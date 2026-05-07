@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  /* Functional colours — universal UX signal, fixed. Used only in functional contexts. */
+  --color-functional-marigold: #F5A623;
+  --color-functional-green: #7CB342;
+  --color-functional-red: #C73E1D;
+
+  /* Aesthetic palette — three colours plus halves. */
+  --color-indigo-deep: #1A1B4B;
+  --color-indigo-faded: #3D3E6B;
+  --color-teal-faded: #3A6B6B;
+  --color-teal-pale: #7AA5A5;
+  --color-sienna-burnt: #C77B47;
+  --color-sienna-pale: #E5B088;
+  --color-cream: #F8F1E4;
+  --color-charcoal: #1A1A1A;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-indigo-deep);
+}

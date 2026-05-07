@@ -1,0 +1,713 @@
+[
+  {
+    "id": "cp25-q001",
+    "module": "cp-25",
+    "topic": "Division of Labor",
+    "difficulty": "easy",
+    "question": "What is division of labor?",
+    "options": [
+      "The breaking down of work into specialized tasks performed by different workers",
+      "A legal requirement that workers split their time equally across all jobs",
+      "The separation of workers based on their age and experience",
+      "The process of dividing profits equally among all company employees"
+    ],
+    "correctIndex": 0,
+    "explanation": "Division of labor involves breaking down production into specialized tasks, with different workers focusing on specific components or stages. This specialization increases efficiency and productivity."
+  },
+  {
+    "id": "cp25-q002",
+    "module": "cp-25",
+    "topic": "Division of Labor",
+    "difficulty": "easy",
+    "question": "Why does specialization increase productivity?",
+    "options": [
+      "Workers become more skilled at their specific tasks through practice and repetition",
+      "Specialized workers receive higher wages than generalists",
+      "Specialization reduces the number of workers needed",
+      "It eliminates the need for any form of training or education"
+    ],
+    "correctIndex": 0,
+    "explanation": "Specialization increases productivity through skill development, reduced switching costs between tasks, and the ability to use task-specific tools effectively. A worker repeating the same task becomes faster and more efficient."
+  },
+  {
+    "id": "cp25-q003",
+    "module": "cp-25",
+    "topic": "Division of Labor",
+    "difficulty": "easy",
+    "question": "What is a potential disadvantage of excessive division of labor?",
+    "options": [
+      "Work can become monotonous and demotivating for workers",
+      "It always requires more workers than less specialized approaches",
+      "Workers cannot understand the complete production process",
+      "Specialization necessarily reduces the quality of products"
+    ],
+    "correctIndex": 0,
+    "explanation": "While specialization increases productivity, workers may experience decreased job satisfaction from repetitive tasks. Workers may lack understanding of the broader context, and motivation can suffer."
+  },
+  {
+    "id": "cp25-q004",
+    "module": "cp-25",
+    "topic": "Comparative Advantage",
+    "difficulty": "easy",
+    "question": "What is absolute advantage in trade?",
+    "options": [
+      "The ability to produce a good using fewer resources than another producer",
+      "The ability to produce a good that nobody else can make",
+      "Having a larger population or more total resources than another country",
+      "The legal right to be the first producer of a good"
+    ],
+    "correctIndex": 0,
+    "explanation": "Absolute advantage means one producer can make a good more efficiently (using fewer inputs) than another. Country A has absolute advantage in wheat if it produces more wheat per acre than Country B."
+  },
+  {
+    "id": "cp25-q005",
+    "module": "cp-25",
+    "topic": "Comparative Advantage",
+    "difficulty": "easy",
+    "question": "What is comparative advantage?",
+    "options": [
+      "The ability to produce a good at a lower opportunity cost than another producer",
+      "The ability to produce a good faster than another producer",
+      "Having access to better technology than competitors",
+      "Producing goods that are more expensive and valuable than alternatives"
+    ],
+    "correctIndex": 0,
+    "explanation": "Comparative advantage is about opportunity cost\u2014the ability to produce something while giving up less of something else. A producer has comparative advantage if the relative cost (what must be sacrificed) is lower."
+  },
+  {
+    "id": "cp25-q006",
+    "module": "cp-25",
+    "topic": "Comparative Advantage",
+    "difficulty": "easy",
+    "question": "Can a country have comparative advantage in a good even if it lacks absolute advantage?",
+    "options": [
+      "Yes, if its opportunity cost is lower despite lower overall efficiency",
+      "No, absolute advantage always determines comparative advantage",
+      "Only if it has superior technology",
+      "Only if it has lower labor costs"
+    ],
+    "correctIndex": 0,
+    "explanation": "Yes. A country might be less efficient overall but still have comparative advantage if the opportunity cost is lowest. This is David Ricardo's key insight\u2014mutual gains from trade come from comparative, not absolute, advantage."
+  },
+  {
+    "id": "cp25-q007",
+    "module": "cp-25",
+    "topic": "Gains from Trade",
+    "difficulty": "easy",
+    "question": "Why do economists favor specialization based on comparative advantage?",
+    "options": [
+      "It allows each producer to focus on what they do relatively best, increasing total output",
+      "It eliminates all competition between producers",
+      "It guarantees equal income for all workers",
+      "It removes the need for any international agreements"
+    ],
+    "correctIndex": 0,
+    "explanation": "Specialization based on comparative advantage increases the size of the total pie\u2014both countries can consume more than if they were self-sufficient. Trade allows each to focus on lower-opportunity-cost production."
+  },
+  {
+    "id": "cp25-q008",
+    "module": "cp-25",
+    "topic": "Free Trade Benefits",
+    "difficulty": "easy",
+    "question": "How does free trade typically affect consumer prices?",
+    "options": [
+      "It tends to lower prices by increasing competition and variety",
+      "It always raises prices to benefit foreign producers",
+      "It has no effect on prices in the importing country",
+      "It prevents price changes of any kind"
+    ],
+    "correctIndex": 0,
+    "explanation": "Free trade increases competition among suppliers, often lowering prices for consumers. Imported goods can provide cheaper alternatives, and domestic producers face competitive pressure to reduce costs."
+  },
+  {
+    "id": "cp25-q009",
+    "module": "cp-25",
+    "topic": "Free Trade Benefits",
+    "difficulty": "easy",
+    "question": "What does free trade allow consumers to do?",
+    "options": [
+      "Access a wider variety of goods at competitive prices",
+      "Purchase only domestically-produced goods at any price",
+      "Avoid paying any taxes on imported goods",
+      "Demand that all goods meet identical quality standards"
+    ],
+    "correctIndex": 0,
+    "explanation": "Free trade expands consumer choice\u2014access to goods produced globally at competitive prices. This variety and competition benefit consumers through lower costs and better selection."
+  },
+  {
+    "id": "cp25-q010",
+    "module": "cp-25",
+    "topic": "Trade Barriers",
+    "difficulty": "easy",
+    "question": "What is a tariff?",
+    "options": [
+      "A tax imposed on imported goods by the government",
+      "A voluntary agreement between trading nations",
+      "A reduction in the price of exported goods",
+      "A treaty allowing free movement of people across borders"
+    ],
+    "correctIndex": 0,
+    "explanation": "A tariff is a tax on imports. By raising the price of foreign goods, tariffs protect domestic producers from foreign competition but typically raise prices for consumers."
+  },
+  {
+    "id": "cp25-q011",
+    "module": "cp-25",
+    "topic": "Trade Barriers",
+    "difficulty": "easy",
+    "question": "What is a quota in trade?",
+    "options": [
+      "A limit on the quantity of a good that can be imported",
+      "A minimum price that must be charged for imports",
+      "A requirement that domestic producers match foreign prices",
+      "A tax that increases with the value of imports"
+    ],
+    "correctIndex": 0,
+    "explanation": "An import quota is a quantitative restriction\u2014a maximum amount of a good allowed to be imported. Like tariffs, quotas protect domestic producers by restricting foreign competition."
+  },
+  {
+    "id": "cp25-q012",
+    "module": "cp-25",
+    "topic": "Protectionism",
+    "difficulty": "easy",
+    "question": "What argument is made by protectionists against free trade?",
+    "options": [
+      "Protecting domestic industries prevents job losses and promotes self-sufficiency",
+      "Tariffs and quotas always increase total employment",
+      "Developing countries should avoid any international trade",
+      "Free trade benefits only wealthy nations"
+    ],
+    "correctIndex": 0,
+    "explanation": "Protectionists argue that trade barriers shield domestic workers and industries from foreign competition. They cite concerns about unemployment, infant industry vulnerability, and strategic self-reliance."
+  },
+  {
+    "id": "cp25-q013",
+    "module": "cp-25",
+    "topic": "Trade Controversies",
+    "difficulty": "medium",
+    "question": "What is the infant industry argument for protection?",
+    "options": [
+      "Young industries need temporary protection until they're competitive globally",
+      "New industries should never be allowed to import competing goods",
+      "Industries beginning operations need permanent government subsidies",
+      "Protection should apply indefinitely to all domestic producers"
+    ],
+    "correctIndex": 0,
+    "explanation": "The infant industry argument suggests temporary protection allows developing industries to achieve economies of scale and competitiveness before facing global competition. The debate is whether such protection is necessary and what happens when it's supposed to end."
+  },
+  {
+    "id": "cp25-q014",
+    "module": "cp-25",
+    "topic": "Trade Policy",
+    "difficulty": "medium",
+    "question": "What does the phrase 'mutually beneficial trade' mean?",
+    "options": [
+      "Both parties gain from the trade compared to not trading",
+      "Both parties receive identical benefits from the exchange",
+      "Trade partners must have equal economic development levels",
+      "Only wealthy nations benefit from international commerce"
+    ],
+    "correctIndex": 0,
+    "explanation": "Mutually beneficial trade means both parties are better off after trading than before\u2014each gets goods at prices lower than their opportunity cost would be in autarky. The gains don't have to be equal."
+  },
+  {
+    "id": "cp25-q015",
+    "module": "cp-25",
+    "topic": "Trade and Development",
+    "difficulty": "medium",
+    "question": "How can trade accelerate economic development in poorer countries?",
+    "options": [
+      "By providing access to capital, technology, and larger markets through exports",
+      "By eliminating the need for any domestic industrial development",
+      "By guaranteeing equal incomes to all trading partners",
+      "By requiring wealthy nations to subsidize poor countries"
+    ],
+    "correctIndex": 0,
+    "explanation": "Trade can benefit development through export opportunities, foreign investment, technology transfer, and access to cheaper inputs. Countries like South Korea and Taiwan used trade-oriented policies to develop rapidly."
+  },
+  {
+    "id": "cp25-q016",
+    "module": "cp-25",
+    "topic": "Trade and Employment",
+    "difficulty": "medium",
+    "question": "When trade eliminates jobs in import-competing industries, what typically happens to overall employment?",
+    "options": [
+      "New jobs are created in export industries and other sectors, though transitions are difficult",
+      "Unemployment increases permanently and cannot be reduced",
+      "The total number of jobs remains exactly the same",
+      "Only the most educated workers find new employment"
+    ],
+    "correctIndex": 0,
+    "explanation": "Trade creates winners and losers. While some jobs are lost in import-competing sectors, export industries expand and create jobs elsewhere. However, displaced workers may face transition difficulties and wage losses."
+  },
+  {
+    "id": "cp25-q017",
+    "module": "cp-25",
+    "topic": "Comparative Advantage Limitations",
+    "difficulty": "medium",
+    "question": "Why might a country choose not to fully specialize according to comparative advantage?",
+    "options": [
+      "To maintain self-sufficiency in essential goods, diversify risk, or preserve strategic industries",
+      "Because comparative advantage is mathematically impossible",
+      "Specialization never provides any economic benefits",
+      "Only countries with similar development levels can trade"
+    ],
+    "correctIndex": 0,
+    "explanation": "While specialization maximizes efficiency, countries may prioritize food security (agriculture), military capability, or economic resilience by maintaining domestic capacity in strategic sectors, accepting some inefficiency."
+  },
+  {
+    "id": "cp25-q018",
+    "module": "cp-25",
+    "topic": "Trade Terms",
+    "difficulty": "medium",
+    "question": "What are 'terms of trade'?",
+    "options": [
+      "The ratio of export prices to import prices for a country",
+      "The total value of goods traded between two nations",
+      "The legal agreements governing commercial relationships",
+      "The transportation costs for international shipping"
+    ],
+    "correctIndex": 0,
+    "explanation": "Terms of trade measure how many imports a country can purchase with its exports. If prices of exports rise relative to imports, terms of trade improve\u2014a country benefits more from each unit exported."
+  },
+  {
+    "id": "cp25-q019",
+    "module": "cp-25",
+    "topic": "Supply Chains",
+    "difficulty": "medium",
+    "question": "How has modern trade affected production structures in developing countries?",
+    "options": [
+      "Created global supply chains with specialization in labor-intensive production stages",
+      "Eliminated all manufacturing in developing countries",
+      "Required identical production methods everywhere",
+      "Prevented any technological development in poor countries"
+    ],
+    "correctIndex": 0,
+    "explanation": "Global supply chains allow countries to specialize in specific production stages. Developing nations often focus on labor-intensive assembly while developed countries handle design and high-tech components\u2014mutually beneficial specialization."
+  },
+  {
+    "id": "cp25-q020",
+    "module": "cp-25",
+    "topic": "Trade Negotiations",
+    "difficulty": "medium",
+    "question": "What is the purpose of multilateral trade agreements like those negotiated through the WTO?",
+    "options": [
+      "To reduce trade barriers between nations and establish common rules for commerce",
+      "To eliminate all competition in global markets",
+      "To ensure wealthy nations always win negotiations",
+      "To prevent any country from trading with others"
+    ],
+    "correctIndex": 0,
+    "explanation": "Multilateral trade agreements aim to liberalize trade by reducing barriers, establishing dispute-resolution procedures, and creating predictable rules. They reflect the view that mutual liberalization benefits all parties."
+  },
+  {
+    "id": "cp25-q021",
+    "module": "cp-25",
+    "topic": "Trade and Inequality",
+    "difficulty": "medium",
+    "question": "Why might some workers oppose free trade despite overall economic gains?",
+    "options": [
+      "They face displacement or wage competition from imports without sharing in the gains",
+      "All workers automatically benefit equally from free trade",
+      "Trade only benefits employers, never workers",
+      "Workers in poor countries always oppose any exports"
+    ],
+    "correctIndex": 0,
+    "explanation": "Trade creates winners and losers. While consumers benefit from lower prices and overall efficiency improves, workers in import-competing industries face job loss or wage pressure. They bear costs while gains spread to consumers and exporters."
+  },
+  {
+    "id": "cp25-q022",
+    "module": "cp-25",
+    "topic": "Exchange Rates and Trade",
+    "difficulty": "medium",
+    "question": "How does a depreciation of a country's currency affect its exports and imports?",
+    "options": [
+      "Exports become cheaper and more competitive; imports become more expensive",
+      "Exports become more expensive; imports become cheaper",
+      "Both exports and imports become equally more expensive",
+      "Currency changes have no effect on trade volumes"
+    ],
+    "correctIndex": 0,
+    "explanation": "When a currency weakens, exports become cheaper for foreign buyers (more competitive) while imports become more expensive domestically. This typically increases exports and decreases imports."
+  },
+  {
+    "id": "cp25-q023",
+    "module": "cp-25",
+    "topic": "Trade Imbalances",
+    "difficulty": "medium",
+    "question": "What does a trade deficit indicate?",
+    "options": [
+      "A country imports more goods than it exports by value",
+      "A country's economy is failing and must be reformed",
+      "Foreign countries are unfairly dumping products on the market",
+      "The country will definitely lose jobs to imports"
+    ],
+    "correctIndex": 0,
+    "explanation": "A trade deficit means imports exceed exports. This can reflect strong domestic demand, currency appreciation, or capital inflows. It's not inherently negative\u2014it reflects financial flows and consumer preferences."
+  },
+  {
+    "id": "cp25-q024",
+    "module": "cp-25",
+    "topic": "Trade and Environment",
+    "difficulty": "medium",
+    "question": "Why might some environmentalists oppose free trade?",
+    "options": [
+      "Trade increases production and transportation, potentially increasing environmental damage",
+      "All trade necessarily destroys the environment",
+      "Poor countries are too poor to care about environmental protection",
+      "Free trade mandates that countries eliminate environmental regulations"
+    ],
+    "correctIndex": 0,
+    "explanation": "Critics argue free trade increases production volumes, shipping distances, and consumption, raising carbon emissions and pollution. They contend trade should be restricted to protect the environment."
+  },
+  {
+    "id": "cp25-q025",
+    "module": "cp-25",
+    "topic": "Trade and Labor Standards",
+    "difficulty": "medium",
+    "question": "What concern do labor advocates raise about free trade?",
+    "options": [
+      "Production shifts to countries with lower labor standards and wages, creating a 'race to the bottom'",
+      "Free trade prevents workers from ever earning higher wages",
+      "Workers in poor countries never benefit from trade-related employment",
+      "All workers must receive identical wages in trading partners"
+    ],
+    "correctIndex": 0,
+    "explanation": "Labor advocates worry that trade creates incentives to locate production where labor is cheapest and regulations weakest. This could pressure countries to lower standards or prevent workers from organizing."
+  },
+  {
+    "id": "cp25-q026",
+    "module": "cp-25",
+    "topic": "Specialization and Comparative Advantage",
+    "difficulty": "hard",
+    "question": "If Country A can produce 100 apples or 50 oranges per day, and Country B can produce 80 apples or 40 oranges per day, which country has comparative advantage in apples?",
+    "options": [
+      "Country B has lower opportunity cost for apples (0.5 oranges per apple vs 0.5)",
+      "Country A has absolute advantage, so it must have comparative advantage",
+      "Neither country has comparative advantage in apples",
+      "The answer depends on what the countries actually want to produce"
+    ],
+    "correctIndex": 0,
+    "explanation": "Country A's opportunity cost: 1 apple = 0.5 oranges. Country B's opportunity cost: 1 apple = 0.5 oranges. Actually, they have equal opportunity cost here. (This example illustrates the need for different opportunity costs for comparative advantage to create trade opportunities.)"
+  },
+  {
+    "id": "cp25-q027",
+    "module": "cp-25",
+    "topic": "Tariff Effects",
+    "difficulty": "hard",
+    "question": "What is deadweight loss from a tariff?",
+    "options": [
+      "The reduction in total surplus due to reduced trade volume and inefficient domestic production",
+      "The total tax revenue collected by the government",
+      "The profit increase for protected domestic firms",
+      "The consumer savings from lower import prices"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tariffs create deadweight loss by: 1) Preventing mutually beneficial trades between consumers and foreign producers, 2) Encouraging inefficient domestic production. The efficiency loss exceeds any income distribution effects."
+  },
+  {
+    "id": "cp25-q028",
+    "module": "cp-25",
+    "topic": "Trade Barriers and Consumer Welfare",
+    "difficulty": "hard",
+    "question": "When a tariff is imposed, who loses in the short run?",
+    "options": [
+      "Consumers face higher prices; foreign producers lose sales; overall efficiency declines",
+      "Only foreign producers lose; domestic workers and consumers both benefit",
+      "Everyone benefits because domestic firms gain protection",
+      "The government loses all tariff revenue"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tariffs raise consumer prices immediately, causing deadweight loss. Foreign suppliers lose market share. Domestic producers gain, and the government collects tariff revenue, but overall welfare typically declines."
+  },
+  {
+    "id": "cp25-q029",
+    "module": "cp-25",
+    "topic": "Comparative Advantage Dynamics",
+    "difficulty": "hard",
+    "question": "How can a country's comparative advantage change over time?",
+    "options": [
+      "Through capital accumulation, human capital development, and technological progress",
+      "Comparative advantage is permanently fixed by geography and initial resources",
+      "Trade policy changes can create or destroy comparative advantage",
+      "Comparative advantage only changes through government decree"
+    ],
+    "correctIndex": 0,
+    "explanation": "Comparative advantages evolve as countries develop. South Korea shifted from simple assembly to semiconductors; India developed IT expertise. Investment in education, capital, and technology fundamentally alters what countries can do efficiently."
+  },
+  {
+    "id": "cp25-q030",
+    "module": "cp-25",
+    "topic": "Trade Policy Effectiveness",
+    "difficulty": "hard",
+    "question": "Why do protectionist policies often fail to achieve long-term competitiveness?",
+    "options": [
+      "Protected industries face reduced competition incentives, discouraging innovation and efficiency improvements",
+      "International laws make all protectionism immediately illegal",
+      "Protectionism always increases production costs for all consumers",
+      "Protected firms cannot export to any markets"
+    ],
+    "correctIndex": 0,
+    "explanation": "Infant industry protection can become permanent. Without competitive pressure, firms lack incentives to innovate, cut costs, or improve quality. They depend on tariffs rather than becoming genuinely competitive."
+  },
+  {
+    "id": "cp25-q031",
+    "module": "cp-25",
+    "topic": "Global Value Chains",
+    "difficulty": "hard",
+    "question": "How do global value chains affect the nature of comparative advantage?",
+    "options": [
+      "They shift advantage from whole industries to specific production stages within industries",
+      "They eliminate comparative advantage entirely in modern economies",
+      "They concentrate all advantage in the most developed nations",
+      "They make international trade impossible without complete specialization"
+    ],
+    "correctIndex": 0,
+    "explanation": "Modern supply chains mean countries specialize not in entire products but in specific components or stages. Bangladesh excels at garment assembly; China at electronics manufacturing. Comparative advantage now operates at the production-stage level."
+  },
+  {
+    "id": "cp25-q032",
+    "module": "cp-25",
+    "topic": "Trade and Economic Growth",
+    "difficulty": "hard",
+    "question": "What evidence suggests trade promotes growth in developing economies?",
+    "options": [
+      "Countries that opened to trade like China and India achieved high growth; closed economies stagnated",
+      "Trade always guarantees rapid development regardless of other factors",
+      "Historical evidence shows protectionism produced faster growth than free trade",
+      "Growth rates are unrelated to trade policy choices"
+    ],
+    "correctIndex": 0,
+    "explanation": "Empirical evidence generally supports that trade openness correlates with faster growth. Export-oriented East Asian economies outgrew inward-focused ones. However, growth depends on multiple factors beyond just trade policy."
+  },
+  {
+    "id": "cp25-q033",
+    "module": "cp-25",
+    "topic": "Trade Policy in Developing Nations",
+    "difficulty": "hard",
+    "question": "What is strategic trade policy?",
+    "options": [
+      "Government targeting of specific industries to develop competitive advantages over rivals",
+      "Eliminating all government involvement in economic policy",
+      "Maximizing immediate consumer welfare regardless of long-term effects",
+      "Abandoning all international trade agreements"
+    ],
+    "correctIndex": 0,
+    "explanation": "Strategic trade policy suggests governments can target R&D, infrastructure, and education in specific sectors to develop comparative advantages. South Korea's focus on semiconductors is cited as an example, though results are debated."
+  },
+  {
+    "id": "cp25-q034",
+    "module": "cp-25",
+    "topic": "Trade and Income Distribution",
+    "difficulty": "hard",
+    "question": "According to trade theory, how does trade affect income distribution within a country?",
+    "options": [
+      "It increases returns to abundant factors; decreases returns to scarce factors (Stolper-Samuelson effect)",
+      "Trade has no effect on relative wages or income distribution",
+      "It always increases wages for all workers equally",
+      "It only affects farmer incomes, not urban workers"
+    ],
+    "correctIndex": 0,
+    "explanation": "The Stolper-Samuelson theorem predicts trade benefits the abundant factor (e.g., unskilled labor in labor-rich countries) while harming the scarce factor (capital in labor-rich countries). This explains why trade benefits and losses vary by factor type."
+  },
+  {
+    "id": "cp25-q035",
+    "module": "cp-25",
+    "topic": "Trade Agreements and Harmonization",
+    "difficulty": "hard",
+    "question": "Why do some economists oppose provisions in trade agreements that harmonize regulations across countries?",
+    "options": [
+      "Different countries may have legitimate different preferences for environmental and labor standards",
+      "Harmonization guarantees that all countries adopt the lowest standards",
+      "Trade agreements always require identical regulations globally",
+      "Regulations have no economic impact on trade or production"
+    ],
+    "correctIndex": 0,
+    "explanation": "Countries may intentionally choose different regulatory levels reflecting different values and development stages. Harmonization at high levels increases costs for poor countries; at low levels, it reduces protection. One-size-fits-all approaches may not be optimal."
+  },
+  {
+    "id": "cp25-q036",
+    "module": "cp-25",
+    "topic": "Trade Liberalization Sequencing",
+    "difficulty": "hard",
+    "question": "Why might the speed of trade liberalization matter for developing countries?",
+    "options": [
+      "Rapid opening can overwhelm domestic industries before they adjust; gradual opening allows adaptation",
+      "Speed of liberalization has no effect on economic outcomes",
+      "Slow liberalization always produces better results than rapid opening",
+      "Only wealthy countries can handle any pace of liberalization"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sequencing matters. Abrupt tariff elimination can cause unemployment and firm closures before resources can shift to new sectors. Gradual liberalization allows workers to retrain and capital to reallocate more smoothly."
+  },
+  {
+    "id": "cp25-q037",
+    "module": "cp-25",
+    "topic": "Trade and Poverty",
+    "difficulty": "hard",
+    "question": "How might trade reduce poverty in poor countries?",
+    "options": [
+      "Expanding export opportunities creates jobs and income growth; cheaper imports reduce cost of living",
+      "Trade automatically eliminates all poverty",
+      "Poor countries must reject trade to protect their citizens",
+      "Poverty is unrelated to trade policy"
+    ],
+    "correctIndex": 0,
+    "explanation": "Trade can reduce poverty through job creation in export sectors and lower prices for essentials. Bangladesh's garment exports employ millions; cheap imports provide affordable goods. However, benefits depend on complementary policies and labor mobility."
+  },
+  {
+    "id": "cp25-q038",
+    "module": "cp-25",
+    "topic": "Regional Trade Agreements",
+    "difficulty": "hard",
+    "question": "What is 'trade diversion' in regional trade agreements?",
+    "options": [
+      "Trade shifts from efficient external suppliers to less-efficient member countries due to lower tariffs",
+      "Increased trade benefits within a regional block",
+      "Protection against all non-member countries",
+      "The elimination of internal tariffs among members"
+    ],
+    "correctIndex": 0,
+    "explanation": "Trade diversion occurs when a regional agreement lowers internal tariffs but raises external ones. Trade shifts away from the cheapest global suppliers to less efficient regional partners. This reduces efficiency despite trade creation benefits."
+  },
+  {
+    "id": "cp25-q039",
+    "module": "cp-25",
+    "topic": "Trade and Competitiveness",
+    "difficulty": "hard",
+    "question": "Why is the concept of 'national competitiveness' sometimes misleading in trade discussions?",
+    "options": [
+      "Nations are not firms; gains from trade accrue to factors and individuals, not nations as unified entities",
+      "Competitiveness of nations is fixed and cannot change",
+      "All nations must be equally competitive in all sectors",
+      "International competition always harms national welfare"
+    ],
+    "correctIndex": 0,
+    "explanation": "Economists note that while firms compete, nations benefit from specialization even if uncompetitive overall. A poor nation can gain by importing everything if it specializes and exports what it does relatively well\u2014'competitiveness' at the national level differs from firms."
+  },
+  {
+    "id": "cp25-q040",
+    "module": "cp-25",
+    "topic": "Trade and Technology",
+    "difficulty": "expert",
+    "question": "How does trade affect technology transfer to developing countries?",
+    "options": [
+      "Foreign investment, joint ventures, and reverse engineering enable technology adoption; licensing creates barriers",
+      "Trade automatically transfers all advanced technology to poor countries",
+      "Technology transfer only occurs through formal education, not trade",
+      "Developing countries never benefit from access to foreign technology"
+    ],
+    "correctIndex": 0,
+    "explanation": "Trade facilitates technology transfer through foreign direct investment, multinational production, and imitation. However, patents and IP protections may limit access. Historical examples (India's pharmaceuticals through generic production) show both mechanisms operate."
+  },
+  {
+    "id": "cp25-q041",
+    "module": "cp-25",
+    "topic": "Trade Policy Synthesis",
+    "difficulty": "expert",
+    "question": "In designing trade policy for a developing country, what balance must policymakers strike?",
+    "options": [
+      "Between protection for nascent industries and openness for consumer benefits and efficiency",
+      "Between eliminating all government intervention and complete protectionism",
+      "Between making identical choices as wealthy nations and perfect isolation",
+      "Between maximizing exports at any cost and complete self-sufficiency"
+    ],
+    "correctIndex": 0,
+    "explanation": "The optimal policy depends on specific circumstances. Some temporary protection for learning industries makes economic sense, but permanent protection creates inefficiency. Open trade drives innovation and consumer welfare, but adjustment costs require attention. Context matters critically."
+  },
+  {
+    "id": "cp25-q042",
+    "module": "cp-25",
+    "topic": "comparative-advantage",
+    "difficulty": "expert",
+    "question": "Comparative advantage theory predicts that all countries gain from specialization and trade even if one country is absolutely better at producing everything. What is the most powerful challenge to this prediction in practice?",
+    "options": [
+      "Comparative advantage is static, but dynamic capabilities matter \u2014 specializing according to current comparative advantage can lock countries into lower-value activities while preventing development of new ones",
+      "Comparative advantage theory is mathematically correct but empirically false \u2014 countries that specialize according to it systematically underperform those that protect domestic industry",
+      "The theory fails because transportation and trade costs are always too high for comparative advantage to produce its predicted gains from specialization",
+      "Comparative advantage only applies to goods, not services \u2014 the large and growing services sector makes the theory irrelevant to modern trade policy"
+    ],
+    "correctIndex": 0,
+    "explanation": "The dynamic capabilities critique is the most serious: today's comparative advantage may not be tomorrow's. Countries that specialize in commodities or low-skill manufacturing according to current comparative advantage may fail to develop the technological and organizational capabilities needed for higher-value sectors.",
+    "source": "Comparative_Advantage.pdf"
+  },
+  {
+    "id": "cp25-q043",
+    "module": "cp-25",
+    "topic": "protectionism",
+    "difficulty": "expert",
+    "question": "The infant industry argument for protectionism holds that temporary protection allows domestic industries to develop until they can compete internationally. Why does empirical evidence on industrial policy make economists skeptical of this argument in practice?",
+    "options": [
+      "Protection that is temporary in theory becomes permanent in practice as protected industries build political constituencies against liberalization \u2014 'infant' industries rarely grow up",
+      "The infant industry argument is theoretically flawed \u2014 there is no economic mechanism by which protection can allow industries to develop competitive advantage",
+      "Empirical evidence shows that infant industry protection always succeeds when administered by technically competent bureaucracies with clear performance benchmarks",
+      "The argument fails because international trade agreements make infant industry protection illegal, so countries cannot use it even when it would be welfare-improving"
+    ],
+    "correctIndex": 0,
+    "explanation": "The political economy of protection is the strongest empirical objection: protected industries become constituencies for continued protection. The temporary becomes permanent as firms adapt to operating behind a tariff wall rather than becoming internationally competitive.",
+    "source": "Note_on_Protectionism.pdf"
+  },
+  {
+    "id": "cp25-q044",
+    "module": "cp-25",
+    "topic": "trade-liberalization",
+    "difficulty": "expert",
+    "question": "Trade liberalization creates aggregate gains but concentrated losses \u2014 some workers and industries bear high adjustment costs while gains are diffuse. What does this distributional asymmetry imply for the political sustainability of liberal trade policy?",
+    "options": [
+      "Concentrated losers organize politically more easily than diffuse gainers, making trade liberalization systematically politically vulnerable even when it is economically beneficial in aggregate",
+      "The distributional asymmetry is a temporary problem that resolves as workers retrain and displaced industries are replaced by more productive alternatives",
+      "Governments can sustain trade liberalization indefinitely through adequate communication of aggregate benefits, regardless of distributional effects",
+      "Trade's distributional effects are no different from other forms of economic change, so trade liberalization faces no special political economy challenge"
+    ],
+    "correctIndex": 0,
+    "explanation": "A worker who loses their job to import competition bears a clear, large, concentrated loss. The gains from cheaper goods are spread across millions of consumers \u2014 each gaining a tiny, invisible amount. This asymmetry is why trade politics often contradict the economics.",
+    "source": "Trade_Liberalization-_Why_So_Much_Controversy_.pdf"
+  },
+  {
+    "id": "cp25-q045",
+    "module": "cp-25",
+    "topic": "trade-policy",
+    "difficulty": "expert",
+    "question": "India's long history of import substitution industrialization is assessed critically in the readings. What does this case reveal about the relationship between trade policy, state capacity, and industrial development?",
+    "options": [
+      "Import substitution can develop industrial capacity but becomes costly when maintained beyond the point where protected industries become globally competitive \u2014 requiring state capacity to know when and how to liberalize",
+      "India's ISI experience proves that import substitution always fails and all developing countries should immediately adopt free trade regardless of their institutional context",
+      "ISI succeeded in building industrial capacity in India but failed only because of insufficient protection \u2014 the correct lesson is that more comprehensive protection would have produced better outcomes",
+      "India's ISI experience is not generalizable \u2014 its failure was caused by unique historical and cultural factors that do not apply to other developing countries"
+    ],
+    "correctIndex": 0,
+    "explanation": "ISI can build industrial capacity in the short run, but indefinite protection prevents the competition pressure that forces productivity improvement. The challenge is not whether to protect but for how long and with what exit conditions \u2014 which requires state capacity to monitor and enforce.",
+    "source": "INDIA_S_MARATHON.pdf"
+  },
+  {
+    "id": "cp25-q046",
+    "module": "cp-25",
+    "topic": "comparative-advantage",
+    "difficulty": "expert",
+    "question": "Division of labor enables specialization but creates interdependence. What does the history of global supply chain disruptions during COVID-19 reveal about the limits of optimizing for comparative advantage without regard for resilience?",
+    "options": [
+      "Maximizing specialization according to comparative advantage reduces redundancy and increases vulnerability to disruption \u2014 resilient systems require some inefficiency as insurance against concentrated single-point failures",
+      "COVID supply chain disruptions show that global trade is inherently fragile and countries should produce all critical goods domestically regardless of comparative advantage",
+      "Supply chain resilience is purely a private sector concern \u2014 governments have no role in ensuring supply chain diversity beyond normal market competition",
+      "The COVID disruptions were temporary and do not change the fundamental case for deep global specialization \u2014 the long-run efficiency gains always outweigh short-run resilience costs"
+    ],
+    "correctIndex": 0,
+    "explanation": "Optimizing for efficiency creates lean supply chains with no slack \u2014 which work brilliantly in normal times and catastrophically in crises. Resilience requires redundancy, which is inefficiency by definition. The policy question is what insurance premium is worth paying for what risk scenarios.",
+    "source": "Division of Labor - Econlib.pdf"
+  },
+  {
+    "id": "cp25-q047",
+    "module": "cp-25",
+    "topic": "trade-policy",
+    "difficulty": "expert",
+    "question": "The history of international trade policy shows cycles of liberalization and protection. What does this cyclicality suggest about whether free trade is a stable political-economic equilibrium?",
+    "options": [
+      "Free trade generates diffuse gains but concentrated losses, and the political mobilization of losers periodically overwhelms the aggregate case for openness \u2014 making protection cycles a predictable feature rather than a failure of understanding",
+      "The cycles reflect changing economic conditions rather than political dynamics \u2014 protection rises when comparative advantage changes and falls when new industries emerge",
+      "Trade policy cycles are caused primarily by international power shifts \u2014 liberalization dominates when hegemons promote it and protection rises when hegemonic power declines",
+      "Free trade is a stable equilibrium in theory and cycles occur only because of irrational populist politics that could be eliminated through better economic education"
+    ],
+    "correctIndex": 0,
+    "explanation": "If free trade were a stable political equilibrium, cycles would not recur across very different historical periods and institutional contexts. The recurrence suggests a structural political economy dynamic: trade creates its own opposition through the concentrated losses it imposes on identifiable groups.",
+    "source": "A_Brief_History_of_International_Trade_Policy.pdf"
+  }
+]

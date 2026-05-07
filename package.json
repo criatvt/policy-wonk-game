@@ -1,0 +1,35 @@
+{
+  "name": "policy-wonk-game",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Policy Wonk — a 15-question ladder quiz game built on Takshashila GCPP course material, hosted by Iqbal Ji.",
+  "homepage": "https://policywonkgame.aasifj.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/criatvt/policy-wonk-game.git"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build && pagefind --site dist",
+    "preview": "astro preview",
+    "astro": "astro",
+    "validate-questions": "node scripts/validate-questions.js"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.2.0",
+    "astro": "^5.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "pagefind": "^1.3.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.0"
+  }
+}

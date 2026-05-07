@@ -1,0 +1,770 @@
+[
+  {
+    "id": "cp13-q001",
+    "module": "cp-13",
+    "topic": "policy-analysis-eightfold",
+    "difficulty": "easy",
+    "question": "Bardach's Eightfold Path begins with which step in policy analysis?",
+    "options": [
+      "Assembling evidence",
+      "Defining the problem",
+      "Constructing alternatives",
+      "Deciding on a solution"
+    ],
+    "correctIndex": 1,
+    "explanation": "The first step of Bardach's Eightfold Path is to define the problem clearly. Without understanding what problem you are trying to solve, the subsequent analytical steps cannot be effective.",
+    "source": "Bardachs-Eightfold-Path-1.pdf"
+  },
+  {
+    "id": "cp13-q002",
+    "module": "cp-13",
+    "topic": "policy-analysis-eightfold",
+    "difficulty": "easy",
+    "question": "Which of the following is NOT one of Bardach's eight steps of policy analysis?",
+    "options": [
+      "Assembling evidence",
+      "Projecting outcomes",
+      "Polling stakeholders",
+      "Confronting trade-offs"
+    ],
+    "correctIndex": 2,
+    "explanation": "Polling stakeholders, while sometimes useful, is not an explicit step in Bardach's Eightfold Path. The path focuses on: defining the problem, assembling evidence, constructing alternatives, selecting criteria, projecting outcomes, confronting trade-offs, deciding, and telling your story.",
+    "source": "Bardachs-Eightfold-Path-1.pdf"
+  },
+  {
+    "id": "cp13-q003",
+    "module": "cp-13",
+    "topic": "policy-goals",
+    "difficulty": "easy",
+    "question": "According to Deborah Stone, what is one of the four primary goals of public policy?",
+    "options": [
+      "Profit maximization",
+      "Equity or equality",
+      "Economic growth",
+      "Voter satisfaction"
+    ],
+    "correctIndex": 1,
+    "explanation": "Stone identifies four primary goals of public policy: equity/equality, efficiency, security, and liberty. These represent fundamental objectives that policymakers consider when designing public interventions.",
+    "source": "Goals_of_Public_Policy.pdf"
+  },
+  {
+    "id": "cp13-q004",
+    "module": "cp-13",
+    "topic": "policy-goals",
+    "difficulty": "easy",
+    "question": "What does efficiency in public policy typically mean?",
+    "options": [
+      "Achieving the fastest possible implementation",
+      "Getting the most output for a given input",
+      "Satisfying all stakeholders equally",
+      "Minimizing government bureaucracy"
+    ],
+    "correctIndex": 1,
+    "explanation": "Efficiency in policy contexts means achieving maximum output relative to input, or achieving an objective at the lowest cost. However, measuring efficiency in the public sector is difficult because defining inputs and outputs is complex.",
+    "source": "Goals_of_Public_Policy.pdf"
+  },
+  {
+    "id": "cp13-q005",
+    "module": "cp-13",
+    "topic": "policy-goals",
+    "difficulty": "medium",
+    "question": "Why is it difficult for government to run exactly like a business?",
+    "options": [
+      "Governments have more money than businesses",
+      "Government is composed of citizens and voters, not buyers and sellers, and engages in activities that are not profitable by definition",
+      "Businesses are more efficient at everything they do",
+      "Governments have too much regulation to follow"
+    ],
+    "correctIndex": 1,
+    "explanation": "According to Stone, government fundamentally differs from business because it must serve all citizens, not just customers who can pay. It provides collective goods and addresses market failures that are inherently unprofitable for markets to handle.",
+    "source": "Goals_of_Public_Policy.pdf"
+  },
+  {
+    "id": "cp13-q006",
+    "module": "cp-13",
+    "topic": "market-failure",
+    "difficulty": "easy",
+    "question": "Which situation illustrates a market failure that justifies government intervention?",
+    "options": [
+      "A business increases its prices when demand rises",
+      "A factory pollutes a river, harming people who did not purchase its products",
+      "A company earns high profits from a popular product",
+      "Consumers choose cheaper alternatives over expensive ones"
+    ],
+    "correctIndex": 1,
+    "explanation": "Market failures occur when markets cannot efficiently allocate resources or when benefits/costs spill over to people not involved in the transaction. Pollution is a classic example of a negative externality that justifies government intervention.",
+    "source": "Goals_of_Public_Policy.pdf"
+  },
+  {
+    "id": "cp13-q007",
+    "module": "cp-13",
+    "topic": "liberty-security-tradeoff",
+    "difficulty": "medium",
+    "question": "What is the core tension between liberty and security in public policy?",
+    "options": [
+      "Liberty only benefits the wealthy while security benefits the poor",
+      "Providing security may require government intrusion that limits individual freedom",
+      "Liberty and security always reinforce each other perfectly",
+      "Security is more important than liberty in all circumstances"
+    ],
+    "correctIndex": 1,
+    "explanation": "Stone identifies a fundamental trade-off: to provide security against harm, governments often need to expand their powers and become more intrusive, which can reduce individual liberty and autonomy. This balance is central to policy debates.",
+    "source": "Goals_of_Public_Policy.pdf"
+  },
+  {
+    "id": "cp13-q008",
+    "module": "cp-13",
+    "topic": "liberty-equality-tradeoff",
+    "difficulty": "medium",
+    "question": "What is the difference between negative liberty and positive liberty?",
+    "options": [
+      "Negative liberty applies to poor people; positive liberty applies to rich people",
+      "Negative liberty is freedom from interference; positive liberty is freedom from want or lack",
+      "Negative liberty is about politics; positive liberty is about economics",
+      "There is no meaningful difference between them"
+    ],
+    "correctIndex": 1,
+    "explanation": "Negative liberty refers to freedom from constraint or interference (Mill's concept). Positive liberty refers to having the means or capabilities to exercise freedom (like freedom from poverty). These represent different conceptions of freedom that can conflict.",
+    "source": "Goals_of_Public_Policy.pdf"
+  },
+  {
+    "id": "cp13-q009",
+    "module": "cp-13",
+    "topic": "problem-definition",
+    "difficulty": "easy",
+    "question": "What distinguishes a 'problem' from a 'condition' in policy analysis?",
+    "options": [
+      "Problems are always more important than conditions",
+      "A problem is something that can be addressed by policy; a condition cannot be changed",
+      "Conditions are always permanent while problems are temporary",
+      "There is no meaningful distinction between them"
+    ],
+    "correctIndex": 1,
+    "explanation": "Stone defines conditions as bad circumstances that little can be done about (e.g., mortality). Problems are conditions that can be addressed through policy intervention. The distinction matters because it determines whether governments should act.",
+    "source": "Goals_of_Public_Policy.pdf"
+  },
+  {
+    "id": "cp13-q010",
+    "module": "cp-13",
+    "topic": "symbolic-representation",
+    "difficulty": "medium",
+    "question": "What is a 'synecdoche' as used in policy problem definition?",
+    "options": [
+      "A statistical measure used to quantify a policy problem",
+      "A figure of speech in which a part is used to represent the whole",
+      "A method for calculating policy costs",
+      "A type of political campaign strategy"
+    ],
+    "correctIndex": 1,
+    "explanation": "According to Stone, synecdoche is a rhetorical device where one part represents the whole. In policy, a single compelling example or story can be used to represent an entire problem category.",
+    "source": "Goals_of_Public_Policy.pdf"
+  },
+  {
+    "id": "cp13-q011",
+    "module": "cp-13",
+    "topic": "policy-instruments",
+    "difficulty": "easy",
+    "question": "What is a regulating instrument in policy design?",
+    "options": [
+      "An instrument that eliminates all government oversight",
+      "An instrument that directly influences the volume or nature of activities through requirements or restrictions",
+      "An instrument that only provides information to citizens",
+      "An instrument that creates new markets for goods and services"
+    ],
+    "correctIndex": 1,
+    "explanation": "Regulating instruments directly intervene in activities through requirements (like mandatory technologies, emission limits, or performance standards) to influence behavior and outcomes.",
+    "source": "Efficiency_and_Effectiveness.pdf"
+  },
+  {
+    "id": "cp13-q012",
+    "module": "cp-13",
+    "topic": "policy-instruments",
+    "difficulty": "easy",
+    "question": "Which of these is an example of a fiscal instrument in public policy?",
+    "options": [
+      "Emission quota requirements",
+      "Mandatory technology standards",
+      "Carbon tax or subsidy",
+      "Performance benchmarks"
+    ],
+    "correctIndex": 2,
+    "explanation": "Fiscal instruments include taxes, levies, subsidies, and grants. They work by changing the price of activities\u2014either increasing the cost of undesired behavior or decreasing the cost of desired behavior.",
+    "source": "Efficiency_and_Effectiveness.pdf"
+  },
+  {
+    "id": "cp13-q013",
+    "module": "cp-13",
+    "topic": "efficiency-effectiveness",
+    "difficulty": "medium",
+    "question": "Why is permit trading generally considered more economically efficient than direct regulation?",
+    "options": [
+      "Because it requires less government oversight",
+      "Because it allows flexibility in how actors achieve goals, enabling those with lower costs to reduce more pollution",
+      "Because it is cheaper for everyone without exception",
+      "Because it provides better information about actual costs"
+    ],
+    "correctIndex": 1,
+    "explanation": "Permit trading (or cap-and-trade) allows flexibility. Those who can reduce pollution cheaply do so and can sell permits; those facing high costs can buy permits. This flexibility minimizes total costs compared to uniform requirements.",
+    "source": "Efficiency_and_Effectiveness.pdf"
+  },
+  {
+    "id": "cp13-q014",
+    "module": "cp-13",
+    "topic": "effectiveness",
+    "difficulty": "medium",
+    "question": "What is the 'top-down vs. bottom-up' dilemma in policy design?",
+    "options": [
+      "Whether policy should begin at national or local government level",
+      "Top-down approaches analyze instruments well but make crude assumptions about measures, while bottom-up approaches detail measures but simplify instrument design",
+      "Whether policies should benefit the rich or the poor first",
+      "Whether to implement policy quickly or slowly"
+    ],
+    "correctIndex": 1,
+    "explanation": "Top-down approaches (macro-level) are efficient but uncertain about which specific actions will result. Bottom-up approaches (micro-level) are detailed about what works but uncertain about which policy instruments will achieve it.",
+    "source": "Efficiency_and_Effectiveness.pdf"
+  },
+  {
+    "id": "cp13-q015",
+    "module": "cp-13",
+    "topic": "information-asymmetry",
+    "difficulty": "hard",
+    "question": "How does the existence of transaction costs affect the relationship between theoretical and actual marginal abatement costs?",
+    "options": [
+      "Transaction costs have no effect on this relationship",
+      "They lower theoretical costs below actual costs",
+      "They create a gap where actual costs exceed theoretical costs, reducing the effectiveness of price-based policies",
+      "They eliminate the difference entirely"
+    ],
+    "correctIndex": 2,
+    "explanation": "Transaction costs (information gathering, learning, decision-making time) mean that even when abatement is theoretically profitable, actual behavior lags. This explains why simple taxation alone may be ineffective; supportive policies that reduce transaction costs are needed.",
+    "source": "Efficiency_and_Effectiveness.pdf"
+  },
+  {
+    "id": "cp13-q016",
+    "module": "cp-13",
+    "topic": "policy-narrative",
+    "difficulty": "medium",
+    "question": "What is a 'horror story' as a policy narrative device?",
+    "options": [
+      "A fictional account with no basis in reality",
+      "A story about government failures that should never be told",
+      "A single egregious or outlandish incident chosen to justify policy change",
+      "An economic analysis of worst-case scenarios"
+    ],
+    "correctIndex": 2,
+    "explanation": "According to Stone, politicians and interest groups use horror stories\u2014selecting one dramatic or shocking example\u2014to mobilize support for policy change. The welfare queen or the hot coffee lawsuit are examples used to justify broader policy positions.",
+    "source": "Goals_of_Public_Policy.pdf"
+  },
+  {
+    "id": "cp13-q017",
+    "module": "cp-13",
+    "topic": "policy-analysis",
+    "difficulty": "hard",
+    "question": "What is the relationship between selecting criteria and projecting outcomes in Bardach's framework?",
+    "options": [
+      "They are the same step done in different order",
+      "Criteria must be selected before you can project which outcomes matter for evaluation",
+      "Projecting outcomes is separate from criteria selection",
+      "Criteria are irrelevant to outcome projection"
+    ],
+    "correctIndex": 1,
+    "explanation": "In Bardach's path, you must first decide what criteria matter (equity, efficiency, security, etc.), then project what outcomes different policies will produce. The criteria determine which projected outcomes are relevant to decision-making.",
+    "source": "Bardachs-Eightfold-Path-1.pdf"
+  },
+  {
+    "id": "cp13-q018",
+    "module": "cp-13",
+    "topic": "effectiveness-evaluation",
+    "difficulty": "medium",
+    "question": "Why might further increases in fuel taxes have limited effectiveness in some contexts?",
+    "options": [
+      "Because fuel is not price-sensitive",
+      "Because people have already adjusted their behavior significantly at existing high tax rates",
+      "Because fuel taxes never work",
+      "Because people always oppose taxes"
+    ],
+    "correctIndex": 1,
+    "explanation": "Once fuel taxes are already very high, the marginal effect of further increases diminishes. Additional adjustment options become exhausted, and the pure substitution effect weakens. Alternative policy approaches may be more effective at that point.",
+    "source": "Efficiency_and_Effectiveness.pdf"
+  },
+  {
+    "id": "cp13-q019",
+    "module": "cp-13",
+    "topic": "policy-tradeoffs",
+    "difficulty": "hard",
+    "question": "What is the fundamental tension in using taxes versus standards for environmental policy?",
+    "options": [
+      "Taxes are always cheaper than standards",
+      "Standards are always more effective than taxes",
+      "Taxes provide better incentives for innovation but may be politically difficult; standards ensure compliance but may be economically inefficient",
+      "There is no tension between these approaches"
+    ],
+    "correctIndex": 2,
+    "explanation": "Taxes and pricing mechanisms incentivize least-cost solutions and innovation, but face political resistance regarding distributional effects. Standards ensure minimum compliance but lock in particular technologies and miss cheaper alternatives.",
+    "source": "Efficiency_and_Effectiveness.pdf"
+  },
+  {
+    "id": "cp13-q020",
+    "module": "cp-13",
+    "topic": "problem-definition",
+    "difficulty": "medium",
+    "question": "What are the key elements that determine different conceptions of 'equity' in public policy?",
+    "options": [
+      "Only the item being distributed matters",
+      "The recipients, the item being distributed, and the process by which it is distributed",
+      "Only the process matters",
+      "Equity has only one correct definition"
+    ],
+    "correctIndex": 1,
+    "explanation": "Stone shows that 'equity' or 'equality' can be defined in multiple ways depending on: who receives the good, what is being distributed, and how it is distributed. This flexibility allows equity language to support very different distributions.",
+    "source": "Goals_of_Public_Policy.pdf"
+  },
+  {
+    "id": "cp13-q021",
+    "module": "cp-13",
+    "topic": "causal-stories",
+    "difficulty": "hard",
+    "question": "What is the significance of causal stories in how policy problems are understood?",
+    "options": [
+      "They are irrelevant to policy design",
+      "They determine what solutions are considered appropriate by attributing problems to specific causes",
+      "They only matter in academic discussions",
+      "They are always scientifically accurate"
+    ],
+    "correctIndex": 1,
+    "explanation": "According to Stone, how we understand the causes of problems shapes which solutions seem reasonable. If poverty is caused by laziness (personal), different solutions are proposed than if it's caused by lack of jobs (structural).",
+    "source": "Goals_of_Public_Policy.pdf"
+  },
+  {
+    "id": "cp13-q022",
+    "module": "cp-13",
+    "topic": "policy-analysis",
+    "difficulty": "easy",
+    "question": "What is the final step in Bardach's Eightfold Path?",
+    "options": [
+      "Decide on a policy",
+      "Tell your story\u2014communicate findings effectively",
+      "Implement the policy",
+      "Evaluate the results"
+    ],
+    "correctIndex": 1,
+    "explanation": "Bardach's eighth and final step is 'Tell Your Story'\u2014effectively communicating your analysis to decision-makers and stakeholders. Analysis is only useful if it influences actual decisions.",
+    "source": "Bardachs-Eightfold-Path-1.pdf"
+  },
+  {
+    "id": "cp13-q023",
+    "module": "cp-13",
+    "topic": "policy-alternatives",
+    "difficulty": "medium",
+    "question": "Why is constructing multiple alternatives important in policy analysis?",
+    "options": [
+      "It is not important; there is usually only one right answer",
+      "It allows comparison of different approaches on consistent criteria",
+      "It satisfies stakeholders by including their preferred options",
+      "It delays decision-making appropriately"
+    ],
+    "correctIndex": 1,
+    "explanation": "By constructing multiple alternatives, analysts can compare them against the same criteria, revealing trade-offs and enabling better-informed decisions. Without alternatives, there is nothing to evaluate against.",
+    "source": "Bardachs-Eightfold-Path-1.pdf"
+  },
+  {
+    "id": "cp13-q024",
+    "module": "cp-13",
+    "topic": "evidence-assembly",
+    "difficulty": "medium",
+    "question": "What is the main purpose of assembling evidence in policy analysis?",
+    "options": [
+      "To support a predetermined conclusion",
+      "To inform projections about what outcomes different policies will produce",
+      "To delay decision-making",
+      "To prove that all policies fail"
+    ],
+    "correctIndex": 1,
+    "explanation": "Evidence assembly provides the factual foundation for making projections. Understanding how similar policies worked elsewhere, what outcomes were achieved, and under what conditions helps predict future results.",
+    "source": "Bardachs-Eightfold-Path-1.pdf"
+  },
+  {
+    "id": "cp13-q025",
+    "module": "cp-13",
+    "topic": "trade-offs",
+    "difficulty": "hard",
+    "question": "When confronting trade-offs between efficiency and equity, what is the core policy challenge?",
+    "options": [
+      "There is no real trade-off; both can always be maximized",
+      "Efficiency is more important so equity should be ignored",
+      "Policies that improve efficiency may worsen equity, requiring judgment about acceptable distributions",
+      "Only equity matters; efficiency is irrelevant"
+    ],
+    "correctIndex": 2,
+    "explanation": "Most policy decisions require trading off multiple goals. The most efficient solution may benefit some while harming others. Policymakers must decide what equity-efficiency combination is acceptable given their values and constraints.",
+    "source": "Goals_of_Public_Policy.pdf"
+  },
+  {
+    "id": "cp13-q026",
+    "module": "cp-13",
+    "topic": "smart-practices",
+    "difficulty": "medium",
+    "question": "What is a 'smart practice' in the context of policy analysis?",
+    "options": [
+      "Any policy that sounds good",
+      "A policy that worked well in one context that is assumed to work everywhere",
+      "A practice observed to work in one location that may or may not transfer to different contexts",
+      "A practice that is mathematically optimal"
+    ],
+    "correctIndex": 2,
+    "explanation": "Smart or best practices from other jurisdictions should be analyzed carefully before adopting. Local conditions, institutions, and implementation capacity differ, so what works elsewhere may not work the same way locally.",
+    "source": "Bardachs-Eightfold-Path-1.pdf"
+  },
+  {
+    "id": "cp13-q027",
+    "module": "cp-13",
+    "topic": "policy-credibility",
+    "difficulty": "hard",
+    "question": "What does 'policy credibility' mean in the context of demonetization?",
+    "options": [
+      "The public's trust that the government can actually implement policy",
+      "The extent to which citizens agree with the policy",
+      "How long the policy has been in place",
+      "The amount of money spent on the policy"
+    ],
+    "correctIndex": 0,
+    "explanation": "Policy credibility refers to the public's belief that government can and will follow through on commitments. Policies that lack credibility fail because individuals and businesses do not adjust behavior in anticipation of promised changes.",
+    "source": "Demonetization_and_Policy_Credibility.pdf"
+  },
+  {
+    "id": "cp13-q028",
+    "module": "cp-13",
+    "topic": "metrics-numbers",
+    "difficulty": "medium",
+    "question": "Why is the decision to count something considered 'a highly political act'?",
+    "options": [
+      "Because counting requires government approval",
+      "Because choosing what to measure and how shapes which problems become visible and salient",
+      "Because all counting is inherently inaccurate",
+      "Because numbers are never used in politics"
+    ],
+    "correctIndex": 1,
+    "explanation": "What gets measured influences what gets addressed. The unemployment rate, crime statistics, and environmental metrics all involve choices about what to count, which can emphasize or hide different aspects of a problem.",
+    "source": "Goals_of_Public_Policy.pdf"
+  },
+  {
+    "id": "cp13-q029",
+    "module": "cp-13",
+    "topic": "policy-alternatives",
+    "difficulty": "hard",
+    "question": "In constructing policy alternatives, what is the risk of starting with a poor initial selection?",
+    "options": [
+      "It increases the time required for analysis",
+      "It means you will optimize the wrong set of measures, potentially missing better solutions",
+      "It reduces stakeholder engagement",
+      "It has no significant consequences"
+    ],
+    "correctIndex": 1,
+    "explanation": "The initial selection of alternatives defines the solution space being analyzed. If you start with a limited or poorly chosen set of alternatives, the final recommendation will be optimized from a flawed starting point.",
+    "source": "Efficiency_and_Effectiveness.pdf"
+  },
+  {
+    "id": "cp13-q030",
+    "module": "cp-13",
+    "topic": "policy-analysis",
+    "difficulty": "easy",
+    "question": "What does 'ceteris paribus' mean in policy analysis?",
+    "options": [
+      "Other things being equal; holding other variables constant",
+      "All things being equal in every way",
+      "Using examples from other countries",
+      "Making assumptions about future changes"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ceteris paribus means 'other things being equal'\u2014a standard assumption in analysis that allows us to isolate the effect of one change by holding everything else constant.",
+    "source": "Bardachs-Eightfold-Path-1.pdf"
+  },
+  {
+    "id": "cp13-q031",
+    "module": "cp-13",
+    "topic": "policy-implementation",
+    "difficulty": "hard",
+    "question": "What is the relationship between policy design and implementation capacity?",
+    "options": [
+      "Implementation capacity does not matter; design is all that matters",
+      "Good design alone guarantees successful implementation",
+      "A well-designed policy may fail if the implementing organization lacks capacity or commitment",
+      "Implementation is a purely technical matter unrelated to policy design"
+    ],
+    "correctIndex": 2,
+    "explanation": "Even brilliant policy designs fail if implementing organizations lack resources, expertise, or political support. Understanding implementation realities should inform policy design choices.",
+    "source": "Bardachs-Eightfold-Path-1.pdf"
+  },
+  {
+    "id": "cp13-q032",
+    "module": "cp-13",
+    "topic": "policy-goals",
+    "difficulty": "medium",
+    "question": "What is a structural harm in the context of policy goals?",
+    "options": [
+      "Physical damage to buildings",
+      "Damage to the community's ability to function as a community",
+      "Individual personal injuries",
+      "Economic costs"
+    ],
+    "correctIndex": 1,
+    "explanation": "Stone distinguishes between harms to individuals and structural harms\u2014damage to institutions and collective capacity. Examples include weakening democratic institutions, eroding social trust, or degrading governance capacity.",
+    "source": "Goals_of_Public_Policy.pdf"
+  },
+  {
+    "id": "cp13-q033",
+    "module": "cp-13",
+    "topic": "voluntary-agreements",
+    "difficulty": "hard",
+    "question": "What is the advantage and disadvantage of using voluntary agreements as a policy instrument?",
+    "options": [
+      "Advantage: legally binding; disadvantage: citizens always comply",
+      "Advantage: maximizes degree of freedom for regulated parties; disadvantage: effectiveness depends on their cooperation",
+      "Advantage: no disadvantages whatsoever",
+      "Advantage: same as regulations; disadvantage: more expensive"
+    ],
+    "correctIndex": 1,
+    "explanation": "Voluntary agreements offer flexibility and reduce regulatory burden but rely on the goodwill of regulated parties. They work well when interests align but may fail without enforcement mechanisms or genuine commitment.",
+    "source": "Efficiency_and_Effectiveness.pdf"
+  },
+  {
+    "id": "cp13-q034",
+    "module": "cp-13",
+    "topic": "metaphor-policy",
+    "difficulty": "medium",
+    "question": "What is the significance of using disease metaphors in policy problem framing?",
+    "options": [
+      "They are purely decorative language",
+      "They symbolize deterioration and decline, implying problems spread and require urgent intervention",
+      "They have no influence on policy thinking",
+      "They are unique to medical policy"
+    ],
+    "correctIndex": 1,
+    "explanation": "Metaphors like 'contagion' and 'plague' suggest urgent, spreading problems requiring rapid response. The choice of metaphor shapes how problems are understood and what solutions seem appropriate.",
+    "source": "Goals_of_Public_Policy.pdf"
+  },
+  {
+    "id": "cp13-q035",
+    "module": "cp-13",
+    "topic": "policy-analysis",
+    "difficulty": "easy",
+    "question": "What is the purpose of selecting criteria in Bardach's Step Four?",
+    "options": [
+      "To eliminate options quickly",
+      "To establish standards by which alternative policies will be evaluated",
+      "To satisfy all stakeholders",
+      "To ensure only one option survives"
+    ],
+    "correctIndex": 1,
+    "explanation": "Criteria define what matters in evaluation\u2014efficiency, equity, liberty, security, etc. They provide the framework for comparing alternatives and justifying final recommendations.",
+    "source": "Bardachs-Eightfold-Path-1.pdf"
+  },
+  {
+    "id": "cp13-q036",
+    "module": "cp-13",
+    "topic": "supportive-actions",
+    "difficulty": "medium",
+    "question": "Why might supportive actions like R&D and training be as important as direct regulatory instruments?",
+    "options": [
+      "Because they are cheaper than all other instruments",
+      "Because they can lower transaction costs and improve market transparency, increasing the effectiveness of other policies",
+      "Because they can replace all regulatory instruments",
+      "Because they have no relationship to other instruments"
+    ],
+    "correctIndex": 1,
+    "explanation": "Information barriers and knowledge gaps often prevent agents from responding efficiently to price signals or regulations. R&D and dissemination help overcome these barriers, making other instruments more effective.",
+    "source": "Efficiency_and_Effectiveness.pdf"
+  },
+  {
+    "id": "cp13-q037",
+    "module": "cp-13",
+    "topic": "indicators-focusing",
+    "difficulty": "medium",
+    "question": "How do 'indicators' and 'focusing events' contribute to problem emergence?",
+    "options": [
+      "They are unrelated to problem emergence",
+      "Indicators measure trends; focusing events (crises, scandals) draw sudden attention to those trends",
+      "Only indicators matter; focusing events are distractions",
+      "They prevent problems from being recognized"
+    ],
+    "correctIndex": 1,
+    "explanation": "Statistical indicators (rising unemployment, declining literacy) provide evidence of problems, but attention often requires focusing events (a crash, a scandal, a tragedy) to mobilize policy action. Both are needed for problems to emerge on the agenda.",
+    "source": "Goals_of_Public_Policy.pdf"
+  },
+  {
+    "id": "cp13-q038",
+    "module": "cp-13",
+    "topic": "policy-design",
+    "difficulty": "hard",
+    "question": "What is the significance of distributional effects in policy instrument selection?",
+    "options": [
+      "Distribution effects are irrelevant to policy choice",
+      "All policies have identical distributional effects",
+      "Different instruments create different patterns of costs and benefits across groups, influencing their political feasibility",
+      "Only wealthy groups care about distribution"
+    ],
+    "correctIndex": 2,
+    "explanation": "A carbon tax affects different regions, industries, and income groups differently. These distributional effects influence whether policies are politically feasible, even if economically optimal. Policy design must consider who bears costs and who benefits.",
+    "source": "Efficiency_and_Effectiveness.pdf"
+  },
+  {
+    "id": "cp13-q039",
+    "module": "cp-13",
+    "topic": "policy-research",
+    "difficulty": "medium",
+    "question": "What is the purpose of conducting policy research interviews?",
+    "options": [
+      "To convince people to support your preferred policy",
+      "To gather expert knowledge, perspectives, and evidence from those with experience relevant to the problem",
+      "To conduct propaganda",
+      "To avoid doing systematic analysis"
+    ],
+    "correctIndex": 1,
+    "explanation": "Policy research interviews access tacit knowledge and practical insights from practitioners, implementers, and affected populations. This complements quantitative evidence and expert literature.",
+    "source": "Bardachs-Eightfold-Path-1.pdf"
+  },
+  {
+    "id": "cp13-q040",
+    "module": "cp-13",
+    "topic": "policy-analysis",
+    "difficulty": "hard",
+    "question": "What does it mean for policy analysis to be a 'social and political activity' as Bardach argues?",
+    "options": [
+      "Policy analysis should avoid facts and evidence",
+      "Analysis only matters if it is politically popular",
+      "Analysis involves multiple stakeholders, serves clients, and ultimately influences decisions affecting many citizens",
+      "Policy should never be analyzed systematically"
+    ],
+    "correctIndex": 2,
+    "explanation": "Policy analysis goes beyond individual decision-making. It involves teams, clients, political stakeholders, and ultimately affects large numbers of people. This social context shapes what 'quality work' means.",
+    "source": "Bardachs-Eightfold-Path-1.pdf"
+  },
+  {
+    "id": "cp13-q041",
+    "module": "cp-13",
+    "topic": "policy-analysis",
+    "difficulty": "expert",
+    "question": "Bardach's eightfold path begins with defining the problem. Why does the choice of problem definition represent a fundamentally political act that constrains all subsequent analytical steps?",
+    "options": [
+      "Problem definition selects which facts are relevant, which actors are implicated, and which solutions are thinkable \u2014 pre-determining the analytical space before any analysis begins",
+      "Problem definition is purely technical and becomes political only when analysts allow their personal values to influence how they frame issues",
+      "The choice of problem definition matters only in politically contentious areas; technical problems can be defined objectively without political implications",
+      "Later steps in the policy analysis process can correct for biased problem definitions, so the initial framing is less critical than the evidence gathered later"
+    ],
+    "correctIndex": 0,
+    "explanation": "Problem definition is upstream of everything \u2014 it determines which stakeholders count, which metrics matter, which interventions are even imaginable. A different definition of the same situation produces a different analysis and different solutions, even with identical data.",
+    "source": "Bardachs-Eightfold-Path-1.pdf"
+  },
+  {
+    "id": "cp13-q042",
+    "module": "cp-13",
+    "topic": "policy-credibility",
+    "difficulty": "expert",
+    "question": "The demonetization case illustrates how policy credibility can be destroyed even when a policy achieves some of its stated technical objectives. What does this reveal about the relationship between outcomes and credibility?",
+    "options": [
+      "Credibility depends not just on whether a policy achieves its goals but on whether the government's stated reasoning was consistent, its projections were accurate, and its implementation was competent",
+      "Credibility is primarily determined by outcomes \u2014 policies that succeed rebuild credibility regardless of how poorly they were justified or implemented",
+      "Credibility is purely a communication challenge that can be managed through better messaging even when policy outcomes are poor",
+      "Government credibility is independent of any single policy and is determined by long-run institutional track record rather than individual decisions"
+    ],
+    "correctIndex": 0,
+    "explanation": "Demonetization's credibility failure stemmed from overconfidence in initial projections, constant revision of stated objectives, and implementation chaos \u2014 even where some goals were partially achieved. Credibility requires consistency between stated logic, predictions, and observed outcomes.",
+    "source": "Demonetization_and_Policy_Credibility.pdf"
+  },
+  {
+    "id": "cp13-q043",
+    "module": "cp-13",
+    "topic": "efficiency-effectiveness",
+    "difficulty": "expert",
+    "question": "A policy is highly efficient \u2014 it achieves its specific objective at very low cost \u2014 but ineffective at addressing the underlying problem. How should a policymaker use this distinction when evaluating competing interventions?",
+    "options": [
+      "Efficiency is meaningless if the objective itself is wrong \u2014 effectiveness at addressing the root problem must be established before efficiency comparisons are valid",
+      "Efficiency is always the primary criterion because resources are scarce; an effective but inefficient policy wastes public funds that could serve other needs",
+      "Effectiveness and efficiency are equivalent criteria \u2014 a policy that efficiently achieves its stated objective is always addressing the underlying problem adequately",
+      "The distinction only matters in theory; in practice, policymakers should accept whatever objectives are politically achievable and optimize for efficiency"
+    ],
+    "correctIndex": 0,
+    "explanation": "Efficiency optimizes for achieving a specified objective. If the objective doesn't address the real problem, optimizing efficiency is optimizing the wrong thing. Effectiveness \u2014 does the intervention address the actual underlying condition \u2014 logically precedes efficiency analysis.",
+    "source": "Efficiency_and_Effectiveness.pdf"
+  },
+  {
+    "id": "cp13-q044",
+    "module": "cp-13",
+    "topic": "policy-goals",
+    "difficulty": "expert",
+    "question": "Deborah Stone identifies four fundamental goals of public policy: efficiency, equity, security, and liberty. Why does she argue these goals inevitably conflict rather than complement each other?",
+    "options": [
+      "Each goal embeds a different conception of what constitutes a fair social arrangement, so maximizing one systematically requires trade-offs with the others",
+      "The goals conflict only when resources are scarce; in wealthy societies, all four goals can be maximized simultaneously without meaningful trade-offs",
+      "The conflicts are rhetorical rather than real \u2014 good policy design can always find solutions that advance all four goals without meaningful sacrifice",
+      "The conflicts arise only because of poor political institutions; well-designed democratic systems naturally reconcile competing policy goals"
+    ],
+    "correctIndex": 0,
+    "explanation": "Efficiency may require concentrating resources where returns are highest, violating equity. Security may require constraints on liberty. Equity may reduce efficiency incentives. These are not accidental conflicts but reflect genuinely competing visions of the good society.",
+    "source": "Goals_of_Public_Policy.pdf"
+  },
+  {
+    "id": "cp13-q045",
+    "module": "cp-13",
+    "topic": "policy-analysis",
+    "difficulty": "expert",
+    "question": "Why does the PAISA framework for evaluating municipal finances reveal a deeper problem than just poor accounting \u2014 one about the relationship between information, accountability, and governance?",
+    "options": [
+      "Without reliable information about what is being spent on what, citizens and governments cannot hold service providers accountable \u2014 creating a structural accountability gap regardless of political will",
+      "The PAISA framework shows that municipal governance fails primarily because local governments lack sufficient financial resources rather than because of accountability problems",
+      "Poor financial information is a technical problem that can be solved through digitization without requiring changes to political incentive structures or accountability mechanisms",
+      "The PAISA findings indicate that decentralization of governance is inherently problematic and that centralized financial management produces better outcomes"
+    ],
+    "correctIndex": 0,
+    "explanation": "PAISA reveals that when money flows cannot be tracked, accountability becomes impossible regardless of legal frameworks or political intentions. Information is infrastructure for accountability \u2014 without it, even well-designed governance structures fail.",
+    "source": "PAISA_for_Municipalities.pdf"
+  },
+  {
+    "id": "cp13-q046",
+    "module": "cp-13",
+    "topic": "policy-instruments",
+    "difficulty": "expert",
+    "question": "Bardach argues policymakers should assemble rather than design policy solutions. What does this distinction imply for how analysts should approach a new policy problem?",
+    "options": [
+      "Solutions should be built from existing resources, capacities, and programs rather than designed from scratch \u2014 recognizing that implementation depends on what actually exists, not ideal constructs",
+      "Policy design should always begin with first principles rather than with existing programs, which are likely to perpetuate the problems they were meant to solve",
+      "The assembling approach only applies to incremental policy changes; transformative reforms always require designing new institutions and instruments",
+      "Assembling solutions from existing elements is a political compromise that sacrifices analytical rigor for practical feasibility"
+    ],
+    "correctIndex": 0,
+    "explanation": "Assembling rather than designing reflects a systems insight: new policies operate within existing institutional landscapes. Solutions that ignore what exists \u2014 in capacity, culture, incentives, and resources \u2014 produce well-designed plans that fail in implementation.",
+    "source": "Bardachs-Eightfold-Path-1.pdf"
+  },
+  {
+    "id": "cp13-q047",
+    "module": "cp-13",
+    "topic": "policy-credibility",
+    "difficulty": "expert",
+    "question": "The 'Tocsin for an Ancien Regime' reading suggests that policy failure is often a symptom of deeper institutional decay rather than poor policy design. What does this imply for how policy analysts should diagnose recurring policy failures in a particular domain?",
+    "options": [
+      "Recurring failure in a domain is evidence of systemic institutional problems \u2014 the analyst must look beyond policy design to the incentive structures, capacity constraints, and political economy that make reform persistently difficult",
+      "Recurring failure indicates that policymakers simply need better analytical tools and more rigorous evidence to design effective interventions",
+      "Recurring failure is best explained by political opposition to reform rather than by institutional factors, so the solution is always political mobilization",
+      "Recurring failure in a domain shows that the problem is inherently unsolvable and policymakers should redirect resources to more tractable problems"
+    ],
+    "correctIndex": 0,
+    "explanation": "When the same domain repeatedly produces policy failure despite different interventions, the failure is unlikely to be in any specific policy design. It is more likely to reflect deep institutional dysfunctions: perverse incentives, captured regulators, absent capacity, or political structures that reward failure.",
+    "source": "Tocsin_For_An_Ancien_Regime.pdf"
+  },
+  {
+    "id": "cp13-q048",
+    "module": "cp-13",
+    "topic": "policy-analysis",
+    "difficulty": "expert",
+    "question": "The Delhi Metro critique illustrates a recurring problem in infrastructure policy evaluation: benefits are public and diffuse while costs are concentrated and immediate. What does this asymmetry imply for how project evaluations should be structured?",
+    "options": [
+      "Evaluations must explicitly measure diffuse public benefits \u2014 reduced congestion, environmental, and agglomeration effects \u2014 or they will systematically undervalue infrastructure relative to more easily counted costs",
+      "Diffuse public benefits are inherently unmeasurable, so infrastructure evaluation should focus exclusively on quantifiable financial returns and ignore broader social value",
+      "The asymmetry is a market failure that can only be resolved by full privatization of infrastructure, which forces projects to capture the benefits they generate",
+      "Concentrated costs are always more politically salient than diffuse benefits, so evaluation methodology has no effect on whether infrastructure projects are built"
+    ],
+    "correctIndex": 0,
+    "explanation": "If evaluations measure only costs (which are concentrated and visible) but fail to measure diffuse benefits (which are real but hard to count), the analysis is systematically biased against public goods \u2014 producing under-investment relative to the social optimum.",
+    "source": "The_Leap_Blog__Concerns_with_Delhi_Metro.pdf"
+  }
+]

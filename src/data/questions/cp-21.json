@@ -1,0 +1,770 @@
+[
+  {
+    "id": "cp21-q001",
+    "module": "cp-21",
+    "topic": "incentives",
+    "difficulty": "easy",
+    "question": "What does the phrase 'incentives matter' mean in economics?",
+    "options": [
+      "Money is the only motivation for human behavior",
+      "People respond to changes in rewards and costs by adjusting their behavior",
+      "Incentives have no real effect on behavior",
+      "Only rich people respond to incentives"
+    ],
+    "correctIndex": 1,
+    "explanation": "The economic principle that incentives matter refers to how people respond to changes in constraints or rewards. When incentives change, people adjust their choices in ways that often reflect creative problem-solving.",
+    "source": "Incentives_Matter.pdf"
+  },
+  {
+    "id": "cp21-q002",
+    "module": "cp-21",
+    "topic": "incentives",
+    "difficulty": "easy",
+    "question": "Why did mortality rates fall dramatically when convict ship captains were paid bonuses for each convict that arrived alive?",
+    "options": [
+      "Captains became more compassionate people",
+      "The bonus aligned captains' self-interest with the well-being of the convicts",
+      "It was a complete coincidence",
+      "The government increased the ship quality"
+    ],
+    "correctIndex": 1,
+    "explanation": "The change in incentives (payment for live arrivals) aligned what was profitable for captains with what was beneficial for convicts. Captains didn't become more ethical\u2014their incentives changed.",
+    "source": "Incentives_Matter.pdf"
+  },
+  {
+    "id": "cp21-q003",
+    "module": "cp-21",
+    "topic": "opportunity-cost",
+    "difficulty": "easy",
+    "question": "What is opportunity cost?",
+    "options": [
+      "The amount of money you spend on something",
+      "The value of the best alternative you give up when you choose something",
+      "The profit you make from a purchase",
+      "The cost of making a mistake"
+    ],
+    "correctIndex": 1,
+    "explanation": "Opportunity cost is the value of what you must sacrifice when making a choice. If you choose to go to college, the opportunity cost includes the income you could have earned working instead.",
+    "source": "Getting the Most Out of Life_ The Concept of Opportunity Cost - Econlib.pdf"
+  },
+  {
+    "id": "cp21-q004",
+    "module": "cp-21",
+    "topic": "marginal-thinking",
+    "difficulty": "easy",
+    "question": "What does 'thinking at the margin' mean?",
+    "options": [
+      "Only wealthy people can afford to think carefully",
+      "Focusing on how small changes in one variable affect outcomes",
+      "Considering only the worst-case scenario",
+      "Avoiding careful analysis of decisions"
+    ],
+    "correctIndex": 1,
+    "explanation": "Marginal thinking involves analyzing the effect of small changes. For example, when considering a price increase, look at how the change affects behavior at the margin, not whether people stop buying entirely.",
+    "source": "Marginal Thinking.pdf"
+  },
+  {
+    "id": "cp21-q005",
+    "module": "cp-21",
+    "topic": "demand-response",
+    "difficulty": "easy",
+    "question": "When gasoline prices increase, what is the most common economic response by consumers?",
+    "options": [
+      "People stop driving entirely",
+      "People find ways to buy less gasoline, like carpooling or driving more efficiently",
+      "Prices have no effect on behavior",
+      "People buy more expensive cars"
+    ],
+    "correctIndex": 1,
+    "explanation": "Higher prices create incentives for creative responses short of stopping entirely. People carpool, combine trips, drive more slowly, or upgrade to fuel-efficient vehicles when prices rise enough.",
+    "source": "Incentives_Matter.pdf"
+  },
+  {
+    "id": "cp21-q006",
+    "module": "cp-21",
+    "topic": "incentive-creativity",
+    "difficulty": "medium",
+    "question": "What happened when Chilean bakers faced a price ceiling that made bread unprofitable to sell?",
+    "options": [
+      "They stopped baking entirely",
+      "They creatively adjusted their product to meet the legal constraints while maintaining profit",
+      "They began selling only to wealthy customers",
+      "Government forced them to accept the loss"
+    ],
+    "correctIndex": 1,
+    "explanation": "When a maximum price made normal loaves unprofitable, bakers first reduced loaf size, then sold raw dough, then added water to raw dough to meet minimum weight requirements. People respond creatively to incentives.",
+    "source": "Incentives_Matter.pdf"
+  },
+  {
+    "id": "cp21-q007",
+    "module": "cp-21",
+    "topic": "non-monetary-incentives",
+    "difficulty": "medium",
+    "question": "Are monetary incentives the only incentives that affect behavior?",
+    "options": [
+      "Yes, money is all that motivates people",
+      "No, reputation, time, conscience, and non-monetary factors can be equally important",
+      "Incentives do not affect behavior at all",
+      "Only negative incentives matter"
+    ],
+    "correctIndex": 1,
+    "explanation": "People also respond to non-monetary incentives: time, status, reputation, conscience, patriotism, and love. These can be as powerful or more powerful than money in shaping behavior.",
+    "source": "Incentives_Matter.pdf"
+  },
+  {
+    "id": "cp21-q008",
+    "module": "cp-21",
+    "topic": "kidney-shortage",
+    "difficulty": "medium",
+    "question": "Why is there a persistent shortage of kidneys available for transplant in the United States?",
+    "options": [
+      "Kidneys are medically impossible to transplant",
+      "Current law prohibits buying and selling kidneys; altruism alone is insufficient to meet demand",
+      "All kidney transplants are successful so there is no shortage",
+      "Doctors do not know how to perform transplants"
+    ],
+    "correctIndex": 1,
+    "explanation": "The current system relies on altruism for kidney donation. While many donate, altruism alone does not create supply equal to demand. Allowing payment would likely increase supply, but this raises ethical concerns.",
+    "source": "Incentives_Matter.pdf"
+  },
+  {
+    "id": "cp21-q009",
+    "module": "cp-21",
+    "topic": "property-incentives",
+    "difficulty": "medium",
+    "question": "What was the key difference in productivity between communal and private farming in the Pilgrim settlement?",
+    "options": [
+      "Communal farms were always more productive",
+      "Private assignment of land plots led to much greater productivity because individuals captured the direct benefits of their labor",
+      "Productivity was identical",
+      "Private farms failed in Plymouth"
+    ],
+    "correctIndex": 1,
+    "explanation": "When Plymouth moved from communal to private land assignments, productivity soared. Governor Bradford noted that the incentive to capture one's own harvest made people industrious. This shows how incentive structures affect effort.",
+    "source": "Incentives_Matter.pdf"
+  },
+  {
+    "id": "cp21-q010",
+    "module": "cp-21",
+    "topic": "economic-freedom",
+    "difficulty": "hard",
+    "question": "What is the relationship between economic freedom and innovation?",
+    "options": [
+      "Economic freedom prevents innovation",
+      "Economic freedom creates incentives for innovation by allowing entrepreneurs to capture rewards from new ideas",
+      "Innovation happens only through government planning",
+      "Economic freedom and innovation are unrelated"
+    ],
+    "correctIndex": 1,
+    "explanation": "When people can keep the profits from new ideas, they have incentives to innovate. Countries with greater economic freedom tend to see more innovation, technological progress, and economic growth.",
+    "source": "Economic Freedom - Econlib.pdf"
+  },
+  {
+    "id": "cp21-q011",
+    "module": "cp-21",
+    "topic": "market-failure",
+    "difficulty": "easy",
+    "question": "What is a market failure?",
+    "options": [
+      "When a company loses money on a product",
+      "When a market cannot efficiently allocate resources, often due to externalities or missing information",
+      "When markets grow too large",
+      "When everyone becomes wealthy"
+    ],
+    "correctIndex": 1,
+    "explanation": "Market failures occur when free markets do not produce efficient outcomes. Examples include pollution externalities, monopolies, or situations where information is asymmetrical between buyers and sellers.",
+    "source": "Clifford Winston Market Failure Podcast.pdf"
+  },
+  {
+    "id": "cp21-q012",
+    "module": "cp-21",
+    "topic": "incentive-design",
+    "difficulty": "hard",
+    "question": "What is the fundamental challenge in policy design related to incentives?",
+    "options": [
+      "Incentives never work",
+      "Aligning incentives so that what is profitable for individuals also achieves policy goals",
+      "Preventing all individual profit",
+      "Making policy so complicated that people cannot respond"
+    ],
+    "correctIndex": 1,
+    "explanation": "Good policy design aligns incentives: what benefits the individual or firm should also benefit society. This requires understanding how people respond to incentives and designing rules accordingly.",
+    "source": "Incentives_Matter.pdf"
+  },
+  {
+    "id": "cp21-q013",
+    "module": "cp-21",
+    "topic": "opportunity-cost",
+    "difficulty": "medium",
+    "question": "If you choose to spend an evening studying for an exam, what is the opportunity cost?",
+    "options": [
+      "The amount you paid for the textbook",
+      "The value of what you could have done with that time instead",
+      "The grade you receive on the exam",
+      "The cost of attending college"
+    ],
+    "correctIndex": 1,
+    "explanation": "The opportunity cost of studying is whatever you sacrifice to study\u2014whether that's time with friends, watching a movie, working at a job, or sleeping. Different opportunities have different values to different people.",
+    "source": "Getting the Most Out of Life_ The Concept of Opportunity Cost - Econlib.pdf"
+  },
+  {
+    "id": "cp21-q014",
+    "module": "cp-21",
+    "topic": "specialization",
+    "difficulty": "easy",
+    "question": "Why do people specialize in producing goods and services?",
+    "options": [
+      "To make their work more boring",
+      "Because specialization typically leads to greater productivity and efficiency",
+      "Specialization is forced by governments",
+      "There is no advantage to specialization"
+    ],
+    "correctIndex": 1,
+    "explanation": "When people focus on what they do relatively well, they produce more efficiently. This allows trade and exchange to make everyone better off\u2014even if one person could do everything better, specialization still benefits both parties.",
+    "source": "Getting the Most Out of Life_ The Concept of Opportunity Cost - Econlib.pdf"
+  },
+  {
+    "id": "cp21-q015",
+    "module": "cp-21",
+    "topic": "price-mechanism",
+    "difficulty": "medium",
+    "question": "What information does a price convey to consumers and producers?",
+    "options": [
+      "Prices have no informational value",
+      "Prices signal scarcity and the value of alternatives, guiding allocation decisions",
+      "Prices only reflect how rich the seller is",
+      "Prices are random"
+    ],
+    "correctIndex": 1,
+    "explanation": "Prices aggregate information about scarcity and value. A rising price signals that something is becoming scarcer or more valuable, providing incentives for producers to increase supply and consumers to use less.",
+    "source": "Incentives_Matter.pdf"
+  },
+  {
+    "id": "cp21-q016",
+    "module": "cp-21",
+    "topic": "unintended-consequences",
+    "difficulty": "hard",
+    "question": "How do unintended consequences arise from policy incentives?",
+    "options": [
+      "They never arise; all consequences are intended",
+      "People respond creatively to incentives in ways policymakers did not anticipate",
+      "Unintended consequences only affect the poor",
+      "Incentives do not cause behavior changes"
+    ],
+    "correctIndex": 1,
+    "explanation": "Because people respond to incentives in creative ways, well-intentioned policies often have side effects. Understanding how incentives work helps anticipate and minimize unintended consequences.",
+    "source": "Incentives_Matter.pdf"
+  },
+  {
+    "id": "cp21-q017",
+    "module": "cp-21",
+    "topic": "consumer-choice",
+    "difficulty": "easy",
+    "question": "When the price of a good decreases, what typically happens to consumption of that good?",
+    "options": [
+      "Consumption stays exactly the same",
+      "Consumption decreases",
+      "Consumption increases",
+      "Prices have no effect on consumption"
+    ],
+    "correctIndex": 2,
+    "explanation": "This is a fundamental principle of economics: when something becomes cheaper, people buy more of it (holding other factors constant). Lower prices remove barriers to consumption.",
+    "source": "Marginal Thinking.pdf"
+  },
+  {
+    "id": "cp21-q018",
+    "module": "cp-21",
+    "topic": "economic-growth",
+    "difficulty": "medium",
+    "question": "What is typically the most important driver of long-term economic growth?",
+    "options": [
+      "High inflation rates",
+      "Productive capacity and technological improvements",
+      "Printing more money",
+      "Preventing all trade"
+    ],
+    "correctIndex": 1,
+    "explanation": "Economic growth comes from producing more goods and services, which requires better technology, education, capital investment, and efficient allocation of resources. Money printing without real production growth only causes inflation.",
+    "source": "Economic_Growth.pdf"
+  },
+  {
+    "id": "cp21-q019",
+    "module": "cp-21",
+    "topic": "rent-seeking",
+    "difficulty": "hard",
+    "question": "What is 'rent-seeking' behavior?",
+    "options": [
+      "The process of looking for apartment rentals",
+      "Attempting to gain income by manipulating the economic environment rather than creating new value",
+      "Charging fair prices for goods and services",
+      "Legitimate business competition"
+    ],
+    "correctIndex": 1,
+    "explanation": "Rent-seeking occurs when economic actors spend resources to capture existing wealth rather than create new value. Examples include lobbying for monopoly protection or regulations that benefit established firms. This wastes resources that could create real wealth.",
+    "source": "Opinion___The_addictive_nature_of_bad_policies.pdf"
+  },
+  {
+    "id": "cp21-q020",
+    "module": "cp-21",
+    "topic": "comparative-advantage",
+    "difficulty": "hard",
+    "question": "What is comparative advantage?",
+    "options": [
+      "Being the absolute best at everything",
+      "Having the lowest opportunity cost of producing something",
+      "Having more resources than competitors",
+      "Being geographically closer to markets"
+    ],
+    "correctIndex": 1,
+    "explanation": "Comparative advantage means having a lower opportunity cost than others. Even if Country A is better at everything than Country B, both benefit if each specializes where they have the lowest opportunity cost.",
+    "source": "Getting the Most Out of Life_ The Concept of Opportunity Cost - Econlib.pdf"
+  },
+  {
+    "id": "cp21-q021",
+    "module": "cp-21",
+    "topic": "elasticity",
+    "difficulty": "medium",
+    "question": "What does it mean if a good has 'inelastic demand'?",
+    "options": [
+      "People buy more when it gets cheaper",
+      "Demand does not respond much to price changes",
+      "The good is very expensive",
+      "Producers can easily change their supply"
+    ],
+    "correctIndex": 1,
+    "explanation": "Inelastic demand means quantity demanded is relatively unresponsive to price changes. Essential goods like insulin or gasoline in the short term tend to be inelastic because people need them regardless of price.",
+    "source": "Marginal Thinking.pdf"
+  },
+  {
+    "id": "cp21-q022",
+    "module": "cp-21",
+    "topic": "time-cost",
+    "difficulty": "medium",
+    "question": "Why is time an important non-monetary incentive?",
+    "options": [
+      "Time has no value",
+      "Because everyone has limited time, the value placed on time affects choices and behavior",
+      "Only wealthy people care about time",
+      "Time and money are unrelated"
+    ],
+    "correctIndex": 1,
+    "explanation": "Time is a scarce resource with value. When free services require long waits, they have a high time cost. This affects who chooses to use them and how much they use them.",
+    "source": "Incentives_Matter.pdf"
+  },
+  {
+    "id": "cp21-q023",
+    "module": "cp-21",
+    "topic": "division-of-labor",
+    "difficulty": "easy",
+    "question": "What is the primary benefit of division of labor?",
+    "options": [
+      "It makes work harder",
+      "It increases productivity and efficiency by allowing people to specialize",
+      "It eliminates the need for trade",
+      "It has no benefits"
+    ],
+    "correctIndex": 1,
+    "explanation": "Division of labor allows each person or firm to focus on specific tasks they can do efficiently. This specialization increases total productivity compared to everyone doing everything themselves.",
+    "source": "Getting the Most Out of Life_ The Concept of Opportunity Cost - Econlib.pdf"
+  },
+  {
+    "id": "cp21-q024",
+    "module": "cp-21",
+    "topic": "resource-allocation",
+    "difficulty": "medium",
+    "question": "What mechanism most efficiently allocates scarce resources in a competitive market?",
+    "options": [
+      "Government directly assigning resources",
+      "Random selection of who gets what",
+      "Price signals reflecting supply and demand",
+      "Giving everything to the wealthy"
+    ],
+    "correctIndex": 2,
+    "explanation": "Prices coordinate millions of independent decisions about production and consumption. High prices signal scarcity and encourage conservation and increased production. Low prices encourage consumption and decreased production.",
+    "source": "Incentives_Matter.pdf"
+  },
+  {
+    "id": "cp21-q025",
+    "module": "cp-21",
+    "topic": "consumer-surplus",
+    "difficulty": "hard",
+    "question": "What is consumer surplus?",
+    "options": [
+      "The total amount of money consumers spend",
+      "The extra benefit consumers receive by paying less than the maximum they would be willing to pay",
+      "The amount of goods that remain unsold",
+      "The profit that stores make from customers"
+    ],
+    "correctIndex": 1,
+    "explanation": "Consumer surplus is the difference between what consumers are willing to pay and what they actually pay. It represents the value or benefit they receive above the price. Lower prices increase consumer surplus.",
+    "source": "Marginal Thinking.pdf"
+  },
+  {
+    "id": "cp21-q026",
+    "module": "cp-21",
+    "topic": "deadweight-loss",
+    "difficulty": "hard",
+    "question": "What causes deadweight loss in an economy?",
+    "options": [
+      "When people work too hard",
+      "When resources are not allocated to their most efficient uses, reducing total economic value",
+      "When prices are too low",
+      "When businesses are too successful"
+    ],
+    "correctIndex": 1,
+    "explanation": "Deadweight loss occurs when markets are not allocating resources efficiently\u2014when someone who values something more than its cost cannot get it, or when it goes to someone who values it less. This represents lost potential gains.",
+    "source": "Efficiency_and_Effectiveness.pdf"
+  },
+  {
+    "id": "cp21-q027",
+    "module": "cp-21",
+    "topic": "incentive-response",
+    "difficulty": "medium",
+    "question": "When economists say 'incentives matter,' do they mean only monetary incentives matter?",
+    "options": [
+      "Yes, only money motivates behavior",
+      "No, they mean all forms of incentives affect behavior, but monetary incentives are observable and easier to study",
+      "Incentives do not matter at all",
+      "Only non-monetary incentives matter"
+    ],
+    "correctIndex": 1,
+    "explanation": "Economists focus on monetary incentives because they are measurable and changeable, but non-monetary factors (status, conscience, time) matter equally. The principle is that holding other factors constant, changing rewards changes behavior.",
+    "source": "Incentives_Matter.pdf"
+  },
+  {
+    "id": "cp21-q028",
+    "module": "cp-21",
+    "topic": "scarcity",
+    "difficulty": "easy",
+    "question": "What is scarcity in economics?",
+    "options": [
+      "When something costs a lot of money",
+      "When there is not enough of something to satisfy everyone's desires at zero price",
+      "When stores run out of stock",
+      "When people are poor"
+    ],
+    "correctIndex": 1,
+    "explanation": "Scarcity means that relative to demand, supply is limited. This is the fundamental economic problem that makes all choices costly. Even very cheap or abundant goods have value because time is scarce.",
+    "source": "Economic_Growth.pdf"
+  },
+  {
+    "id": "cp21-q029",
+    "module": "cp-21",
+    "topic": "economic-policy",
+    "difficulty": "hard",
+    "question": "What is the addiction to bad policies problem?",
+    "options": [
+      "Policies that only affect those with addictions",
+      "Once policies create concentrated benefits for some groups, those groups lobby to preserve the policy even if overall costs exceed benefits",
+      "Bad policies automatically disappear over time",
+      "Governments never adopt bad policies"
+    ],
+    "correctIndex": 1,
+    "explanation": "Bad policies persist because they create concentrated benefits for organized groups (farmers, manufacturers) who lobby to keep them, even though diffuse costs to consumers far exceed the benefits. Removing such policies faces political resistance.",
+    "source": "Opinion___The_addictive_nature_of_bad_policies.pdf"
+  },
+  {
+    "id": "cp21-q030",
+    "module": "cp-21",
+    "topic": "production-possibility",
+    "difficulty": "medium",
+    "question": "What does a production possibility curve show?",
+    "options": [
+      "The total cost of producing goods",
+      "The maximum amount of two goods that can be produced with available resources",
+      "The price of products in stores",
+      "How many people can afford to buy things"
+    ],
+    "correctIndex": 1,
+    "explanation": "A production possibility curve (or frontier) shows the trade-off between two goods given resource constraints. Points on the curve are efficient; points inside represent wasted resources.",
+    "source": "Economic_Growth.pdf"
+  },
+  {
+    "id": "cp21-q031",
+    "module": "cp-21",
+    "topic": "incentive-design",
+    "difficulty": "hard",
+    "question": "Why might paying teachers based on student test scores create unintended consequences?",
+    "options": [
+      "Teachers would never respond to incentives",
+      "Teachers might focus only on tested subjects, teach to the test, or neglect unmeasured skills",
+      "Higher pay always improves education without side effects",
+      "Test scores are the only measure of educational quality"
+    ],
+    "correctIndex": 1,
+    "explanation": "Performance-based incentives can distort behavior. Teachers might optimize for measured outcomes (test scores) at the expense of unmeasured but valuable skills (critical thinking, creativity). This demonstrates why incentive design requires careful thought.",
+    "source": "Incentives_Matter.pdf"
+  },
+  {
+    "id": "cp21-q032",
+    "module": "cp-21",
+    "topic": "information-asymmetry",
+    "difficulty": "medium",
+    "question": "What is information asymmetry and why does it cause market problems?",
+    "options": [
+      "When prices are too high",
+      "When one party knows significantly more than the other, leading to adverse selection or moral hazard",
+      "When markets are too competitive",
+      "When sellers always tell the truth"
+    ],
+    "correctIndex": 1,
+    "explanation": "If buyers cannot evaluate quality, sellers have incentives to cut costs on unobservable quality. If insurers cannot assess risk, high-risk people are more likely to buy insurance. These problems can lead to market failure.",
+    "source": "Economic Freedom - Econlib.pdf"
+  },
+  {
+    "id": "cp21-q033",
+    "module": "cp-21",
+    "topic": "externality",
+    "difficulty": "medium",
+    "question": "What is a negative externality?",
+    "options": [
+      "A customer who is unhappy with a purchase",
+      "A cost imposed on third parties who did not choose to incur it",
+      "A fee charged by the government",
+      "Any large cost"
+    ],
+    "correctIndex": 1,
+    "explanation": "Negative externalities are costs borne by people who did not make the decision causing the cost. Pollution is a classic example\u2014the factory benefits from production while neighbors bear health costs. This causes market failure.",
+    "source": "Clifford Winston Market Failure Podcast.pdf"
+  },
+  {
+    "id": "cp21-q034",
+    "module": "cp-21",
+    "topic": "public-goods",
+    "difficulty": "medium",
+    "question": "Why do markets undersupply public goods like national defense?",
+    "options": [
+      "Public goods are always bad",
+      "People cannot be easily excluded from benefiting even if they do not pay, so individuals have little incentive to buy them privately",
+      "Public goods have no value",
+      "Governments prevent people from buying public goods"
+    ],
+    "correctIndex": 1,
+    "explanation": "If you benefit from national defense whether you pay or not, you have incentive to free-ride. This is the free-rider problem. Markets cannot efficiently provide goods where non-payers cannot be excluded from benefits.",
+    "source": "Clifford Winston Market Failure Podcast.pdf"
+  },
+  {
+    "id": "cp21-q035",
+    "module": "cp-21",
+    "topic": "labor-incentives",
+    "difficulty": "medium",
+    "question": "How did moving from communal to individual land plots affect incentive to work in Plymouth?",
+    "options": [
+      "People worked less because they were less community-minded",
+      "People worked much more because they directly captured the benefits of their own labor",
+      "The change in land ownership had no effect on effort",
+      "People worked less because farming became too easy"
+    ],
+    "correctIndex": 1,
+    "explanation": "When people could keep the fruits of their labor, productivity soared. Governor Bradford noted that women and children willingly went to the fields, something they had resisted under communal arrangements. Incentives fundamentally changed behavior.",
+    "source": "Incentives_Matter.pdf"
+  },
+  {
+    "id": "cp21-q036",
+    "module": "cp-21",
+    "topic": "price-discovery",
+    "difficulty": "hard",
+    "question": "What is price discovery and why is it important?",
+    "options": [
+      "Finding the lowest price in stores",
+      "The process by which supply and demand determine equilibrium prices that reflect true scarcity",
+      "Government setting official prices",
+      "Prices have no role in economic coordination"
+    ],
+    "correctIndex": 1,
+    "explanation": "Markets discover prices through the interaction of supply and demand. These prices aggregate dispersed information about preferences and scarcity, allowing efficient coordination without central planning.",
+    "source": "Incentives_Matter.pdf"
+  },
+  {
+    "id": "cp21-q037",
+    "module": "cp-21",
+    "topic": "trade-gains",
+    "difficulty": "medium",
+    "question": "How does voluntary trade benefit both parties?",
+    "options": [
+      "One party must gain at the other's expense",
+      "Both parties benefit because each trades away something they value less for something they value more",
+      "Trade only benefits merchants, not ordinary people",
+      "Trade has no benefits for consumers"
+    ],
+    "correctIndex": 1,
+    "explanation": "In voluntary exchange, both parties must believe they benefit (otherwise they would not trade). This mutual benefit from specialization and exchange is the foundation of economic growth.",
+    "source": "Getting the Most Out of Life_ The Concept of Opportunity Cost - Econlib.pdf"
+  },
+  {
+    "id": "cp21-q038",
+    "module": "cp-21",
+    "topic": "monopoly",
+    "difficulty": "medium",
+    "question": "Why is monopoly considered a market failure?",
+    "options": [
+      "Because monopolies are always illegal",
+      "Because monopolies lack competition, allowing them to restrict output and raise prices above competitive levels",
+      "Because monopolies reduce their own profits",
+      "Monopolies are not a market failure"
+    ],
+    "correctIndex": 1,
+    "explanation": "Without competition, monopolies can maintain prices above marginal cost and restrict output. This creates deadweight loss and benefits the monopolist at consumers' expense. Competition or regulation can address this.",
+    "source": "Clifford Winston Market Failure Podcast.pdf"
+  },
+  {
+    "id": "cp21-q039",
+    "module": "cp-21",
+    "topic": "behavioral-response",
+    "difficulty": "hard",
+    "question": "What does the Pilgrims' move from communal to private farming tell us about incentive design?",
+    "options": [
+      "People are naturally lazy and will never work",
+      "Community-based systems always fail",
+      "Incentive structures fundamentally affect effort and productivity, sometimes in ways policymakers overlook",
+      "Private ownership is evil because it eliminates community"
+    ],
+    "correctIndex": 2,
+    "explanation": "The Pilgrim example demonstrates that the same people with the same values worked much harder under private incentives. This shows that incentive structure matters as much as character or ideology in determining behavior.",
+    "source": "Incentives_Matter.pdf"
+  },
+  {
+    "id": "cp21-q040",
+    "module": "cp-21",
+    "topic": "economic-systems",
+    "difficulty": "hard",
+    "question": "Why do market economies generally create more innovation than centrally planned economies?",
+    "options": [
+      "Planners are inherently less intelligent",
+      "Markets create incentives for individuals and firms to develop new ideas and capture rewards from innovation",
+      "Central planning prevents innovation intentionally",
+      "Innovation happens equally in all economic systems"
+    ],
+    "correctIndex": 1,
+    "explanation": "When entrepreneurs can capture profits from innovations, they have strong incentives to innovate. Central planning cannot replicate these powerful incentives to solve problems creatively and improve productivity.",
+    "source": "Economic Freedom - Econlib.pdf"
+  },
+  {
+    "id": "cp21-q041",
+    "module": "cp-21",
+    "topic": "incentives",
+    "difficulty": "expert",
+    "question": "The convict transport example shows that changing the incentive structure transformed outcomes without changing the people involved. What does this imply for institutional design in contexts where direct monitoring is costly or impossible?",
+    "options": [
+      "Well-designed incentives can substitute for monitoring by making the interests of agents align with the interests of principals \u2014 reducing the need for costly oversight",
+      "Incentive design is always secondary to personnel selection \u2014 the right people will produce good outcomes regardless of the incentive structure they face",
+      "The convict example is a special case that cannot be generalized to complex modern institutions with multiple competing objectives",
+      "Changing incentives without changing personnel is ineffective because people's behavior is primarily determined by their values and character"
+    ],
+    "correctIndex": 0,
+    "explanation": "When ship captains were paid per convict delivered alive (rather than per convict loaded), survival rates rose dramatically \u2014 with no change in personnel or monitoring. This shows that aligning incentives with desired outcomes can replace costly oversight.",
+    "source": "Incentives_Matter.pdf"
+  },
+  {
+    "id": "cp21-q042",
+    "module": "cp-21",
+    "topic": "opportunity-cost",
+    "difficulty": "expert",
+    "question": "Opportunity cost is often called the most important concept in economics because it applies not just to money but to time, attention, and political capital. What does this imply for how policymakers should think about the full cost of any commitment?",
+    "options": [
+      "Every policy commitment consumes resources \u2014 financial, political, and administrative \u2014 that could have served other purposes; the true cost includes all foregone alternatives, not just budget expenditure",
+      "Opportunity cost applies only to financial decisions; non-financial resources like political capital are not subject to the same trade-off logic",
+      "Policymakers should focus on absolute costs rather than opportunity costs, since foregone alternatives are too speculative to factor into real decisions",
+      "Opportunity cost is primarily a theoretical concept useful for teaching economics but not for evaluating actual policy trade-offs in complex political environments"
+    ],
+    "correctIndex": 0,
+    "explanation": "Opportunity cost means the full cost of any decision includes what you give up \u2014 and for policymakers, this includes political capital spent, administrative attention diverted, and institutional bandwidth consumed that could have served higher-priority problems.",
+    "source": "Getting the Most Out of Life_ The Concept of Opportunity Cost - Econlib.pdf"
+  },
+  {
+    "id": "cp21-q043",
+    "module": "cp-21",
+    "topic": "market-failure",
+    "difficulty": "expert",
+    "question": "Market failure provides the economic justification for government intervention. Why does the existence of market failure alone not establish that intervention will improve outcomes?",
+    "options": [
+      "Government interventions also fail \u2014 due to information problems, incentive distortions, and capture \u2014 so the relevant comparison is between imperfect markets and imperfect government, not perfect government versus imperfect markets",
+      "Market failures are always temporary and self-correcting, so waiting for markets to adjust is always superior to government intervention",
+      "Market failures justify intervention only in sectors with natural monopoly; all other types of market failure are better addressed through competition policy",
+      "The existence of market failure establishes that intervention will always improve outcomes, provided it is well-designed and properly implemented"
+    ],
+    "correctIndex": 0,
+    "explanation": "The Nirvana fallacy compares real markets to ideal governments. But governments also face information problems, interest group capture, and bureaucratic failure. The correct question is: will this specific intervention in this specific context produce better outcomes than the market, given realistic government constraints?",
+    "source": "Clifford Winston Market Failure Podcast.pdf"
+  },
+  {
+    "id": "cp21-q044",
+    "module": "cp-21",
+    "topic": "marginal-thinking",
+    "difficulty": "expert",
+    "question": "Marginal thinking implies that the optimal decision is made where marginal benefit equals marginal cost \u2014 not where total benefit is maximized. Why does this distinction matter for policy?",
+    "options": [
+      "Maximizing total benefit ignores the additional cost of each unit beyond the optimum, leading to over-provision of services that appear valuable in aggregate but cost more than they are worth at the margin",
+      "Total benefit maximization is always the correct objective; marginal analysis is only appropriate for private market decisions, not public policy",
+      "The distinction is purely theoretical \u2014 in practice, policymakers should always maximize total benefit regardless of marginal costs",
+      "Marginal analysis implies that governments should always produce less than the amount that maximizes total social benefit"
+    ],
+    "correctIndex": 0,
+    "explanation": "A hospital bed, a police officer, or a kilometer of road that produces great total value may still be a bad investment at the margin if its incremental cost exceeds its incremental benefit. Policy that ignores margins systematically over-invests in seemingly good things.",
+    "source": "Marginal Thinking.pdf"
+  },
+  {
+    "id": "cp21-q045",
+    "module": "cp-21",
+    "topic": "economic-growth",
+    "difficulty": "expert",
+    "question": "Economic growth is often presented as the primary goal of development policy. What deeper argument do the readings make about why growth matters, and what does this imply for how growth should be pursued?",
+    "options": [
+      "Growth matters primarily as a means of transforming lives \u2014 reducing poverty and expanding freedom \u2014 which implies that growth processes that bypass the poor or destroy social fabric may fail the underlying purpose",
+      "Growth matters because it expands the national tax base, enabling governments to fund essential public services regardless of distributional effects",
+      "Growth is valuable in itself as a measure of social progress, independent of how its gains are distributed across the population",
+      "Growth should be pursued through any means available, since all forms of growth eventually reduce poverty through trickle-down mechanisms"
+    ],
+    "correctIndex": 0,
+    "explanation": "The readings situate growth within a larger argument about enabling human potential and reducing poverty. This implies that growth processes that are highly unequal, environmentally destructive, or that undermine the social institutions enabling further growth may defeat their own purpose.",
+    "source": "Economic_Growth.pdf"
+  },
+  {
+    "id": "cp21-q046",
+    "module": "cp-21",
+    "topic": "incentives",
+    "difficulty": "expert",
+    "question": "The 'addictive nature of bad policies' reading argues that once bad policies are in place, they create constituencies that make reform politically difficult. What does this reveal about the relationship between policy design and political economy?",
+    "options": [
+      "Policy design cannot be treated as purely technical \u2014 the political economy effects of a policy (who it empowers, who it creates as a beneficiary) are endogenous to the policy and become obstacles to future reform",
+      "Bad policies persist only because of elite capture; removing elite influence would allow bad policies to be reformed through normal democratic processes",
+      "The addictiveness of bad policies is a temporary problem that diminishes over time as voters observe poor outcomes and punish governments that maintain them",
+      "Policy reform is primarily a communication challenge \u2014 once policymakers explain clearly why reform is needed, the political economy obstacles dissolve"
+    ],
+    "correctIndex": 0,
+    "explanation": "Bad policies create their own political economy: subsidies build constituencies, regulations create industries that profit from compliance costs, and entitlements generate voters who depend on them. Policy designers who ignore these dynamics build prisons from which future reform must escape.",
+    "source": "Opinion___The_addictive_nature_of_bad_policies.pdf"
+  },
+  {
+    "id": "cp21-q047",
+    "module": "cp-21",
+    "topic": "economic-freedom",
+    "difficulty": "expert",
+    "question": "Economic freedom indices measure the extent to which economic decisions are made by individuals rather than governments. What does empirical evidence about the relationship between economic freedom and prosperity suggest for developing country policymakers?",
+    "options": [
+      "The evidence suggests a positive relationship between economic freedom and prosperity, but the causal mechanism and the role of institutional quality complicate simple prescriptions for liberalization",
+      "The evidence establishes that maximum economic freedom always produces maximum prosperity regardless of institutional or historical context",
+      "Economic freedom indices measure primarily formal legal rules and do not capture the actual economic conditions that determine prosperity",
+      "The evidence shows no systematic relationship between economic freedom and prosperity \u2014 outcomes depend entirely on country-specific historical and cultural conditions"
+    ],
+    "correctIndex": 0,
+    "explanation": "The correlation between economic freedom and prosperity is real but the mechanism matters: institutions that protect property rights and enable markets require state capacity and rule of law. Simple liberalization without these institutional foundations often fails, complicating policy prescriptions.",
+    "source": "Economic Freedom - Econlib.pdf"
+  },
+  {
+    "id": "cp21-q048",
+    "module": "cp-21",
+    "topic": "incentives",
+    "difficulty": "expert",
+    "question": "The snake bounty example illustrates how incentive schemes can produce perverse outcomes by changing behavior in unexpected ways. What general principle should policymakers draw from cases like this?",
+    "options": [
+      "Incentive schemes must model how rational actors will respond to the scheme itself \u2014 not just to the problem the scheme is trying to solve \u2014 because the scheme changes the incentive landscape in ways that can defeat its purpose",
+      "Incentive schemes are inherently unreliable and policymakers should rely exclusively on direct regulation rather than market-based mechanisms",
+      "The snake bounty case is an historical curiosity that does not generalize to modern policy contexts with more sophisticated institutional design",
+      "Perverse incentive outcomes only occur when schemes are poorly monitored; with sufficient oversight, incentive programs always produce intended results"
+    ],
+    "correctIndex": 0,
+    "explanation": "The bounty created an incentive to breed snakes. The scheme changed the optimal strategy of participants in ways the designers did not anticipate \u2014 because they modeled behavior in response to the problem, not in response to the scheme itself. Good incentive design requires anticipating strategic responses.",
+    "source": "Slavery__Snakes__and_Switching_The_Role_of_Incentives_in_Creating_Unintended_Consequences__1_.pdf"
+  }
+]

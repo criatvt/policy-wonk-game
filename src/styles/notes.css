@@ -1,0 +1,22 @@
+/*
+ * notes.css — calm, editorial reading experience.
+ * Loaded only on /notes/* and /search. Pairs with global.css.
+ */
+
+.notes-zone {
+  background: var(--color-cream);
+  color: var(--color-indigo-deep);
+  font-family: ui-serif, Georgia, "Times New Roman", serif;
+  line-height: 1.7;
+}
+
+.notes-zone h1,
+.notes-zone h2,
+.notes-zone h3 {
+  color: var(--color-sienna-burnt);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.notes-zone a {
+  color: var(--color-teal-faded);
+}

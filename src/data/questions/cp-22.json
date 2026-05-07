@@ -1,0 +1,770 @@
+[
+  {
+    "id": "cp22-q001",
+    "module": "cp-22",
+    "topic": "price-signals",
+    "difficulty": "easy",
+    "question": "What is a price signal in economics?",
+    "options": [
+      "A government announcement about costs",
+      "Information about scarcity that creates incentives for action",
+      "A warning sign in a store",
+      "The average price in a market"
+    ],
+    "correctIndex": 1,
+    "explanation": "A price signal conveys information about scarcity and value. When prices rise, they signal that something is becoming scarcer, creating incentives for conservation and increased production.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q002",
+    "module": "cp-22",
+    "topic": "price-mechanism",
+    "difficulty": "easy",
+    "question": "How did the rise in oil prices in the 1970s affect rose production?",
+    "options": [
+      "It had no effect on rose production",
+      "It increased oil production and rose production equally",
+      "It increased the cost of heating greenhouses, changing where roses were produced",
+      "It eliminated all rose production"
+    ],
+    "correctIndex": 2,
+    "explanation": "Higher oil prices made heating greenhouses in the U.S. more expensive. This price signal incentivized production shifts to naturally warm locations like Kenya and Ecuador, demonstrating how prices coordinate production decisions.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q003",
+    "module": "cp-22",
+    "topic": "decentralized-coordination",
+    "difficulty": "medium",
+    "question": "Why did Kenyan farmers increase rose production without knowing about oil scarcity?",
+    "options": [
+      "They were ordered by international organizations",
+      "They saw the price paid for roses had increased and responded to their own self-interest",
+      "They wanted to help American oil companies",
+      "They received personal instructions from oil executives"
+    ],
+    "correctIndex": 1,
+    "explanation": "The price mechanism allows dispersed information to be aggregated and acted upon without central coordination. The Kenyan farmer only needed to see the higher rose price to make the economically efficient choice.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q004",
+    "module": "cp-22",
+    "topic": "price-information",
+    "difficulty": "medium",
+    "question": "What information is contained in the price system that no single person could have?",
+    "options": [
+      "Only information about government policies",
+      "Dispersed information about costs, preferences, and alternative uses of resources across the entire economy",
+      "Random data with no meaning",
+      "Information that is impossible to use"
+    ],
+    "correctIndex": 1,
+    "explanation": "Prices aggregate information about the costs of production, preferences of consumers, and value of resources in alternative uses. No single individual could have access to all this information, yet prices coordinate decisions efficiently.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q005",
+    "module": "cp-22",
+    "topic": "opportunity-cost",
+    "difficulty": "easy",
+    "question": "In the context of the oil crisis and roses, what was one economically rational response to high oil prices?",
+    "options": [
+      "Continue buying flowers regardless of cost",
+      "Stop celebrating Valentine's Day",
+      "Substitute roses with chocolate and teddy bears",
+      "Reduce all consumption equally"
+    ],
+    "correctIndex": 2,
+    "explanation": "When rose prices increased due to oil costs, consumers had incentives to shift to substitutes. This creative response to price signals demonstrates how individuals find ways to satisfy needs even when preferred options become expensive.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q006",
+    "module": "cp-22",
+    "topic": "sunk-costs",
+    "difficulty": "easy",
+    "question": "What is a sunk cost?",
+    "options": [
+      "The total revenue a business has earned",
+      "A cost that has been incurred and cannot be recovered, and should not affect future decisions",
+      "The cost of building something new",
+      "A government tax on businesses"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sunk costs are past expenditures that cannot be recovered. Rational decision-making should ignore sunk costs and focus only on future costs and benefits. Many businesses fail because they do not abandon bad investments due to sunk cost fallacy.",
+    "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
+  },
+  {
+    "id": "cp22-q007",
+    "module": "cp-22",
+    "topic": "sunk-cost-fallacy",
+    "difficulty": "medium",
+    "question": "Why do businesses sometimes continue investing in failing projects?",
+    "options": [
+      "Because they are legally required to",
+      "Because they want to hurt their investors",
+      "Because they irrationally try to recoup sunk costs instead of looking at future costs and benefits",
+      "Because failed projects are always profitable eventually"
+    ],
+    "correctIndex": 2,
+    "explanation": "The sunk cost fallacy leads businesses to 'throw good money after bad.' Even though past investments cannot be recovered, managers sometimes continue funding unsuccessful projects hoping to eventually recoup the initial investment. This is economically irrational.",
+    "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
+  },
+  {
+    "id": "cp22-q008",
+    "module": "cp-22",
+    "topic": "price-role",
+    "difficulty": "medium",
+    "question": "What role does price play in determining how society allocates scarce resources?",
+    "options": [
+      "Prices have no role in allocation",
+      "Prices are arbitrary and determined by government",
+      "Prices reflect scarcity and value, guiding resources to where they are most highly valued",
+      "Only wealthy people respond to prices"
+    ],
+    "correctIndex": 2,
+    "explanation": "Prices perform the critical function of allocating resources. High prices encourage conservation and increased production of scarce goods; low prices encourage consumption. This decentralized mechanism is remarkably efficient.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q009",
+    "module": "cp-22",
+    "topic": "market-coordination",
+    "difficulty": "hard",
+    "question": "Why is the price system described as 'the invisible hand in action'?",
+    "options": [
+      "Because it uses magic to allocate resources",
+      "Because individual pursuit of self-interest through price signals produces efficient allocation for society",
+      "Because prices are literally invisible",
+      "Because the system is mysterious and unexplainable"
+    ],
+    "correctIndex": 1,
+    "explanation": "Adam Smith's metaphor of the invisible hand describes how individual economic decisions made in pursuit of self-interest aggregate to produce outcomes beneficial for society. Prices facilitate this coordination without central planning.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q010",
+    "module": "cp-22",
+    "topic": "information-scarcity",
+    "difficulty": "hard",
+    "question": "What does the Kenyan rose farmer example demonstrate about information and incentives?",
+    "options": [
+      "That farmers need to understand global oil markets",
+      "That complex economic problems require central planning",
+      "That local decision-makers can respond efficiently to aggregate information encoded in prices",
+      "That price signals are unreliable"
+    ],
+    "correctIndex": 2,
+    "explanation": "The example shows that specialized information is not required. When prices aggregate information from across the world, local actors can make efficient decisions based on local knowledge. This enables decentralized coordination.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q011",
+    "module": "cp-22",
+    "topic": "opportunity-cost",
+    "difficulty": "medium",
+    "question": "What was the opportunity cost to consumers of the oil price increase affecting rose prices?",
+    "options": [
+      "Zero; there was no cost",
+      "Higher oil consumption to maintain the same rose supply",
+      "Choosing between roses and other goods, or accepting fewer roses",
+      "Only wealthy people faced any cost"
+    ],
+    "correctIndex": 2,
+    "explanation": "Higher rose prices forced consumers to choose: buy roses and sacrifice other spending, or choose alternative gifts. This illustrates how scarcity creates trade-offs in what we can have.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q012",
+    "module": "cp-22",
+    "topic": "business-failure",
+    "difficulty": "medium",
+    "question": "What common business mistake led to the failure of Gerald Ratner's jewelry business?",
+    "options": [
+      "He cut prices too much",
+      "He publicly mocked the quality of his own products, destroying consumer confidence",
+      "He failed to advertise",
+      "He did not specialize in jewelry"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ratner joked to a business audience that his products were 'total crap.' This damaged the crucial 'signal' that price sends about quality. Consumer confidence evaporated and the business value fell by \u00a3500 million within days.",
+    "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
+  },
+  {
+    "id": "cp22-q013",
+    "module": "cp-22",
+    "topic": "concealing-losses",
+    "difficulty": "hard",
+    "question": "Why did Nick Leeson's concealment of losses at Barings Bank make the eventual collapse worse?",
+    "options": [
+      "Because concealment is illegal",
+      "Because hidden losses prevented management from making corrective decisions, allowing losses to accumulate",
+      "Because losses always get worse on their own",
+      "Because the bank wanted the losses to happen"
+    ],
+    "correctIndex": 1,
+    "explanation": "When losses were concealed, management could not see the true financial state and make decisions to cut losses. This allowed a \u00a3208 million deficit to grow to over \u00a3800 million before discovery. Information failure led to worse outcomes.",
+    "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
+  },
+  {
+    "id": "cp22-q014",
+    "module": "cp-22",
+    "topic": "price-as-signal",
+    "difficulty": "medium",
+    "question": "How does price communicate quality and value to consumers?",
+    "options": [
+      "Price has no connection to quality",
+      "High prices always mean high quality",
+      "Price signals the seller's confidence in product quality and combines with other signals",
+      "Consumers cannot use price as information"
+    ],
+    "correctIndex": 2,
+    "explanation": "Price functions as a signal of quality and value. When Ratner undermined this signal by calling his products 'crap,' he destroyed consumer confidence despite the low price. The price signal had been damaged.",
+    "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
+  },
+  {
+    "id": "cp22-q015",
+    "module": "cp-22",
+    "topic": "marginal-decision",
+    "difficulty": "easy",
+    "question": "When rose prices increased, what was the marginal decision consumers faced?",
+    "options": [
+      "Whether to buy roses at all",
+      "Whether to buy slightly fewer roses or substitute with alternatives",
+      "Whether to eliminate all spending on gifts",
+      "Roses had no marginal effect"
+    ],
+    "correctIndex": 1,
+    "explanation": "At the margin, consumers decided whether to buy roses at the new price or buy substitutes. Few stopped buying roses entirely; most adjusted quantities and made substitution choices at the margin.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q016",
+    "module": "cp-22",
+    "topic": "information-prices",
+    "difficulty": "hard",
+    "question": "What is remarkable about the price system's efficiency in the oil-rose example?",
+    "options": [
+      "It required central planning from the government",
+      "It achieved complex global coordination without any person knowing the full information or making decisions in advance",
+      "It only worked for roses and oil",
+      "It was completely inefficient and proved markets do not work"
+    ],
+    "correctIndex": 1,
+    "explanation": "No one could have predicted that oil scarcity would lead to Kenyan rose farms or chocolate substitutes. Yet prices coordinated millions of independent decisions to produce these efficient outcomes without central direction.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q017",
+    "module": "cp-22",
+    "topic": "sunk-costs",
+    "difficulty": "medium",
+    "question": "Why is the Titanic's poor construction quality an example of a sunk cost problem?",
+    "options": [
+      "Because the ship was expensive to build",
+      "Because poor quality rivets showed inadequate supervision; once incurred, this cost could not be recovered",
+      "Because building ships is always expensive",
+      "Because the Titanic sank in water"
+    ],
+    "correctIndex": 1,
+    "explanation": "The poor quality rivets represent a sunk cost\u2014once incurred in construction, the cost could not be recovered. Though this cost contributed to the disaster, the larger lesson is about hidden quality problems that manifest as failures.",
+    "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
+  },
+  {
+    "id": "cp22-q018",
+    "module": "cp-22",
+    "topic": "business-innovation",
+    "difficulty": "medium",
+    "question": "What did entrepreneurs recognize in response to high oil prices?",
+    "options": [
+      "That oil prices would never change",
+      "That alternative production methods existed, like growing flowers in naturally warm climates",
+      "That all production would have to stop",
+      "That consumers would stop buying roses"
+    ],
+    "correctIndex": 1,
+    "explanation": "Entrepreneurs recognized profit opportunities in new production methods. By investing in rose farms in warm climates and transport infrastructure, they could profit while solving the scarcity problem created by oil prices.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q019",
+    "module": "cp-22",
+    "topic": "consumer-behavior",
+    "difficulty": "easy",
+    "question": "What behavioral response demonstrates how prices influence consumption?",
+    "options": [
+      "People stop all spending when prices rise",
+      "Prices have no effect on purchases",
+      "When rose prices increased, consumers bought fewer roses or substituted alternatives",
+      "Consumer behavior is random and unpredictable"
+    ],
+    "correctIndex": 2,
+    "explanation": "Higher prices incentivize consumers to reduce consumption and search for alternatives. The oil-rose example shows how price changes propagate through the economy, affecting production and consumption choices.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q020",
+    "module": "cp-22",
+    "topic": "competitive-advantage",
+    "difficulty": "hard",
+    "question": "Why did Nokia fail despite once being a global technology leader?",
+    "options": [
+      "Because technology companies always fail eventually",
+      "Because management lacked courage to act on information that its operating system was years behind iOS",
+      "Because the iPhone did not exist before Nokia",
+      "Because Nokia made good products"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nokia engineers and developers knew Symbian was obsolete, but middle managers would not relay this information to senior leadership. This information failure prevented corrective action. A company that fails to act on available information cannot compete.",
+    "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
+  },
+  {
+    "id": "cp22-q021",
+    "module": "cp-22",
+    "topic": "price-discovery",
+    "difficulty": "medium",
+    "question": "How does the price system 'discover' where resources are most valued?",
+    "options": [
+      "Governments determine where resources should go",
+      "Prices rise where resources are highly valued, attracting production; prices fall where they are less valued",
+      "Resources are randomly distributed",
+      "The price system cannot discover value"
+    ],
+    "correctIndex": 1,
+    "explanation": "High prices signal where resources are most valued. This attracts producers and investment. Low prices signal lower value. This decentralized price discovery mechanism guides resources to their highest-value uses.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q022",
+    "module": "cp-22",
+    "topic": "sunk-cost-fallacy",
+    "difficulty": "hard",
+    "question": "How did Toys 'R' Us's partnership with Amazon exemplify poor decision-making?",
+    "options": [
+      "Because it partnered with a stronger competitor instead of competing independently",
+      "Because it failed to recognize its business model was becoming obsolete compared to specialized retailers like Build-a-Bear",
+      "Because online sales were not profitable",
+      "Because toys are not competitive"
+    ],
+    "correctIndex": 1,
+    "explanation": "Toys 'R' Us made a poor strategic choice by outsourcing to Amazon while competitors like Build-a-Bear invested in experience and service. Burdened by debt from sunk costs, it could not invest in its own future, making eventual bankruptcy inevitable.",
+    "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
+  },
+  {
+    "id": "cp22-q023",
+    "module": "cp-22",
+    "topic": "price-expectations",
+    "difficulty": "medium",
+    "question": "Why did the 2008 financial crisis occur despite warning signs?",
+    "options": [
+      "Because there were no warning signs",
+      "Because people believed property prices would always rise, not acting on available information",
+      "Because banks wanted the crisis to happen",
+      "Because no one could have predicted it"
+    ],
+    "correctIndex": 1,
+    "explanation": "People created a 'magical belief' that property was a one-way bet despite warnings. Price expectations became disconnected from fundamentals. When belief in ever-rising prices collapsed, the financial system froze.",
+    "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
+  },
+  {
+    "id": "cp22-q024",
+    "module": "cp-22",
+    "topic": "dispersed-knowledge",
+    "difficulty": "hard",
+    "question": "What does the rose example teach about the limits of central planning?",
+    "options": [
+      "That central planning is more efficient than markets",
+      "That no single person or organization could have anticipated and coordinated the complex global response to oil scarcity",
+      "That planning is never possible",
+      "That markets always fail"
+    ],
+    "correctIndex": 1,
+    "explanation": "Central planners could not have known about Kenyan climate advantages, transportation possibilities, consumer preferences for chocolate, or all the dispersed information that markets aggregated through prices. This illustrates Hayek's knowledge problem.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q025",
+    "module": "cp-22",
+    "topic": "scarcity-response",
+    "difficulty": "easy",
+    "question": "In the context of price signals, what is the fundamental economic problem being solved?",
+    "options": [
+      "How to eliminate all scarcity",
+      "How to allocate scarce resources among competing uses",
+      "How to make everything free",
+      "How to prevent people from wanting things"
+    ],
+    "correctIndex": 1,
+    "explanation": "Scarcity means not everything can be produced in unlimited quantities. Prices solve the allocation problem by signaling where resources are most valued and guiding production and consumption decisions.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q026",
+    "module": "cp-22",
+    "topic": "business-failure-patterns",
+    "difficulty": "hard",
+    "question": "What common pattern appears in many business failures?",
+    "options": [
+      "Failure always happens suddenly without warning",
+      "Management knows problems exist but fails to act, or conceals information, allowing small problems to compound",
+      "Markets are completely unpredictable",
+      "All business failures are caused by external factors"
+    ],
+    "correctIndex": 1,
+    "explanation": "From Leeson at Barings to Nokia's management, failure often results from information gaps or unwillingness to face problems. When problems are concealed or ignored, they accumulate and become catastrophic.",
+    "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
+  },
+  {
+    "id": "cp22-q027",
+    "module": "cp-22",
+    "topic": "price-as-signal",
+    "difficulty": "medium",
+    "question": "What does a rising price tell producers in a market economy?",
+    "options": [
+      "They should stop producing",
+      "That a good is becoming more scarce and valuable, creating profit opportunities for increased production",
+      "That consumer demand is decreasing",
+      "That government should regulate prices"
+    ],
+    "correctIndex": 1,
+    "explanation": "Rising prices signal scarcity and opportunity. Producers respond by increasing supply, which eventually brings prices back down. This price-driven feedback loop produces efficient allocation without central coordination.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q028",
+    "module": "cp-22",
+    "topic": "specialization",
+    "difficulty": "medium",
+    "question": "Why did rose production shift from New Jersey greenhouses to Kenya and Ecuador?",
+    "options": [
+      "Because American farmers were lazy",
+      "Because prices signaled the opportunity cost had changed, making other locations more economical",
+      "Because oil prices were identical everywhere",
+      "Because governments mandated the shift"
+    ],
+    "correctIndex": 1,
+    "explanation": "Oil prices made greenhouse heating expensive in the U.S. Kenya and Ecuador's natural warmth provided comparative advantage. Entrepreneurs recognized this and shifted production accordingly\u2014all coordinated through prices.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q029",
+    "module": "cp-22",
+    "topic": "market-failure",
+    "difficulty": "hard",
+    "question": "What role did concealed information play in the Barings Bank collapse?",
+    "options": [
+      "It had no effect on the outcome",
+      "It prevented corrective action, allowing losses to compound until the bank became insolvent",
+      "It made the losses smaller",
+      "It helped the bank recover"
+    ],
+    "correctIndex": 1,
+    "explanation": "When Leeson concealed losses, bank management lacked information to take corrective action. A \u00a3208 million loss became \u00a3862 million. Information failure led to catastrophic outcomes that could have been mitigated with transparency.",
+    "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
+  },
+  {
+    "id": "cp22-q030",
+    "module": "cp-22",
+    "topic": "prices-coordination",
+    "difficulty": "easy",
+    "question": "How does the price of roses coordinate decisions between oil producers, farmers, and consumers?",
+    "options": [
+      "Price does not coordinate anything",
+      "Government officials directly instruct each group",
+      "Through a mechanism where each group responds to price signals without needing to communicate",
+      "Randomly and inefficiently"
+    ],
+    "correctIndex": 2,
+    "explanation": "Oil producers respond to oil prices, rose farmers respond to rose prices, and consumers respond to rose prices. No coordination is required; each pursues self-interest while responding to prices, producing efficient outcomes.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q031",
+    "module": "cp-22",
+    "topic": "business-adaptation",
+    "difficulty": "medium",
+    "question": "Why did Thomas Cook fail despite inventing mass tourism?",
+    "options": [
+      "Because travel is impossible",
+      "Because it failed to adapt as the internet eliminated the need for travel agents and reduced barriers to direct booking",
+      "Because people stopped traveling",
+      "Because it was too successful"
+    ],
+    "correctIndex": 1,
+    "explanation": "Thomas Cook's competitive advantage\u2014access to information and distribution networks\u2014was made obsolete by the internet. Unable to adapt and burdened by debt from a failed acquisition, it could not compete with online booking.",
+    "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
+  },
+  {
+    "id": "cp22-q032",
+    "module": "cp-22",
+    "topic": "information-efficiency",
+    "difficulty": "hard",
+    "question": "What does Vernon Smith mean when he calls the price system 'a scientific mystery'?",
+    "options": [
+      "That prices are random and meaningless",
+      "That the price system's efficiency in coordinating dispersed information rivals natural phenomena like the expanding universe",
+      "That prices cannot be studied scientifically",
+      "That markets never work"
+    ],
+    "correctIndex": 1,
+    "explanation": "Smith suggests the price system's ability to aggregate infinite dispersed information and produce efficient allocation is as profound and mysterious as fundamental physical phenomena. Its elegance comes from its simplicity and effectiveness.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q033",
+    "module": "cp-22",
+    "topic": "consumer-alternatives",
+    "difficulty": "medium",
+    "question": "What rational choices did consumers make when rose prices increased?",
+    "options": [
+      "No rational choice was possible",
+      "Buy roses and reduce other spending; substitute with chocolate or teddy bears; or skip gift-giving",
+      "All consumers stopped buying all gifts",
+      "Consumers had no way to respond"
+    ],
+    "correctIndex": 1,
+    "explanation": "Price increases created a menu of choices for consumers. Some prioritized roses and cut other spending. Others found substitutes. A few gave up gifts. All responses were rational given individual preferences and constraints.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q034",
+    "module": "cp-22",
+    "topic": "management-information",
+    "difficulty": "hard",
+    "question": "What management failure characterized both Leeson's concealment and Nokia's silence about Symbian?",
+    "options": [
+      "Perfect transparency and honesty",
+      "Senior leaders did not have access to or would not face critical information about their company's problems",
+      "These companies had no problems",
+      "Management was too informed"
+    ],
+    "correctIndex": 1,
+    "explanation": "Both cases show information gaps between operational knowledge and decision-making. At Barings, losses were hidden. At Nokia, technical problems were known but not reported upward. Information failures prevented corrective action.",
+    "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
+  },
+  {
+    "id": "cp22-q035",
+    "module": "cp-22",
+    "topic": "market-response",
+    "difficulty": "easy",
+    "question": "What was remarkable about how the market responded to the oil price shock?",
+    "options": [
+      "The market could not respond",
+      "Only government intervention could solve the problem",
+      "Complex adaptation occurred through decentralized decisions responding to price signals",
+      "No one changed any behavior"
+    ],
+    "correctIndex": 2,
+    "explanation": "The oil shock created a complex global reallocation of resources\u2014new farms, new infrastructure, new consumption patterns\u2014all coordinated through price signals without central planning or direct communication.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q036",
+    "module": "cp-22",
+    "topic": "profit-motive",
+    "difficulty": "medium",
+    "question": "How did profit incentives solve the scarcity problem in rose production?",
+    "options": [
+      "Profit incentives made the problem worse",
+      "Entrepreneurs invested in new production methods in warm climates because they could profit from the price difference",
+      "Profits were not involved",
+      "Only charity could solve the problem"
+    ],
+    "correctIndex": 1,
+    "explanation": "High rose prices created profit opportunities. Entrepreneurs invested in Kenyan and Ecuadorian farms and transport infrastructure because they could profit. This self-interested behavior solved the scarcity problem for society.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q037",
+    "module": "cp-22",
+    "topic": "adjustment-mechanisms",
+    "difficulty": "hard",
+    "question": "What is the relationship between price changes and long-term supply adjustment?",
+    "options": [
+      "Prices have no effect on supply over time",
+      "High prices encourage production increases until supply increases enough to bring prices back down",
+      "Prices only affect consumption, not production",
+      "Supply and prices are unrelated"
+    ],
+    "correctIndex": 1,
+    "explanation": "Price increases signal profit opportunities, encouraging new production. As supply increases, prices fall until they stabilize at a new equilibrium. This self-correcting mechanism produces allocation without central planning.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q038",
+    "module": "cp-22",
+    "topic": "transparency-failure",
+    "difficulty": "medium",
+    "question": "How do information failures lead to business collapse?",
+    "options": [
+      "They do not; all information failures are beneficial",
+      "When critical information is hidden or not communicated upward, management cannot make corrective decisions",
+      "Information has no effect on business success",
+      "More information always makes problems worse"
+    ],
+    "correctIndex": 1,
+    "explanation": "When managers lack information about problems, they cannot address them. Leeson's concealment, Nokia's silence about obsolescence, and mismanagement of sunk costs all show how information gaps lead to preventable failures.",
+    "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
+  },
+  {
+    "id": "cp22-q039",
+    "module": "cp-22",
+    "topic": "price-efficiency",
+    "difficulty": "hard",
+    "question": "Why is the price system more efficient than having a planner decide resource allocation?",
+    "options": [
+      "Because prices are random and don't require thinking",
+      "Because no single planner can have access to all the dispersed information about costs, preferences, and alternatives",
+      "Because the price system is less efficient",
+      "Because markets always produce perfect results"
+    ],
+    "correctIndex": 1,
+    "explanation": "Hayek's knowledge problem shows that centralized planning cannot access the dispersed information about local costs and conditions. Prices aggregate this information and allow efficient decentralized decisions.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q040",
+    "module": "cp-22",
+    "topic": "creative-response",
+    "difficulty": "hard",
+    "question": "What does the variety of responses to the oil price increase demonstrate about economic incentives?",
+    "options": [
+      "That incentives do not affect behavior",
+      "That people respond to incentives in creative, unpredictable, and often beneficial ways",
+      "That all responses to incentives are bad",
+      "That incentives eliminate all choice"
+    ],
+    "correctIndex": 1,
+    "explanation": "The oil crisis prompted creative responses: new farms, new transport infrastructure, consumer substitutions, and new business models. No one could have planned these outcomes, yet incentives produced them. This demonstrates the power of price-driven coordination.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q041",
+    "module": "cp-22",
+    "topic": "price-signals",
+    "difficulty": "expert",
+    "question": "Hayek's argument about the price system is that prices aggregate dispersed knowledge no central planner can possess. What does this imply for the design of socialist or command planning systems?",
+    "options": [
+      "Command systems face an inherent information problem \u2014 not just an incentive problem \u2014 because the knowledge embedded in prices is tacit, local, and constantly changing in ways no authority can fully track",
+      "The information problem is real but secondary; socialist planning fails primarily because it lacks competitive pressure rather than because of information constraints",
+      "Hayek's argument has been superseded by big data and machine learning, which can now aggregate dispersed information without the price system",
+      "The information problem only applies to consumer goods markets; investment and infrastructure decisions can be efficiently centrally planned with adequate data"
+    ],
+    "correctIndex": 0,
+    "explanation": "Hayek's insight is not just about incentives but about epistemology: the knowledge needed to allocate resources efficiently is not available in any one place. It exists in dispersed, tacit, local form \u2014 and prices are the only mechanism that aggregates it without requiring central collection.",
+    "source": "Information__Prices__and_Socialism_s_Flaws.pdf"
+  },
+  {
+    "id": "cp22-q042",
+    "module": "cp-22",
+    "topic": "sunk-costs",
+    "difficulty": "expert",
+    "question": "The sunk cost fallacy leads organizations to continue investing in failing projects because of past expenditure. Why is the fallacy particularly dangerous in government policy contexts?",
+    "options": [
+      "In government, sunk costs are politically visible commitments \u2014 reversing them signals failure and invites opposition, creating systematic pressure to continue bad policies beyond their rational stopping point",
+      "The sunk cost fallacy only affects private firms; governments are immune because they have broader mandates and longer time horizons than private actors",
+      "Sunk cost reasoning in government is rational because governments must demonstrate commitment to long-term projects; reversing course destroys credibility",
+      "The danger of sunk cost reasoning in government is primarily financial \u2014 the waste of funds already spent rather than the distortion of future investment decisions"
+    ],
+    "correctIndex": 0,
+    "explanation": "Political sunk costs are commitment devices that backfire: an infrastructure project, a military intervention, or a subsidy program that has consumed public funds acquires a political constituency that makes rational abandonment nearly impossible even when continuation is clearly worse.",
+    "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
+  },
+  {
+    "id": "cp22-q043",
+    "module": "cp-22",
+    "topic": "price-signals",
+    "difficulty": "expert",
+    "question": "The Kenyan farmers responding to changes in oil prices without knowing about oil markets illustrates a profound property of the price system. What is that property, and what are its limits?",
+    "options": [
+      "Prices coordinate global economic activity without requiring any participant to understand the full system \u2014 but this breaks down when market prices are distorted by subsidies, monopolies, or externalities",
+      "The property is that prices automatically produce optimal social outcomes without any government involvement under all market conditions",
+      "The property is that prices transmit all economically relevant information, making other information systems like regulation or planning fully redundant",
+      "The property holds only in commodity markets; in markets with significant information asymmetry, prices do not coordinate effectively"
+    ],
+    "correctIndex": 0,
+    "explanation": "Prices allow global coordination through local signals \u2014 Kenyan farmers adjust their behavior without needing to understand OPEC decisions. But this magnificent property fails when prices themselves are distorted: regulated prices, subsidized inputs, or unpriced externalities all break the signal.",
+    "source": "What do prices know that you dont.pdf"
+  },
+  {
+    "id": "cp22-q044",
+    "module": "cp-22",
+    "topic": "opportunity-cost",
+    "difficulty": "expert",
+    "question": "Opportunity cost implies that using a resource for one purpose necessarily forecloses other uses. Why does failing to account for opportunity cost lead governments to systematically underestimate the true cost of public programs?",
+    "options": [
+      "Government accounting typically records only financial outlays, omitting the value of foregone alternatives \u2014 so programs that consume scarce administrative capacity, political capital, or crowded-out private investment appear cheaper than they are",
+      "Opportunity cost is inherently unmeasurable for government programs because counterfactuals about what would have happened otherwise cannot be observed",
+      "Government programs do not have opportunity costs because public funds come from taxation and have no alternative productive use once collected",
+      "Opportunity costs only apply when resources are fully employed; if there is slack in the economy, government spending has no opportunity cost"
+    ],
+    "correctIndex": 0,
+    "explanation": "Budget line items show what was spent, not what was foregone. A program that consumes regulatory bandwidth, crowds out private investment, diverts bureaucratic attention from higher-value activities, or spends political capital appears much cheaper in formal accounts than in full economic terms.",
+    "source": "Opportunity Cost.pdf"
+  },
+  {
+    "id": "cp22-q045",
+    "module": "cp-22",
+    "topic": "price-signals",
+    "difficulty": "expert",
+    "question": "Price controls are often introduced to protect consumers from high prices. What does the economics of price signals suggest will systematically happen to supply when prices are held below market-clearing levels?",
+    "options": [
+      "Below-market price controls reduce the incentive to supply, producing shortages \u2014 the very problem they were meant to solve reappears as unavailability rather than unaffordability",
+      "Price controls always benefit consumers by reducing costs without affecting supply, as producers have no choice but to continue supplying at controlled prices",
+      "The effect depends entirely on the elasticity of supply \u2014 in highly inelastic markets, price controls successfully reduce prices without producing shortages",
+      "Price controls improve efficiency by preventing monopolists from charging prices above competitive equilibrium, increasing both consumer welfare and total output"
+    ],
+    "correctIndex": 0,
+    "explanation": "Price is a signal to suppliers. When the signal is suppressed below market-clearing level, suppliers reduce supply. The result is shortage \u2014 consumers who would have paid the market price cannot find the good at the controlled price, producing queues, rationing, and black markets.",
+    "source": "Price Signal Incentive.pdf"
+  },
+  {
+    "id": "cp22-q046",
+    "module": "cp-22",
+    "topic": "price-signals",
+    "difficulty": "expert",
+    "question": "The 'I, Rose' essay (after Leonard Read's 'I, Pencil') demonstrates that no individual or organization possesses the knowledge to plan the entire supply chain of even a simple product. What does this reveal about the limits of industrial policy?",
+    "options": [
+      "Industrial policy that tries to manage supply chains faces the same knowledge problem as central planning \u2014 the information required to optimize across interconnected global markets is dispersed and unavailable to any planning authority",
+      "The essay shows that complex supply chains require government coordination to function \u2014 spontaneous order alone cannot produce such sophisticated networks",
+      "The knowledge problem only affects consumer goods with complex supply chains; industrial policy targeting simpler sectors can be efficiently planned",
+      "Industrial policy fails only because of implementation problems in bureaucracies; in principle, a sufficiently capable technocracy could manage supply chains effectively"
+    ],
+    "correctIndex": 0,
+    "explanation": "Like the pencil, the rose involves thousands of actors across continents coordinating without anyone planning the whole. Industrial policy that tries to replicate or improve this coordination must gather and process information that exists only dispersed across all those actors \u2014 which is impossible.",
+    "source": "I rose.pdf"
+  },
+  {
+    "id": "cp22-q047",
+    "module": "cp-22",
+    "topic": "sunk-costs",
+    "difficulty": "expert",
+    "question": "The Titanic and Evergrande cases both illustrate how sunk cost reasoning can accelerate catastrophic failure. What common institutional feature allows sunk cost logic to override rational decision-making in both private and public contexts?",
+    "options": [
+      "In both cases, decision-makers face audiences \u2014 creditors, shareholders, governments, citizens \u2014 who interpret course reversal as evidence of failure rather than rational adjustment, creating pressure to continue regardless of fundamentals",
+      "Sunk cost logic takes hold only when decision-makers lack financial expertise; better training in economics would prevent both types of failure",
+      "Both cases involved fraud and concealment, which is the actual driver of continued bad investment rather than sunk cost reasoning",
+      "Sunk cost reasoning is unique to private sector actors motivated by stock price; public institutions are immune because they have no comparable external performance pressure"
+    ],
+    "correctIndex": 0,
+    "explanation": "The common mechanism is the audience: Titanic's officers couldn't signal the ship was sinking; Evergrande couldn't signal insolvency. In both cases, the cost of transparency \u2014 panic, withdrawal, collapse \u2014 appeared to exceed the cost of continuation, trapping decision-makers in escalating commitment.",
+    "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
+  },
+  {
+    "id": "cp22-q048",
+    "module": "cp-22",
+    "topic": "price-signals",
+    "difficulty": "expert",
+    "question": "Prices coordinate economic activity through decentralized signals, but externalities mean that market prices often fail to reflect the full social cost of production or consumption. What does this imply for the design of carbon pricing mechanisms?",
+    "options": [
+      "A carbon price attempts to internalize externalities by making the price signal reflect the full social cost \u2014 but its effectiveness depends on the price being set accurately, applied comprehensively, and resistant to political manipulation",
+      "Carbon pricing is straightforwardly superior to all other climate instruments because it harnesses the price system's coordination power without requiring any additional regulation",
+      "Externalities undermine the price system so comprehensively that markets cannot play any meaningful role in addressing climate change \u2014 only direct regulation is effective",
+      "Carbon pricing solves the externality problem completely by definition, since any positive carbon price improves on the zero price that markets produce without intervention"
+    ],
+    "correctIndex": 0,
+    "explanation": "Carbon pricing is an attempt to fix the broken signal \u2014 to make the price of fossil energy include its climate cost. But the fix requires setting the price correctly (estimating the social cost of carbon), applying it broadly (avoiding carbon leakage), and keeping it politically stable \u2014 each of which is a substantial challenge.",
+    "source": "Price Signal Incentive.pdf"
+  }
+]

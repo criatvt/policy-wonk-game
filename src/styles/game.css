@@ -1,0 +1,20 @@
+/*
+ * game.css — loud, warm, hand-drawn, retro-Indian aesthetic.
+ * Loaded only on game routes (/, /play). Pairs with global.css.
+ *
+ * Hard guardrails (see 02-game-design.md):
+ *  - No purple/electric-blue gradients.
+ *  - No spotlight-on-circular-stage framing.
+ *  - No glossy gold-accented chrome typography.
+ * Functional colours (marigold/green/red) appear only in functional contexts.
+ */
+
+.game-zone {
+  background: var(--color-indigo-deep);
+  color: var(--color-cream);
+  min-height: 100vh;
+}
+
+.game-zone a {
+  color: var(--color-sienna-pale);
+}

@@ -1,0 +1,674 @@
+[
+  {
+    "id": "cp12-q001",
+    "module": "cp-12",
+    "topic": "state-failure",
+    "difficulty": "easy",
+    "question": "What does Pritchett identify as a flailing state?",
+    "options": [
+      "A state that simultaneously succeeds in some domains and fails in others",
+      "A state that fails completely in all functions",
+      "A state that has entirely collapsed",
+      "A state without taxation"
+    ],
+    "correctIndex": 0,
+    "explanation": "Pritchett's concept of a 'flailing state' describes contexts where state capacity is unevenly distributed—strong in some areas (security, urban administration) but weak in others (rural delivery, welfare).",
+    "source": "Kapur-Indian_State.pdf"
+  },
+  {
+    "id": "cp12-q002",
+    "module": "cp-12",
+    "topic": "state-capacity",
+    "difficulty": "easy",
+    "question": "What does Kapur mean by the Indian state both failing and succeeding?",
+    "options": [
+      "The state shows contradictory outcomes—strong institutional capacity in some areas while delivering poor public goods in others",
+      "The state is purely failing",
+      "The state succeeds uniformly across all sectors",
+      "Success and failure are unrelated concepts"
+    ],
+    "correctIndex": 0,
+    "explanation": "Kapur argues that characterizing India's state as simply 'failing' or 'succeeding' obscures the reality of uneven state capacity across different domains and populations.",
+    "source": "Kapur-Indian_State.pdf"
+  },
+  {
+    "id": "cp12-q003",
+    "module": "cp-12",
+    "topic": "principal-agent",
+    "difficulty": "easy",
+    "question": "In principal-agent theory, what is the core problem?",
+    "options": [
+      "Agents (bureaucrats) may pursue their own interests rather than the principal's (public's) interests",
+      "Principals always perfectly control agents",
+      "Agents have no ability to deviate from principals' wishes",
+      "The problem only occurs in private firms"
+    ],
+    "correctIndex": 0,
+    "explanation": "The principal-agent problem describes the challenge of ensuring those executing policy (agents) remain aligned with those delegating authority (principals).",
+    "source": "Principal-Agent.pdf"
+  },
+  {
+    "id": "cp12-q004",
+    "module": "cp-12",
+    "topic": "bureaucratic-structure",
+    "difficulty": "easy",
+    "question": "What is a key institutional source of principal-agent problems in government?",
+    "options": [
+      "Information asymmetries between elected officials and career bureaucrats",
+      "Bureaucrats lack the ability to withhold information",
+      "Officials always have perfect information",
+      "Bureaucracies are transparent by design"
+    ],
+    "correctIndex": 0,
+    "explanation": "Bureaucrats possess detailed operational knowledge that elected principals lack, creating opportunities for bureaucratic discretion and potential misalignment.",
+    "source": "Principal-Agent.pdf"
+  },
+  {
+    "id": "cp12-q005",
+    "module": "cp-12",
+    "topic": "policy-implementation",
+    "difficulty": "easy",
+    "question": "What does 'The Grammar of Anarchy' suggest about state authority in India?",
+    "options": [
+      "State authority rests partly on legitimacy conferred by citizens, not just coercive capacity",
+      "The state rules purely through force",
+      "Citizens never question state authority",
+      "Grammar is irrelevant to state power"
+    ],
+    "correctIndex": 0,
+    "explanation": "The work argues that state authority in India is negotiated and contingent on how different groups understand legitimate governance and reciprocal obligations.",
+    "source": "Grammar_of_Anarchy.pdf"
+  },
+  {
+    "id": "cp12-q006",
+    "module": "cp-12",
+    "topic": "tightrope-walking",
+    "difficulty": "easy",
+    "question": "What does the policymaker-as-tightrope-walker metaphor suggest about governance?",
+    "options": [
+      "Policymakers navigate competing pressures and constraints, requiring careful balance",
+      "Policy is straightforward and linear",
+      "Policymakers face no constraints",
+      "Walking metaphors are irrelevant to policy"
+    ],
+    "correctIndex": 0,
+    "explanation": "The metaphor captures how policymakers must balance multiple constituencies, constraints, and competing goals simultaneously.",
+    "source": "Tightrope_Walker.pdf"
+  },
+  {
+    "id": "cp12-q007",
+    "module": "cp-12",
+    "topic": "government-capacity",
+    "difficulty": "easy",
+    "question": "What is a primary limitation on state capacity in developing democracies?",
+    "options": [
+      "Insufficient financial and human resources to implement policies effectively",
+      "Governments have unlimited resources",
+      "Capacity is not limited",
+      "Money is irrelevant to governance"
+    ],
+    "correctIndex": 0,
+    "explanation": "Limited budgets, inadequate infrastructure, and insufficient trained personnel constrain what developing states can achieve.",
+    "source": "Kapur-Indian_State.pdf"
+  },
+  {
+    "id": "cp12-q008",
+    "module": "cp-12",
+    "topic": "service-delivery",
+    "difficulty": "easy",
+    "question": "What does poor state performance in rural areas typically reflect?",
+    "options": [
+      "Lower capacity to extract resources and deliver services in dispersed, less profitable locations",
+      "Rural people prefer poor services",
+      "Distance has no impact on service delivery",
+      "Rural areas are prioritized equally"
+    ],
+    "correctIndex": 0,
+    "explanation": "Geographic remoteness, population density, and lower revenue-generation capacity make rural service delivery more expensive and logistically challenging.",
+    "source": "Pritchett__2009__-_Is_India_a_Flailing_State.pdf"
+  },
+  {
+    "id": "cp12-q009",
+    "module": "cp-12",
+    "topic": "governance-legitimacy",
+    "difficulty": "easy",
+    "question": "What role does perceived legitimacy play in state authority?",
+    "options": [
+      "Legitimate authority requires less coercive force to achieve compliance",
+      "Legitimacy and force are unrelated",
+      "States require no legitimacy",
+      "Force completely determines state power"
+    ],
+    "correctIndex": 0,
+    "explanation": "When citizens perceive state authority as legitimate, compliance costs decrease and state capacity effectively increases.",
+    "source": "Grammar_of_Anarchy.pdf"
+  },
+  {
+    "id": "cp12-q010",
+    "module": "cp-12",
+    "topic": "bureaucratic-incentives",
+    "difficulty": "easy",
+    "question": "What structural incentive might lead bureaucrats to misalign with public interest?",
+    "options": [
+      "Career advancement often depends on pleasing supervisors rather than serving public goals",
+      "Bureaucrats always prioritize public interest",
+      "Incentives are irrelevant",
+      "Bureaucrats have no career concerns"
+    ],
+    "correctIndex": 0,
+    "explanation": "When promotion and evaluation depend on hierarchical relationships rather than policy outcomes, bureaucrats may optimize for internal metrics rather than public benefit.",
+    "source": "Principal-Agent.pdf"
+  },
+  {
+    "id": "cp12-q011",
+    "module": "cp-12",
+    "topic": "state-reach",
+    "difficulty": "easy",
+    "question": "What geographic pattern characterizes many developing states?",
+    "options": [
+      "Strong state presence in urban centers with weaker reach in peripheral regions",
+      "State power is uniformly distributed",
+      "Rural areas are prioritized",
+      "Geography irrelevant to state strength"
+    ],
+    "correctIndex": 0,
+    "explanation": "States typically maintain greater administrative, coercive, and extractive capacity in urban areas where resources are concentrated and control is easier.",
+    "source": "Kapur-Indian_State.pdf"
+  },
+  {
+    "id": "cp12-q012",
+    "module": "cp-12",
+    "topic": "policy-constraints",
+    "difficulty": "easy",
+    "question": "What external constraint commonly limits policymakers' choices?",
+    "options": [
+      "Veto players with power to block policies can force compromise",
+      "Policymakers face no constraints",
+      "External actors never influence policy",
+      "Constraints are entirely internal"
+    ],
+    "correctIndex": 0,
+    "explanation": "Policymakers operate within systems where various actors—legislatures, courts, interest groups, bureaucracies—can block or modify proposed policies.",
+    "source": "Tightrope_Walker.pdf"
+  },
+  {
+    "id": "cp12-q013",
+    "module": "cp-12",
+    "topic": "selective-capacity",
+    "difficulty": "medium",
+    "question": "Why might a state simultaneously have strong capacity in taxation but weak capacity in social service delivery?",
+    "options": [
+      "Taxation requires concentrated effort on urban areas and businesses; service delivery requires dispersed presence",
+      "Strong taxation automatically ensures strong services",
+      "Services and taxation are unrelated",
+      "Weak states cannot tax at all"
+    ],
+    "correctIndex": 0,
+    "explanation": "Different policy domains require different institutional capabilities; states may excel at extractive capacity (taxation) while struggling with distributive capacity (services).",
+    "source": "Kapur-Indian_State.pdf"
+  },
+  {
+    "id": "cp12-q014",
+    "module": "cp-12",
+    "topic": "principal-agent-solutions",
+    "difficulty": "medium",
+    "question": "What mechanism can mitigate principal-agent problems in bureaucracy?",
+    "options": [
+      "Transparent performance metrics and accountability mechanisms that align agent incentives with principal goals",
+      "Principals controlling all information",
+      "No monitoring whatsoever",
+      "Removing all delegation"
+    ],
+    "correctIndex": 0,
+    "explanation": "Clear performance measures, transparency, and consequences for non-compliance help align bureaucratic behavior with public policy objectives.",
+    "source": "Principal-Agent.pdf"
+  },
+  {
+    "id": "cp12-q015",
+    "module": "cp-12",
+    "topic": "state-legitimacy-india",
+    "difficulty": "medium",
+    "question": "How does democracy affect the grammar of state authority in India?",
+    "options": [
+      "Democratic procedures create expectations that state authority must reflect public will, requiring constant negotiation",
+      "Democracy has no effect on state authority",
+      "State authority becomes absolute in democracies",
+      "Elections eliminate all negotiation"
+    ],
+    "correctIndex": 0,
+    "explanation": "In democracies, state authority is contingent on regular legitimation through elections and public opinion, making it more contested and negotiable.",
+    "source": "Grammar_of_Anarchy.pdf"
+  },
+  {
+    "id": "cp12-q016",
+    "module": "cp-12",
+    "topic": "flailing-state-health",
+    "difficulty": "medium",
+    "question": "What does India's state performance in public health illustrate about flailing states?",
+    "options": [
+      "States can achieve significant outcomes in some areas while failing dramatically in others within the same domain",
+      "States either fail or succeed uniformly",
+      "Public health and state capacity are unrelated",
+      "All outcomes are equally distributed"
+    ],
+    "correctIndex": 0,
+    "explanation": "India's health system shows both successes (vaccination programs, medical training) and failures (maternal mortality, sanitation), exemplifying uneven capacity.",
+    "source": "Kapur-Indian_State.pdf"
+  },
+  {
+    "id": "cp12-q017",
+    "module": "cp-12",
+    "topic": "policy-implementation-gap",
+    "difficulty": "medium",
+    "question": "What creates the gap between policy intent and policy outcome in developing states?",
+    "options": [
+      "Capacity limitations, principal-agent misalignment, and constraints on resources prevent full policy implementation",
+      "Intent always translates directly to outcomes",
+      "No gap exists",
+      "Gaps are purely due to deliberate defiance"
+    ],
+    "correctIndex": 0,
+    "explanation": "Multiple factors—inadequate resources, bureaucratic misalignment, unforeseen constraints—cause actual policy outcomes to diverge from original objectives.",
+    "source": "Tightrope_Walker.pdf"
+  },
+  {
+    "id": "cp12-q018",
+    "module": "cp-12",
+    "topic": "state-performance-variation",
+    "difficulty": "medium",
+    "question": "Why does state performance vary so dramatically across different sectors and regions in India?",
+    "options": [
+      "States have different resource bases, bureaucratic capacities, and political pressures across sectors and regions",
+      "Variation is random",
+      "All sectors receive equal resources",
+      "Regional and sectoral differences are irrelevant"
+    ],
+    "correctIndex": 0,
+    "explanation": "Resource availability, bureaucratic quality, political salience, and geographic feasibility all vary across sectors and regions, producing uneven performance.",
+    "source": "Kapur-Indian_State.pdf"
+  },
+  {
+    "id": "cp12-q019",
+    "module": "cp-12",
+    "topic": "agent-rent-seeking",
+    "difficulty": "medium",
+    "question": "How do principal-agent problems enable rent-seeking behavior by bureaucrats?",
+    "options": [
+      "Information asymmetries allow agents to extract benefits (rents) through corruption without detection",
+      "Rent-seeking is impossible in bureaucracies",
+      "Principals always detect corruption",
+      "Agents have no opportunity for deviation"
+    ],
+    "correctIndex": 0,
+    "explanation": "When bureaucrats can hide information and have discretion, they may use this power to solicit bribes or extract resources, treating office as private benefit.",
+    "source": "Principal-Agent.pdf"
+  },
+  {
+    "id": "cp12-q020",
+    "module": "cp-12",
+    "topic": "anarchy-concept",
+    "difficulty": "medium",
+    "question": "What does 'anarchy' mean in 'The Grammar of Anarchy'?",
+    "options": [
+      "The absence of centralized authority enforcement, requiring negotiated coordination among social actors",
+      "Chaos and disorder",
+      "The absence of government",
+      "Lawlessness"
+    ],
+    "correctIndex": 0,
+    "explanation": "The work uses 'anarchy' in the political science sense—no overarching enforcer—to describe how local social order emerges through negotiated rules.",
+    "source": "Grammar_of_Anarchy.pdf"
+  },
+  {
+    "id": "cp12-q021",
+    "module": "cp-12",
+    "topic": "policymaker-constraints",
+    "difficulty": "medium",
+    "question": "What does the tightrope-walker model suggest about the predictability of policy outcomes?",
+    "options": [
+      "Policymakers face multiple constraints and must balance competing interests, making outcomes contingent and less predictable",
+      "Policy outcomes are entirely predictable",
+      "Constraints are irrelevant to outcomes",
+      "Policymakers face no trade-offs"
+    ],
+    "correctIndex": 0,
+    "explanation": "The model emphasizes that policy results depend on how policymakers navigate conflicting pressures, making outcomes highly context-dependent.",
+    "source": "Tightrope_Walker.pdf"
+  },
+  {
+    "id": "cp12-q022",
+    "module": "cp-12",
+    "topic": "state-extraction",
+    "difficulty": "medium",
+    "question": "What explains why states are more effective at extracting revenue from urban businesses than delivering rural services?",
+    "options": [
+      "Revenue extraction targets concentrated, visible actors; service delivery requires dispersed institutional presence",
+      "Both are equally easy",
+      "Rural areas are taxed more heavily",
+      "Cities receive no government revenue"
+    ],
+    "correctIndex": 0,
+    "explanation": "Urban businesses are easier to identify and monitor for taxation; rural service delivery requires expensive infrastructure across dispersed populations.",
+    "source": "Kapur-Indian_State.pdf"
+  },
+  {
+    "id": "cp12-q024",
+    "module": "cp-12",
+    "topic": "state-capacity-definition",
+    "difficulty": "medium",
+    "question": "How should state capacity be conceptualized given the flailing state phenomenon?",
+    "options": [
+      "As multidimensional, varying across policy domains rather than as a single overall capacity measure",
+      "As a single binary (strong or weak)",
+      "As uniform across all functions",
+      "As irrelevant to outcomes"
+    ],
+    "correctIndex": 0,
+    "explanation": "The flailing state concept requires disaggregating capacity into specific domains rather than treating it as a single attribute.",
+    "source": "Pritchett__2009__-_Is_India_a_Flailing_State.pdf"
+  },
+  {
+    "id": "cp12-q025",
+    "module": "cp-12",
+    "topic": "capacity-contradiction",
+    "difficulty": "hard",
+    "question": "How does the flailing state create a paradox for development policy?",
+    "options": [
+      "States that successfully extract resources may lack capacity to deliver results, creating a mismatch between means and ends",
+      "No paradox exists",
+      "Extractive capacity automatically ensures delivery capacity",
+      "Resources are irrelevant to outcomes"
+    ],
+    "correctIndex": 0,
+    "explanation": "Pritchett argues that India demonstrates how states can be 'strong' in some ways (revenue, military) while failing in core development outcomes (health, education).",
+    "source": "Pritchett__2009__-_Is_India_a_Flailing_State.pdf"
+  },
+  {
+    "id": "cp12-q026",
+    "module": "cp-12",
+    "topic": "principal-agent-complexity",
+    "difficulty": "hard",
+    "question": "Why do multiple layers of delegation in complex bureaucracies amplify principal-agent problems?",
+    "options": [
+      "Each additional delegation layer multiplies information asymmetries and provides more opportunities for misalignment",
+      "Delegation simplifies problems",
+      "Layers have no effect on alignment",
+      "Adding layers reduces principal-agent problems"
+    ],
+    "correctIndex": 0,
+    "explanation": "In hierarchical bureaucracies, delegation from minister to secretary to field officer creates multiple principal-agent relationships, each with potential misalignment.",
+    "source": "Principal-Agent.pdf"
+  },
+  {
+    "id": "cp12-q027",
+    "module": "cp-12",
+    "topic": "state-legitimacy-performance",
+    "difficulty": "hard",
+    "question": "How does state legitimacy depend on actual performance rather than just procedure in democracies?",
+    "options": [
+      "Citizens withdraw legitimacy when states fail to deliver outcomes, even if democratic procedures were followed",
+      "Procedural legitimacy is sufficient regardless of outcomes",
+      "Performance is irrelevant to legitimacy",
+      "Legitimacy depends only on procedures"
+    ],
+    "correctIndex": 0,
+    "explanation": "The 'grammar of anarchy' suggests that in democracies, citizens continuously evaluate whether state authority merits obedience based on both procedural fairness and substantive delivery.",
+    "source": "Grammar_of_Anarchy.pdf"
+  },
+  {
+    "id": "cp12-q028",
+    "module": "cp-12",
+    "topic": "kapur-framework",
+    "difficulty": "hard",
+    "question": "What analytical framework does Kapur propose to move beyond 'failing state' discourse?",
+    "options": [
+      "Examining specific state capacities across domains and identifying where success is possible rather than using a binary label",
+      "Calling all states equivalent",
+      "Abandoning analysis of state performance",
+      "Using only aggregate measures"
+    ],
+    "correctIndex": 0,
+    "explanation": "Kapur advocates for domain-specific analysis of state capacity rather than dismissing the entire state as 'failing,' which obscures genuine achievements.",
+    "source": "Kapur-Indian_State.pdf"
+  },
+  {
+    "id": "cp12-q029",
+    "module": "cp-12",
+    "topic": "policy-equilibrium",
+    "difficulty": "hard",
+    "question": "What does the tightrope-walker model suggest about stable policy equilibria?",
+    "options": [
+      "Stable policies reflect equilibrium among competing pressures; changing any pressure requires rebalancing across all dimensions",
+      "Policies are easily changed",
+      "No equilibrium exists in policy",
+      "One actor determines all policy"
+    ],
+    "correctIndex": 0,
+    "explanation": "The model shows that existing policies often represent contingent balances; reform requires managing all affected constituencies simultaneously.",
+    "source": "Tightrope_Walker.pdf"
+  },
+  {
+    "id": "cp12-q030",
+    "module": "cp-12",
+    "topic": "selectivity-bias",
+    "difficulty": "hard",
+    "question": "How does selective state capacity create bias in who benefits from government?",
+    "options": [
+      "Those in areas and sectors with strong state presence benefit disproportionately; peripheral populations are underserved",
+      "Benefits are distributed equally",
+      "Capacity has no distributional consequences",
+      "Weak areas receive more benefits"
+    ],
+    "correctIndex": 0,
+    "explanation": "Uneven capacity means that the poor and rural populations often live in areas where the state has minimal delivery capacity, reproducing inequality.",
+    "source": "Kapur-Indian_State.pdf"
+  },
+  {
+    "id": "cp12-q031",
+    "module": "cp-12",
+    "topic": "monitoring-challenge",
+    "difficulty": "hard",
+    "question": "Why is monitoring agent performance particularly difficult in distributed service delivery?",
+    "options": [
+      "Field-level agents have informational advantages and geographic distance prevents direct oversight, enabling deviation",
+      "Monitoring is straightforward everywhere",
+      "Distance has no effect on monitoring",
+      "All agents are equally visible"
+    ],
+    "correctIndex": 0,
+    "explanation": "In decentralized service delivery (schools, clinics), frontline workers operate far from supervisors, making it hard to verify whether they're following guidelines.",
+    "source": "Principal-Agent.pdf"
+  },
+  {
+    "id": "cp12-q032",
+    "module": "cp-12",
+    "topic": "negotiated-authority",
+    "difficulty": "hard",
+    "question": "What does understanding state authority as negotiated rather than imposed imply for governance?",
+    "options": [
+      "States must continuously justify authority through both procedural fairness and substantive performance to maintain compliance",
+      "Authority is purely imposed by force",
+      "Negotiation is irrelevant to governance",
+      "States need not justify any actions"
+    ],
+    "correctIndex": 0,
+    "explanation": "If authority is negotiated, then state survival depends on citizens perceiving sufficient legitimacy to grant the state ruling authority.",
+    "source": "Grammar_of_Anarchy.pdf"
+  },
+  {
+    "id": "cp12-q033",
+    "module": "cp-12",
+    "topic": "strategic-delegation",
+    "difficulty": "hard",
+    "question": "How might principals strategically use delegation to address their own limitations?",
+    "options": [
+      "By delegating to agents with specialized expertise that principals lack, though this creates new principal-agent risks",
+      "Delegation prevents any expertise",
+      "Principals can never benefit from delegation",
+      "Expertise is irrelevant to governance"
+    ],
+    "correctIndex": 0,
+    "explanation": "Delegation allows access to expertise and local knowledge, but this same information asymmetry creates monitoring challenges.",
+    "source": "Principal-Agent.pdf"
+  },
+  {
+    "id": "cp12-q034",
+    "module": "cp-12",
+    "topic": "reform-political-economy",
+    "difficulty": "hard",
+    "question": "What does the tightrope-walker model suggest about why state reforms often fail?",
+    "options": [
+      "Reforms disrupt existing equilibria, causing veto players to mobilize against change unless carefully managed",
+      "Reforms always succeed immediately",
+      "No resistance to reform exists",
+      "Veto players have no power"
+    ],
+    "correctIndex": 0,
+    "explanation": "The model emphasizes that existing policy balances serve particular interests; any reform creates losers who can block change.",
+    "source": "Tightrope_Walker.pdf"
+  },
+  {
+    "id": "cp12-q035",
+    "module": "cp-12",
+    "topic": "capability-approach",
+    "difficulty": "expert",
+    "question": "How does conceptualizing the Indian state through capability domains challenge traditional state capacity theory?",
+    "options": [
+      "It disaggregates state capacity into specific functions, showing that abstract 'state capacity' is too broad and obscures heterogeneous realities",
+      "It claims all states are identical",
+      "It returns to unified capacity measures",
+      "It rejects all state analysis"
+    ],
+    "correctIndex": 0,
+    "explanation": "Kapur's approach refuses to reduce the Indian state to a single capacity score, instead examining specific capabilities (taxation, education delivery, health provision) separately.",
+    "source": "Kapur-Indian_State.pdf"
+  },
+  {
+    "id": "cp12-q036",
+    "module": "cp-12",
+    "topic": "moral-economy-anarchy",
+    "difficulty": "expert",
+    "question": "How does the concept of a moral economy inform 'The Grammar of Anarchy' analysis?",
+    "options": [
+      "It suggests state authority depends on whether actors perceive state behavior as adhering to locally-understood standards of reciprocal obligation",
+      "Morality is irrelevant to state authority",
+      "Economic relationships are purely transactional",
+      "Local norms never affect state legitimacy"
+    ],
+    "correctIndex": 0,
+    "explanation": "The work argues that state authority is contested based on whether the state honors implicit social contracts about reciprocal duties and obligations.",
+    "source": "Grammar_of_Anarchy.pdf"
+  },
+  {
+    "id": "cp12-q037",
+    "module": "cp-12",
+    "topic": "revealed-preference",
+    "difficulty": "expert",
+    "question": "What does the flailing state concept reveal about the relationship between policy announcements and revealed state priorities?",
+    "options": [
+      "Official commitments to health and education often reveal less than states' actual resource allocation to military and administration",
+      "Announcements perfectly reflect priorities",
+      "States have no real priorities",
+      "Resource allocation is irrelevant"
+    ],
+    "correctIndex": 0,
+    "explanation": "Pritchett's work shows that India's stated commitment to human development has not translated into proportional resource allocation, revealing actual priorities.",
+    "source": "Pritchett__2009__-_Is_India_a_Flailing_State.pdf"
+  },
+  {
+    "id": "cp12-q038",
+    "module": "cp-12",
+    "topic": "multiple-equilibria",
+    "difficulty": "expert",
+    "question": "How does principal-agent theory explain why bad equilibria can persist despite being Pareto-inefficient?",
+    "options": [
+      "Each actor has incentives that prevent coordinated movement away from a bad equilibrium, even though all would benefit from change",
+      "Bad equilibria are impossible",
+      "All equilibria are equally good",
+      "Coordination is costless"
+    ],
+    "correctIndex": 0,
+    "explanation": "The theory shows that even when all actors would be better off under different arrangements, existing incentive structures can lock in poor outcomes.",
+    "source": "Principal-Agent.pdf"
+  },
+  {
+    "id": "cp12-q039",
+    "module": "cp-12",
+    "topic": "tightrope-institutional",
+    "difficulty": "expert",
+    "question": "What institutional factors determine how much tightrope policymakers must walk?",
+    "options": [
+      "The number of veto players, their geographic distribution, and their capacity to block policy create pressure requiring careful balance",
+      "No factors affect policy space",
+      "All regimes require identical balancing",
+      "Institutions are irrelevant to constraints"
+    ],
+    "correctIndex": 0,
+    "explanation": "Decentralized systems with many veto players force policymakers to negotiate more extensively than centralized systems with fewer veto points.",
+    "source": "Tightrope_Walker.pdf"
+  },
+  {
+    "id": "cp12-q040",
+    "module": "cp-12",
+    "topic": "democracy-state-capacity",
+    "difficulty": "expert",
+    "question": "What paradox does Indian democracy create for understanding state capacity?",
+    "options": [
+      "Democracy generates demands for state capacity it simultaneously makes difficult to deliver by requiring consensus across veto players",
+      "Democracy removes all constraints",
+      "No relationship between democracy and capacity",
+      "Authoritarianism automatically strengthens capacity"
+    ],
+    "correctIndex": 0,
+    "explanation": "India's democratic structure multiplies veto players and demands accountability, yet these same features constrain executive action needed for policy implementation.",
+    "source": "Grammar_of_Anarchy.pdf"
+  },
+  {
+    "id": "cp12-q041",
+    "module": "cp-12",
+    "topic": "development-state",
+    "difficulty": "medium",
+    "question": "How does the flailing state concept complicate narratives about development and progress?",
+    "options": [
+      "It shows that countries can have modern institutions and economic growth without strong capacity in human development outcomes",
+      "Development always follows automatically",
+      "Economic and institutional development are unrelated",
+      "Progress is linear and inevitable"
+    ],
+    "correctIndex": 0,
+    "explanation": "The flailing state demonstrates that conventional measures of development (GDP, urbanization, military capacity) can coexist with failure in education, health, and welfare.",
+    "source": "Kapur-Indian_State.pdf"
+  },
+  {
+    "id": "cp12-q043",
+    "module": "cp-12",
+    "topic": "state-capacity",
+    "difficulty": "expert",
+    "question": "India successfully runs a space programme and maintains a nuclear arsenal, yet struggles to deliver clean water and functional public schools in many districts. Kapur's framework of selective state capacity offers one explanation. What is the most defensible account of this asymmetry?",
+    "options": [
+      "Space and nuclear programmes are corruption-free because they are managed by technical elites, whereas service delivery involves politicians who divert funds",
+      "The asymmetry reflects selective state capacity — the state can be highly capable where it has concentrated authority, clear metrics, and insulated decision-making, but fragmented across the diffuse, politically contested terrain of service delivery",
+      "Service delivery failures are primarily a resource problem; if India's defence and space budgets were redirected to social services, outcomes would improve proportionally",
+      "The asymmetry is temporary and will resolve as economic development increases overall state revenue and administrative capacity"
+    ],
+    "correctIndex": 1,
+    "explanation": "Kapur's selective capacity argument is that the Indian state is not uniformly weak or strong — it can concentrate capability where institutional design creates insulation from political interference and where goals are measurable. Space and nuclear programmes have clear objectives, specialised agencies, and political insulation. Service delivery is contested across fragmented bureaucracies, political interests, and principal-agent chains that defeat these conditions.",
+    "source": "cp-12/kapur-state-capacity.md"
+  },
+  {
+    "id": "cp12-q042",
+    "module": "cp-12",
+    "topic": "policy-reform",
+    "difficulty": "expert",
+    "question": "A reformist state government wants to improve public school quality. It designs strong accountability mechanisms, performance-based pay for teachers, and clear outcome metrics. Eighteen months later, teaching quality is unchanged and teacher morale has collapsed. Which diagnosis is most consistent with the principal-agent and flailing state frameworks?",
+    "options": [
+      "The reform failed because teachers are intrinsically unmotivated and performance pay cannot change this fundamental disposition",
+      "The reform focused on measurement and incentives but ignored the information asymmetry problem — street-level bureaucrats (teachers) have local knowledge that principals (administrators) cannot replicate or verify, so metrics get gamed rather than genuinely improving outcomes",
+      "Eighteen months is too short to evaluate education reforms; the accountability mechanisms simply need more time to change behaviour",
+      "The problem is that performance pay is too low to motivate change; increasing the financial stakes would resolve the implementation failure"
+    ],
+    "correctIndex": 1,
+    "explanation": "The principal-agent framework predicts that when agents (teachers) have information advantages over principals (administrators), they will respond to accountability mechanisms by gaming metrics rather than improving underlying performance. The flailing state literature adds that diffuse service delivery chains compound this — each link in the administrative chain has its own interests and information advantages, making top-down incentive design reliably ineffective without addressing the information and accountability structure at each level.",
+    "source": "cp-12/principal-agent-state.md"
+  }
+]

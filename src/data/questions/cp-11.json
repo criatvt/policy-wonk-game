@@ -1,0 +1,674 @@
+[
+  {
+    "id": "cp11-q001",
+    "module": "cp-11",
+    "topic": "nationalism",
+    "difficulty": "easy",
+    "question": "What does Benedict Anderson define as the origin of nationalism?",
+    "options": [
+      "The invention of imagined communities through print media",
+      "The spread of divine right doctrine",
+      "The consolidation of military power",
+      "The establishment of feudal hierarchies"
+    ],
+    "correctIndex": 0,
+    "explanation": "Anderson argues that nationalism emerged when print media made it possible for people to imagine themselves as part of large communities without direct face-to-face contact.",
+    "source": "Anderson-Imagined_Communities.pdf"
+  },
+  {
+    "id": "cp11-q002",
+    "module": "cp-11",
+    "topic": "nation-state",
+    "difficulty": "easy",
+    "question": "In Anderson's framework, what role did print capitalism play?",
+    "options": [
+      "It enabled the formation of national consciousness and identity",
+      "It consolidated royal power",
+      "It prevented social mobility",
+      "It strengthened church authority"
+    ],
+    "correctIndex": 0,
+    "explanation": "Print capitalism allowed vernacular languages to standardize and circulate widely, creating a shared linguistic and cultural space that enabled imagined national communities.",
+    "source": "Anderson-Imagined_Communities.pdf"
+  },
+  {
+    "id": "cp11-q003",
+    "module": "cp-11",
+    "topic": "sovereignty",
+    "difficulty": "easy",
+    "question": "According to Krasner, what is the 'hole in the whole' paradox?",
+    "options": [
+      "States violate their own rules and norms while claiming perfect sovereignty",
+      "Nationalism creates internal divisions within states",
+      "International law has no enforcement mechanisms",
+      "Democracy weakens state capacity"
+    ],
+    "correctIndex": 0,
+    "explanation": "Krasner argues that states consistently violate principles of sovereignty and international law they claim to uphold, revealing deep contradictions in how sovereignty is practiced.",
+    "source": "Krasner-The_Hole_in_the_Whole.pdf"
+  },
+  {
+    "id": "cp11-q004",
+    "module": "cp-11",
+    "topic": "state-theory",
+    "difficulty": "easy",
+    "question": "What does Westphalian sovereignty emphasize?",
+    "options": [
+      "State autonomy and non-interference in internal affairs",
+      "The supremacy of international institutions",
+      "The sovereignty of monarchs over citizens",
+      "The primacy of religious authority"
+    ],
+    "correctIndex": 0,
+    "explanation": "Westphalian sovereignty, emerging from the 1648 Peace of Westphalia, established the principle of state territorial autonomy and non-interference by other states in internal matters.",
+    "source": "Krasner-The_Hole_in_the_Whole.pdf"
+  },
+  {
+    "id": "cp11-q005",
+    "module": "cp-11",
+    "topic": "liberal-nationalism",
+    "difficulty": "easy",
+    "question": "What is the key distinction of liberal nationalism?",
+    "options": [
+      "It seeks to combine national identity with individual rights and democratic governance",
+      "It prioritizes cultural purity over individual freedoms",
+      "It rejects all forms of national identity",
+      "It advocates for empire-building"
+    ],
+    "correctIndex": 0,
+    "explanation": "Liberal nationalism seeks to reconcile the bonds of national community with liberal principles of individual rights, democratic representation, and limited government.",
+    "source": "Liberal_Nationalism.pdf"
+  },
+  {
+    "id": "cp11-q006",
+    "module": "cp-11",
+    "topic": "ethnic-nationalism",
+    "difficulty": "easy",
+    "question": "How does ethnic nationalism differ from civic nationalism?",
+    "options": [
+      "Ethnic nationalism bases membership on shared ancestry; civic nationalism bases it on shared political values and institutions",
+      "Ethnic nationalism is always peaceful while civic nationalism leads to conflict",
+      "Civic nationalism predates ethnic nationalism historically",
+      "They are synonymous terms"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ethnic nationalism emphasizes shared ethnicity, language, or culture as criteria for national membership, while civic nationalism emphasizes shared political principles and loyalty to institutions.",
+    "source": "Liberal_Nationalism.pdf"
+  },
+  {
+    "id": "cp11-q007",
+    "module": "cp-11",
+    "topic": "partha-chatterjee",
+    "difficulty": "easy",
+    "question": "What does Partha Chatterjee argue about the state in colonized societies?",
+    "options": [
+      "The state became a site of contested authority between colonial power and nationalist movements",
+      "Nationalist movements rejected the state entirely",
+      "The colonial state was fully accepted by local populations",
+      "The state had no relevance to nationalism"
+    ],
+    "correctIndex": 0,
+    "explanation": "Chatterjee analyzes how colonized societies experienced the state as an imposed structure, around which nationalist movements developed competing claims of legitimacy and authority.",
+    "source": "Chatterjee-The_State.pdf"
+  },
+  {
+    "id": "cp11-q008",
+    "module": "cp-11",
+    "topic": "nation-building",
+    "difficulty": "easy",
+    "question": "What is a key challenge in constructing a nation from a diverse population?",
+    "options": [
+      "Creating a shared identity and sense of belonging across different groups",
+      "Maintaining absolutely uniform culture",
+      "Eliminating all regional differences",
+      "Establishing pure ethnic homogeneity"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nation-building involves creating sufficient social cohesion and shared identity to enable collective action and governance, despite inherent diversity.",
+    "source": "What_It_Takes.pdf"
+  },
+  {
+    "id": "cp11-q009",
+    "module": "cp-11",
+    "topic": "nationalism-conflict",
+    "difficulty": "easy",
+    "question": "Why did Nitin Pai characterize certain nationalist movements as 'flash mobs of class warfare'?",
+    "options": [
+      "They mobilize temporarily around class grievances without developing deep organizational capacity",
+      "They exclusively use digital media",
+      "They reject all forms of political organization",
+      "They are organized by a single charismatic leader"
+    ],
+    "correctIndex": 0,
+    "explanation": "Pai uses 'flash mob' to suggest that some nationalist movements are episodic mobilizations around class interests rather than sustained, institutionalized movements.",
+    "source": "Nitin_Pai-Flash_Mobs.pdf"
+  },
+  {
+    "id": "cp11-q010",
+    "module": "cp-11",
+    "topic": "imagined-communities",
+    "difficulty": "easy",
+    "question": "What makes a nation 'imagined' according to Anderson?",
+    "options": [
+      "Citizens imagine bonds with strangers they will never meet, yet feel genuine connection",
+      "Nations are entirely fictional constructs",
+      "Nationalism is irrational belief",
+      "Nations exist only in literature"
+    ],
+    "correctIndex": 0,
+    "explanation": "Anderson uses 'imagined' not to mean false, but to describe how nations function through shared cultural imagination despite members never directly interacting.",
+    "source": "Anderson-Imagined_Communities.pdf"
+  },
+  {
+    "id": "cp11-q011",
+    "module": "cp-11",
+    "topic": "sovereignty-practice",
+    "difficulty": "easy",
+    "question": "What is the relationship between de jure and de facto sovereignty?",
+    "options": [
+      "States may claim legal sovereignty while lacking practical authority in their territory",
+      "They are always identical",
+      "De facto sovereignty is more important than de jure",
+      "Modern states have no de jure claims"
+    ],
+    "correctIndex": 0,
+    "explanation": "States may formally claim sovereignty (de jure) while facing practical constraints (de facto) on their ability to control territory and population.",
+    "source": "Krasner-The_Hole_in_the_Whole.pdf"
+  },
+  {
+    "id": "cp11-q012",
+    "module": "cp-11",
+    "topic": "nation-membership",
+    "difficulty": "easy",
+    "question": "How do members of a nation typically develop a sense of shared identity?",
+    "options": [
+      "Through exposure to common symbols, narratives, media, and institutions",
+      "Through genetic similarity alone",
+      "Through forced assimilation only",
+      "Through geographic proximity exclusively"
+    ],
+    "correctIndex": 0,
+    "explanation": "National identity is constructed and reproduced through cultural and institutional channels—shared language, media, education, symbols—that create collective imagination.",
+    "source": "Anderson-Imagined_Communities.pdf"
+  },
+  {
+    "id": "cp11-q013",
+    "module": "cp-11",
+    "topic": "nationalism-origins",
+    "difficulty": "medium",
+    "question": "How did the shift from Latin to vernacular languages contribute to nationalist sentiment?",
+    "options": [
+      "Vernacular languages allowed larger populations to access texts and imagine shared communities",
+      "Latin facilitated nationalism more effectively",
+      "Language had no effect on nationalism",
+      "Vernacular languages fragmented communities"
+    ],
+    "correctIndex": 0,
+    "explanation": "The move to vernacular languages democratized literacy and print distribution, enabling larger populations to share cultural references and develop national consciousness.",
+    "source": "Anderson-Imagined_Communities.pdf"
+  },
+  {
+    "id": "cp11-q014",
+    "module": "cp-11",
+    "topic": "state-capacity",
+    "difficulty": "medium",
+    "question": "According to Krasner, what explains the gap between stated and actual state behavior regarding sovereignty?",
+    "options": [
+      "States prioritize strategic interests over consistent adherence to principles",
+      "States lack the intelligence to understand their own rules",
+      "International institutions force violations",
+      "Citizens demand sovereignty violations"
+    ],
+    "correctIndex": 0,
+    "explanation": "Krasner argues that states strategically violate sovereignty norms when it serves their interests, revealing that sovereignty is negotiated rather than absolute.",
+    "source": "Krasner-The_Hole_in_the_Whole.pdf"
+  },
+  {
+    "id": "cp11-q015",
+    "module": "cp-11",
+    "topic": "liberal-nationalism-tensions",
+    "difficulty": "medium",
+    "question": "What tension does liberal nationalism attempt to resolve?",
+    "options": [
+      "The tension between national solidarity and individual liberty",
+      "The tension between monarchy and democracy",
+      "The tension between tradition and modernity",
+      "The tension between urban and rural areas"
+    ],
+    "correctIndex": 0,
+    "explanation": "Liberal nationalism seeks to maintain both a strong sense of national community and liberal commitment to individual rights and democratic governance.",
+    "source": "Liberal_Nationalism.pdf"
+  },
+  {
+    "id": "cp11-q016",
+    "module": "cp-11",
+    "topic": "national-identity-construction",
+    "difficulty": "medium",
+    "question": "How do states use institutions to construct national identity?",
+    "options": [
+      "Through education systems, media, symbols, and rituals that promote shared understanding",
+      "States are passive recipients of national identity",
+      "Institutions have no role in identity formation",
+      "Only families can construct identity"
+    ],
+    "correctIndex": 0,
+    "explanation": "States actively shape national identity through schools, public ceremonies, media regulation, and official narratives that cultivate common cultural understanding.",
+    "source": "Chatterjee-The_State.pdf"
+  },
+  {
+    "id": "cp11-q017",
+    "module": "cp-11",
+    "topic": "postcolonial-nationalism",
+    "difficulty": "medium",
+    "question": "What is distinctive about nationalism in formerly colonized societies according to Chatterjee?",
+    "options": [
+      "It developed through contestation with colonial authority and sought to reclaim sovereignty",
+      "It merely copied Western nationalism",
+      "It rejected all forms of state organization",
+      "It was imposed entirely from above"
+    ],
+    "correctIndex": 0,
+    "explanation": "In postcolonial contexts, nationalism emerged as a response to colonial domination, with nationalists claiming authority against foreign rule while reorganizing the state.",
+    "source": "Chatterjee-The_State.pdf"
+  },
+  {
+    "id": "cp11-q018",
+    "module": "cp-11",
+    "topic": "nation-vs-ethnicity",
+    "difficulty": "medium",
+    "question": "Why is the distinction between nations and ethnic groups analytically important?",
+    "options": [
+      "Nations are political projects; ethnic groups are cultural categories that may or may not coincide with states",
+      "They are identical terms",
+      "Nations always precede ethnic groups",
+      "Only nations can have cultural identity"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nations represent political organization and sovereignty claims, while ethnic groups represent cultural identity; many states contain multiple ethnic groups, and ethnic groups may span multiple nations.",
+    "source": "Liberal_Nationalism.pdf"
+  },
+  {
+    "id": "cp11-q019",
+    "module": "cp-11",
+    "topic": "nationalism-legitimacy",
+    "difficulty": "medium",
+    "question": "How does nationalist ideology claim to legitimize state authority?",
+    "options": [
+      "By asserting that the state represents the will and identity of the nation's people",
+      "By claiming divine right",
+      "By demonstrating military superiority",
+      "By denying legitimacy is necessary"
+    ],
+    "correctIndex": 0,
+    "explanation": "Modern nationalism asserts that legitimate political authority derives from representing a unified national people, not from tradition or force alone.",
+    "source": "What_It_Takes.pdf"
+  },
+  {
+    "id": "cp11-q020",
+    "question": "What does Anderson suggest about the relationship between print capitalism and print language?",
+    "module": "cp-11",
+    "topic": "print-capitalism",
+    "difficulty": "medium",
+    "options": [
+      "Print capitalism favored certain languages, creating standardized linguistic communities that became national",
+      "All languages benefited equally from print capitalism",
+      "Print capitalism opposed language standardization",
+      "Language preceded and shaped print capitalism"
+    ],
+    "correctIndex": 0,
+    "explanation": "Anderson argues that print capitalism invested in certain languages for profit motives, which had the unintended consequence of standardizing and nationalizing those languages.",
+    "source": "Anderson-Imagined_Communities.pdf"
+  },
+  {
+    "id": "cp11-q021",
+    "module": "cp-11",
+    "topic": "sovereignty-violations",
+    "difficulty": "medium",
+    "question": "How do states justify sovereignty violations while maintaining the principle of sovereignty?",
+    "options": [
+      "They frame violations as exceptions, necessity, or claims to special circumstances",
+      "They openly declare sovereignty is meaningless",
+      "They never violate sovereignty",
+      "They abolish the concept entirely"
+    ],
+    "correctIndex": 0,
+    "explanation": "States maintain the rhetoric of sovereignty while strategically exempting their own actions through legal doctrines, emergency powers, or claims about threats.",
+    "source": "Krasner-The_Hole_in_the_Whole.pdf"
+  },
+  {
+    "id": "cp11-q022",
+    "module": "cp-11",
+    "topic": "class-nationalism",
+    "difficulty": "medium",
+    "question": "What does Pai mean by suggesting nationalism can become a vehicle for class conflict?",
+    "options": [
+      "Nationalist movements may mobilize around class interests rather than ethnic or cultural unity",
+      "Class and nationalism are unrelated",
+      "Nationalism automatically transcends class divisions",
+      "Only classes, not nations, matter politically"
+    ],
+    "correctIndex": 0,
+    "explanation": "Pai analyzes how nationalist rhetoric can be deployed to advance particular class interests, making nationalism a contested terrain rather than an expression of unified national interest.",
+    "source": "Nitin_Pai-Flash_Mobs.pdf"
+  },
+  {
+    "id": "cp11-q024",
+    "module": "cp-11",
+    "topic": "civic-community",
+    "difficulty": "medium",
+    "question": "How does civic nationalism define community membership?",
+    "options": [
+      "Through shared political institutions and commitment to constitutional principles",
+      "Through blood descent exclusively",
+      "Through religious uniformity",
+      "Through geographic isolation"
+    ],
+    "correctIndex": 0,
+    "explanation": "Civic nationalism defines the national community through shared participation in political institutions and adherence to civic principles, open to diverse ethnic backgrounds.",
+    "source": "Liberal_Nationalism.pdf"
+  },
+  {
+    "id": "cp11-q025",
+    "module": "cp-11",
+    "topic": "print-standardization",
+    "difficulty": "hard",
+    "question": "How does Anderson's analysis of print capitalism challenge teleological narratives of nationalism?",
+    "options": [
+      "It shows nationalism emerged as an unintended consequence of economic forces, not inevitable progress",
+      "It proves nationalism is purely cultural",
+      "It demonstrates nationalism was fully planned",
+      "It argues print had no impact on social change"
+    ],
+    "correctIndex": 0,
+    "explanation": "Anderson's argument suggests nationalism resulted from contingent economic developments, not from a predetermined march toward modern nation-states.",
+    "source": "Anderson-Imagined_Communities.pdf"
+  },
+  {
+    "id": "cp11-q026",
+    "module": "cp-11",
+    "topic": "sovereignty-paradox",
+    "difficulty": "hard",
+    "question": "What does Krasner identify as the fundamental paradox within the sovereignty concept itself?",
+    "options": [
+      "States cannot simultaneously honor territorial sovereignty while participating in an interconnected world system",
+      "Sovereignty was never clearly defined",
+      "Only powerful states claim sovereignty",
+      "Sovereignty and democracy are unrelated"
+    ],
+    "correctIndex": 0,
+    "explanation": "Krasner's analysis reveals that absolute sovereignty is incompatible with participation in international systems, yet states maintain the rhetoric of sovereignty anyway.",
+    "source": "Krasner-The_Hole_in_the_Whole.pdf"
+  },
+  {
+    "id": "cp11-q027",
+    "module": "cp-11",
+    "topic": "liberal-nationalism-critique",
+    "difficulty": "hard",
+    "question": "What is a major critique of liberal nationalism as a framework?",
+    "options": [
+      "It assumes nations can be ethnically/culturally diverse while maintaining civic unity, which empirically often fails",
+      "It is inherently fascist",
+      "It denies any role for cultural identity",
+      "It is theoretically incoherent"
+    ],
+    "correctIndex": 0,
+    "explanation": "Critics argue that liberal nationalism underestimates how ethnic or cultural particularism can undermine commitment to universal civic principles.",
+    "source": "Liberal_Nationalism.pdf"
+  },
+  {
+    "id": "cp11-q028",
+    "module": "cp-11",
+    "topic": "state-nation-mismatch",
+    "difficulty": "hard",
+    "question": "What does Chatterjee argue about the relationship between the post-colonial state and pre-colonial nations?",
+    "options": [
+      "Colonial borders created states that often encompassed multiple pre-existing nations, creating ongoing tensions",
+      "Nations and states always coincided perfectly",
+      "Colonialism had no effect on nation-state boundaries",
+      "Pre-colonial nations accepted state borders completely"
+    ],
+    "correctIndex": 0,
+    "explanation": "Chatterjee's analysis emphasizes how colonialism imposed arbitrary boundaries that fragmented some nations and grouped others together, creating enduring structural conflicts.",
+    "source": "Chatterjee-The_State.pdf"
+  },
+  {
+    "id": "cp11-q029",
+    "module": "cp-11",
+    "topic": "nationalism-modernity",
+    "difficulty": "hard",
+    "question": "How does the timing of nationalism relate to broader processes of modernity?",
+    "options": [
+      "Nationalism emerged alongside industrialization, mass literacy, and print media as interconnected modern phenomena",
+      "Nationalism predates modernity",
+      "Modernity and nationalism are unrelated",
+      "Nationalism caused modernity"
+    ],
+    "correctIndex": 0,
+    "explanation": "Anderson and others situate nationalism within a broader constellation of modern developments—capitalism, technology, literacy—that jointly enabled imagined national communities.",
+    "source": "Anderson-Imagined_Communities.pdf"
+  },
+  {
+    "id": "cp11-q030",
+    "module": "cp-11",
+    "topic": "institutional-sovereignty",
+    "difficulty": "hard",
+    "question": "According to Krasner, how do international institutions affect state claims to sovereignty?",
+    "options": [
+      "They simultaneously reinforce and undermine sovereignty by requiring states to recognize each other while also constraining unilateral action",
+      "They strengthen sovereignty completely",
+      "They have no relationship to sovereignty",
+      "They abolish sovereignty entirely"
+    ],
+    "correctIndex": 0,
+    "explanation": "International institutions create a paradoxical situation where states' recognition of each other's sovereignty is conditional on submitting to collective rules.",
+    "source": "Krasner-The_Hole_in_the_Whole.pdf"
+  },
+  {
+    "id": "cp11-q031",
+    "module": "cp-11",
+    "topic": "nationalism-dissent",
+    "difficulty": "hard",
+    "question": "What internal challenges do nationalist movements face when trying to build unified nations from diverse populations?",
+    "options": [
+      "Suppressing or marginalizing groups that don't fit the dominant nationalist narrative, creating internal dissent",
+      "There are no internal challenges",
+      "Diversity automatically strengthens nationalism",
+      "Nationalism dissolves all differences"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nationalist projects often require suppressing or subordinating subnational identities (regional, ethnic, religious), generating internal resistance and periodic crises.",
+    "source": "What_It_Takes.pdf"
+  },
+  {
+    "id": "cp11-q032",
+    "module": "cp-11",
+    "topic": "nationalism-class-theory",
+    "difficulty": "hard",
+    "question": "How does Pai's analysis complicate Marxist theory's relationship to nationalism?",
+    "options": [
+      "By showing that nationalism can simultaneously express class interests while transcending class through appeals to shared identity",
+      "By proving Marxism is entirely correct",
+      "By rejecting all class analysis",
+      "By arguing class is irrelevant to nationalism"
+    ],
+    "correctIndex": 0,
+    "explanation": "Pai's work suggests that nationalism's appeal lies partly in its ability to mobilize around class grievances while obscuring them under the language of national interest.",
+    "source": "Nitin_Pai-Flash_Mobs.pdf"
+  },
+  {
+    "id": "cp11-q033",
+    "module": "cp-11",
+    "topic": "postcolonial-sovereignty",
+    "difficulty": "hard",
+    "question": "What does Chatterjee identify as the paradox of postcolonial sovereignty?",
+    "options": [
+      "New states inherited colonial state forms while claiming to represent indigenous nations with different authority structures",
+      "Postcolonial states have complete sovereignty",
+      "Colonialism had no institutional legacy",
+      "Postcolonial nations rejected statehood"
+    ],
+    "correctIndex": 0,
+    "explanation": "Chatterjee argues that postcolonial nationalists inherited European state forms while claiming to represent fundamentally different social and political orders.",
+    "source": "Chatterjee-The_State.pdf"
+  },
+  {
+    "id": "cp11-q034",
+    "module": "cp-11",
+    "topic": "nationalism-universalism",
+    "difficulty": "hard",
+    "question": "How does liberal nationalism attempt to reconcile universalist principles with particularist national loyalty?",
+    "options": [
+      "By claiming national communities can embody universal values while maintaining distinct cultural expression",
+      "By abandoning universalism entirely",
+      "By denying particularism exists",
+      "By claiming all nations are identical"
+    ],
+    "correctIndex": 0,
+    "explanation": "Liberal nationalism asserts that universal principles (rights, democracy, rule of law) can be instantiated through specific national forms, creating a bridge between universal and particular.",
+    "source": "Liberal_Nationalism.pdf"
+  },
+  {
+    "id": "cp11-q035",
+    "module": "cp-11",
+    "topic": "anderson-historiography",
+    "difficulty": "expert",
+    "question": "How does Anderson's treatment of 'creole nationalism' challenge traditional genealogies of nationalism?",
+    "options": [
+      "It suggests nationalism originated in colonial contexts through creole elites, predating European nationalism",
+      "It proves all nationalism is European",
+      "It claims creoles had no national consciousness",
+      "It is historically inaccurate"
+    ],
+    "correctIndex": 0,
+    "explanation": "Anderson argues that Spanish American creole nationalism, arising from administrative divisions in colonial bureaucracies, emerged before 19th-century European nationalism.",
+    "source": "Anderson-Imagined_Communities.pdf"
+  },
+  {
+    "id": "cp11-q036",
+    "module": "cp-11",
+    "topic": "krasner-international-law",
+    "difficulty": "expert",
+    "question": "What does Krasner's framework reveal about the relationship between international law and state practice?",
+    "options": [
+      "International law functions more to legitimize state behavior than to constrain it, as states violate principles they helped create",
+      "International law perfectly constrains state behavior",
+      "States follow all international rules consistently",
+      "International law is purely theoretical"
+    ],
+    "correctIndex": 0,
+    "explanation": "Krasner's historical analysis shows states use international law selectively, violating the same principles they formally endorse depending on circumstances.",
+    "source": "Krasner-The_Hole_in_the_Whole.pdf"
+  },
+  {
+    "id": "cp11-q037",
+    "module": "cp-11",
+    "topic": "nationalism-contingency",
+    "difficulty": "expert",
+    "question": "How does emphasizing the role of print capitalism in nationalism change our understanding of national identity?",
+    "options": [
+      "It suggests national identities are contingent historical constructions rather than expressions of primordial bonds",
+      "It proves identity is entirely determined by economics",
+      "It denies any cultural dimension to nationalism",
+      "It returns to essentialist views of identity"
+    ],
+    "correctIndex": 0,
+    "explanation": "By tracing nationalism to economic developments rather than inherent national essence, Anderson's approach historicizes and denaturalizes national identity.",
+    "source": "Anderson-Imagined_Communities.pdf"
+  },
+  {
+    "id": "cp11-q038",
+    "module": "cp-11",
+    "topic": "state-capacity-nationalism",
+    "difficulty": "expert",
+    "question": "What does Chatterjee's work suggest about how states use nationalism to extend their administrative capacity?",
+    "options": [
+      "States employ nationalist discourse to legitimize expansion of state reach into civil society and local governance",
+      "States ignore nationalism in administration",
+      "Nationalism weakens state capacity",
+      "There is no relationship between state capacity and nationalism"
+    ],
+    "correctIndex": 0,
+    "explanation": "Chatterjee analyzes how both colonial and postcolonial states use appeals to nationalism to mobilize populations and extend bureaucratic control.",
+    "source": "Chatterjee-The_State.pdf"
+  },
+  {
+    "id": "cp11-q039",
+    "module": "cp-11",
+    "topic": "nationalism-temporality",
+    "difficulty": "expert",
+    "question": "How does Anderson's concept of simultaneity relate to the formation of national consciousness?",
+    "options": [
+      "Print media creates the possibility of imagining strangers engaging in simultaneous action, fostering national consciousness",
+      "Simultaneity has no role in nationalism",
+      "All communities experience simultaneity equally",
+      "Print media prevents awareness of simultaneity"
+    ],
+    "correctIndex": 0,
+    "explanation": "Anderson emphasizes that print media allows people to imagine thousands of strangers reading the same newspaper simultaneously, creating horizontal solidarity.",
+    "source": "Anderson-Imagined_Communities.pdf"
+  },
+  {
+    "id": "cp11-q040",
+    "module": "cp-11",
+    "topic": "liberal-nationalism-tension",
+    "difficulty": "expert",
+    "question": "What does liberal nationalism's tension between universal rights and particular national loyalty reveal about modern political theory?",
+    "options": [
+      "That the nation-state structure inherently contains contradictory commitments that require ongoing negotiation",
+      "That universal rights are more important than nationalism",
+      "That nationalism and liberalism are entirely compatible",
+      "That this tension is resolved through nationalism alone"
+    ],
+    "correctIndex": 0,
+    "explanation": "Liberal nationalism exemplifies a fundamental structural tension in modernity: the coexistence of claims to universal human rights with particularistic national belonging.",
+    "source": "Liberal_Nationalism.pdf"
+  },
+  {
+    "id": "cp11-q041",
+    "module": "cp-11",
+    "topic": "nationalism-essentialism",
+    "difficulty": "medium",
+    "question": "What is the significance of challenging essentialist views of nationalism?",
+    "options": [
+      "It reveals that national identities are socially constructed and can change, not fixed by nature or blood",
+      "Nationalism is determined by biology",
+      "Nations cannot evolve",
+      "Identity never changes"
+    ],
+    "correctIndex": 0,
+    "explanation": "Showing nationalism as historically contingent rather than essential opens space for critically examining national projects and potentially reimagining community.",
+    "source": "Anderson-Imagined_Communities.pdf"
+  },
+  {
+    "id": "cp11-q043",
+    "module": "cp-11",
+    "topic": "nationalism-and-state",
+    "difficulty": "expert",
+    "question": "Anderson argues nationalism is modern, constructed through print capitalism and imagined simultaneity. Yet nationalist movements routinely claim ancient, primordial roots. What does this paradox reveal about how nationalism actually functions politically?",
+    "options": [
+      "The constructed origins of nationalism are irrelevant once it becomes a powerful political force — what matters is that citizens believe in it, regardless of historical accuracy",
+      "Nationalist movements deliberately falsify history, which means they are inherently illegitimate and can be delegitimised by historical scholarship",
+      "The tension reveals that nationalism serves as a legitimating technology — constructed origins are strategically deployed as primordial to claim authority that modern political institutions alone cannot provide",
+      "Anderson's analysis only applies to European nationalism; in post-colonial states, national identity genuinely predates modern print capitalism"
+    ],
+    "correctIndex": 2,
+    "explanation": "The key insight is that nationalism's constructed nature does not make it less real or less powerful. Nationalist movements invoke primordial roots precisely because constructed, modern origins would undermine the authority they seek. This reveals nationalism as a legitimating technology — its historical revisionism is not a bug but a feature, serving to naturalise political claims that are fundamentally modern.",
+    "source": "cp-11/anderson-imagined-communities.md"
+  },
+  {
+    "id": "cp11-q042",
+    "module": "cp-11",
+    "topic": "sovereignty-and-ir",
+    "difficulty": "expert",
+    "question": "Krasner identifies 'sovereignty holes' — areas where international actors exercise authority that formally belongs to states. A critic argues this merely describes power imbalances, not a structural feature of sovereignty. How should a defender of Krasner's framework respond?",
+    "options": [
+      "The critic is right; sovereignty holes are just instances of powerful states imposing their will on weaker ones, which is better explained by realist balance-of-power theory",
+      "Sovereignty has always been a legal fiction — Krasner's contribution is showing that the fiction is systematically violated in predictable domains (human rights, financial regulation, security), revealing the gap between juridical and empirical sovereignty as structurally durable",
+      "Sovereignty holes only emerge when international institutions are strong, so the critique is only valid in periods of high multilateral cooperation",
+      "The concept only applies to failed states; functioning states with legitimate governments do not experience sovereignty holes regardless of power disparities"
+    ],
+    "correctIndex": 1,
+    "explanation": "Krasner's framework goes beyond mere power politics by showing that sovereignty violations are not random but occur in predictable domains and patterns — revealing that the gap between juridical sovereignty (legal recognition) and empirical sovereignty (actual control) is a structural feature, not just a reflection of power imbalances. The concept applies even to formally recognised, functioning states.",
+    "source": "cp-11/krasner-sovereignty.md"
+  }
+]

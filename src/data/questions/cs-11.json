@@ -1,0 +1,642 @@
+[
+  {
+    "id": "cs11-q001",
+    "module": "cs-11",
+    "topic": "Strategic Fundamentals",
+    "difficulty": "easy",
+    "question": "What is strategy?",
+    "options": [
+      "The art and science of planning to achieve political or military objectives",
+      "Winning a single battle or tactical engagement",
+      "Following orders without thinking independently",
+      "Random decisions made during crises"
+    ],
+    "correctIndex": 0,
+    "explanation": "Strategy is concerned with the broader context of achieving objectives—connecting political goals with military or diplomatic means. It differs from tactics, which concerns individual battles or engagements."
+  },
+  {
+    "id": "cs11-q002",
+    "module": "cs-11",
+    "topic": "Strategic vs Tactical",
+    "difficulty": "easy",
+    "question": "What distinguishes strategy from tactics?",
+    "options": [
+      "Strategy addresses long-term goals; tactics address immediate engagements to support those goals",
+      "Strategy and tactics are identical concepts",
+      "Tactics are more important than strategy",
+      "Strategy only applies to military conflicts"
+    ],
+    "correctIndex": 0,
+    "explanation": "A strategic objective might be 'establish control of a region.' Tactics are the specific maneuvers—which units move where, timing, formations. Good tactics serve bad strategy; bad tactics undermine good strategy."
+  },
+  {
+    "id": "cs11-q003",
+    "module": "cs-11",
+    "topic": "Strategic Studies",
+    "difficulty": "easy",
+    "question": "What does strategic studies examine?",
+    "options": [
+      "How states pursue national security through military, diplomatic, and economic means",
+      "Only how to win individual battles",
+      "The personal tactics of military commanders",
+      "Historical dates and names without analysis"
+    ],
+    "correctIndex": 0,
+    "explanation": "Strategic studies is an interdisciplinary field examining how states use all tools of statecraft—military, political, economic, informational—to pursue national interests while managing threats and conflicts."
+  },
+  {
+    "id": "cs11-q004",
+    "module": "cs-11",
+    "topic": "Power and National Interest",
+    "difficulty": "easy",
+    "question": "What is national interest?",
+    "options": [
+      "A state's fundamental objectives regarding survival, prosperity, and values that guide foreign policy",
+      "Whatever the current government leadership personally wants",
+      "Identical across all nations and time periods",
+      "Determined entirely by international law"
+    ],
+    "correctIndex": 0,
+    "explanation": "National interest typically includes security, economic wellbeing, and values. It may be debated within a nation, but it provides continuity across governments and guides long-term strategy."
+  },
+  {
+    "id": "cs11-q005",
+    "module": "cs-11",
+    "topic": "Power Resources",
+    "difficulty": "easy",
+    "question": "What are sources of national power?",
+    "options": [
+      "Military capability, economic resources, geographic position, population, technology, and governance",
+      "Military power alone",
+      "Economic wealth alone",
+      "Only physical resources like minerals"
+    ],
+    "correctIndex": 0,
+    "explanation": "National power is multifaceted. A wealthy but militarily weak state has limited power; a large population without technology or organization has little influence. Geography, stability, and population quality all matter."
+  },
+  {
+    "id": "cs11-q006",
+    "module": "cs-11",
+    "topic": "Statecraft",
+    "difficulty": "easy",
+    "question": "What is statecraft?",
+    "options": [
+      "The practice of conducting diplomacy and foreign policy to advance state interests",
+      "The craft of building state buildings and monuments",
+      "The technical skill of writing laws",
+      "Military combat techniques"
+    ],
+    "correctIndex": 0,
+    "explanation": "Statecraft is the practice of diplomacy, negotiation, alliance-building, and political maneuvering to achieve foreign policy objectives. It combines strategy with practical diplomacy."
+  },
+  {
+    "id": "cs11-q007",
+    "module": "cs-11",
+    "topic": "International System",
+    "difficulty": "easy",
+    "question": "What is the international system?",
+    "options": [
+      "The arrangement of sovereign states, institutions, and rules that structure world politics",
+      "A global government that controls all nations",
+      "Only the United Nations",
+      "Unrelated to individual state behavior"
+    ],
+    "correctIndex": 0,
+    "explanation": "The international system is anarchic—no central authority above states. It consists of sovereign states, international organizations, norms, and institutions that constrain and enable state action."
+  },
+  {
+    "id": "cs11-q008",
+    "module": "cs-11",
+    "topic": "Conflict and Cooperation",
+    "difficulty": "easy",
+    "question": "What is the security dilemma?",
+    "options": [
+      "When defensive measures by one state alarm others, leading to spiral of mistrust and arms buildup",
+      "Military weapons are difficult to build",
+      "All states are naturally peaceful",
+      "International security arrangements always succeed"
+    ],
+    "correctIndex": 0,
+    "explanation": "The security dilemma describes a tragic dynamic: State A builds weapons for defense; State B views this as a threat and arms itself; State A perceives this as aggressive and arms further. Everyone ends up less secure."
+  },
+  {
+    "id": "cs11-q009",
+    "module": "cs-11",
+    "topic": "Deterrence",
+    "difficulty": "easy",
+    "question": "What is deterrence in strategic terms?",
+    "options": [
+      "Discouraging an adversary from taking action through the threat of unacceptable punishment",
+      "Preventing all conflicts from ever occurring",
+      "Giving an opponent whatever they want to avoid war",
+      "Making military conflict impossible"
+    ],
+    "correctIndex": 0,
+    "explanation": "Deterrence works by making the cost of hostile action unacceptable. It requires credible capability and commitment to use it. If an adversary believes you won't fight, deterrence fails."
+  },
+  {
+    "id": "cs11-q010",
+    "module": "cs-11",
+    "topic": "Alliance",
+    "difficulty": "easy",
+    "question": "Why do states form alliances?",
+    "options": [
+      "To combine power against common threats or to pursue shared interests",
+      "Alliances are unnecessary because states are self-sufficient",
+      "All alliances are permanent and binding",
+      "States never cooperate except under coercion"
+    ],
+    "correctIndex": 0,
+    "explanation": "Alliances enable states to achieve objectives beyond individual capability. A weak state gains security through alliance with a strong one; a strong state gains influence and resources through allies."
+  },
+  {
+    "id": "cs11-q011",
+    "module": "cs-11",
+    "topic": "Power Transition",
+    "difficulty": "medium",
+    "question": "What is 'power transition theory'?",
+    "options": [
+      "Conflict is most likely when a rising power approaches parity with a declining hegemon",
+      "Power shifts happen peacefully through negotiation",
+      "Rising powers never challenge the status quo",
+      "International stability is unaffected by changes in state power"
+    ],
+    "correctIndex": 0,
+    "explanation": "Power transition theory suggests the most dangerous moment is when a challenger becomes strong enough to compete, as the declining leader may use force to prevent loss of position. This explains many historical wars."
+  },
+  {
+    "id": "cs11-q012",
+    "module": "cs-11",
+    "topic": "Balance of Power",
+    "difficulty": "medium",
+    "question": "What is the balance of power principle in international relations?",
+    "options": [
+      "States align to prevent any one power from dominating; roughly equal power distribution increases stability",
+      "One dominant power creates perfect stability",
+      "Power imbalance is impossible",
+      "Balance of power is irrelevant to conflict"
+    ],
+    "correctIndex": 0,
+    "explanation": "Balance of power is a classic strategic principle: a stable system requires roughly equal distribution of power. Overwhelming dominance by one state invites challenge; balance discourages aggression through mutual restraint."
+  },
+  {
+    "id": "cs11-q013",
+    "module": "cs-11",
+    "topic": "Hegemony",
+    "difficulty": "medium",
+    "question": "What is hegemony in international politics?",
+    "options": [
+      "Dominance by one state capable of shaping the international system and imposing its preferences",
+      "A system where all states have equal power",
+      "Rule by international organizations",
+      "Cooperation among all nations toward common goals"
+    ],
+    "correctIndex": 0,
+    "explanation": "A hegemonic power sets rules, operates without significant constraint, and can often coerce others. Examples: British naval dominance in 19th century, American military superiority post-Cold War. Hegemonic stability can last until power erodes."
+  },
+  {
+    "id": "cs11-q014",
+    "module": "cs-11",
+    "topic": "Spheres of Influence",
+    "difficulty": "medium",
+    "question": "What is a sphere of influence?",
+    "options": [
+      "A region where one state exercises primary influence and expects others to respect its interests",
+      "An area of the world unknown to most states",
+      "A region governed by international organizations",
+      "Obsolete concept irrelevant to modern politics"
+    ],
+    "correctIndex": 0,
+    "explanation": "Spheres of influence reflect great power competition—Russia's sphere historically includes Eastern Europe; the US sphere includes the Western Hemisphere. These are contested and unstable as rising powers challenge established influence."
+  },
+  {
+    "id": "cs11-q015",
+    "module": "cs-11",
+    "topic": "Grand Strategy",
+    "difficulty": "medium",
+    "question": "What is grand strategy?",
+    "options": [
+      "The long-term direction of state policy coordinating military, economic, and diplomatic tools toward political objectives",
+      "The strategy for a single military campaign",
+      "Tactics for individual battles",
+      "Randomly chosen policies without coherent direction"
+    ],
+    "correctIndex": 0,
+    "explanation": "Grand strategy is how a state organizes all instruments of power—military, economic, diplomatic, informational—over decades to achieve fundamental objectives. It provides coherence across administrations."
+  },
+  {
+    "id": "cs11-q016",
+    "module": "cs-11",
+    "topic": "Military Strategy",
+    "difficulty": "medium",
+    "question": "What is the relationship between military strategy and national security?",
+    "options": [
+      "Military strategy implements the broader national strategy to achieve security and political objectives",
+      "Military strategy is irrelevant to national security",
+      "Military strategy determines national policy",
+      "Only military solutions matter in security"
+    ],
+    "correctIndex": 0,
+    "explanation": "Military strategy is a tool serving political objectives, not an end in itself. Good strategy coordinates military means with diplomatic and economic statecraft. Military solutions to political problems often fail without broader strategy."
+  },
+  {
+    "id": "cs11-q017",
+    "module": "cs-11",
+    "topic": "Asymmetric Conflict",
+    "difficulty": "medium",
+    "question": "What is asymmetric warfare?",
+    "options": [
+      "Conflict between unequal military powers where the weaker uses unconventional tactics against stronger state",
+      "Military forces of equal size and capability",
+      "Fighting with the same weapons on both sides",
+      "Only conventional military engagements"
+    ],
+    "correctIndex": 0,
+    "explanation": "Asymmetric conflict includes insurgency, terrorism, and guerrilla warfare—when a weaker adversary cannot match conventional military power and uses unconventional means (ambushes, terrorism, propaganda) instead."
+  },
+  {
+    "id": "cs11-q018",
+    "module": "cs-11",
+    "topic": "Containment",
+    "difficulty": "medium",
+    "question": "What was the Cold War strategy of 'containment'?",
+    "options": [
+      "Preventing expansion of Soviet influence beyond existing boundaries while avoiding direct confrontation",
+      "Attempting to eliminate Soviet power immediately",
+      "Allowing Soviet expansion to preserve peace",
+      "Isolating the US from international affairs"
+    ],
+    "correctIndex": 0,
+    "explanation": "Containment, articulated by George Kennan, was the US strategy to check Soviet expansion everywhere it occurred while avoiding direct war. This strategy guided Cold War policy for decades."
+  },
+  {
+    "id": "cs11-q019",
+    "module": "cs-11",
+    "topic": "Strategic Competition",
+    "difficulty": "medium",
+    "question": "How do states compete strategically below the level of war?",
+    "options": [
+      "Through economic pressure, espionage, proxy conflicts, and political influence operations",
+      "Peaceful competition doesn't exist; states either cooperate or fight",
+      "Competition is limited to trade agreements",
+      "States cannot influence each other without military conflict"
+    ],
+    "correctIndex": 0,
+    "explanation": "Strategic competition includes sanctions, economic coercion, intelligence operations, cyber attacks, proxy wars, propaganda, and political interference. These are 'gray zone' activities—aggressive but below open warfare."
+  },
+  {
+    "id": "cs11-q020",
+    "module": "cs-11",
+    "topic": "Soft Power",
+    "difficulty": "medium",
+    "question": "What is soft power in strategic terms?",
+    "options": [
+      "Ability to influence others through attraction and persuasion rather than coercion or payment",
+      "Weakness or lack of military capability",
+      "Ineffective forms of influence",
+      "Only applies to cultural exchanges"
+    ],
+    "correctIndex": 0,
+    "explanation": "Soft power relies on cultural appeal, institutions, and values—when others want what you have or admire your model. It's cheaper and more durable than coercion. US influence through culture, universities, and democracy is soft power."
+  },
+  {
+    "id": "cs11-q021",
+    "module": "cs-11",
+    "topic": "Strategic Interests",
+    "difficulty": "hard",
+    "question": "Why is geographic position strategically significant?",
+    "options": [
+      "Geography affects resource access, defense capability, and power projection; it's relatively constant across history",
+      "Geography has no effect on strategic advantage",
+      "All geographic locations are equally valuable",
+      "Geography only mattered before industrialization"
+    ],
+    "correctIndex": 0,
+    "explanation": "Geography shapes strategy: island nations have different security concerns than land powers; control of choke points (Suez, Malacca Strait) provides disproportionate influence; resources location drives conflict. Geography is destiny in statecraft."
+  },
+  {
+    "id": "cs11-q022",
+    "module": "cs-11",
+    "topic": "Strategic Culture",
+    "difficulty": "hard",
+    "question": "What is strategic culture?",
+    "options": [
+      "Historical experience and national identity that shape how a state perceives interests and chooses strategies",
+      "Universal principles that apply identically to all states",
+      "The entertainment and arts of a nation",
+      "Irrelevant to understanding strategic behavior"
+    ],
+    "correctIndex": 0,
+    "explanation": "Strategic culture explains why similar situations produce different responses. Russia's experience with invasions produces different threat perceptions than US experience. Japan's island history differs from Germany's continental exposure."
+  },
+  {
+    "id": "cs11-q023",
+    "module": "cs-11",
+    "topic": "Nuclear Strategy",
+    "difficulty": "hard",
+    "question": "What is 'mutual assured destruction' (MAD) in nuclear strategy?",
+    "options": [
+      "A deterrent posture where both sides maintain capability to destroy each other even after first strike attack",
+      "A war-fighting strategy that nuclear weapons can win",
+      "The belief that nuclear weapons provide absolute security",
+      "Irrelevant to Cold War strategy"
+    ],
+    "correctIndex": 0,
+    "explanation": "MAD assumes neither side dares attack because retaliation would destroy both. This seemingly paradoxically creates stability—war becomes unthinkable. Critics note it's fragile and assumes rationality."
+  },
+  {
+    "id": "cs11-q024",
+    "module": "cs-11",
+    "topic": "Strategic Stability",
+    "difficulty": "hard",
+    "question": "What makes an international system strategically stable?",
+    "options": [
+      "States see incentives for status quo over aggression; power roughly balanced; clear communication; low chance of miscalculation",
+      "Maximum military buildup by all states",
+      "One state dominates absolutely",
+      "Stability is impossible in international politics"
+    ],
+    "correctIndex": 0,
+    "explanation": "Stable systems discourage aggression through cost-benefit analysis and balance of power. Unstable systems have incentives for preemption and surprise attack. Communication and crisis management reduce miscalculation risks."
+  },
+  {
+    "id": "cs11-q025",
+    "module": "cs-11",
+    "topic": "Strategic Surprise",
+    "difficulty": "hard",
+    "question": "Why do strategically significant surprises occur despite intelligence capabilities?",
+    "options": [
+      "Cognitive biases cause analysts to dismiss disconfirming evidence; adversaries exploit conventional expectations",
+      "Intelligence agencies have perfect information",
+      "Surprises are random and unpredictable",
+      "Major attacks are always obvious in advance"
+    ],
+    "correctIndex": 0,
+    "explanation": "Pearl Harbor, 9/11, and the 1973 Yom Kippur War surprised major powers. Why? Intelligence agencies had some information but dismissed it as unlikely. Adversaries exploited what defenders assumed was impossible."
+  },
+  {
+    "id": "cs11-q026",
+    "module": "cs-11",
+    "topic": "Power and Legitimacy",
+    "difficulty": "hard",
+    "question": "How does legitimacy affect state power and strategic options?",
+    "options": [
+      "Legitimacy multiplies power by reducing need for coercion; illegitimate power requires constant force to maintain",
+      "Legitimacy is irrelevant to actual power",
+      "Illegitimate rulers have equal power to legitimate ones",
+      "Power determines legitimacy, not vice versa"
+    ],
+    "correctIndex": 0,
+    "explanation": "A legitimate government can act with less force; an illegitimate one must constantly coerce. International legitimacy affects a state's options—what allies will support, which interventions are acceptable, what costs are sustainable."
+  },
+  {
+    "id": "cs11-q027",
+    "module": "cs-11",
+    "topic": "Strategic Alternatives",
+    "difficulty": "hard",
+    "question": "What strategies might a declining power employ to manage relative loss of position?",
+    "options": [
+      "Reform and adapt, build coalitions to maintain position, negotiate while still strong, or attempt preventive conflict",
+      "Accept subordination without any response",
+      "War is the only option when power declines",
+      "Decline is always irreversible"
+    ],
+    "correctIndex": 0,
+    "explanation": "Declining powers face choices: internal reform and innovation (Japan's transformation), coalition-building (current Western strategy against China), negotiated accommodation, or risky preventive war. Some choose better than others."
+  },
+  {
+    "id": "cs11-q028",
+    "module": "cs-11",
+    "topic": "Economic Statecraft",
+    "difficulty": "hard",
+    "question": "How does economic interdependence affect conflict likelihood?",
+    "options": [
+      "High interdependence increases costs of conflict but may be unstable if one side perceives advantage from disruption",
+      "Economic interdependence eliminates all conflict",
+      "Interdependence increases conflict by creating competition",
+      "Economics is irrelevant to strategic relations"
+    ],
+    "correctIndex": 0,
+    "explanation": "The 'liberal peace' theory suggests trade reduces conflict. However, Germany-Britain interdependence didn't prevent WWI. High interdependence that's asymmetric can be unstable—the stronger side may risk conflict."
+  },
+  {
+    "id": "cs11-q029",
+    "module": "cs-11",
+    "topic": "Strategic Communications",
+    "difficulty": "hard",
+    "question": "What role do signals and messages play in strategic interactions?",
+    "options": [
+      "Credible signals communicate commitment and intent, reducing miscalculation; but deceptive signals can trigger escalation",
+      "Communication has no effect on strategic behavior",
+      "All states believe what others claim about their intentions",
+      "Clear communication makes conflict impossible"
+    ],
+    "correctIndex": 0,
+    "explanation": "A state builds up troops at the border, signaling resolve but risking provocation. A public statement of commitment signals intent but becomes hard to back down from. Strategic communication is about credible signaling amid incentives to deceive."
+  },
+  {
+    "id": "cs11-q030",
+    "module": "cs-11",
+    "topic": "Innovation and Strategy",
+    "difficulty": "hard",
+    "question": "How does military or technological innovation reshape strategy?",
+    "options": [
+      "Innovation enables new strategies while disabling old ones; states struggle to adapt outdated strategic thinking",
+      "Innovation has no effect on strategic thinking",
+      "Strategy remains constant throughout history",
+      "Technology determines strategy automatically"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gunpowder destroyed medieval castle fortifications and chivalric warfare. Nuclear weapons eliminated total victory as an option. Cyber capabilities created new domains. Leaders who cling to outdated strategies are defeated."
+  },
+  {
+    "id": "cs11-q031",
+    "module": "cs-11",
+    "topic": "Strategic Adaptation",
+    "difficulty": "expert",
+    "question": "What characteristics enable states to adapt strategy when circumstances change?",
+    "options": [
+      "Flexible institutions, learning from experience, civil-military dialogue, and willingness to question assumptions",
+      "Rigid adherence to established doctrine",
+      "Waiting until forced by catastrophe to change",
+      "Strategic adaptation is impossible in practice"
+    ],
+    "correctIndex": 0,
+    "explanation": "Adaptive states like the US can modify Cold War strategy for new threats. Rigid states like the Soviet Union failed to adapt before collapse. Flexibility requires institutional design that enables learning and challenges assumptions."
+  },
+  {
+    "id": "cs11-q032",
+    "module": "cs-11",
+    "topic": "Strategic Restraint",
+    "difficulty": "expert",
+    "question": "Why might a strong state practice strategic restraint despite having overwhelming power?",
+    "options": [
+      "Restraint preserves alliances, reduces opposition, avoids overextension, and maintains legitimacy long-term",
+      "Strong states should always maximize power over rivals",
+      "Restraint is a sign of weakness",
+      "Exercising power has no cost"
+    ],
+    "correctIndex": 0,
+    "explanation": "Overexertion—Rome conquering beyond sustainable borders, Nazi Germany attacking on all fronts, Soviet expansion—often brings empires down. Judicious restraint preserves resources and prevents coalition-building against you."
+  },
+  {
+    "id": "cs11-q033",
+    "module": "cs-11",
+    "topic": "deterrence",
+    "difficulty": "easy",
+    "question": "What is deterrence in strategic studies?",
+    "options": [
+      "Making the potential cost of aggression outweigh any benefit an adversary might gain from it",
+      "Building military forces large enough to defeat any opponent in direct conventional combat",
+      "Forming alliances that make attacking one state equivalent to attacking all alliance members",
+      "Using economic sanctions to make an adversary's aggression too costly to sustain over time"
+    ],
+    "correctIndex": 0,
+    "explanation": "Deterrence is the threat of sufficient retaliation to persuade an adversary that the costs of aggression will outweigh any possible gain — it works through the adversary's calculations, not through direct military defeat.",
+    "source": "Statecraft - Institute of World Politics.pdf"
+  },
+  {
+    "id": "cs11-q034",
+    "module": "cs-11",
+    "topic": "grand-strategy",
+    "difficulty": "easy",
+    "question": "What distinguishes strategy from tactics in statecraft?",
+    "options": [
+      "Strategy connects ends and means at the level of overall objectives; tactics address how to win individual engagements",
+      "Strategy is the domain of politicians while tactics is exclusively the domain of military commanders",
+      "Strategy involves long-term planning while tactics are defined as decisions made under combat pressure",
+      "Strategy involves nuclear weapons and grand alliances while conventional operations are purely tactical"
+    ],
+    "correctIndex": 0,
+    "explanation": "Strategy is concerned with relating means to ends at the level of overall political objectives. Tactics is concerned with winning individual engagements. A brilliant tactician without strategy can win battles and lose wars.",
+    "source": "The_Lost_Meaning_of_Strategy.pdf"
+  },
+  {
+    "id": "cs11-q035",
+    "module": "cs-11",
+    "topic": "military-strategy",
+    "difficulty": "medium",
+    "question": "Why do scholars argue that strategy without political purpose is merely operational art rather than true strategy?",
+    "options": [
+      "Strategy is inherently political — without political ends, military operations lack a framework for determining what constitutes success or failure",
+      "Strategy without political purpose is still legitimate because military victory creates political opportunities leaders can then exploit",
+      "The distinction is arbitrary because all military operations serve political purposes, whether explicitly acknowledged or not",
+      "Political constraints on military strategy usually prevent armies from achieving decisive victory and should be minimized"
+    ],
+    "correctIndex": 0,
+    "explanation": "Clausewitz's dictum that war is the continuation of politics by other means is foundational: without a defined political objective, there is no criterion for victory or defeat — only operational activity that serves no coherent end.",
+    "source": "The_Lost_Meaning_of_Strategy.pdf"
+  },
+  {
+    "id": "cs11-q036",
+    "module": "cs-11",
+    "topic": "soft-power",
+    "difficulty": "medium",
+    "question": "Soft power differs from hard power primarily in that...",
+    "options": [
+      "Soft power achieves influence through attraction and persuasion rather than coercion or payment",
+      "Soft power is exercised exclusively through cultural exports like films, music, and food diplomacy",
+      "Soft power is more effective than hard power in all strategic contexts because it builds lasting influence",
+      "Soft power is used only by democratic states while authoritarian states rely exclusively on hard power"
+    ],
+    "correctIndex": 0,
+    "explanation": "Soft power gets others to want what you want through attraction — the appeal of values, culture, and legitimate institutions — rather than compelling them through threats (hard power) or buying their compliance (economic power).",
+    "source": "Statecraft - Institute of World Politics.pdf"
+  },
+  {
+    "id": "cs11-q037",
+    "module": "cs-11",
+    "topic": "strategic-adaptation",
+    "difficulty": "expert",
+    "question": "Why do states sometimes fail to adapt strategically even when their current approach is clearly failing?",
+    "options": [
+      "Institutional inertia, sunk cost reasoning, bureaucratic resistance, and vested interests in existing strategy prevent adaptation even when feedback is clear",
+      "Strategic failure always results from insufficient resources — states with adequate resources always adapt their strategy effectively",
+      "Military and civilian officials recognize strategic failure but cannot publicly acknowledge it without being removed from office",
+      "States fail to adapt because strategic wisdom is rare and most leaders lack the intellectual capacity to recognize systemic failure"
+    ],
+    "correctIndex": 0,
+    "explanation": "Strategic adaptation is blocked by multiple reinforcing forces: institutions built around existing doctrine, sunk costs in current strategy, bureaucracies that would lose power if strategy changed, and political constituencies for current approaches.",
+    "source": "Strategic_Studies_and_the_Problem_of_Power.pdf"
+  },
+  {
+    "id": "cs11-q038",
+    "module": "cs-11",
+    "topic": "nuclear-strategy",
+    "difficulty": "expert",
+    "question": "Nuclear deterrence creates a stability-instability paradox. What does this mean?",
+    "options": [
+      "Nuclear weapons create strategic-level stability by making large war unthinkable, while enabling lower-level instability by providing a shield for limited aggression",
+      "Nuclear weapons create instability at all levels because the risk of nuclear use makes all states more aggressive in conventional conflicts",
+      "The paradox shows nuclear weapons are always destabilizing and makes the case for their complete elimination by all states",
+      "Nuclear stability causes states to invest in conventional forces rather than nuclear weapons, eventually making deterrence unreliable"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nuclear deterrence prevents large-scale war between nuclear-armed states, but the same deterrence umbrella allows both sides to engage in limited conventional or proxy conflicts below the nuclear threshold — stabilizing at the top, destabilizing below.",
+    "source": "Strategy_and_Limitation_of_War.pdf"
+  },
+  {
+    "id": "cs11-q039",
+    "module": "cs-11",
+    "topic": "strategic-studies",
+    "difficulty": "expert",
+    "question": "The 'lost meaning of strategy' thesis argues modern statecraft has reduced strategy to logistics and management. What structural forces produce this degradation?",
+    "options": [
+      "Bureaucratization, short-term political incentives, and risk aversion cause institutions to focus on measurable inputs rather than asking whether means are connected to political ends",
+      "The degradation occurs because modern democracies are inherently incapable of sustaining long-term strategic thought against short electoral cycles",
+      "Modern technology has made traditional strategic thinking obsolete by enabling real-time battlefield adaptation without strategic frameworks",
+      "Strategy has not been degraded — modern statecraft is more sophisticated than historical practice because it integrates more instruments"
+    ],
+    "correctIndex": 0,
+    "explanation": "When institutions measure what is measurable — budgets, deployments, kill ratios — the harder question of whether these means serve political ends is crowded out. Strategy degrades into activity: things are done because they can be done, not because they serve a coherent objective.",
+    "source": "The_Lost_Meaning_of_Strategy.pdf"
+  },
+  {
+    "id": "cs11-q040",
+    "module": "cs-11",
+    "topic": "power-and-national-interest",
+    "difficulty": "expert",
+    "question": "The 'problem of power' in strategic studies refers to which fundamental challenge?",
+    "options": [
+      "The inherent difficulty of measuring, accumulating, and converting power into political outcomes in systems where power is multidimensional and context-dependent",
+      "The challenge that powerful states face in maintaining alliances with weaker partners who contribute little to collective defence",
+      "The paradox that states with the greatest military power are most likely to be drawn into costly and unwinnable wars",
+      "The difficulty small states face in resisting the demands of powerful neighbors while maintaining their formal sovereignty"
+    ],
+    "correctIndex": 0,
+    "explanation": "Power is notoriously difficult to measure, accumulate, or convert into desired outcomes. Military superiority does not guarantee political compliance; economic strength does not always translate to diplomatic influence. The 'problem of power' is this gap between capability and outcome.",
+    "source": "Strategic_Studies_and_the_Problem_of_Power.pdf"
+  },
+  {
+    "id": "cs11-q041",
+    "module": "cs-11",
+    "topic": "strategy-theory",
+    "difficulty": "expert",
+    "question": "Clausewitz argued that war is the continuation of politics by other means — strategy must always be subordinate to political purpose. A military commander argues that operational demands should sometimes override political constraints to achieve military success. What is the Clausewitzian objection to this view?",
+    "options": [
+      "Military commanders lack the political legitimacy to make strategic decisions; this is purely a question of civilian authority over the military in democratic systems",
+      "Operational success that undermines political purpose is not strategic success — it is a category error. Strategy exists to serve political ends; military logic that severs this link produces victories that achieve nothing, or creates new political problems that cannot be solved militarily",
+      "The objection is that political constraints typically reflect public opinion, which changes; commanders should optimise for military success since political consensus will follow victory",
+      "Clausewitz's framework was developed before modern warfare made the political-military boundary less clear; contemporary strategy must allow operational logic to sometimes take precedence"
+    ],
+    "correctIndex": 1,
+    "explanation": "Clausewitz's core insight is that military activity without political purpose is violence, not strategy. The Clausewitzian objection to operationally-driven strategy is not merely procedural (civilian control) but substantive: if operations undermine the political objective, the military success is meaningless or counterproductive. The Vietnam War is a canonical example — tactical dominance coexisted with strategic failure because operations were decoupled from achievable political ends.",
+    "source": "cs-11/clausewitz-strategy.md"
+  },
+  {
+    "id": "cs11-q042",
+    "module": "cs-11",
+    "topic": "power-and-deterrence",
+    "difficulty": "expert",
+    "question": "Two states both possess nuclear weapons. State A has a larger, more accurate arsenal. State B has a smaller arsenal but has ensured its second-strike capability through dispersal and survivability. Which state has stronger deterrence, and what principle does this illustrate?",
+    "options": [
+      "State A, because superior numbers and accuracy translate directly into strategic advantage — the larger arsenal can destroy State B's missiles before they can be launched",
+      "They are deterrence equals because both possess the ability to inflict unacceptable damage; mutual vulnerability is the basis of stable deterrence, not relative arsenal size",
+      "State B, because a survivable second-strike capability is the foundation of credible deterrence — what matters is not the size of the first strike but the assured ability to absorb one and retaliate, which State A's larger but potentially vulnerable arsenal may not guarantee",
+      "Deterrence depends entirely on political resolve and signalling, not on the technical characteristics of arsenals; both states deter equally regardless of survivability"
+    ],
+    "correctIndex": 2,
+    "explanation": "This illustrates the second-strike survivability principle at the heart of nuclear deterrence theory. Deterrence rests on the credible threat of assured retaliation, not on first-strike capability. A larger arsenal that can be destroyed in a first strike provides weaker deterrence than a smaller, survivable one. State B's dispersed, survivable forces mean any attacker must accept that retaliation is certain — which is what deters. State A may actually be less stable if its concentration invites a disarming first strike.",
+    "source": "cs-11/deterrence-theory.md"
+  }
+]

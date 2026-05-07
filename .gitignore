@@ -4,6 +4,9 @@ node_modules/
 # Build output
 dist/
 
+# Astro generated types and cache (regenerated on dev/build)
+.astro/
+
 # Intermediate content extraction — regenerable from source, never commit
 working-content/
 

@@ -1,0 +1,641 @@
+[
+  {
+    "id": "cp33-q001",
+    "module": "cp-33",
+    "topic": "Communication Fundamentals",
+    "difficulty": "easy",
+    "question": "What is the primary goal of policy communication?",
+    "options": [
+      "To explain policy decisions and build understanding among stakeholders",
+      "To conceal government decisions from the public",
+      "To increase government revenue through communication services",
+      "To prevent any public discussion of policy"
+    ],
+    "correctIndex": 0,
+    "explanation": "Effective policy communication aims to clearly explain government decisions, their rationale, and implications to citizens, media, and other stakeholders. This builds legitimacy and enables informed public engagement."
+  },
+  {
+    "id": "cp33-q002",
+    "module": "cp-33",
+    "topic": "Target Audiences",
+    "difficulty": "easy",
+    "question": "Who are key audiences for policy communication?",
+    "options": [
+      "Citizens, media, civil society, international partners, and policymakers themselves",
+      "Only wealthy and educated citizens",
+      "Exclusively government officials",
+      "Foreign governments, not domestic audiences"
+    ],
+    "correctIndex": 0,
+    "explanation": "Effective policy communication reaches multiple audiences with tailored messages—citizens need to understand impacts, media translate for public, civil society provides feedback, international partners need clarity on commitments."
+  },
+  {
+    "id": "cp33-q003",
+    "module": "cp-33",
+    "topic": "Narrative and Framing",
+    "difficulty": "easy",
+    "question": "What is a policy narrative?",
+    "options": [
+      "A structured story that explains policy goals, problems, and solutions in a compelling way",
+      "A fictional account used to entertain policymakers",
+      "Only the technical data about a policy",
+      "A criticism of government decisions"
+    ],
+    "correctIndex": 0,
+    "explanation": "Narratives are powerful communication tools that connect abstract policy to human experience. A good narrative for environmental policy might show how it protects health and creates jobs, not just describe regulations."
+  },
+  {
+    "id": "cp33-q004",
+    "module": "cp-33",
+    "topic": "Framing Effects",
+    "difficulty": "easy",
+    "question": "What is framing in policy communication?",
+    "options": [
+      "Presenting the same policy in different ways that affect public perception",
+      "Putting text inside literal frames on documents",
+      "Identifying fraudulent policies",
+      "Creating new laws through communication"
+    ],
+    "correctIndex": 0,
+    "explanation": "Framing affects how people interpret information. A tax increase can be framed as 'necessary for schools' (positive) or 'burden on families' (negative)—same policy, different frames, different responses."
+  },
+  {
+    "id": "cp33-q005",
+    "module": "cp-33",
+    "topic": "Credibility and Trust",
+    "difficulty": "easy",
+    "question": "What builds credibility in policy communication?",
+    "options": [
+      "Consistent messaging, transparency about facts and uncertainties, and following through on commitments",
+      "Always telling people what they want to hear",
+      "Concealing any problems or uncertainties",
+      "Using complex technical language to impress audiences"
+    ],
+    "correctIndex": 0,
+    "explanation": "Trust comes from consistency, honesty about limitations, and demonstrable follow-through. A policymaker who admits uncertainty when warranted builds more credibility than one making false certainties."
+  },
+  {
+    "id": "cp33-q006",
+    "module": "cp-33",
+    "topic": "Communication Channels",
+    "difficulty": "easy",
+    "question": "What role does media play in policy communication?",
+    "options": [
+      "Media translates and amplifies policy information to broader public audiences",
+      "Media controls all government policy decisions",
+      "Media only reports facts with no interpretation",
+      "Media has no influence on how policy is understood"
+    ],
+    "correctIndex": 0,
+    "explanation": "Media serves as the primary channel between policymakers and public. Journalists interpret, contextualize, and amplify policy announcements. Good media relations can clarify; poor ones create confusion or misinformation."
+  },
+  {
+    "id": "cp33-q007",
+    "module": "cp-33",
+    "topic": "Digital and Social Media",
+    "difficulty": "easy",
+    "question": "How has social media changed policy communication?",
+    "options": [
+      "It allows direct communication to citizens, faster feedback, but also rapid spread of misinformation",
+      "Social media has eliminated the need for any policy communication",
+      "Social media only spreads accurate information",
+      "Only governments use social media for communication"
+    ],
+    "correctIndex": 0,
+    "explanation": "Social media enables governments to communicate directly and gather rapid feedback, but also allows misinformation to spread quickly. Real-time communication demands faster response capabilities and fact-checking vigilance."
+  },
+  {
+    "id": "cp33-q008",
+    "module": "cp-33",
+    "topic": "Message Development",
+    "difficulty": "easy",
+    "question": "What is a clear policy message?",
+    "options": [
+      "A simple, memorable statement of what the policy does and why it matters to audiences",
+      "A lengthy explanation of all technical details",
+      "A promise that the policy will solve all related problems",
+      "A statement that avoids any specifics"
+    ],
+    "correctIndex": 0,
+    "explanation": "Effective messages are specific but understandable: 'This health subsidy allows poor families to afford preventive care, reducing emergency costs.' Clear messages help audiences grasp importance and implications."
+  },
+  {
+    "id": "cp33-q009",
+    "module": "cp-33",
+    "topic": "Stakeholder Engagement",
+    "difficulty": "easy",
+    "question": "Why is listening important in policy communication?",
+    "options": [
+      "It reveals public concerns, identifies misunderstandings, and improves policy design through feedback",
+      "Policymakers should never consider public input",
+      "Listening makes policies less efficient to implement",
+      "Public feedback is always correct and should override expert judgment"
+    ],
+    "correctIndex": 0,
+    "explanation": "Two-way communication improves policy outcomes. Public input reveals implementation challenges, identifies unintended effects, and builds support. However, public feedback should inform, not always override, expert judgment."
+  },
+  {
+    "id": "cp33-q010",
+    "module": "cp-33",
+    "topic": "Crisis Communication",
+    "difficulty": "easy",
+    "question": "What is critical in crisis policy communication?",
+    "options": [
+      "Speed, honesty about uncertainty, and clear instructions for action",
+      "Waiting until all information is perfect before saying anything",
+      "Reassuring the public regardless of actual situation",
+      "Avoiding any public communication during crises"
+    ],
+    "correctIndex": 0,
+    "explanation": "Crisis communication requires immediate response even with incomplete information. Acknowledging uncertainty while providing current facts and clear guidance maintains public trust better than silence or false certainty."
+  },
+  {
+    "id": "cp33-q011",
+    "module": "cp-33",
+    "topic": "Misinformation",
+    "difficulty": "medium",
+    "question": "How should policymakers respond to misinformation about their policies?",
+    "options": [
+      "Correct it promptly with facts, explain the truth clearly, and address underlying concerns driving belief",
+      "Ignore all criticism as ignorance",
+      "Repeat the wrong information to keep people aware of it",
+      "Accept that misinformation can't be countered"
+    ],
+    "correctIndex": 0,
+    "explanation": "Research shows that repeating false claims reinforces them. Effective response combines factual correction with empathy for underlying concerns. Sometimes the concern motivating misinformation is legitimate even if the specific claim is false."
+  },
+  {
+    "id": "cp33-q012",
+    "module": "cp-33",
+    "topic": "Narrative Structure",
+    "difficulty": "medium",
+    "question": "What elements strengthen a policy narrative?",
+    "options": [
+      "Clear problem, relatable characters/examples, proposed solution, and evidence of feasibility",
+      "Complex statistics that most people won't understand",
+      "Blaming all problems on one cause",
+      "Avoiding any mention of implementation challenges"
+    ],
+    "correctIndex": 0,
+    "explanation": "Strong narratives follow storytelling principles: identify a problem audiences care about, show how it affects real people, propose a solution, and provide evidence it can work. Examples make abstract policy concrete."
+  },
+  {
+    "id": "cp33-q013",
+    "module": "cp-33",
+    "topic": "Audience Segmentation",
+    "difficulty": "medium",
+    "question": "Why segment audiences in policy communication?",
+    "options": [
+      "Different groups have different knowledge levels and interests; tailored messages are more effective",
+      "All audiences understand policies identically",
+      "Segmentation is manipulative and should be avoided",
+      "Only wealthy audiences deserve policy communication"
+    ],
+    "correctIndex": 0,
+    "explanation": "A farmer and an urban banker need different explanations of agricultural policy. Farmers care about implementation support; investors care about market effects. Tailored communication for each group increases comprehension and buy-in."
+  },
+  {
+    "id": "cp33-q014",
+    "module": "cp-33",
+    "topic": "Transparency",
+    "difficulty": "medium",
+    "question": "What does transparency mean in policy communication?",
+    "options": [
+      "Openly sharing information about policy processes, decisions, and even mistakes",
+      "Hiding any negative information from the public",
+      "Making all data instantly available without explanation",
+      "Refusing to acknowledge any policy failures"
+    ],
+    "correctIndex": 0,
+    "explanation": "Transparency means open access to policy information, decision rationale, and performance data. Honest acknowledgment of problems and failures builds trust more than perfectionistic silence. Context and explanation are still needed."
+  },
+  {
+    "id": "cp33-q015",
+    "module": "cp-33",
+    "topic": "Language and Jargon",
+    "difficulty": "medium",
+    "question": "What is the danger of excessive jargon in policy communication?",
+    "options": [
+      "It excludes citizens from understanding decisions that affect them, reducing democratic participation",
+      "Jargon always makes policies more credible",
+      "Non-technical language is always less accurate",
+      "Policy should only be explained to experts"
+    ],
+    "correctIndex": 0,
+    "explanation": "Jargon can serve as either clarification (precise terms among experts) or exclusion (unnecessary complexity excluding public participation). Clear communication doesn't mean oversimplifying; it means accessible explanation."
+  },
+  {
+    "id": "cp33-q016",
+    "module": "cp-33",
+    "topic": "Visual Communication",
+    "difficulty": "medium",
+    "question": "Why are visual aids effective in policy communication?",
+    "options": [
+      "They convey complex information quickly and are more memorable than text alone",
+      "Visuals are only decorative and don't aid understanding",
+      "Charts and graphs confuse audiences more than help them",
+      "Policy should never use visuals"
+    ],
+    "correctIndex": 0,
+    "explanation": "Visual information (charts, maps, infographics) helps people grasp trends and relationships faster than paragraphs of text. A graph showing vaccine safety over time communicates faster than written statistics."
+  },
+  {
+    "id": "cp33-q017",
+    "module": "cp-33",
+    "topic": "International Policy Communication",
+    "difficulty": "medium",
+    "question": "What challenges arise in communicating policy internationally?",
+    "options": [
+      "Language barriers, different cultural contexts, and varying levels of trust in government",
+      "All countries share identical understanding of policy concepts",
+      "International communication is impossible",
+      "Translation is the only challenge"
+    ],
+    "correctIndex": 0,
+    "explanation": "International policy communication must navigate language differences, cultural values, media landscapes, and historical relationships. A policy message effective domestically may need adjustment for international audiences."
+  },
+  {
+    "id": "cp33-q018",
+    "module": "cp-33",
+    "topic": "Legitimacy and Consent",
+    "difficulty": "medium",
+    "question": "How does policy communication contribute to democratic legitimacy?",
+    "options": [
+      "By explaining decisions, inviting participation, and building public consent through informed deliberation",
+      "By concealing information to prevent criticism",
+      "By assuming citizens can't understand complex policies",
+      "By forcing compliance without explanation"
+    ],
+    "correctIndex": 0,
+    "explanation": "Democratic legitimacy rests on public understanding and consent, not coercion. Good policy communication enables citizens to evaluate decisions and hold governments accountable. Opaque policy breeds cynicism and resistance."
+  },
+  {
+    "id": "cp33-q019",
+    "module": "cp-33",
+    "topic": "Media Relations",
+    "difficulty": "medium",
+    "question": "What makes for effective government-media relations in policy communication?",
+    "options": [
+      "Regular, honest engagement; providing timely information; respecting journalistic independence",
+      "Controlling all media coverage and punishing critical reporting",
+      "Refusing all media questions",
+      "Providing information only to favorable journalists"
+    ],
+    "correctIndex": 0,
+    "explanation": "Healthy government-media relations require mutual respect. Governments that provide accurate, timely information and answer tough questions tend to get better coverage than those trying to control narratives. Good media relations serve transparency."
+  },
+  {
+    "id": "cp33-q020",
+    "module": "cp-33",
+    "topic": "Implementation Communication",
+    "difficulty": "medium",
+    "question": "Why is communication important during policy implementation?",
+    "options": [
+      "To clarify requirements, provide updates, address concerns, and gather feedback for adjustments",
+      "Communication ends once a policy is approved",
+      "Citizens don't need to know how policies are being implemented",
+      "Implementation is purely a technical task requiring no public communication"
+    ],
+    "correctIndex": 0,
+    "explanation": "Policy communication doesn't end at announcement. Ongoing communication during implementation helps citizens understand requirements, builds confidence, identifies problems early, and enables course corrections."
+  },
+  {
+    "id": "cp33-q021",
+    "module": "cp-33",
+    "topic": "Narrative Change",
+    "difficulty": "hard",
+    "question": "How can policymakers change deeply held narratives about social problems?",
+    "options": [
+      "Through consistent counter-narratives, new evidence, trusted messengers, and appeals to shared values",
+      "By arguing longer or using more data",
+      "Entrenched narratives can never be changed",
+      "Changing narratives requires forcing people to believe"
+    ],
+    "correctIndex": 0,
+    "explanation": "Changing narratives is difficult but possible. Effective strategies include: counter-narratives that tell a different story, scientific evidence, messengers from within communities, and appeals to widely shared values. Aggressive argument often backfires."
+  },
+  {
+    "id": "cp33-q022",
+    "module": "cp-33",
+    "topic": "Framing and Values",
+    "difficulty": "hard",
+    "question": "How do values affect how people interpret policy frames?",
+    "options": [
+      "Same policy frame resonates differently based on people's core values and identity",
+      "Framing effects are identical across all people",
+      "Values don't influence how people understand information",
+      "All people prioritize identical values"
+    ],
+    "correctIndex": 0,
+    "explanation": "A climate policy framed as 'protecting our grandchildren's future' resonates with those valuing family legacy; framed as 'preventing economic loss' appeals to those valuing prosperity. Understanding audience values improves frame effectiveness."
+  },
+  {
+    "id": "cp33-q023",
+    "module": "cp-33",
+    "topic": "Digital Platforms",
+    "difficulty": "hard",
+    "question": "What is the challenge of policy communication on algorithmic social media platforms?",
+    "options": [
+      "Algorithms prioritize engagement over accuracy, amplifying controversial content and fragmenting public discourse",
+      "Social media platforms deliver information equally to all users",
+      "Misinformation doesn't spread on major platforms",
+      "Algorithms help people find balanced information"
+    ],
+    "correctIndex": 0,
+    "explanation": "Social media algorithms optimize for engagement—sensational, emotionally charged, or controversial content spreads faster than nuanced policy explanations. This favors misinformation and polarization, fragmenting the shared information environment."
+  },
+  {
+    "id": "cp33-q024",
+    "module": "cp-33",
+    "topic": "Stakeholder Conflict",
+    "difficulty": "hard",
+    "question": "How should policy communication handle audiences with conflicting interests?",
+    "options": [
+      "Acknowledge trade-offs honestly, explain why the policy serves overall public interest despite harming some groups",
+      "Promise that the policy benefits everyone equally",
+      "Hide the fact that some groups are negatively affected",
+      "Choose one side and exclude the other"
+    ],
+    "correctIndex": 0,
+    "explanation": "Most policies create winners and losers. Honest communication acknowledges who benefits and who bears costs, explains the rationale, and may offer transition support. Pretending no one loses destroys credibility."
+  },
+  {
+    "id": "cp33-q025",
+    "module": "cp-33",
+    "topic": "Evidence and Communication",
+    "difficulty": "hard",
+    "question": "What is 'motivated reasoning' in how people evaluate policy evidence?",
+    "options": [
+      "People unconsciously interpret evidence to support their pre-existing beliefs and interests",
+      "People always evaluate evidence objectively",
+      "Evidence is irrelevant to what people believe",
+      "Only uneducated people engage in motivated reasoning"
+    ],
+    "correctIndex": 0,
+    "explanation": "Motivated reasoning means people scrutinize disconfirming evidence more harshly than confirming evidence. A doctor might dismiss side effect studies that conflict with prescribing preferences. Understanding this bias helps communicators address it."
+  },
+  {
+    "id": "cp33-q026",
+    "module": "cp-33",
+    "topic": "Policy Paradox and Narratives",
+    "difficulty": "hard",
+    "question": "What is 'policy paradox' in communicating about conflicting goals?",
+    "options": [
+      "Policies must balance seemingly contradictory goals (e.g., freedom and security); communication must acknowledge this tension honestly",
+      "Policies should hide the fact that they involve trade-offs",
+      "No policies involve any trade-offs between values",
+      "Acknowledging paradoxes weakens policy support"
+    ],
+    "correctIndex": 0,
+    "explanation": "Policy often involves genuine paradoxes—freedom vs. security, growth vs. environment. Honest communication acknowledges these tensions and explains the balance chosen. Pretending no tension exists undermines credibility."
+  },
+  {
+    "id": "cp33-q027",
+    "module": "cp-33",
+    "topic": "News Cycles and Policy Communication",
+    "difficulty": "hard",
+    "question": "How do short news cycles affect policy communication strategy?",
+    "options": [
+      "News cycles reward simple, dramatic narratives, making nuanced policy communication harder; repetition becomes critical",
+      "News cycles have no effect on how policy is understood",
+      "Complex policies receive equal coverage regardless of news competition",
+      "Journalists fully explain all policy implications"
+    ],
+    "correctIndex": 0,
+    "explanation": "24-hour news cycles favor brief, emotionally compelling narratives. Complex policy explanations get squeezed. Successful communicators repeat key messages across multiple news cycles and partner with sustained outlets (podcasts, long-form journalism)."
+  },
+  {
+    "id": "cp33-q028",
+    "module": "cp-33",
+    "topic": "Trust and Uncertainty",
+    "difficulty": "hard",
+    "question": "How should policymakers communicate about scientific or technical uncertainty?",
+    "options": [
+      "Acknowledge uncertainty honestly, explain what's known and unknown, and describe how policy adapts as knowledge improves",
+      "Pretend certainty exists even when it doesn't",
+      "Avoid any communication about the science",
+      "Let uncertainty paralyze decision-making indefinitely"
+    ],
+    "correctIndex": 0,
+    "explanation": "COVID policy communication failed when leaders claimed certainty that didn't exist. Honest uncertainty ('we know this much, we're still learning') maintains credibility better. Adaptive communication—'here's how we'll adjust as evidence evolves'—also helps."
+  },
+  {
+    "id": "cp33-q029",
+    "module": "cp-33",
+    "topic": "Narrative Power",
+    "difficulty": "hard",
+    "question": "Why are personal stories or testimonials more persuasive than statistics in policy communication?",
+    "options": [
+      "Human stories create emotional connection and make abstract policy concrete; they're memorable and relatable",
+      "Statistics are always more convincing than stories",
+      "Personal stories are always misleading",
+      "Policy should only use data, never anecdotes"
+    ],
+    "correctIndex": 0,
+    "explanation": "A policy story about a widow forced to choose between medicine and food is more moving than 'policy X affects 2 million seniors.' Stories don't replace data but make it human. Effective communication combines both."
+  },
+  {
+    "id": "cp33-q030",
+    "module": "cp-33",
+    "topic": "Communication and Compliance",
+    "difficulty": "hard",
+    "question": "What is the relationship between policy communication and citizen compliance?",
+    "options": [
+      "Clear, trusted communication increases voluntary compliance without coercion; opaque communication requires enforcement",
+      "Communication has no effect on whether people follow policies",
+      "All citizens follow policies regardless of communication",
+      "Coercion is equally effective regardless of communication quality"
+    ],
+    "correctIndex": 0,
+    "explanation": "When people understand the rationale and see fairness, they comply voluntarily. Tax compliance is higher where citizens trust the system. Poor communication forces reliance on enforcement, which is expensive and generates resentment."
+  },
+  {
+    "id": "cp33-q031",
+    "module": "cp-33",
+    "topic": "Rhetoric and Persuasion",
+    "difficulty": "expert",
+    "question": "How do the rhetorical appeals of ethos, pathos, and logos function in policy communication?",
+    "options": [
+      "Ethos (credibility), pathos (emotion), and logos (logic) work together; overreliance on any one weakens persuasion",
+      "Only logic matters in policy arguments",
+      "Emotional appeals are manipulative and should be avoided",
+      "Credibility is irrelevant if the logic is sound"
+    ],
+    "correctIndex": 0,
+    "explanation": "Aristotelian rhetoric shows effective persuasion combines credibility (the speaker is trustworthy), emotional resonance (the message matters to me), and logical reasoning (the evidence supports the claim). All three strengthen policy communication."
+  },
+  {
+    "id": "cp33-q032",
+    "module": "cp-33",
+    "topic": "Countering Disinformation",
+    "difficulty": "expert",
+    "question": "What is the 'backfire effect' in correcting misinformation?",
+    "options": [
+      "Sometimes corrections strengthen false beliefs if they conflict with identity or values; careful correction can mitigate this",
+      "Corrections always successfully eliminate false beliefs",
+      "Corrections have no effect on beliefs",
+      "The backfire effect is universal and corrections always make things worse"
+    ],
+    "correctIndex": 0,
+    "explanation": "Research shows corrections sometimes backfire, strengthening false beliefs—especially when misinformation aligns with values. Mitigation strategies include: delay before correction, use credible messengers, appeal to shared values, offer alternative explanations."
+  },
+  {
+    "id": "cp33-q033",
+    "module": "cp-33",
+    "topic": "Policy Feedback and Iteration",
+    "difficulty": "expert",
+    "question": "How can policy communication support evidence-based policy iteration and improvement?",
+    "options": [
+      "By creating feedback mechanisms, sharing results transparently, and explicitly adjusting policy based on learning",
+      "By hiding data about policy outcomes",
+      "By never admitting when policies aren't working",
+      "By claiming all policies are successful regardless of evidence"
+    ],
+    "correctIndex": 0,
+    "explanation": "Communicating transparently about policy performance creates accountability and enables improvement. Pilot programs with explicit evaluation and communication about what works create political space for course corrections."
+  },
+  {
+    "id": "cp33-q034",
+    "module": "cp-33",
+    "topic": "narrative-framing",
+    "difficulty": "easy",
+    "question": "What is the primary purpose of framing in policy communication?",
+    "options": [
+      "To select which aspects of an issue to highlight, shaping how audiences interpret it",
+      "To provide complete and accurate information about all aspects of a policy issue",
+      "To persuade audiences by suppressing information that contradicts the preferred view",
+      "To ensure technical details are communicated clearly to expert and specialist audiences"
+    ],
+    "correctIndex": 0,
+    "explanation": "Framing selects which aspects of reality are made salient — it does not change the facts but changes which facts are foregrounded, profoundly shaping how audiences interpret an issue and what solutions seem appropriate.",
+    "source": "Narratives_-_Policy_Paradox_Deborah_Stone_Ch_6__7__8.pdf"
+  },
+  {
+    "id": "cp33-q035",
+    "module": "cp-33",
+    "topic": "narrative-structure",
+    "difficulty": "easy",
+    "question": "A narrative in policy communication typically includes...",
+    "options": [
+      "Characters, a plot with cause and effect, and a moral or lesson",
+      "Statistical data, technical analysis, and expert citations",
+      "Legislative history, constitutional provisions, and legal precedents",
+      "Survey results, polling data, and demographic breakdowns"
+    ],
+    "correctIndex": 0,
+    "explanation": "Policy narratives are stories with protagonists, antagonists, a plot that assigns cause and blame, and a moral that implies a solution. This structure makes them far more persuasive than raw data alone.",
+    "source": "Narratives_in_Public_Policy.pptx-1.pdf"
+  },
+  {
+    "id": "cp33-q036",
+    "module": "cp-33",
+    "topic": "news-cycles",
+    "difficulty": "medium",
+    "question": "Why does research suggest accurate factual corrections often fail to change people's minds about political issues?",
+    "options": [
+      "Because political beliefs are tied to group identity and values, making factual challenges feel like personal or social threats",
+      "Because people lack the cognitive capacity to process new factual information about complex policy issues",
+      "Because media organizations deliberately distort corrections to protect their existing narratives and audiences",
+      "Because governments suppress accurate corrections to protect policies already implemented and in progress"
+    ],
+    "correctIndex": 0,
+    "explanation": "Research on backfire effects and motivated reasoning shows that when facts threaten group identity, people resist them emotionally. Effective communication must work with existing values rather than simply correcting misinformation.",
+    "source": "How the news changes the way we think and behave.pdf"
+  },
+  {
+    "id": "cp33-q037",
+    "module": "cp-33",
+    "topic": "policy-paradox",
+    "difficulty": "medium",
+    "question": "Deborah Stone argues that policy narratives are inherently political. What does she mean?",
+    "options": [
+      "Narratives frame what counts as a problem, who is responsible, and what solutions are legitimate — choices that distribute power and resources",
+      "Narratives are tools of propaganda used by governments to mislead citizens about costs and benefits of policy",
+      "Policy narratives are primarily designed to win elections rather than improve the quality of policy outcomes",
+      "All policy narratives are driven by ideological commitments that make objective policy analysis impossible"
+    ],
+    "correctIndex": 0,
+    "explanation": "For Stone, there is no neutral way to define a policy problem. Every narrative selects characters, assigns causation, and implies remedies — and these choices are not technical but political, determining who gains and who bears costs.",
+    "source": "Narratives_-_Policy_Paradox_Deborah_Stone_Ch_6__7__8.pdf"
+  },
+  {
+    "id": "cp33-q038",
+    "module": "cp-33",
+    "topic": "credibility-trust",
+    "difficulty": "expert",
+    "question": "A policymaker has strong evidence that a well-established public narrative is factually wrong, but correcting it risks undermining trust in government. What does this dilemma reveal?",
+    "options": [
+      "Legitimacy and accuracy are related but distinct goods — maintaining trust sometimes requires building bridges between existing beliefs and new evidence, not direct contradiction",
+      "Accuracy always takes precedence over legitimacy because democratic governance fundamentally requires fully informed citizens",
+      "Legitimacy always takes precedence over accuracy because a government that loses public trust cannot govern at all",
+      "The dilemma shows all policy communication is inherently deceptive and policymakers should abandon narrative framing"
+    ],
+    "correctIndex": 0,
+    "explanation": "The tension between factual accuracy and narrative legitimacy is real and unresolvable by formula. Effective communicators know that corrections delivered in ways that threaten identity produce resistance, making the method of correction as important as the correction itself.",
+    "source": "Effective_Policy_Communication_in_the_Age_of_Information_Overload_and_YouTube.pdf"
+  },
+  {
+    "id": "cp33-q039",
+    "module": "cp-33",
+    "topic": "digital-platforms",
+    "difficulty": "expert",
+    "question": "Why does the rise of social media make Deborah Stone's account of narrative and framing more, not less, relevant to policy analysis?",
+    "options": [
+      "Social media amplifies narrative and framing by reducing the cost of mobilizing communities around shared stories, making narrative dynamics central to political outcomes",
+      "Social media eliminates narrative effects by giving citizens direct access to raw data, bypassing journalists and political intermediaries",
+      "Social media makes factual information more available and therefore reduces the influence of framing on political beliefs and preferences",
+      "Social media primarily benefits government communicators, who can now reach citizens directly without passing through hostile media"
+    ],
+    "correctIndex": 0,
+    "explanation": "If anything, social media turbocharges narrative dynamics: algorithms reward emotionally resonant stories over dry fact, filter bubbles reinforce existing frames, and virality rewards the most compelling narrative — not the most accurate one.",
+    "source": "Effective_Policy_Communication_in_the_Age_of_Information_Overload_and_YouTube.pdf"
+  },
+  {
+    "id": "cp33-q040",
+    "module": "cp-33",
+    "topic": "narrative-framing",
+    "difficulty": "expert",
+    "question": "Policy paradox and narrative framing both show that defining a problem shapes available solutions. What does this imply for the design of public consultation processes?",
+    "options": [
+      "Consultation processes should surface competing problem definitions rather than just gathering input on pre-defined solutions",
+      "Consultation processes should focus on technical solutions and avoid engaging citizens in problem definition, which requires expert knowledge",
+      "Consultation processes are primarily legitimating exercises whose design does not significantly affect policy outcomes",
+      "Framing effects in consultation can be eliminated by using standardized questionnaires that present all options neutrally"
+    ],
+    "correctIndex": 0,
+    "explanation": "If how a problem is framed determines what solutions are even imaginable, then consultations that present pre-defined solutions are merely choosing among options selected by whoever defined the problem — a fundamentally political act disguised as neutral process.",
+    "source": "Narratives_-_Policy_Paradox_Deborah_Stone_Ch_6__7__8.pdf"
+  },
+  {
+    "id": "cp33-q041",
+    "module": "cp-33",
+    "topic": "communication-strategy",
+    "difficulty": "expert",
+    "question": "A public health campaign presents rigorous scientific evidence that a widely-held dietary belief is false. Surveys show that after the campaign, more people hold the false belief than before. Which framework best explains this outcome and what does it imply for communication strategy?",
+    "options": [
+      "The backfire effect: threatening strongly-held beliefs causes people to double down; the implication is that direct factual correction is counterproductive and communicators must work with existing narrative frames rather than against them",
+      "The campaign failed because the evidence was presented by scientists rather than trusted community figures; switching messengers would resolve the problem",
+      "The outcome is statistically unlikely and suggests a methodological flaw in the surveys rather than a genuine communication failure",
+      "Digital misinformation algorithms amplified the original false belief faster than the campaign could correct it; the solution is platform-level regulation, not better messaging"
+    ],
+    "correctIndex": 0,
+    "explanation": "The backfire effect (and the broader research on identity-protective cognition) explains why direct factual correction can increase belief in falsehoods when those beliefs are identity-linked. The implication for communication strategy is that effective correction requires working within existing narrative frames, using trusted messengers, and avoiding framing that triggers identity threat rather than simply presenting better evidence.",
+    "source": "cp-33/narrative-and-communication.md"
+  },
+  {
+    "id": "cp33-q042",
+    "module": "cp-33",
+    "topic": "consultation-design",
+    "difficulty": "expert",
+    "question": "A ministry conducts an extensive public consultation on a draft policy — public meetings in 12 cities, an online submission portal, and stakeholder roundtables. The final policy is identical to the original draft. A critic accuses the ministry of performative consultation. What structural features would distinguish genuine consultation from performative consultation, and why does the distinction matter?",
+    "options": [
+      "Genuine consultation requires that the final policy must change from the draft; if it does not change, the process was performative regardless of how extensive it was",
+      "The distinction does not matter practically — what matters is whether the policy is good, not whether the process was genuine",
+      "Genuine consultation builds in decision points where input can materially alter design, assigns accountability for how submissions influenced decisions, and involves stakeholders before options are foreclosed; performative consultation substitutes process for influence, which matters because it erodes trust in future consultations and misallocates public participation resources",
+      "Genuine consultation requires equal participation by all affected parties; performative consultation is one where certain groups are systematically excluded from the process"
+    ],
+    "correctIndex": 2,
+    "explanation": "The key structural distinction is whether input can materially alter decisions, not whether many inputs are collected. Genuine consultation occurs before options are foreclosed and includes feedback loops showing how submissions influenced design. The distinction matters beyond any single policy: performative consultation erodes the credibility of future consultation processes, reducing participation and the information value of public input over time.",
+    "source": "cp-33/consultation-and-legitimacy.md"
+  }
+]

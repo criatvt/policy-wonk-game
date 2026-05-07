@@ -1,0 +1,50 @@
+name: Build and deploy
+
+# 01-architecture.md: Cloudflare Pages is the preferred target.
+# Cloudflare Pages can deploy via its native Git integration without GitHub Actions
+# (set the CF Pages project to watch this repo, build command `npm run build`, output
+# directory `dist`). This workflow runs the same build on every push so we catch
+# broken builds before they hit production, and it doubles as a deploy step if you
+# prefer to drive deploys from GitHub Actions: uncomment the deploy job below and
+# add CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID secrets.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+      - run: npm run build
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 7
+
+  # deploy:
+  #   needs: build
+  #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/download-artifact@v4
+  #       with:
+  #         name: dist
+  #         path: dist
+  #     - name: Deploy to Cloudflare Pages
+  #       uses: cloudflare/wrangler-action@v3
+  #       with:
+  #         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+  #         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+  #         command: pages deploy dist --project-name=policy-wonk-game
