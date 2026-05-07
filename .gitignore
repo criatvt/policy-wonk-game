@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Intermediate content extraction — regenerable from source, never commit
+working-content/
+
+# Environment variables
+.env
+.env.local
+
+# Editor
+.DS_Store
+.vscode/
