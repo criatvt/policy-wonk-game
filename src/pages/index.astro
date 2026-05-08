@@ -1,15 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout title="Policy Wonk — coming soon" zone="game">
-  <section class="text-center py-20">
-    <p class="text-sm uppercase tracking-widest opacity-70 mb-4">Studio under construction</p>
-    <h1 class="text-5xl md:text-6xl font-semibold mb-6">Policy Wonk</h1>
-    <p class="text-lg max-w-xl mx-auto opacity-90">
-      Check your public policy knowledge in a fun way. Most fun if you're a Takshashila alumnus or a public policy enthusiast.
+<BaseLayout title="Policy Wonk" zone="game">
+  <section class="text-center py-16 md:py-24 flex flex-col items-center gap-8">
+    <p class="text-sm uppercase tracking-widest opacity-70">Hosted by Iqbal Ji</p>
+    <h1 class="text-5xl md:text-7xl font-semibold leading-tight">Policy Wonk</h1>
+    <p class="text-lg max-w-xl opacity-90">
+      Fifteen questions. Four difficulty tiers. Three lifelines. Two safety nets.
+      One crore credibility points if you go all the way.
     </p>
-    <p class="mt-10 text-sm opacity-70">
-      Iqbal Ji is still tying his neck collar. Please hold.
+    <a
+      href="/play"
+      class="px-8 py-4 rounded bg-[var(--color-functional-marigold)] text-[var(--color-charcoal)] text-lg font-semibold hover:opacity-90 transition-opacity"
+    >
+      Play
+    </a>
+    <p class="text-xs opacity-60 max-w-md">
+      Built on Takshashila GCPP course material. Most fun if you've taken the courses;
+      welcoming if you haven't.
     </p>
   </section>
 </BaseLayout>

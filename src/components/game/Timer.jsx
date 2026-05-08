@@ -1,0 +1,82 @@
+import { useEffect, useRef, useState } from "react";
+
+// Tier-based countdown. Starts when `running` flips true. Pauses when
+// running flips false. Calls onExpire() at zero. Visual warning kicks
+// in at the last 5 seconds (functional red).
+
+export default function Timer({ seconds, running, onExpire, onTick }) {
+  const [remaining, setRemaining] = useState(seconds);
+  const expiredRef = useRef(false);
+  const startStampRef = useRef(null);
+  const accumulatedRef = useRef(0);
+  const rafRef = useRef(null);
+
+  // Reset when `seconds` changes (new question)
+  useEffect(() => {
+    setRemaining(seconds);
+    expiredRef.current = false;
+    accumulatedRef.current = 0;
+    startStampRef.current = null;
+  }, [seconds]);
+
+  useEffect(() => {
+    function tick() {
+      if (!running) return;
+      const now = performance.now();
+      const elapsedSec =
+        (accumulatedRef.current + (now - startStampRef.current)) / 1000;
+      const next = Math.max(0, seconds - elapsedSec);
+      setRemaining(next);
+      onTick?.(next);
+      if (next <= 0 && !expiredRef.current) {
+        expiredRef.current = true;
+        onExpire?.();
+        return;
+      }
+      rafRef.current = requestAnimationFrame(tick);
+    }
+
+    if (running) {
+      startStampRef.current = performance.now();
+      rafRef.current = requestAnimationFrame(tick);
+    } else if (startStampRef.current != null) {
+      // Pause: bank elapsed time
+      accumulatedRef.current += performance.now() - startStampRef.current;
+      startStampRef.current = null;
+    }
+
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [running, seconds]);
+
+  const display = Math.ceil(remaining);
+  const warning = remaining <= 5 && remaining > 0;
+  const pct = Math.max(0, Math.min(1, remaining / seconds));
+
+  return (
+    <div className="flex items-center gap-3 select-none">
+      <div
+        className={`font-mono text-2xl tabular-nums ${
+          warning ? "text-[var(--color-functional-red)]" : ""
+        }`}
+        aria-live="polite"
+        aria-label={`${display} seconds remaining`}
+      >
+        {display}s
+      </div>
+      <div className="flex-1 h-2 bg-[var(--color-indigo-faded)] rounded overflow-hidden min-w-[120px]">
+        <div
+          className="h-full transition-[width] duration-100"
+          style={{
+            width: `${pct * 100}%`,
+            background: warning
+              ? "var(--color-functional-red)"
+              : "var(--color-functional-marigold)",
+          }}
+        />
+      </div>
+    </div>
+  );
+}

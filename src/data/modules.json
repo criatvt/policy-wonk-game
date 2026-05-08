@@ -1,0 +1,90 @@
+[
+  {
+    "id": "cp-10",
+    "short": "cp10",
+    "code": "CP 10",
+    "name": "Public Systems Thinking",
+    "group": "Foundations",
+    "themeFlavour": "balanced"
+  },
+  {
+    "id": "cp-11",
+    "short": "cp11",
+    "code": "CP 11",
+    "name": "Politics & Society",
+    "group": "Foundations",
+    "themeFlavour": "balanced"
+  },
+  {
+    "id": "cp-12",
+    "short": "cp12",
+    "code": "CP 12",
+    "name": "State Capacity",
+    "group": "Foundations",
+    "themeFlavour": "balanced"
+  },
+  {
+    "id": "cp-13",
+    "short": "cp13",
+    "code": "CP 13",
+    "name": "Policy Analysis",
+    "group": "Foundations",
+    "themeFlavour": "balanced"
+  },
+  {
+    "id": "cp-21",
+    "short": "cp21",
+    "code": "CP 21",
+    "name": "Public Economics — Incentives",
+    "group": "Economic Reasoning",
+    "themeFlavour": "english-heavy"
+  },
+  {
+    "id": "cp-22",
+    "short": "cp22",
+    "code": "CP 22",
+    "name": "Public Economics — Markets",
+    "group": "Economic Reasoning",
+    "themeFlavour": "english-heavy"
+  },
+  {
+    "id": "cp-23",
+    "short": "cp23",
+    "code": "CP 23",
+    "name": "Microeconomics — Demand & Supply",
+    "group": "Economic Reasoning",
+    "themeFlavour": "english-heavy"
+  },
+  {
+    "id": "cp-25",
+    "short": "cp25",
+    "code": "CP 25",
+    "name": "Trade & Specialisation",
+    "group": "Economic Reasoning",
+    "themeFlavour": "english-heavy"
+  },
+  {
+    "id": "cg-1",
+    "short": "cg1",
+    "code": "CG 1",
+    "name": "Culture & Society",
+    "group": "Strategy & Society",
+    "themeFlavour": "wild"
+  },
+  {
+    "id": "cp-33",
+    "short": "cp33",
+    "code": "CP 33",
+    "name": "Policy Communication",
+    "group": "Strategy & Society",
+    "themeFlavour": "wild"
+  },
+  {
+    "id": "cs-11",
+    "short": "cs11",
+    "code": "CS 11",
+    "name": "Strategic Studies",
+    "group": "Strategy & Society",
+    "themeFlavour": "mock-serious"
+  }
+]

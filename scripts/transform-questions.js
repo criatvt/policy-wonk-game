@@ -1,18 +1,16 @@
 #!/usr/bin/env node
 // Build-time pipeline:
-//   1. Read authoring banks from src/data/questions/<module>.json
-//   2. Validate (delegates to validate-questions.js)
-//   3. For each question: hash the correct answer with a per-build salt,
+//   1. Validate authoring banks (delegates to validate-questions.js)
+//   2. For each question: hash correct answer with a per-build salt,
 //      shuffle options deterministically per question id, strip
-//      `correctIndex` and `explanation`
-//   4. Write runtime questions to dist/data/questions/<module>.json
-//   5. Write explanations separately to dist/data/explanations/<module>.json
+//      correctIndex and explanation
+//   3. Write runtime questions to public/data/questions/<module>.json
+//      (Astro serves public/ at dev and copies it to dist/ at build)
+//   4. Write explanations separately to public/data/explanations/<module>.json
+//   5. Emit the salt as src/lib/_salt.js so it bundles into the JS that
+//      ships to the browser. Casual obfuscation, not crypto — see CLAUDE.md.
 //
-// The salt is generated fresh per build and embedded in the bundle via
-// dist/data/_salt.json (loaded by the runtime hashing helper). It is
-// casual obfuscation — not crypto.
-//
-// Usage: node scripts/transform-questions.js [--out=dist]
+// Usage: node scripts/transform-questions.js [--skip-validate]
 
 import { readFileSync, writeFileSync, mkdirSync, readdirSync } from "node:fs";
 import { join, dirname, resolve } from "node:path";
@@ -23,26 +21,19 @@ import { spawnSync } from "node:child_process";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 const QUESTIONS_DIR = join(ROOT, "src/data/questions");
+const RUNTIME_QUESTIONS = join(ROOT, "public/data/questions");
+const RUNTIME_EXPLANATIONS = join(ROOT, "public/data/explanations");
+const SALT_MODULE = join(ROOT, "src/lib/_salt.js");
 
-const args = Object.fromEntries(
-  process.argv
-    .slice(2)
-    .filter((a) => a.startsWith("--"))
-    .map((a) => {
-      const [k, v] = a.replace(/^--/, "").split("=");
-      return [k, v ?? true];
-    }),
-);
-const OUT_DIR = resolve(ROOT, args.out || "dist");
-const SKIP_VALIDATE = args["skip-validate"] === true || args["skip-validate"] === "true";
+const args = new Set(process.argv.slice(2));
+const SKIP_VALIDATE = args.has("--skip-validate");
 
 function sha256(str) {
   return createHash("sha256").update(str).digest("hex");
 }
 
-// Mulberry32 PRNG — deterministic, seeded by question id so the same
-// player sees a stable order across reloads, but different builds with
-// the same content produce the same shuffle (option order is content-stable).
+// Mulberry32-style PRNG seeded from the question id. Same id → same shuffle
+// across builds, so option order is content-stable (only the salt rotates).
 function seededRandom(seedStr) {
   let h = 2166136261;
   for (let i = 0; i < seedStr.length; i++) {
@@ -91,14 +82,12 @@ function main() {
   const salt = randomBytes(16).toString("hex");
   const moduleFiles = readdirSync(QUESTIONS_DIR).filter((f) => f.endsWith(".json"));
 
-  const questionsOut = join(OUT_DIR, "data/questions");
-  const explanationsOut = join(OUT_DIR, "data/explanations");
-  ensureDir(questionsOut);
-  ensureDir(explanationsOut);
+  ensureDir(RUNTIME_QUESTIONS);
+  ensureDir(RUNTIME_EXPLANATIONS);
+  ensureDir(dirname(SALT_MODULE));
 
   let totalQuestions = 0;
   for (const file of moduleFiles) {
-    const moduleId = file.replace(/\.json$/, "");
     const data = JSON.parse(readFileSync(join(QUESTIONS_DIR, file), "utf8"));
 
     const runtime = [];
@@ -118,7 +107,6 @@ function main() {
         correctHash,
       };
       if (q.topic) runtimeQ.topic = q.topic;
-      if (q.source) runtimeQ.source = q.source;
       if (q.timerOverride) runtimeQ.timerOverride = q.timerOverride;
       runtime.push(runtimeQ);
 
@@ -126,25 +114,36 @@ function main() {
     }
 
     writeFileSync(
-      join(questionsOut, file),
-      JSON.stringify(runtime, null, 0),
+      join(RUNTIME_QUESTIONS, file),
+      JSON.stringify(runtime),
     );
-    writeFileSync(
-      join(explanationsOut, file),
-      JSON.stringify(explanations, null, 0),
-    );
+    // Per-question explanation files. Spec (04-question-schema.md):
+    // "The frontend fetches it only after the player has locked an
+    // answer." A per-module file would leak other questions' answers
+    // on the first lock — per-question files keep the leak to one.
+    const moduleId = file.replace(/\.json$/, "");
+    const explanationsModuleDir = join(RUNTIME_EXPLANATIONS, moduleId);
+    ensureDir(explanationsModuleDir);
+    for (const [id, text] of Object.entries(explanations)) {
+      writeFileSync(
+        join(explanationsModuleDir, `${id}.json`),
+        JSON.stringify({ id, explanation: text }),
+      );
+    }
     totalQuestions += runtime.length;
   }
 
-  // Salt embedded as a separate JSON file. Runtime hashing util reads it
-  // at startup. Casual obfuscation, not crypto — see CLAUDE.md.
+  // Salt as a JS module — bundled into the runtime by Astro/Vite.
   writeFileSync(
-    join(OUT_DIR, "data/_salt.json"),
-    JSON.stringify({ salt, builtAt: new Date().toISOString() }, null, 2),
+    SALT_MODULE,
+    `// Generated by scripts/transform-questions.js. Do not edit; do not commit.\n` +
+      `// Casual obfuscation only — see CLAUDE.md for the threat model.\n` +
+      `export const SALT = ${JSON.stringify(salt)};\n` +
+      `export const BUILT_AT = ${JSON.stringify(new Date().toISOString())};\n`,
   );
 
   console.log(
-    `transform: ${totalQuestions} questions across ${moduleFiles.length} modules → ${OUT_DIR}/data/{questions,explanations}/`,
+    `transform: ${totalQuestions} questions across ${moduleFiles.length} modules → public/data/{questions,explanations}/`,
   );
 }
 

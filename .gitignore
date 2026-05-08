@@ -10,6 +10,10 @@ dist/
 # Intermediate content extraction — regenerable from source, never commit
 working-content/
 
+# Build artefacts emitted by scripts/transform-questions.js
+public/data/
+src/lib/_salt.js
+
 # Environment variables
 .env
 .env.local

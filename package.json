@@ -11,9 +11,9 @@
     "url": "https://github.com/criatvt/policy-wonk-game.git"
   },
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build && pagefind --site dist",
+    "dev": "node scripts/transform-questions.js && astro dev",
+    "start": "npm run dev",
+    "build": "node scripts/transform-questions.js && astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
     "validate-questions": "node scripts/validate-questions.js",

@@ -1,0 +1,7 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import GameContainer from "../components/game/GameContainer.jsx";
+---
+<BaseLayout title="Policy Wonk — play" zone="game">
+  <GameContainer client:only="react" />
+</BaseLayout>

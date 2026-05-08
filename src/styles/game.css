@@ -18,3 +18,16 @@
 .game-zone a {
   color: var(--color-sienna-pale);
 }
+
+/* Ladder: vertical on desktop, horizontal scroll on mobile */
+@media (max-width: 768px) {
+  .ladder-rungs {
+    flex-direction: row !important;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.25rem;
+  }
+  .ladder-rungs li {
+    flex-shrink: 0;
+  }
+}
