@@ -1,0 +1,33 @@
+{
+  "_note": "Metadata only. Voiced lines come in Phase 7 from 07-dialogue-script.md (per CLAUDE.md, character voice is approved by Aasif, not generated). For Phase 6, the Phone an AI lifeline shows a neutral recommendation; the character framing arrives with the dialogue picker.",
+  "experts": [
+    {
+      "id": "pranai",
+      "name": "Pranay Kotasthane",
+      "displayName": "Pranai AI ji",
+      "reliability": 0.90,
+      "quirk": "Verbose, frameworks-first, qualifies everything"
+    },
+    {
+      "id": "niteen",
+      "name": "Nitin Pai",
+      "displayName": "Niteen AI ji",
+      "reliability": 0.70,
+      "quirk": "Aphoristic, strategic-culture framing, mildly contrarian"
+    },
+    {
+      "id": "anoopam",
+      "name": "Anupam Manur",
+      "displayName": "Anoopam AI ji",
+      "reliability": 0.60,
+      "quirk": "Empiricist, cites studies (sometimes invented), hedges"
+    },
+    {
+      "id": "saarthak",
+      "name": "Sarthak Pradhan",
+      "displayName": "Saarthak AI ji",
+      "reliability": 0.50,
+      "quirk": "Fast, first-principles, confident, often wrong charmingly"
+    }
+  ]
+}

@@ -3,6 +3,9 @@ import modules from "../../data/modules.json";
 import {
   LADDER,
   advanceToNextQuestion,
+  applyAudiencePoll,
+  applyExpert,
+  applyFiftyFifty,
   canWalkAway,
   createInitialState,
   endAfterWrong,
@@ -14,12 +17,22 @@ import {
   timerForRung,
   walkAway,
 } from "../../lib/gameEngine.js";
+import {
+  expertVerdict,
+  fiftyFiftyEliminate,
+  generateAudiencePoll,
+} from "../../lib/lifelineLogic.js";
 import { findCorrectIndex, isCorrect } from "../../lib/answerHash.js";
+import expertsData from "../../data/experts.json";
 import Question from "./Question.jsx";
 import Ladder from "./Ladder.jsx";
 import Timer from "./Timer.jsx";
 import IqbalJi from "./IqbalJi.jsx";
 import EndScreen from "./EndScreen.jsx";
+import Lifelines from "./Lifelines.jsx";
+import HostTakeover from "./HostTakeover.jsx";
+
+const EXPERTS = expertsData.experts;
 
 const SCREEN_ONBOARDING = "onboarding";
 const SCREEN_PLAYING = "playing";
@@ -33,19 +46,15 @@ function groupedModules() {
   }));
 }
 
-// Placeholder dialogue beats — Phase 7 replaces with the dialogue picker.
-function beatLine(state) {
+// Neutral system text only. Phase 7 wires the dialogue picker against
+// the approved lines in 07-dialogue-script.md. Do NOT write character
+// voice here — that violates CLAUDE.md.
+function statusText(state) {
   if (!state) return "";
-  if (state.status === "reveal-question") {
-    if (state.currentRung === 1) return "First question. Standard Operating Procedure: read carefully.";
-    if (state.currentRung === 5) return "First safety net is right here. Cross it and you don't go home empty-handed.";
-    if (state.currentRung === 10) return "Second safety net. Now things get interesting.";
-    if (state.currentRung === 13) return "Tier four. The Reserve Bank of difficulty.";
-    return `Question ${state.currentRung}. Take your time, the timer's only counting.`;
-  }
-  if (state.status === "locked") return "Locked. Now the suspense.";
-  if (state.status === "revealed-correct") return "Correct! Onwards.";
-  if (state.status === "revealed-wrong") return "Hmm. Not quite. Look again — and look at the explanation.";
+  if (state.status === "reveal-question") return `Question ${state.currentRung} of 15.`;
+  if (state.status === "locked") return "Answer locked. Awaiting reveal.";
+  if (state.status === "revealed-correct") return "Correct.";
+  if (state.status === "revealed-wrong") return "Incorrect.";
   return "";
 }
 
@@ -64,6 +73,7 @@ export default function GameContainer() {
   const [moduleId, setModuleId] = useState(modules[0]?.id ?? "");
   const [state, setState] = useState(null);
   const [loadError, setLoadError] = useState(null);
+  const [takeoverShown, setTakeoverShown] = useState(false);
   const [timerRunning, setTimerRunning] = useState(false);
   const [explanationVisible, setExplanationVisible] = useState(false);
 
@@ -72,10 +82,17 @@ export default function GameContainer() {
   const currentQuestion = state ? state.plan[state.currentRung - 1] : null;
   const tierTimer = currentQuestion ? timerForRung(state.currentRung, currentQuestion) : 0;
 
+  const trimmedName = name.trim();
+  const canBegin = trimmedName.length > 0 && !!moduleId;
+
   // Load bank when game starts. Explanations are fetched one-at-a-time
   // post-lock so they don't leak via the network tab pre-answer.
   const startGame = useCallback(async () => {
     setLoadError(null);
+    if (!trimmedName) {
+      setLoadError("Enter your name to begin.");
+      return;
+    }
     try {
       const questionsRes = await fetch(`/data/questions/${moduleId}.json`);
       if (!questionsRes.ok) throw new Error(`questions ${questionsRes.status}`);
@@ -84,13 +101,13 @@ export default function GameContainer() {
       if (warnings.length) {
         for (const w of warnings) console.warn("question pool:", w);
       }
-      setState(createInitialState({ name: name.trim() || "wonk", moduleId, plan }));
+      setState(createInitialState({ name: trimmedName, moduleId, plan }));
       setExplanationVisible(false);
       setScreen(SCREEN_PLAYING);
     } catch (e) {
       setLoadError(`Failed to load module: ${e.message}`);
     }
-  }, [moduleId, name]);
+  }, [moduleId, trimmedName]);
 
   async function fetchExplanation(question) {
     try {
@@ -107,9 +124,22 @@ export default function GameContainer() {
   const resetToOnboarding = useCallback(() => {
     setState(null);
     setExplanationVisible(false);
+    setTakeoverShown(false);
     setTimerRunning(false);
     setScreen(SCREEN_ONBOARDING);
   }, []);
+
+  // After reveal, hold the green/red highlight on the question for a
+  // beat so the player sees the right answer; THEN bring the host
+  // takeover forward with the explanation.
+  useEffect(() => {
+    if (state?.status !== "revealed-correct" && state?.status !== "revealed-wrong") {
+      setTakeoverShown(false);
+      return;
+    }
+    const t = setTimeout(() => setTakeoverShown(true), 4000);
+    return () => clearTimeout(t);
+  }, [state?.status, state?.currentRung]);
 
   // After options finish revealing, start the timer for this question
   const handleRevealComplete = useCallback(() => {
@@ -138,11 +168,12 @@ export default function GameContainer() {
       findCorrectIndex(q),
       fetchExplanation(q),
     ]);
-    // Brief suspense pause (1.5s) before reveal — see 02-game-design.md
-    await new Promise((r) => setTimeout(r, 1500));
+    // Suspense pause before reveal. 3s is the dramatic-host beat — long
+    // enough to feel like real anticipation, short enough to not bore.
+    await new Promise((r) => setTimeout(r, 3000));
     setState((s) => reveal(s, correct, exp, correctIdx));
     setExplanationVisible(true);
-  }, [state, explanations]);
+  }, [state]);
 
   // Auto-advance after correct, or end after wrong, on user click
   const handleNext = useCallback(() => {
@@ -159,9 +190,58 @@ export default function GameContainer() {
 
   const handleWalkAway = useCallback(() => {
     if (!state || !canWalkAway(state)) return;
-    if (!confirm(`Walk away with current safety-net points? You're sure, ${state.playerName}?`)) return;
+    if (!confirm(`Walk away with current safety-net points, ${state.playerName}?`)) return;
     setTimerRunning(false);
     setState((s) => walkAway(s));
+  }, [state]);
+
+  // Lifelines. Each pauses the timer, computes the result, and stamps
+  // it onto state via the engine helpers. The lifeline panel close
+  // button resumes the timer.
+  const handleLifelineFiftyFifty = useCallback(async () => {
+    if (!state || state.status !== "reveal-question" || state.answerLocked) return;
+    if (!state.lifelines.fiftyFifty) return;
+    setTimerRunning(false);
+    const q = state.plan[state.currentRung - 1];
+    const correctIdx = await findCorrectIndex(q);
+    const eliminated = fiftyFiftyEliminate(correctIdx);
+    setState((s) => applyFiftyFifty(s, eliminated));
+    // 50:50 has no panel; resume timer after a short beat so the user
+    // sees the elimination land.
+    setTimeout(() => setTimerRunning(true), 800);
+  }, [state]);
+
+  const handleLifelinePoll = useCallback(async () => {
+    if (!state || state.status !== "reveal-question" || state.answerLocked) return;
+    if (!state.lifelines.poll) return;
+    setTimerRunning(false);
+    const q = state.plan[state.currentRung - 1];
+    const correctIdx = await findCorrectIndex(q);
+    const pollData = generateAudiencePoll(correctIdx, q.difficulty);
+    setState((s) => applyAudiencePoll(s, pollData));
+  }, [state]);
+
+  const handleLifelineExpert = useCallback(
+    async (expertId) => {
+      if (!state || state.status !== "reveal-question" || state.answerLocked) return;
+      if (!state.lifelines.expert) return;
+      setTimerRunning(false);
+      const expert = EXPERTS.find((e) => e.id === expertId);
+      if (!expert) return;
+      const q = state.plan[state.currentRung - 1];
+      const correctIdx = await findCorrectIndex(q);
+      const verdict = expertVerdict(expert, correctIdx);
+      // Phase 7 wires the actual character-voiced line. For Phase 6
+      // we pass null and Lifelines.jsx renders a neutral recommendation.
+      setState((s) => applyExpert(s, expertId, null, verdict.pickedIndex));
+    },
+    [state],
+  );
+
+  const handleLifelineDismiss = useCallback(() => {
+    if (state?.status === "reveal-question" && !state.answerLocked) {
+      setTimerRunning(true);
+    }
   }, [state]);
 
   const handleExpire = useCallback(async () => {
@@ -205,13 +285,16 @@ export default function GameContainer() {
         </header>
 
         <label className="flex flex-col gap-2">
-          <span className="text-sm opacity-80">Your name</span>
+          <span className="text-sm opacity-80">
+            Your name <span className="opacity-60">(required)</span>
+          </span>
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
             maxLength={30}
-            placeholder="Wonk-in-training"
+            required
+            aria-required="true"
             className="px-3 py-2 rounded bg-[var(--color-indigo-faded)]/40 border border-[var(--color-cream)]/20 text-[var(--color-cream)]"
           />
         </label>
@@ -277,7 +360,8 @@ export default function GameContainer() {
         <button
           type="button"
           onClick={startGame}
-          className="px-6 py-3 rounded bg-[var(--color-functional-marigold)] text-[var(--color-charcoal)] font-semibold"
+          disabled={!canBegin}
+          className="px-6 py-3 rounded bg-[var(--color-functional-marigold)] text-[var(--color-charcoal)] font-semibold disabled:opacity-40 disabled:cursor-not-allowed"
         >
           Begin
         </button>
@@ -291,83 +375,100 @@ export default function GameContainer() {
     return <EndScreen state={state} onPlayAgain={resetToOnboarding} />;
   }
 
-  const showNextButton =
-    state.status === "revealed-correct" || state.status === "revealed-wrong";
   const lockEnabled =
     state.selectedAnswer != null && !state.answerLocked && state.status === "reveal-question";
+
+  // Reveal flow:
+  //   reveal-question → locked (1.5s suspense) → revealed-* (2.5s with
+  //   green/red highlight on the question itself) → host takeover with
+  //   the explanation.
+  const inReveal =
+    state.status === "revealed-correct" || state.status === "revealed-wrong";
+  const showTakeover = inReveal && takeoverShown;
 
   return (
     <div className="grid md:grid-cols-[1fr_240px] gap-6">
       <section className="flex flex-col gap-5">
-        <IqbalJi expression={expressionFor(state)} line={beatLine(state)} />
+        {!showTakeover && (
+          <IqbalJi expression={expressionFor(state)} line={statusText(state)} />
+        )}
 
-        <div className="flex items-center justify-between gap-4">
-          <p className="text-sm opacity-70">
-            Question {state.currentRung} of 15 — {LADDER[state.currentRung - 1].difficulty}
-          </p>
-          {state.status === "reveal-question" && (
-            <Timer
-              seconds={tierTimer}
-              running={timerRunning}
-              onExpire={handleExpire}
-            />
-          )}
-        </div>
-
-        <Question
-          question={currentQuestion}
-          selectedIndex={state.selectedAnswer}
-          locked={state.answerLocked}
-          eliminated={state.fiftyFiftyEliminated}
-          revealCorrect={
-            state.status === "revealed-correct" || state.status === "revealed-wrong"
-              ? state.correctIndex
-              : null
-          }
-          onSelect={handleSelect}
-          onRevealComplete={handleRevealComplete}
-        />
-
-        {explanationVisible && state.explanation && (
-          <div className="border-l-4 border-[var(--color-sienna-burnt)] pl-4 py-2 text-sm opacity-90">
-            <p className="text-xs uppercase tracking-widest opacity-60 mb-1">
-              Why
+        {!showTakeover && (
+          <div className="flex items-center justify-between gap-4">
+            <p className="text-sm opacity-70">
+              Question {state.currentRung} of 15 — {LADDER[state.currentRung - 1].difficulty}
             </p>
-            {state.explanation}
+            {state.status === "reveal-question" && (
+              <Timer
+                seconds={tierTimer}
+                running={timerRunning}
+                onExpire={handleExpire}
+              />
+            )}
           </div>
         )}
 
-        <div className="flex flex-wrap gap-3 mt-2">
-          {state.status === "reveal-question" && (
-            <>
-              <button
-                type="button"
-                disabled={!lockEnabled}
-                onClick={handleLock}
-                className="px-5 py-2 rounded border border-[var(--color-functional-marigold)] text-[var(--color-functional-marigold)] disabled:opacity-30"
-              >
-                Lock answer
-              </button>
-              <button
-                type="button"
-                disabled={!canWalkAway(state)}
-                onClick={handleWalkAway}
-                className="ml-auto px-3 py-2 text-xs opacity-70 hover:opacity-100 disabled:opacity-30"
-              >
-                Walk away
-              </button>
-            </>
-          )}
-          {showNextButton && (
-            <button
-              type="button"
-              onClick={handleNext}
-              className="px-5 py-2 rounded bg-[var(--color-functional-marigold)] text-[var(--color-charcoal)] font-semibold"
-            >
-              {state.status === "revealed-correct" ? "Next question" : "See result"}
-            </button>
-          )}
-        </div>
+        {showTakeover ? (
+          <HostTakeover
+            expression={expressionFor(state)}
+            caption={
+              state.status === "revealed-correct"
+                ? `Correct. Question ${state.currentRung}.`
+                : `Incorrect. Question ${state.currentRung}.`
+            }
+            body={state.explanation ?? "Explanation unavailable."}
+            onContinue={handleNext}
+            continueLabel={
+              state.status === "revealed-correct" ? "Next question" : "See result"
+            }
+          />
+        ) : (
+          <Question
+            question={currentQuestion}
+            selectedIndex={state.selectedAnswer}
+            locked={state.answerLocked}
+            eliminated={state.fiftyFiftyEliminated}
+            revealCorrect={inReveal ? state.correctIndex : null}
+            onSelect={handleSelect}
+            onRevealComplete={handleRevealComplete}
+          />
+        )}
+
+        {!showTakeover && state.status === "reveal-question" && (
+          <Lifelines
+            state={state}
+            experts={EXPERTS}
+            onUseFiftyFifty={handleLifelineFiftyFifty}
+            onUseAudiencePoll={handleLifelinePoll}
+            onUseExpert={handleLifelineExpert}
+            onDismissPanel={handleLifelineDismiss}
+          />
+        )}
+
+        {!showTakeover && (
+          <div className="flex flex-wrap gap-3 mt-2">
+            {state.status === "reveal-question" && (
+              <>
+                <button
+                  type="button"
+                  disabled={!lockEnabled}
+                  onClick={handleLock}
+                  className="px-5 py-2 rounded border border-[var(--color-functional-marigold)] text-[var(--color-functional-marigold)] disabled:opacity-30"
+                >
+                  Lock answer
+                </button>
+                <button
+                  type="button"
+                  disabled={!canWalkAway(state)}
+                  onClick={handleWalkAway}
+                  className="ml-auto px-3 py-2 text-xs opacity-70 hover:opacity-100 disabled:opacity-30"
+                >
+                  Walk away
+                </button>
+              </>
+            )}
+          </div>
+        )}
       </section>
 
       <aside className="md:order-2">

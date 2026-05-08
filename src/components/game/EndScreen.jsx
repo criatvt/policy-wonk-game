@@ -16,19 +16,21 @@ function shareString(state) {
 }
 
 export default function EndScreen({ state, onPlayAgain }) {
+  // Neutral system text. Phase 7 wires Iqbal Ji's approved end-state
+  // lines from 07-dialogue-script.md.
   const heading =
     state.status === "won"
-      ? "1 crore. Iqbal Ji bows."
+      ? "Ladder cleared."
       : state.status === "walked-away"
-      ? "You walked away."
-      : "You fell.";
+      ? "Walked away."
+      : "Wrong answer.";
 
   const sub =
     state.status === "won"
-      ? "Full ladder cleared."
+      ? "All 15 questions answered correctly."
       : state.status === "walked-away"
-      ? `Took the points and went home.`
-      : `Fell on Q${state.fellOnRung}. Safety nets paid out.`;
+      ? `Walked away at Q${state.currentRung}.`
+      : `Fell on Q${state.fellOnRung}.`;
 
   const share = shareString(state);
 

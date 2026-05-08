@@ -217,6 +217,38 @@ export function walkAway(state) {
   };
 }
 
+// Lifeline state transitions. Caller computes the result via
+// lifelineLogic.js and passes it in.
+
+export function applyFiftyFifty(state, eliminated) {
+  if (!state.lifelines.fiftyFifty) return state;
+  return {
+    ...state,
+    lifelines: { ...state.lifelines, fiftyFifty: false },
+    fiftyFiftyEliminated: eliminated,
+    // If the player had selected an eliminated option, clear it
+    selectedAnswer: eliminated.includes(state.selectedAnswer) ? null : state.selectedAnswer,
+  };
+}
+
+export function applyAudiencePoll(state, pollData) {
+  if (!state.lifelines.poll) return state;
+  return {
+    ...state,
+    lifelines: { ...state.lifelines, poll: false },
+    pollData,
+  };
+}
+
+export function applyExpert(state, expertId, line, pickedIndex) {
+  if (!state.lifelines.expert) return state;
+  return {
+    ...state,
+    lifelines: { ...state.lifelines, expert: false },
+    expertVerdict: { expertId, line, pickedIndex },
+  };
+}
+
 export function timeExpired(state) {
   if (state.answerLocked) return state;
   // Treat as wrong answer at the current rung.

@@ -1,25 +1,24 @@
-// Placeholder host component. Phase 7 swaps in the hand-drawn portraits
-// and wires the dialogue picker. For now: a labelled box that surfaces
-// the current beat so playtesting can verify state transitions.
+// Hand-drawn portraits live at /public/iqbal-ji/. Three expressions
+// keyed off game state (see expressionFor in GameContainer).
 
-const EXPRESSIONS = {
-  neutral: "🙂",
-  smiling: "😄",
-  sad: "😞",
+const PORTRAITS = {
+  neutral: "/iqbal-ji/neutral.png",
+  smiling: "/iqbal-ji/smiling.png",
+  sad: "/iqbal-ji/sad.png",
 };
 
 export default function IqbalJi({ expression = "neutral", line }) {
+  const src = PORTRAITS[expression] ?? PORTRAITS.neutral;
   return (
     <div
-      className="flex items-start gap-3 p-3 rounded border border-[var(--color-sienna-burnt)]/40 bg-[var(--color-indigo-faded)]/40"
+      className="flex items-start gap-4 p-3 rounded border border-[var(--color-sienna-burnt)]/40 bg-[var(--color-indigo-faded)]/40"
       aria-live="polite"
     >
-      <div
-        className="w-12 h-12 rounded-full bg-[var(--color-cream)] text-[var(--color-charcoal)] flex items-center justify-center text-2xl shrink-0"
-        aria-label={`Iqbal Ji (${expression})`}
-      >
-        {EXPRESSIONS[expression] ?? EXPRESSIONS.neutral}
-      </div>
+      <img
+        src={src}
+        alt={`Iqbal Ji, the host, looking ${expression}`}
+        className="w-20 h-20 rounded-full object-cover shrink-0 bg-[var(--color-cream)]"
+      />
       <div className="flex-1">
         <p className="text-xs uppercase tracking-widest opacity-60 mb-1">
           Iqbal Ji

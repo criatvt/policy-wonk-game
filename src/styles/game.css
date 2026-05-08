@@ -15,7 +15,10 @@
   min-height: 100vh;
 }
 
-.game-zone a {
+/* Plain text-link colour. Scoped to anchors without an explicit colour
+   utility so button-styled anchors (e.g. the Play CTA) are unaffected.
+   `:where()` keeps specificity at 0 so utility classes always win. */
+.game-zone :where(a:not([class*="text-"]):not([class*="bg-"])) {
   color: var(--color-sienna-pale);
 }
 
