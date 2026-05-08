@@ -10,6 +10,9 @@ const LETTERS = ["A", "B", "C", "D"];
 export default function Lifelines({
   state,
   experts,
+  // Iqbal Ji's "you have activated Phone an AI" line, shown above the
+  // expert picker.
+  phoneAnAiSelectLine,
   onUseFiftyFifty,
   onUseAudiencePoll,
   onUseExpert,
@@ -72,12 +75,17 @@ export default function Lifelines({
       </div>
 
       {openPanel === "poll" && state.pollData && (
-        <PollPanel data={state.pollData} onClose={handleDismiss} />
+        <PollPanel
+          data={state.pollData}
+          intro={state.pollIntroLine}
+          onClose={handleDismiss}
+        />
       )}
 
       {openPanel === "expert-pick" && (
         <ExpertPicker
           experts={experts}
+          intro={phoneAnAiSelectLine}
           onPick={handleExpertPick}
           onClose={handleDismiss}
         />
@@ -113,10 +121,13 @@ function LifelineButton({ label, used, disabled, onClick }) {
   );
 }
 
-function PollPanel({ data, onClose }) {
+function PollPanel({ data, intro, onClose }) {
   const max = Math.max(...data, 1);
   return (
     <Panel title="The audience says…" onClose={onClose}>
+      {intro && (
+        <p className="text-sm italic opacity-80 mb-1">— {intro}</p>
+      )}
       <ul className="flex flex-col gap-2 list-none p-0 m-0">
         {data.map((pct, i) => (
           <li key={i} className="flex items-center gap-3">
@@ -137,9 +148,12 @@ function PollPanel({ data, onClose }) {
   );
 }
 
-function ExpertPicker({ experts, onPick, onClose }) {
+function ExpertPicker({ experts, intro, onPick, onClose }) {
   return (
     <Panel title="Who do you want to call?" onClose={onClose}>
+      {intro && (
+        <p className="text-sm italic opacity-80 mb-2">— {intro}</p>
+      )}
       <ul className="grid sm:grid-cols-2 gap-2 list-none p-0 m-0">
         {experts.map((e) => (
           <li key={e.id}>
@@ -159,17 +173,19 @@ function ExpertPicker({ experts, onPick, onClose }) {
 }
 
 function ExpertPanel({ experts, verdict, onClose }) {
-  // Phase 6: neutral recommendation. Phase 7 swaps this for the
-  // character-voiced line drawn from the dialogue script.
   const expert = experts.find((e) => e.id === verdict.expertId);
   return (
-    <Panel title={`${expert?.displayName ?? "Expert"} recommends…`} onClose={onClose}>
-      <p className="text-base leading-relaxed">
-        Option <span className="font-mono text-[var(--color-functional-marigold)]">{LETTERS[verdict.pickedIndex]}</span>.
-      </p>
-      <p className="text-xs opacity-60 mt-2">
-        Reliability {Math.round((expert?.reliability ?? 0) * 100)}%. Character voice arrives in Phase 7.
-      </p>
+    <Panel title={`${expert?.displayName ?? "Expert"} on the line.`} onClose={onClose}>
+      {verdict.iqbalIntro && (
+        <p className="text-sm italic opacity-80 mb-3">— {verdict.iqbalIntro}</p>
+      )}
+      {verdict.line ? (
+        <p className="text-base leading-relaxed">{verdict.line}</p>
+      ) : (
+        <p className="text-base leading-relaxed">
+          Option <span className="font-mono text-[var(--color-functional-marigold)]">{LETTERS[verdict.pickedIndex]}</span>.
+        </p>
+      )}
     </Panel>
   );
 }

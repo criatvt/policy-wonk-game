@@ -41,15 +41,30 @@ export default function HostTakeover({
   explanation,
   onContinue,
   continueLabel = "Continue",
+  // Optional secondary action (e.g. "Cancel" on the walk-away
+  // confirmation). When supplied, renders next to Continue.
+  onCancel,
+  cancelLabel = "Cancel",
+  // Audience mode — fourth-wall asides. Visual register shifts:
+  // off-centre portrait, italic body, faded-teal frame. Tone is
+  // ignored when in audience mode.
+  audienceMode = false,
 }) {
   const src = PORTRAITS[expression] ?? PORTRAITS.neutral;
   const [bodyDone, setBodyDone] = useState(false);
-  const toneClass = TONE_BORDER[tone] ?? TONE_BORDER.neutral;
+  const toneClass = audienceMode
+    ? "border-[var(--color-teal-faded)] bg-[var(--color-teal-faded)]/15"
+    : TONE_BORDER[tone] ?? TONE_BORDER.neutral;
 
   // Reset typewriter when body content changes
   useEffect(() => {
     setBodyDone(false);
   }, [body]);
+
+  // Audience mode: portrait shifts left (looks past the player at the
+  // imagined audience); body text in italic.
+  const portraitAlignClass = audienceMode ? "self-start md:ml-8" : "";
+  const bodyToneClass = audienceMode ? "italic opacity-90" : "";
 
   return (
     <section
@@ -59,13 +74,13 @@ export default function HostTakeover({
       <img
         src={src}
         alt={`Iqbal Ji, the host, looking ${expression}`}
-        className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover bg-[var(--color-cream)] shrink-0"
+        className={`w-40 h-40 md:w-48 md:h-48 rounded-full object-cover bg-[var(--color-cream)] shrink-0 ${portraitAlignClass}`}
       />
       <div className="w-full max-w-2xl flex flex-col gap-4 text-center">
         {caption && (
           <p className="text-sm uppercase tracking-widest opacity-70">{caption}</p>
         )}
-        <p className="text-base md:text-lg leading-relaxed">
+        <p className={`text-base md:text-lg leading-relaxed ${bodyToneClass}`}>
           {body && (
             <Typewriter
               text={body}
@@ -85,15 +100,28 @@ export default function HostTakeover({
           </div>
         )}
       </div>
-      {onContinue && (
-        <button
-          type="button"
-          onClick={onContinue}
-          disabled={!bodyDone}
-          className="px-5 py-2 rounded bg-[var(--color-functional-marigold)] text-[var(--color-charcoal)] font-semibold disabled:opacity-40 disabled:cursor-not-allowed"
-        >
-          {continueLabel}
-        </button>
+      {(onContinue || onCancel) && (
+        <div className="flex flex-wrap gap-3 justify-center">
+          {onCancel && (
+            <button
+              type="button"
+              onClick={onCancel}
+              className="px-5 py-2 rounded border border-[var(--color-cream)]/30 text-[var(--color-cream)] hover:border-[var(--color-cream)]/60"
+            >
+              {cancelLabel}
+            </button>
+          )}
+          {onContinue && (
+            <button
+              type="button"
+              onClick={onContinue}
+              disabled={!bodyDone}
+              className="px-5 py-2 rounded bg-[var(--color-functional-marigold)] text-[var(--color-charcoal)] font-semibold disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              {continueLabel}
+            </button>
+          )}
+        </div>
       )}
     </section>
   );

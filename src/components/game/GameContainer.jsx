@@ -243,8 +243,42 @@ export default function GameContainer() {
       ? pickCorrectLine(q.difficulty, subs)
       : pickWrongLine(q.difficulty, subs);
     setRevealLine(line);
-    setState((s) => reveal(s, correct, exp, correctIdx));
-    setExplanationVisible(true);
+
+    // Fourth-wall beat fires post-lock pre-reveal at Q9 (cheating) and
+    // Q13 (ethics). Once per session each. Audience mode visual.
+    const doReveal = () => {
+      setState((s) => reveal(s, correct, exp, correctIdx));
+      setExplanationVisible(true);
+    };
+    const rung = state.currentRung;
+    const fwBeat =
+      rung === 9 && !state.fourthWallFiredQ9
+        ? "tier-3-fourth-wall-cheating"
+        : rung === 13 && !state.fourthWallFiredQ13
+        ? "tier-4-ethics-aside"
+        : null;
+    if (fwBeat) {
+      const fwLine = pickLine(fwBeat, { name: state.playerName });
+      if (fwLine) {
+        setInterstitial({
+          line: fwLine,
+          caption: rung === 9 ? "Aside, to the audience." : "A reflection.",
+          continueLabel: "Reveal the answer",
+          tone: "neutral",
+          audienceMode: true,
+          after: () => {
+            setState((s) => ({
+              ...s,
+              ...(rung === 9 ? { fourthWallFiredQ9: true } : {}),
+              ...(rung === 13 ? { fourthWallFiredQ13: true } : {}),
+            }));
+            doReveal();
+          },
+        });
+        return;
+      }
+    }
+    doReveal();
   }, [state]);
 
   // Auto-advance after correct, or end after wrong, on user click.
@@ -298,14 +332,35 @@ export default function GameContainer() {
 
   const handleWalkAway = useCallback(() => {
     if (!state || !canWalkAway(state)) return;
-    if (!confirm(`Walk away with current safety-net points, ${state.playerName}?`)) return;
     setTimerRunning(false);
-    setState((s) => walkAway(s));
+    const tentativeScore = state.highestClearedRung > 0
+      ? LADDER[state.highestClearedRung - 1].credibility
+      : 0;
+    const subs = {
+      name: state.playerName,
+      x: tentativeScore.toLocaleString("en-IN"),
+    };
+    const line = pickLine("walk-away-confirm", subs);
+    setInterstitial({
+      line: line ?? { text: `Walk away with current safety-net points, ${state.playerName}?`, expression: "neutral" },
+      caption: "Walk away?",
+      continueLabel: "Yes, walk away",
+      tone: "neutral",
+      after: () => {
+        setState((s) => walkAway(s));
+      },
+      onCancel: () => {
+        setInterstitial(null);
+        // Resume timer if we were mid-question
+        if (state.status === "reveal-question") setTimerRunning(true);
+      },
+      cancelLabel: "Stay in the game",
+    });
   }, [state]);
 
   // Lifelines. Each pauses the timer, computes the result, and stamps
   // it onto state via the engine helpers. The lifeline panel close
-  // button resumes the timer.
+  // button resumes the timer. Iqbal Ji speaks an intro line for each.
   const handleLifelineFiftyFifty = useCallback(async () => {
     if (!state || state.status !== "reveal-question" || state.answerLocked) return;
     if (!state.lifelines.fiftyFifty) return;
@@ -314,9 +369,19 @@ export default function GameContainer() {
     const correctIdx = await findCorrectIndex(q);
     const eliminated = fiftyFiftyEliminate(correctIdx);
     setState((s) => applyFiftyFifty(s, eliminated));
-    // 50:50 has no panel; resume timer after a short beat so the user
-    // sees the elimination land.
-    setTimeout(() => setTimerRunning(true), 800);
+    // Brief Iqbal Ji line + Continue, then resume timer.
+    const intro = pickLine("lifeline-fifty-fifty", { name: state.playerName });
+    if (intro) {
+      setInterstitial({
+        line: intro,
+        caption: "Fifty-fifty.",
+        continueLabel: "Back to the question",
+        tone: "neutral",
+        after: () => setTimerRunning(true),
+      });
+    } else {
+      setTimeout(() => setTimerRunning(true), 800);
+    }
   }, [state]);
 
   const handleLifelinePoll = useCallback(async () => {
@@ -326,7 +391,11 @@ export default function GameContainer() {
     const q = state.plan[state.currentRung - 1];
     const correctIdx = await findCorrectIndex(q);
     const pollData = generateAudiencePoll(correctIdx, q.difficulty);
-    setState((s) => applyAudiencePoll(s, pollData));
+    const intro = pickLine("lifeline-audience-poll", { name: state.playerName });
+    setState((s) => ({
+      ...applyAudiencePoll(s, pollData),
+      pollIntroLine: intro?.text ?? null,
+    }));
   }, [state]);
 
   const handleLifelineExpert = useCallback(
@@ -339,9 +408,29 @@ export default function GameContainer() {
       const q = state.plan[state.currentRung - 1];
       const correctIdx = await findCorrectIndex(q);
       const verdict = expertVerdict(expert, correctIdx);
-      // Phase 7 wires the actual character-voiced line. For Phase 6
-      // we pass null and Lifelines.jsx renders a neutral recommendation.
-      setState((s) => applyExpert(s, expertId, null, verdict.pickedIndex));
+      // Pick the AI line based on whether the verdict is right or
+      // wrong. Niteen has no "wrong" pool; the picker falls back to
+      // "useless" for him.
+      const tag = verdict.gotItRight ? "correct" : "wrong";
+      const optionLetter = ["A", "B", "C", "D"][verdict.pickedIndex];
+      const aiLine = pickExpertLine(EXPERTS, expertId, tag, {
+        option: `Option ${optionLetter}`,
+      });
+      // Iqbal Ji's intro before handing over to the expert.
+      const introBeat = `phone-an-ai-intro-${expertId}`;
+      const iqbalIntro = pickLine(introBeat, { name: state.playerName });
+      setState((s) =>
+        applyExpert(s, expertId, aiLine?.text ?? null, verdict.pickedIndex),
+      );
+      // Cache Iqbal Ji's intro line on state so Lifelines.jsx can show
+      // it above the expert verdict.
+      setState((s) => ({
+        ...s,
+        expertVerdict: {
+          ...s.expertVerdict,
+          iqbalIntro: iqbalIntro?.text ?? null,
+        },
+      }));
     },
     [state],
   );
@@ -351,6 +440,15 @@ export default function GameContainer() {
       setTimerRunning(true);
     }
   }, [state]);
+
+  // Iqbal Ji's "Phone an AI" select intro shown when the expert picker
+  // opens — passed through to Lifelines.jsx via state.
+  const phoneAnAiSelectLine = useMemo(() => {
+    if (!state || state.status !== "reveal-question") return null;
+    const l = pickLine("phone-an-ai-select", { name: state.playerName });
+    return l?.text ?? null;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state?.currentRung, state?.playerName]);
 
   const handleExpire = useCallback(async () => {
     setTimerRunning(false);
@@ -480,16 +578,20 @@ export default function GameContainer() {
   if (!state) return null;
 
   // Interstitial takes precedence over normal play. Used for welcome,
-  // module intro, tier intros, safety net, fourth-wall asides.
+  // module intro, tier intros, safety net, fourth-wall asides,
+  // walk-away confirm.
   if (interstitial) {
     return (
       <HostTakeover
         expression={interstitial.line.expression}
         tone={interstitial.tone}
+        audienceMode={interstitial.line.audienceMode || interstitial.audienceMode}
         caption={interstitial.caption ?? undefined}
         body={interstitial.line.text}
         onContinue={dismissInterstitial}
         continueLabel={interstitial.continueLabel}
+        onCancel={interstitial.onCancel}
+        cancelLabel={interstitial.cancelLabel}
       />
     );
   }
@@ -563,6 +665,7 @@ export default function GameContainer() {
           <Lifelines
             state={state}
             experts={EXPERTS}
+            phoneAnAiSelectLine={phoneAnAiSelectLine}
             onUseFiftyFifty={handleLifelineFiftyFifty}
             onUseAudiencePoll={handleLifelinePoll}
             onUseExpert={handleLifelineExpert}
