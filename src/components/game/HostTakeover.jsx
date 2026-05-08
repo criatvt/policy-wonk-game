@@ -27,7 +27,7 @@ const PORTRAITS = {
 const TONE_BORDER = {
   correct: "border-[var(--color-functional-green)] bg-[var(--color-functional-green)]/10",
   wrong: "border-[var(--color-functional-red)] bg-[var(--color-functional-red)]/10",
-  neutral: "border-[var(--color-sienna-burnt)]/40 bg-[var(--color-indigo-faded)]/30",
+  neutral: "border-[var(--color-border-soft)] bg-[var(--color-bg-panel)]",
 };
 
 export default function HostTakeover({
@@ -53,7 +53,7 @@ export default function HostTakeover({
   const src = PORTRAITS[expression] ?? PORTRAITS.neutral;
   const [bodyDone, setBodyDone] = useState(false);
   const toneClass = audienceMode
-    ? "border-[var(--color-teal-faded)] bg-[var(--color-teal-faded)]/15"
+    ? "border-[var(--color-text-muted)] bg-[var(--color-bg-soft)]"
     : TONE_BORDER[tone] ?? TONE_BORDER.neutral;
 
   // Reset typewriter when body content changes
@@ -74,7 +74,7 @@ export default function HostTakeover({
       <img
         src={src}
         alt={`Iqbal Ji, the host, looking ${expression}`}
-        className={`w-40 h-40 md:w-48 md:h-48 rounded-full object-cover bg-[var(--color-cream)] shrink-0 ${portraitAlignClass}`}
+        className={`w-40 h-40 md:w-48 md:h-48 rounded-full object-cover bg-[var(--color-bg-soft)] border border-[var(--color-border)] shrink-0 ${portraitAlignClass}`}
       />
       <div className="w-full max-w-2xl flex flex-col gap-4 text-center">
         {caption && (
@@ -92,7 +92,7 @@ export default function HostTakeover({
           )}
         </p>
         {explanation && bodyDone && (
-          <div className="border-t border-[var(--color-cream)]/15 pt-4 text-sm opacity-90 text-left">
+          <div className="border-t border-[var(--color-border)] pt-4 text-sm opacity-90 text-left">
             <p className="text-xs uppercase tracking-widest opacity-60 mb-2 text-center">
               Why
             </p>
@@ -106,7 +106,7 @@ export default function HostTakeover({
             <button
               type="button"
               onClick={onCancel}
-              className="px-5 py-2 rounded border border-[var(--color-cream)]/30 text-[var(--color-cream)] hover:border-[var(--color-cream)]/60"
+              className="px-5 py-2 rounded border border-[var(--color-border-soft)] text-[var(--color-text)] hover:border-[var(--color-text-soft)]"
             >
               {cancelLabel}
             </button>

@@ -1,17 +1,20 @@
 /*
- * game.css — loud, warm, hand-drawn, retro-Indian aesthetic.
- * Loaded only on game routes (/, /play). Pairs with global.css.
+ * game.css — calm white-with-gray theme + traffic-light functional colours.
+ *
+ * Per Aasif's design call (2026-05-08): the palette was switched from
+ * indigo/teal/sienna to white/black/gray to keep the focus on the
+ * questions and let the functional colours (marigold = selected,
+ * green = correct, red = wrong) do all the state-signal work.
  *
  * Hard guardrails (see 02-game-design.md):
  *  - No purple/electric-blue gradients.
  *  - No spotlight-on-circular-stage framing.
  *  - No glossy gold-accented chrome typography.
- * Functional colours (marigold/green/red) appear only in functional contexts.
  */
 
 .game-zone {
-  background: var(--color-indigo-deep);
-  color: var(--color-cream);
+  background: var(--color-bg);
+  color: var(--color-text);
   min-height: 100vh;
 }
 
@@ -19,7 +22,9 @@
    utility so button-styled anchors (e.g. the Play CTA) are unaffected.
    `:where()` keeps specificity at 0 so utility classes always win. */
 .game-zone :where(a:not([class*="text-"]):not([class*="bg-"])) {
-  color: var(--color-sienna-pale);
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--color-functional-marigold);
 }
 
 /* Ladder: vertical on desktop, horizontal scroll on mobile */

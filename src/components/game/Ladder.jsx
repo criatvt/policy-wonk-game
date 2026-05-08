@@ -20,8 +20,8 @@ export default function Ladder({ currentRung, highestClearedRung }) {
               current
                 ? "bg-[var(--color-functional-marigold)] text-[var(--color-charcoal)] font-semibold"
                 : cleared
-                ? "text-[var(--color-cream)] opacity-60"
-                : "text-[var(--color-cream)] opacity-90"
+                ? "text-[var(--color-functional-green)] opacity-80"
+                : "text-[var(--color-text-muted)]"
             }`}
             aria-current={current ? "step" : undefined}
           >

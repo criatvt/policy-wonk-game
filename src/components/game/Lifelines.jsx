@@ -110,9 +110,9 @@ function LifelineButton({ label, used, disabled, onClick }) {
       onClick={onClick}
       className={`px-3 py-2 rounded border text-sm transition-opacity ${
         used
-          ? "border-[var(--color-cream)]/15 line-through opacity-40 cursor-not-allowed"
+          ? "border-[var(--color-border)] line-through opacity-40 cursor-not-allowed"
           : disabled
-          ? "border-[var(--color-cream)]/20 opacity-40 cursor-not-allowed"
+          ? "border-[var(--color-border)] opacity-40 cursor-not-allowed"
           : "border-[var(--color-functional-marigold)] text-[var(--color-functional-marigold)] hover:bg-[var(--color-functional-marigold)]/15"
       }`}
     >
@@ -131,10 +131,10 @@ function PollPanel({ data, intro, onClose }) {
       <ul className="flex flex-col gap-2 list-none p-0 m-0">
         {data.map((pct, i) => (
           <li key={i} className="flex items-center gap-3">
-            <span className="font-mono w-6 text-center text-[var(--color-sienna-pale)]">
+            <span className="font-mono w-6 text-center text-[var(--color-text-muted)]">
               {LETTERS[i]}
             </span>
-            <div className="flex-1 h-5 bg-[var(--color-indigo-faded)]/60 rounded overflow-hidden">
+            <div className="flex-1 h-5 bg-[var(--color-bg-soft)] rounded overflow-hidden">
               <div
                 className="h-full bg-[var(--color-functional-marigold)]/70 transition-[width] duration-700"
                 style={{ width: `${(pct / max) * 100}%` }}
@@ -160,7 +160,7 @@ function ExpertPicker({ experts, intro, onPick, onClose }) {
             <button
               type="button"
               onClick={() => onPick(e.id)}
-              className="w-full text-left p-3 rounded border border-[var(--color-cream)]/20 hover:border-[var(--color-functional-marigold)]"
+              className="w-full text-left p-3 rounded border border-[var(--color-border)] hover:border-[var(--color-functional-marigold)]"
             >
               <p className="font-semibold">{e.displayName}</p>
               <p className="text-xs opacity-70 mt-1">{e.quirk}</p>
@@ -192,7 +192,7 @@ function ExpertPanel({ experts, verdict, onClose }) {
 
 function Panel({ title, children, onClose }) {
   return (
-    <div className="border border-[var(--color-sienna-burnt)]/40 bg-[var(--color-indigo-faded)]/40 rounded p-4 flex flex-col gap-3">
+    <div className="border border-[var(--color-border-soft)] bg-[var(--color-bg-panel)] rounded p-4 flex flex-col gap-3">
       <div className="flex items-center justify-between">
         <p className="text-xs uppercase tracking-widest opacity-70">{title}</p>
         <button

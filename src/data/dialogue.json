@@ -49,7 +49,7 @@
     "correct-easy": [
       "Correct! Well answered, [name]. [pause] The audience nods. Some approvingly, some surprised. I will not say which group is larger. Onwards.",
       "Yes. That is exactly right. [pause] I could say something profound about the value of foundational knowledge, but Pranai ji has already said it better, in three parts with a framework, and I am at the end of the day just a man in large spectacles. Onward.",
-      "Correct. Good. [beat] I am resisting the urge to celebrate too wildly for a Tier 1 question. We have fourteen more to go. But I am pleased. Quietly, appropriately pleased."
+      "Correct. Good. [beat] I am resisting the urge to celebrate too wildly for a Tier 1 question. There is a way to go yet. But I am pleased. Quietly, appropriately pleased."
     ],
     "correct-medium": [
       "Yes! [name], that is right. [pause] The ladder moves. The audience exhales. You are halfway up and climbing. Do not stop now.",
@@ -112,8 +112,8 @@
       "That is the game, [name]. [pause] [correct] was the answer. [pause] [X] credibility points remain. [pause] The audience is sympathetic. So am I. [pause] Come back. Try another module. The ladder will be here."
     ],
     "lost-nudge": [
-      "The notes section is right there. I am pointing at it with both hands. [pause] And if this quiz has awakened something in you, Takshashila's PGP programme is worth a look: school.takshashila.org.in/pgp. I mention this with warmth. Not as a consolation prize. Mostly.",
-      "Perhaps the notes section. Perhaps the GCPP. Perhaps the PGP programme at school.takshashila.org.in/pgp. [pause] These are not suggestions. These are observations. From a man in large spectacles who built a quiz game and is rooting for you."
+      "If this quiz has awakened something in you, Takshashila's PGP programme is worth a look: school.takshashila.org.in/pgp. [pause] I mention this with warmth. Not as a consolation prize. Mostly.",
+      "The PGP programme at school.takshashila.org.in/pgp. [pause] This is not a suggestion. It is an observation. From a man in large spectacles who built a quiz game and is rooting for you."
     ],
     "walked-away": [
       "[name] walked away with [X] credibility points. [pause] The right call at the right time. [pause] Policy is full of people who did not know when to stop. This game has one fewer. [pause] That was almost profound. I am going to ruin it by saying: come back and try another module.",

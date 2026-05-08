@@ -66,7 +66,7 @@ export default function Timer({ seconds, running, onExpire, onTick }) {
       >
         {display}s
       </div>
-      <div className="flex-1 h-2 bg-[var(--color-indigo-faded)] rounded overflow-hidden min-w-[120px]">
+      <div className="flex-1 h-2 bg-[var(--color-bg-soft)] rounded overflow-hidden min-w-[120px]">
         <div
           className="h-full transition-[width] duration-100"
           style={{

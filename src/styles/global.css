@@ -1,20 +1,35 @@
 @import "tailwindcss";
 
 @theme {
-  /* Functional colours — universal UX signal, fixed. Used only in functional contexts. */
+  /* Functional colours — universal UX signal, fixed. */
   --color-functional-marigold: #F5A623;
   --color-functional-green: #7CB342;
   --color-functional-red: #C73E1D;
 
-  /* Aesthetic palette — three colours plus halves. */
-  --color-indigo-deep: #1A1B4B;
-  --color-indigo-faded: #3D3E6B;
-  --color-teal-faded: #3A6B6B;
-  --color-teal-pale: #7AA5A5;
-  --color-sienna-burnt: #C77B47;
-  --color-sienna-pale: #E5B088;
-  --color-cream: #F8F1E4;
+  /* Aesthetic palette — white background, black/gray text and surfaces.
+     Per Aasif's call (2026-05-08): the indigo/teal/sienna palette was
+     not working; switched to a calm white/gray theme with the functional
+     colours doing all state-signal work. */
+  --color-bg: #FFFFFF;
+  --color-bg-soft: #F5F5F5;
+  --color-bg-panel: #FAFAFA;
+  --color-text: #1A1A1A;
+  --color-text-soft: #4B5563;
+  --color-text-muted: #9CA3AF;
+  --color-border: #E5E5E5;
+  --color-border-soft: #D1D5DB;
   --color-charcoal: #1A1A1A;
+
+  /* Legacy aliases mapped to the new palette so existing components
+     that still reference these vars don't break. Migrate to the
+     semantic names above as components are touched. */
+  --color-cream: #1A1A1A;
+  --color-indigo-deep: #FFFFFF;
+  --color-indigo-faded: #F5F5F5;
+  --color-sienna-burnt: #9CA3AF;
+  --color-sienna-pale: #4B5563;
+  --color-teal-faded: #6B7280;
+  --color-teal-pale: #9CA3AF;
 }
 
 :root {
@@ -28,6 +43,6 @@ html, body {
 
 body {
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, sans-serif;
-  background: var(--color-cream);
-  color: var(--color-indigo-deep);
+  background: var(--color-bg);
+  color: var(--color-text);
 }

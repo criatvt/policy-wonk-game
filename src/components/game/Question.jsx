@@ -75,7 +75,7 @@ export default function Question({
             revealCorrect != null && isSelected && revealCorrect !== i;
           // Visual state precedence: revealed > selected > eliminated > idle.
           let stateClass =
-            "border-[var(--color-cream)]/30 hover:border-[var(--color-functional-marigold)]";
+            "border-[var(--color-border)] hover:border-[var(--color-functional-marigold)]";
           if (isCorrect)
             stateClass =
               "border-[var(--color-functional-green)] bg-[var(--color-functional-green)]/25 ring-2 ring-[var(--color-functional-green)]/40";
@@ -83,7 +83,7 @@ export default function Question({
             stateClass =
               "border-[var(--color-functional-red)] bg-[var(--color-functional-red)]/25";
           else if (revealCorrect != null)
-            stateClass = "border-[var(--color-cream)]/15 opacity-50";
+            stateClass = "border-[var(--color-border)] opacity-50";
           else if (isEliminated) stateClass = "opacity-30 line-through";
           else if (locked && isSelected)
             stateClass =
@@ -108,7 +108,7 @@ export default function Question({
                 aria-hidden={!visible}
               >
                 <span
-                  className="font-mono text-[var(--color-sienna-pale)] shrink-0 w-6 text-center"
+                  className="font-mono text-[var(--color-text-muted)] shrink-0 w-6 text-center"
                   aria-hidden
                 >
                   {LETTERS[i]}

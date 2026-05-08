@@ -102,7 +102,7 @@ export default function EndScreen({ state, onPlayAgain }) {
 
   return (
     <section className="flex flex-col gap-6 max-w-xl mx-auto text-center">
-      <div className="border border-[var(--color-sienna-burnt)]/40 rounded p-6 bg-[var(--color-indigo-faded)]/30">
+      <div className="border border-[var(--color-border-soft)] rounded p-6 bg-[var(--color-bg-panel)]">
         <p className="text-xs uppercase tracking-widest opacity-60">Credibility points</p>
         <p className="text-4xl font-semibold tabular-nums mt-2">
           {formatIndianNumber(state.score)}
@@ -114,7 +114,7 @@ export default function EndScreen({ state, onPlayAgain }) {
         <textarea
           readOnly
           value={share}
-          className="w-full p-3 rounded bg-[var(--color-charcoal)]/40 border border-[var(--color-cream)]/20 text-sm font-mono"
+          className="w-full p-3 rounded bg-[var(--color-bg-soft)] border border-[var(--color-border)] text-sm font-mono text-[var(--color-text)]"
           rows={3}
         />
         <button
