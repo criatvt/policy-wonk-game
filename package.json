@@ -16,7 +16,8 @@
     "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
-    "validate-questions": "node scripts/validate-questions.js"
+    "validate-questions": "node scripts/validate-questions.js",
+    "transform-questions": "node scripts/transform-questions.js"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",

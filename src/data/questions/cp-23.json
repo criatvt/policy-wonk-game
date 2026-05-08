@@ -12,7 +12,7 @@
       "Demand always remains constant regardless of price"
     ],
     "correctIndex": 0,
-    "explanation": "The law of demand is a fundamental economic principle stating that there is an inverse relationship between price and quantity demanded\u2014when prices rise, consumers typically demand less of a good, and vice versa."
+    "explanation": "The law of demand is a fundamental economic principle stating that there is an inverse relationship between price and quantity demanded—when prices rise, consumers typically demand less of a good, and vice versa."
   },
   {
     "id": "cp23-q002",
@@ -87,7 +87,7 @@
       "A good that nobody wants to purchase"
     ],
     "correctIndex": 0,
-    "explanation": "Inferior goods are those for which demand falls when consumer income rises. Classic examples include public transportation and cheap instant noodles\u2014as people earn more, they switch to premium alternatives."
+    "explanation": "Inferior goods are those for which demand falls when consumer income rises. Classic examples include public transportation and cheap instant noodles—as people earn more, they switch to premium alternatives."
   },
   {
     "id": "cp23-q007",
@@ -102,7 +102,7 @@
       "Supply always remains constant regardless of price"
     ],
     "correctIndex": 0,
-    "explanation": "The law of supply describes a positive relationship between price and quantity supplied\u2014producers are willing to supply more of a good when its price is higher, as this increases their profit potential."
+    "explanation": "The law of supply describes a positive relationship between price and quantity supplied—producers are willing to supply more of a good when its price is higher, as this increases their profit potential."
   },
   {
     "id": "cp23-q008",
@@ -162,7 +162,7 @@
       "Price controls prevented the market from clearing"
     ],
     "correctIndex": 0,
-    "explanation": "The egg shortage during COVID resulted from supply disruptions (farm closures, transport issues) while demand stayed constant or increased. This leftward supply shift caused prices to spike\u2014a classic supply shock scenario."
+    "explanation": "The egg shortage during COVID resulted from supply disruptions (farm closures, transport issues) while demand stayed constant or increased. This leftward supply shift caused prices to spike—a classic supply shock scenario."
   },
   {
     "id": "cp23-q012",
@@ -187,9 +187,9 @@
     "question": "If market price is above equilibrium, what is the typical result?",
     "options": [
       "A surplus exists, putting downward pressure on prices",
-      "A shortage exists, putting upward pressure on prices",
-      "The market immediately clears at the new price",
-      "Consumers and producers both benefit from the high price"
+      "A shortage forms as producers cut output to protect margins",
+      "Consumers bid prices higher to secure dwindling supply",
+      "The equilibrium price rises to match the current market price"
     ],
     "correctIndex": 0,
     "explanation": "When price exceeds equilibrium, quantity supplied exceeds quantity demanded, creating a surplus. This excess supply typically puts downward pressure on prices as sellers compete to reduce inventories."
@@ -202,9 +202,9 @@
     "question": "What is a shortage in economic terms?",
     "options": [
       "A situation where quantity demanded exceeds quantity supplied at the current price",
-      "A situation where quantity supplied exceeds quantity demanded",
-      "A permanent reduction in the total supply of a good",
-      "A decrease in consumer wealth or purchasing power"
+      "A situation where producers reduce output below the profit-maximising level",
+      "A condition in which market price rises above consumer willingness to pay",
+      "A long-run decline in the total productive capacity of an industry"
     ],
     "correctIndex": 0,
     "explanation": "A shortage occurs when, at the current price, consumers want to buy more than producers are willing to sell. This creates upward pressure on prices as buyers compete for limited supplies."
@@ -247,9 +247,9 @@
     "question": "What is price elasticity of demand?",
     "options": [
       "A measure of how responsive quantity demanded is to price changes",
-      "The maximum price consumers will pay for a good",
-      "The rate at which supply increases with price",
-      "The relationship between income and consumption"
+      "The percentage of income consumers spend on a particular good",
+      "A ratio comparing a good's price to its closest substitute's price",
+      "The speed at which demand adjusts after a supply-side shock"
     ],
     "correctIndex": 0,
     "explanation": "Price elasticity of demand measures the percentage change in quantity demanded divided by the percentage change in price. It indicates how sensitive consumers are to price changes."
@@ -262,9 +262,9 @@
     "question": "When demand is price inelastic, what happens when price increases?",
     "options": [
       "Total revenue increases despite lower quantity demanded",
-      "Total revenue decreases as expected",
-      "Quantity demanded remains completely unchanged",
-      "Consumers switch entirely to substitute goods"
+      "Total revenue falls as consumers resist the higher price",
+      "Producers face a steeper supply curve and raise output",
+      "Consumer surplus rises because buyers value the good more"
     ],
     "correctIndex": 0,
     "explanation": "Inelastic demand means quantity demanded doesn't change much with price changes. When price rises on inelastic goods (like essential medicines), total revenue increases because the percentage price increase exceeds the percentage quantity decrease."
@@ -282,7 +282,7 @@
       "A government-provided utility like water"
     ],
     "correctIndex": 0,
-    "explanation": "Elastic demand exists for goods with abundant substitutes and low necessity. Luxury items fit this profile\u2014consumers easily switch to alternatives if price rises. Necessities with few substitutes tend to be inelastic."
+    "explanation": "Elastic demand exists for goods with abundant substitutes and low necessity. Luxury items fit this profile—consumers easily switch to alternatives if price rises. Necessities with few substitutes tend to be inelastic."
   },
   {
     "id": "cp23-q020",
@@ -292,9 +292,9 @@
     "question": "In India's hand sanitizer market during COVID-19, what prevented prices from rising indefinitely?",
     "options": [
       "Price controls and regulatory action limited maximum selling prices",
-      "Unlimited supplies became available from global sources",
-      "Consumer demand suddenly disappeared",
-      "The government eliminated all taxes on sanitizers"
+      "New domestic producers entered the market, expanding supply rapidly",
+      "Demand fell sharply once consumers stockpiled sufficient quantities",
+      "Cheaper substitutes such as soap displaced sanitizer demand entirely"
     ],
     "correctIndex": 0,
     "explanation": "The Indian government implemented price controls on hand sanitizers during the COVID crisis to prevent exploitative pricing, even though supply was constrained. This is an example of a binding price ceiling."
@@ -307,12 +307,12 @@
     "question": "What role does price play in a market economy?",
     "options": [
       "It serves as a signal that coordinates producers and consumers",
-      "It is determined entirely by government planning agencies",
-      "It has no relationship to supply and demand",
-      "It primarily benefits sellers while harming buyers"
+      "It is a proxy for quality, determined by production costs alone",
+      "It reflects only consumer preferences, independent of supply conditions",
+      "It primarily redistributes income from buyers to sellers"
     ],
     "correctIndex": 0,
-    "explanation": "In market economies, prices serve as signals\u2014higher prices indicate scarcity and encourage supply increases, while lower prices indicate surplus and discourage production. This price mechanism coordinates economic activity."
+    "explanation": "In market economies, prices serve as signals—higher prices indicate scarcity and encourage supply increases, while lower prices indicate surplus and discourage production. This price mechanism coordinates economic activity."
   },
   {
     "id": "cp23-q022",
@@ -330,21 +330,6 @@
     "explanation": "A drought reduces agricultural output (leftward supply shift) while demand stays relatively constant because food is a necessity. This supply shock causes both quantity to fall and prices to rise significantly."
   },
   {
-    "id": "cp23-q023",
-    "module": "cp-23",
-    "topic": "Consumer and Producer Surplus",
-    "difficulty": "medium",
-    "question": "What is consumer surplus?",
-    "options": [
-      "The difference between what consumers are willing to pay and what they actually pay",
-      "The total amount consumers spend on a good",
-      "The profit that sellers make on each unit",
-      "The government's tax revenue from a product"
-    ],
-    "correctIndex": 0,
-    "explanation": "Consumer surplus is the economic benefit consumers receive when they pay less than their maximum willingness to pay. It represents the value gained from purchasing at market prices."
-  },
-  {
     "id": "cp23-q024",
     "module": "cp-23",
     "topic": "Consumer and Producer Surplus",
@@ -352,9 +337,9 @@
     "question": "How does a price ceiling affect consumer surplus?",
     "options": [
       "It increases consumer surplus by lowering prices, though shortages may reduce access",
-      "It decreases consumer surplus by creating artificial scarcity",
-      "It has no effect on consumer surplus",
-      "It causes consumer surplus to shift to producers"
+      "It eliminates consumer surplus by forcing prices below production cost",
+      "It transfers consumer surplus entirely to the government as tax revenue",
+      "Consumer surplus is unaffected because price ceilings only constrain producers"
     ],
     "correctIndex": 0,
     "explanation": "A binding price ceiling increases consumer surplus for those who can still purchase, as they pay less. However, shortages reduce the quantity available, potentially leaving some consumers unable to purchase at all."
@@ -367,9 +352,9 @@
     "question": "What is deadweight loss?",
     "options": [
       "The loss of economic efficiency when the market doesn't reach equilibrium",
-      "The total revenue lost by sellers due to price controls",
-      "The amount consumers save due to lower prices",
-      "The government's cost of enforcing price regulations"
+      "The net reduction in producer profits caused by new market entrants",
+      "The amount consumers save relative to their willingness to pay",
+      "The fiscal cost to government of maintaining a price control regime"
     ],
     "correctIndex": 0,
     "explanation": "Deadweight loss occurs when price controls or other market distortions prevent the market from reaching equilibrium, resulting in lost economic efficiency. Trades that would benefit both parties don't happen."
@@ -382,9 +367,9 @@
     "question": "If both demand and supply increase simultaneously, what can we definitively say about the new equilibrium?",
     "options": [
       "Equilibrium quantity increases, but the price change is ambiguous",
-      "Equilibrium price increases, but the quantity change is ambiguous",
-      "Both price and quantity remain unchanged",
-      "We cannot determine equilibrium without knowing the magnitudes of the shifts"
+      "Equilibrium price rises because greater demand always dominates supply shifts",
+      "Both price and quantity settle at a higher level than before the shocks",
+      "Only equilibrium price is determinate; quantity depends on consumer preferences"
     ],
     "correctIndex": 0,
     "explanation": "When both demand and supply shift right, the quantity at equilibrium definitely increases (both curves shift right). However, price could increase, decrease, or stay the same depending on the relative magnitudes of the shifts."
@@ -412,9 +397,9 @@
     "question": "What is the substitution effect of a price increase?",
     "options": [
       "Consumers buy less of the good because it's relatively more expensive than substitutes",
-      "Consumers have less income after the price increase, so they buy less",
-      "Producers substitute more expensive inputs for cheaper ones",
-      "Consumers shift their entire budget to a completely different category"
+      "Reduced real income leads households to shift spending toward inferior goods",
+      "Producers switch to using cheaper factor inputs to maintain their output level",
+      "Higher prices cause consumers to delay purchases until market conditions improve"
     ],
     "correctIndex": 0,
     "explanation": "The substitution effect describes how consumers switch to relatively cheaper alternatives when a good's price rises. This is separate from the income effect, which reflects reduced purchasing power."
@@ -427,9 +412,9 @@
     "question": "For an inferior good, how do income and substitution effects work in opposite directions?",
     "options": [
       "Substitution effect reduces consumption; income effect increases it as people feel poorer",
-      "Substitution effect increases consumption; income effect reduces it",
-      "They work in the same direction, both reducing consumption",
-      "Income effects don't apply to inferior goods"
+      "Substitution effect raises consumption; income effect lowers it as real income rises",
+      "Income effect dominates for inferior goods, making substitution irrelevant",
+      "Both effects reinforce each other, producing a larger fall in quantity demanded"
     ],
     "correctIndex": 0,
     "explanation": "For inferior goods like cheap instant noodles: a price increase causes the substitution effect (buy less due to relative expense) but the income effect works opposite (buy more because you feel poorer and can afford fewer alternatives). The net effect depends on which dominates."
@@ -442,9 +427,9 @@
     "question": "Why might a market fail to allocate resources efficiently even when supply and demand are present?",
     "options": [
       "Externalities, information asymmetries, or monopoly power can prevent efficient allocation",
-      "Efficient allocation is mathematically impossible in real markets",
-      "Only government central planning can achieve efficiency",
-      "Markets are inherently irrational due to human psychology"
+      "Price signals become unreliable once a market reaches a large enough scale",
+      "Competitive markets by definition over-produce relative to social optimum",
+      "Consumer preferences are too unstable to allow supply to align with demand"
     ],
     "correctIndex": 0,
     "explanation": "Market failures occur when supply-demand mechanisms don't capture full costs/benefits (externalities), when buyers/sellers lack information, or when monopolies restrict output. These prevent the market from reaching the socially efficient outcome."
@@ -457,12 +442,12 @@
     "question": "What is a Giffen good?",
     "options": [
       "An inferior good where quantity demanded increases when price rises",
-      "A normal good that becomes less desirable as income increases",
-      "A luxury good that people want primarily because it's expensive",
-      "A good that has no close substitutes in the market"
+      "A normal good whose demand falls faster than income as incomes rise",
+      "A luxury good purchased primarily for its conspicuous social signal",
+      "A good whose supply curve bends backward at sufficiently high prices"
     ],
     "correctIndex": 0,
-    "explanation": "A Giffen good is exceptionally rare\u2014an inferior good where the income effect is so strong that it dominates the substitution effect. A price increase makes people feel poorer, so they buy MORE of the cheap staple. Historical examples include rice or potatoes during famines."
+    "explanation": "A Giffen good is exceptionally rare—an inferior good where the income effect is so strong that it dominates the substitution effect. A price increase makes people feel poorer, so they buy MORE of the cheap staple. Historical examples include rice or potatoes during famines."
   },
   {
     "id": "cp23-q032",
@@ -477,7 +462,7 @@
       "Neither good is price-elastic in the market"
     ],
     "correctIndex": 0,
-    "explanation": "Cross-price elasticity measures how quantity demanded of one good responds to price changes in another. Negative elasticity indicates complements (like cars and gasoline)\u2014when gasoline price rises, car demand falls."
+    "explanation": "Cross-price elasticity measures how quantity demanded of one good responds to price changes in another. Negative elasticity indicates complements (like cars and gasoline)—when gasoline price rises, car demand falls."
   },
   {
     "id": "cp23-q033",
@@ -487,12 +472,12 @@
     "question": "What does an income elasticity of demand greater than 1 indicate?",
     "options": [
       "The good is a luxury item; demand grows faster than income increases",
-      "The good is a necessity; demand barely changes with income",
-      "The good is an inferior good; demand decreases with rising income",
-      "The good has perfectly inelastic demand regardless of price"
+      "The good is a necessity; consumers continue buying it as income fluctuates",
+      "The good is an inferior good; a richer consumer buys a cheaper substitute",
+      "The good exhibits perfectly inelastic demand across all income levels"
     ],
     "correctIndex": 0,
-    "explanation": "Income elasticity > 1 means the good is a luxury\u2014a 1% increase in income leads to more than 1% increase in demand. Luxuries like fine dining or air travel have this property, unlike necessities with low elasticity."
+    "explanation": "Income elasticity > 1 means the good is a luxury—a 1% increase in income leads to more than 1% increase in demand. Luxuries like fine dining or air travel have this property, unlike necessities with low elasticity."
   },
   {
     "id": "cp23-q034",
@@ -502,9 +487,9 @@
     "question": "In a market with a binding price ceiling, how are goods allocated when shortages exist?",
     "options": [
       "By non-price mechanisms like queuing, rationing, or seller discretion",
-      "Automatically to the highest-income consumers",
-      "Through a second underground market at higher prices",
-      "Equally distributed to all citizens regardless of preference"
+      "By competitive bidding among buyers until a market-clearing price emerges",
+      "Proportionally by income level, since wealthier buyers can access more supply",
+      "Through the black market, where the official ceiling price is enforced strictly"
     ],
     "correctIndex": 0,
     "explanation": "With a shortage from price controls, market price cannot allocate. Instead, non-price allocation mechanisms emerge: first-come-first-served lines, formal rationing programs, or sellers choosing favored customers."
@@ -517,9 +502,9 @@
     "question": "During the COVID-19 pandemic, why did hand sanitizer prices spike before price controls were implemented?",
     "options": [
       "Demand surged due to health concerns while supply couldn't keep pace",
-      "Sellers intentionally destroyed inventory to create artificial scarcity",
-      "Price controls had already been implemented in all markets",
-      "Consumers hoarded supplies because they expected prices to fall"
+      "Existing producers raised prices to pre-fund capacity expansion investments",
+      "Anticipatory price controls signalled scarcity and triggered hoarding behaviour",
+      "Import restrictions reduced the elasticity of supply below pre-pandemic levels"
     ],
     "correctIndex": 0,
     "explanation": "The sanitizer price spike reflected a demand shock (sudden health awareness) hitting a supply-constrained market (limited production capacity, supply chain disruptions). Prices rose sharply until government intervention capped them."
@@ -532,9 +517,9 @@
     "question": "Why is supply typically more elastic in the long run than in the short run?",
     "options": [
       "Producers have time to adjust production capacity, enter new markets, and innovate",
-      "Consumer preferences change more dramatically over longer time periods",
-      "Price controls are more strictly enforced in the long run",
-      "Input costs inevitably increase over time, restricting expansion"
+      "Consumer demand stabilises over time, reducing pressure on producers to adjust output",
+      "Input prices fall in the long run as markets become more competitive globally",
+      "Fixed costs become variable costs over time, lowering the break-even price level"
     ],
     "correctIndex": 0,
     "explanation": "Short-run supply is constrained by fixed capital and capacity. In the long run, producers can build new factories, train workers, and develop new production methods, making supply more responsive to price changes."
@@ -547,12 +532,12 @@
     "question": "What is the economic significance of comparing consumer and producer surplus before and after a price control?",
     "options": [
       "It shows the total welfare loss from the control and who bears the cost",
-      "It proves price controls always benefit consumers",
-      "It demonstrates that price controls have no real effect on markets",
-      "It measures only the government's tax revenue from the control"
+      "It confirms that price controls always raise overall social welfare",
+      "It measures the government's fiscal savings from reduced transfer payments",
+      "It reveals whether producers can profitably remain in the market long term"
     ],
     "correctIndex": 0,
-    "explanation": "Comparing surpluses before/after controls reveals deadweight loss\u2014the net loss of economic efficiency. It also shows distributional effects: who gains and loses, demonstrating that price controls have winners and losers."
+    "explanation": "Comparing surpluses before/after controls reveals deadweight loss—the net loss of economic efficiency. It also shows distributional effects: who gains and loses, demonstrating that price controls have winners and losers."
   },
   {
     "id": "cp23-q038",
@@ -562,9 +547,9 @@
     "question": "How might suppliers respond to expectations of price increases?",
     "options": [
       "They reduce current supply to store inventory and sell later at higher prices",
-      "They immediately increase output to sell before prices rise further",
-      "They exit the market entirely, expecting regulation",
-      "They maintain normal supply levels, unaffected by future price expectations"
+      "They immediately increase output to capture market share before rivals expand",
+      "They lobby regulators to lock in the current price as a guaranteed floor",
+      "They invest in cost-cutting technology to protect margins at the current price"
     ],
     "correctIndex": 0,
     "explanation": "If producers expect higher future prices, they have an incentive to reduce current supply (shifting the supply curve left) and save inventory for future sale at higher prices. This expectation creates a self-fulfilling prophecy of price increases."
@@ -577,9 +562,9 @@
     "question": "When demand is more inelastic than supply, on whom does a new tax primarily fall?",
     "options": [
       "Consumers bear most of the tax burden because they can't easily reduce consumption",
-      "Producers bear most because they can reduce supply",
-      "The tax is split equally between consumers and producers",
-      "The tax burden depends solely on who is legally required to pay it"
+      "Producers absorb most of the tax to avoid losing market share to rivals",
+      "The burden is evenly split, since both parties must agree to any transaction",
+      "Incidence shifts entirely to the government through reduced taxable output"
     ],
     "correctIndex": 0,
     "explanation": "Tax incidence depends on relative elasticities, not legal liability. When demand is inelastic (consumers can't easily reduce purchases), consumers bear more of the tax. Suppliers can more easily adjust, so they pass the burden forward."
@@ -592,9 +577,9 @@
     "question": "In healthcare markets, both demand inelasticity and supply constraints exist. What does economic theory predict about pricing in such markets?",
     "options": [
       "Prices will be high due to inelastic demand and constrained supply limiting competition",
-      "Prices will be low because healthcare is essential and producers are altruistic",
-      "Price controls can achieve both affordability and eliminate shortages",
-      "Market mechanisms are irrelevant in healthcare; only government planning matters"
+      "Prices converge toward marginal cost as patients comparison-shop across providers",
+      "Supply constraints are offset by inelastic demand, producing stable long-run prices",
+      "Healthcare pricing is governed by professional norms rather than supply and demand"
     ],
     "correctIndex": 0,
     "explanation": "Healthcare has relatively inelastic demand (people need treatment regardless of cost) and sometimes limited supply (years to train doctors, expensive equipment). This combination predicts high prices and potential shortages, explaining why healthcare is a persistent policy challenge."
@@ -607,9 +592,9 @@
     "question": "After a shock creates a temporary shortage, why might prices eventually overshoot equilibrium before settling?",
     "options": [
       "Producers and consumers take time to adjust expectations, leading to overshooting behavior",
-      "Price controls intentionally force oscillations",
-      "Consumers always make irrational purchasing decisions",
-      "Shortages permanently eliminate any future price adjustment"
+      "Regulatory lags mean controls are applied after the peak and removed before trough",
+      "Overshooting only occurs in commodity markets with futures trading and speculation",
+      "Price controls imposed during the shock prevent adjustment, causing a permanent surplus"
     ],
     "correctIndex": 0,
     "explanation": "Market dynamics can show overshooting: producers respond to high prices by increasing supply beyond equilibrium, consumers respond to the boom by buying more, then overcorrection occurs. Expectations about future prices drive this dynamic behavior until the market stabilizes."
@@ -621,13 +606,13 @@
     "difficulty": "expert",
     "question": "During the COVID-19 pandemic, price spikes for hand sanitizer were widely condemned as 'price gouging.' What does supply-and-demand analysis reveal about the trade-offs in banning such price increases?",
     "options": [
-      "Banning price increases prevents rationing by price, leading to rationing by availability \u2014 those who arrive first get the good, not those who need it most or value it highest",
-      "Banning price increases is always welfare-improving because it prevents producers from extracting consumer surplus during emergencies",
-      "Price spikes during emergencies are purely speculative and serve no signaling function, so banning them has no effect on supply or allocation",
-      "Price controls during emergencies are justified because markets fail to function normally during crises, making economic analysis inapplicable"
+      "Banning price increases prevents rationing by price, leading to rationing by availability — those who arrive first get the good, not those who need it most or value it highest",
+      "Banning price spikes is welfare-improving, since the price signal is redundant once a shortage is publicly known and visible to all potential suppliers",
+      "Price ceilings during acute shortages raise total surplus by shifting gains from sellers to the buyers who need the good most urgently",
+      "Blocking price increases halts speculative hoarding without affecting the underlying supply signal, so output and allocation remain at efficient levels"
     ],
     "correctIndex": 0,
-    "explanation": "The price spike signals suppliers to produce more and buyers to use sparingly. Banning the spike removes the signal, maintains artificial low prices, and produces shortages \u2014 goods disappear from shelves, distributed on a first-come basis with no regard for who needs them most.",
+    "explanation": "The price spike signals suppliers to produce more and buyers to use sparingly. Banning the spike removes the signal, maintains artificial low prices, and produces shortages — goods disappear from shelves, distributed on a first-come basis with no regard for who needs them most.",
     "source": "India-hand_sanitizer.pdf"
   },
   {
@@ -637,13 +622,13 @@
     "difficulty": "expert",
     "question": "Supply and demand analysis predicts that markets tend toward equilibrium. What does the recurrence of shortages in regulated markets reveal about the relationship between equilibrium theory and institutional context?",
     "options": [
-      "Equilibrium theory assumes prices are free to adjust \u2014 in regulated markets where prices are held below clearing levels, the equilibrating mechanism is suppressed and shortages persist as a structural feature",
-      "Recurrent shortages in regulated markets show that equilibrium theory is incorrect and that markets do not tend toward any stable state",
-      "Shortages in regulated markets occur only when regulation is poorly designed; well-designed regulation can achieve market clearing at controlled prices",
-      "Equilibrium theory applies only to competitive markets; in markets with any degree of government involvement, equilibrating mechanisms do not function"
+      "Equilibrium theory assumes prices are free to adjust — where prices are held below clearing levels, the equilibrating mechanism is suppressed and shortages persist as a structural feature",
+      "Recurrent shortages in regulated markets show that equilibrium theory overstates the self-correcting capacity of price signals even in unregulated settings",
+      "Well-designed regulation can replicate price-based clearing through administrative allocation, so shortages reflect poor implementation rather than a theoretical limitation",
+      "Equilibrium only describes competitive markets with many buyers and sellers; regulated markets with dominant state actors fall entirely outside the model's domain"
     ],
     "correctIndex": 0,
-    "explanation": "Equilibrium is not a law of nature but an outcome of the price mechanism. Where prices are held below clearing levels by regulation, the mechanism is suppressed. Supply and demand still describe the underlying forces \u2014 they just cannot manifest as price movement, so they manifest as shortage instead.",
+    "explanation": "Equilibrium is not a law of nature but an outcome of the price mechanism. Where prices are held below clearing levels by regulation, the mechanism is suppressed. Supply and demand still describe the underlying forces — they just cannot manifest as price movement, so they manifest as shortage instead.",
     "source": "Equilibrium Price Quantity.pdf"
   },
   {
@@ -653,13 +638,13 @@
     "difficulty": "expert",
     "question": "The egg and puppy shortages during COVID-19 both involved supply constraints meeting demand surges. Why did they produce different market outcomes, and what does this reveal about the role of elasticity?",
     "options": [
-      "Goods with inelastic supply and suddenly elastic demand produce sharp price spikes; goods with more flexible supply can absorb demand shocks with smaller price effects \u2014 elasticity determines how demand and supply shocks distribute between price and quantity",
-      "Both shortages were caused by speculation rather than fundamental supply-demand imbalances, making elasticity irrelevant to understanding the outcomes",
-      "The different outcomes were caused by government intervention in one market and not the other, rather than by any difference in underlying supply and demand elasticities",
-      "Price elasticity only matters in long-run market dynamics; in short-run crises, prices are always determined by panic buying rather than supply-demand fundamentals"
+      "Inelastic supply plus a demand surge produces sharp price spikes; flexible supply absorbs the shock through quantity, not price — elasticity determines how shocks distribute between price and quantity",
+      "Both shortages reflected identical supply-demand dynamics; the different outcomes were caused by divergent consumer income levels across the two buyer populations",
+      "Elasticity shapes long-run adjustment paths but not short-run crisis outcomes, where price movements are driven by sentiment and media coverage rather than fundamentals",
+      "The divergent outcomes arose because egg markets are regulated and puppy markets are not — elasticity is secondary to the presence or absence of price controls"
     ],
     "correctIndex": 0,
-    "explanation": "Elasticity determines the incidence of shocks. An inelastic supply combined with a demand surge produces a large price increase. A more elastic supply \u2014 where producers can respond quickly \u2014 absorbs the shock through quantity rather than price. The COVID cases illustrate this in real time.",
+    "explanation": "Elasticity determines the incidence of shocks. An inelastic supply combined with a demand surge produces a large price increase. A more elastic supply — where producers can respond quickly — absorbs the shock through quantity rather than price. The COVID cases illustrate this in real time.",
     "source": "No Yolk_ Shortages and Spikes in the Time of COVID - Econlib.pdf"
   },
   {
@@ -669,13 +654,13 @@
     "difficulty": "expert",
     "question": "Supply and demand curves represent behavior at a moment in time, with all else equal. What are the implications of this ceteris paribus assumption for using market analysis to predict the effects of a complex policy change?",
     "options": [
-      "Complex policies change multiple variables simultaneously, violating ceteris paribus \u2014 predictions based on partial equilibrium analysis may be misleading if the policy also shifts tastes, income, technology, or related markets",
-      "Ceteris paribus means supply-demand analysis is only valid for simple, isolated markets and should not be used to analyze complex policies",
-      "General equilibrium models avoid the ceteris paribus problem entirely by modeling all markets simultaneously, making partial equilibrium analysis always inferior",
-      "The ceteris paribus assumption makes supply-demand analysis more rather than less accurate by isolating the specific effect of a single variable change"
+      "Complex policies shift multiple variables at once, violating ceteris paribus — partial equilibrium predictions mislead when the policy also affects income, technology, or related markets",
+      "Ceteris paribus is a modelling convenience with no real-world implications; experienced analysts can apply partial equilibrium correctly to any policy, however complex",
+      "General equilibrium models fully resolve the ceteris paribus problem, making partial equilibrium analysis redundant for policy evaluation in interconnected markets",
+      "The assumption strengthens predictive accuracy by removing noise — holding other variables constant isolates the dominant causal mechanism driving market outcomes"
     ],
     "correctIndex": 0,
-    "explanation": "Ceteris paribus analysis isolates the effect of one change by holding everything else constant. Complex policies change many things at once \u2014 affecting income, substitutes, technology, and expectations simultaneously \u2014 so full analysis requires general equilibrium thinking that tracks second-order effects.",
+    "explanation": "Ceteris paribus analysis isolates the effect of one change by holding everything else constant. Complex policies change many things at once — affecting income, substitutes, technology, and expectations simultaneously — so full analysis requires general equilibrium thinking that tracks second-order effects.",
     "source": "Demand - Econlib.pdf"
   },
   {
@@ -685,13 +670,13 @@
     "difficulty": "expert",
     "question": "Markets are said to 'clear' at equilibrium, meaning there are no unsatisfied buyers or sellers at the prevailing price. Why does the concept of market clearing have significant implications for evaluating the efficiency of government allocation mechanisms?",
     "options": [
-      "If non-price allocation mechanisms leave some high-value buyers unsatisfied while low-value buyers receive the good, they produce a less efficient allocation than market clearing \u2014 even when political arguments justify the non-price mechanism",
-      "Market clearing is always efficient in both allocative and distributional terms, making it the appropriate benchmark for all resource allocation decisions",
-      "Government allocation mechanisms are always less efficient than market clearing because they are driven by political rather than economic logic",
-      "Market clearing only ensures allocative efficiency in competitive markets with no externalities; in all other markets, government allocation is potentially more efficient"
+      "Non-price allocation that leaves high-value buyers unsatisfied while low-value buyers receive the good produces a less efficient outcome than market clearing — even when equity arguments justify it",
+      "Market clearing guarantees both allocative and distributional efficiency, making it the unambiguous benchmark against which all resource allocation systems should be evaluated",
+      "Government allocation mechanisms are categorically less efficient than market clearing because administrative processes cannot incorporate the dispersed information that prices aggregate",
+      "Market clearing only ensures allocative efficiency under perfect competition with no externalities; in all other settings, administrative allocation may outperform price-based clearing"
     ],
     "correctIndex": 0,
-    "explanation": "Market clearing allocates goods to those who value them most highly (as expressed in willingness to pay). Non-price mechanisms \u2014 queuing, rationing, administrative allocation \u2014 are often distributional improvements but typically sacrifice some allocative efficiency, producing a genuine trade-off rather than a free lunch.",
+    "explanation": "Market clearing allocates goods to those who value them most highly (as expressed in willingness to pay). Non-price mechanisms — queuing, rationing, administrative allocation — are often distributional improvements but typically sacrifice some allocative efficiency, producing a genuine trade-off rather than a free lunch.",
     "source": "Equilibrium Price Quantity.pdf"
   },
   {
@@ -701,13 +686,13 @@
     "difficulty": "expert",
     "question": "The rescue puppy market during COVID showed demand surging and prices rising sharply. What would standard economic theory predict happens to supply over a longer time horizon, and why does this matter for evaluating short-run policy responses?",
     "options": [
-      "Higher prices attract new supply over time \u2014 more breeders enter, supply expands, and prices fall back. Short-run price controls prevent this supply response, prolonging the shortage beyond what the market would naturally resolve",
-      "Supply in the puppy market is fixed by biological constraints, so prices will remain elevated permanently regardless of market adjustment or policy response",
-      "Higher prices reduce demand until it falls back to pre-surge levels, so supply does not need to expand \u2014 the market self-corrects through demand destruction alone",
-      "Short-run price controls are costless in markets like this because supply cannot respond quickly to price signals anyway, making the long-run concern irrelevant for immediate policy"
+      "Higher prices attract new supply over time — more breeders enter, supply expands, prices fall. Short-run price controls suppress this signal, prolonging the shortage beyond what the market resolves",
+      "Biological constraints cap supply growth, so price controls are the only tool that can prevent permanent price elevation once a demand surge occurs in animal markets",
+      "Demand destruction from the high price restores balance before new supply enters, so the long-run supply response is economically insignificant for evaluating short-run controls",
+      "Long-run supply expansion in regulated animal markets depends on licensing policy rather than price signals, making standard economic predictions unreliable in this context"
     ],
     "correctIndex": 0,
-    "explanation": "Price signals induce supply response over time. If the price is allowed to rise, it draws in new supply \u2014 eventually. Controls that suppress the price remove the signal to new entrants, prolonging the shortage until the underlying demand surge subsides on its own.",
+    "explanation": "Price signals induce supply response over time. If the price is allowed to rise, it draws in new supply — eventually. Controls that suppress the price remove the signal to new entrants, prolonging the shortage until the underlying demand surge subsides on its own.",
     "source": "What rescue puppies teach us about supply and demand.pdf"
   }
 ]

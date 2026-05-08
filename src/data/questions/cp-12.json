@@ -199,9 +199,9 @@
     "question": "Why might a state simultaneously have strong capacity in taxation but weak capacity in social service delivery?",
     "options": [
       "Taxation requires concentrated effort on urban areas and businesses; service delivery requires dispersed presence",
-      "Strong taxation automatically ensures strong services",
-      "Services and taxation are unrelated",
-      "Weak states cannot tax at all"
+      "Improving service delivery automatically strengthens a state's capacity to collect taxes efficiently across regions",
+      "States develop tax capacity first, then use fiscal surplus to build out service-delivery infrastructure progressively",
+      "Low-income states must choose either strong tax administration or strong service delivery, since both cannot coexist"
     ],
     "correctIndex": 0,
     "explanation": "Different policy domains require different institutional capabilities; states may excel at extractive capacity (taxation) while struggling with distributive capacity (services).",
@@ -215,9 +215,9 @@
     "question": "What mechanism can mitigate principal-agent problems in bureaucracy?",
     "options": [
       "Transparent performance metrics and accountability mechanisms that align agent incentives with principal goals",
-      "Principals controlling all information",
-      "No monitoring whatsoever",
-      "Removing all delegation"
+      "Devolving all decision-making authority to frontline agents who possess superior local knowledge and operational insight",
+      "Concentrating administrative discretion in a single senior official who can monitor and correct agent behavior directly",
+      "Replacing career civil servants with short-term contract staff whose renewal depends on observed policy outcomes"
     ],
     "correctIndex": 0,
     "explanation": "Clear performance measures, transparency, and consequences for non-compliance help align bureaucratic behavior with public policy objectives.",
@@ -231,9 +231,9 @@
     "question": "How does democracy affect the grammar of state authority in India?",
     "options": [
       "Democratic procedures create expectations that state authority must reflect public will, requiring constant negotiation",
-      "Democracy has no effect on state authority",
-      "State authority becomes absolute in democracies",
-      "Elections eliminate all negotiation"
+      "Regular elections transfer authority to whichever party wins, making state power more stable and predictable over time",
+      "Electoral competition concentrates policymakers' attention on urban voters, weakening state reach in peripheral regions",
+      "Representative institutions translate citizen preferences directly into policy, removing the need for bureaucratic discretion"
     ],
     "correctIndex": 0,
     "explanation": "In democracies, state authority is contingent on regular legitimation through elections and public opinion, making it more contested and negotiable.",
@@ -247,9 +247,9 @@
     "question": "What does India's state performance in public health illustrate about flailing states?",
     "options": [
       "States can achieve significant outcomes in some areas while failing dramatically in others within the same domain",
-      "States either fail or succeed uniformly",
-      "Public health and state capacity are unrelated",
-      "All outcomes are equally distributed"
+      "Public health performance depends almost entirely on per-capita income; states above the poverty line succeed uniformly",
+      "Weak states fail across all health indicators simultaneously, since health system capacity is inherently indivisible",
+      "International health aid is the primary determinant of outcomes, making state-level capacity a secondary consideration"
     ],
     "correctIndex": 0,
     "explanation": "India's health system shows both successes (vaccination programs, medical training) and failures (maternal mortality, sanitation), exemplifying uneven capacity.",
@@ -263,9 +263,9 @@
     "question": "What creates the gap between policy intent and policy outcome in developing states?",
     "options": [
       "Capacity limitations, principal-agent misalignment, and constraints on resources prevent full policy implementation",
-      "Intent always translates directly to outcomes",
-      "No gap exists",
-      "Gaps are purely due to deliberate defiance"
+      "Opposition parties systematically obstruct well-designed policies, which accounts for most implementation failures",
+      "Policy gaps arise primarily from inadequate legal frameworks; stronger legislation would close most implementation deficits",
+      "Vested interests outside government capture the design phase and deliberately introduce ambiguity to enable rent extraction"
     ],
     "correctIndex": 0,
     "explanation": "Multiple factors—inadequate resources, bureaucratic misalignment, unforeseen constraints—cause actual policy outcomes to diverge from original objectives.",
@@ -279,9 +279,9 @@
     "question": "Why does state performance vary so dramatically across different sectors and regions in India?",
     "options": [
       "States have different resource bases, bureaucratic capacities, and political pressures across sectors and regions",
-      "Variation is random",
-      "All sectors receive equal resources",
-      "Regional and sectoral differences are irrelevant"
+      "Colonial administrative legacies determine performance differentials, leaving little room for contemporary policy reform",
+      "International development rankings systematically misattribute performance variation to policy choices rather than geography",
+      "Electoral cycle effects cause governments to prioritize visible short-term spending over structural capacity investments"
     ],
     "correctIndex": 0,
     "explanation": "Resource availability, bureaucratic quality, political salience, and geographic feasibility all vary across sectors and regions, producing uneven performance.",
@@ -295,9 +295,9 @@
     "question": "How do principal-agent problems enable rent-seeking behavior by bureaucrats?",
     "options": [
       "Information asymmetries allow agents to extract benefits (rents) through corruption without detection",
-      "Rent-seeking is impossible in bureaucracies",
-      "Principals always detect corruption",
-      "Agents have no opportunity for deviation"
+      "Low public sector wages force bureaucrats into corruption because formal salaries cannot meet household subsistence needs",
+      "Weak rule-of-law institutions remove deterrence so agents rationally conclude that sanctions for misconduct are negligible",
+      "Patronage networks ensure that corrupt bureaucrats receive political protection, making internal discipline ineffective"
     ],
     "correctIndex": 0,
     "explanation": "When bureaucrats can hide information and have discretion, they may use this power to solicit bribes or extract resources, treating office as private benefit.",
@@ -311,9 +311,9 @@
     "question": "What does 'anarchy' mean in 'The Grammar of Anarchy'?",
     "options": [
       "The absence of centralized authority enforcement, requiring negotiated coordination among social actors",
-      "Chaos and disorder",
-      "The absence of government",
-      "Lawlessness"
+      "A Hobbesian condition of perpetual conflict where rational actors defect from cooperation in the absence of a sovereign",
+      "The breakdown of formal legal institutions, leaving social order entirely dependent on customary or religious authority",
+      "A developmental stage that precedes state formation, characterised by kin-based governance and limited market exchange"
     ],
     "correctIndex": 0,
     "explanation": "The work uses 'anarchy' in the political science sense—no overarching enforcer—to describe how local social order emerges through negotiated rules.",
@@ -327,9 +327,9 @@
     "question": "What does the tightrope-walker model suggest about the predictability of policy outcomes?",
     "options": [
       "Policymakers face multiple constraints and must balance competing interests, making outcomes contingent and less predictable",
-      "Policy outcomes are entirely predictable",
-      "Constraints are irrelevant to outcomes",
-      "Policymakers face no trade-offs"
+      "Technically optimal policies produce predictable improvements regardless of the political environment in which they operate",
+      "Policy outcomes follow reliably from institutional design, so analytical models can forecast results with high confidence",
+      "Strong executive leadership can override competing pressures, making skilled leadership the primary driver of predictability"
     ],
     "correctIndex": 0,
     "explanation": "The model emphasizes that policy results depend on how policymakers navigate conflicting pressures, making outcomes highly context-dependent.",
@@ -343,9 +343,9 @@
     "question": "What explains why states are more effective at extracting revenue from urban businesses than delivering rural services?",
     "options": [
       "Revenue extraction targets concentrated, visible actors; service delivery requires dispersed institutional presence",
-      "Both are equally easy",
-      "Rural areas are taxed more heavily",
-      "Cities receive no government revenue"
+      "Taxation is politically popular and electorally rewarding, whereas rural service delivery generates little political support",
+      "Urban tax agencies benefit from better information technology, whereas rural bureaucracies lack digital infrastructure",
+      "Colonial states built fiscal systems first and never invested in distributive capacity, a path dependency that persists today"
     ],
     "correctIndex": 0,
     "explanation": "Urban businesses are easier to identify and monitor for taxation; rural service delivery requires expensive infrastructure across dispersed populations.",
@@ -359,9 +359,9 @@
     "question": "How should state capacity be conceptualized given the flailing state phenomenon?",
     "options": [
       "As multidimensional, varying across policy domains rather than as a single overall capacity measure",
-      "As a single binary (strong or weak)",
-      "As uniform across all functions",
-      "As irrelevant to outcomes"
+      "As a developmental threshold states either cross or fail to cross, determined by per-capita income and institutional age",
+      "As predominantly a fiscal concept measurable through the ratio of tax revenue to GDP as a uniform national indicator",
+      "As a product of constitutional design, so that federal systems are structurally weaker than unitary states by definition"
     ],
     "correctIndex": 0,
     "explanation": "The flailing state concept requires disaggregating capacity into specific domains rather than treating it as a single attribute.",
@@ -375,9 +375,9 @@
     "question": "How does the flailing state create a paradox for development policy?",
     "options": [
       "States that successfully extract resources may lack capacity to deliver results, creating a mismatch between means and ends",
-      "No paradox exists",
-      "Extractive capacity automatically ensures delivery capacity",
-      "Resources are irrelevant to outcomes"
+      "High military expenditure and nuclear deterrence signal strong state capacity that should spill over into social provision",
+      "Development paradoxes are resolved once democratic elections force governments to shift spending toward human development",
+      "Revenue mobilisation and welfare delivery require identical institutional skills, so fiscal strength predicts social outcomes"
     ],
     "correctIndex": 0,
     "explanation": "Pritchett argues that India demonstrates how states can be 'strong' in some ways (revenue, military) while failing in core development outcomes (health, education).",
@@ -391,9 +391,9 @@
     "question": "Why do multiple layers of delegation in complex bureaucracies amplify principal-agent problems?",
     "options": [
       "Each additional delegation layer multiplies information asymmetries and provides more opportunities for misalignment",
-      "Delegation simplifies problems",
-      "Layers have no effect on alignment",
-      "Adding layers reduces principal-agent problems"
+      "Hierarchical bureaucracies improve alignment by giving senior officials multiple checkpoints to correct deviant behaviour",
+      "Complex organisations reduce principal-agent problems by professionalising staff who internalise institutional objectives",
+      "Delegation layers create redundancy that compensates for individual agent failures, thereby strengthening accountability"
     ],
     "correctIndex": 0,
     "explanation": "In hierarchical bureaucracies, delegation from minister to secretary to field officer creates multiple principal-agent relationships, each with potential misalignment.",
@@ -407,9 +407,9 @@
     "question": "How does state legitimacy depend on actual performance rather than just procedure in democracies?",
     "options": [
       "Citizens withdraw legitimacy when states fail to deliver outcomes, even if democratic procedures were followed",
-      "Procedural legitimacy is sufficient regardless of outcomes",
-      "Performance is irrelevant to legitimacy",
-      "Legitimacy depends only on procedures"
+      "Constitutional entrenchment of democratic norms creates durable legitimacy that persists even through sustained service failures",
+      "Legitimacy in consolidated democracies derives entirely from electoral mandates and is unaffected by public goods provision",
+      "State legitimacy tracks economic growth rates; when incomes rise, citizens overlook procedural and delivery deficiencies"
     ],
     "correctIndex": 0,
     "explanation": "The 'grammar of anarchy' suggests that in democracies, citizens continuously evaluate whether state authority merits obedience based on both procedural fairness and substantive delivery.",
@@ -423,9 +423,9 @@
     "question": "What analytical framework does Kapur propose to move beyond 'failing state' discourse?",
     "options": [
       "Examining specific state capacities across domains and identifying where success is possible rather than using a binary label",
-      "Calling all states equivalent",
-      "Abandoning analysis of state performance",
-      "Using only aggregate measures"
+      "Benchmarking Indian state performance against East Asian developmental states to identify the institutional reforms required",
+      "Disaggregating state failure into corruption, capacity, and legitimacy deficits and addressing each through targeted aid",
+      "Measuring aggregate service delivery outcomes at the national level and tracking marginal improvements over five-year periods"
     ],
     "correctIndex": 0,
     "explanation": "Kapur advocates for domain-specific analysis of state capacity rather than dismissing the entire state as 'failing,' which obscures genuine achievements.",
@@ -439,9 +439,9 @@
     "question": "What does the tightrope-walker model suggest about stable policy equilibria?",
     "options": [
       "Stable policies reflect equilibrium among competing pressures; changing any pressure requires rebalancing across all dimensions",
-      "Policies are easily changed",
-      "No equilibrium exists in policy",
-      "One actor determines all policy"
+      "Policy stability results from public consensus rather than bargaining, so persuasion is the primary instrument of reform",
+      "Institutional path dependence locks in initial policy choices regardless of subsequent political preferences or coalitions",
+      "Stable policies persist because technocratic agencies insulate them from electoral pressures and short-term political cycles"
     ],
     "correctIndex": 0,
     "explanation": "The model shows that existing policies often represent contingent balances; reform requires managing all affected constituencies simultaneously.",
@@ -455,9 +455,9 @@
     "question": "How does selective state capacity create bias in who benefits from government?",
     "options": [
       "Those in areas and sectors with strong state presence benefit disproportionately; peripheral populations are underserved",
-      "Benefits are distributed equally",
-      "Capacity has no distributional consequences",
-      "Weak areas receive more benefits"
+      "Universal service mandates in welfare legislation ensure equitable distribution despite variation in local administrative capacity",
+      "Market mechanisms compensate for weak state capacity in peripheral areas through private provision of public goods",
+      "Decentralisation shifts fiscal responsibility to local governments which raise revenue locally, eliminating distributional bias"
     ],
     "correctIndex": 0,
     "explanation": "Uneven capacity means that the poor and rural populations often live in areas where the state has minimal delivery capacity, reproducing inequality.",
@@ -471,9 +471,9 @@
     "question": "Why is monitoring agent performance particularly difficult in distributed service delivery?",
     "options": [
       "Field-level agents have informational advantages and geographic distance prevents direct oversight, enabling deviation",
-      "Monitoring is straightforward everywhere",
-      "Distance has no effect on monitoring",
-      "All agents are equally visible"
+      "Standardised reporting requirements reduce monitoring costs by converting qualitative service outcomes into auditable metrics",
+      "Community-based monitoring by local governance bodies provides sufficient principal oversight to substitute for bureaucratic supervision",
+      "Performance-linked pay resolves the monitoring challenge by making agent compensation contingent on measurable outcome indicators"
     ],
     "correctIndex": 0,
     "explanation": "In decentralized service delivery (schools, clinics), frontline workers operate far from supervisors, making it hard to verify whether they're following guidelines.",
@@ -487,9 +487,9 @@
     "question": "What does understanding state authority as negotiated rather than imposed imply for governance?",
     "options": [
       "States must continuously justify authority through both procedural fairness and substantive performance to maintain compliance",
-      "Authority is purely imposed by force",
-      "Negotiation is irrelevant to governance",
-      "States need not justify any actions"
+      "Negotiated governance produces weaker states because it prevents decisive action and encourages clientelist bargaining",
+      "Rulers who treat authority as negotiated are more vulnerable to elite capture than those who rely on constitutional supremacy",
+      "Participatory governance models devolve authority to local communities, eventually replacing the central state in service provision"
     ],
     "correctIndex": 0,
     "explanation": "If authority is negotiated, then state survival depends on citizens perceiving sufficient legitimacy to grant the state ruling authority.",
@@ -503,9 +503,9 @@
     "question": "How might principals strategically use delegation to address their own limitations?",
     "options": [
       "By delegating to agents with specialized expertise that principals lack, though this creates new principal-agent risks",
-      "Delegation prevents any expertise",
-      "Principals can never benefit from delegation",
-      "Expertise is irrelevant to governance"
+      "By retaining full decision-making authority while using agents only for routine implementation tasks requiring no discretion",
+      "By rotating agents frequently across portfolios so that no individual accumulates enough knowledge to exploit informational gaps",
+      "By contracting technical tasks to private firms whose profit motive aligns with output quality better than bureaucratic incentives"
     ],
     "correctIndex": 0,
     "explanation": "Delegation allows access to expertise and local knowledge, but this same information asymmetry creates monitoring challenges.",
@@ -519,9 +519,9 @@
     "question": "What does the tightrope-walker model suggest about why state reforms often fail?",
     "options": [
       "Reforms disrupt existing equilibria, causing veto players to mobilize against change unless carefully managed",
-      "Reforms always succeed immediately",
-      "No resistance to reform exists",
-      "Veto players have no power"
+      "Reform outcomes depend primarily on the technical quality of design; political economy constraints are secondary barriers",
+      "Institutional inertia slows reform regardless of political will because administrative systems require decades to restructure",
+      "Reforms fail when they lack public communication strategies that generate sufficient electoral pressure to override veto players"
     ],
     "correctIndex": 0,
     "explanation": "The model emphasizes that existing policy balances serve particular interests; any reform creates losers who can block change.",
@@ -535,9 +535,9 @@
     "question": "How does conceptualizing the Indian state through capability domains challenge traditional state capacity theory?",
     "options": [
       "It disaggregates state capacity into specific functions, showing that abstract 'state capacity' is too broad and obscures heterogeneous realities",
-      "It claims all states are identical",
-      "It returns to unified capacity measures",
-      "It rejects all state analysis"
+      "It reframes state capacity as a function of colonial institutional inheritance, shifting attention from contemporary policy to historical path dependence",
+      "It applies a capabilities approach derived from Sen and Nussbaum, evaluating states by the functionings they enable rather than their administrative strength",
+      "It adopts a comparative politics framework, ranking India's domains of state capacity against East Asian developmental state benchmarks to identify gaps"
     ],
     "correctIndex": 0,
     "explanation": "Kapur's approach refuses to reduce the Indian state to a single capacity score, instead examining specific capabilities (taxation, education delivery, health provision) separately.",
@@ -551,9 +551,9 @@
     "question": "How does the concept of a moral economy inform 'The Grammar of Anarchy' analysis?",
     "options": [
       "It suggests state authority depends on whether actors perceive state behavior as adhering to locally-understood standards of reciprocal obligation",
-      "Morality is irrelevant to state authority",
-      "Economic relationships are purely transactional",
-      "Local norms never affect state legitimacy"
+      "It grounds state authority in contractarian theory, where citizens consent to governance in exchange for security and property rights protection",
+      "It applies a rational-choice lens, explaining compliance as the product of expected cost-benefit calculations rather than normative commitment",
+      "It argues that subsistence communities resist state authority whenever market integration threatens traditional production and exchange relations"
     ],
     "correctIndex": 0,
     "explanation": "The work argues that state authority is contested based on whether the state honors implicit social contracts about reciprocal duties and obligations.",
@@ -567,9 +567,9 @@
     "question": "What does the flailing state concept reveal about the relationship between policy announcements and revealed state priorities?",
     "options": [
       "Official commitments to health and education often reveal less than states' actual resource allocation to military and administration",
-      "Announcements perfectly reflect priorities",
-      "States have no real priorities",
-      "Resource allocation is irrelevant"
+      "Stated policy goals are reliable proxies for actual priorities because democratic accountability punishes visible divergence",
+      "Budget allocations reveal preferences more accurately than programme outcomes, which are distorted by implementation capacity gaps",
+      "Constitutional directive principles translate automatically into resource commitments through judicial enforcement of fundamental rights"
     ],
     "correctIndex": 0,
     "explanation": "Pritchett's work shows that India's stated commitment to human development has not translated into proportional resource allocation, revealing actual priorities.",
@@ -583,9 +583,9 @@
     "question": "How does principal-agent theory explain why bad equilibria can persist despite being Pareto-inefficient?",
     "options": [
       "Each actor has incentives that prevent coordinated movement away from a bad equilibrium, even though all would benefit from change",
-      "Bad equilibria are impossible",
-      "All equilibria are equally good",
-      "Coordination is costless"
+      "Bad equilibria persist because state actors systematically suppress reform coalitions through patronage and selective enforcement",
+      "Pareto-inferior outcomes self-correct over time as rational actors update beliefs and identify gains from institutional redesign",
+      "Multilateral donors can shift bad equilibria by conditioning aid on institutional reform, overcoming domestic coordination failures"
     ],
     "correctIndex": 0,
     "explanation": "The theory shows that even when all actors would be better off under different arrangements, existing incentive structures can lock in poor outcomes.",
@@ -599,9 +599,9 @@
     "question": "What institutional factors determine how much tightrope policymakers must walk?",
     "options": [
       "The number of veto players, their geographic distribution, and their capacity to block policy create pressure requiring careful balance",
-      "No factors affect policy space",
-      "All regimes require identical balancing",
-      "Institutions are irrelevant to constraints"
+      "The constitutional allocation of executive powers determines how much discretion policymakers retain relative to legislative oversight",
+      "Party system fragmentation and coalition arithmetic set the effective range of policies that governments can sustain without collapse",
+      "Judicial review intensity and administrative tribunal density constrain regulatory policymakers more than electoral or legislative pressures"
     ],
     "correctIndex": 0,
     "explanation": "Decentralized systems with many veto players force policymakers to negotiate more extensively than centralized systems with fewer veto points.",
@@ -615,9 +615,9 @@
     "question": "What paradox does Indian democracy create for understanding state capacity?",
     "options": [
       "Democracy generates demands for state capacity it simultaneously makes difficult to deliver by requiring consensus across veto players",
-      "Democracy removes all constraints",
-      "No relationship between democracy and capacity",
-      "Authoritarianism automatically strengthens capacity"
+      "Universal suffrage expands the electorate to include low-income citizens whose policy preferences raise fiscal demands beyond state capacity",
+      "Competitive elections incentivise short-term patronage over long-term institutional investment, systematically degrading state capability",
+      "Federal democratic systems disperse administrative authority in ways that strengthen local delivery while weakening central co-ordination"
     ],
     "correctIndex": 0,
     "explanation": "India's democratic structure multiplies veto players and demands accountability, yet these same features constrain executive action needed for policy implementation.",
@@ -631,9 +631,9 @@
     "question": "How does the flailing state concept complicate narratives about development and progress?",
     "options": [
       "It shows that countries can have modern institutions and economic growth without strong capacity in human development outcomes",
-      "Development always follows automatically",
-      "Economic and institutional development are unrelated",
-      "Progress is linear and inevitable"
+      "It confirms modernisation theory's prediction that economic development eventually produces corresponding welfare state capacity",
+      "It demonstrates that institutional quality converges across income levels, making cross-country comparisons of capacity unreliable",
+      "It argues that growth-oriented development strategies necessarily crowd out redistributive programmes until a threshold income is reached"
     ],
     "correctIndex": 0,
     "explanation": "The flailing state demonstrates that conventional measures of development (GDP, urbanization, military capacity) can coexist with failure in education, health, and welfare.",
@@ -646,10 +646,10 @@
     "difficulty": "expert",
     "question": "India successfully runs a space programme and maintains a nuclear arsenal, yet struggles to deliver clean water and functional public schools in many districts. Kapur's framework of selective state capacity offers one explanation. What is the most defensible account of this asymmetry?",
     "options": [
-      "Space and nuclear programmes are corruption-free because they are managed by technical elites, whereas service delivery involves politicians who divert funds",
-      "The asymmetry reflects selective state capacity — the state can be highly capable where it has concentrated authority, clear metrics, and insulated decision-making, but fragmented across the diffuse, politically contested terrain of service delivery",
-      "Service delivery failures are primarily a resource problem; if India's defence and space budgets were redirected to social services, outcomes would improve proportionally",
-      "The asymmetry is temporary and will resolve as economic development increases overall state revenue and administrative capacity"
+      "Space and nuclear agencies are shielded from patronage politics by official secrecy, whereas education and health delivery are embedded in legislative budgeting cycles that invite rent extraction",
+      "The asymmetry reflects selective state capacity: the state concentrates capability where authority is insulated and metrics are clear, but fragments across the contested terrain of service delivery",
+      "Service delivery failures are primarily fiscal: redirecting even a modest share of defence spending to health and education would proportionally close the outcome gap within a policy cycle",
+      "The gap is transitional; as formalisation expands the tax base, rising revenues will fund the administrative density needed for reliable service delivery across dispersed populations"
     ],
     "correctIndex": 1,
     "explanation": "Kapur's selective capacity argument is that the Indian state is not uniformly weak or strong — it can concentrate capability where institutional design creates insulation from political interference and where goals are measurable. Space and nuclear programmes have clear objectives, specialised agencies, and political insulation. Service delivery is contested across fragmented bureaucracies, political interests, and principal-agent chains that defeat these conditions.",
@@ -662,10 +662,10 @@
     "difficulty": "expert",
     "question": "A reformist state government wants to improve public school quality. It designs strong accountability mechanisms, performance-based pay for teachers, and clear outcome metrics. Eighteen months later, teaching quality is unchanged and teacher morale has collapsed. Which diagnosis is most consistent with the principal-agent and flailing state frameworks?",
     "options": [
-      "The reform failed because teachers are intrinsically unmotivated and performance pay cannot change this fundamental disposition",
-      "The reform focused on measurement and incentives but ignored the information asymmetry problem — street-level bureaucrats (teachers) have local knowledge that principals (administrators) cannot replicate or verify, so metrics get gamed rather than genuinely improving outcomes",
-      "Eighteen months is too short to evaluate education reforms; the accountability mechanisms simply need more time to change behaviour",
-      "The problem is that performance pay is too low to motivate change; increasing the financial stakes would resolve the implementation failure"
+      "Teachers' professional norms prioritise peer autonomy over administrative accountability; performance pay violates those norms, triggering collective resistance that renders the incentive system inert",
+      "The reform ignored the information asymmetry problem: teachers hold local knowledge that administrators cannot verify, so performance metrics get gamed rather than improving actual learning outcomes",
+      "Eighteen months is too short; education reforms typically require a full student cohort cycle before accountability mechanisms alter the instructional practices that determine learning results",
+      "The financial increment was too modest; research on incentive design indicates that bonuses must substantially exceed baseline salary to shift frontline worker effort in measurable ways"
     ],
     "correctIndex": 1,
     "explanation": "The principal-agent framework predicts that when agents (teachers) have information advantages over principals (administrators), they will respond to accountability mechanisms by gaming metrics rather than improving underlying performance. The flailing state literature adds that diffuse service delivery chains compound this — each link in the administrative chain has its own interests and information advantages, making top-down incentive design reliably ineffective without addressing the information and accountability structure at each level.",

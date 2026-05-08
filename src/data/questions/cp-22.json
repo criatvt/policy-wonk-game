@@ -38,10 +38,10 @@
     "difficulty": "medium",
     "question": "Why did Kenyan farmers increase rose production without knowing about oil scarcity?",
     "options": [
-      "They were ordered by international organizations",
+      "They followed directives issued by regional agricultural cooperatives and government export boards",
       "They saw the price paid for roses had increased and responded to their own self-interest",
-      "They wanted to help American oil companies",
-      "They received personal instructions from oil executives"
+      "They tracked global commodity markets and sought trade finance to anticipate demand shifts",
+      "They received targeted subsidies from export promotion agencies to expand their output capacity"
     ],
     "correctIndex": 1,
     "explanation": "The price mechanism allows dispersed information to be aggregated and acted upon without central coordination. The Kenyan farmer only needed to see the higher rose price to make the economically efficient choice.",
@@ -54,10 +54,10 @@
     "difficulty": "medium",
     "question": "What information is contained in the price system that no single person could have?",
     "options": [
-      "Only information about government policies",
+      "Aggregate data on government expenditure, fiscal deficits, and public debt stocks compiled across all administrative regions",
       "Dispersed information about costs, preferences, and alternative uses of resources across the entire economy",
-      "Random data with no meaning",
-      "Information that is impossible to use"
+      "Statistical averages of producer and consumer incomes compiled annually by national statistical agencies",
+      "Consolidated records of past market transactions stored in a central economic database and trade registry"
     ],
     "correctIndex": 1,
     "explanation": "Prices aggregate information about the costs of production, preferences of consumers, and value of resources in alternative uses. No single individual could have access to all this information, yet prices coordinate decisions efficiently.",
@@ -102,10 +102,10 @@
     "difficulty": "medium",
     "question": "Why do businesses sometimes continue investing in failing projects?",
     "options": [
-      "Because they are legally required to",
-      "Because they want to hurt their investors",
+      "Because creditors legally require continued investment to service outstanding debt obligations",
       "Because they irrationally try to recoup sunk costs instead of looking at future costs and benefits",
-      "Because failed projects are always profitable eventually"
+      "Because markets reward persistence and penalise early exit from long-run projects",
+      "Because managerial bonuses are tied to project completion rather than project profitability"
     ],
     "correctIndex": 2,
     "explanation": "The sunk cost fallacy leads businesses to 'throw good money after bad.' Even though past investments cannot be recovered, managers sometimes continue funding unsuccessful projects hoping to eventually recoup the initial investment. This is economically irrational.",
@@ -118,10 +118,10 @@
     "difficulty": "medium",
     "question": "What role does price play in determining how society allocates scarce resources?",
     "options": [
-      "Prices have no role in allocation",
-      "Prices are arbitrary and determined by government",
+      "Prices record historical transaction costs but do not actively redirect new investment or signal scarcity",
+      "Prices represent negotiated outcomes between producer lobbies and consumer groups within regulated frameworks",
       "Prices reflect scarcity and value, guiding resources to where they are most highly valued",
-      "Only wealthy people respond to prices"
+      "Prices serve mainly as a tax base and have limited bearing on investment or production decisions"
     ],
     "correctIndex": 2,
     "explanation": "Prices perform the critical function of allocating resources. High prices encourage conservation and increased production of scarce goods; low prices encourage consumption. This decentralized mechanism is remarkably efficient.",
@@ -134,10 +134,10 @@
     "difficulty": "hard",
     "question": "Why is the price system described as 'the invisible hand in action'?",
     "options": [
-      "Because it uses magic to allocate resources",
+      "Because market outcomes are unpredictable and no single actor can observe all the underlying forces driving them",
       "Because individual pursuit of self-interest through price signals produces efficient allocation for society",
-      "Because prices are literally invisible",
-      "Because the system is mysterious and unexplainable"
+      "Because price formation happens inside closed exchanges that are inaccessible to most ordinary market participants",
+      "Because the welfare gains from trade are intangible and cannot be captured in standard national accounts"
     ],
     "correctIndex": 1,
     "explanation": "Adam Smith's metaphor of the invisible hand describes how individual economic decisions made in pursuit of self-interest aggregate to produce outcomes beneficial for society. Prices facilitate this coordination without central planning.",
@@ -150,10 +150,10 @@
     "difficulty": "hard",
     "question": "What does the Kenyan rose farmer example demonstrate about information and incentives?",
     "options": [
-      "That farmers need to understand global oil markets",
-      "That complex economic problems require central planning",
+      "That producers must study global commodity chains to make locally optimal choices",
+      "That profit incentives alone are insufficient without direct government guidance on export markets",
       "That local decision-makers can respond efficiently to aggregate information encoded in prices",
-      "That price signals are unreliable"
+      "That price signals require financial literacy training before farmers can act on them"
     ],
     "correctIndex": 2,
     "explanation": "The example shows that specialized information is not required. When prices aggregate information from across the world, local actors can make efficient decisions based on local knowledge. This enables decentralized coordination.",
@@ -166,10 +166,10 @@
     "difficulty": "medium",
     "question": "What was the opportunity cost to consumers of the oil price increase affecting rose prices?",
     "options": [
-      "Zero; there was no cost",
-      "Higher oil consumption to maintain the same rose supply",
+      "The tax revenue foregone by government when consumers shifted to untaxed substitutes",
+      "The long-run depreciation in the value of Valentine's Day as a cultural institution",
       "Choosing between roses and other goods, or accepting fewer roses",
-      "Only wealthy people faced any cost"
+      "The producer surplus lost by florists who could no longer compete on price"
     ],
     "correctIndex": 2,
     "explanation": "Higher rose prices forced consumers to choose: buy roses and sacrifice other spending, or choose alternative gifts. This illustrates how scarcity creates trade-offs in what we can have.",
@@ -182,13 +182,13 @@
     "difficulty": "medium",
     "question": "What common business mistake led to the failure of Gerald Ratner's jewelry business?",
     "options": [
-      "He cut prices too much",
+      "He set prices so aggressively low that margins became insufficient to cover overheads",
       "He publicly mocked the quality of his own products, destroying consumer confidence",
-      "He failed to advertise",
-      "He did not specialize in jewelry"
+      "He over-expanded into overseas markets before the domestic brand was secure",
+      "He neglected workforce development, leading to poor customer service outcomes"
     ],
     "correctIndex": 1,
-    "explanation": "Ratner joked to a business audience that his products were 'total crap.' This damaged the crucial 'signal' that price sends about quality. Consumer confidence evaporated and the business value fell by \u00a3500 million within days.",
+    "explanation": "Ratner joked to a business audience that his products were 'total crap.' This damaged the crucial 'signal' that price sends about quality. Consumer confidence evaporated and the business value fell by £500 million within days.",
     "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
   },
   {
@@ -198,13 +198,13 @@
     "difficulty": "hard",
     "question": "Why did Nick Leeson's concealment of losses at Barings Bank make the eventual collapse worse?",
     "options": [
-      "Because concealment is illegal",
+      "Because regulatory audits are automatically triggered when cumulative loss thresholds are crossed",
       "Because hidden losses prevented management from making corrective decisions, allowing losses to accumulate",
-      "Because losses always get worse on their own",
-      "Because the bank wanted the losses to happen"
+      "Because concealment shifted the legal liability and enforcement burden from the bank to the individual trader",
+      "Because market counterparties began raising borrowing costs once they suspected the bank was in distress"
     ],
     "correctIndex": 1,
-    "explanation": "When losses were concealed, management could not see the true financial state and make decisions to cut losses. This allowed a \u00a3208 million deficit to grow to over \u00a3800 million before discovery. Information failure led to worse outcomes.",
+    "explanation": "When losses were concealed, management could not see the true financial state and make decisions to cut losses. This allowed a £208 million deficit to grow to over £800 million before discovery. Information failure led to worse outcomes.",
     "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
   },
   {
@@ -214,10 +214,10 @@
     "difficulty": "medium",
     "question": "How does price communicate quality and value to consumers?",
     "options": [
-      "Price has no connection to quality",
-      "High prices always mean high quality",
+      "Price is set by regulation to reflect minimum quality standards mandated by authorities",
+      "Consumers decode price only when combined with explicit product specifications and warranties",
       "Price signals the seller's confidence in product quality and combines with other signals",
-      "Consumers cannot use price as information"
+      "In competitive markets price converges to marginal cost, stripping out all quality information"
     ],
     "correctIndex": 2,
     "explanation": "Price functions as a signal of quality and value. When Ratner undermined this signal by calling his products 'crap,' he destroyed consumer confidence despite the low price. The price signal had been damaged.",
@@ -246,10 +246,10 @@
     "difficulty": "hard",
     "question": "What is remarkable about the price system's efficiency in the oil-rose example?",
     "options": [
-      "It required central planning from the government",
+      "Prices aligned producer and consumer incentives because an international commodity agency monitored all transactions",
       "It achieved complex global coordination without any person knowing the full information or making decisions in advance",
-      "It only worked for roses and oil",
-      "It was completely inefficient and proved markets do not work"
+      "Efficiency emerged because oil and cut flowers are close economic substitutes with highly correlated demand cycles",
+      "The outcome was planned by agricultural trade associations that tracked oil input costs and issued guidance to producers"
     ],
     "correctIndex": 1,
     "explanation": "No one could have predicted that oil scarcity would lead to Kenyan rose farms or chocolate substitutes. Yet prices coordinated millions of independent decisions to produce these efficient outcomes without central direction.",
@@ -262,13 +262,13 @@
     "difficulty": "medium",
     "question": "Why is the Titanic's poor construction quality an example of a sunk cost problem?",
     "options": [
-      "Because the ship was expensive to build",
+      "Because the ship's owners refused to take out adequate insurance, choosing to accept the full financial risk",
       "Because poor quality rivets showed inadequate supervision; once incurred, this cost could not be recovered",
-      "Because building ships is always expensive",
-      "Because the Titanic sank in water"
+      "Because investors continued funding additional voyages despite repeated and costly maintenance overruns",
+      "Because the shipyard received full payment before delivery and had no contractual incentive to correct defects"
     ],
     "correctIndex": 1,
-    "explanation": "The poor quality rivets represent a sunk cost\u2014once incurred in construction, the cost could not be recovered. Though this cost contributed to the disaster, the larger lesson is about hidden quality problems that manifest as failures.",
+    "explanation": "The poor quality rivets represent a sunk cost—once incurred in construction, the cost could not be recovered. Though this cost contributed to the disaster, the larger lesson is about hidden quality problems that manifest as failures.",
     "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
   },
   {
@@ -278,10 +278,10 @@
     "difficulty": "medium",
     "question": "What did entrepreneurs recognize in response to high oil prices?",
     "options": [
-      "That oil prices would never change",
+      "That input cost increases would soon be reversed and greenhouse production would resume profitably",
       "That alternative production methods existed, like growing flowers in naturally warm climates",
-      "That all production would have to stop",
-      "That consumers would stop buying roses"
+      "That consumers would permanently reduce flower spending, shrinking the total addressable market",
+      "That vertical integration with oil suppliers would restore the economics of greenhouse production"
     ],
     "correctIndex": 1,
     "explanation": "Entrepreneurs recognized profit opportunities in new production methods. By investing in rose farms in warm climates and transport infrastructure, they could profit while solving the scarcity problem created by oil prices.",
@@ -310,10 +310,10 @@
     "difficulty": "hard",
     "question": "Why did Nokia fail despite once being a global technology leader?",
     "options": [
-      "Because technology companies always fail eventually",
+      "Because Nokia priced its smartphones above what consumers in key emerging markets could afford, steadily losing share",
       "Because management lacked courage to act on information that its operating system was years behind iOS",
-      "Because the iPhone did not exist before Nokia",
-      "Because Nokia made good products"
+      "Because Nokia outsourced hardware manufacturing to reduce costs, losing control over product quality and profit margins",
+      "Because antitrust regulators repeatedly blocked Nokia from acquiring the software firms it needed to close the gap"
     ],
     "correctIndex": 1,
     "explanation": "Nokia engineers and developers knew Symbian was obsolete, but middle managers would not relay this information to senior leadership. This information failure prevented corrective action. A company that fails to act on available information cannot compete.",
@@ -326,10 +326,10 @@
     "difficulty": "medium",
     "question": "How does the price system 'discover' where resources are most valued?",
     "options": [
-      "Governments determine where resources should go",
+      "A planning committee surveys producers and consumers periodically, then publishes binding allocation targets",
       "Prices rise where resources are highly valued, attracting production; prices fall where they are less valued",
-      "Resources are randomly distributed",
-      "The price system cannot discover value"
+      "Resources shift toward sectors that hold the largest share of government procurement and public investment contracts",
+      "Regulators benchmark domestic prices to international averages and provide targeted subsidies to cover shortfalls"
     ],
     "correctIndex": 1,
     "explanation": "High prices signal where resources are most valued. This attracts producers and investment. Low prices signal lower value. This decentralized price discovery mechanism guides resources to their highest-value uses.",
@@ -342,10 +342,10 @@
     "difficulty": "hard",
     "question": "How did Toys 'R' Us's partnership with Amazon exemplify poor decision-making?",
     "options": [
-      "Because it partnered with a stronger competitor instead of competing independently",
+      "Because it chose to partner with a dominant competitor rather than invest in building its own online retail capability independently",
       "Because it failed to recognize its business model was becoming obsolete compared to specialized retailers like Build-a-Bear",
-      "Because online sales were not profitable",
-      "Because toys are not competitive"
+      "Because the revenue-sharing terms with Amazon were structurally below the cost of managing its own inventory",
+      "Because it delayed expanding its physical store estate at precisely the moment when online retailers captured market share"
     ],
     "correctIndex": 1,
     "explanation": "Toys 'R' Us made a poor strategic choice by outsourcing to Amazon while competitors like Build-a-Bear invested in experience and service. Burdened by debt from sunk costs, it could not invest in its own future, making eventual bankruptcy inevitable.",
@@ -358,10 +358,10 @@
     "difficulty": "medium",
     "question": "Why did the 2008 financial crisis occur despite warning signs?",
     "options": [
-      "Because there were no warning signs",
+      "Because financial regulators lacked legal authority to intervene in securitised mortgage markets",
       "Because people believed property prices would always rise, not acting on available information",
-      "Because banks wanted the crisis to happen",
-      "Because no one could have predicted it"
+      "Because interest rates were set too high, making debt servicing impossible for subprime borrowers",
+      "Because credit rating agencies were prohibited from publishing negative assessments of bank assets"
     ],
     "correctIndex": 1,
     "explanation": "People created a 'magical belief' that property was a one-way bet despite warnings. Price expectations became disconnected from fundamentals. When belief in ever-rising prices collapsed, the financial system froze.",
@@ -374,10 +374,10 @@
     "difficulty": "hard",
     "question": "What does the rose example teach about the limits of central planning?",
     "options": [
-      "That central planning is more efficient than markets",
+      "That planning agencies require substantially larger budgets and specialist data analysts to replicate the outcomes markets achieve",
       "That no single person or organization could have anticipated and coordinated the complex global response to oil scarcity",
-      "That planning is never possible",
-      "That markets always fail"
+      "That central planning can succeed in homogeneous commodity markets but breaks down in differentiated consumer goods",
+      "That international trade agreements serve as necessary substitutes for the price system when coordinating across national borders"
     ],
     "correctIndex": 1,
     "explanation": "Central planners could not have known about Kenyan climate advantages, transportation possibilities, consumer preferences for chocolate, or all the dispersed information that markets aggregated through prices. This illustrates Hayek's knowledge problem.",
@@ -406,10 +406,10 @@
     "difficulty": "hard",
     "question": "What common pattern appears in many business failures?",
     "options": [
-      "Failure always happens suddenly without warning",
+      "Competition from new entrants erodes incumbents' margins faster than established firms can restructure their cost base",
       "Management knows problems exist but fails to act, or conceals information, allowing small problems to compound",
-      "Markets are completely unpredictable",
-      "All business failures are caused by external factors"
+      "Rapid technology change makes existing product lines obsolete before affordable replacement products are ready to launch",
+      "Debt-financed acquisitions destroy value because the integration costs consistently exceed the anticipated synergies"
     ],
     "correctIndex": 1,
     "explanation": "From Leeson at Barings to Nokia's management, failure often results from information gaps or unwillingness to face problems. When problems are concealed or ignored, they accumulate and become catastrophic.",
@@ -422,10 +422,10 @@
     "difficulty": "medium",
     "question": "What does a rising price tell producers in a market economy?",
     "options": [
-      "They should stop producing",
+      "That input costs have risen and margins narrowed, making it rational to scale back or exit production",
       "That a good is becoming more scarce and valuable, creating profit opportunities for increased production",
-      "That consumer demand is decreasing",
-      "That government should regulate prices"
+      "That real consumer incomes have risen and the good can now be repositioned as an aspirational luxury offering",
+      "That a major competing producer has exited the market, temporarily inflating price well above long-run equilibrium"
     ],
     "correctIndex": 1,
     "explanation": "Rising prices signal scarcity and opportunity. Producers respond by increasing supply, which eventually brings prices back down. This price-driven feedback loop produces efficient allocation without central coordination.",
@@ -438,13 +438,13 @@
     "difficulty": "medium",
     "question": "Why did rose production shift from New Jersey greenhouses to Kenya and Ecuador?",
     "options": [
-      "Because American farmers were lazy",
+      "Because American consumers preferred imported flowers as a marker of premium quality and origin",
       "Because prices signaled the opportunity cost had changed, making other locations more economical",
-      "Because oil prices were identical everywhere",
-      "Because governments mandated the shift"
+      "Because bilateral trade agreements granted Kenyan exporters preferential tariff access to US markets",
+      "Because technological improvements in cold-chain logistics made international shipping cost-competitive"
     ],
     "correctIndex": 1,
-    "explanation": "Oil prices made greenhouse heating expensive in the U.S. Kenya and Ecuador's natural warmth provided comparative advantage. Entrepreneurs recognized this and shifted production accordingly\u2014all coordinated through prices.",
+    "explanation": "Oil prices made greenhouse heating expensive in the U.S. Kenya and Ecuador's natural warmth provided comparative advantage. Entrepreneurs recognized this and shifted production accordingly—all coordinated through prices.",
     "source": "Price Signal Incentive.pdf"
   },
   {
@@ -454,13 +454,13 @@
     "difficulty": "hard",
     "question": "What role did concealed information play in the Barings Bank collapse?",
     "options": [
-      "It had no effect on the outcome",
+      "Concealment shifted regulatory scrutiny to other banks, leaving Barings free to extend its positions",
       "It prevented corrective action, allowing losses to compound until the bank became insolvent",
-      "It made the losses smaller",
-      "It helped the bank recover"
+      "Concealment improved short-term market confidence, attracting new capital that briefly offset losses",
+      "It delayed intervention just long enough for a potential acquisition offer to emerge and then fail"
     ],
     "correctIndex": 1,
-    "explanation": "When Leeson concealed losses, bank management lacked information to take corrective action. A \u00a3208 million loss became \u00a3862 million. Information failure led to catastrophic outcomes that could have been mitigated with transparency.",
+    "explanation": "When Leeson concealed losses, bank management lacked information to take corrective action. A £208 million loss became £862 million. Information failure led to catastrophic outcomes that could have been mitigated with transparency.",
     "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
   },
   {
@@ -486,13 +486,13 @@
     "difficulty": "medium",
     "question": "Why did Thomas Cook fail despite inventing mass tourism?",
     "options": [
-      "Because travel is impossible",
+      "Because post-2008 austerity policies permanently compressed discretionary travel budgets among its core customer base",
       "Because it failed to adapt as the internet eliminated the need for travel agents and reduced barriers to direct booking",
-      "Because people stopped traveling",
-      "Because it was too successful"
+      "Because low-cost airlines systematically undercut Thomas Cook's package-holiday pricing on short-haul European routes",
+      "Because its franchise model gave local operators insufficient incentive or capital to invest in improving service quality"
     ],
     "correctIndex": 1,
-    "explanation": "Thomas Cook's competitive advantage\u2014access to information and distribution networks\u2014was made obsolete by the internet. Unable to adapt and burdened by debt from a failed acquisition, it could not compete with online booking.",
+    "explanation": "Thomas Cook's competitive advantage—access to information and distribution networks—was made obsolete by the internet. Unable to adapt and burdened by debt from a failed acquisition, it could not compete with online booking.",
     "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
   },
   {
@@ -502,10 +502,10 @@
     "difficulty": "hard",
     "question": "What does Vernon Smith mean when he calls the price system 'a scientific mystery'?",
     "options": [
-      "That prices are random and meaningless",
+      "That price formation follows emergent statistical patterns economists have not yet succeeded in modelling mathematically",
       "That the price system's efficiency in coordinating dispersed information rivals natural phenomena like the expanding universe",
-      "That prices cannot be studied scientifically",
-      "That markets never work"
+      "That prices can simultaneously reflect objective production costs and subjective consumer values in ways that defy logical reconciliation",
+      "That experimental economics consistently fails to replicate real-world price outcomes in controlled laboratory settings"
     ],
     "correctIndex": 1,
     "explanation": "Smith suggests the price system's ability to aggregate infinite dispersed information and produce efficient allocation is as profound and mysterious as fundamental physical phenomena. Its elegance comes from its simplicity and effectiveness.",
@@ -518,10 +518,10 @@
     "difficulty": "medium",
     "question": "What rational choices did consumers make when rose prices increased?",
     "options": [
-      "No rational choice was possible",
+      "Consumers petitioned producers to increase supply, restoring the original market price",
       "Buy roses and reduce other spending; substitute with chocolate or teddy bears; or skip gift-giving",
-      "All consumers stopped buying all gifts",
-      "Consumers had no way to respond"
+      "Consumers collectively boycotted roses until prices returned to their pre-shock levels",
+      "Consumers reallocated spending to higher-status gifts, increasing overall Valentine's Day expenditure"
     ],
     "correctIndex": 1,
     "explanation": "Price increases created a menu of choices for consumers. Some prioritized roses and cut other spending. Others found substitutes. A few gave up gifts. All responses were rational given individual preferences and constraints.",
@@ -534,10 +534,10 @@
     "difficulty": "hard",
     "question": "What management failure characterized both Leeson's concealment and Nokia's silence about Symbian?",
     "options": [
-      "Perfect transparency and honesty",
+      "Both firms hired large numbers of technical specialists who displaced generalist managers better at interpreting market signals",
       "Senior leaders did not have access to or would not face critical information about their company's problems",
-      "These companies had no problems",
-      "Management was too informed"
+      "Both organizations adopted matrix management structures that created ambiguous accountability for business performance",
+      "Short-term incentive schemes in both firms rewarded reported profits over the long-run health of the organisation"
     ],
     "correctIndex": 1,
     "explanation": "Both cases show information gaps between operational knowledge and decision-making. At Barings, losses were hidden. At Nokia, technical problems were known but not reported upward. Information failures prevented corrective action.",
@@ -556,7 +556,7 @@
       "No one changed any behavior"
     ],
     "correctIndex": 2,
-    "explanation": "The oil shock created a complex global reallocation of resources\u2014new farms, new infrastructure, new consumption patterns\u2014all coordinated through price signals without central planning or direct communication.",
+    "explanation": "The oil shock created a complex global reallocation of resources—new farms, new infrastructure, new consumption patterns—all coordinated through price signals without central planning or direct communication.",
     "source": "Price Signal Incentive.pdf"
   },
   {
@@ -566,10 +566,10 @@
     "difficulty": "medium",
     "question": "How did profit incentives solve the scarcity problem in rose production?",
     "options": [
-      "Profit incentives made the problem worse",
+      "Government export subsidies temporarily lowered production costs until domestic greenhouse supply recovered to pre-shock levels",
       "Entrepreneurs invested in new production methods in warm climates because they could profit from the price difference",
-      "Profits were not involved",
-      "Only charity could solve the problem"
+      "A producer cartel coordinated output restrictions to sustain high prices long enough for new supply investment to become viable",
+      "International development banks directed concessional loans toward tropical agriculture as a condition attached to aid agreements"
     ],
     "correctIndex": 1,
     "explanation": "High rose prices created profit opportunities. Entrepreneurs invested in Kenyan and Ecuadorian farms and transport infrastructure because they could profit. This self-interested behavior solved the scarcity problem for society.",
@@ -582,10 +582,10 @@
     "difficulty": "hard",
     "question": "What is the relationship between price changes and long-term supply adjustment?",
     "options": [
-      "Prices have no effect on supply over time",
+      "Supply adjustments follow price changes only when producers have access to subsidised credit markets",
       "High prices encourage production increases until supply increases enough to bring prices back down",
-      "Prices only affect consumption, not production",
-      "Supply and prices are unrelated"
+      "Price changes affect demand immediately but supply can adjust only through regulatory approval processes",
+      "In industries with high fixed costs, prices and supply are determined by capacity constraints alone"
     ],
     "correctIndex": 1,
     "explanation": "Price increases signal profit opportunities, encouraging new production. As supply increases, prices fall until they stabilize at a new equilibrium. This self-correcting mechanism produces allocation without central planning.",
@@ -598,10 +598,10 @@
     "difficulty": "medium",
     "question": "How do information failures lead to business collapse?",
     "options": [
-      "They do not; all information failures are beneficial",
+      "Information overload within large organisations causes decision paralysis, significantly slowing the response to competitive threats",
       "When critical information is hidden or not communicated upward, management cannot make corrective decisions",
-      "Information has no effect on business success",
-      "More information always makes problems worse"
+      "Regulations restricting proprietary information sharing between competitors prevent the coordinated industry responses needed for recovery",
+      "External auditors systematically fail to access internal operational data, leaving boards uninformed about accumulating liabilities"
     ],
     "correctIndex": 1,
     "explanation": "When managers lack information about problems, they cannot address them. Leeson's concealment, Nokia's silence about obsolescence, and mismanagement of sunk costs all show how information gaps lead to preventable failures.",
@@ -614,10 +614,10 @@
     "difficulty": "hard",
     "question": "Why is the price system more efficient than having a planner decide resource allocation?",
     "options": [
-      "Because prices are random and don't require thinking",
+      "Because price-setting algorithms can now process transaction data far faster than any bureaucratic decision-making procedure",
       "Because no single planner can have access to all the dispersed information about costs, preferences, and alternatives",
-      "Because the price system is less efficient",
-      "Because markets always produce perfect results"
+      "Because planners invariably face political pressures that prevent them from raising administered prices to market-clearing levels",
+      "Because price systems largely eliminate rent-seeking, whereas allocation planning systems systematically incentivise lobbying for quotas"
     ],
     "correctIndex": 1,
     "explanation": "Hayek's knowledge problem shows that centralized planning cannot access the dispersed information about local costs and conditions. Prices aggregate this information and allow efficient decentralized decisions.",
@@ -630,10 +630,10 @@
     "difficulty": "hard",
     "question": "What does the variety of responses to the oil price increase demonstrate about economic incentives?",
     "options": [
-      "That incentives do not affect behavior",
+      "That producers and consumers need coordinating institutions to translate incentives into coherent outcomes",
       "That people respond to incentives in creative, unpredictable, and often beneficial ways",
-      "That all responses to incentives are bad",
-      "That incentives eliminate all choice"
+      "That incentive responses are efficient only in industries where entry costs are low and competition is intense",
+      "That price incentives produce beneficial responses only when backed by complementary public investment"
     ],
     "correctIndex": 1,
     "explanation": "The oil crisis prompted creative responses: new farms, new transport infrastructure, consumer substitutions, and new business models. No one could have planned these outcomes, yet incentives produced them. This demonstrates the power of price-driven coordination.",
@@ -646,13 +646,13 @@
     "difficulty": "expert",
     "question": "Hayek's argument about the price system is that prices aggregate dispersed knowledge no central planner can possess. What does this imply for the design of socialist or command planning systems?",
     "options": [
-      "Command systems face an inherent information problem \u2014 not just an incentive problem \u2014 because the knowledge embedded in prices is tacit, local, and constantly changing in ways no authority can fully track",
-      "The information problem is real but secondary; socialist planning fails primarily because it lacks competitive pressure rather than because of information constraints",
-      "Hayek's argument has been superseded by big data and machine learning, which can now aggregate dispersed information without the price system",
-      "The information problem only applies to consumer goods markets; investment and infrastructure decisions can be efficiently centrally planned with adequate data"
+      "Command systems face an inherent information problem — not just an incentive problem — because prices embed tacit, local, constantly changing knowledge that no authority can fully gather",
+      "The information constraint is real but secondary; socialist planning fails chiefly because it cannot replicate competitive market pressure, not because knowledge is irreducibly dispersed across actors",
+      "Hayek's argument is now partially addressed by big data analytics, which can aggregate consumption signals across millions of actors and approximate price-system coordination outcomes",
+      "The knowledge problem applies to final goods markets but not to investment allocation, which state development banks can efficiently guide once they have reliable sectoral and firm-level data"
     ],
     "correctIndex": 0,
-    "explanation": "Hayek's insight is not just about incentives but about epistemology: the knowledge needed to allocate resources efficiently is not available in any one place. It exists in dispersed, tacit, local form \u2014 and prices are the only mechanism that aggregates it without requiring central collection.",
+    "explanation": "Hayek's insight is not just about incentives but about epistemology: the knowledge needed to allocate resources efficiently is not available in any one place. It exists in dispersed, tacit, local form — and prices are the only mechanism that aggregates it without requiring central collection.",
     "source": "Information__Prices__and_Socialism_s_Flaws.pdf"
   },
   {
@@ -662,10 +662,10 @@
     "difficulty": "expert",
     "question": "The sunk cost fallacy leads organizations to continue investing in failing projects because of past expenditure. Why is the fallacy particularly dangerous in government policy contexts?",
     "options": [
-      "In government, sunk costs are politically visible commitments \u2014 reversing them signals failure and invites opposition, creating systematic pressure to continue bad policies beyond their rational stopping point",
-      "The sunk cost fallacy only affects private firms; governments are immune because they have broader mandates and longer time horizons than private actors",
-      "Sunk cost reasoning in government is rational because governments must demonstrate commitment to long-term projects; reversing course destroys credibility",
-      "The danger of sunk cost reasoning in government is primarily financial \u2014 the waste of funds already spent rather than the distortion of future investment decisions"
+      "In government, sunk costs are politically visible commitments — reversing course signals failure and invites opposition, creating pressure to continue bad policies beyond any rational stopping point",
+      "The fallacy primarily affects private firms; governments are less vulnerable because electoral cycles force policy reviews and public auditors constrain spending on failed programmes",
+      "Sunk cost reasoning is rational for governments because sustained commitment to long-term projects builds sovereign credibility and any reversal raises borrowing costs in international capital markets",
+      "The main danger in public contexts is fiscal — the budgetary waste of funds already spent rather than any systematic distortion in how future investment and expenditure decisions are subsequently made"
     ],
     "correctIndex": 0,
     "explanation": "Political sunk costs are commitment devices that backfire: an infrastructure project, a military intervention, or a subsidy program that has consumed public funds acquires a political constituency that makes rational abandonment nearly impossible even when continuation is clearly worse.",
@@ -678,13 +678,13 @@
     "difficulty": "expert",
     "question": "The Kenyan farmers responding to changes in oil prices without knowing about oil markets illustrates a profound property of the price system. What is that property, and what are its limits?",
     "options": [
-      "Prices coordinate global economic activity without requiring any participant to understand the full system \u2014 but this breaks down when market prices are distorted by subsidies, monopolies, or externalities",
-      "The property is that prices automatically produce optimal social outcomes without any government involvement under all market conditions",
-      "The property is that prices transmit all economically relevant information, making other information systems like regulation or planning fully redundant",
-      "The property holds only in commodity markets; in markets with significant information asymmetry, prices do not coordinate effectively"
+      "Prices coordinate global activity without any participant needing to understand the full system — but this breaks down when prices are distorted by subsidies, monopolies, or externalities",
+      "Prices automatically produce socially optimal outcomes without government involvement under virtually all market structures, including those with significant information asymmetry or market power",
+      "Prices transmit all economically relevant information to every actor, making other coordination mechanisms such as regulation or standards redundant in a well-functioning economy",
+      "The coordination property is robust across all market types; in sectors with information asymmetry, higher prices still attract entry and restore efficiency without any corrective intervention"
     ],
     "correctIndex": 0,
-    "explanation": "Prices allow global coordination through local signals \u2014 Kenyan farmers adjust their behavior without needing to understand OPEC decisions. But this magnificent property fails when prices themselves are distorted: regulated prices, subsidized inputs, or unpriced externalities all break the signal.",
+    "explanation": "Prices allow global coordination through local signals — Kenyan farmers adjust their behavior without needing to understand OPEC decisions. But this magnificent property fails when prices themselves are distorted: regulated prices, subsidized inputs, or unpriced externalities all break the signal.",
     "source": "What do prices know that you dont.pdf"
   },
   {
@@ -694,10 +694,10 @@
     "difficulty": "expert",
     "question": "Opportunity cost implies that using a resource for one purpose necessarily forecloses other uses. Why does failing to account for opportunity cost lead governments to systematically underestimate the true cost of public programs?",
     "options": [
-      "Government accounting typically records only financial outlays, omitting the value of foregone alternatives \u2014 so programs that consume scarce administrative capacity, political capital, or crowded-out private investment appear cheaper than they are",
-      "Opportunity cost is inherently unmeasurable for government programs because counterfactuals about what would have happened otherwise cannot be observed",
-      "Government programs do not have opportunity costs because public funds come from taxation and have no alternative productive use once collected",
-      "Opportunity costs only apply when resources are fully employed; if there is slack in the economy, government spending has no opportunity cost"
+      "Government accounting records only financial outlays, omitting foregone alternatives — so programmes that consume administrative capacity or crowd out private investment appear cheaper than they are",
+      "Opportunity cost is unmeasurable for government programmes because the counterfactual — what private actors would have done with the same resources — cannot be observed or reliably estimated",
+      "Public funds raised through taxation carry no opportunity cost once collected, since the private sector would not have deployed them productively anyway in the absence of the government programme",
+      "Opportunity costs are relevant only at full employment; where spare capacity exists, public spending involves no meaningful foregone alternative use of idle resources in the broader economy"
     ],
     "correctIndex": 0,
     "explanation": "Budget line items show what was spent, not what was foregone. A program that consumes regulatory bandwidth, crowds out private investment, diverts bureaucratic attention from higher-value activities, or spends political capital appears much cheaper in formal accounts than in full economic terms.",
@@ -710,13 +710,13 @@
     "difficulty": "expert",
     "question": "Price controls are often introduced to protect consumers from high prices. What does the economics of price signals suggest will systematically happen to supply when prices are held below market-clearing levels?",
     "options": [
-      "Below-market price controls reduce the incentive to supply, producing shortages \u2014 the very problem they were meant to solve reappears as unavailability rather than unaffordability",
-      "Price controls always benefit consumers by reducing costs without affecting supply, as producers have no choice but to continue supplying at controlled prices",
-      "The effect depends entirely on the elasticity of supply \u2014 in highly inelastic markets, price controls successfully reduce prices without producing shortages",
-      "Price controls improve efficiency by preventing monopolists from charging prices above competitive equilibrium, increasing both consumer welfare and total output"
+      "Below-market price controls reduce the incentive to supply, producing shortages — the very problem they were meant to solve reappears as unavailability rather than unaffordability",
+      "Price controls always benefit consumers by reducing costs without affecting supply, since producers face legal obligations to continue selling at controlled prices regardless of profitability",
+      "The supply effect depends entirely on price elasticity — in inelastic markets, controls reduce prices substantially without triggering significant shortages or black market activity",
+      "Price controls improve allocative efficiency by preventing monopolists from pricing above competitive equilibrium, increasing both consumer welfare and total market output in concentrated industries"
     ],
     "correctIndex": 0,
-    "explanation": "Price is a signal to suppliers. When the signal is suppressed below market-clearing level, suppliers reduce supply. The result is shortage \u2014 consumers who would have paid the market price cannot find the good at the controlled price, producing queues, rationing, and black markets.",
+    "explanation": "Price is a signal to suppliers. When the signal is suppressed below market-clearing level, suppliers reduce supply. The result is shortage — consumers who would have paid the market price cannot find the good at the controlled price, producing queues, rationing, and black markets.",
     "source": "Price Signal Incentive.pdf"
   },
   {
@@ -726,13 +726,13 @@
     "difficulty": "expert",
     "question": "The 'I, Rose' essay (after Leonard Read's 'I, Pencil') demonstrates that no individual or organization possesses the knowledge to plan the entire supply chain of even a simple product. What does this reveal about the limits of industrial policy?",
     "options": [
-      "Industrial policy that tries to manage supply chains faces the same knowledge problem as central planning \u2014 the information required to optimize across interconnected global markets is dispersed and unavailable to any planning authority",
-      "The essay shows that complex supply chains require government coordination to function \u2014 spontaneous order alone cannot produce such sophisticated networks",
-      "The knowledge problem only affects consumer goods with complex supply chains; industrial policy targeting simpler sectors can be efficiently planned",
-      "Industrial policy fails only because of implementation problems in bureaucracies; in principle, a sufficiently capable technocracy could manage supply chains effectively"
+      "Industrial policy managing supply chains faces the same knowledge problem as central planning — optimising across global markets requires dispersed information no planning authority can possess",
+      "The essay shows complex supply chains require state coordination — spontaneous order cannot sustain investments in logistics, cold-chain infrastructure, and product standards that global trade demands",
+      "The knowledge problem applies only to consumer goods with fragmented global supply chains; simpler domestic sectors can be efficiently guided by industrial policy using available sectoral data",
+      "Industrial policy failures reflect implementation weaknesses in bureaucracies, not a fundamental knowledge constraint — a sufficiently capable technocracy could plan supply chains effectively"
     ],
     "correctIndex": 0,
-    "explanation": "Like the pencil, the rose involves thousands of actors across continents coordinating without anyone planning the whole. Industrial policy that tries to replicate or improve this coordination must gather and process information that exists only dispersed across all those actors \u2014 which is impossible.",
+    "explanation": "Like the pencil, the rose involves thousands of actors across continents coordinating without anyone planning the whole. Industrial policy that tries to replicate or improve this coordination must gather and process information that exists only dispersed across all those actors — which is impossible.",
     "source": "I rose.pdf"
   },
   {
@@ -742,13 +742,13 @@
     "difficulty": "expert",
     "question": "The Titanic and Evergrande cases both illustrate how sunk cost reasoning can accelerate catastrophic failure. What common institutional feature allows sunk cost logic to override rational decision-making in both private and public contexts?",
     "options": [
-      "In both cases, decision-makers face audiences \u2014 creditors, shareholders, governments, citizens \u2014 who interpret course reversal as evidence of failure rather than rational adjustment, creating pressure to continue regardless of fundamentals",
-      "Sunk cost logic takes hold only when decision-makers lack financial expertise; better training in economics would prevent both types of failure",
-      "Both cases involved fraud and concealment, which is the actual driver of continued bad investment rather than sunk cost reasoning",
-      "Sunk cost reasoning is unique to private sector actors motivated by stock price; public institutions are immune because they have no comparable external performance pressure"
+      "In both cases, audiences — creditors, shareholders, citizens — interpret course reversal as failure rather than rational adjustment, creating systematic pressure to continue regardless of fundamentals",
+      "Sunk cost escalation mainly occurs when decision-makers lack financial economics training; better education at senior levels would substantially reduce both corporate and public sector failures",
+      "Both cases were driven principally by fraud and deliberate concealment rather than sunk cost psychology — the principal-agent problem of hidden information is the actual mechanism, not cognitive bias",
+      "Sunk cost escalation is unique to private sector actors responding to stock-price pressure; public sector institutions and state-owned enterprises are insulated from comparable performance scrutiny"
     ],
     "correctIndex": 0,
-    "explanation": "The common mechanism is the audience: Titanic's officers couldn't signal the ship was sinking; Evergrande couldn't signal insolvency. In both cases, the cost of transparency \u2014 panic, withdrawal, collapse \u2014 appeared to exceed the cost of continuation, trapping decision-makers in escalating commitment.",
+    "explanation": "The common mechanism is the audience: Titanic's officers couldn't signal the ship was sinking; Evergrande couldn't signal insolvency. In both cases, the cost of transparency — panic, withdrawal, collapse — appeared to exceed the cost of continuation, trapping decision-makers in escalating commitment.",
     "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
   },
   {
@@ -758,13 +758,13 @@
     "difficulty": "expert",
     "question": "Prices coordinate economic activity through decentralized signals, but externalities mean that market prices often fail to reflect the full social cost of production or consumption. What does this imply for the design of carbon pricing mechanisms?",
     "options": [
-      "A carbon price attempts to internalize externalities by making the price signal reflect the full social cost \u2014 but its effectiveness depends on the price being set accurately, applied comprehensively, and resistant to political manipulation",
-      "Carbon pricing is straightforwardly superior to all other climate instruments because it harnesses the price system's coordination power without requiring any additional regulation",
-      "Externalities undermine the price system so comprehensively that markets cannot play any meaningful role in addressing climate change \u2014 only direct regulation is effective",
-      "Carbon pricing solves the externality problem completely by definition, since any positive carbon price improves on the zero price that markets produce without intervention"
+      "A carbon price internalizes externalities by making the price signal reflect the full social cost — but this requires setting the price accurately, broad coverage, and political durability",
+      "Carbon pricing is straightforwardly superior to all other climate instruments because it harnesses price-system coordination power without requiring sector-specific regulation or technology mandates",
+      "Externalities so comprehensively undermine price signals in energy markets that only direct command-and-control regulation can achieve the emission reductions required to address climate change",
+      "Any positive carbon price fully resolves the externality by definition, since it improves on the zero price that unregulated markets produce — the precise level matters only at the margin"
     ],
     "correctIndex": 0,
-    "explanation": "Carbon pricing is an attempt to fix the broken signal \u2014 to make the price of fossil energy include its climate cost. But the fix requires setting the price correctly (estimating the social cost of carbon), applying it broadly (avoiding carbon leakage), and keeping it politically stable \u2014 each of which is a substantial challenge.",
+    "explanation": "Carbon pricing is an attempt to fix the broken signal — to make the price of fossil energy include its climate cost. But the fix requires setting the price correctly (estimating the social cost of carbon), applying it broadly (avoiding carbon leakage), and keeping it politically stable — each of which is a substantial challenge.",
     "source": "Price Signal Incentive.pdf"
   }
 ]

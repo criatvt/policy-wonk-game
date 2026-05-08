@@ -12,7 +12,7 @@
       "A one-way chain of causes and effects with a clear beginning and definite end"
     ],
     "correctIndex": 0,
-    "explanation": "A feedback loop is a process in which A causes B, which in turn influences A \u2014 with higher-order effects frequently resulting from the continual movement of the loop.",
+    "explanation": "A feedback loop is a process in which A causes B, which in turn influences A — with higher-order effects frequently resulting from the continual movement of the loop.",
     "source": "The_Mental_Models_of_Systems_Thinking.pdf"
   },
   {
@@ -28,7 +28,7 @@
       "The power to negotiate treaties and manage foreign affairs and alliances"
     ],
     "correctIndex": 0,
-    "explanation": "Drawing on Max Weber, 'In Service of the Republic' holds that at the heart of the state is violence \u2014 the state acquires a monopoly upon legitimate violence and uses the threat of violence to obtain obedience.",
+    "explanation": "Drawing on Max Weber, 'In Service of the Republic' holds that at the heart of the state is violence — the state acquires a monopoly upon legitimate violence and uses the threat of violence to obtain obedience.",
     "source": "In_Service_of_the_Republic_Ch_1__Ch_2_and_Ch_3.pdf"
   },
   {
@@ -44,7 +44,7 @@
       "The failure of international organizations to enforce rules agreed upon by member states"
     ],
     "correctIndex": 0,
-    "explanation": "Anarchy in IR theory means the absence of a legitimate governmental authority to regulate disputes and enforce agreements between states \u2014 it is the defining structural feature of the international system in realist thought.",
+    "explanation": "Anarchy in IR theory means the absence of a legitimate governmental authority to regulate disputes and enforce agreements between states — it is the defining structural feature of the international system in realist thought.",
     "source": "1998 causes of war & conditions of peace.pdf"
   },
   {
@@ -76,7 +76,7 @@
       "The process by which a complex system expands to incorporate new members or functions"
     ],
     "correctIndex": 0,
-    "explanation": "Emergence describes higher-level behavior that arises from the interaction of lower-order components. The result is frequently non-linear \u2014 not simple addition \u2014 and cannot be predicted by studying the parts in isolation.",
+    "explanation": "Emergence describes higher-level behavior that arises from the interaction of lower-order components. The result is frequently non-linear — not simple addition — and cannot be predicted by studying the parts in isolation.",
     "source": "The_Mental_Models_of_Systems_Thinking.pdf"
   },
   {
@@ -108,7 +108,7 @@
       "Security guarantees from great powers are unreliable and create dangerous dependency problems"
     ],
     "correctIndex": 0,
-    "explanation": "The security dilemma is the possibility that a state's actions to provide for its own security may result in a decrease in the security of all states, including itself \u2014 even when no aggression was intended.",
+    "explanation": "The security dilemma is the possibility that a state's actions to provide for its own security may result in a decrease in the security of all states, including itself — even when no aggression was intended.",
     "source": "1998 causes of war & conditions of peace.pdf"
   },
   {
@@ -124,7 +124,7 @@
       "Economic growth inevitably slows as societies transition from agriculture to industry"
     ],
     "correctIndex": 0,
-    "explanation": "The Law of Diminishing Returns holds that most important real-world results are subject to an eventual decrease of incremental value \u2014 and often veer into negative territory with too much input.",
+    "explanation": "The Law of Diminishing Returns holds that most important real-world results are subject to an eventual decrease of incremental value — and often veer into negative territory with too much input.",
     "source": "The_Mental_Models_of_Systems_Thinking.pdf"
   },
   {
@@ -140,7 +140,7 @@
       "The point at which a system achieves its peak efficiency and maximum output"
     ],
     "correctIndex": 0,
-    "explanation": "Critical mass refers to the mass needed to have a critical event occur \u2014 the threshold at which a system jumps from one phase to another. The marginal utility of the last unit before this jump is wildly higher than prior units.",
+    "explanation": "Critical mass refers to the mass needed to have a critical event occur — the threshold at which a system jumps from one phase to another. The marginal utility of the last unit before this jump is wildly higher than prior units.",
     "source": "The_Mental_Models_of_Systems_Thinking.pdf"
   },
   {
@@ -156,7 +156,7 @@
       "Public ownership of key industries provides the stability needed for long-term investment"
     ],
     "correctIndex": 0,
-    "explanation": "Free markets drive growth because competition forces firms onto a treadmill \u2014 endlessly improving products and reducing costs to survive. Productivity gains flow to workers as wages, producing growth without central planning.",
+    "explanation": "Free markets drive growth because competition forces firms onto a treadmill — endlessly improving products and reducing costs to survive. Productivity gains flow to workers as wages, producing growth without central planning.",
     "source": "In_Service_of_the_Republic_Ch_1__Ch_2_and_Ch_3.pdf"
   },
   {
@@ -172,7 +172,7 @@
       "States become so economically interdependent that large-scale war seems irrational"
     ],
     "correctIndex": 0,
-    "explanation": "Power transition theory holds that wars occur as a rising challenger approaches parity with the dominant power \u2014 the period of transition is the most dangerous, not clear dominance or clear inferiority.",
+    "explanation": "Power transition theory holds that wars occur as a rising challenger approaches parity with the dominant power — the period of transition is the most dangerous, not clear dominance or clear inferiority.",
     "source": "1998 causes of war & conditions of peace.pdf"
   },
   {
@@ -188,7 +188,7 @@
       "The process by which complex systems duplicate themselves and spread across environments"
     ],
     "correctIndex": 0,
-    "explanation": "Homeostasis is the process through which systems self-regulate to maintain an equilibrium state that enables them to function in a changing environment \u2014 like a pilot continuously correcting course.",
+    "explanation": "Homeostasis is the process through which systems self-regulate to maintain an equilibrium state that enables them to function in a changing environment — like a pilot continuously correcting course.",
     "source": "The_Mental_Models_of_Systems_Thinking.pdf"
   },
   {
@@ -199,12 +199,12 @@
     "question": "In 'In Service of the Republic,' the charger standardization example is used to illustrate what broader point about government intervention?",
     "options": [
       "Even seemingly simple interventions generate complex enforcement problems, unintended consequences, and welfare costs",
-      "Governments should never intervene in technology markets because free markets always produce better outcomes",
-      "The primary problem with government intervention is that it creates opportunities for official corruption",
-      "Technology standards should be set by international bodies rather than individual national governments"
+      "Governments intervene in technology markets mainly when incumbent industries lobby for protection from new entrants",
+      "The core lesson is that standardization requires democratic legitimacy before any enforcement mechanism can work effectively",
+      "Market failures in technology sectors are best addressed by requiring disclosure rather than mandating technical specifications"
     ],
     "correctIndex": 0,
-    "explanation": "The USB charger example shows that even the most trivial-seeming intervention \u2014 standardizing a charger \u2014 immediately raises deep questions about who decides, how it's enforced, and whether the gains exceed the welfare costs.",
+    "explanation": "The USB charger example shows that even the most trivial-seeming intervention — standardizing a charger — immediately raises deep questions about who decides, how it's enforced, and whether the gains exceed the welfare costs.",
     "source": "In_Service_of_the_Republic_Ch_1__Ch_2_and_Ch_3.pdf"
   },
   {
@@ -215,12 +215,12 @@
     "question": "Why can't anarchy alone explain variations in war and peace across different times and regions?",
     "options": [
       "Anarchy is a constant structural feature of the international system, so it cannot explain why war occurs at some times and not others",
-      "Anarchy has been progressively eliminated by international institutions, making it less relevant historically",
-      "States have learned to cooperate despite anarchy, making it irrelevant as an explanation for modern conflicts",
-      "Anarchy applies only to great power relations and cannot explain conflicts between smaller or weaker states"
+      "Anarchy is a constructed norm that states can revise through sustained diplomacy and the gradual building of shared institutions",
+      "War is caused by anarchy but peace is caused by domestic regime type, so anarchy explains conflict while liberalism explains peace",
+      "Anarchy is the dominant explanatory variable, and its absence in regions like Europe explains why interstate wars there have declined"
     ],
     "correctIndex": 0,
-    "explanation": "Anarchy is a constant \u2014 it cannot explain variation. If anarchy were sufficient to explain war, war would be continuous. Explaining why war occurs in some cases but not others requires additional variables.",
+    "explanation": "Anarchy is a constant — it cannot explain variation. If anarchy were sufficient to explain war, war would be continuous. Explaining why war occurs in some cases but not others requires additional variables.",
     "source": "1998 causes of war & conditions of peace.pdf"
   },
   {
@@ -231,12 +231,12 @@
     "question": "What distinguishes balance of power theory from power transition theory in explaining when wars occur?",
     "options": [
       "Balance of power fears hegemony and expects war to prevent it; power transition expects war as a challenger approaches the dominant state",
-      "Both theories agree that equality of power is most stable; they differ only in how states achieve equality",
-      "Power transition theory focuses on economic competition while balance of power focuses on military alliances",
-      "Balance of power applies to multipolar systems while power transition theory applies only to bipolar ones"
+      "Balance of power predicts stability under multipolarity; power transition predicts stability under hegemony — both treat bipolarity as dangerous",
+      "Power transition theory focuses on long-run economic trends while balance of power focuses on immediate military capability and alliance formation",
+      "Balance of power is a descriptive theory of historical outcomes while power transition is a prescriptive theory of what states should do"
     ],
     "correctIndex": 0,
-    "explanation": "Balance of power theory predicts war to resist hegemonic threats, while power transition theory predicts war during the dangerous moment when a rising state nears parity with the dominant one \u2014 opposite predictions about when stability breaks down.",
+    "explanation": "Balance of power theory predicts war to resist hegemonic threats, while power transition theory predicts war during the dangerous moment when a rising state nears parity with the dominant one — opposite predictions about when stability breaks down.",
     "source": "1998 causes of war & conditions of peace.pdf"
   },
   {
@@ -247,12 +247,12 @@
     "question": "A runaway feedback loop differs from a homeostatic feedback loop because...",
     "options": [
       "Instead of self-correcting toward equilibrium, it amplifies deviations, driving the system further from its prior state",
-      "It operates faster than homeostatic loops, producing more rapid changes in overall system behavior",
-      "It involves more actors and connections, making it harder to model and predict accurately",
-      "It only occurs in engineered systems, while homeostatic loops are found in natural and biological systems"
+      "Runaway loops appear mainly in social systems, where actors resist corrective feedback unlike physical systems",
+      "It produces discrete, discontinuous shifts rather than gradual adjustments, making the system jump suddenly between stable states",
+      "It is driven by external shocks rather than internal dynamics, so the system loses control only when exposed to exogenous disturbances"
     ],
     "correctIndex": 0,
-    "explanation": "A runaway feedback loop is one where the output of a reaction becomes its own catalyst \u2014 autocatalysis. Unlike homeostatic loops that restore balance, runaway loops amplify deviation continuously.",
+    "explanation": "A runaway feedback loop is one where the output of a reaction becomes its own catalyst — autocatalysis. Unlike homeostatic loops that restore balance, runaway loops amplify deviation continuously.",
     "source": "The_Mental_Models_of_Systems_Thinking.pdf"
   },
   {
@@ -263,12 +263,12 @@
     "question": "The 'levels of analysis' framework in international relations is primarily useful because...",
     "options": [
       "It organizes different types of explanatory variables and prevents confusion about what each theory is trying to explain",
-      "It proves that systemic factors are always more important than individual or national-level factors in causing wars",
-      "It eliminates the need to study individual leaders and their decisions in understanding international outcomes",
-      "It shows that the primary cause of war is always found at the systemic level rather than within states"
+      "It demonstrates that systemic factors outweigh leader-level variables, so studying individual decisions adds little explanatory power",
+      "It reveals that second-image explanations rooted in domestic politics are the most empirically robust of all available approaches",
+      "It enables empirical tests of whether growing institutions have modified anarchy enough to change its effects on state behavior"
     ],
     "correctIndex": 0,
-    "explanation": "The levels-of-analysis framework helps classify independent variables \u2014 whether causes of war derive from the system, the society, the government, or the individual \u2014 preventing analytical confusion across different theories.",
+    "explanation": "The levels-of-analysis framework helps classify independent variables — whether causes of war derive from the system, the society, the government, or the individual — preventing analytical confusion across different theories.",
     "source": "1998 causes of war & conditions of peace.pdf"
   },
   {
@@ -278,10 +278,10 @@
     "difficulty": "medium",
     "question": "What is 'churn' in systems thinking, and why does it matter for organizations?",
     "options": [
-      "Churn is periodic loss of members or customers that must be replaced just to maintain the status quo \u2014 standing still equals falling behind",
-      "Churn is the rapid cycling of leadership in organizations, which prevents the formation of institutional memory",
-      "Churn refers to turbulence when two competing systems interact, destabilizing both simultaneously",
-      "Churn is the process of continuous growth by adding new members while maintaining all existing ones"
+      "Churn is periodic loss of members or customers that must be replaced just to maintain the status quo — standing still equals falling behind",
+      "Churn is competitive disruption where new entrants replace incumbents, forcing organizations to innovate continuously or lose market position",
+      "Churn is the phenomenon whereby organizations accumulate complexity over time, eventually becoming ungovernable and requiring structural reform",
+      "Churn describes the pattern where policy reforms cycle without ever being fully implemented, producing the appearance of change with none of the effect"
     ],
     "correctIndex": 0,
     "explanation": "Churn is the constant figure of members or customers that is periodically lost and must be replaced before any net gains are added. Like the Red Queen Effect, standing still is the equivalent of losing.",
@@ -295,12 +295,12 @@
     "question": "Why do the authors of 'In Service of the Republic' distinguish between the 'science' and 'art' of public policy?",
     "options": [
       "Because some decisions rest on well-established evidence and analysis, while others require judgment and contextual reasoning",
-      "Because scientific methods are always superior to judgment-based approaches and should replace them wherever possible",
-      "Because the art of policy is more important than the science, since political success requires persuasion not analysis",
-      "Because separating science from art allows policymakers to avoid responsibility for decisions based on uncertain evidence"
+      "Because the science of policy requires quantitative methods while the art requires qualitative ones, and both must be deployed together",
+      "Because the art refers to communication and persuasion skills that complement technical knowledge but cannot substitute for it in analysis",
+      "Because the science of policy is advancing rapidly and will eventually replace judgment-based approaches as data quality and modeling improve"
     ],
     "correctIndex": 0,
-    "explanation": "There is science where analytical foundations and empirical evidence are strong, and art beyond that \u2014 where policymakers must form judgments that may diverge, feeling their way through intuition and experience.",
+    "explanation": "There is science where analytical foundations and empirical evidence are strong, and art beyond that — where policymakers must form judgments that may diverge, feeling their way through intuition and experience.",
     "source": "In_Service_of_the_Republic_Ch_1__Ch_2_and_Ch_3.pdf"
   },
   {
@@ -311,9 +311,9 @@
     "question": "The 'security dilemma' creates a structural problem for international cooperation because...",
     "options": [
       "Defensive actions by one state appear threatening to others, triggering responses that can spiral into conflict even when no state sought war",
-      "States can resolve the security dilemma through bilateral negotiations if both parties are genuinely rational",
-      "International institutions eliminate the security dilemma by providing binding and enforceable agreements",
-      "The security dilemma only affects great powers; smaller states can always shelter under a protector's guarantee"
+      "States with higher defense spending consistently signal benign intentions more effectively and can escape the dilemma through transparency",
+      "The dilemma is primarily a problem of domestic politics, where leaders must satisfy hawkish constituents even when they personally prefer restraint",
+      "International cooperation fails because states discount future payoffs too heavily, valuing short-run unilateral gains over long-run mutual security"
     ],
     "correctIndex": 0,
     "explanation": "The security dilemma is structural: even defensively motivated military buildups are perceived as threatening by adversaries, triggering counteractions and conflict spirals that are difficult to reverse even when all parties prefer peace.",
@@ -326,13 +326,13 @@
     "difficulty": "medium",
     "question": "Why do properties that work at small scale often fail at large scale in systems thinking?",
     "options": [
-      "Systems are sensitive to scale \u2014 increasing size changes structural properties and behaviors in ways that are not proportional",
-      "Large-scale systems always fail because coordination costs eventually overwhelm any efficiency gains from size",
-      "Properties that work at small scale always perform better at large scale once initial coordination problems are resolved",
-      "Scale effects only matter in engineering systems and do not apply to social or political organizations"
+      "Systems are sensitive to scale — increasing size changes structural properties and behaviors in ways that are not proportional",
+      "Scaling problems arise mainly from management failures rather than system structure, and better leadership can overcome them in most cases",
+      "Large systems fail because the incentives of individual actors diverge from collective goals as anonymity and distance from outcomes increase",
+      "Properties that work at small scale fail at large scale primarily due to resource constraints, which can be resolved with sufficient investment"
     ],
     "correctIndex": 0,
-    "explanation": "One of the most important principles of systems is that they are sensitive to scale. Properties and behaviors tend to change when scaled up or down \u2014 in ways that require quantifying and cannot be assumed to hold linearly.",
+    "explanation": "One of the most important principles of systems is that they are sensitive to scale. Properties and behaviors tend to change when scaled up or down — in ways that require quantifying and cannot be assumed to hold linearly.",
     "source": "The_Mental_Models_of_Systems_Thinking.pdf"
   },
   {
@@ -343,12 +343,12 @@
     "question": "Classical realists and neorealists share core assumptions but differ in what drives state behavior. What is the key difference?",
     "options": [
       "Classical realists emphasize human nature and the drive for power; neorealists focus on the anarchic structure of the international system",
-      "Classical realists focus on economic competition while neorealists treat military capability as the primary instrument of power",
-      "Classical realists support international institutions while neorealists argue all institutions are irrelevant to state behavior",
-      "Classical realists explain individual wars while neorealists explain only systemic patterns of conflict and peace"
+      "Classical realists treat state interests as fixed and given; neorealists treat interests as derivative of position in the international structure",
+      "Classical realists see war as driven by misperception and miscalculation; neorealists see war as a rational response to structural incentives",
+      "Classical realists work at the level of the individual statesman; neorealists exclude individual-level variation as noise around systemic outcomes"
     ],
     "correctIndex": 0,
-    "explanation": "Waltz and neorealists eliminate human nature as an explanatory concept, give primacy to the anarchic structure of the international system, and construct a structural theory \u2014 while classical realists retain human nature as a cause of conflict.",
+    "explanation": "Waltz and neorealists eliminate human nature as an explanatory concept, give primacy to the anarchic structure of the international system, and construct a structural theory — while classical realists retain human nature as a cause of conflict.",
     "source": "1998 causes of war & conditions of peace.pdf"
   },
   {
@@ -359,9 +359,9 @@
     "question": "A government intervention creates unintended consequences worse than the original problem. Which framework from the readings best explains this pattern?",
     "options": [
       "Systems thinking: interventions in complex systems trigger feedback effects that shift or amplify problems in ways linear analysis misses",
-      "Market failure theory: governments always produce worse outcomes than markets due to information asymmetries",
-      "Public choice theory: government officials pursue personal interests rather than public good when designing policy",
-      "Principal-agent theory: bureaucrats systematically distort implementation to protect their own positions and budgets"
+      "Market failure theory: the problem exists because a public good or externality was not properly priced, and the intervention addressed the wrong margin",
+      "Bureaucratic politics: the agency implementing the policy was captured by interest groups who redirected it toward private rather than public benefit",
+      "Rational ignorance theory: voters cannot monitor policy outcomes closely, allowing elected officials to pursue interventions that serve narrow interests"
     ],
     "correctIndex": 0,
     "explanation": "Systems thinking explains how interventions in complex adaptive systems trigger feedback loops, emergent effects, and second-order consequences that simple linear policy analysis fails to anticipate.",
@@ -374,13 +374,13 @@
     "difficulty": "hard",
     "question": "The 'causes of war' literature distinguishes between 'permissive causes' and 'explanations of variation.' Why is this distinction important for policy?",
     "options": [
-      "Preventing war requires addressing both why war is always possible and why it occurs at specific times \u2014 which require different theories and different policies",
-      "Permissive causes are more important than specific triggers, so all anti-war policy should focus on structural reform",
-      "Explanations of variation are empirically superior to permissive cause theories, which are untestable philosophical claims",
-      "The distinction shows that war is inevitable and policymakers should focus on managing conflicts rather than preventing them"
+      "Preventing war requires addressing both why war is always possible and why it occurs at specific times — which require different theories and different policies",
+      "Permissive causes determine which states are most prone to war; specific triggers explain only the timing, so policy should target permissive conditions first",
+      "The distinction is primarily academic; effective peace policy must focus on immediate crisis management rather than on deeper structural conditions",
+      "Explanations of variation are more useful because they generate specific predictions about when and where conflict will occur in identifiable cases"
     ],
     "correctIndex": 0,
-    "explanation": "Permissive causes (like human nature or anarchy) explain why war can always occur; explanations of variation explain why it occurs at some times and places. Peace policy needs both \u2014 structural conditions AND specific triggering dynamics.",
+    "explanation": "Permissive causes (like human nature or anarchy) explain why war can always occur; explanations of variation explain why it occurs at some times and places. Peace policy needs both — structural conditions AND specific triggering dynamics.",
     "source": "1998 causes of war & conditions of peace.pdf"
   },
   {
@@ -391,9 +391,9 @@
     "question": "Why do the authors of 'In Service of the Republic' argue that self-organizing systems frequently outperform centrally planned alternatives?",
     "options": [
       "Decentralized systems aggregate dispersed knowledge and harness individual initiative in ways no central authority can replicate",
-      "Central planning fails only because political systems corrupt it; technically perfect planning would outperform markets",
-      "Self-organizing systems are inherently more democratic and therefore more legitimate than top-down alternatives",
-      "Free markets outperform planning only in consumer goods; critical infrastructure always requires centralized coordination"
+      "Self-organizing systems succeed because they evolve organically over long periods without the coordination failures that afflict new institutions",
+      "Decentralized systems are more resilient to external shocks because failure in one node does not cascade to the entire coordinated structure",
+      "Markets produce efficient outcomes because the profit motive aligns private incentives with social welfare better than any alternative mechanism"
     ],
     "correctIndex": 0,
     "explanation": "The TCP/IP vs X.25 example illustrates the principle: an organic, self-organizing system created by scattered academics beat a state-backed alternative. Decentralized systems use knowledge no central planner can fully possess.",
@@ -406,13 +406,13 @@
     "difficulty": "hard",
     "question": "Why does the emergence property in systems thinking have significant implications for policy evaluation?",
     "options": [
-      "Emergent behaviors cannot be predicted by studying components in isolation, making system-level evaluation essential \u2014 direct effects alone mislead",
-      "Emergent behaviors are always negative, representing unintended consequences of otherwise well-designed policies",
-      "Emergence shows that policy outcomes are random and therefore cannot be meaningfully predicted or evaluated at all",
-      "Emergent properties are only found in natural systems and do not apply to social or political institutions"
+      "Emergent behaviors cannot be predicted by studying components in isolation, making system-level evaluation essential — direct effects alone mislead",
+      "Emergent behaviors disrupt linear models of causation, requiring policymakers to shift from predicting outcomes to building adaptive resilience capacity",
+      "Because emergent behaviors are non-linear, policy interventions must be evaluated over longer time horizons than conventional program evaluations allow",
+      "Emergence reveals that second-order effects are often larger than first-order ones, making impact assessment focus on the wrong causal layer entirely"
     ],
     "correctIndex": 0,
-    "explanation": "Emergence is non-linear: the whole is not the sum of its parts. This means evaluating a policy only at the level of direct effects misses system-level outcomes \u2014 positive or negative \u2014 that only appear when the policy interacts with the broader system.",
+    "explanation": "Emergence is non-linear: the whole is not the sum of its parts. This means evaluating a policy only at the level of direct effects misses system-level outcomes — positive or negative — that only appear when the policy interacts with the broader system.",
     "source": "The_Mental_Models_of_Systems_Thinking.pdf"
   },
   {
@@ -423,9 +423,9 @@
     "question": "Power transition theory predicts wars during rising-state parity. What complicates applying this to modern great power competition?",
     "options": [
       "Nuclear weapons create deterrence that disrupts the historical relationship between power transitions and war, potentially stabilizing the transition period",
-      "The theory cannot be tested in modern conditions because great powers no longer use military force against each other",
-      "Economic interdependence has completely replaced military competition as the dominant form of great power rivalry today",
-      "Power transition theory only applied to the pre-democratic era; democratic peace theory overrides it for modern states"
+      "Economic interdependence between major powers has raised the cost of conventional war to levels that make the historical pattern of transitions obsolete",
+      "The theory underestimates the role of domestic regime type — democratic dyads historically avoid the wars that power transition theory predicts",
+      "Cyber capabilities and gray-zone competition allow rising states to challenge the dominant power below the threshold that triggers power transition wars"
     ],
     "correctIndex": 0,
     "explanation": "Nuclear weapons introduce a powerful intervening variable that the original power transition theory did not account for. The massive destructive costs of nuclear war may deter conflict even during the dangerous period of parity.",
@@ -439,12 +439,12 @@
     "question": "'In Service of the Republic' states that 'the state is a soulless machine.' What does this imply for accountability in governance?",
     "options": [
       "Since the state lacks moral agency, accountability must be built through institutional design and incentives rather than relying on the virtue of officials",
-      "Since states are soulless machines, democratic accountability is impossible and governance must depend on enlightened technocracy",
-      "The state's lack of soul means citizen engagement in governance is futile and political participation has no effect",
-      "Since the state is a machine, it should be run by engineers and technical experts rather than by politicians"
+      "The state's lack of soul means governance must be delegated entirely to civil society, which alone has the moral standing to exercise authority",
+      "Officials who accept this framing become fatalistic and stop trying to improve governance, so the argument undermines its own prescriptive value",
+      "The soulless machine metaphor implies that governance outcomes are fully determined by institutional design, leaving no room for leadership quality"
     ],
     "correctIndex": 0,
-    "explanation": "If the state is a soulless machine that cannot be weaned from violence, depending on the personal virtue of officials is na\u00efve. Accountability must be engineered through checks, incentives, and institutional design \u2014 not virtue alone.",
+    "explanation": "If the state is a soulless machine that cannot be weaned from violence, depending on the personal virtue of officials is naïve. Accountability must be engineered through checks, incentives, and institutional design — not virtue alone.",
     "source": "In_Service_of_the_Republic_Ch_1__Ch_2_and_Ch_3.pdf"
   },
   {
@@ -455,12 +455,12 @@
     "question": "Neorealism treats anarchy as a constant yet tries to explain variations in international outcomes. What logical problem does this create?",
     "options": [
       "A constant cannot explain variation, so neorealism must introduce additional variables, raising questions about whether the theory remains purely structural",
-      "This creates no logical problem because neorealism is designed only to explain systemic patterns, not specific outcomes",
-      "Neorealism resolves this by arguing that some historical periods are more anarchic in their character than others",
-      "The problem is solved by combining neorealism with domestic-level theories that explain why states respond differently"
+      "Neorealism's predictive power is undermined because even its auxiliary variables — polarity, capability distribution — cannot explain specific state choices",
+      "The theory resolves the tension by arguing that variation in outcomes reflects variation in the relative capabilities of states within the same anarchic system",
+      "This is not a logical problem unique to neorealism; all structural theories face the same challenge when applied to specific historical events"
     ],
     "correctIndex": 0,
-    "explanation": "Waltz himself concedes neorealism explains war's recurrence but not specific wars. To explain variation, neorealists must add variables like polarity or offense-defense balance \u2014 which complicates claims to a purely structural theory.",
+    "explanation": "Waltz himself concedes neorealism explains war's recurrence but not specific wars. To explain variation, neorealists must add variables like polarity or offense-defense balance — which complicates claims to a purely structural theory.",
     "source": "1998 causes of war & conditions of peace.pdf"
   },
   {
@@ -471,12 +471,12 @@
     "question": "The irreducibility principle suggests that below a certain threshold, a desired outcome simply does not occur. How does this apply to building state capacity?",
     "options": [
       "There are minimum thresholds of institutional quality, legal infrastructure, and fiscal resources below which governance functions simply fail",
-      "State capacity can be built one institution at a time, and any improvement however small produces proportional improvements in governance",
-      "The irreducibility principle shows that state capacity can only be built through revolutionary rather than incremental change",
-      "Building state capacity is primarily a matter of financial resources \u2014 below a spending threshold, no institutional development is possible"
+      "State capacity grows incrementally as resources accumulate, meaning that any sustained investment eventually produces proportional governance improvements",
+      "The principle implies that governance reforms should concentrate resources on a single sector at a time to cross the threshold in at least one domain",
+      "Below the threshold of viable statehood, external intervention is always required because domestic actors lack the capacity to initiate reform"
     ],
     "correctIndex": 0,
-    "explanation": "Like the woman and the nine-month pregnancy, certain governance outcomes cannot be produced below irreducible thresholds. Partial institutions, underfunded courts, or weak enforcement simply do not function \u2014 there is a floor below which nothing works.",
+    "explanation": "Like the woman and the nine-month pregnancy, certain governance outcomes cannot be produced below irreducible thresholds. Partial institutions, underfunded courts, or weak enforcement simply do not function — there is a floor below which nothing works.",
     "source": "The_Mental_Models_of_Systems_Thinking.pdf"
   },
   {
@@ -487,12 +487,12 @@
     "question": "How does modeling international relations as a stag hunt rather than a Prisoner's Dilemma change predictions about conflict and cooperation?",
     "options": [
       "In a stag hunt, mutual cooperation is both sides' first preference, implying coordination failures rather than inherent defection incentives explain much conflict",
-      "In a stag hunt, states always defect regardless of what the other side does, making genuine cooperation structurally impossible",
-      "The stag hunt shows that international cooperation is achievable only through binding enforcement mechanisms and external guarantors",
-      "Unlike the Prisoner's Dilemma, the stag hunt shows that military deterrence is always the most effective tool for preventing conflict"
+      "In a stag hunt, defection by one player removes the incentive for others to cooperate, so the equilibrium is fragile and easily disrupted by a single actor",
+      "The stag hunt implies that international institutions which reduce uncertainty and build common knowledge can transform deadlocked situations into stable cooperation",
+      "Because first preferences align, repeated interaction and reputation effects are sufficient to sustain cooperation without formal enforcement mechanisms"
     ],
     "correctIndex": 0,
-    "explanation": "In a stag hunt, each player's first preference is mutual cooperation. This implies many international conflicts arise from coordination failures and misperceptions \u2014 not from inherent aggressive preference \u2014 which has very different policy implications.",
+    "explanation": "In a stag hunt, each player's first preference is mutual cooperation. This implies many international conflicts arise from coordination failures and misperceptions — not from inherent aggressive preference — which has very different policy implications.",
     "source": "1998 causes of war & conditions of peace.pdf"
   },
   {
@@ -503,12 +503,12 @@
     "question": "The TCP/IP versus X.25 example in 'In Service of the Republic' illustrates which broader principle about government-led solutions?",
     "options": [
       "Decentralized, self-organizing systems can produce better coordinated outcomes than state-backed alternatives even without state resources",
-      "Government-backed standards always fail because bureaucrats lack the technical expertise needed to make good decisions",
-      "Private firms are always more innovative than governments and should set all technical and industry standards",
-      "Intellectual property protection rather than government support is the primary driver of technological innovation"
+      "The example illustrates that state-backed standards often reflect political rather than technical merit, and incumbents use them to lock out competitors",
+      "The failure of X.25 shows that government investment in technology is systematically misdirected because bureaucrats cannot evaluate technical proposals",
+      "TCP/IP's success demonstrates that academic communities, lacking commercial incentives, innovate more freely and produce superior public-good technologies"
     ],
     "correctIndex": 0,
-    "explanation": "TCP/IP \u2014 backed by no state \u2014 beat X.25 \u2014 backed by a global club of governments. The Internet emerged from self-organizing academic and hobbyist effort. The principle: organic self-organization often outperforms state-led coordination.",
+    "explanation": "TCP/IP — backed by no state — beat X.25 — backed by a global club of governments. The Internet emerged from self-organizing academic and hobbyist effort. The principle: organic self-organization often outperforms state-led coordination.",
     "source": "In_Service_of_the_Republic_Ch_1__Ch_2_and_Ch_3.pdf"
   },
   {
@@ -519,12 +519,12 @@
     "question": "Why do the authors of 'In Service of the Republic' argue that redistributive policies are 'fraught with trouble' even when redistribution is normatively desirable?",
     "options": [
       "Redistribution creates incentive distortions, requires accurate targeting that demands state capacity often absent, and generates political resistance from cost-bearers",
-      "Redistribution is always economically efficient but is prevented by political opposition from wealthy interest groups",
-      "The authors oppose redistribution because they believe inequality is necessary for growth and economic dynamism",
-      "Redistribution policies fail because citizens are unwilling to pay taxes for benefits that flow to others in society"
+      "Redistributive programs generate dependency among recipients, eroding work incentives over time and ultimately making the target population worse off",
+      "Redistribution is fraught because the political coalitions needed to pass it always extract concessions that redirect benefits away from the intended recipients",
+      "The problem with redistribution is primarily one of measurement: governments cannot accurately observe income or consumption, so targeting is always imprecise"
     ],
     "correctIndex": 0,
-    "explanation": "Redistribution is fraught because it disturbs incentives, requires identifying beneficiaries (which demands state capacity), and creates political opposition \u2014 even when the normative goal is valid.",
+    "explanation": "Redistribution is fraught because it disturbs incentives, requires identifying beneficiaries (which demands state capacity), and creates political opposition — even when the normative goal is valid.",
     "source": "In_Service_of_the_Republic_Ch_1__Ch_2_and_Ch_3.pdf"
   },
   {
@@ -535,12 +535,12 @@
     "question": "The 'paradigm wars' between realism and liberalism are criticized for distracting from theory-building. What does this suggest about the ideal approach to studying international relations?",
     "options": [
       "Scholars should develop and test specific falsifiable theories rather than defending paradigms, drawing variables from multiple levels without paradigm constraint",
-      "Scholars should abandon all paradigmatic frameworks and focus exclusively on detailed case studies of specific conflicts",
-      "The paradigm debate is valuable because it forces scholars to clarify their core assumptions about human nature and state behavior",
-      "International relations theory should converge on a single unified framework to prevent confusion and enable prediction"
+      "Scholars should prioritize policy relevance over theoretical rigor, since IR theory's value lies in guiding statecraft rather than advancing academic knowledge",
+      "Paradigm pluralism should be preserved because each framework captures a different dimension of international reality that unified theories inevitably obscure",
+      "The solution is methodological: adopting a common set of research methods across paradigms would allow scholars to adjudicate between competing claims"
     ],
     "correctIndex": 0,
-    "explanation": "The field needs to shift from paradigm wars to theory-building \u2014 constructing specific, testable theories and checking them against evidence, without being constrained by whether they fit the realist or liberal box.",
+    "explanation": "The field needs to shift from paradigm wars to theory-building — constructing specific, testable theories and checking them against evidence, without being constrained by whether they fit the realist or liberal box.",
     "source": "1998 causes of war & conditions of peace.pdf"
   },
   {
@@ -551,12 +551,12 @@
     "question": "The charger standardization example reveals that even trivial interventions generate complex governance challenges. What does this imply for how policymakers should approach the scope of intervention?",
     "options": [
       "Policymakers should be deeply humble about the state's capacity to manage complex systems well, preferring minimal, targeted interventions with clear exit conditions",
-      "The example shows standardization is always bad policy and governments should never set technical standards of any kind",
-      "Governments should intervene only where complete market failure is demonstrated \u2014 and never in technology markets",
-      "The complexity of intervention implies that governments should delegate all technical decisions to independent expert agencies"
+      "Governments should build stronger ex ante evaluation capacity so that interventions are only launched after their full complexity has been assessed in advance",
+      "The lesson is that intervention design should draw heavily on behavioral economics, since cognitive biases in officials produce systematically poor choices",
+      "Policymakers should prefer regulatory standards over direct provision, since standards leverage private actors' knowledge while avoiding government ownership"
     ],
     "correctIndex": 0,
-    "explanation": "If standardizing a charger \u2014 a tiny, inconsequential problem \u2014 immediately generates questions about who decides, how it's enforced, what the welfare costs are, and what black markets emerge, the lesson for larger interventions is deep humility.",
+    "explanation": "If standardizing a charger — a tiny, inconsequential problem — immediately generates questions about who decides, how it's enforced, what the welfare costs are, and what black markets emerge, the lesson for larger interventions is deep humility.",
     "source": "In_Service_of_the_Republic_Ch_1__Ch_2_and_Ch_3.pdf"
   },
   {
@@ -567,12 +567,12 @@
     "question": "Neorealism, power transition theory, and the security dilemma offer different structural explanations for conflict. What can and cannot these structural theories collectively explain?",
     "options": [
       "They explain recurring patterns and conditions that make conflict more or less likely, but cannot explain why a specific leader chose war at a specific moment",
-      "Structural theories are complete explanations because state decisions are fully determined by systemic incentives and structure",
-      "Structural theories explain all historical wars but fail to predict future conflicts because the international system has fundamentally changed",
-      "Structural theories are empirically superior to individual-level explanations because they are more scientifically rigorous and falsifiable"
+      "Structural theories are most useful when combined with game theory, which translates structural incentives into precise predictions about individual state choices",
+      "Structural theories explain both recurrence and variation: polarity, capability distribution, and offense-defense balance together account for most historical conflicts",
+      "Structural theories are sufficient for explaining great power outcomes but require domestic-level supplements when applied to civil wars or intrastate violence"
     ],
     "correctIndex": 0,
-    "explanation": "Structural theories explain the landscape \u2014 which conditions make war more or less likely. They cannot explain why Saddam invaded Kuwait in August 1990 specifically. That requires individual-level analysis of decision-makers, beliefs, and perceptions.",
+    "explanation": "Structural theories explain the landscape — which conditions make war more or less likely. They cannot explain why Saddam invaded Kuwait in August 1990 specifically. That requires individual-level analysis of decision-makers, beliefs, and perceptions.",
     "source": "1998 causes of war & conditions of peace.pdf"
   },
   {
@@ -582,13 +582,13 @@
     "difficulty": "expert",
     "question": "Emergence in systems thinking implies the whole is not the sum of its parts. How does this challenge standard policy cost-benefit analysis?",
     "options": [
-      "Standard CBA aggregates individual-level effects, but emergent system-level outcomes \u2014 positive and negative \u2014 may not appear in that aggregation at all",
-      "Emergence shows that all policy interventions produce net positive outcomes at the system level even when individual effects appear negative",
-      "The challenge is purely technical and can be addressed by using more sophisticated quantitative modeling and bigger datasets",
-      "Emergence implies CBA is inherently biased against large interventions that generate the most emergent system-level value"
+      "Standard CBA aggregates individual-level effects, but emergent system-level outcomes — positive and negative — may not appear in that aggregation at all",
+      "The challenge can be addressed by extending the analytic timeframe of CBA, since emergent effects eventually materialize and become observable and measurable",
+      "CBA consistently undervalues network effects and coordination goods, which are the most common form of emergence in social and economic policy contexts",
+      "Emergence makes ex ante evaluation unreliable, but ex post evaluation can still capture system-level outcomes once they have appeared and stabilized"
     ],
     "correctIndex": 0,
-    "explanation": "CBA works by summing individual effects \u2014 but emergence is definitionally not reducible to such a sum. The interaction effects that produce emergent outcomes at the system level are invisible to any analysis that looks only at component-level impacts.",
+    "explanation": "CBA works by summing individual effects — but emergence is definitionally not reducible to such a sum. The interaction effects that produce emergent outcomes at the system level are invisible to any analysis that looks only at component-level impacts.",
     "source": "The_Mental_Models_of_Systems_Thinking.pdf"
   },
   {
@@ -599,12 +599,12 @@
     "question": "The security dilemma suggests conflict can emerge from purely defensive motivations. Why does this make international cooperation exceptionally difficult even between states that prefer peace?",
     "options": [
       "States cannot credibly signal that their military buildup is defensive rather than offensive, creating mutual suspicion that rational actors cannot easily escape",
-      "Cooperation is impossible because states are inherently aggressive and always prefer dominance to peaceful coexistence with rivals",
-      "States that genuinely prefer peace are always eventually defeated by aggressive states, making the dilemma irrelevant for peaceful nations",
-      "International cooperation is difficult only because of transaction costs \u2014 once institutions reduce these costs, cooperation becomes straightforward"
+      "Even peaceful states face the dilemma because domestic political pressures force leaders to spend on defense at levels that adversaries read as threatening",
+      "The dilemma is most severe for geographically exposed states, but landlocked or island states can credibly signal defensive intent through geography alone",
+      "The security dilemma is self-reinforcing because each round of defensive buildup generates a new round of adversary response, compounding mutual insecurity"
     ],
     "correctIndex": 0,
-    "explanation": "The credibility problem is structural: a defensive arms buildup is indistinguishable from an offensive one. No purely verbal assurance can resolve this \u2014 it requires costly signaling or verification mechanisms that are themselves difficult to build.",
+    "explanation": "The credibility problem is structural: a defensive arms buildup is indistinguishable from an offensive one. No purely verbal assurance can resolve this — it requires costly signaling or verification mechanisms that are themselves difficult to build.",
     "source": "1998 causes of war & conditions of peace.pdf"
   },
   {
@@ -615,9 +615,9 @@
     "question": "'In Service of the Republic' argues simultaneously for free markets AND for government intervention to correct market failures. Is this position consistent, and what does it require?",
     "options": [
       "The position is consistent if policymakers rigorously distinguish genuine market failures from situations where markets work well, and match interventions precisely to the failure type",
-      "The position is internally contradictory because governments cannot simultaneously support markets and intervene in them",
-      "The position requires governments to intervene in all markets because all markets have imperfections that reduce social welfare",
-      "The position is consistent only in theory; in practice, governments always over-intervene once given authority to correct any market failure"
+      "The position is internally consistent only if the state has the capacity to identify and correct failures without creating larger distortions in the process",
+      "The reconciliation requires a dynamic framework: markets should be the default, with intervention triggered by specific measurable failures and sunset conditions",
+      "Consistency requires policymakers to accept that intervention will sometimes fail, and to build in evaluation mechanisms that allow failed policies to be reversed"
     ],
     "correctIndex": 0,
     "explanation": "The position is logically consistent: markets are presumptively efficient, but genuine failures (externalities, public goods, information asymmetry, natural monopoly) exist and justify targeted intervention matched to the specific type of failure.",
@@ -631,12 +631,12 @@
     "question": "The systems thinking concept of a 'margin of safety' in engineering suggests always building in buffer for error. How does this principle translate to the design of public institutions?",
     "options": [
       "Institutions should be designed with redundancy, reserve capacity, and error-tolerance, since unknown shocks will arrive and optimal-state design will fail under stress",
-      "A margin of safety in institutions means governments should always maintain large fiscal reserves regardless of current economic conditions",
-      "The principle only applies to physical infrastructure like bridges and cannot be meaningfully applied to social or political institutions",
-      "Institutions should be optimized for expected conditions rather than rare events, since the cost of excess capacity outweighs its benefits"
+      "The margin of safety principle implies that institutional diversity across jurisdictions is itself a form of redundancy that reduces system-wide governance failures",
+      "Applying the principle requires identifying which institutional functions are most prone to cascading failure and hardening those nodes against extreme scenarios",
+      "The principle suggests that fiscal rules, legislative procedures, and judicial independence should all be designed with explicit tolerance bands rather than fixed targets"
     ],
     "correctIndex": 0,
-    "explanation": "Engineers add margins of safety because they live in an unknown world. Institutions designed for expected conditions fail under unexpected stress. The lesson: build in redundancy, overlap, and tolerance for error \u2014 not just efficiency.",
+    "explanation": "Engineers add margins of safety because they live in an unknown world. Institutions designed for expected conditions fail under unexpected stress. The lesson: build in redundancy, overlap, and tolerance for error — not just efficiency.",
     "source": "The_Mental_Models_of_Systems_Thinking.pdf"
   },
   {
@@ -647,12 +647,12 @@
     "question": "If feminist theory treats patriarchy as a constant (like neorealists treat anarchy), it faces the same explanatory problem: constants cannot explain variation. How should feminist scholarship respond to this structural challenge?",
     "options": [
       "By identifying variation in the degree and form of patriarchal structures across societies and periods, generating testable hypotheses about when and where this variation correlates with conflict",
-      "By arguing that patriarchy is not truly constant but varies so much that it explains all variation in international outcomes including war",
-      "By abandoning structural explanation entirely and focusing exclusively on the experiences of individual women in conflict situations",
-      "By accepting that feminist theory can explain recurrence of violence but not specific conflicts, and leaving the latter to historians"
+      "By distinguishing between different institutional contexts — democratic versus authoritarian, colonial versus post-colonial — and showing how each modulates the link between patriarchy and conflict",
+      "By shifting the unit of analysis from the international system to the household or community level, where patriarchal variation is more directly observable and can be measured comparatively",
+      "By developing mid-range theories about specific conflict types — such as sexual violence in war or militarism — rather than a grand theory of all international outcomes"
     ],
     "correctIndex": 0,
-    "explanation": "The same logic that limits neorealism limits any theory that treats its core variable as a constant. To explain variation, feminist IR must operationalize variation in patriarchal structures \u2014 making it measurable, comparable, and testable across contexts.",
+    "explanation": "The same logic that limits neorealism limits any theory that treats its core variable as a constant. To explain variation, feminist IR must operationalize variation in patriarchal structures — making it measurable, comparable, and testable across contexts.",
     "source": "1998 causes of war & conditions of peace.pdf"
   }
 ]

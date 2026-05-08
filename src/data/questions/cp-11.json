@@ -199,9 +199,9 @@
     "question": "How did the shift from Latin to vernacular languages contribute to nationalist sentiment?",
     "options": [
       "Vernacular languages allowed larger populations to access texts and imagine shared communities",
-      "Latin facilitated nationalism more effectively",
-      "Language had no effect on nationalism",
-      "Vernacular languages fragmented communities"
+      "Standardized Latin became the basis for national consciousness across territorial communities",
+      "Clerical monopoly on Latin literacy was the primary driver of proto-national solidarity",
+      "Vernacular dialects reinforced local loyalties but undermined any broader national imagining"
     ],
     "correctIndex": 0,
     "explanation": "The move to vernacular languages democratized literacy and print distribution, enabling larger populations to share cultural references and develop national consciousness.",
@@ -215,9 +215,9 @@
     "question": "According to Krasner, what explains the gap between stated and actual state behavior regarding sovereignty?",
     "options": [
       "States prioritize strategic interests over consistent adherence to principles",
-      "States lack the intelligence to understand their own rules",
-      "International institutions force violations",
-      "Citizens demand sovereignty violations"
+      "Sovereignty norms are routinely overridden by binding multilateral treaty obligations",
+      "Domestic constitutional law supersedes international sovereignty principles",
+      "Bureaucratic fragmentation prevents coherent implementation of sovereignty doctrine"
     ],
     "correctIndex": 0,
     "explanation": "Krasner argues that states strategically violate sovereignty norms when it serves their interests, revealing that sovereignty is negotiated rather than absolute.",
@@ -231,9 +231,9 @@
     "question": "What tension does liberal nationalism attempt to resolve?",
     "options": [
       "The tension between national solidarity and individual liberty",
-      "The tension between monarchy and democracy",
-      "The tension between tradition and modernity",
-      "The tension between urban and rural areas"
+      "The tension between popular sovereignty and administrative efficiency",
+      "The tension between democratic accountability and expert technocracy",
+      "The tension between territorial integrity and minority self-determination"
     ],
     "correctIndex": 0,
     "explanation": "Liberal nationalism seeks to maintain both a strong sense of national community and liberal commitment to individual rights and democratic governance.",
@@ -247,9 +247,9 @@
     "question": "How do states use institutions to construct national identity?",
     "options": [
       "Through education systems, media, symbols, and rituals that promote shared understanding",
-      "States are passive recipients of national identity",
-      "Institutions have no role in identity formation",
-      "Only families can construct identity"
+      "By constitutionally mandating cultural uniformity and penalizing regional expression",
+      "Through market mechanisms that make national goods more attractive than foreign alternatives",
+      "By delegating identity formation to civil society while withdrawing direct state involvement"
     ],
     "correctIndex": 0,
     "explanation": "States actively shape national identity through schools, public ceremonies, media regulation, and official narratives that cultivate common cultural understanding.",
@@ -263,9 +263,9 @@
     "question": "What is distinctive about nationalism in formerly colonized societies according to Chatterjee?",
     "options": [
       "It developed through contestation with colonial authority and sought to reclaim sovereignty",
-      "It merely copied Western nationalism",
-      "It rejected all forms of state organization",
-      "It was imposed entirely from above"
+      "It evolved from pre-colonial dynastic loyalty once administrative capacity was consolidated",
+      "It was shaped primarily by economic grievances rather than political or cultural claims",
+      "It drew its legitimacy from universalist Enlightenment norms rather than indigenous traditions"
     ],
     "correctIndex": 0,
     "explanation": "In postcolonial contexts, nationalism emerged as a response to colonial domination, with nationalists claiming authority against foreign rule while reorganizing the state.",
@@ -279,9 +279,9 @@
     "question": "Why is the distinction between nations and ethnic groups analytically important?",
     "options": [
       "Nations are political projects; ethnic groups are cultural categories that may or may not coincide with states",
-      "They are identical terms",
-      "Nations always precede ethnic groups",
-      "Only nations can have cultural identity"
+      "Ethnic groups are subsets of nations that have not yet achieved political self-consciousness or organization",
+      "Nations derive their cohesion from ethnic solidarity, making the two categories analytically inseparable",
+      "Ethnic identity is primordial and pre-political, while national identity is always a voluntary civic choice"
     ],
     "correctIndex": 0,
     "explanation": "Nations represent political organization and sovereignty claims, while ethnic groups represent cultural identity; many states contain multiple ethnic groups, and ethnic groups may span multiple nations.",
@@ -295,9 +295,9 @@
     "question": "How does nationalist ideology claim to legitimize state authority?",
     "options": [
       "By asserting that the state represents the will and identity of the nation's people",
-      "By claiming divine right",
-      "By demonstrating military superiority",
-      "By denying legitimacy is necessary"
+      "By grounding state authority in constitutional procedures and separation of powers",
+      "By demonstrating effective delivery of public goods and economic development outcomes",
+      "By appealing to historical treaties and internationally recognized territorial boundaries"
     ],
     "correctIndex": 0,
     "explanation": "Modern nationalism asserts that legitimate political authority derives from representing a unified national people, not from tradition or force alone.",
@@ -311,9 +311,9 @@
     "difficulty": "medium",
     "options": [
       "Print capitalism favored certain languages, creating standardized linguistic communities that became national",
-      "All languages benefited equally from print capitalism",
-      "Print capitalism opposed language standardization",
-      "Language preceded and shaped print capitalism"
+      "Publishers consciously promoted national languages to foster civic loyalty and broaden their readership base",
+      "State patronage of printing presses directed which languages gained cultural prestige and official status",
+      "Vernacular literacy arose from religious reformation movements and was only later captured by market forces"
     ],
     "correctIndex": 0,
     "explanation": "Anderson argues that print capitalism invested in certain languages for profit motives, which had the unintended consequence of standardizing and nationalizing those languages.",
@@ -327,9 +327,9 @@
     "question": "How do states justify sovereignty violations while maintaining the principle of sovereignty?",
     "options": [
       "They frame violations as exceptions, necessity, or claims to special circumstances",
-      "They openly declare sovereignty is meaningless",
-      "They never violate sovereignty",
-      "They abolish the concept entirely"
+      "They invoke universal humanitarian norms to redefine what sovereign conduct requires",
+      "They renegotiate bilateral treaties to retrospectively authorize contested interventions",
+      "They transfer decision-making to multilateral bodies to diffuse accountability for the breach"
     ],
     "correctIndex": 0,
     "explanation": "States maintain the rhetoric of sovereignty while strategically exempting their own actions through legal doctrines, emergency powers, or claims about threats.",
@@ -343,9 +343,9 @@
     "question": "What does Pai mean by suggesting nationalism can become a vehicle for class conflict?",
     "options": [
       "Nationalist movements may mobilize around class interests rather than ethnic or cultural unity",
-      "Class and nationalism are unrelated",
-      "Nationalism automatically transcends class divisions",
-      "Only classes, not nations, matter politically"
+      "Class solidarity across borders tends to displace national loyalty when economic conditions worsen",
+      "Nationalist elites deliberately suppress class grievances by redirecting anger toward external enemies",
+      "Economic inequality is the primary structural cause of secessionist and irredentist nationalism"
     ],
     "correctIndex": 0,
     "explanation": "Pai analyzes how nationalist rhetoric can be deployed to advance particular class interests, making nationalism a contested terrain rather than an expression of unified national interest.",
@@ -359,9 +359,9 @@
     "question": "How does civic nationalism define community membership?",
     "options": [
       "Through shared political institutions and commitment to constitutional principles",
-      "Through blood descent exclusively",
-      "Through religious uniformity",
-      "Through geographic isolation"
+      "Through voluntary assimilation into a dominant cultural and linguistic tradition",
+      "Through demonstrated loyalty to the state over multiple generations of residence",
+      "Through participation in national military service and civic duty obligations"
     ],
     "correctIndex": 0,
     "explanation": "Civic nationalism defines the national community through shared participation in political institutions and adherence to civic principles, open to diverse ethnic backgrounds.",
@@ -375,9 +375,9 @@
     "question": "How does Anderson's analysis of print capitalism challenge teleological narratives of nationalism?",
     "options": [
       "It shows nationalism emerged as an unintended consequence of economic forces, not inevitable progress",
-      "It proves nationalism is purely cultural",
-      "It demonstrates nationalism was fully planned",
-      "It argues print had no impact on social change"
+      "It demonstrates that nationalist consciousness develops in a uniform sequence across all societies",
+      "It confirms that print technology was deployed purposefully by state actors to construct loyalty",
+      "It traces how commercial interests and political elites deliberately co-produced national identities"
     ],
     "correctIndex": 0,
     "explanation": "Anderson's argument suggests nationalism resulted from contingent economic developments, not from a predetermined march toward modern nation-states.",
@@ -391,9 +391,9 @@
     "question": "What does Krasner identify as the fundamental paradox within the sovereignty concept itself?",
     "options": [
       "States cannot simultaneously honor territorial sovereignty while participating in an interconnected world system",
-      "Sovereignty was never clearly defined",
-      "Only powerful states claim sovereignty",
-      "Sovereignty and democracy are unrelated"
+      "Sovereignty claims require international recognition, but recognition itself undermines full autonomy",
+      "Domestic constitutions often grant sovereignty to the people rather than the state, creating dual authority",
+      "Security alliances demand pooling of sovereign decision-making, invalidating unilateral territorial claims"
     ],
     "correctIndex": 0,
     "explanation": "Krasner's analysis reveals that absolute sovereignty is incompatible with participation in international systems, yet states maintain the rhetoric of sovereignty anyway.",
@@ -407,9 +407,9 @@
     "question": "What is a major critique of liberal nationalism as a framework?",
     "options": [
       "It assumes nations can be ethnically/culturally diverse while maintaining civic unity, which empirically often fails",
-      "It is inherently fascist",
-      "It denies any role for cultural identity",
-      "It is theoretically incoherent"
+      "It over-privileges individual autonomy at the expense of collective decision-making within national institutions",
+      "It relies on an implausibly thin conception of culture that ignores the role of religion in national identity",
+      "It cannot explain why some multinational states maintain stable democratic governance despite deep diversity"
     ],
     "correctIndex": 0,
     "explanation": "Critics argue that liberal nationalism underestimates how ethnic or cultural particularism can undermine commitment to universal civic principles.",
@@ -423,9 +423,9 @@
     "question": "What does Chatterjee argue about the relationship between the post-colonial state and pre-colonial nations?",
     "options": [
       "Colonial borders created states that often encompassed multiple pre-existing nations, creating ongoing tensions",
-      "Nations and states always coincided perfectly",
-      "Colonialism had no effect on nation-state boundaries",
-      "Pre-colonial nations accepted state borders completely"
+      "Post-colonial states successfully forged new national identities that superseded pre-colonial ethnic attachments",
+      "Pre-colonial polities lacked the institutional coherence to constitute genuine nations in a modern political sense",
+      "Colonial administrators deliberately aligned state boundaries with ethnic communities to ease administrative control"
     ],
     "correctIndex": 0,
     "explanation": "Chatterjee's analysis emphasizes how colonialism imposed arbitrary boundaries that fragmented some nations and grouped others together, creating enduring structural conflicts.",
@@ -439,9 +439,9 @@
     "question": "How does the timing of nationalism relate to broader processes of modernity?",
     "options": [
       "Nationalism emerged alongside industrialization, mass literacy, and print media as interconnected modern phenomena",
-      "Nationalism predates modernity",
-      "Modernity and nationalism are unrelated",
-      "Nationalism caused modernity"
+      "Nationalism preceded industrialization by centuries and provided the cultural preconditions for capitalist development",
+      "Modernity dissolved pre-modern loyalties, creating a vacuum that states strategically filled with national ideology",
+      "Urbanization and migration weakened ethnic bonds, compelling states to construct civic national identities instead"
     ],
     "correctIndex": 0,
     "explanation": "Anderson and others situate nationalism within a broader constellation of modern developments—capitalism, technology, literacy—that jointly enabled imagined national communities.",
@@ -455,9 +455,9 @@
     "question": "According to Krasner, how do international institutions affect state claims to sovereignty?",
     "options": [
       "They simultaneously reinforce and undermine sovereignty by requiring states to recognize each other while also constraining unilateral action",
-      "They strengthen sovereignty completely",
-      "They have no relationship to sovereignty",
-      "They abolish sovereignty entirely"
+      "They gradually transfer sovereign authority upward, producing a layered system of shared governance above the state level",
+      "They codify sovereignty norms in binding treaties, reducing the gap between juridical claims and actual state practice",
+      "They insulate weaker states from great-power coercion by providing collective security guarantees and legal recognition"
     ],
     "correctIndex": 0,
     "explanation": "International institutions create a paradoxical situation where states' recognition of each other's sovereignty is conditional on submitting to collective rules.",
@@ -471,9 +471,9 @@
     "question": "What internal challenges do nationalist movements face when trying to build unified nations from diverse populations?",
     "options": [
       "Suppressing or marginalizing groups that don't fit the dominant nationalist narrative, creating internal dissent",
-      "There are no internal challenges",
-      "Diversity automatically strengthens nationalism",
-      "Nationalism dissolves all differences"
+      "Maintaining elite consensus on which cultural symbols should anchor the national identity project",
+      "Balancing fiscal transfers between prosperous and lagging regions without triggering secessionist sentiment",
+      "Persuading diaspora communities to maintain loyalty to the homeland despite integration abroad"
     ],
     "correctIndex": 0,
     "explanation": "Nationalist projects often require suppressing or subordinating subnational identities (regional, ethnic, religious), generating internal resistance and periodic crises.",
@@ -487,9 +487,9 @@
     "question": "How does Pai's analysis complicate Marxist theory's relationship to nationalism?",
     "options": [
       "By showing that nationalism can simultaneously express class interests while transcending class through appeals to shared identity",
-      "By proving Marxism is entirely correct",
-      "By rejecting all class analysis",
-      "By arguing class is irrelevant to nationalism"
+      "By demonstrating that base economic contradictions inevitably dissolve national solidarity under advanced capitalism",
+      "By arguing that ethnic solidarity functions as false consciousness that systematically prevents class formation",
+      "By recovering Rosa Luxemburg's critique that national self-determination conflicts with internationalist class politics"
     ],
     "correctIndex": 0,
     "explanation": "Pai's work suggests that nationalism's appeal lies partly in its ability to mobilize around class grievances while obscuring them under the language of national interest.",
@@ -503,9 +503,9 @@
     "question": "What does Chatterjee identify as the paradox of postcolonial sovereignty?",
     "options": [
       "New states inherited colonial state forms while claiming to represent indigenous nations with different authority structures",
-      "Postcolonial states have complete sovereignty",
-      "Colonialism had no institutional legacy",
-      "Postcolonial nations rejected statehood"
+      "Postcolonial sovereignty was formally recognized internationally but remained economically constrained by dependency relations",
+      "Anti-colonial movements built their legitimacy on popular sovereignty but often governed through centralized authoritarian means",
+      "Postcolonial leaders embraced Westphalian norms to gain UN recognition while demanding their revision in practice"
     ],
     "correctIndex": 0,
     "explanation": "Chatterjee argues that postcolonial nationalists inherited European state forms while claiming to represent fundamentally different social and political orders.",
@@ -519,9 +519,9 @@
     "question": "How does liberal nationalism attempt to reconcile universalist principles with particularist national loyalty?",
     "options": [
       "By claiming national communities can embody universal values while maintaining distinct cultural expression",
-      "By abandoning universalism entirely",
-      "By denying particularism exists",
-      "By claiming all nations are identical"
+      "By ranking universal human rights above national loyalty whenever the two come into direct conflict",
+      "By treating nations as transitional forms that will eventually give way to cosmopolitan institutions",
+      "By grounding both universalism and particularity in a shared social contract negotiated within each state"
     ],
     "correctIndex": 0,
     "explanation": "Liberal nationalism asserts that universal principles (rights, democracy, rule of law) can be instantiated through specific national forms, creating a bridge between universal and particular.",
@@ -535,9 +535,9 @@
     "question": "How does Anderson's treatment of 'creole nationalism' challenge traditional genealogies of nationalism?",
     "options": [
       "It suggests nationalism originated in colonial contexts through creole elites, predating European nationalism",
-      "It proves all nationalism is European",
-      "It claims creoles had no national consciousness",
-      "It is historically inaccurate"
+      "It shows European nationalist movements consciously modeled themselves on earlier American independence struggles",
+      "It traces how Enlightenment universalism was selectively appropriated by creole elites to exclude indigenous peoples",
+      "It argues that administrative differentiation under colonialism was the primary driver of all subsequent nationalist thought"
     ],
     "correctIndex": 0,
     "explanation": "Anderson argues that Spanish American creole nationalism, arising from administrative divisions in colonial bureaucracies, emerged before 19th-century European nationalism.",
@@ -551,9 +551,9 @@
     "question": "What does Krasner's framework reveal about the relationship between international law and state practice?",
     "options": [
       "International law functions more to legitimize state behavior than to constrain it, as states violate principles they helped create",
-      "International law perfectly constrains state behavior",
-      "States follow all international rules consistently",
-      "International law is purely theoretical"
+      "International law shapes state behavior primarily through socialization and norm internalization over time",
+      "Repeated violation of international norms gradually erodes their legal standing and weakens the broader treaty framework",
+      "Hegemonic states draft international law to serve systemic interests, leaving weaker states with little enforcement capacity"
     ],
     "correctIndex": 0,
     "explanation": "Krasner's historical analysis shows states use international law selectively, violating the same principles they formally endorse depending on circumstances.",
@@ -567,9 +567,9 @@
     "question": "How does emphasizing the role of print capitalism in nationalism change our understanding of national identity?",
     "options": [
       "It suggests national identities are contingent historical constructions rather than expressions of primordial bonds",
-      "It proves identity is entirely determined by economics",
-      "It denies any cultural dimension to nationalism",
-      "It returns to essentialist views of identity"
+      "It reveals that national cultures are commodified products whose authenticity depends on market validation",
+      "It shows that shared linguistic communities are the necessary and sufficient basis for any durable nationalism",
+      "It implies that national identity formation can be deliberately accelerated by expanding media infrastructure"
     ],
     "correctIndex": 0,
     "explanation": "By tracing nationalism to economic developments rather than inherent national essence, Anderson's approach historicizes and denaturalizes national identity.",
@@ -583,9 +583,9 @@
     "question": "What does Chatterjee's work suggest about how states use nationalism to extend their administrative capacity?",
     "options": [
       "States employ nationalist discourse to legitimize expansion of state reach into civil society and local governance",
-      "States ignore nationalism in administration",
-      "Nationalism weakens state capacity",
-      "There is no relationship between state capacity and nationalism"
+      "Nationalist ideology substitutes for weak administrative capacity by generating voluntary compliance from citizens",
+      "States outsource nation-building to civil society organizations to avoid the legitimacy costs of direct coercion",
+      "Nationalist mobilization weakens bureaucratic rationality by privileging cultural solidarity over technical expertise"
     ],
     "correctIndex": 0,
     "explanation": "Chatterjee analyzes how both colonial and postcolonial states use appeals to nationalism to mobilize populations and extend bureaucratic control.",
@@ -599,9 +599,9 @@
     "question": "How does Anderson's concept of simultaneity relate to the formation of national consciousness?",
     "options": [
       "Print media creates the possibility of imagining strangers engaging in simultaneous action, fostering national consciousness",
-      "Simultaneity has no role in nationalism",
-      "All communities experience simultaneity equally",
-      "Print media prevents awareness of simultaneity"
+      "Shared historical memory of a common founding moment produces a sense of temporal simultaneity within the nation",
+      "Simultaneous participation in electoral rituals synchronizes citizens and reinforces collective national belonging",
+      "The standardized school calendar creates homogeneous temporal rhythms that embed national identity in daily life"
     ],
     "correctIndex": 0,
     "explanation": "Anderson emphasizes that print media allows people to imagine thousands of strangers reading the same newspaper simultaneously, creating horizontal solidarity.",
@@ -615,9 +615,9 @@
     "question": "What does liberal nationalism's tension between universal rights and particular national loyalty reveal about modern political theory?",
     "options": [
       "That the nation-state structure inherently contains contradictory commitments that require ongoing negotiation",
-      "That universal rights are more important than nationalism",
-      "That nationalism and liberalism are entirely compatible",
-      "That this tension is resolved through nationalism alone"
+      "That cosmopolitan political theory has successfully dissolved the particularist claims of national belonging",
+      "That liberal political philosophy systematically undertheorizes the cultural preconditions of democratic governance",
+      "That federalism and consociationalism are the only institutional forms capable of managing this core tension"
     ],
     "correctIndex": 0,
     "explanation": "Liberal nationalism exemplifies a fundamental structural tension in modernity: the coexistence of claims to universal human rights with particularistic national belonging.",
@@ -631,9 +631,9 @@
     "question": "What is the significance of challenging essentialist views of nationalism?",
     "options": [
       "It reveals that national identities are socially constructed and can change, not fixed by nature or blood",
-      "Nationalism is determined by biology",
-      "Nations cannot evolve",
-      "Identity never changes"
+      "It shows that nationalist movements can be delegitimized simply by exposing their invented historical narratives",
+      "It confirms that civic identity is always more stable and politically productive than ethnic attachment",
+      "It demonstrates that state institutions, not cultural traditions, are the true basis of national cohesion"
     ],
     "correctIndex": 0,
     "explanation": "Showing nationalism as historically contingent rather than essential opens space for critically examining national projects and potentially reimagining community.",
@@ -648,7 +648,7 @@
     "options": [
       "The constructed origins of nationalism are irrelevant once it becomes a powerful political force — what matters is that citizens believe in it, regardless of historical accuracy",
       "Nationalist movements deliberately falsify history, which means they are inherently illegitimate and can be delegitimised by historical scholarship",
-      "The tension reveals that nationalism serves as a legitimating technology — constructed origins are strategically deployed as primordial to claim authority that modern political institutions alone cannot provide",
+      "Nationalism functions as a legitimating technology — constructed origins are deployed as primordial to claim authority that modern political institutions alone cannot provide",
       "Anderson's analysis only applies to European nationalism; in post-colonial states, national identity genuinely predates modern print capitalism"
     ],
     "correctIndex": 2,
@@ -663,7 +663,7 @@
     "question": "Krasner identifies 'sovereignty holes' — areas where international actors exercise authority that formally belongs to states. A critic argues this merely describes power imbalances, not a structural feature of sovereignty. How should a defender of Krasner's framework respond?",
     "options": [
       "The critic is right; sovereignty holes are just instances of powerful states imposing their will on weaker ones, which is better explained by realist balance-of-power theory",
-      "Sovereignty has always been a legal fiction — Krasner's contribution is showing that the fiction is systematically violated in predictable domains (human rights, financial regulation, security), revealing the gap between juridical and empirical sovereignty as structurally durable",
+      "Sovereignty is a legal fiction — Krasner's insight is that the fiction is violated in predictable domains (human rights, finance, security), making the juridical-empirical gap structurally durable",
       "Sovereignty holes only emerge when international institutions are strong, so the critique is only valid in periods of high multilateral cooperation",
       "The concept only applies to failed states; functioning states with legitimate governments do not experience sovereignty holes regardless of power disparities"
     ],
