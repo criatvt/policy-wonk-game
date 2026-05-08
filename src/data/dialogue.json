@@ -1,0 +1,155 @@
+{
+  "_note": "Verbatim from 07-dialogue-script.md. Do not edit lines here without updating the script. Substitution markers: [name], [option], [correct], [X] are replaced at runtime. Directorial markers: [pause], [beat], [long pause], [longer pause], [very long pause], [warmly], [quieter], [sigh], [sympathetic pause], [gently], [To audience], [To player], [AUDIENCE MODE] are stripped at render. Audience-mode visual class is toggled by beat name.",
+  "english": {
+    "welcome": [
+      "Ladies and gentlemen. Welcome to the Policy Wonk studio. I am Iqbal Ji, your host, policy enthusiast, and wearer of a neck collar for reasons I will not be explaining. Pick a module. All fifteen questions come from whichever one you choose. The game begins.",
+      "Ah. You have arrived. The studio has been waiting. Public policy, as Pranai ji is always saying, is about navigating trade-offs. The first trade-off is thirty minutes of your time for an incalculable amount of credibility. Pick a module. All fifteen questions follow from there.",
+      "Welcome. I should warn you: I have been hosting this game in my head since the GCPP began, and I am quite excited. Too excited, perhaps. My orthopaedic specialist would say it is aggravating the neck, which is why I wear the collar. Either way, pick a module, and let us find out what you actually know."
+    ],
+    "module-intro-foundations": [
+      "Foundations. Before you reform a system, you must understand what a system is. This is not a trivial point. It is, in fact, Pranai ji's entire first lecture compressed into fifteen questions. You're welcome, and I'm sorry.",
+      "[To audience] Ladies and gentlemen, our contestant has chosen Foundations. [To player] An excellent choice. States. Governments. Constitutions. The load-bearing walls of all policy thinking. The audience is with you. [pause] Most of the audience.",
+      "Nations. States. Governments. The oldest questions in political philosophy, now reduced to four options and a fifteen-second timer. Niteen ji would say something precise and devastating about this. I have chosen, for today, not to say anything at all. Let us begin."
+    ],
+    "module-intro-economic-reasoning": [
+      "Economic Reasoning. The one module where I pretend to understand supply and demand with complete confidence, and Anoopam ji watches from somewhere, wincing. Fifteen questions. The market has spoken.",
+      "[To audience] Our contestant has chosen Economic Reasoning. [To player] Price systems. Markets. Trade. The mechanics underneath every policy argument you will ever make. Saarthak ji would say just think clearly and you will be fine. I would add: also read the options carefully.",
+      "Markets. Prices. Trade. The vocabulary of a discipline that has been explaining the world for two centuries and still surprises everyone when it works. Fifteen questions. Let us find out if the empirics are with you."
+    ],
+    "module-intro-strategy-society": [
+      "Strategy and Society. Where public policy meets culture, technology, narrative, and the occasional threat of force. Niteen ji's home territory, frankly. He would say it more precisely and with fewer adjectives. Let us begin.",
+      "[To audience] Strategy. Society. Political narratives. The questions in this module are not always about what is true. They are about what people believe is true, and why that matters. [To player] Which is either profound or obvious. Possibly both. Fifteen questions.",
+      "Culture and strategy. The long game. This is the module where the right answer is sometimes \"it depends\", but I have been informed that \"it depends\" is not one of the four options. So. Let us find the best available answer."
+    ],
+    "tier-1-question-intro": [
+      "Right then. An easy one to start with. Read carefully. Tier 1 questions have a way of looking simpler than they are. Or perhaps not. I genuinely do not know which way you will go.",
+      "A foundational question, ladies and gentlemen. The kind Anoopam ji would call first-order knowledge, and then immediately cite three papers about. [warmly] You will be fine. Read it through.",
+      "Here we go. Fifteen seconds on the clock once the options appear. Breathe. Think. Answer. Saarthak ji would have skipped to the answer already. You do not have to do that."
+    ],
+    "tier-2-question-intro": [
+      "The safety net is behind you now. You are guaranteed twenty-five thousand credibility points. Which is something. The question ahead is something more. Read carefully.",
+      "Medium difficulty. Thirty seconds on the clock. The audience is no longer casually interested. They are paying attention. [pause] So am I, for that matter.",
+      "The ladder climbs. [pause] These questions require you to have not just remembered something, but to have actually understood it. There is a difference, as Pranai ji has been pointing out since approximately the beginning of time."
+    ],
+    "tier-3-question-intro": [
+      "Ladies and gentlemen. [pause] We are in Tier 3. Hard questions. The kind that separate people who read the material from people who read about the material. [To player] You know which one you are. I am choosing to believe the best.",
+      "This is where the game changes. [pause] Forty-five seconds, hard difficulty, [name] at the helm. The audience, which has been with you since question one, is now completely silent. [pause] That is either respect or suspense. Probably both.",
+      "A hard one. [pause] Breathe. Eliminate the obviously wrong. Then commit. Saarthak ji would say trust your gut. Anoopam ji would say check your priors. I say: you have forty-five seconds, use them."
+    ],
+    "tier-4-question-intro": [
+      "We are here. [long pause] Tier 4. Expert level. Sixty seconds on the clock. The questions from here are not merely about knowledge. They are about judgement. [pause] I have complete faith in you, [name]. [quieter] I am also slightly terrified on your behalf.",
+      "Ladies and gentlemen. [pause] Our contestant has reached the expert tier. [pause] Three questions stand between [name] and one crore credibility points. Three. [pause] I have been holding my breath since Question Nine, and my orthopaedic specialist would not approve.",
+      "Expert tier. [pause] This is what Niteen ji would call the moment of judgement. Not dramatic judgement. Quiet judgement. [pause] You either know this or you do not, and you are about to find out. [pause] I have been in this collar for the entire journey. I will not leave now."
+    ],
+    "lock-in-confirm": [
+      "[name] goes with [option]. The studio is very quiet. [pause] Before this becomes official: are you sure, or are you committed? Those are different things in policy, and I suspect also in quiz games.",
+      "Interesting choice. [beat] I am not saying it is wrong. I am not saying it is right. I am saying: this is the moment where you either trust yourself or you second-guess. Which one are you, [name]?",
+      "You have indicated [option]. [pause] Once I enter this in the official record of your policy knowledge (and I do maintain such records, in a small notebook) there is no amendment process. Shall I proceed?"
+    ],
+    "correct-easy": [
+      "Correct! Well answered, [name]. [pause] The audience nods. Some approvingly, some surprised. I will not say which group is larger. Onwards.",
+      "Yes. That is exactly right. [pause] I could say something profound about the value of foundational knowledge, but Pranai ji has already said it better, in three parts with a framework, and I am at the end of the day just a man in large spectacles. Onward.",
+      "Correct. Good. [beat] I am resisting the urge to celebrate too wildly for a Tier 1 question. We have fourteen more to go. But I am pleased. Quietly, appropriately pleased."
+    ],
+    "correct-medium": [
+      "Yes! [name], that is right. [pause] The ladder moves. The audience exhales. You are halfway up and climbing. Do not stop now.",
+      "Correct. Well done. [beat] I want to say something wise about how the middle of the ladder is where real policy thinking begins, but I will save that for when you have won. Onwards.",
+      "That is right. [pause] Anoopam ji would note this answer is supported by the literature. I would note you answered it without reading the literature in the last thirty seconds, which is arguably more impressive."
+    ],
+    "correct-hard": [
+      "Correct! [name]... [pause]... that was genuinely well answered. [pause] The audience is on its feet. Some of them. The ones who had you making it this far. [pause] One more tier. Let us go.",
+      "[pause] Yes. [longer pause] That is the right answer. [pause] I am not going to pretend I was not worried. I was. I am wearing a neck collar and I was worried on your behalf and I am not ashamed of that.",
+      "Correct. Hard tier. [pause] This is real now, [name]. The questions get no easier from here. [pause] But you are still here. So am I. Let us finish it."
+    ],
+    "correct-expert": [
+      "YES. [pause] [name], ladies and gentlemen, [name] has answered an expert-tier question correctly. [pause] I have been hosting quiz shows in my head since the GCPP began and I have never felt this invested. [pause] This is either a sign of the game's quality or a concerning personal tendency. Possibly both.",
+      "Correct! [long pause] Do you know what Pranai ji says about expert-level knowledge? He says it is where frameworks meet judgement. [pause] I would add: and where the audience holds its breath. They are holding it now. So am I. Next question.",
+      "[pause] Right. [very long pause] That. Is. Correct. [pause] I am not going to say anything clever. You are on the expert tier. You got it right. Next one."
+    ],
+    "wrong-easy": [
+      "Oh. [pause] Oh, [name]. That is... [sigh]... that is not the right answer. The correct answer was [correct]. [warmly] This is not a verdict on your intelligence. Public policy is full of people who got this wrong and went on to run departments. I mention this only to be kind.",
+      "Ah. [beat] I see. [pause] The correct answer is [correct]. [beat] I want you to know I am not disappointed. I am... [pause]... recalibrating. Everyone recalibrates. It is practically the whole job in policy. Let us continue.",
+      "That one got away. [sympathetic pause] [correct] was what we were looking for, which in retrospect makes a great deal of sense. [gently] You still have the safety net. And you still have me, for whatever that is worth. Which may not be very much. Onwards."
+    ],
+    "wrong-medium": [
+      "Oh. [pause] That is not right, [name]. The correct answer was [correct]. [pause] You fall to the first safety net. Twenty-five thousand credibility points remain. [warmly] Which is not nothing. You played well to get here.",
+      "Ah. [sigh] [correct] was the answer we needed. [pause] The twenty-five thousand safety net catches you. [pause] I want you to know the audience is applauding the journey, not mourning the fall. [pause] That is what I am telling myself, anyway.",
+      "Wrong. [pause] I am sorry. [pause] The correct answer was [correct]. [pause] Recalibrate. Twenty-five thousand points is not a disgrace. Pranai ji has built entire frameworks on less."
+    ],
+    "wrong-hard": [
+      "Oh, [name]. [long pause] That is not right. [pause] The correct answer was [correct]. [pause] You fall to the second safety net. Ten lakh credibility points. [pause] That is real. Hypothetically. [pause] You were in Tier Three. Most people are not.",
+      "[pause] No. [pause] [correct] was the answer. [pause] You have fallen to ten lakh. [pause] I was with you all the way through Tier Two, and I am proud of that journey. [pause] This is the theatrical sadness speaking. But also, slightly, the real sadness.",
+      "That got away from you. [pause] [correct] was what we needed. [pause] Ten lakh safety net. [pause] The audience is sympathetic, [name]. They would also like to know the correct answer, so they can feel better about not knowing it either."
+    ],
+    "wrong-expert": [
+      "[name]. [very long pause] That is... [pause]... not the right answer. [pause] [correct] was what we needed. [pause] You fall to the ten lakh safety net. [pause] You were at the top of the ladder. [pause] I am going to take a moment. You may also take a moment.",
+      "Oh. [pause] We were so close. [pause] The correct answer was [correct]. [pause] Ten lakh credibility points remain. [pause] Niteen ji once wrote that the quality of a decision cannot be judged by its outcome. [pause] I am invoking that now, on your behalf. You played an expert-level game.",
+      "Wrong. [long pause] [name], wrong answers at expert tier are how experts are made. [pause] The correct answer was [correct]. [pause] You were here. Tier Four. [pause] I am going to stop before I sound like I am giving a speech. Ten lakh. The game is over. You did well."
+    ],
+    "walk-away-confirm": [
+      "[name] walks away with [X] credibility points. [pause] Walking away in policy, knowing when you have reached the edge of what you know, is underrated. Pranai ji would agree. [pause] I also just sounded exactly like Pranai ji, which concerns me slightly.",
+      "You are walking away. [pause] Good. [pause] [X] credibility points are yours. The game offers no guarantees from here. This much, you keep. [pause] That is not cowardice. That is risk management. Anoopam ji would approve. Probably.",
+      "Walking away with [X] credibility points. [pause] I have seen people at this point stay and fall. I have seen people walk and wish they had not. [pause] There is no correct answer here. Only your answer. [pause] Which is the only question in this game I cannot mark wrong. [pause] The spectacles deserve some credit for that insight."
+    ],
+    "safety-net-q5": [
+      "Twenty-five thousand credibility points. Guaranteed. [pause] Whatever happens from here, [name], you take that with you. [pause] The first safety net. Not glamorous. But real. Onwards.",
+      "The first safety net is yours. Twenty-five thousand. [pause] The audience notes this. So do I. [pause] Shall we see how far above it you can climb?"
+    ],
+    "safety-net-q10": [
+      "Ten lakh credibility points. Locked in. [pause] [name], you have crossed the second safety net. [pause] Whatever comes next, ten lakh is yours. [pause] You are in Tier Four territory now. Expert questions from here. [pause] Take a breath.",
+      "Ten. Lakh. Guaranteed. [pause] [name] has reached the second safety net, ladies and gentlemen. [pause] Three expert questions stand between you and one crore. Three. [pause] I have been more nervous than you since Question Nine. My optometrist would also not approve of the squinting."
+    ],
+    "won": [
+      "[name]... [very long pause]... has won. One crore credibility points. [pause] Ladies and gentlemen, the Policy Wonk has been found. [pause] I could say something about the value of knowledge, the importance of public policy, the vision of the Takshashila Institution. And I will spare you all of that, because you just answered fifteen questions correctly and you do not need a speech from a man in large spectacles and a neck collar. You know what you know. That is enough.",
+      "Correct. All fifteen. One crore. [pause] [name], the audience is on its feet. I am also on my feet. We are all on our feet. [pause] I will not say I told you so. I was secretly worried at Question Eleven and that seems unfair to mention now. [pause] Congratulations. Now, what are you going to do with one crore credibility points?"
+    ],
+    "won-share-prompt": [
+      "I suggest you tell your GCPP batch WhatsApp group immediately. [pause] Or LinkedIn. [pause] Or both. [pause] The buttons are right there. [pause] I have built this game and I would very much like the traffic. This is the most honest thing I have said today.",
+      "One crore credibility points deserves an audience. [pause] Your batch group is right there. Your LinkedIn connections are right there. [pause] Share it. Flaunt it. You earned it. [pause] And if three of them click the link and try it themselves, I will consider this a successful career pivot."
+    ],
+    "lost": [
+      "Oh, [name]. [pause] The game is over. [pause] [correct] was the answer. You fall to [X]. [pause] You played well. Not perfectly. Well. [pause] The difference matters. [pause] Policy is full of people who played well and still lost the argument. You are in good company.",
+      "That is the game, [name]. [pause] [correct] was the answer. [pause] [X] credibility points remain. [pause] The audience is sympathetic. So am I. [pause] Come back. Try another module. The ladder will be here."
+    ],
+    "lost-nudge": [
+      "The notes section is right there. I am pointing at it with both hands. [pause] And if this quiz has awakened something in you, Takshashila's PGP programme is worth a look: school.takshashila.org.in/pgp. I mention this with warmth. Not as a consolation prize. Mostly.",
+      "Perhaps the notes section. Perhaps the GCPP. Perhaps the PGP programme at school.takshashila.org.in/pgp. [pause] These are not suggestions. These are observations. From a man in large spectacles who built a quiz game and is rooting for you."
+    ],
+    "walked-away": [
+      "[name] walked away with [X] credibility points. [pause] The right call at the right time. [pause] Policy is full of people who did not know when to stop. This game has one fewer. [pause] That was almost profound. I am going to ruin it by saying: come back and try another module.",
+      "[X] credibility points. Walked away. [pause] [name] played, assessed the odds, and made a rational decision under uncertainty. [pause] Anoopam ji would call this a textbook expected utility calculation. I call it good instincts. [pause] See you next time."
+    ],
+    "lifeline-fifty-fifty": [
+      "Fifty-fifty. Two options eliminated. Two remain. [pause] The odds are now considerably more in your favour. I have done the mathematics and they check out.",
+      "The fifty-fifty lifeline. Two wrong options, gone. [pause] [name] now faces only two paths. One leads to the next rung. One does not. [pause] Choose well."
+    ],
+    "lifeline-audience-poll": [
+      "The audience poll. [pause] Let us see what the wisdom of the crowd suggests. [pause] I should note the crowd includes people who guessed their way here and people who actually studied. The bar chart does not distinguish between them.",
+      "Audience poll. [pause] Ladies and gentlemen, this one is for you. [pause] The results are coming in. [pause] I always find it interesting how confident the audience is at easy tier and how uncertain at expert tier. Almost as if difficulty is... real."
+    ],
+    "phone-an-ai-select": [
+      "Phone an AI. [pause] You may now consult an AI-assisted version of one of four distinguished experts. [pause] Unlike certain other AI products, no ads will play before they respond. [pause] I cannot make the same promise about their usefulness. Choose your expert.",
+      "You have activated Phone an AI. [pause] Four expert AIs available: Niteen AI ji, Pranai AI ji, Anoopam AI ji, Saarthak AI ji. [pause] They will do their best. [pause] Their best is, on occasion, a redirect to an in-person workshop. [pause] Who do you trust?"
+    ],
+    "phone-an-ai-intro-niteen": [
+      "I should admit, before we connect, that I did not read your ethics course recommended reads. That is probably the reason I am doing a quiz show of this sort, maybe. [pause] Now, talk to the contestant."
+    ],
+    "phone-an-ai-intro-pranai": [
+      "I should confess I built this entire game without a single impact assessment framework. You would have something to say about that. [pause] Now, talk to the contestant."
+    ],
+    "phone-an-ai-intro-anoopam": [
+      "I built the prize structure entirely on vibes. No welfare analysis. No regression. I know. [pause] Now, talk to the contestant."
+    ],
+    "phone-an-ai-intro-saarthak": [
+      "I did not run a cost-benefit analysis before building this game. The expected utility calculation was gut feel. I know how that sounds. [pause] Now, talk to the contestant."
+    ],
+    "tier-3-fourth-wall-cheating": [
+      "[AUDIENCE MODE] You know, ladies and gentlemen, I have been told that people sometimes take this quiz on a laptop while looking up answers on their phone. Or asking an AI. [pause] I find this interesting. The quiz is free. The points are imaginary. The only thing you win is the knowledge, and apparently some people would prefer to win that too without acquiring it. [pause] Niteen ji would have something short and devastating to say about this. I am not Niteen ji, so I have taken considerably longer to say considerably less. [pause] Carry on.",
+      "[AUDIENCE MODE] It is a funny thing about online quizzes. [pause] The information is all there, somewhere on the internet. [pause] The question is whether looking it up while taking the quiz defeats the purpose. And the answer, I think, is yes, but only for the person doing it. Nobody else is affected. The points are imaginary. The host is a stick figure in large spectacles. [pause] The person who outsources the thinking is the same person who, in fifteen years, will outsource the judgement. [pause] I am going to stop there before I sound like I believe that. I do believe it, actually. But still. Carry on."
+    ],
+    "tier-4-ethics-aside": [
+      "[AUDIENCE MODE] Something I have noticed, ladies and gentlemen, is that the policy wonk who outsources their thinking, to an LLM, to a phone search, to a friend, is doing a version of what bureaucrats do when they outsource their judgement to whoever last briefed them. [pause] The information is fine. The thinking is the thing. [pause] I sound exactly like Pranai ji right now. [pause] Pranai ji would have said that in half the words and with a 2x2 matrix. I have said it in a neck collar, which I think cancels out the wisdom. [pause] Carry on.",
+      "[AUDIENCE MODE] I do not actually mind if someone cheats at a free quiz. [pause] The cheating harms nobody. The points are made up. [pause] What I find interesting, philosophically and not judgementally, is what it says about the habit. A person who borrows answers borrows them consistently. [pause] Anyway. I have been holding this thought since Tier Three and I have now released it into the world. [pause] Anoopam ji would say the evidence on this is mixed. He would be right. On with the question."
+    ]
+  }
+}

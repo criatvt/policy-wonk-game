@@ -1,33 +1,84 @@
 {
-  "_note": "Metadata only. Voiced lines come in Phase 7 from 07-dialogue-script.md (per CLAUDE.md, character voice is approved by Aasif, not generated). For Phase 6, the Phone an AI lifeline shows a neutral recommendation; the character framing arrives with the dialogue picker.",
+  "_note": "Verbatim from 07-dialogue-script.md §'Phone an AI — Expert lines'. Tags: correct (recommends right answer), wrong (recommends wrong answer), useless (does not give an answer). Reliability rate governs how often correct lines are served. [Option] is substituted at runtime with the recommended option's letter.",
   "experts": [
-    {
-      "id": "pranai",
-      "name": "Pranay Kotasthane",
-      "displayName": "Pranai AI ji",
-      "reliability": 0.90,
-      "quirk": "Verbose, frameworks-first, qualifies everything"
-    },
     {
       "id": "niteen",
       "name": "Nitin Pai",
       "displayName": "Niteen AI ji",
       "reliability": 0.70,
-      "quirk": "Aphoristic, strategic-culture framing, mildly contrarian"
+      "quirk": "Aphoristic, strategic-culture framing, mildly contrarian",
+      "lines": {
+        "correct": [
+          "Cross-referencing positions. [Option]. No ads were served in the generation of this response.",
+          "[Option]. I am an approximation of Niteen ji. The real one would have said this better and shorter.",
+          "[Option]. The second-order effects point in this direction. I stand by this with moderate confidence."
+        ],
+        "wrong": [],
+        "useless": [
+          "Excellent question. I am redirecting you to an in-person workshop. Registration link: unavailable. Workshop date: to be determined.",
+          "The second-order effects here require a 47-slide deck. Shall I begin? I will assume yes. Slide one."
+        ]
+      }
+    },
+    {
+      "id": "pranai",
+      "name": "Pranay Kotasthane",
+      "displayName": "Pranai AI ji",
+      "reliability": 0.90,
+      "quirk": "Verbose, frameworks-first, qualifies everything",
+      "lines": {
+        "correct": [
+          "Three things to consider. One: eliminate the obviously wrong. Two: apply first principles. Three: [Option]. Verify independently.",
+          "[Option]. I would thread this but there is no thread functionality in this format. I have filed a complaint with the developers.",
+          "Framework applied. Three inputs processed. Output: [Option]. Caveats exist but we have run out of time for them."
+        ],
+        "wrong": [
+          "Great question. Are you subscribed to our policy newsletter? [pause] I do not have one. I am an AI. Disregard. [Option]."
+        ],
+        "useless": [
+          "Full analysis requires the workshop. Attending the Takshashila programme would have preempted this question entirely."
+        ]
+      }
     },
     {
       "id": "anoopam",
       "name": "Anupam Manur",
       "displayName": "Anoopam AI ji",
       "reliability": 0.60,
-      "quirk": "Empiricist, cites studies (sometimes invented), hedges"
+      "quirk": "Empiricist, cites studies (sometimes invented), hedges",
+      "lines": {
+        "correct": [
+          "[Option]. Source: a paper that exists, probably. I am moderately confident about both claims.",
+          "Running regression. Controlling for confounds. Best estimate: [Option]. R-squared: adequate. Do not ask about the p-value."
+        ],
+        "wrong": [
+          "The evidence is mixed. I am an AI. I am also mixed. [Option], but my confidence interval includes all four options.",
+          "[Option], with a confidence interval of plus or minus one option. You may find this unhelpful. I agree."
+        ],
+        "useless": [
+          "I have processed 200 papers on this. My uncertainty is larger than my answer. Please attend a Takshashila workshop for clarity."
+        ]
+      }
     },
     {
       "id": "saarthak",
       "name": "Sarthak Pradhan",
       "displayName": "Saarthak AI ji",
       "reliability": 0.50,
-      "quirk": "Fast, first-principles, confident, often wrong charmingly"
+      "quirk": "Fast, first-principles, confident, often wrong charmingly",
+      "lines": {
+        "correct": [
+          "[Option]. Four seconds of computation. First principles. Not taking further questions.",
+          "Processed. [Option]. 80% confident. The 20% is what makes me interesting."
+        ],
+        "wrong": [
+          "[Option]. I have since been updated. My revised answer is also [Option]. I just wanted you to know I updated.",
+          "Honestly? [Option]. I am eighty percent sure. Possibly sixty. The update changed things."
+        ],
+        "useless": [
+          "The in-person GCPP is a richer learning experience than a quiz format. I am not authorised to give the answer. Please register at school.takshashila.org.in."
+        ]
+      }
     }
   ]
 }

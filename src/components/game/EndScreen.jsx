@@ -1,8 +1,27 @@
+import { useEffect, useState } from "react";
 import { formatIndianNumber } from "../../lib/gameEngine.js";
+import { pickLine } from "../../lib/dialoguePicker.js";
+import HostTakeover from "./HostTakeover.jsx";
 
-// Three states: won | lost | walked-away. Phase 7 will swap in proper
-// dialogue; for now the screen surfaces score, share string, and a
-// reset CTA so playtesting works end-to-end.
+// End-screen flow:
+//   1. Primary takeover with the won / lost / walked-away beat (Iqbal Ji
+//      reacts in voice; explanation = score recap).
+//   2. Continue → secondary takeover with the won-share-prompt OR
+//      lost-nudge beat (if applicable). For walked-away the screen ends
+//      with the share/score block directly.
+//   3. Share string + Play again CTA.
+
+const PRIMARY_BEAT = {
+  won: "won",
+  lost: "lost",
+  "walked-away": "walked-away",
+};
+
+const SECONDARY_BEAT = {
+  won: "won-share-prompt",
+  lost: "lost-nudge",
+  "walked-away": null,
+};
 
 function shareString(state) {
   const url = "https://policywonkgame.aasifj.com";
@@ -16,37 +35,73 @@ function shareString(state) {
 }
 
 export default function EndScreen({ state, onPlayAgain }) {
-  // Neutral system text. Phase 7 wires Iqbal Ji's approved end-state
-  // lines from 07-dialogue-script.md.
-  const heading =
-    state.status === "won"
-      ? "Ladder cleared."
-      : state.status === "walked-away"
-      ? "Walked away."
-      : "Wrong answer.";
+  const [phase, setPhase] = useState("primary"); // "primary" | "secondary" | "summary"
+  const subs = {
+    name: state.playerName,
+    correct: state.correctIndex != null && state.plan
+      ? state.plan[state.currentRung - 1]?.options?.[state.correctIndex] ?? ""
+      : "",
+    x: formatIndianNumber(state.score),
+  };
 
-  const sub =
-    state.status === "won"
-      ? "All 15 questions answered correctly."
-      : state.status === "walked-away"
-      ? `Walked away at Q${state.currentRung}.`
-      : `Fell on Q${state.fellOnRung}.`;
+  const primaryBeat = PRIMARY_BEAT[state.status];
+  const secondaryBeat = SECONDARY_BEAT[state.status];
+  const [primary] = useState(() => (primaryBeat ? pickLine(primaryBeat, subs) : null));
+  const [secondary] = useState(() => (secondaryBeat ? pickLine(secondaryBeat, subs) : null));
+
+  // If we have no primary line (defensive), skip straight to summary.
+  useEffect(() => {
+    if (!primary) setPhase("summary");
+  }, [primary]);
+
+  const tone =
+    state.status === "won" ? "correct" : state.status === "lost" ? "wrong" : "neutral";
+  const explanationLine = `Final score: ${formatIndianNumber(state.score)} credibility points.`;
+
+  if (phase === "primary" && primary) {
+    return (
+      <HostTakeover
+        expression={primary.expression}
+        tone={tone}
+        caption={
+          state.status === "won"
+            ? "All fifteen."
+            : state.status === "lost"
+            ? `Fell at Q${state.fellOnRung}.`
+            : `Walked away.`
+        }
+        body={primary.text}
+        explanation={explanationLine}
+        onContinue={() => setPhase(secondary ? "secondary" : "summary")}
+        continueLabel={secondary ? "Continue" : "See score"}
+      />
+    );
+  }
+
+  if (phase === "secondary" && secondary) {
+    return (
+      <HostTakeover
+        expression={secondary.expression}
+        tone={tone}
+        caption={state.status === "won" ? "Share it." : "One more thought."}
+        body={secondary.text}
+        onContinue={() => setPhase("summary")}
+        continueLabel="See score"
+      />
+    );
+  }
 
   const share = shareString(state);
-
   async function copyShare() {
     try {
       await navigator.clipboard.writeText(share);
     } catch {
-      // Best-effort; fall through silently for now
+      // best-effort
     }
   }
 
   return (
     <section className="flex flex-col gap-6 max-w-xl mx-auto text-center">
-      <h2 className="text-3xl md:text-4xl font-semibold">{heading}</h2>
-      <p className="opacity-80">{sub}</p>
-
       <div className="border border-[var(--color-sienna-burnt)]/40 rounded p-6 bg-[var(--color-indigo-faded)]/30">
         <p className="text-xs uppercase tracking-widest opacity-60">Credibility points</p>
         <p className="text-4xl font-semibold tabular-nums mt-2">

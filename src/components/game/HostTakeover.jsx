@@ -20,15 +20,31 @@ const PORTRAITS = {
   sad: "/iqbal-ji/sad.png",
 };
 
+// `tone`: "correct" → green border, "wrong" → red border, "neutral" → sienna.
+// The tone provides an unambiguous visual signal independent of the
+// caption text, so a player who wasn't reading the caption still knows.
+
+const TONE_BORDER = {
+  correct: "border-[var(--color-functional-green)] bg-[var(--color-functional-green)]/10",
+  wrong: "border-[var(--color-functional-red)] bg-[var(--color-functional-red)]/10",
+  neutral: "border-[var(--color-sienna-burnt)]/40 bg-[var(--color-indigo-faded)]/30",
+};
+
 export default function HostTakeover({
   expression = "neutral",
+  tone = "neutral",
   caption,
   body,
+  // Optional supplementary text rendered below the body once the body
+  // has finished typing. Used for the question explanation after the
+  // host has delivered his reaction.
+  explanation,
   onContinue,
   continueLabel = "Continue",
 }) {
   const src = PORTRAITS[expression] ?? PORTRAITS.neutral;
   const [bodyDone, setBodyDone] = useState(false);
+  const toneClass = TONE_BORDER[tone] ?? TONE_BORDER.neutral;
 
   // Reset typewriter when body content changes
   useEffect(() => {
@@ -37,7 +53,7 @@ export default function HostTakeover({
 
   return (
     <section
-      className="flex flex-col items-center gap-5 p-6 rounded-lg border border-[var(--color-sienna-burnt)]/40 bg-[var(--color-indigo-faded)]/30"
+      className={`flex flex-col items-center gap-5 p-6 rounded-lg border-2 ${toneClass}`}
       aria-live="polite"
     >
       <img
@@ -45,7 +61,7 @@ export default function HostTakeover({
         alt={`Iqbal Ji, the host, looking ${expression}`}
         className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover bg-[var(--color-cream)] shrink-0"
       />
-      <div className="w-full max-w-2xl flex flex-col gap-3 text-center">
+      <div className="w-full max-w-2xl flex flex-col gap-4 text-center">
         {caption && (
           <p className="text-sm uppercase tracking-widest opacity-70">{caption}</p>
         )}
@@ -60,6 +76,14 @@ export default function HostTakeover({
             />
           )}
         </p>
+        {explanation && bodyDone && (
+          <div className="border-t border-[var(--color-cream)]/15 pt-4 text-sm opacity-90 text-left">
+            <p className="text-xs uppercase tracking-widest opacity-60 mb-2 text-center">
+              Why
+            </p>
+            <p className="leading-relaxed">{explanation}</p>
+          </div>
+        )}
       </div>
       {onContinue && (
         <button

@@ -23,6 +23,14 @@ import {
   generateAudiencePoll,
 } from "../../lib/lifelineLogic.js";
 import { findCorrectIndex, isCorrect } from "../../lib/answerHash.js";
+import {
+  pickCorrectLine,
+  pickExpertLine,
+  pickLine,
+  pickModuleIntro,
+  pickTierIntro,
+  pickWrongLine,
+} from "../../lib/dialoguePicker.js";
 import expertsData from "../../data/experts.json";
 import Question from "./Question.jsx";
 import Ladder from "./Ladder.jsx";
@@ -36,6 +44,14 @@ const EXPERTS = expertsData.experts;
 
 const SCREEN_ONBOARDING = "onboarding";
 const SCREEN_PLAYING = "playing";
+
+function slugifyGroup(group) {
+  return group
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-");
+}
 
 // Group modules for the picker, preserving spec order.
 function groupedModules() {
@@ -74,6 +90,12 @@ export default function GameContainer() {
   const [state, setState] = useState(null);
   const [loadError, setLoadError] = useState(null);
   const [takeoverShown, setTakeoverShown] = useState(false);
+  // Interstitial: a HostTakeover panel queued in front of normal play
+  // (welcome, module intro, tier intro, fourth-wall beat, safety-net,
+  // end-screen). Shape: { line, tone, caption, continueLabel, after }.
+  const [interstitial, setInterstitial] = useState(null);
+  // Cached reveal lines so they don't reroll on each render.
+  const [revealLine, setRevealLine] = useState(null);
   const [timerRunning, setTimerRunning] = useState(false);
   const [explanationVisible, setExplanationVisible] = useState(false);
 
@@ -104,6 +126,19 @@ export default function GameContainer() {
       setState(createInitialState({ name: trimmedName, moduleId, plan }));
       setExplanationVisible(false);
       setScreen(SCREEN_PLAYING);
+      // Pre-game: welcome → module intro, then question one reveals.
+      const moduleData = modules.find((m) => m.id === moduleId);
+      const subs = { name: trimmedName };
+      queueBeat("welcome", subs, {
+        continueLabel: "Continue",
+        after: () => {
+          if (moduleData?.group) {
+            queueBeat(`module-intro-${slugifyGroup(moduleData.group)}`, subs, {
+              continueLabel: "Start the show",
+            });
+          }
+        },
+      });
     } catch (e) {
       setLoadError(`Failed to load module: ${e.message}`);
     }
@@ -125,9 +160,34 @@ export default function GameContainer() {
     setState(null);
     setExplanationVisible(false);
     setTakeoverShown(false);
+    setInterstitial(null);
+    setRevealLine(null);
     setTimerRunning(false);
     setScreen(SCREEN_ONBOARDING);
   }, []);
+
+  // Helper: queue an interstitial takeover. `beat` is a dialogue.json
+  // beat name; subs are runtime substitutions; `after` runs when the
+  // user clicks Continue on the takeover panel.
+  function queueBeat(beat, subs, opts) {
+    const line = pickLine(beat, subs);
+    if (!line) {
+      opts?.after?.();
+      return;
+    }
+    setInterstitial({
+      line,
+      caption: opts?.caption ?? null,
+      continueLabel: opts?.continueLabel ?? "Continue",
+      tone: opts?.tone ?? "neutral",
+      after: opts?.after,
+    });
+  }
+  function dismissInterstitial() {
+    const after = interstitial?.after;
+    setInterstitial(null);
+    after?.();
+  }
 
   // After reveal, hold the green/red highlight on the question for a
   // beat so the player sees the right answer; THEN bring the host
@@ -171,22 +231,70 @@ export default function GameContainer() {
     // Suspense pause before reveal. 3s is the dramatic-host beat — long
     // enough to feel like real anticipation, short enough to not bore.
     await new Promise((r) => setTimeout(r, 3000));
+    // Cache the dialogue line for the reveal takeover so it doesn't
+    // reroll on every render.
+    const correctText = q.options[correctIdx];
+    const subs = {
+      name: state.playerName,
+      option: `Option ${["A", "B", "C", "D"][state.selectedAnswer]}`,
+      correct: correctText,
+    };
+    const line = correct
+      ? pickCorrectLine(q.difficulty, subs)
+      : pickWrongLine(q.difficulty, subs);
+    setRevealLine(line);
     setState((s) => reveal(s, correct, exp, correctIdx));
     setExplanationVisible(true);
   }, [state]);
 
-  // Auto-advance after correct, or end after wrong, on user click
+  // Auto-advance after correct, or end after wrong, on user click.
+  // Insert safety-net celebration + tier-intro interstitials at the
+  // appropriate ladder boundaries.
   const handleNext = useCallback(() => {
     setExplanationVisible(false);
-    setState((s) => {
-      if (s.status === "revealed-correct") {
-        const next = advanceToNextQuestion(s);
-        return next;
+    setRevealLine(null);
+    if (!state) return;
+    const subs = { name: state.playerName };
+    if (state.status === "revealed-correct") {
+      const justCleared = state.currentRung;
+      const advance = () => setState((s) => advanceToNextQuestion(s));
+      // Helper: optionally chain a tier-intro for the next rung
+      // (medium-tier-onwards prominence per project memory).
+      const queueTierIntroIfNeeded = () => {
+        const nextRung = justCleared + 1;
+        const tierIntroByRung = { 5: 2, 9: 3, 13: 4 };
+        const nextTier = tierIntroByRung[nextRung];
+        if (nextTier) {
+          // Advance state first so the tier intro fires "for" the next rung
+          advance();
+          const intro = pickTierIntro(nextTier, subs);
+          if (intro) {
+            setInterstitial({
+              line: intro,
+              caption: `Tier ${nextTier}.`,
+              continueLabel: "Begin",
+              tone: "neutral",
+            });
+          }
+        } else {
+          advance();
+        }
+      };
+      // Safety net beats fire after clearing Q5 or Q10.
+      if (justCleared === 5 || justCleared === 10) {
+        const beat = justCleared === 5 ? "safety-net-q5" : "safety-net-q10";
+        queueBeat(beat, subs, {
+          continueLabel: "Onwards",
+          tone: "correct",
+          after: queueTierIntroIfNeeded,
+        });
+      } else {
+        queueTierIntroIfNeeded();
       }
-      if (s.status === "revealed-wrong") return endAfterWrong(s);
-      return s;
-    });
-  }, []);
+    } else if (state.status === "revealed-wrong") {
+      setState((s) => endAfterWrong(s));
+    }
+  }, [state]);
 
   const handleWalkAway = useCallback(() => {
     if (!state || !canWalkAway(state)) return;
@@ -371,6 +479,21 @@ export default function GameContainer() {
 
   if (!state) return null;
 
+  // Interstitial takes precedence over normal play. Used for welcome,
+  // module intro, tier intros, safety net, fourth-wall asides.
+  if (interstitial) {
+    return (
+      <HostTakeover
+        expression={interstitial.line.expression}
+        tone={interstitial.tone}
+        caption={interstitial.caption ?? undefined}
+        body={interstitial.line.text}
+        onContinue={dismissInterstitial}
+        continueLabel={interstitial.continueLabel}
+      />
+    );
+  }
+
   if (state.status === "won" || state.status === "lost" || state.status === "walked-away") {
     return <EndScreen state={state} onPlayAgain={resetToOnboarding} />;
   }
@@ -410,13 +533,15 @@ export default function GameContainer() {
 
         {showTakeover ? (
           <HostTakeover
-            expression={expressionFor(state)}
+            expression={revealLine?.expression ?? expressionFor(state)}
+            tone={state.status === "revealed-correct" ? "correct" : "wrong"}
             caption={
               state.status === "revealed-correct"
                 ? `Correct. Question ${state.currentRung}.`
                 : `Incorrect. Question ${state.currentRung}.`
             }
-            body={state.explanation ?? "Explanation unavailable."}
+            body={revealLine?.text ?? (state.status === "revealed-correct" ? "Correct." : "Incorrect.")}
+            explanation={state.explanation}
             onContinue={handleNext}
             continueLabel={
               state.status === "revealed-correct" ? "Next question" : "See result"
