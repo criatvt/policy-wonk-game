@@ -124,13 +124,11 @@ function rungMessage(cleared, scoreLabel, playerName) {
 }
 
 // Onboarding flow:
-//   ONBOARDING (name + language) → MODULE_PICK → RULES → PLAYING
-// Aasif's call (2026-05-09): the Iqbal Ji host character was deferred to
-// v2/v3 and the welcome screen between onboarding and module pick was
-// dropped. Only English is wired; Indian / Bengaluru Special remain
-// in the picker as "coming soon" so the v2/v3 plan is visible.
-// Rules screen added 2026-05-09 — tiers, timers, safety nets, walk-away
-// and lifelines are explained before Q1 so the player knows the contract.
+//   ONBOARDING (name) → RULES (game explanation) → MODULE_PICK → PLAYING
+// Aasif's call (2026-05-09): rules come BEFORE module pick so the player
+// knows the contract before committing to a topic. Returning players who
+// have already seen the rules (RULES_SEEN_KEY localStorage flag) skip
+// from ONBOARDING straight to MODULE_PICK.
 const SCREEN_ONBOARDING = "onboarding";
 const SCREEN_MODULE_PICK = "module-pick";
 const SCREEN_RULES = "rules";
@@ -163,7 +161,7 @@ const RULES_STAGES = [
   },
   {
     title: "Lifelines",
-    body: "Three lifelines, each usable once per session. 50:50 eliminates two wrong options. Audience Poll shows what the crowd thinks. Phone an AI gets advice from one of four AI experts (their reliability varies).",
+    body: "Three lifelines, each usable once per session. 50:50 eliminates two wrong options. Audience Poll shows what the crowd thinks. Ask an AI ✨ gets advice from one of four AI experts (their reliability varies. You know, they are AI).",
   },
 ];
 
@@ -189,7 +187,17 @@ export default function GameContainer() {
       setLoadError("Enter your name to begin.");
       return;
     }
-    setScreen(SCREEN_MODULE_PICK);
+    // Returning players who've already seen the rules walkthrough skip
+    // straight to module pick. First-timers see the rules story first.
+    const seen =
+      typeof window !== "undefined" &&
+      window.localStorage?.getItem(RULES_SEEN_KEY) === "true";
+    if (seen) {
+      setScreen(SCREEN_MODULE_PICK);
+    } else {
+      setRulesStage(0);
+      setScreen(SCREEN_RULES);
+    }
   }, [trimmedName]);
 
   const startGame = useCallback(async (chosenModuleId) => {
@@ -376,66 +384,48 @@ export default function GameContainer() {
 
   if (screen === SCREEN_ONBOARDING) {
     return (
-      <section className="max-w-xl mx-auto flex flex-col gap-6">
-        <header className="text-center">
-          <p className="text-sm uppercase tracking-widest opacity-70">First, the basics</p>
-          <h1 className="text-3xl md:text-4xl font-semibold mt-2">Who is playing?</h1>
+      <section className="max-w-xl mx-auto min-h-[70vh] flex flex-col justify-center gap-10">
+        <header className="flex flex-col items-center gap-5 text-center">
+          <span className="text-xs uppercase tracking-[0.2em] px-3 py-1 border border-[var(--color-border-soft)] text-[var(--color-text-soft)]">
+            Step 1 of 3
+          </span>
+          <h1 className="font-serif text-5xl md:text-6xl font-semibold leading-tight">
+            Who is playing<span className="text-[var(--color-functional-marigold)] italic">?</span>
+          </h1>
         </header>
 
-        <label className="flex flex-col gap-2">
-          <span className="text-sm opacity-80">
+        <label className="flex flex-col gap-2 max-w-md w-full mx-auto">
+          <span className="text-sm opacity-80 text-center">
             Your name <span className="opacity-60">(required)</span>
           </span>
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && canContinueFromOnboarding) {
+                advanceFromOnboarding();
+              }
+            }}
             maxLength={30}
             required
+            autoFocus
             aria-required="true"
-            className="px-3 py-2 rounded bg-[var(--color-bg-soft)] border border-[var(--color-border)] text-[var(--color-text)]"
+            className="px-4 py-3 text-lg text-center rounded bg-[var(--color-bg-soft)] border-2 border-[var(--color-border)] text-[var(--color-text)] focus:border-[var(--color-functional-marigold)] focus:outline-none focus:ring-2 focus:ring-[var(--color-functional-marigold)]/30"
           />
         </label>
 
-        <fieldset className="flex flex-col gap-2">
-          <legend className="text-sm opacity-80">Language</legend>
-          <div className="flex flex-wrap gap-2 text-sm">
-            <button
-              type="button"
-              className="px-3 py-2 rounded border border-[var(--color-functional-marigold)] bg-[var(--color-functional-marigold)]/15"
-            >
-              Strictly English
-            </button>
-            <button
-              type="button"
-              disabled
-              className="px-3 py-2 rounded border border-[var(--color-border)] opacity-50 cursor-not-allowed"
-              title="Coming soon"
-            >
-              Indian — coming soon
-            </button>
-            <button
-              type="button"
-              disabled
-              className="px-3 py-2 rounded border border-[var(--color-border)] opacity-50 cursor-not-allowed"
-              title="Coming soon"
-            >
-              Bengaluru Special — coming soon
-            </button>
-          </div>
-        </fieldset>
-
         {loadError && (
-          <p className="text-[var(--color-functional-red)] text-sm">{loadError}</p>
+          <p className="text-[var(--color-functional-red)] text-sm text-center">{loadError}</p>
         )}
 
         <button
           type="button"
           onClick={advanceFromOnboarding}
           disabled={!canContinueFromOnboarding}
-          className="px-6 py-3 rounded bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-90"
+          className="self-center px-8 py-3 rounded bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-90"
         >
-          Continue
+          Continue →
         </button>
       </section>
     );
@@ -443,12 +433,15 @@ export default function GameContainer() {
 
   if (screen === SCREEN_MODULE_PICK) {
     return (
-      <section className="max-w-xl mx-auto flex flex-col gap-6">
-        <header className="text-center">
-          <p className="text-sm uppercase tracking-widest opacity-70">Pick your module</p>
-          <h1 className="text-2xl md:text-3xl font-semibold mt-2">
-            All fifteen questions come from this module.
+      <section className="max-w-xl mx-auto min-h-[70vh] flex flex-col justify-center gap-8">
+        <header className="flex flex-col items-center gap-4 text-center">
+          <span className="text-xs uppercase tracking-[0.2em] px-3 py-1 border border-[var(--color-border-soft)] text-[var(--color-text-soft)]">
+            Step 3 of 3
+          </span>
+          <h1 className="font-serif text-3xl md:text-4xl font-semibold">
+            Pick your module
           </h1>
+          <p className="text-sm text-[var(--color-text-soft)]">All fifteen questions come from the one you choose.</p>
         </header>
 
         <fieldset className="flex flex-col gap-3">
@@ -479,7 +472,19 @@ export default function GameContainer() {
         <div className="flex gap-3">
           <button
             type="button"
-            onClick={() => setScreen(SCREEN_ONBOARDING)}
+            onClick={() => {
+              // Back goes to rules if first-timer (so they can re-read);
+              // otherwise straight back to onboarding (rules were skipped).
+              const seen =
+                typeof window !== "undefined" &&
+                window.localStorage?.getItem(RULES_SEEN_KEY) === "true";
+              if (seen) {
+                setScreen(SCREEN_ONBOARDING);
+              } else {
+                setRulesStage(RULES_STAGES.length - 1);
+                setScreen(SCREEN_RULES);
+              }
+            }}
             className="px-4 py-2 rounded border border-[var(--color-border)] text-[var(--color-text-soft)]"
           >
             Back
@@ -488,17 +493,7 @@ export default function GameContainer() {
             type="button"
             onClick={() => {
               if (!moduleId) return;
-              // Returning players who've seen the rules walkthrough skip
-              // straight to the game. First-timers get the rules story.
-              const seen =
-                typeof window !== "undefined" &&
-                window.localStorage?.getItem(RULES_SEEN_KEY) === "true";
-              if (seen) {
-                startGame(moduleId);
-              } else {
-                setRulesStage(0);
-                setScreen(SCREEN_RULES);
-              }
+              startGame(moduleId);
             }}
             disabled={!moduleId}
             className="px-5 py-2 rounded bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-90"
@@ -513,35 +508,39 @@ export default function GameContainer() {
   if (screen === SCREEN_RULES) {
     const stage = RULES_STAGES[rulesStage];
     const isLastStage = rulesStage === RULES_STAGES.length - 1;
-    const beginGame = () => {
+    const advanceToModulePick = () => {
       try {
         window.localStorage?.setItem(RULES_SEEN_KEY, "true");
       } catch {
         // localStorage may be unavailable (private browsing, etc.) —
         // not blocking. Player just sees rules again next time.
       }
-      startGame(moduleId);
+      setScreen(SCREEN_MODULE_PICK);
     };
     const goBack = () => {
       if (rulesStage === 0) {
-        setRulesStage(0);
-        setScreen(SCREEN_MODULE_PICK);
+        setScreen(SCREEN_ONBOARDING);
       } else {
         setRulesStage(rulesStage - 1);
       }
     };
     return (
-      <section className="max-w-xl mx-auto flex flex-col gap-6">
-        <header className="text-center flex flex-col gap-2">
-          <p className="text-xs uppercase tracking-widest opacity-60">
+      <section className="max-w-2xl mx-auto min-h-[80vh] flex flex-col justify-center gap-10">
+        <header className="flex flex-col items-center gap-4 text-center">
+          <span className="text-xs uppercase tracking-[0.2em] px-3 py-1 border border-[var(--color-border-soft)] text-[var(--color-text-soft)]">
+            Step 2 of 3
+          </span>
+          <p className="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">
             How it works · {rulesStage + 1} of {RULES_STAGES.length}
           </p>
-          <h1 className="text-2xl md:text-3xl font-semibold">{stage.title}</h1>
+          <h1 className="font-serif text-5xl md:text-6xl font-semibold leading-[1.05] tracking-tight">
+            {stage.title}
+          </h1>
         </header>
 
-        <div className="border border-[var(--color-border)] rounded-lg p-6 min-h-[160px] flex items-center">
-          <p className="text-base md:text-lg leading-relaxed">{stage.body}</p>
-        </div>
+        <p className="text-lg md:text-xl leading-relaxed text-center text-[var(--color-text-soft)] max-w-xl mx-auto">
+          {stage.body}
+        </p>
 
         {/* Progress dots — quiet visual cue of how many stages remain. */}
         <div className="flex justify-center gap-2" aria-hidden="true">
@@ -550,9 +549,9 @@ export default function GameContainer() {
               key={i}
               className={`h-1.5 rounded-full transition-all ${
                 i === rulesStage
-                  ? "w-6 bg-[var(--color-charcoal)]"
+                  ? "w-6 bg-[var(--color-functional-marigold)]"
                   : i < rulesStage
-                  ? "w-1.5 bg-[var(--color-charcoal)]/40"
+                  ? "w-1.5 bg-[var(--color-functional-marigold)]/40"
                   : "w-1.5 bg-[var(--color-border)]"
               }`}
             />
@@ -563,39 +562,39 @@ export default function GameContainer() {
           <p className="text-[var(--color-functional-red)] text-sm text-center">{loadError}</p>
         )}
 
-        <div className="flex flex-wrap gap-3 items-center">
-          <button
-            type="button"
-            onClick={goBack}
-            className="px-4 py-2 rounded border border-[var(--color-border)] text-[var(--color-text-soft)] hover:border-[var(--color-text-soft)]"
-          >
-            Back
-          </button>
-          <button
-            type="button"
-            onClick={beginGame}
-            className="text-xs underline opacity-70 hover:opacity-100"
-          >
-            Skip the rules and begin
-          </button>
-          <div className="ml-auto">
-            {isLastStage ? (
-              <button
-                type="button"
-                onClick={beginGame}
-                className="px-6 py-2 rounded bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
-              >
-                Begin the game
-              </button>
-            ) : (
-              <button
-                type="button"
-                onClick={() => setRulesStage(rulesStage + 1)}
-                className="px-6 py-2 rounded bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
-              >
-                Next
-              </button>
-            )}
+        <div className="flex flex-col items-center gap-4">
+          {isLastStage ? (
+            <button
+              type="button"
+              onClick={advanceToModulePick}
+              className="px-12 py-5 bg-[var(--color-charcoal)] text-[var(--color-bg)] text-xl font-semibold hover:opacity-90 transition-opacity"
+            >
+              Pick your module →
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() => setRulesStage(rulesStage + 1)}
+              className="px-12 py-5 bg-[var(--color-charcoal)] text-[var(--color-bg)] text-xl font-semibold hover:opacity-90 transition-opacity"
+            >
+              Next →
+            </button>
+          )}
+          <div className="flex gap-5 items-center text-sm">
+            <button
+              type="button"
+              onClick={goBack}
+              className="text-[var(--color-text-soft)] hover:text-[var(--color-text)]"
+            >
+              ← Back
+            </button>
+            <button
+              type="button"
+              onClick={advanceToModulePick}
+              className="text-xs underline text-[var(--color-text-muted)] hover:text-[var(--color-text-soft)]"
+            >
+              Skip the rules
+            </button>
           </div>
         </div>
       </section>
@@ -615,7 +614,8 @@ export default function GameContainer() {
     state.status === "revealed-correct" || state.status === "revealed-wrong";
 
   return (
-    <div className="grid md:grid-cols-[1fr_240px] gap-6">
+    <div className="min-h-[80vh] flex items-center justify-center">
+      <div className="grid md:grid-cols-[1fr_240px] gap-6 w-full">
       <section className="flex flex-col gap-5">
         <div className="flex items-center justify-between gap-4">
           <p className="text-sm opacity-70">
@@ -704,6 +704,25 @@ export default function GameContainer() {
                   See result
                 </button>
               )}
+
+              <div className="border-t border-[var(--color-border)] pt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[var(--color-text-muted)]">
+                <span>Spot an issue with this question?</span>
+                <a
+                  href={`mailto:aasif@aasifj.com?subject=${encodeURIComponent(`[Policy Wonk] Issue with ${currentQuestion.id}`)}&body=${encodeURIComponent(`Module: ${currentQuestion.module}\nQuestion ID: ${currentQuestion.id}\n\nWhat's wrong:\n`)}`}
+                  className="underline hover:opacity-70"
+                >
+                  Email
+                </a>
+                <span aria-hidden="true">·</span>
+                <a
+                  href={`https://github.com/criatvt/policy-wonk-game/issues/new?title=${encodeURIComponent(`[Question issue] ${currentQuestion.id}`)}&body=${encodeURIComponent(`**Module:** ${currentQuestion.module}\n**Question ID:** ${currentQuestion.id}\n\n**What's wrong:**\n`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:opacity-70"
+                >
+                  GitHub issue
+                </a>
+              </div>
             </div>
           );
         })()}
@@ -783,6 +802,7 @@ export default function GameContainer() {
           highestClearedRung={state.highestClearedRung}
         />
       </aside>
+      </div>
     </div>
   );
 }

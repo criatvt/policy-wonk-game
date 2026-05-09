@@ -55,7 +55,7 @@ export default function Question({
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="min-h-[3em] text-lg md:text-xl leading-snug" aria-live="polite">
+      <div className="font-serif min-h-[3em] text-xl md:text-2xl leading-snug" aria-live="polite">
         <Typewriter
           text={question.question}
           perCharMs={50}

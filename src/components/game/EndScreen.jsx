@@ -36,12 +36,12 @@ export default function EndScreen({ state, onPlayAgain }) {
   }
 
   return (
-    <section className="flex flex-col gap-6 max-w-xl mx-auto">
+    <section className="flex flex-col gap-6 max-w-xl mx-auto min-h-[70vh] justify-center">
       <header className="flex flex-col gap-2 py-4 text-center">
         <p className="text-sm uppercase tracking-widest opacity-70">
           {captionForStatus(state.status)}
         </p>
-        <h1 className="text-3xl md:text-4xl font-semibold">
+        <h1 className="font-serif text-4xl md:text-5xl font-semibold leading-tight">
           {headlineForStatus(state.status, state.score)}
         </h1>
         {state.status === "lost" && state.fellOnRung && (
@@ -71,12 +71,12 @@ export default function EndScreen({ state, onPlayAgain }) {
 
       <div className="border-t border-[var(--color-border)] pt-5 text-center">
         <p className="text-sm leading-relaxed">
-          Want to go deeper into Indian public policy? Take a look at the{" "}
+          Want to go deeper into Public Policy? Take a look at the{" "}
           <a
             href={PGP_URL}
             target="_blank"
             rel="noreferrer"
-            className="underline decoration-[var(--color-functional-marigold)] decoration-2 underline-offset-2 hover:opacity-90"
+            className="text-[var(--color-functional-marigold)] underline decoration-2 underline-offset-2 hover:opacity-80"
           >
             Takshashila PGP programme
           </a>
@@ -91,6 +91,63 @@ export default function EndScreen({ state, onPlayAgain }) {
       >
         Play again
       </button>
+
+      <section className="border-t border-[var(--color-border)] pt-6 flex flex-col gap-3">
+        <h2 className="text-xs uppercase tracking-widest text-[var(--color-functional-marigold)]">Open source</h2>
+        <p className="text-base text-[var(--color-text)] leading-relaxed">
+          Policy Wonk is open-source. The code and design notes live on GitHub.
+          Issues, ideas, and pull requests welcome — I'd love your help making this better.
+        </p>
+        <p className="text-sm">
+          <a
+            href="https://github.com/criatvt/policy-wonk-game"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--color-functional-marigold)] underline decoration-2 underline-offset-2 hover:opacity-80"
+          >
+            View the repo →
+          </a>
+        </p>
+      </section>
+
+      <section className="border-t border-[var(--color-border)] pt-5 flex flex-col gap-3">
+        <h2 className="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Upcoming features</h2>
+        <ul className="flex flex-col gap-3 list-none p-0 m-0">
+          <li className="flex flex-col gap-0.5">
+            <p className="font-serif text-base">Wonky</p>
+            <p className="text-sm text-[var(--color-text-soft)]">A host with quirky policy traits.</p>
+          </li>
+          <li className="flex flex-col gap-0.5">
+            <p className="font-serif text-base">Smarter Ask an AI</p>
+            <p className="text-sm text-[var(--color-text-soft)]">Richer characters and sharper answers from the four AI experts.</p>
+          </li>
+          <li className="flex flex-col gap-0.5">
+            <p className="font-serif text-base">Notes for revising topics</p>
+            <p className="text-sm text-[var(--color-text-soft)]">Curated notes from each module so you can revise the concepts you missed.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section className="border-t border-[var(--color-border)] pt-5 flex flex-col gap-3">
+        <h2 className="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Polish & fixes</h2>
+        <ul className="flex flex-col gap-3 list-none p-0 m-0">
+          <li className="flex flex-col gap-0.5">
+            <p className="font-serif text-base">Mobile optimization</p>
+            <p className="text-sm text-[var(--color-text-soft)]">Touch-friendly layouts and tighter type scale on small screens.</p>
+          </li>
+        </ul>
+        <p className="text-sm text-[var(--color-text-soft)]">
+          More on the{" "}
+          <a
+            href="https://github.com/criatvt/policy-wonk-game/issues"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[var(--color-functional-marigold)] underline decoration-2 underline-offset-2 hover:opacity-80"
+          >
+            GitHub issue tracker
+          </a>.
+        </p>
+      </section>
     </section>
   );
 }

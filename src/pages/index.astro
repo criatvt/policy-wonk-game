@@ -2,22 +2,79 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 <BaseLayout title="Policy Wonk" zone="game">
-  <section class="text-center py-16 md:py-24 flex flex-col items-center gap-8">
-    <p class="text-sm uppercase tracking-widest opacity-70">A quiz on Indian public policy</p>
-    <h1 class="text-5xl md:text-7xl font-semibold leading-tight">Policy Wonk</h1>
-    <p class="text-lg max-w-xl opacity-90">
-      Fifteen questions. Four difficulty tiers. Three lifelines. Two safety nets.
-      One crore credibility points if you go all the way.
-    </p>
-    <a
-      href="/play"
-      class="px-8 py-4 rounded bg-[var(--color-charcoal)] text-[var(--color-bg)] text-lg font-semibold hover:opacity-90 transition-opacity"
-    >
-      Play
-    </a>
-    <p class="text-xs opacity-60 max-w-md">
-      Built on Takshashila GCPP course material. Most fun if you've taken the courses;
-      welcoming if you haven't.
-    </p>
+  <section class="py-12 md:py-20 flex flex-col gap-12 md:gap-16">
+    <header class="flex flex-col gap-6">
+      <span class="self-start text-xs uppercase tracking-[0.2em] px-3 py-1 border border-[var(--color-border-soft)] text-[var(--color-text-soft)]">
+        Quiz on Public Policy Fundamentals
+      </span>
+      <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl leading-[0.95] tracking-tight font-semibold">
+        Policy <span class="text-[var(--color-functional-marigold)] italic">Wonk.</span>
+      </h1>
+    </header>
+
+    <dl class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8 border-y border-[var(--color-border)] py-8">
+      <div class="flex flex-col gap-1">
+        <dt class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Questions</dt>
+        <dd class="font-serif text-4xl md:text-5xl text-[var(--color-functional-marigold)] font-semibold">15</dd>
+      </div>
+      <div class="flex flex-col gap-1">
+        <dt class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Tiers</dt>
+        <dd class="font-serif text-4xl md:text-5xl text-[var(--color-functional-marigold)] font-semibold">4</dd>
+      </div>
+      <div class="flex flex-col gap-1">
+        <dt class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Lifelines</dt>
+        <dd class="font-serif text-4xl md:text-5xl text-[var(--color-functional-marigold)] font-semibold">3</dd>
+      </div>
+      <div class="flex flex-col gap-1">
+        <dt class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Top score</dt>
+        <dd class="font-serif text-4xl md:text-5xl text-[var(--color-functional-marigold)] font-semibold">1 cr</dd>
+      </div>
+    </dl>
+
+    <div class="flex flex-col items-center gap-5">
+      <a
+        href="/play"
+        class="px-12 py-5 bg-[var(--color-charcoal)] text-[var(--color-bg)] text-xl font-semibold hover:opacity-90 transition-opacity"
+      >
+        Play →
+      </a>
+      <p class="text-sm text-[var(--color-text-muted)] max-w-md text-center leading-relaxed">
+        For The Takshashila Institution alumni, students, and the policy curious.
+        <br />
+        Built on GCPP study material.
+      </p>
+    </div>
+
+    <section class="flex flex-col gap-3 border-t border-[var(--color-border)] pt-6">
+      <h2 class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Upcoming features</h2>
+      <ul class="flex flex-col gap-3 list-none p-0 m-0">
+        <li class="flex flex-col gap-0.5">
+          <p class="font-serif text-base text-[var(--color-text)]">Wonky</p>
+          <p class="text-sm text-[var(--color-text-soft)]">A host with quirky policy traits.</p>
+        </li>
+        <li class="flex flex-col gap-0.5">
+          <p class="font-serif text-base text-[var(--color-text)]">Smarter Ask an AI</p>
+          <p class="text-sm text-[var(--color-text-soft)]">Richer characters and sharper answers from the four AI experts.</p>
+        </li>
+        <li class="flex flex-col gap-0.5">
+          <p class="font-serif text-base text-[var(--color-text)]">Notes for revising topics</p>
+          <p class="text-sm text-[var(--color-text-soft)]">Curated notes from each module so you can revise the concepts you missed.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="flex flex-col gap-3 border-t border-[var(--color-border)] pt-6">
+      <h2 class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Polish & fixes</h2>
+      <ul class="flex flex-col gap-3 list-none p-0 m-0">
+        <li class="flex flex-col gap-0.5">
+          <p class="font-serif text-base text-[var(--color-text)]">Mobile optimization</p>
+          <p class="text-sm text-[var(--color-text-soft)]">Touch-friendly layouts and tighter type scale on small screens.</p>
+        </li>
+      </ul>
+      <p class="text-sm text-[var(--color-text-soft)]">
+        More on the
+        <a href="https://github.com/criatvt/policy-wonk-game/issues" target="_blank" rel="noopener noreferrer" class="text-[var(--color-functional-marigold)] underline decoration-2 underline-offset-2 hover:opacity-80">GitHub issue tracker</a>.
+      </p>
+    </section>
   </section>
 </BaseLayout>

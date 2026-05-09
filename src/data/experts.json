@@ -4,13 +4,13 @@
     {
       "id": "niteen",
       "name": "Nitin Pai",
-      "displayName": "Niteen AI ji",
+      "displayName": "Nithen AI",
       "reliability": 0.70,
       "quirk": "Aphoristic, strategic-culture framing, mildly contrarian",
       "lines": {
         "correct": [
           "Cross-referencing positions. [Option]. No ads were served in the generation of this response.",
-          "[Option]. I am an approximation of Niteen ji. The real one would have said this better and shorter.",
+          "[Option]. I am an approximation of Nithen. The real one would have said this better and shorter.",
           "[Option]. The second-order effects point in this direction. I stand by this with moderate confidence."
         ],
         "wrong": [],
@@ -23,7 +23,7 @@
     {
       "id": "pranai",
       "name": "Pranay Kotasthane",
-      "displayName": "Pranai AI ji",
+      "displayName": "Pranai AI",
       "reliability": 0.90,
       "quirk": "Verbose, frameworks-first, qualifies everything",
       "lines": {
@@ -43,7 +43,7 @@
     {
       "id": "anoopam",
       "name": "Anupam Manur",
-      "displayName": "Anoopam AI ji",
+      "displayName": "Anoopam AI",
       "reliability": 0.60,
       "quirk": "Empiricist, cites studies (sometimes invented), hedges",
       "lines": {
@@ -63,7 +63,7 @@
     {
       "id": "saarthak",
       "name": "Sarthak Pradhan",
-      "displayName": "Saarthak AI ji",
+      "displayName": "Saarthak AI",
       "reliability": 0.50,
       "quirk": "Fast, first-principles, confident, often wrong charmingly",
       "lines": {

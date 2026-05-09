@@ -64,7 +64,7 @@ export default function Lifelines({
           onClick={handlePoll}
         />
         <LifelineButton
-          label="Phone an AI"
+          label="Ask an AI ✨"
           used={!state.lifelines.expert}
           disabled={disabled}
           onClick={handleExpertOpen}
@@ -169,6 +169,7 @@ function ExpertPanel({ experts, verdict, onClose }) {
           Option <span className="font-mono text-[var(--color-functional-marigold)]">{LETTERS[verdict.pickedIndex]}</span>.
         </p>
       )}
+      <p className="text-xs italic text-[var(--color-text-muted)] mt-1">AI can make mistakes.</p>
     </Panel>
   );
 }

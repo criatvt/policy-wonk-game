@@ -3,8 +3,8 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
-  "license": "MIT",
-  "description": "Policy Wonk — a 15-question ladder quiz game built on Takshashila GCPP course material, hosted by Iqbal Ji.",
+  "license": "CC-BY-NC-4.0",
+  "description": "Policy Wonk — a 15-question ladder quiz game built on Takshashila GCPP course material.",
   "homepage": "https://policywonkgame.aasifj.com",
   "repository": {
     "type": "git",
