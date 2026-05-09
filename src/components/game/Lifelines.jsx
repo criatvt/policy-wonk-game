@@ -10,9 +10,6 @@ const LETTERS = ["A", "B", "C", "D"];
 export default function Lifelines({
   state,
   experts,
-  // Iqbal Ji's "you have activated Phone an AI" line, shown above the
-  // expert picker.
-  phoneAnAiSelectLine,
   onUseFiftyFifty,
   onUseAudiencePoll,
   onUseExpert,
@@ -75,17 +72,12 @@ export default function Lifelines({
       </div>
 
       {openPanel === "poll" && state.pollData && (
-        <PollPanel
-          data={state.pollData}
-          intro={state.pollIntroLine}
-          onClose={handleDismiss}
-        />
+        <PollPanel data={state.pollData} onClose={handleDismiss} />
       )}
 
       {openPanel === "expert-pick" && (
         <ExpertPicker
           experts={experts}
-          intro={phoneAnAiSelectLine}
           onPick={handleExpertPick}
           onClose={handleDismiss}
         />
@@ -113,7 +105,7 @@ function LifelineButton({ label, used, disabled, onClick }) {
           ? "border-[var(--color-border)] line-through opacity-40 cursor-not-allowed"
           : disabled
           ? "border-[var(--color-border)] opacity-40 cursor-not-allowed"
-          : "border-[var(--color-functional-marigold)] text-[var(--color-functional-marigold)] hover:bg-[var(--color-functional-marigold)]/15"
+          : "border-[var(--color-charcoal)] text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)]/10"
       }`}
     >
       {label}
@@ -121,13 +113,10 @@ function LifelineButton({ label, used, disabled, onClick }) {
   );
 }
 
-function PollPanel({ data, intro, onClose }) {
+function PollPanel({ data, onClose }) {
   const max = Math.max(...data, 1);
   return (
     <Panel title="The audience says…" onClose={onClose}>
-      {intro && (
-        <p className="text-sm italic opacity-80 mb-1">— {intro}</p>
-      )}
       <ul className="flex flex-col gap-2 list-none p-0 m-0">
         {data.map((pct, i) => (
           <li key={i} className="flex items-center gap-3">
@@ -148,19 +137,16 @@ function PollPanel({ data, intro, onClose }) {
   );
 }
 
-function ExpertPicker({ experts, intro, onPick, onClose }) {
+function ExpertPicker({ experts, onPick, onClose }) {
   return (
     <Panel title="Who do you want to call?" onClose={onClose}>
-      {intro && (
-        <p className="text-sm italic opacity-80 mb-2">— {intro}</p>
-      )}
       <ul className="grid sm:grid-cols-2 gap-2 list-none p-0 m-0">
         {experts.map((e) => (
           <li key={e.id}>
             <button
               type="button"
               onClick={() => onPick(e.id)}
-              className="w-full text-left p-3 rounded border border-[var(--color-border)] hover:border-[var(--color-functional-marigold)]"
+              className="w-full text-left p-3 rounded border border-[var(--color-border)] hover:border-[var(--color-charcoal)]"
             >
               <p className="font-semibold">{e.displayName}</p>
               <p className="text-xs opacity-70 mt-1">{e.quirk}</p>
@@ -176,9 +162,6 @@ function ExpertPanel({ experts, verdict, onClose }) {
   const expert = experts.find((e) => e.id === verdict.expertId);
   return (
     <Panel title={`${expert?.displayName ?? "Expert"} on the line.`} onClose={onClose}>
-      {verdict.iqbalIntro && (
-        <p className="text-sm italic opacity-80 mb-3">— {verdict.iqbalIntro}</p>
-      )}
       {verdict.line ? (
         <p className="text-base leading-relaxed">{verdict.line}</p>
       ) : (

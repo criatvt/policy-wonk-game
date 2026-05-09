@@ -136,8 +136,6 @@ export function createInitialState({ name, moduleId, plan }) {
     score: 0,
     fellOnRung: null,
     startTime: Date.now(),
-    fourthWallFiredQ9: false,
-    fourthWallFiredQ13: false,
   };
 }
 
@@ -203,9 +201,12 @@ export function endAfterWrong(state) {
   return { ...state, status: "lost" };
 }
 
-// Walk-away is only valid before locking, and never on Q1.
+// Walk-away is only valid before locking, and only from rung 6 onwards
+// (i.e. once the first safety net at Q5 has been cleared). Aasif's call
+// (2026-05-09): walking away before the first safety net is too
+// premature — there's no real money on the table yet.
 export function canWalkAway(state) {
-  return state.currentRung > 1 && !state.answerLocked && state.status === "reveal-question";
+  return state.currentRung > 5 && !state.answerLocked && state.status === "reveal-question";
 }
 
 export function walkAway(state) {
