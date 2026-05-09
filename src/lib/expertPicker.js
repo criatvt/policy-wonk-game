@@ -1,10 +1,10 @@
-// Picks an AI expert line for the Phone an AI lifeline, applies runtime
+// Picks an AI expert line for the Ask an AI lifeline, applies runtime
 // substitutions ([option]) and strips directorial markers ([pause], etc.).
 //
-// The four caricatured experts (Niteen / Pranai / Anoopam / Saarthak) are
-// retained per Aasif's call (2026-05-09) when the Iqbal Ji host character
-// was removed from v1 — the lifeline mechanic still works without the
-// host since experts speak directly.
+// The four caricatured experts (Nithen / Pranai / Anoopam / Saarthak) are
+// retained per the 2026-05-09 call when the Wonky host character was
+// deferred to a later release — the lifeline mechanic still works without
+// the host since experts speak directly.
 
 const SUBSTITUTION_KEYS = new Set(["option"]);
 
