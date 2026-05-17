@@ -11,24 +11,35 @@
     "url": "https://github.com/criatvt/policy-wonk-game.git"
   },
   "scripts": {
-    "astro": "astro",
-    "build": "node scripts/transform-questions.js && astro build && pagefind --site dist",
     "dev": "node scripts/transform-questions.js && astro dev",
-    "notes:clean": "node scripts/clean-and-structure.js",
-    "notes:ingest": "node scripts/ingest.js",
-    "notes:rebuild": "node scripts/ingest.js --force && node scripts/clean-and-structure.js",
-    "preview": "astro preview",
     "start": "npm run dev",
+    "build": "node scripts/transform-questions.js && astro build && pagefind --site dist",
+    "preview": "astro preview",
+    "astro": "astro",
+    "validate-questions": "node scripts/validate-questions.js",
     "transform-questions": "node scripts/transform-questions.js",
-    "validate-questions": "node scripts/validate-questions.js"
+    "notes:ingest": "node scripts/ingest.js",
+    "notes:clean": "node scripts/clean-and-structure.js",
+    "notes:rebuild": "node scripts/ingest.js --force && node scripts/clean-and-structure.js",
+    "dev:worker": "npm run build && wrangler pages dev ./dist",
+    "deploy:preview": "wrangler pages deploy ./dist --env preview",
+    "deploy:prod": "wrangler pages deploy ./dist --env production",
+    "db:migrate:dev": "wrangler d1 migrations apply policy-wonk-dev --local",
+    "db:migrate:staging": "wrangler d1 migrations apply policy-wonk-staging --env preview --remote",
+    "db:migrate:prod": "wrangler d1 migrations apply policy-wonk-prod --env production --remote",
+    "db:query:dev": "wrangler d1 execute policy-wonk-dev --local --command",
+    "db:query:staging": "wrangler d1 execute policy-wonk-staging --env preview --remote --command",
+    "db:query:prod": "wrangler d1 execute policy-wonk-prod --env production --remote --command"
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",
     "astro": "^5.2.0",
+    "hono": "^4.12.19",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260517.1",
     "@tailwindcss/vite": "^4.0.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
@@ -39,6 +50,7 @@
     "pagefind": "^1.3.0",
     "pdf-parse": "^1.1.1",
     "tailwindcss": "^4.0.0",
-    "typescript": "^5.7.0"
+    "typescript": "^5.7.0",
+    "wrangler": "^4.92.0"
   }
 }
