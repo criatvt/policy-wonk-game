@@ -7,13 +7,14 @@
 // Usage: npm run validate-questions
 //        node scripts/validate-questions.js [--quiet]
 
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 const QUESTIONS_DIR = join(ROOT, "src/data/questions");
+const NOTES_DIR = join(ROOT, "src/content/notes");
 
 const MODULES = [
   "cg-1",
@@ -28,6 +29,29 @@ const MODULES = [
   "cp-33",
   "cs-11",
 ];
+
+// Modules with shipped notes content. Question `topic` must point at an
+// existing notes file for these. Other modules are in a transitional state
+// where `topic` is allowed-but-warned — remove from this gating exception
+// as #13 lands content for each module.
+const LEAD_MODULES = new Set(["cg-1", "cp-10", "cp-22"]);
+
+// Per-module set of available topic slugs, built lazily.
+const topicSlugsByModule = new Map();
+function getTopicSlugs(moduleId) {
+  if (topicSlugsByModule.has(moduleId)) return topicSlugsByModule.get(moduleId);
+  const moduleDir = join(NOTES_DIR, moduleId);
+  let slugs = new Set();
+  if (existsSync(moduleDir)) {
+    slugs = new Set(
+      readdirSync(moduleDir)
+        .filter((f) => f.endsWith(".md") && f !== "_index.md")
+        .map((f) => f.replace(/\.md$/, "")),
+    );
+  }
+  topicSlugsByModule.set(moduleId, slugs);
+  return slugs;
+}
 
 const DIFFICULTIES = ["easy", "medium", "hard", "expert"];
 const STEM_LIMIT = { easy: 150, medium: 300, hard: 500, expert: 500 };
@@ -160,6 +184,34 @@ function validateQuestion(q, file, idx) {
   // Optional explanation
   if ("explanation" in q && typeof q.explanation !== "string") {
     err(fileLabel, id, `explanation must be a string when present`);
+  }
+
+  // Topic validation, two layers:
+  //   ERROR — topic field empty for a lead module. Data hygiene; the
+  //           authored question banks already populate this field.
+  //   WARN  — topic doesn't have a matching notes file. The notes
+  //           pipeline currently emits source-file-based slugs while
+  //           question topics are concept-based; #13 will reconcile this
+  //           via per-module _topics.json. Promote this to ERROR once
+  //           #13 lands content for each LEAD_MODULES entry.
+  const topic = typeof q.topic === "string" ? q.topic.trim() : "";
+  if (typeof q.module === "string" && LEAD_MODULES.has(q.module)) {
+    if (!topic) {
+      err(fileLabel, id, `topic is empty — required for lead module "${q.module}"`);
+    } else {
+      const slugs = getTopicSlugs(q.module);
+      if (!slugs.has(topic)) {
+        warn(
+          fileLabel,
+          id,
+          `topic "${topic}" has no matching notes file at src/content/notes/${q.module}/${topic}.md — will be ERROR once #13 lands concept-based notes`,
+        );
+      }
+    }
+  } else if (typeof q.module === "string") {
+    if (!topic) {
+      warn(fileLabel, id, `topic is empty — required once "${q.module}" notes ship (#13)`);
+    }
   }
 }
 
