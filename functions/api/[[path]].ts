@@ -1,11 +1,15 @@
 // Pages Functions catch-all route.
 //
 // Cloudflare Pages routes every request matching /api/* through this file.
-// We use Hono internally to dispatch by path + method. As Phase 1 progresses,
-// route handlers move into `functions/api/_routes/` and get mounted on this app.
+// We use Hono internally to dispatch by path + method. Route handlers
+// for individual feature areas live in `_routes/<area>.ts` and are mounted
+// here on a basePath.
 
 import { Hono } from "hono";
 import { handle } from "hono/cloudflare-pages";
+
+import auth from "./_routes/auth";
+import me from "./_routes/me";
 
 type Bindings = {
   DB: D1Database;
@@ -26,6 +30,9 @@ app.get("/health", (c) => {
     timestamp: new Date().toISOString(),
   });
 });
+
+app.route("/auth", auth);
+app.route("/me", me);
 
 app.notFound((c) => c.json({ ok: false, error: "not_found" }, 404));
 
