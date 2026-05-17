@@ -53,6 +53,12 @@ Phase 2+ items are stack-ranked here but the ordering is **draft** — to be con
 | #24 | Post-game login upsell for guests |
 | #25 | Privacy & data note at email collection |
 
+**Track D — Admin**
+
+| # | Issue |
+|---|---|
+| #26 | Admin panel for user management + troubleshooting (read-only) |
+
 **Frozen decisions for Phase 1:**
 
 - **3 lead modules only at launch** — CP 22 (micro), CG 1 (governance), CP 10 (statecraft). Others "coming soon."
