@@ -18,6 +18,9 @@ src/lib/_salt.js
 .env
 .env.local
 
+# Local-only build journal — kept outside this repo, but ignore if it appears here
+journal.md
+
 # Editor
 .DS_Store
 .vscode/
