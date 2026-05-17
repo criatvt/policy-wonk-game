@@ -1,0 +1,70 @@
+# Cloudflare Pages + Functions config for Policy Wonk.
+#
+# Three environments:
+#   - top-level (no [env.<name>] block) → `wrangler pages dev`, local development
+#   - [env.preview]                     → preview deploys (phase-1 branch, PR previews)
+#   - [env.production]                  → production deploys (main branch only)
+#
+# Each env binds its own D1 database and KV namespace so preview/dev can never
+# touch prod user data. The `database_id` and KV `id` are filled in after
+# running `wrangler d1 create` / `wrangler kv namespace create` (see CONTRIBUTING.md).
+#
+# Secrets (RESEND_API_KEY, SESSION_SECRET) are NOT stored here — they're set
+# per env via `wrangler pages secret put <NAME> --env <env>`.
+
+name = "policy-wonk-game"
+pages_build_output_dir = "./dist"
+compatibility_date = "2026-01-15"
+compatibility_flags = ["nodejs_compat"]
+
+# ---------- local dev (`wrangler pages dev`) ----------
+
+[[d1_databases]]
+binding = "DB"
+database_name = "policy-wonk-dev"
+database_id = "PLACEHOLDER_DEV_D1_ID"
+
+[[kv_namespaces]]
+binding = "KV"
+id = "PLACEHOLDER_DEV_KV_ID"
+
+[vars]
+ENV = "dev"
+ADMIN_EMAILS = "aasif@aasifj.com"
+RESEND_FROM = "noreply@policywonkgame.aasifj.com"
+
+# ---------- preview (phase-N branches, PR previews) ----------
+
+[env.preview]
+
+[[env.preview.d1_databases]]
+binding = "DB"
+database_name = "policy-wonk-staging"
+database_id = "PLACEHOLDER_STAGING_D1_ID"
+
+[[env.preview.kv_namespaces]]
+binding = "KV"
+id = "PLACEHOLDER_STAGING_KV_ID"
+
+[env.preview.vars]
+ENV = "preview"
+ADMIN_EMAILS = "aasif@aasifj.com"
+RESEND_FROM = "noreply@policywonkgame.aasifj.com"
+
+# ---------- production (main branch only) ----------
+
+[env.production]
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "policy-wonk-prod"
+database_id = "PLACEHOLDER_PROD_D1_ID"
+
+[[env.production.kv_namespaces]]
+binding = "KV"
+id = "PLACEHOLDER_PROD_KV_ID"
+
+[env.production.vars]
+ENV = "production"
+ADMIN_EMAILS = "aasif@aasifj.com"
+RESEND_FROM = "noreply@policywonkgame.aasifj.com"

@@ -24,3 +24,9 @@ journal.md
 # Editor
 .DS_Store
 .vscode/
+
+# Claude Code session state
+.claude/
+
+# Wrangler local state (D1 SQLite file, KV cache)
+.wrangler/
