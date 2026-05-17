@@ -1,22 +1,90 @@
 /*
  * notes.css — calm, editorial reading experience.
- * Loaded only on /notes/* and /search. Pairs with global.css.
+ * Loaded by BaseLayout via the body class `notes-zone`.
+ * Pairs with global.css's semantic tokens (white/black/gray palette per
+ * the v1 palette decision; aesthetic cream/indigo/sienna vars are legacy
+ * and remapped — do NOT use them here).
  */
 
 .notes-zone {
-  background: var(--color-cream);
-  color: var(--color-indigo-deep);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.notes-zone .prose {
   font-family: ui-serif, Georgia, "Times New Roman", serif;
-  line-height: 1.7;
+  line-height: 1.75;
+  font-size: 1.0625rem;  /* 17px — slightly larger than UI body for reading */
 }
 
-.notes-zone h1,
-.notes-zone h2,
-.notes-zone h3 {
-  color: var(--color-sienna-burnt);
-  font-family: ui-sans-serif, system-ui, sans-serif;
+.notes-zone .prose h1,
+.notes-zone .prose h2,
+.notes-zone .prose h3 {
+  font-family: var(--font-serif), Georgia, serif;
+  color: var(--color-text);
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
 }
 
-.notes-zone a {
-  color: var(--color-teal-faded);
+.notes-zone .prose h1 {
+  font-size: 2.25rem;
+  margin-top: 0;
+}
+
+.notes-zone .prose h2 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.25rem;
+}
+
+.notes-zone .prose h3 {
+  font-size: 1.25rem;
+}
+
+.notes-zone .prose p,
+.notes-zone .prose li {
+  margin-bottom: 1rem;
+}
+
+.notes-zone .prose ul,
+.notes-zone .prose ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.notes-zone .prose a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.notes-zone .prose blockquote {
+  border-left: 3px solid var(--color-border-soft);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--color-text-soft);
+  font-style: italic;
+}
+
+.notes-zone .prose code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--color-bg-soft);
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+.notes-zone .prose pre {
+  background: var(--color-bg-soft);
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.9em;
+  margin: 1rem 0;
+}
+
+.notes-zone .prose pre code {
+  background: transparent;
+  padding: 0;
 }

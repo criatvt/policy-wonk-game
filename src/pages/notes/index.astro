@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import modulesData from "../../data/modules.json";
+
+type Module = (typeof modulesData)[number];
+
+// Modules with notes available in this Phase 1 release.
+// As #13 lands content for more modules, add them here.
+const AVAILABLE_MODULES = new Set(["cp-22", "cg-1", "cp-10"]);
+
+// Determine which modules have at least one note file shipped.
+// We use the content collection to confirm, rather than trusting the set above,
+// so the index stays accurate even if a module is partially authored.
+const allNotes = await getCollection("notes");
+const modulesWithNotes = new Set(allNotes.map((n) => n.data.module));
+
+const groupOrder = ["Foundations", "Economic Reasoning", "Strategy & Society"];
+const grouped: Record<string, Module[]> = {};
+for (const m of modulesData as Module[]) {
+  if (!grouped[m.group]) grouped[m.group] = [];
+  grouped[m.group].push(m);
+}
+---
+<BaseLayout title="Notes · Policy Wonk" description="Revision notes for the 11 Takshashila GCPP modules covered by Policy Wonk." zone="notes">
+  <section class="max-w-3xl mx-auto py-8">
+    <header class="mb-12">
+      <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Revision</p>
+      <h1 class="font-serif text-4xl md:text-5xl font-bold leading-tight">Notes</h1>
+      <p class="mt-4 text-gray-700 leading-relaxed text-lg">
+        Per-topic revision notes for each Takshashila GCPP module. Three modules are available now; the rest are coming as content is written.
+      </p>
+    </header>
+
+    {groupOrder.map((groupName) => (
+      <section class="mb-12">
+        <h2 class="font-serif text-2xl font-bold mb-4">{groupName}</h2>
+        <ul class="divide-y divide-gray-300">
+          {grouped[groupName]?.map((m) => {
+            const available = AVAILABLE_MODULES.has(m.id) && modulesWithNotes.has(m.id);
+            return (
+              <li class="py-4 flex items-baseline justify-between gap-4">
+                <div>
+                  <p class="font-semibold">
+                    {available ? (
+                      <a href={`/notes/${m.id}/`} class="underline">{m.code} · {m.name}</a>
+                    ) : (
+                      <span class="text-gray-500">{m.code} · {m.name}</span>
+                    )}
+                  </p>
+                </div>
+                {!available && (
+                  <span class="text-xs uppercase tracking-widest text-gray-500 whitespace-nowrap">Coming soon</span>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    ))}
+
+    <footer class="mt-16 pt-6 border-t border-gray-300 text-sm text-gray-500">
+      Notes adapted from Takshashila GCPP course material.
+    </footer>
+  </section>
+</BaseLayout>
