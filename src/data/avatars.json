@@ -1,0 +1,14 @@
+[
+  { "slug": "m-a", "displayName": "A", "description": "Monogram placeholder", "tier": 1 },
+  { "slug": "m-b", "displayName": "B", "description": "Monogram placeholder", "tier": 1 },
+  { "slug": "m-c", "displayName": "C", "description": "Monogram placeholder", "tier": 1 },
+  { "slug": "m-d", "displayName": "D", "description": "Monogram placeholder", "tier": 1 },
+  { "slug": "m-e", "displayName": "E", "description": "Monogram placeholder", "tier": 1 },
+  { "slug": "m-f", "displayName": "F", "description": "Monogram placeholder", "tier": 1 },
+  { "slug": "m-g", "displayName": "G", "description": "Monogram placeholder", "tier": 1 },
+  { "slug": "m-h", "displayName": "H", "description": "Monogram placeholder", "tier": 1 },
+  { "slug": "m-i", "displayName": "I", "description": "Monogram placeholder", "tier": 1 },
+  { "slug": "m-j", "displayName": "J", "description": "Monogram placeholder", "tier": 1 },
+  { "slug": "m-k", "displayName": "K", "description": "Monogram placeholder", "tier": 1 },
+  { "slug": "m-l", "displayName": "L", "description": "Monogram placeholder", "tier": 1 }
+]

@@ -5,7 +5,8 @@
 
 import { Hono, type Context } from "hono";
 import { readSession } from "../_lib/session";
-import { findUserById } from "../_lib/users";
+import { findUserById, updateAvatar, updateNickname } from "../_lib/users";
+import { isValidAvatarSlug } from "../_lib/avatars";
 import {
   insertSession,
   listSessionsByUser,
@@ -134,6 +135,80 @@ me.get("/played-modules", async (c) => {
   const moduleIds = await playedModulesForUser(c.env.DB, userId);
   return c.json({ ok: true, module_ids: moduleIds });
 });
+
+// POST /api/me/profile/nickname — step 1 of onboarding (#17).
+// Body: { nickname: string }. Trimmed, 3–24 chars, profanity-checked.
+// Uniqueness not enforced — users are disambiguated by id.
+me.post("/profile/nickname", async (c) => {
+  const userId = await requireUserId(c);
+  if (!userId) return c.json({ ok: false, error: "unauthorized" }, 401);
+
+  let body: { nickname?: unknown };
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({ ok: false, error: "invalid_body" }, 400);
+  }
+
+  const raw = typeof body.nickname === "string" ? body.nickname.trim() : "";
+  if (raw.length < 3 || raw.length > 24) {
+    return c.json({ ok: false, error: "invalid_nickname_length" }, 400);
+  }
+  // Letters (any script), digits, spaces, hyphens, underscores, apostrophes.
+  // Rejects control chars and most punctuation.
+  if (!/^[\p{L}\p{N} _'\-]+$/u.test(raw)) {
+    return c.json({ ok: false, error: "invalid_nickname_chars" }, 400);
+  }
+  if (containsProfanity(raw)) {
+    return c.json({ ok: false, error: "nickname_blocked" }, 400);
+  }
+
+  await updateNickname(c.env.DB, userId, raw);
+  return c.json({ ok: true, nickname: raw });
+});
+
+// POST /api/me/profile/avatar — step 2 of onboarding (#17).
+// Body: { avatar_slug: string }. Must match the curated manifest.
+me.post("/profile/avatar", async (c) => {
+  const userId = await requireUserId(c);
+  if (!userId) return c.json({ ok: false, error: "unauthorized" }, 401);
+
+  let body: { avatar_slug?: unknown };
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({ ok: false, error: "invalid_body" }, 400);
+  }
+
+  const slug = typeof body.avatar_slug === "string" ? body.avatar_slug : "";
+  if (!isValidAvatarSlug(slug)) {
+    return c.json({ ok: false, error: "invalid_avatar_slug" }, 400);
+  }
+
+  await updateAvatar(c.env.DB, userId, slug);
+  return c.json({ ok: true, avatar_slug: slug });
+});
+
+// Phase 1 stub. Substring match against an obviously-offensive seed list.
+// Not a substitute for a real profanity library if abuse becomes a problem.
+// Lowercased before comparison so "FUCK" and "fuck" both get caught.
+const PROFANITY_SEED = [
+  "fuck",
+  "shit",
+  "cunt",
+  "bitch",
+  "asshole",
+  "bastard",
+  "dick",
+  "piss",
+  "nigger",
+  "faggot",
+  "retard",
+];
+function containsProfanity(s: string): boolean {
+  const lower = s.toLowerCase();
+  return PROFANITY_SEED.some((w) => lower.includes(w));
+}
 
 type ValidSession = {
   module_id: string;

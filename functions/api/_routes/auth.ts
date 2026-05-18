@@ -12,7 +12,7 @@ import {
   magicLinkHtml,
   magicLinkText,
 } from "../_lib/email";
-import { upsertUserOnLogin } from "../_lib/users";
+import { upsertUserOnLogin, type User } from "../_lib/users";
 import { issueSessionCookie, clearSessionCookie } from "../_lib/session";
 
 type Bindings = {
@@ -118,9 +118,7 @@ auth.get("/verify", async (c) => {
   const user = await upsertUserOnLogin(c.env.DB, payload.email, adminEmails);
   await issueSessionCookie(c, user.id, user.email, c.env.SESSION_SECRET);
 
-  // Redirect target: onboarding for new users (no nickname yet), home otherwise.
-  const next = user.nickname ? "/" : "/onboarding/nickname";
-  return c.redirect(next);
+  return c.redirect(nextOnboardingStep(user));
 });
 
 // POST /api/auth/logout
@@ -151,8 +149,20 @@ auth.all("/dev-login", async (c) => {
     .filter(Boolean);
   const user = await upsertUserOnLogin(c.env.DB, email, adminEmails);
   await issueSessionCookie(c, user.id, user.email, c.env.SESSION_SECRET);
-  return c.json({ ok: true, user: { id: user.id, email: user.email } });
+  // Redirect by default so browser visits walk the same onboarding chain
+  // as the real magic-link verify. format=json keeps the JSON response
+  // for curl-based testing.
+  if (c.req.query("format") === "json") {
+    return c.json({ ok: true, user: { id: user.id, email: user.email } });
+  }
+  return c.redirect(nextOnboardingStep(user));
 });
+
+function nextOnboardingStep(user: User): string {
+  if (!user.nickname) return "/onboarding/nickname";
+  if (!user.avatar_slug) return "/onboarding/avatar";
+  return "/";
+}
 
 function isValidEmail(email: string): boolean {
   // Permissive RFC-ish check — good enough for Phase 1.

@@ -78,3 +78,25 @@ export async function findUserById(
     .first<User>();
   return result ?? null;
 }
+
+export async function updateNickname(
+  db: D1Database,
+  userId: string,
+  nickname: string,
+): Promise<void> {
+  await db
+    .prepare("UPDATE users SET nickname = ? WHERE id = ?")
+    .bind(nickname, userId)
+    .run();
+}
+
+export async function updateAvatar(
+  db: D1Database,
+  userId: string,
+  avatarSlug: string,
+): Promise<void> {
+  await db
+    .prepare("UPDATE users SET avatar_slug = ? WHERE id = ?")
+    .bind(avatarSlug, userId)
+    .run();
+}
