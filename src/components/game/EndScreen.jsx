@@ -1,7 +1,53 @@
+import { useEffect, useRef } from "react";
 import { formatIndianNumber } from "../../lib/gameEngine.js";
 
 const SITE_URL = "https://policywonkgame.aasifj.com";
 const PGP_URL = "https://school.takshashila.org.in/pgp";
+
+// Canonical outcomes match the server enum (sessions.outcome). The client
+// engine uses "walked-away" historically; normalize at the API boundary.
+function outcomeForApi(status) {
+  if (status === "won") return "won";
+  if (status === "walked-away") return "walked_away";
+  if (status === "lost") return "lost";
+  return null;
+}
+
+function lifelinesUsed(lifelines) {
+  if (!lifelines) return [];
+  return Object.keys(lifelines).filter((k) => lifelines[k] === false);
+}
+
+async function postSession(state) {
+  const outcome = outcomeForApi(state.status);
+  if (!outcome) return;
+  if (!state.clientSessionId || !state.selectedModule) return;
+
+  const payload = {
+    client_id: state.clientSessionId,
+    module_id: state.selectedModule,
+    started_at: new Date(state.startTime).toISOString(),
+    ended_at: new Date().toISOString(),
+    score: state.score,
+    highest_cleared_rung: state.highestClearedRung,
+    outcome,
+    lifelines_used: lifelinesUsed(state.lifelines),
+  };
+
+  try {
+    await fetch("/api/me/sessions", {
+      method: "POST",
+      credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    // 401 (guest) and 4xx (validation) are silently dropped. Sessions
+    // are an enhancement; failing to record one must not break the
+    // end-screen for the player.
+  } catch {
+    // Network failure — same posture as above.
+  }
+}
 
 function shareString(state) {
   if (state.status === "won") {
@@ -26,6 +72,13 @@ function headlineForStatus(status, score) {
 
 export default function EndScreen({ state, onPlayAgain }) {
   const share = shareString(state);
+  const postedRef = useRef(false);
+
+  useEffect(() => {
+    if (postedRef.current) return;
+    postedRef.current = true;
+    postSession(state);
+  }, [state]);
 
   async function copyShare() {
     try {

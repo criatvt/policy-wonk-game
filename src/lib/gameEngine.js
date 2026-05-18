@@ -136,7 +136,19 @@ export function createInitialState({ name, moduleId, plan }) {
     score: 0,
     fellOnRung: null,
     startTime: Date.now(),
+    // Stable client-side id so the EndScreen POST to /api/me/sessions is
+    // idempotent across StrictMode double-mount, refresh, or retry.
+    clientSessionId: cryptoRandomUUID(),
   };
+}
+
+function cryptoRandomUUID() {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID();
+  }
+  // Fallback for very old browsers — Phase 1 supports modern only, but
+  // don't crash the game if crypto.randomUUID is missing.
+  return `${Date.now().toString(16)}-${Math.random().toString(16).slice(2)}`;
 }
 
 // Status transitions. Each helper returns a new state — engine is pure.

@@ -129,6 +129,31 @@ auth.post("/logout", (c) => {
   return c.json({ ok: true });
 });
 
+// GET/POST /api/auth/dev-login?email=... — dev-only bypass for the magic-link
+// flow. Gated strictly on ENV === "dev"; returns 404 in preview/production
+// so it cannot be invoked even if Workers config drift exposes the route.
+// Existence is intentional: the magic-link path requires Resend, which a
+// local checkout typically lacks. This keeps the local test loop fast.
+auth.all("/dev-login", async (c) => {
+  if (c.env.ENV !== "dev") {
+    return c.json({ ok: false, error: "not_found" }, 404);
+  }
+  if (!c.env.SESSION_SECRET) {
+    return c.json({ ok: false, error: "server_not_configured" }, 500);
+  }
+  const email = (c.req.query("email") ?? "").trim().toLowerCase();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return c.json({ ok: false, error: "invalid_email" }, 400);
+  }
+  const adminEmails = (c.env.ADMIN_EMAILS ?? "")
+    .split(",")
+    .map((s) => s.trim().toLowerCase())
+    .filter(Boolean);
+  const user = await upsertUserOnLogin(c.env.DB, email, adminEmails);
+  await issueSessionCookie(c, user.id, user.email, c.env.SESSION_SECRET);
+  return c.json({ ok: true, user: { id: user.id, email: user.email } });
+});
+
 function isValidEmail(email: string): boolean {
   // Permissive RFC-ish check — good enough for Phase 1.
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email.length <= 254;
