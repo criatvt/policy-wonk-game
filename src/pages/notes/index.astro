@@ -10,8 +10,8 @@ type Module = (typeof modulesData)[number];
 const AVAILABLE_MODULES = new Set(["cp-22", "cg-1", "cp-10"]);
 
 // Determine which modules have at least one note file shipped.
-// We use the content collection to confirm, rather than trusting the set above,
-// so the index stays accurate even if a module is partially authored.
+// Cross-check the content collection so the index stays accurate even if
+// a module is half-authored.
 const allNotes = await getCollection("notes");
 const modulesWithNotes = new Set(allNotes.map((n) => n.data.module));
 
@@ -28,7 +28,7 @@ for (const m of modulesData as Module[]) {
       <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Revision</p>
       <h1 class="font-serif text-4xl md:text-5xl font-bold leading-tight">Notes</h1>
       <p class="mt-4 text-gray-700 leading-relaxed text-lg">
-        Per-topic revision notes for each Takshashila GCPP module. Three modules are available now; the rest are coming as content is written.
+        Per-topic revision notes for each Takshashila GCPP module. Notes unlock once you've completed a quiz on that module.
       </p>
     </header>
 
@@ -37,21 +37,35 @@ for (const m of modulesData as Module[]) {
         <h2 class="font-serif text-2xl font-bold mb-4">{groupName}</h2>
         <ul class="divide-y divide-gray-300">
           {grouped[groupName]?.map((m) => {
-            const available = AVAILABLE_MODULES.has(m.id) && modulesWithNotes.has(m.id);
+            const authored = AVAILABLE_MODULES.has(m.id) && modulesWithNotes.has(m.id);
+            if (!authored) {
+              return (
+                <li class="py-4 flex items-baseline justify-between gap-4">
+                  <p class="font-semibold text-gray-500">{m.code} · {m.name}</p>
+                  <span class="text-xs uppercase tracking-widest text-gray-500 whitespace-nowrap">Coming soon</span>
+                </li>
+              );
+            }
+            // Default server-render: guest-locked. JS upgrades for logged-in
+            // viewers (to "play to unlock") and unlocks (to "browse notes")
+            // based on /api/me + /api/me/played-modules.
             return (
-              <li class="py-4 flex items-baseline justify-between gap-4">
-                <div>
-                  <p class="font-semibold">
-                    {available ? (
-                      <a href={`/notes/${m.id}/`} class="underline">{m.code} · {m.name}</a>
-                    ) : (
-                      <span class="text-gray-500">{m.code} · {m.name}</span>
-                    )}
+              <li
+                class="py-4 flex items-baseline justify-between gap-4 module-card"
+                data-module-id={m.id}
+                data-module-name={m.name}
+              >
+                <div class="flex-1">
+                  <p class="font-semibold text-gray-500 module-title">{m.code} · {m.name}</p>
+                  <p class="text-sm text-gray-500 mt-1 module-hint" data-state="guest">
+                    Log in to unlock these notes.
                   </p>
                 </div>
-                {!available && (
-                  <span class="text-xs uppercase tracking-widest text-gray-500 whitespace-nowrap">Coming soon</span>
-                )}
+                <a
+                  href="/login"
+                  class="text-sm font-medium underline whitespace-nowrap module-cta"
+                  data-state="guest"
+                >Log in to unlock →</a>
               </li>
             );
           })}
@@ -64,3 +78,67 @@ for (const m of modulesData as Module[]) {
     </footer>
   </section>
 </BaseLayout>
+
+<script>
+  type MeResponse = {
+    ok: boolean;
+    user: null | { id: string; nickname: string | null };
+  };
+  type PlayedResponse = {
+    ok: boolean;
+    module_ids?: string[];
+  };
+
+  (async function upgradeLockState() {
+    const cards = document.querySelectorAll<HTMLLIElement>(".module-card");
+    if (cards.length === 0) return;
+
+    let me: MeResponse | null = null;
+    let played: Set<string> = new Set();
+
+    try {
+      const meRes = await fetch("/api/me", { credentials: "same-origin" });
+      me = (await meRes.json()) as MeResponse;
+    } catch {
+      // Network down — leave the default guest state.
+      return;
+    }
+    if (!me?.user) {
+      // Truly a guest — default state is correct, nothing to do.
+      return;
+    }
+
+    try {
+      const playedRes = await fetch("/api/me/played-modules", { credentials: "same-origin" });
+      const data = (await playedRes.json()) as PlayedResponse;
+      played = new Set(data.module_ids ?? []);
+    } catch {
+      // Could not fetch played list — fall through, all cards stay as
+      // "play to unlock" which is still accurate.
+    }
+
+    cards.forEach((card) => {
+      const moduleId = card.dataset.moduleId!;
+      const moduleName = card.dataset.moduleName!;
+      const title = card.querySelector<HTMLParagraphElement>(".module-title")!;
+      const hint = card.querySelector<HTMLParagraphElement>(".module-hint")!;
+      const cta = card.querySelector<HTMLAnchorElement>(".module-cta")!;
+
+      if (played.has(moduleId)) {
+        // Unlocked: title becomes the link, hint + cta hidden.
+        title.innerHTML = `<a href="/notes/${moduleId}/" class="underline">${title.textContent}</a>`;
+        title.classList.remove("text-gray-500");
+        title.classList.add("text-black");
+        hint.remove();
+        cta.remove();
+      } else {
+        // Logged-in but unplayed.
+        hint.textContent = `Play ${moduleName} to unlock these notes.`;
+        hint.dataset.state = "unplayed";
+        cta.textContent = "Play to unlock →";
+        cta.href = "/play";
+        cta.dataset.state = "unplayed";
+      }
+    });
+  })();
+</script>
