@@ -211,6 +211,60 @@ export default function GameContainer() {
   const [timerRunning, setTimerRunning] = useState(false);
   const [walkAwayConfirm, setWalkAwayConfirm] = useState(false);
   const [rulesStage, setRulesStage] = useState(() => persisted?.rulesStage ?? 0);
+  // Logged-in user (or null). Populated by the /api/me effect below. Used
+  // to skip the in-game name prompt — a player with an account nickname
+  // shouldn't be asked their name again at the start of every game (#32).
+  const [loggedInUser, setLoggedInUser] = useState(null);
+
+  // Compute the "next" screen after onboarding completes — RULES the first
+  // time, MODULE_PICK on returning. Shared between manual onboarding
+  // advance, the auto-skip for logged-in users, and Play again.
+  const goPostOnboarding = useCallback(() => {
+    const seen =
+      typeof window !== "undefined" &&
+      window.localStorage?.getItem(RULES_SEEN_KEY) === "true";
+    if (seen) {
+      setScreen(SCREEN_MODULE_PICK);
+    } else {
+      setRulesStage(0);
+      setScreen(SCREEN_RULES);
+    }
+  }, []);
+
+  // One-shot auth check on mount. If the player has an account with a
+  // nickname, seed it as the in-game name and jump past the name prompt.
+  // Guests get a null result and stay on the existing flow. Deps=[] so
+  // this runs exactly once per mount — Play again handles its own skip
+  // below using the loggedInUser state captured here.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch("/api/me", { credentials: "same-origin" });
+        if (!res.ok) return;
+        const data = await res.json();
+        if (cancelled) return;
+        const user = data?.user ?? null;
+        if (!user) return;
+        setLoggedInUser(user);
+        // Only auto-advance on a fresh entry — don't disturb a game in
+        // progress (state != null) or a player who already moved past
+        // onboarding (e.g. mid-rules or mid-module-pick on a refresh).
+        if (!user.nickname) return;
+        if (state != null) return;
+        if (screen !== SCREEN_ONBOARDING) return;
+        setName(user.nickname);
+        goPostOnboarding();
+      } catch {
+        // /api/me unreachable — treat as guest. Existing flow continues.
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Persist the game snapshot on any change. Skip while a lock is mid-flight
   // (answerLocked=true but correctIndex not yet resolved) — that 1s window
@@ -248,18 +302,8 @@ export default function GameContainer() {
       setLoadError("Enter your name to begin.");
       return;
     }
-    // Returning players who've already seen the rules walkthrough skip
-    // straight to module pick. First-timers see the rules story first.
-    const seen =
-      typeof window !== "undefined" &&
-      window.localStorage?.getItem(RULES_SEEN_KEY) === "true";
-    if (seen) {
-      setScreen(SCREEN_MODULE_PICK);
-    } else {
-      setRulesStage(0);
-      setScreen(SCREEN_RULES);
-    }
-  }, [trimmedName]);
+    goPostOnboarding();
+  }, [trimmedName, goPostOnboarding]);
 
   const startGame = useCallback(async (chosenModuleId) => {
     setLoadError(null);
@@ -297,8 +341,15 @@ export default function GameContainer() {
     setState(null);
     setTimerRunning(false);
     setWalkAwayConfirm(false);
-    setScreen(SCREEN_ONBOARDING);
-  }, []);
+    // Logged-in users (#32): skip the name prompt on Play again. Their
+    // nickname is already in `name` from the initial seed, so we jump
+    // straight to rules (first time) or module pick (returning).
+    if (loggedInUser?.nickname) {
+      goPostOnboarding();
+    } else {
+      setScreen(SCREEN_ONBOARDING);
+    }
+  }, [loggedInUser, goPostOnboarding]);
 
   // After options finish revealing, start the timer for this question
   const handleRevealComplete = useCallback(() => {
