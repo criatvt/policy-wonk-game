@@ -1,0 +1,76 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const initialQuery = Astro.url.searchParams.get("q") ?? "";
+---
+<BaseLayout
+  title={initialQuery ? `Search: ${initialQuery} · Policy Wonk` : "Search · Policy Wonk"}
+  description="Full-text search across Policy Wonk's revision notes."
+  zone="notes"
+>
+  <section class="max-w-2xl mx-auto py-8">
+    <header class="mb-8">
+      <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)] mb-2">Notes</p>
+      <h1 class="font-serif text-4xl md:text-5xl font-semibold leading-tight">Search</h1>
+      <p class="mt-4 text-base leading-relaxed text-[var(--color-text-soft)]">
+        Search across every revision note. Powered by <a href="https://pagefind.app/" target="_blank" rel="noopener noreferrer" class="underline decoration-1 underline-offset-2 hover:opacity-80">Pagefind</a> — fully static, no backend.
+      </p>
+    </header>
+
+    <noscript>
+      <p class="p-4 border-l-4 border-[var(--color-functional-red)] bg-[var(--color-functional-red)]/10 text-sm">
+        Search needs JavaScript. <a href="/notes/" class="underline">Browse the notes index</a> instead.
+      </p>
+    </noscript>
+
+    <div id="search"></div>
+
+    <!-- Pagefind ships its UI as a small JS + CSS bundle into /pagefind
+         at production build time. In `astro dev` these assets don't exist,
+         so the search box stays empty there — use `npm run build` +
+         `npm run preview` (or the deployed site) to exercise this page. -->
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+    <script src="/pagefind/pagefind-ui.js" is:inline></script>
+    <script define:vars={{ initialQuery }} is:inline>
+      window.addEventListener("DOMContentLoaded", () => {
+        if (typeof PagefindUI === "undefined") {
+          const el = document.getElementById("search");
+          if (el) {
+            el.innerHTML =
+              '<p style="padding:1rem;border-left:4px solid #C73E1D;background:rgba(199,62,29,0.08);font-size:0.875rem">Search index isn\'t available yet. Run <code>npm run build</code> to generate it, or visit the deployed site.</p>';
+          }
+          return;
+        }
+        new PagefindUI({
+          element: "#search",
+          showSubResults: true,
+          showImages: false,
+          resetStyles: false,
+        });
+        if (initialQuery) {
+          const input = document.querySelector("#search input[type='text']");
+          if (input) {
+            input.value = initialQuery;
+            input.dispatchEvent(new Event("input", { bubbles: true }));
+          }
+        }
+      });
+    </script>
+  </section>
+</BaseLayout>
+
+<style is:global>
+  /* Tone Pagefind's default colours toward the project palette without
+     fighting its layout. The component CSS is loaded above; these overrides
+     ride on top via specificity. */
+  :root {
+    --pagefind-ui-primary: var(--color-charcoal);
+    --pagefind-ui-text: var(--color-text);
+    --pagefind-ui-background: var(--color-bg);
+    --pagefind-ui-border: var(--color-border);
+    --pagefind-ui-tag: var(--color-bg-soft);
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 0;
+    --pagefind-ui-font: "Inter", sans-serif;
+  }
+</style>

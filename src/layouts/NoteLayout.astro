@@ -1,0 +1,68 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import SearchBar from "../components/shared/SearchBar.astro";
+
+interface Props {
+  title: string;
+  module: string;
+  moduleName: string;
+  summary?: string;
+  topic?: string;
+}
+
+const { title, module, moduleName, summary, topic } = Astro.props;
+const description = summary ?? `${title} — revision notes from ${moduleName}.`;
+
+// Pre-filled report links — mirror the question-issue pattern in
+// GameContainer so the report path feels consistent across the site.
+// `topic` is optional so the layout still renders gracefully if a caller
+// (e.g. a future /notes/<module>/_index route) doesn't have one.
+const noteRef = topic ? `${module}/${topic}` : module;
+const mailSubject = `[Policy Wonk] Notes issue with ${noteRef}`;
+const mailBody = `Note: ${noteRef}\n${title ? `Title: ${title}\n` : ""}\nWhat's off:\n`;
+const issueTitle = `[Notes issue] ${noteRef}`;
+const issueBody = `**Note:** ${noteRef}\n${title ? `**Title:** ${title}\n` : ""}\n**What's off:**\n`;
+const mailHref = `mailto:aasif@aasifj.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+const issueHref = `https://github.com/criatvt/policy-wonk-game/issues/new?title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}`;
+const contributeHref = `https://github.com/criatvt/policy-wonk-game/tree/main/policy-wonk-game/src/content/notes/${module}`;
+---
+<BaseLayout title={`${title} · ${moduleName} · Policy Wonk`} description={description} zone="notes">
+  <article class="max-w-prose mx-auto py-4">
+    <nav class="mb-6 flex flex-wrap items-center justify-between gap-4">
+      <div class="text-sm">
+        <a href="/notes/" class="underline">Notes</a>
+        <span class="mx-2 text-gray-400">›</span>
+        <a href={`/notes/${module}/`} class="underline">{moduleName}</a>
+      </div>
+      <SearchBar />
+    </nav>
+
+    <header class="mb-8 pb-6 border-b border-gray-300">
+      <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">{moduleName}</p>
+      <h1 class="font-serif text-3xl md:text-4xl font-bold leading-tight">{title}</h1>
+      {summary && <p class="mt-3 text-gray-700 leading-relaxed text-lg">{summary}</p>}
+    </header>
+
+    <div class="prose">
+      <slot />
+    </div>
+
+    <footer class="mt-16 pt-6 border-t border-gray-300 text-sm text-gray-500 leading-relaxed flex flex-col gap-4">
+      <p>
+        Revision notes are a blend of public-domain policy concepts, Aasif's own notes,
+        and material adapted from the Takshashila GCPP course readings. They're a
+        revision aid for the quiz, not a substitute for the original sources.
+      </p>
+      <p>
+        Spot an error?{" "}
+        <a href={mailHref} class="underline hover:text-gray-700">Email</a>
+        {" · "}
+        <a href={issueHref} target="_blank" rel="noopener noreferrer" class="underline hover:text-gray-700">Open a GitHub issue</a>
+      </p>
+      <p>
+        Have more detailed notes for this topic?{" "}
+        <a href={contributeHref} target="_blank" rel="noopener noreferrer" class="underline hover:text-gray-700">Contribute on GitHub →</a>
+      </p>
+    </footer>
+  </article>
+</BaseLayout>

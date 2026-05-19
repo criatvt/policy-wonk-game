@@ -1,7 +1,100 @@
+import { useEffect, useRef, useState } from "react";
 import { formatIndianNumber } from "../../lib/gameEngine.js";
+import { stashGuestSession } from "../../lib/guestSessions.js";
+import modulesData from "../../data/modules.json";
 
 const SITE_URL = "https://policywonkgame.aasifj.com";
 const PGP_URL = "https://school.takshashila.org.in/pgp";
+
+function moduleNameFor(moduleId) {
+  const m = modulesData.find((x) => x.id === moduleId);
+  return m?.name ?? "this module";
+}
+
+// Slugified topics in the question bank are kebab-case (e.g. "sunk-cost-
+// fallacy"). For display in the end-screen "Browse notes for X" link, we
+// title-case the slug as a passable label. The notes file's own
+// frontmatter `title` is the canonical name, but we don't have access to
+// that here — close enough is fine.
+function topicLabel(slug) {
+  if (!slug) return "";
+  return slug
+    .split("-")
+    .filter(Boolean)
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
+// Per-outcome benefits-led copy for the guest upsell (#24). Three variants
+// matching the three end states. Never frames the pitch as a paywall —
+// the player already sees their wrongs and explanations as a guest;
+// logging in adds revision tools on top.
+function upsellCopy(state) {
+  if (state.status === "lost") {
+    const moduleName = moduleNameFor(state.selectedModule);
+    return {
+      headline: `Want to revise ${moduleName}?`,
+      body: "Log in and the notes for this module unlock for you instantly. Your play history sticks around too.",
+    };
+  }
+  if (state.status === "won") {
+    return {
+      headline: "Want to save this score and keep coming back?",
+      body: "Log in to track your scores across modules and revisit the ones you nail.",
+    };
+  }
+  // walked-away
+  return {
+    headline: "Want to come back and finish strong?",
+    body: "Log in to pick up where you left off. Notes for completed modules unlock too.",
+  };
+}
+
+// Canonical outcomes match the server enum (sessions.outcome). The client
+// engine uses "walked-away" historically; normalize at the API boundary.
+function outcomeForApi(status) {
+  if (status === "won") return "won";
+  if (status === "walked-away") return "walked_away";
+  if (status === "lost") return "lost";
+  return null;
+}
+
+function lifelinesUsed(lifelines) {
+  if (!lifelines) return [];
+  return Object.keys(lifelines).filter((k) => lifelines[k] === false);
+}
+
+function sessionPayload(state) {
+  const outcome = outcomeForApi(state.status);
+  if (!outcome) return null;
+  if (!state.clientSessionId || !state.selectedModule) return null;
+  return {
+    client_id: state.clientSessionId,
+    module_id: state.selectedModule,
+    started_at: new Date(state.startTime).toISOString(),
+    ended_at: new Date().toISOString(),
+    score: state.score,
+    highest_cleared_rung: state.highestClearedRung,
+    outcome,
+    lifelines_used: lifelinesUsed(state.lifelines),
+  };
+}
+
+async function postSessionForUser(payload) {
+  if (!payload) return;
+  try {
+    await fetch("/api/me/sessions", {
+      method: "POST",
+      credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    // 4xx (validation) is silently dropped. Sessions are an enhancement;
+    // failing to record one must not break the end-screen for the player.
+  } catch {
+    // Network failure — same posture as above.
+  }
+}
 
 function shareString(state) {
   if (state.status === "won") {
@@ -26,6 +119,48 @@ function headlineForStatus(status, score) {
 
 export default function EndScreen({ state, onPlayAgain }) {
   const share = shareString(state);
+  const postedRef = useRef(false);
+  // "loading" while /api/me is in flight, then "guest" or "user". We
+  // render nothing in the upsell slot until we know — it's a fast call,
+  // worth a short blank to avoid flashing the wrong variant.
+  const [authState, setAuthState] = useState("loading");
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch("/api/me", { credentials: "same-origin" });
+        if (!res.ok) throw new Error("me_failed");
+        const data = await res.json();
+        if (cancelled) return;
+        setAuthState(data?.user ? "user" : "guest");
+      } catch {
+        if (cancelled) return;
+        setAuthState("guest");
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  // Record the session once the auth state is known. Logged-in users hit
+  // /api/me/sessions directly; guests stash the payload in sessionStorage
+  // (#20) so it can be merged into their account if they sign in later in
+  // the same tab. The postedRef guard keeps StrictMode double-mounts and
+  // any incidental re-renders from double-recording.
+  useEffect(() => {
+    if (postedRef.current) return;
+    if (authState === "loading") return;
+    postedRef.current = true;
+    const payload = sessionPayload(state);
+    if (!payload) return;
+    if (authState === "user") {
+      postSessionForUser(payload);
+    } else {
+      stashGuestSession(payload);
+    }
+  }, [state, authState]);
 
   async function copyShare() {
     try {
@@ -48,9 +183,75 @@ export default function EndScreen({ state, onPlayAgain }) {
           <p className="text-sm opacity-70">Fell at Q{state.fellOnRung}.</p>
         )}
         {state.playerName && (
-          <p className="text-sm opacity-80 mt-2">Well played, {state.playerName}.</p>
+          <p className="text-sm opacity-80 mt-2">Thanks for playing, {state.playerName}.</p>
         )}
       </header>
+
+      {/* Per-wrong-answer notes link (#10). Logged-in only — guests get the
+          upsell card below instead. Lost is currently the only end state
+          with a missed question; walked-away and won have nothing to flag
+          here. */}
+      {authState === "user" && state.status === "lost" && state.fellOnRung && (() => {
+        const q = state.plan?.[state.fellOnRung - 1];
+        if (!q?.topic || !q?.module) return null;
+        return (
+          <div className="border-2 border-[var(--color-charcoal)] p-5 text-center flex flex-col gap-2">
+            <p className="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">
+              Revise the concept
+            </p>
+            <p className="text-base leading-relaxed">
+              <a
+                href={`/notes/${q.module}/${q.topic}`}
+                className="text-[var(--color-functional-marigold)] underline decoration-2 underline-offset-2 hover:opacity-80 font-semibold"
+              >
+                Browse notes for {topicLabel(q.topic)} →
+              </a>
+            </p>
+          </div>
+        );
+      })()}
+
+      {/* Guest upsell (#24). Variant by outcome; primary CTA is Log in;
+          "Play another as guest" sits inside as the secondary action so
+          the standalone Play again button below can be hidden for guests
+          without losing the path forward. */}
+      {authState === "guest" && (() => {
+        const { headline, body } = upsellCopy(state);
+        return (
+          <section className="border-2 border-[var(--color-charcoal)] p-6 flex flex-col gap-4">
+            <h2 className="font-serif text-2xl md:text-3xl font-semibold leading-tight">
+              {headline}
+            </h2>
+            <p className="text-base leading-relaxed text-[var(--color-text-soft)]">
+              {body}
+            </p>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-3 mt-1">
+              <a
+                href="/login"
+                className="px-6 py-3 bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
+              >
+                Log in →
+              </a>
+              <button
+                type="button"
+                onClick={onPlayAgain}
+                className="text-sm underline decoration-2 underline-offset-2 text-[var(--color-text-soft)] hover:text-[var(--color-text)]"
+              >
+                Play another as guest →
+              </button>
+            </div>
+            <p className="text-xs text-[var(--color-text-muted)] leading-relaxed mt-1">
+              We save your email, nickname, avatar, and history. We don't track you, don't share with third parties, don't use analytics cookies.{" "}
+              <a
+                href="/privacy"
+                className="underline decoration-1 underline-offset-2 hover:text-[var(--color-text-soft)]"
+              >
+                Read more →
+              </a>
+            </p>
+          </section>
+        );
+      })()}
 
       <div className="flex flex-col gap-3">
         <p className="text-sm opacity-80">Share string</p>
@@ -84,13 +285,18 @@ export default function EndScreen({ state, onPlayAgain }) {
         </p>
       </div>
 
-      <button
-        type="button"
-        onClick={onPlayAgain}
-        className="self-center mt-2 px-6 py-3 rounded bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
-      >
-        Play again
-      </button>
+      {/* Guests already get "Play another as guest" inside the upsell card,
+          so don't duplicate the button here. Hide while authState is loading
+          to avoid the brief flash for the (rare) logged-in case. */}
+      {authState === "user" && (
+        <button
+          type="button"
+          onClick={onPlayAgain}
+          className="self-center mt-2 px-6 py-3 rounded bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
+        >
+          Play again
+        </button>
+      )}
 
       <section className="border-t border-[var(--color-border)] pt-6 flex flex-col gap-3">
         <h2 className="text-xs uppercase tracking-widest text-[var(--color-functional-marigold)]">Open source</h2>

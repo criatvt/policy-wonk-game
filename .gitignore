@@ -17,7 +17,17 @@ src/lib/_salt.js
 # Environment variables
 .env
 .env.local
+.dev.vars
+
+# Local-only build journal — kept outside this repo, but ignore if it appears here
+journal.md
 
 # Editor
 .DS_Store
 .vscode/
+
+# Claude Code session state
+.claude/
+
+# Wrangler local state (D1 SQLite file, KV cache)
+.wrangler/

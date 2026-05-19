@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import modules from "../../data/modules.json";
 import expertsData from "../../data/experts.json";
 import {
@@ -140,6 +140,37 @@ const SCREEN_PLAYING = "playing";
 // rules again. Aasif's call (2026-05-09).
 const RULES_SEEN_KEY = "policyWonk:rulesSeen";
 
+// sessionStorage key — guest play state (issue #19). Snapshot of
+// { screen, name, moduleId, state } persisted on every change so a
+// refresh restores the in-progress game. Cleared when the player hits
+// "Play again" on the end screen. Tab close wipes it for free
+// (sessionStorage semantics) — exactly the ephemerality the issue asks
+// for. Logged-in players use the same mechanism; their session also gets
+// POSTed to /api/me/sessions at the end for permanent storage.
+const GAME_STATE_KEY = "policyWonk:gameState";
+
+function loadPersistedGame() {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.sessionStorage?.getItem(GAME_STATE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") return null;
+    return parsed;
+  } catch {
+    return null;
+  }
+}
+
+function clearPersistedGame() {
+  if (typeof window === "undefined") return;
+  try {
+    window.sessionStorage?.removeItem(GAME_STATE_KEY);
+  } catch {
+    // best-effort
+  }
+}
+
 // Storied rules — one card per stage, the player clicks Next through
 // them. Replaces the all-in-one rules screen.
 const RULES_STAGES = [
@@ -166,14 +197,104 @@ const RULES_STAGES = [
 ];
 
 export default function GameContainer() {
-  const [screen, setScreen] = useState(SCREEN_ONBOARDING);
-  const [name, setName] = useState("");
-  const [moduleId, setModuleId] = useState(modules[0]?.id ?? "");
-  const [state, setState] = useState(null);
+  // Read the persisted snapshot once at first render so the rehydrated
+  // screen paints immediately (no flash of the onboarding screen).
+  // useState initializers run once on mount.
+  const [persisted] = useState(loadPersistedGame);
+  const [screen, setScreen] = useState(() => persisted?.screen ?? SCREEN_ONBOARDING);
+  const [name, setName] = useState(() => persisted?.name ?? "");
+  const [moduleId, setModuleId] = useState(
+    () => persisted?.moduleId ?? (modules[0]?.id ?? ""),
+  );
+  const [state, setState] = useState(() => persisted?.state ?? null);
   const [loadError, setLoadError] = useState(null);
   const [timerRunning, setTimerRunning] = useState(false);
   const [walkAwayConfirm, setWalkAwayConfirm] = useState(false);
-  const [rulesStage, setRulesStage] = useState(0);
+  const [rulesStage, setRulesStage] = useState(() => persisted?.rulesStage ?? 0);
+  // Logged-in user (or null). Populated by the /api/me effect below. Used
+  // to skip the in-game name prompt — a player with an account nickname
+  // shouldn't be asked their name again at the start of every game (#32).
+  const [loggedInUser, setLoggedInUser] = useState(null);
+
+  // Rung that was mounted from sessionStorage (or null if no rehydrate).
+  // Used to tell the Question component to render instantly instead of
+  // replaying the typewriter and option fade-in — the player has already
+  // read this question, re-typing it on refresh feels broken.
+  const rehydratedRungRef = useRef(persisted?.state?.currentRung ?? null);
+
+  // Compute the "next" screen after onboarding completes — RULES the first
+  // time, MODULE_PICK on returning. Shared between manual onboarding
+  // advance, the auto-skip for logged-in users, and Play again.
+  const goPostOnboarding = useCallback(() => {
+    const seen =
+      typeof window !== "undefined" &&
+      window.localStorage?.getItem(RULES_SEEN_KEY) === "true";
+    if (seen) {
+      setScreen(SCREEN_MODULE_PICK);
+    } else {
+      setRulesStage(0);
+      setScreen(SCREEN_RULES);
+    }
+  }, []);
+
+  // One-shot auth check on mount. If the player has an account with a
+  // nickname, seed it as the in-game name and jump past the name prompt.
+  // Guests get a null result and stay on the existing flow. Deps=[] so
+  // this runs exactly once per mount — Play again handles its own skip
+  // below using the loggedInUser state captured here.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch("/api/me", { credentials: "same-origin" });
+        if (!res.ok) return;
+        const data = await res.json();
+        if (cancelled) return;
+        const user = data?.user ?? null;
+        if (!user) return;
+        setLoggedInUser(user);
+        // Only auto-advance on a fresh entry — don't disturb a game in
+        // progress (state != null) or a player who already moved past
+        // onboarding (e.g. mid-rules or mid-module-pick on a refresh).
+        if (!user.nickname) return;
+        if (state != null) return;
+        if (screen !== SCREEN_ONBOARDING) return;
+        setName(user.nickname);
+        goPostOnboarding();
+      } catch {
+        // /api/me unreachable — treat as guest. Existing flow continues.
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Persist the game snapshot on any change. Skip while a lock is mid-flight
+  // (answerLocked=true but correctIndex not yet resolved) — that 1s window
+  // owns an async chain inside handleLock that won't re-fire after a refresh,
+  // so freezing the persisted snapshot at the pre-lock state lets a refreshed
+  // player re-attempt the lock cleanly.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const lockInFlight =
+      state &&
+      state.status === "reveal-question" &&
+      state.answerLocked &&
+      state.correctIndex == null;
+    if (lockInFlight) return;
+    try {
+      window.sessionStorage?.setItem(
+        GAME_STATE_KEY,
+        JSON.stringify({ screen, name, moduleId, state, rulesStage }),
+      );
+    } catch {
+      // sessionStorage may be unavailable (private mode, quota). Not blocking
+      // — the player can keep playing, just without refresh-survival.
+    }
+  }, [screen, name, moduleId, state, rulesStage]);
 
   const currentQuestion = state ? state.plan[state.currentRung - 1] : null;
   const tierTimer = currentQuestion ? timerForRung(state.currentRung, currentQuestion) : 0;
@@ -187,18 +308,8 @@ export default function GameContainer() {
       setLoadError("Enter your name to begin.");
       return;
     }
-    // Returning players who've already seen the rules walkthrough skip
-    // straight to module pick. First-timers see the rules story first.
-    const seen =
-      typeof window !== "undefined" &&
-      window.localStorage?.getItem(RULES_SEEN_KEY) === "true";
-    if (seen) {
-      setScreen(SCREEN_MODULE_PICK);
-    } else {
-      setRulesStage(0);
-      setScreen(SCREEN_RULES);
-    }
-  }, [trimmedName]);
+    goPostOnboarding();
+  }, [trimmedName, goPostOnboarding]);
 
   const startGame = useCallback(async (chosenModuleId) => {
     setLoadError(null);
@@ -229,16 +340,38 @@ export default function GameContainer() {
   }
 
   const resetToOnboarding = useCallback(() => {
+    // Wipe the persisted snapshot so a refresh from the next onboarding
+    // screen doesn't snap them back into the finished game. The persist
+    // effect will re-save the fresh empty snapshot on the next render.
+    clearPersistedGame();
     setState(null);
     setTimerRunning(false);
     setWalkAwayConfirm(false);
-    setScreen(SCREEN_ONBOARDING);
-  }, []);
+    // Logged-in users (#32): skip the name prompt on Play again. Their
+    // nickname is already in `name` from the initial seed, so we jump
+    // straight to rules (first time) or module pick (returning).
+    if (loggedInUser?.nickname) {
+      goPostOnboarding();
+    } else {
+      setScreen(SCREEN_ONBOARDING);
+    }
+  }, [loggedInUser, goPostOnboarding]);
 
-  // After options finish revealing, start the timer for this question
+  // After options finish revealing, start the timer for this question.
+  // Stamp questionStartedAt the first time this fires per rung so a
+  // mid-question refresh can compute the right remaining seconds. On
+  // rehydrate (instant Question), this also fires immediately — the
+  // null-guard preserves the original timestamp.
   const handleRevealComplete = useCallback(() => {
     if (state?.status === "reveal-question") {
       setTimerRunning(true);
+      if (state.questionStartedAt == null) {
+        setState((s) =>
+          s && s.status === "reveal-question" && s.questionStartedAt == null
+            ? { ...s, questionStartedAt: Date.now() }
+            : s,
+        );
+      }
     }
   }, [state?.status]);
 
@@ -625,6 +758,11 @@ export default function GameContainer() {
             <Timer
               seconds={tierTimer}
               running={timerRunning}
+              initialElapsedSec={
+                state.questionStartedAt != null
+                  ? (Date.now() - state.questionStartedAt) / 1000
+                  : 0
+              }
               onExpire={handleExpire}
             />
           )}
@@ -636,6 +774,7 @@ export default function GameContainer() {
           locked={state.answerLocked}
           eliminated={state.fiftyFiftyEliminated}
           revealCorrect={inReveal ? state.correctIndex : null}
+          instant={rehydratedRungRef.current === state.currentRung}
           onSelect={handleSelect}
           onRevealComplete={handleRevealComplete}
         />

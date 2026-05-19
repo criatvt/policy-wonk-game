@@ -36,5 +36,14 @@ const {
       <slot />
     </main>
     <Footer />
+    <!-- Guest-to-account merge trigger (#20). flushGuestSessions is a no-op
+         when nothing is stashed, so the cost is one sessionStorage read per
+         page nav. When the player signs in later in the same tab, the next
+         authenticated page load POSTs their guest history to the merge
+         endpoint and clears the stash on success. -->
+    <script>
+      import { flushGuestSessions } from "../lib/guestSessions.js";
+      flushGuestSessions();
+    </script>
   </body>
 </html>

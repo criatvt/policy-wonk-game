@@ -1,0 +1,158 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const errorParam = Astro.url.searchParams.get("error");
+const errorMessages: Record<string, string> = {
+  missing_token: "The sign-in link was incomplete. Try again.",
+  invalid_or_expired: "That sign-in link has expired or already been used. Send yourself a fresh one.",
+  server: "Something went wrong on our end. Try again in a moment.",
+};
+const errorMessage = errorParam ? (errorMessages[errorParam] ?? "Sign-in failed. Try again.") : null;
+---
+<BaseLayout title="Sign in · Policy Wonk" description="Sign in to Policy Wonk, or play as a guest with no commitment.">
+  <section class="max-w-2xl mx-auto py-12">
+    <header class="mb-10 text-center">
+      <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] mb-3">Policy Wonk</p>
+      <h1 class="font-serif text-4xl md:text-5xl font-semibold leading-tight">Two ways in.</h1>
+      <p class="mt-3 text-[var(--color-text-soft)] leading-relaxed max-w-md mx-auto">
+        Save your history and unlock notes by signing in. Or jump straight into the game — no email, no commitment.
+      </p>
+    </header>
+
+    {errorMessage && (
+      <div role="alert" class="mb-8 p-4 border-l-4 border-[var(--color-functional-red)] bg-[var(--color-functional-red)]/10 text-sm">
+        {errorMessage}
+      </div>
+    )}
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <button
+        type="button"
+        id="show-email-btn"
+        class="px-6 py-4 border-2 border-[var(--color-charcoal)] bg-[var(--color-charcoal)] text-[var(--color-bg)] text-lg font-semibold hover:opacity-90 transition-opacity"
+      >
+        Sign in with email →
+      </button>
+      <a
+        href="/play"
+        class="px-6 py-4 border-2 border-[var(--color-charcoal)] text-[var(--color-charcoal)] text-lg font-semibold text-center hover:bg-[var(--color-charcoal)]/5 transition-colors"
+      >
+        Play as guest →
+      </a>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-x-6 gap-y-6 mt-6 text-sm leading-relaxed">
+      <div class="flex flex-col gap-2">
+        <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">If you sign in</p>
+        <ul class="list-none p-0 m-0 flex flex-col gap-1.5 text-[var(--color-text-soft)]">
+          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Revision notes unlock for each module you play</span></li>
+          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Your scores and play history stick around</span></li>
+          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Coming soon: flashcards, spaced repetition, weak-area dashboard</span></li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-2">
+        <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">If you play as guest</p>
+        <ul class="list-none p-0 m-0 flex flex-col gap-1.5 text-[var(--color-text-soft)]">
+          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Full game — same ladder, same lifelines</span></li>
+          <li class="flex gap-2"><span aria-hidden="true">·</span><span>State persists in this tab; gone when you close it</span></li>
+          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Sign in later — your guest history folds into the new account</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="email-form-wrap" class={`mt-10 pt-8 border-t border-[var(--color-border)] ${errorMessage ? "" : "hidden"}`}>
+      <form id="login-form" class="space-y-4 max-w-md" novalidate>
+        <div>
+          <label for="email" class="block text-sm font-medium mb-2">Your email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+            spellcheck="false"
+            class="w-full px-4 py-3 border border-[var(--color-border)] bg-[var(--color-bg-soft)] focus:outline-none focus:border-[var(--color-charcoal)]"
+            placeholder="you@example.com"
+          />
+        </div>
+        <button
+          type="submit"
+          id="submit-btn"
+          class="w-full px-6 py-3 bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90 disabled:opacity-50 disabled:cursor-wait"
+        >
+          Send me a sign-in link
+        </button>
+        <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
+          We store your email, nickname, avatar, and play history. We don't track you, don't share with third parties, don't use analytics cookies. <a href="/privacy" class="underline decoration-1 underline-offset-2 hover:text-[var(--color-text-soft)]">Read more →</a>
+        </p>
+      </form>
+
+      <div id="login-success" class="hidden mt-6 p-5 border-l-4 border-[var(--color-functional-green)] bg-[var(--color-functional-green)]/10 max-w-md">
+        <p class="font-semibold">Check your email</p>
+        <p class="mt-1 text-sm">If that address is on file, a sign-in link is on its way. It expires in 10 minutes.</p>
+      </div>
+
+      <div id="login-error" class="hidden mt-6 p-5 border-l-4 border-[var(--color-functional-red)] bg-[var(--color-functional-red)]/10 max-w-md">
+        <p class="text-sm" id="login-error-text"></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const showEmailBtn = document.getElementById("show-email-btn") as HTMLButtonElement;
+  const emailFormWrap = document.getElementById("email-form-wrap") as HTMLDivElement;
+  const form = document.getElementById("login-form") as HTMLFormElement;
+  const emailInput = document.getElementById("email") as HTMLInputElement;
+  const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
+  const successEl = document.getElementById("login-success") as HTMLDivElement;
+  const errorEl = document.getElementById("login-error") as HTMLDivElement;
+  const errorText = document.getElementById("login-error-text") as HTMLParagraphElement;
+
+  // Reveal the email form below when the user picks "Sign in with email".
+  // Keeps the entry choice visually balanced — neither path is buried.
+  showEmailBtn.addEventListener("click", () => {
+    emailFormWrap.classList.remove("hidden");
+    emailInput.focus({ preventScroll: true });
+    emailFormWrap.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    successEl.classList.add("hidden");
+    errorEl.classList.add("hidden");
+
+    const email = emailInput.value.trim();
+    if (!email) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending…";
+
+    try {
+      const res = await fetch("/api/auth/send-link", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (res.ok) {
+        successEl.classList.remove("hidden");
+        form.classList.add("hidden");
+      } else {
+        const data = (await res.json().catch(() => ({}))) as { error?: string };
+        errorText.textContent =
+          data.error === "invalid_email"
+            ? "That doesn't look like a valid email. Double-check and try again."
+            : "Something went wrong sending the link. Try again in a moment.";
+        errorEl.classList.remove("hidden");
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send me a sign-in link";
+      }
+    } catch {
+      errorText.textContent = "Couldn't reach the server. Check your connection and try again.";
+      errorEl.classList.remove("hidden");
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Send me a sign-in link";
+    }
+  });
+</script>

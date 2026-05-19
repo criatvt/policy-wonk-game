@@ -1,0 +1,137 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+<BaseLayout title="Pick a nickname · Policy Wonk" description="Set your display name for Policy Wonk.">
+  <section class="max-w-md mx-auto py-12">
+    <header class="mb-8">
+      <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Last step</p>
+      <h1 class="font-serif text-3xl md:text-4xl font-bold leading-tight">Pick a nickname</h1>
+      <p class="mt-3 text-gray-700 leading-relaxed">This is how you'll show up in your play history and on shared scores.</p>
+      <p id="email-line" class="mt-3 text-sm text-gray-500 hidden">
+        Setting up <span id="email-value" class="font-medium text-gray-700"></span>.
+      </p>
+    </header>
+
+    <form id="nickname-form" class="space-y-4" novalidate>
+      <div>
+        <label for="nickname" class="block text-sm font-medium mb-2">Nickname</label>
+        <input
+          type="text"
+          id="nickname"
+          name="nickname"
+          required
+          minlength="3"
+          maxlength="24"
+          autocomplete="off"
+          spellcheck="false"
+          class="w-full px-4 py-3 border border-gray-400 bg-white focus:outline-none focus:border-black"
+          placeholder="3–24 characters"
+        />
+        <p class="mt-2 text-xs text-gray-500">Letters, numbers, spaces, hyphens, underscores, apostrophes.</p>
+      </div>
+      <button
+        type="submit"
+        id="submit-btn"
+        class="w-full px-6 py-3 bg-black text-white font-semibold hover:bg-gray-800 disabled:opacity-50 disabled:cursor-wait"
+      >
+        Continue
+      </button>
+    </form>
+
+    <div id="error-box" class="hidden mt-6 p-4 border-l-4 border-red-600 bg-red-50">
+      <p class="text-sm text-red-900" id="error-text"></p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  type MeResponse = {
+    ok: boolean;
+    user: null | { id: string; email: string; nickname: string | null; avatar_slug: string | null };
+  };
+
+  const form = document.getElementById("nickname-form") as HTMLFormElement;
+  const input = document.getElementById("nickname") as HTMLInputElement;
+  const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
+  const errorBox = document.getElementById("error-box") as HTMLDivElement;
+  const errorText = document.getElementById("error-text") as HTMLParagraphElement;
+  const emailLine = document.getElementById("email-line") as HTMLParagraphElement;
+  const emailValue = document.getElementById("email-value") as HTMLSpanElement;
+
+  function showError(msg: string) {
+    errorText.textContent = msg;
+    errorBox.classList.remove("hidden");
+  }
+
+  function clearError() {
+    errorBox.classList.add("hidden");
+  }
+
+  // Gate: if not logged in, send to /login. If profile already complete,
+  // skip to the right destination so users can't be stuck on this step.
+  (async function gate() {
+    let me: MeResponse;
+    try {
+      const res = await fetch("/api/me", { credentials: "same-origin" });
+      me = (await res.json()) as MeResponse;
+    } catch {
+      window.location.replace("/login");
+      return;
+    }
+    if (!me.user) {
+      window.location.replace("/login");
+      return;
+    }
+    if (me.user.nickname) {
+      // Avatar is auto-derived from the nickname now (#18); there's no
+      // separate picker step. Returning users with a nickname go straight
+      // home regardless of whether avatar_slug is set on their old record.
+      window.location.replace("/");
+      return;
+    }
+    emailValue.textContent = me.user.email;
+    emailLine.classList.remove("hidden");
+    input.focus();
+  })();
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    clearError();
+    const nickname = input.value.trim();
+    if (nickname.length < 3 || nickname.length > 24) {
+      showError("Nickname must be 3–24 characters.");
+      return;
+    }
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Saving…";
+    try {
+      const res = await fetch("/api/me/profile/nickname", {
+        method: "POST",
+        credentials: "same-origin",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nickname }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
+      if (res.ok && data.ok) {
+        // Server auto-derives the avatar from the nickname (#18) — no
+        // picker step. Land on home.
+        window.location.assign("/");
+        return;
+      }
+      const msg =
+        data.error === "invalid_nickname_length"
+          ? "Nickname must be 3–24 characters."
+          : data.error === "invalid_nickname_chars"
+            ? "Use letters, numbers, spaces, hyphens, underscores, or apostrophes."
+            : data.error === "nickname_blocked"
+              ? "Try a different nickname."
+              : "Something went wrong. Try again.";
+      showError(msg);
+    } catch {
+      showError("Couldn't reach the server. Check your connection and try again.");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Continue";
+    }
+  });
+</script>

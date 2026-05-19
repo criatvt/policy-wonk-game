@@ -1,0 +1,32 @@
+---
+// Compact search input shown on notes pages (#9). Submits to /search,
+// where the Pagefind UI does the actual search-and-render. We don't run
+// search inline because Pagefind's index is built at production build
+// time only — astro dev returns 404 for /pagefind/* assets — and the
+// dedicated /search page is the cleanest place to handle the
+// dev-vs-build divergence and read the ?q= URL param.
+//
+// Notes zone only; never rendered in the game zone (per the issue).
+---
+<form
+  role="search"
+  action="/search"
+  method="get"
+  class="flex items-center gap-2 max-w-sm"
+>
+  <label for="notes-search" class="sr-only">Search notes</label>
+  <input
+    id="notes-search"
+    name="q"
+    type="search"
+    placeholder="Search notes…"
+    autocomplete="off"
+    class="flex-1 min-w-0 px-3 py-2 border border-[var(--color-border)] bg-[var(--color-bg-soft)] text-sm text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-charcoal)]"
+  />
+  <button
+    type="submit"
+    class="px-3 py-2 border border-[var(--color-charcoal)] text-[var(--color-charcoal)] text-sm font-medium hover:bg-[var(--color-charcoal)]/5 transition-colors"
+  >
+    Search
+  </button>
+</form>

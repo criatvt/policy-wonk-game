@@ -3,5 +3,43 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import GameContainer from "../components/game/GameContainer.jsx";
 ---
 <BaseLayout title="Policy Wonk — play" zone="game">
+  <!-- Persistent "Log in" affordance for guests (#19). Hidden once
+       authenticated. Sits above GameContainer so it's present across every
+       guest screen: onboarding, rules, module pick, playing, end. -->
+  <header class="flex justify-end -mt-6 mb-4 min-h-[2rem]">
+    <div id="auth-strip">
+      <noscript>
+        <a
+          href="/login"
+          class="inline-block px-3 py-1.5 border border-[var(--color-charcoal)] text-[var(--color-charcoal)] text-xs font-medium hover:bg-[var(--color-charcoal)]/5 transition-colors"
+        >
+          Log in →
+        </a>
+      </noscript>
+    </div>
+  </header>
   <GameContainer client:only="react" />
 </BaseLayout>
+
+<script>
+  // Quiet check for an existing session. On guest play this surfaces a
+  // small "Log in" link in the top-right; on authenticated play we leave
+  // the strip empty (a profile/menu surface can land here later).
+  (async function () {
+    const el = document.getElementById("auth-strip");
+    if (!el) return;
+    try {
+      const res = await fetch("/api/me", { credentials: "same-origin" });
+      const data = (await res.json()) as { user?: unknown } | null;
+      if (data && data.user) {
+        el.innerHTML = "";
+        return;
+      }
+    } catch {
+      // Backend unreachable (offline / static preview). Fall through and
+      // show the link — worst case it just sends them to /login.
+    }
+    el.innerHTML =
+      '<a href="/login" class="inline-block px-3 py-1.5 border border-[var(--color-charcoal)] text-[var(--color-charcoal)] text-xs font-medium hover:bg-[var(--color-charcoal)]/5 transition-colors">Log in →</a>';
+  })();
+</script>

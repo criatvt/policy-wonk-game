@@ -1,0 +1,140 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import avatars from "../../data/avatars.json";
+---
+<BaseLayout title="Pick an avatar · Policy Wonk" description="Pick an avatar for Policy Wonk.">
+  <section class="max-w-2xl mx-auto py-12">
+    <header class="mb-8">
+      <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Step 2 of 2</p>
+      <h1 class="font-serif text-3xl md:text-4xl font-bold leading-tight">Pick an avatar</h1>
+      <p class="mt-3 text-gray-700 leading-relaxed">Placeholder set for now. Real pixel-art avatars land soon.</p>
+      <p id="welcome-line" class="mt-3 text-sm text-gray-500 hidden">
+        Hi <span id="nickname-value" class="font-medium text-gray-700"></span>.
+      </p>
+    </header>
+
+    <fieldset id="avatar-grid" class="grid grid-cols-3 sm:grid-cols-4 gap-4 mb-8">
+      <legend class="sr-only">Choose your avatar</legend>
+      {avatars.map((a) => (
+        <label
+          class="cursor-pointer block"
+          data-slug={a.slug}
+        >
+          <input
+            type="radio"
+            name="avatar"
+            value={a.slug}
+            class="sr-only peer"
+          />
+          <div
+            class="aspect-square rounded-full bg-black text-white flex items-center justify-center font-serif text-3xl peer-checked:ring-4 peer-checked:ring-offset-2 peer-checked:ring-[#006D77] peer-focus:outline-2 peer-focus:outline-[#006D77] transition"
+          >
+            {a.displayName}
+          </div>
+        </label>
+      ))}
+    </fieldset>
+
+    <button
+      type="button"
+      id="submit-btn"
+      disabled
+      class="w-full px-6 py-3 bg-black text-white font-semibold hover:bg-gray-800 disabled:opacity-40 disabled:cursor-not-allowed"
+    >
+      Continue to Policy Wonk
+    </button>
+
+    <div id="error-box" class="hidden mt-6 p-4 border-l-4 border-red-600 bg-red-50">
+      <p class="text-sm text-red-900" id="error-text"></p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  type MeResponse = {
+    ok: boolean;
+    user: null | { id: string; email: string; nickname: string | null; avatar_slug: string | null };
+  };
+
+  const grid = document.getElementById("avatar-grid") as HTMLFieldSetElement;
+  const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
+  const errorBox = document.getElementById("error-box") as HTMLDivElement;
+  const errorText = document.getElementById("error-text") as HTMLParagraphElement;
+  const welcomeLine = document.getElementById("welcome-line") as HTMLParagraphElement;
+  const nicknameValue = document.getElementById("nickname-value") as HTMLSpanElement;
+
+  function showError(msg: string) {
+    errorText.textContent = msg;
+    errorBox.classList.remove("hidden");
+  }
+
+  function clearError() {
+    errorBox.classList.add("hidden");
+  }
+
+  // Gate: must be logged in AND past step 1.
+  (async function gate() {
+    let me: MeResponse;
+    try {
+      const res = await fetch("/api/me", { credentials: "same-origin" });
+      me = (await res.json()) as MeResponse;
+    } catch {
+      window.location.replace("/login");
+      return;
+    }
+    if (!me.user) {
+      window.location.replace("/login");
+      return;
+    }
+    if (!me.user.nickname) {
+      window.location.replace("/onboarding/nickname");
+      return;
+    }
+    if (me.user.avatar_slug) {
+      window.location.replace("/");
+      return;
+    }
+    nicknameValue.textContent = me.user.nickname;
+    welcomeLine.classList.remove("hidden");
+  })();
+
+  grid.addEventListener("change", () => {
+    submitBtn.disabled = !getSelectedSlug();
+  });
+
+  function getSelectedSlug(): string | null {
+    const checked = grid.querySelector<HTMLInputElement>('input[name="avatar"]:checked');
+    return checked?.value ?? null;
+  }
+
+  submitBtn.addEventListener("click", async () => {
+    clearError();
+    const slug = getSelectedSlug();
+    if (!slug) return;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Saving…";
+    try {
+      const res = await fetch("/api/me/profile/avatar", {
+        method: "POST",
+        credentials: "same-origin",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ avatar_slug: slug }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
+      if (res.ok && data.ok) {
+        window.location.assign("/");
+        return;
+      }
+      showError(
+        data.error === "invalid_avatar_slug"
+          ? "That avatar isn't available. Pick another."
+          : "Something went wrong. Try again.",
+      );
+    } catch {
+      showError("Couldn't reach the server. Check your connection and try again.");
+    } finally {
+      submitBtn.disabled = !getSelectedSlug();
+      submitBtn.textContent = "Continue to Policy Wonk";
+    }
+  });
+</script>
