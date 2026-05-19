@@ -61,7 +61,13 @@ Phase 2+ items are stack-ranked here but the ordering is **draft** — to be con
 
 | # | Issue | Status |
 |---|---|---|
-| #26 | Admin panel for user management + troubleshooting (read-only) | ⏸️ Deferred to a Phase 1.x patch — not blocking launch |
+| #26 | Admin panel for user management + troubleshooting (read-only) | ⏸️ Deferred to a Phase 1.x patch — not blocking launch. Work continues on the `phase-1` branch when picked up. |
+
+**Post-launch hotfixes (v0.2.1, same launch day):**
+
+- Magic-link sign-in loop fixed via an intermediate `/auth/confirm` page — email link-scanners were GET-fetching the magic link and eating the one-shot token before users could click. (commit `a140bb1`)
+- Production D1 migrations applied — they'd never been run on prod before launch (pre-launch QA was against the local dev DB). Add an end-to-end signup smoke test against the prod environment to the pre-launch checklist next time.
+- End-screen "Share string" textarea replaced with a real Share button (#35) — uses `navigator.share` where available, clipboard fallback. (commit `49586e6`)
 
 **Frozen decisions for Phase 1:**
 
