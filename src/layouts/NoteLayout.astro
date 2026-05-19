@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import SearchBar from "../components/shared/SearchBar.astro";
 
 interface Props {
   title: string;
@@ -13,10 +14,13 @@ const description = summary ?? `${title} — revision notes from ${moduleName}.`
 ---
 <BaseLayout title={`${title} · ${moduleName} · Policy Wonk`} description={description} zone="notes">
   <article class="max-w-prose mx-auto py-4">
-    <nav class="mb-8 text-sm">
-      <a href="/notes/" class="underline">Notes</a>
-      <span class="mx-2 text-gray-400">›</span>
-      <a href={`/notes/${module}/`} class="underline">{moduleName}</a>
+    <nav class="mb-6 flex flex-wrap items-center justify-between gap-4">
+      <div class="text-sm">
+        <a href="/notes/" class="underline">Notes</a>
+        <span class="mx-2 text-gray-400">›</span>
+        <a href={`/notes/${module}/`} class="underline">{moduleName}</a>
+      </div>
+      <SearchBar />
     </nav>
 
     <header class="mb-8 pb-6 border-b border-gray-300">

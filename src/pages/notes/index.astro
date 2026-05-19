@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import SearchBar from "../../components/shared/SearchBar.astro";
 import { getCollection } from "astro:content";
 import modulesData from "../../data/modules.json";
 
@@ -24,12 +25,15 @@ for (const m of modulesData as Module[]) {
 ---
 <BaseLayout title="Notes · Policy Wonk" description="Revision notes for the 11 Takshashila GCPP modules covered by Policy Wonk." zone="notes">
   <section class="max-w-3xl mx-auto py-8">
-    <header class="mb-12">
+    <header class="mb-10">
       <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Revision</p>
       <h1 class="font-serif text-4xl md:text-5xl font-bold leading-tight">Notes</h1>
       <p class="mt-4 text-gray-700 leading-relaxed text-lg">
         Per-topic revision notes for each Takshashila GCPP module. Notes unlock once you've completed a quiz on that module.
       </p>
+      <div class="mt-6">
+        <SearchBar />
+      </div>
     </header>
 
     {groupOrder.map((groupName) => (
