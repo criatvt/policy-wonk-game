@@ -203,7 +203,13 @@ export default function EndScreen({ state, onPlayAgain }) {
               </button>
             </div>
             <p className="text-xs text-[var(--color-text-muted)] leading-relaxed mt-1">
-              We save your email, nickname, avatar, and history. We don't track you or share with third parties.
+              We save your email, nickname, avatar, and history. We don't track you, don't share with third parties, don't use analytics cookies.{" "}
+              <a
+                href="/privacy"
+                className="underline decoration-1 underline-offset-2 hover:text-[var(--color-text-soft)]"
+              >
+                Read more →
+              </a>
             </p>
           </section>
         );

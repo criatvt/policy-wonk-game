@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout
+  title="Privacy · Policy Wonk"
+  description="What Policy Wonk stores, what it doesn't, and how to delete your account."
+  zone="notes"
+>
+  <section class="max-w-2xl mx-auto py-8 prose-style">
+    <header class="mb-10">
+      <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)] mb-2">Policy Wonk</p>
+      <h1 class="font-serif text-4xl md:text-5xl font-semibold leading-tight">Privacy</h1>
+      <p class="mt-4 text-base leading-relaxed text-[var(--color-text-soft)]">
+        Short version: the game works without an account. If you sign in, we keep your email,
+        nickname, avatar, and play history so you can revise the topics you missed. Nothing else.
+        No trackers, no third-party scripts, no analytics. This page spells out what that means.
+      </p>
+    </header>
+
+    <section class="mb-10">
+      <h2 class="font-serif text-2xl font-semibold mb-3">What we store</h2>
+      <ul class="list-disc pl-6 flex flex-col gap-2 text-base leading-relaxed">
+        <li><strong>Your email address.</strong> Used only to send you the one-time sign-in link and to recognise your account when you come back.</li>
+        <li><strong>Your nickname and avatar.</strong> The display name and pixel-art icon you picked at signup. Shown on shared scores and in your play history.</li>
+        <li><strong>Your play history.</strong> One row per finished game: which module, when, your score, the outcome (won / lost / walked away), and which lifelines you used. This is what drives the per-module notes unlock and your score history.</li>
+        <li><strong>A signed session cookie.</strong> A small token that tells the site you're logged in. It expires after 30 days of inactivity and is never read by anyone else's site.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-serif text-2xl font-semibold mb-3">What we don't store</h2>
+      <ul class="list-disc pl-6 flex flex-col gap-2 text-base leading-relaxed">
+        <li>Analytics or tracking cookies. There is no Google Analytics, no Facebook pixel, no Mixpanel, nothing.</li>
+        <li>Third-party scripts. The page only loads fonts from Google's font CDN — no behavioural tracking.</li>
+        <li>Your IP address, beyond the short-term cache used to rate-limit sign-in emails. That cache resets after 15 minutes and is never written to disk.</li>
+        <li>Anything we'd share with, sell to, or give to anyone outside the project. We don't have advertisers, partners, or data deals.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-serif text-2xl font-semibold mb-3">How long we keep it</h2>
+      <ul class="list-disc pl-6 flex flex-col gap-2 text-base leading-relaxed">
+        <li><strong>Account data</strong> — until you ask us to delete it. We don't auto-prune dormant accounts (yet).</li>
+        <li><strong>Sign-in tokens</strong> — the one-time link tokens are deleted after they're used, or expire after 10 minutes if unused.</li>
+        <li><strong>Rate-limit counters</strong> — auto-reset on a 15-minute window.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-serif text-2xl font-semibold mb-3">How to delete your account</h2>
+      <p class="text-base leading-relaxed">
+        Email <a href="mailto:aasif@aasifj.com?subject=Delete%20my%20Policy%20Wonk%20account" class="text-[var(--color-functional-marigold)] underline decoration-2 underline-offset-2 hover:opacity-80">aasif@aasifj.com</a> from the address on your account with the subject "Delete my account."
+        Everything — email, nickname, avatar, play history — gets wiped within a few days. A self-serve delete button is on the roadmap; until then, this is the manual path.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-serif text-2xl font-semibold mb-3">Guests</h2>
+      <p class="text-base leading-relaxed">
+        Play as Guest doesn't create any server-side record of you. Your in-progress game and any
+        finished sessions live in your browser's <code class="font-mono text-sm">sessionStorage</code> and disappear when you close the tab.
+        If you sign in later in the same tab, those completed sessions get folded into your new account's history
+        so you don't lose them. After that, the local copy is cleared.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-serif text-2xl font-semibold mb-3">Contact</h2>
+      <p class="text-base leading-relaxed">
+        Questions, concerns, or anything that sounds off — email
+        <a href="mailto:aasif@aasifj.com" class="text-[var(--color-functional-marigold)] underline decoration-2 underline-offset-2 hover:opacity-80">aasif@aasifj.com</a>
+        or open an issue on the
+        <a href="https://github.com/criatvt/policy-wonk-game/issues" target="_blank" rel="noopener noreferrer" class="text-[var(--color-functional-marigold)] underline decoration-2 underline-offset-2 hover:opacity-80">GitHub repo</a>.
+      </p>
+    </section>
+
+    <p class="text-xs text-[var(--color-text-muted)] mt-12 pt-6 border-t border-[var(--color-border)]">
+      Last updated 2026-05-19.
+    </p>
+  </section>
+</BaseLayout>
