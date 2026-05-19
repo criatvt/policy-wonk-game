@@ -6,7 +6,7 @@
 import { Hono, type Context } from "hono";
 import { readSession } from "../_lib/session";
 import { findUserById, updateAvatar, updateNickname } from "../_lib/users";
-import { isValidAvatarSlug } from "../_lib/avatars";
+import { deriveAvatarSlug, isValidAvatarSlug } from "../_lib/avatars";
 import {
   insertSession,
   listSessionsByUser,
@@ -223,8 +223,14 @@ me.post("/profile/nickname", async (c) => {
     return c.json({ ok: false, error: "nickname_blocked" }, 400);
   }
 
+  // Auto-derive the avatar slug from the nickname's first alpha character
+  // (#18). Skips the manual avatar picker step — the avatar is just a
+  // pixelated rendering of that letter in the UI.
+  const avatarSlug = deriveAvatarSlug(raw);
+
   await updateNickname(c.env.DB, userId, raw);
-  return c.json({ ok: true, nickname: raw });
+  await updateAvatar(c.env.DB, userId, avatarSlug);
+  return c.json({ ok: true, nickname: raw, avatar_slug: avatarSlug });
 });
 
 // POST /api/me/profile/avatar — step 2 of onboarding (#17).

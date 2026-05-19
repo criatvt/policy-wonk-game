@@ -159,8 +159,9 @@ auth.all("/dev-login", async (c) => {
 });
 
 function nextOnboardingStep(user: User): string {
+  // Avatar is auto-derived at nickname-set time (#18), so the only
+  // remaining onboarding step is the nickname itself.
   if (!user.nickname) return "/onboarding/nickname";
-  if (!user.avatar_slug) return "/onboarding/avatar";
   return "/";
 }
 
