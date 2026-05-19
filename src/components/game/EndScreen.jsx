@@ -11,6 +11,20 @@ function moduleNameFor(moduleId) {
   return m?.name ?? "this module";
 }
 
+// Slugified topics in the question bank are kebab-case (e.g. "sunk-cost-
+// fallacy"). For display in the end-screen "Browse notes for X" link, we
+// title-case the slug as a passable label. The notes file's own
+// frontmatter `title` is the canonical name, but we don't have access to
+// that here — close enough is fine.
+function topicLabel(slug) {
+  if (!slug) return "";
+  return slug
+    .split("-")
+    .filter(Boolean)
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+}
+
 // Per-outcome benefits-led copy for the guest upsell (#24). Three variants
 // matching the three end states. Never frames the pitch as a paywall —
 // the player already sees their wrongs and explanations as a guest;
@@ -172,6 +186,30 @@ export default function EndScreen({ state, onPlayAgain }) {
           <p className="text-sm opacity-80 mt-2">Well played, {state.playerName}.</p>
         )}
       </header>
+
+      {/* Per-wrong-answer notes link (#10). Logged-in only — guests get the
+          upsell card below instead. Lost is currently the only end state
+          with a missed question; walked-away and won have nothing to flag
+          here. */}
+      {authState === "user" && state.status === "lost" && state.fellOnRung && (() => {
+        const q = state.plan?.[state.fellOnRung - 1];
+        if (!q?.topic || !q?.module) return null;
+        return (
+          <div className="border-2 border-[var(--color-charcoal)] p-5 text-center flex flex-col gap-2">
+            <p className="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">
+              Revise the concept
+            </p>
+            <p className="text-base leading-relaxed">
+              <a
+                href={`/notes/${q.module}/${q.topic}`}
+                className="text-[var(--color-functional-marigold)] underline decoration-2 underline-offset-2 hover:opacity-80 font-semibold"
+              >
+                Browse notes for {topicLabel(q.topic)} →
+              </a>
+            </p>
+          </div>
+        );
+      })()}
 
       {/* Guest upsell (#24). Variant by outcome; primary CTA is Log in;
           "Play another as guest" sits inside as the secondary action so
