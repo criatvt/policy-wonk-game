@@ -1,0 +1,92 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+// Intermediate "click to confirm" page for the magic-link flow.
+//
+// Why this page exists: many email clients (Microsoft 365 Safe Links,
+// some corporate spam gateways, Apple Mail link preview) pre-fetch URLs
+// in emails to scan them for safety. A one-shot token consumed on a GET
+// request gets eaten by the pre-fetcher before the real user can click,
+// resulting in a "?error=invalid_or_expired" loop on /login.
+//
+// The fix: the email link points here (a plain static page). This page
+// renders a form whose submit button POSTs the token to /api/auth/verify.
+// Pre-fetchers can fetch this page without consuming the token. Only the
+// actual user-initiated form submission consumes it.
+//
+// The token is read CLIENT-SIDE — Astro's static output evaluates
+// `Astro.url` at build time, where the URL has no `?token=` param. The
+// inline script below picks the token off `window.location` at request
+// time and populates the hidden form input.
+---
+<BaseLayout
+  title="Confirm sign-in · Policy Wonk"
+  description="One more click to finish signing in to Policy Wonk."
+  zone="game"
+>
+  <section class="max-w-md mx-auto py-12">
+    <header class="mb-8">
+      <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Policy Wonk</p>
+      <h1 class="font-serif text-3xl md:text-4xl font-bold leading-tight">Confirm sign-in</h1>
+      <p class="mt-3 text-gray-700 leading-relaxed">
+        One more click to finish signing in. (This extra step is here because some
+        email scanners follow links automatically — confirming here stops your
+        sign-in link from being used up before you click it.)
+      </p>
+    </header>
+
+    {/* The form starts hidden; the inline script below reveals it once a
+        valid-looking token is found in the URL. If the token is missing
+        or malformed, the error block below is revealed instead. */}
+    <form id="confirm-form" method="post" action="/api/auth/verify" class="space-y-4 hidden">
+      <input id="confirm-token" type="hidden" name="token" value="" />
+      <button
+        type="submit"
+        class="w-full px-6 py-3 bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
+      >
+        Sign me in →
+      </button>
+    </form>
+
+    <div
+      id="confirm-error"
+      role="alert"
+      class="hidden p-4 border-l-4 border-[var(--color-functional-red)] bg-[var(--color-functional-red)]/10 text-sm"
+    >
+      <p class="font-semibold mb-1">That link doesn't look right.</p>
+      <p>
+        The token in the URL is missing or malformed. Head back to
+        {" "}<a href="/login" class="underline">the sign-in page</a> and request a fresh link.
+      </p>
+    </div>
+
+    <noscript>
+      <div class="p-4 border-l-4 border-[var(--color-functional-red)] bg-[var(--color-functional-red)]/10 text-sm">
+        <p class="font-semibold mb-1">JavaScript is required to confirm sign-in.</p>
+        <p>Enable JavaScript and reload this page, or request a fresh link from {" "}<a href="/login" class="underline">the sign-in page</a>.</p>
+      </div>
+    </noscript>
+
+    <p class="mt-8 text-xs text-gray-500 leading-relaxed">
+      Links expire 10 minutes after they're sent and can only be used once.
+      If you've waited longer than that, request a fresh one.
+    </p>
+  </section>
+</BaseLayout>
+
+<script is:inline>
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("token") ?? "";
+    const tokenLooksValid = /^[a-f0-9]{64}$/.test(token);
+    const form = document.getElementById("confirm-form");
+    const input = document.getElementById("confirm-token");
+    const error = document.getElementById("confirm-error");
+    if (tokenLooksValid && form && input) {
+      input.value = token;
+      form.classList.remove("hidden");
+    } else if (error) {
+      error.classList.remove("hidden");
+    }
+  })();
+</script>
