@@ -29,18 +29,35 @@ const errorMessage = errorParam ? (errorMessages[errorParam] ?? "Sign-in failed.
       <button
         type="button"
         id="show-email-btn"
-        class="flex flex-col gap-2 px-6 py-6 border-2 border-[var(--color-charcoal)] bg-[var(--color-charcoal)] text-[var(--color-bg)] text-left hover:opacity-90 transition-opacity"
+        class="px-6 py-4 border-2 border-[var(--color-charcoal)] bg-[var(--color-charcoal)] text-[var(--color-bg)] text-lg font-semibold hover:opacity-90 transition-opacity"
       >
-        <span class="text-lg font-semibold">Sign in with email →</span>
-        <span class="text-sm opacity-90 leading-snug">One-time link sent to your inbox. Saves your nickname, avatar, and play history.</span>
+        Sign in with email →
       </button>
       <a
         href="/play"
-        class="flex flex-col gap-2 px-6 py-6 border-2 border-[var(--color-charcoal)] text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)]/5 transition-colors"
+        class="px-6 py-4 border-2 border-[var(--color-charcoal)] text-[var(--color-charcoal)] text-lg font-semibold text-center hover:bg-[var(--color-charcoal)]/5 transition-colors"
       >
-        <span class="text-lg font-semibold">Play as guest →</span>
-        <span class="text-sm leading-snug">Jump straight in. State lasts the browser tab, nothing saved beyond that.</span>
+        Play as guest →
       </a>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-x-6 gap-y-6 mt-6 text-sm leading-relaxed">
+      <div class="flex flex-col gap-2">
+        <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">If you sign in</p>
+        <ul class="list-none p-0 m-0 flex flex-col gap-1.5 text-[var(--color-text-soft)]">
+          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Revision notes unlock for each module you play</span></li>
+          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Your scores and play history stick around</span></li>
+          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Coming soon: flashcards, spaced repetition, weak-area dashboard</span></li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-2">
+        <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">If you play as guest</p>
+        <ul class="list-none p-0 m-0 flex flex-col gap-1.5 text-[var(--color-text-soft)]">
+          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Full game — same ladder, same lifelines</span></li>
+          <li class="flex gap-2"><span aria-hidden="true">·</span><span>State persists in this tab; gone when you close it</span></li>
+          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Sign in later — your guest history folds into the new account</span></li>
+        </ul>
+      </div>
     </div>
 
     <div id="email-form-wrap" class={`mt-10 pt-8 border-t border-[var(--color-border)] ${errorMessage ? "" : "hidden"}`}>
