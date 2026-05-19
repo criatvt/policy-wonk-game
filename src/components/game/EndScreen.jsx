@@ -183,7 +183,7 @@ export default function EndScreen({ state, onPlayAgain }) {
           <p className="text-sm opacity-70">Fell at Q{state.fellOnRung}.</p>
         )}
         {state.playerName && (
-          <p className="text-sm opacity-80 mt-2">Well played, {state.playerName}.</p>
+          <p className="text-sm opacity-80 mt-2">Thanks for playing, {state.playerName}.</p>
         )}
       </header>
 
