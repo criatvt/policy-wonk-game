@@ -12,52 +12,56 @@ Phase 2+ items are stack-ranked here but the ordering is **draft** — to be con
 
 ---
 
-## Phase 1 — Notes + Accounts (frozen 2026-05-17)
+## Phase 1 — Notes + Accounts (frozen 2026-05-17, shipped 2026-05-19)
+
+**Status:** substantially shipped. Tracks A, B, C complete; Track D (admin panel) deferred. See [`CHANGELOG.md`](policy-wonk-game/CHANGELOG.md#020--2026-05-19--phase-1-notes--accounts) for the per-feature summary and known issues.
 
 **Goal:** unlock the learning loop. Players who get questions wrong can revise via notes; their progress saves across sessions if they log in. Guest play stays fully open and first-class.
 
 **Why bundle:** notes give login a reason to exist; login gives notes a moat. Shipping notes open first and gating later would be a UX regression. Shipping login without notes leaves nothing to retain.
 
-**Track A — Notes**
+**Track A — Notes ✅**
 
-| # | Issue |
-|---|---|
-| #4 | Notes overview (parent) |
-| #6 | Source-content extraction script |
-| #7 | Cleaning + structuring script |
-| #8 | Astro routes + content collection |
-| #9 | Pagefind search |
-| #10 | End-screen "Browse notes" link (gated: logged in + completed module) |
-| #11 | Tighten `topic` validation |
-| #13 | Write notes for 3 lead modules (CP 22, CG 1, CP 10) |
-| #14 | Notes index page with per-module lock state |
+| # | Issue | Status |
+|---|---|---|
+| #4 | Notes overview (parent) | ✅ Closed |
+| #6 | Source-content extraction script | ✅ Closed |
+| #7 | Cleaning + structuring script | ✅ Closed |
+| #8 | Astro routes + content collection | ✅ Closed |
+| #9 | Pagefind search | ✅ Closed |
+| #10 | End-screen "Browse notes" link (gated: logged in + completed module) | ✅ Closed |
+| #11 | Tighten `topic` validation | ✅ Closed |
+| #13 | Write notes for 3 lead modules (CP 22, CG 1, CP 10) | ✅ Closed — see CHANGELOG known issues for provenance + re-authoring plan |
+| #14 | Notes index page with per-module lock state | ✅ Closed |
 
-**Track B — Accounts**
+**Track B — Accounts ✅**
 
-| # | Issue |
-|---|---|
-| #15 | Backend setup (Cloudflare Workers + KV/D1) |
-| #16 | Magic-link login (Resend) |
-| #17 | Signup flow (nickname + avatar) |
-| #18 | Curated avatar set (pixelated NFT aesthetic, gender-spectrum) |
-| #19 | Play as Guest path |
-| #20 | Guest-to-account merge on login |
-| #21 | Saved session history |
-| #22 | Module-played tracking |
+| # | Issue | Status |
+|---|---|---|
+| #15 | Backend setup (Cloudflare Workers + KV/D1) | ✅ Closed |
+| #16 | Magic-link login (Resend) | ✅ Closed |
+| #17 | Signup flow (nickname + avatar) | ✅ Closed |
+| #18 | Curated avatar set | ✅ Closed — shipped as 26 auto-derived letter slugs; pixel-letter render surface deferred |
+| #19 | Play as Guest path | ✅ Closed |
+| #20 | Guest-to-account merge on login | ✅ Closed |
+| #21 | Saved session history | ✅ Closed |
+| #22 | Module-played tracking | ✅ Closed |
+| #32 | Skip in-game name prompt for logged-in users | ✅ Closed |
 
-**Track C — Upsells + Docs**
+**Track C — Upsells + Docs ✅**
 
-| # | Issue |
-|---|---|
-| #23 | Pre-game login upsell |
-| #24 | Post-game login upsell for guests |
-| #25 | Privacy & data note at email collection |
+| # | Issue | Status |
+|---|---|---|
+| #23 | Pre-game login upsell | ✅ Closed |
+| #24 | Post-game login upsell for guests | ✅ Closed |
+| #25 | Privacy & data note at email collection | ✅ Closed |
+| #33 | "Well played" copy cosmetic | ✅ Closed |
 
-**Track D — Admin**
+**Track D — Admin ⏸️**
 
-| # | Issue |
-|---|---|
-| #26 | Admin panel for user management + troubleshooting (read-only) |
+| # | Issue | Status |
+|---|---|---|
+| #26 | Admin panel for user management + troubleshooting (read-only) | ⏸️ Deferred to a Phase 1.x patch — not blocking launch |
 
 **Frozen decisions for Phase 1:**
 

@@ -12,7 +12,17 @@ For Takshashila Institution alumni, students of GCPP and PGP revising concepts, 
 
 You answer 15 multiple-choice questions of increasing difficulty, one module at a time. Three lifelines (50:50, Audience Poll, Ask an AI), two safety nets (Q5 and Q10), and the option to walk away from Q6 onwards. Top score: 1 crore credibility points.
 
-No accounts. No tracking. No data leaves your browser.
+The game is fully open — no account needed to play. **Play as Guest** is a first-class entry alongside Sign in. Optional email + magic-link login unlocks the learning loop: revision notes per module (after you've completed a quiz on it), saved play history, nickname + avatar.
+
+No tracking. No analytics. No third-party scripts. See [`/privacy`](https://policywonkgame.aasifj.com/privacy) for the full breakdown.
+
+## Known issues
+
+A few rough edges to be aware of (also tracked in [`CHANGELOG.md`](./CHANGELOG.md#unreleased)):
+
+- The current revision notes for CP 22 / CG 1 / CP 10 were authored from question-bank explanations + general public-policy knowledge, not directly from the GCPP source PDFs. Disclosed in the notes footer; re-authoring through the proper ingest pipeline is on the follow-up list.
+- The end-screen "Browse notes for [topic]" link 404s for topic slugs that don't yet have a 1:1 note file.
+- Avatars are stored as letter slugs but the pixel-letter render surface isn't shipped yet.
 
 ## Run it locally
 
@@ -91,14 +101,13 @@ Pull requests welcome. A few notes:
 
 ## Roadmap
 
-**Upcoming features**
+See [`ROADMAP.md`](../ROADMAP.md) for phasing rationale and the per-phase issue list. [`CHANGELOG.md`](./CHANGELOG.md) tracks what shipped in each release.
 
-- **Wonky** — a host with quirky policy traits.
+**In flight after Phase 1**
+
+- **Wonky** — a host character with quirky policy traits, deferred to v2/v3 after playtesting.
 - **Smarter Ask an AI** — richer characters and sharper answers from the four AI experts.
-- **Notes for revising topics** — curated notes from each module.
-
-**Polish & fixes**
-
+- **Admin panel** — Phase 1 Track D, deferred for a follow-up patch.
 - **Mobile optimisation** — current build is desktop-first; touch-friendly layouts coming.
 
 See [open issues](https://github.com/criatvt/policy-wonk-game/issues) for the full list.
