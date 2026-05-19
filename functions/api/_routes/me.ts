@@ -109,6 +109,66 @@ me.post("/sessions", async (c) => {
   return c.json({ ok: true, session: toView(row) });
 });
 
+// POST /api/me/sessions/merge — fold a guest's accumulated session
+// payloads into the authenticated user's history (#20). Body shape:
+//   { sessions: [<NewSession>, ...] }   (max 50 per call)
+//
+// Same per-session validation as POST /sessions and the same idempotency
+// on (user_id, client_id), so re-merging an already-merged session is a
+// no-op. Invalid items are skipped (counted) rather than failing the
+// whole batch — partial-success is friendlier when a stale guest payload
+// from an older schema sneaks in.
+me.post("/sessions/merge", async (c) => {
+  const userId = await requireUserId(c);
+  if (!userId) return c.json({ ok: false, error: "unauthorized" }, 401);
+
+  let body: { sessions?: unknown };
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({ ok: false, error: "invalid_body" }, 400);
+  }
+
+  const sessions = body?.sessions;
+  if (!Array.isArray(sessions)) {
+    return c.json({ ok: false, error: "invalid_body" }, 400);
+  }
+  if (sessions.length === 0) {
+    return c.json({ ok: true, merged: 0, skipped: 0 });
+  }
+  if (sessions.length > 50) {
+    return c.json({ ok: false, error: "too_many_sessions" }, 400);
+  }
+
+  let merged = 0;
+  let skipped = 0;
+  for (const raw of sessions) {
+    if (!raw || typeof raw !== "object") {
+      skipped++;
+      continue;
+    }
+    const v = validateSessionBody(raw as Record<string, unknown>);
+    if ("error" in v) {
+      skipped++;
+      continue;
+    }
+    await insertSession(c.env.DB, {
+      user_id: userId,
+      module_id: v.module_id,
+      client_id: v.client_id,
+      started_at: v.started_at,
+      ended_at: v.ended_at,
+      score: v.score,
+      highest_cleared_rung: v.highest_cleared_rung,
+      outcome: v.outcome,
+      lifelines_used: v.lifelines_used,
+    });
+    merged++;
+  }
+
+  return c.json({ ok: true, merged, skipped });
+});
+
 // GET /api/me/sessions?limit=50 — newest-first list for the /me page.
 me.get("/sessions", async (c) => {
   const userId = await requireUserId(c);

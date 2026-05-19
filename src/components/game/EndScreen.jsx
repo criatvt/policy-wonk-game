@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { formatIndianNumber } from "../../lib/gameEngine.js";
+import { stashGuestSession } from "../../lib/guestSessions.js";
 import modulesData from "../../data/modules.json";
 
 const SITE_URL = "https://policywonkgame.aasifj.com";
@@ -49,12 +50,11 @@ function lifelinesUsed(lifelines) {
   return Object.keys(lifelines).filter((k) => lifelines[k] === false);
 }
 
-async function postSession(state) {
+function sessionPayload(state) {
   const outcome = outcomeForApi(state.status);
-  if (!outcome) return;
-  if (!state.clientSessionId || !state.selectedModule) return;
-
-  const payload = {
+  if (!outcome) return null;
+  if (!state.clientSessionId || !state.selectedModule) return null;
+  return {
     client_id: state.clientSessionId,
     module_id: state.selectedModule,
     started_at: new Date(state.startTime).toISOString(),
@@ -64,7 +64,10 @@ async function postSession(state) {
     outcome,
     lifelines_used: lifelinesUsed(state.lifelines),
   };
+}
 
+async function postSessionForUser(payload) {
+  if (!payload) return;
   try {
     await fetch("/api/me/sessions", {
       method: "POST",
@@ -72,9 +75,8 @@ async function postSession(state) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     });
-    // 401 (guest) and 4xx (validation) are silently dropped. Sessions
-    // are an enhancement; failing to record one must not break the
-    // end-screen for the player.
+    // 4xx (validation) is silently dropped. Sessions are an enhancement;
+    // failing to record one must not break the end-screen for the player.
   } catch {
     // Network failure — same posture as above.
   }
@@ -110,12 +112,6 @@ export default function EndScreen({ state, onPlayAgain }) {
   const [authState, setAuthState] = useState("loading");
 
   useEffect(() => {
-    if (postedRef.current) return;
-    postedRef.current = true;
-    postSession(state);
-  }, [state]);
-
-  useEffect(() => {
     let cancelled = false;
     (async () => {
       try {
@@ -133,6 +129,24 @@ export default function EndScreen({ state, onPlayAgain }) {
       cancelled = true;
     };
   }, []);
+
+  // Record the session once the auth state is known. Logged-in users hit
+  // /api/me/sessions directly; guests stash the payload in sessionStorage
+  // (#20) so it can be merged into their account if they sign in later in
+  // the same tab. The postedRef guard keeps StrictMode double-mounts and
+  // any incidental re-renders from double-recording.
+  useEffect(() => {
+    if (postedRef.current) return;
+    if (authState === "loading") return;
+    postedRef.current = true;
+    const payload = sessionPayload(state);
+    if (!payload) return;
+    if (authState === "user") {
+      postSessionForUser(payload);
+    } else {
+      stashGuestSession(payload);
+    }
+  }, [state, authState]);
 
   async function copyShare() {
     try {
