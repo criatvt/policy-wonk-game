@@ -18,12 +18,14 @@ export async function getStaticPaths() {
 
 const { note } = Astro.props;
 const { Content } = await note.render();
+const topic = note.slug.split("/").pop() ?? "";
 ---
 <NoteLayout
   title={note.data.title}
   module={note.data.module}
   moduleName={note.data.moduleName}
   summary={note.data.summary}
+  topic={topic}
 >
   <Content />
 </NoteLayout>
