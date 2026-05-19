@@ -3,5 +3,40 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import GameContainer from "../components/game/GameContainer.jsx";
 ---
 <BaseLayout title="Policy Wonk — play" zone="game">
+  <!-- Persistent "Log in" affordance for guests (#19). Hidden once
+       authenticated. Sits above GameContainer so it's present across every
+       guest screen: onboarding, rules, module pick, playing, end. -->
+  <header class="flex justify-end -mt-6 mb-2 min-h-[1.25rem]">
+    <div id="auth-strip" class="text-xs">
+      <noscript>
+        <a href="/login" class="underline text-[var(--color-text-soft)] hover:opacity-80">
+          Log in
+        </a>
+      </noscript>
+    </div>
+  </header>
   <GameContainer client:only="react" />
 </BaseLayout>
+
+<script>
+  // Quiet check for an existing session. On guest play this surfaces a
+  // small "Log in" link in the top-right; on authenticated play we leave
+  // the strip empty (a profile/menu surface can land here later).
+  (async function () {
+    const el = document.getElementById("auth-strip");
+    if (!el) return;
+    try {
+      const res = await fetch("/api/me", { credentials: "same-origin" });
+      const data = (await res.json()) as { user?: unknown } | null;
+      if (data && data.user) {
+        el.innerHTML = "";
+        return;
+      }
+    } catch {
+      // Backend unreachable (offline / static preview). Fall through and
+      // show the link — worst case it just sends them to /login.
+    }
+    el.innerHTML =
+      '<a href="/login" class="underline text-[var(--color-text-soft)] hover:opacity-80">Have an account? Log in →</a>';
+  })();
+</script>

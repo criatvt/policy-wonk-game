@@ -140,6 +140,37 @@ const SCREEN_PLAYING = "playing";
 // rules again. Aasif's call (2026-05-09).
 const RULES_SEEN_KEY = "policyWonk:rulesSeen";
 
+// sessionStorage key — guest play state (issue #19). Snapshot of
+// { screen, name, moduleId, state } persisted on every change so a
+// refresh restores the in-progress game. Cleared when the player hits
+// "Play again" on the end screen. Tab close wipes it for free
+// (sessionStorage semantics) — exactly the ephemerality the issue asks
+// for. Logged-in players use the same mechanism; their session also gets
+// POSTed to /api/me/sessions at the end for permanent storage.
+const GAME_STATE_KEY = "policyWonk:gameState";
+
+function loadPersistedGame() {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.sessionStorage?.getItem(GAME_STATE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") return null;
+    return parsed;
+  } catch {
+    return null;
+  }
+}
+
+function clearPersistedGame() {
+  if (typeof window === "undefined") return;
+  try {
+    window.sessionStorage?.removeItem(GAME_STATE_KEY);
+  } catch {
+    // best-effort
+  }
+}
+
 // Storied rules — one card per stage, the player clicks Next through
 // them. Replaces the all-in-one rules screen.
 const RULES_STAGES = [
@@ -166,14 +197,44 @@ const RULES_STAGES = [
 ];
 
 export default function GameContainer() {
-  const [screen, setScreen] = useState(SCREEN_ONBOARDING);
-  const [name, setName] = useState("");
-  const [moduleId, setModuleId] = useState(modules[0]?.id ?? "");
-  const [state, setState] = useState(null);
+  // Read the persisted snapshot once at first render so the rehydrated
+  // screen paints immediately (no flash of the onboarding screen).
+  // useState initializers run once on mount.
+  const [persisted] = useState(loadPersistedGame);
+  const [screen, setScreen] = useState(() => persisted?.screen ?? SCREEN_ONBOARDING);
+  const [name, setName] = useState(() => persisted?.name ?? "");
+  const [moduleId, setModuleId] = useState(
+    () => persisted?.moduleId ?? (modules[0]?.id ?? ""),
+  );
+  const [state, setState] = useState(() => persisted?.state ?? null);
   const [loadError, setLoadError] = useState(null);
   const [timerRunning, setTimerRunning] = useState(false);
   const [walkAwayConfirm, setWalkAwayConfirm] = useState(false);
-  const [rulesStage, setRulesStage] = useState(0);
+  const [rulesStage, setRulesStage] = useState(() => persisted?.rulesStage ?? 0);
+
+  // Persist the game snapshot on any change. Skip while a lock is mid-flight
+  // (answerLocked=true but correctIndex not yet resolved) — that 1s window
+  // owns an async chain inside handleLock that won't re-fire after a refresh,
+  // so freezing the persisted snapshot at the pre-lock state lets a refreshed
+  // player re-attempt the lock cleanly.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const lockInFlight =
+      state &&
+      state.status === "reveal-question" &&
+      state.answerLocked &&
+      state.correctIndex == null;
+    if (lockInFlight) return;
+    try {
+      window.sessionStorage?.setItem(
+        GAME_STATE_KEY,
+        JSON.stringify({ screen, name, moduleId, state, rulesStage }),
+      );
+    } catch {
+      // sessionStorage may be unavailable (private mode, quota). Not blocking
+      // — the player can keep playing, just without refresh-survival.
+    }
+  }, [screen, name, moduleId, state, rulesStage]);
 
   const currentQuestion = state ? state.plan[state.currentRung - 1] : null;
   const tierTimer = currentQuestion ? timerForRung(state.currentRung, currentQuestion) : 0;
@@ -229,6 +290,10 @@ export default function GameContainer() {
   }
 
   const resetToOnboarding = useCallback(() => {
+    // Wipe the persisted snapshot so a refresh from the next onboarding
+    // screen doesn't snap them back into the finished game. The persist
+    // effect will re-save the fresh empty snapshot on the next render.
+    clearPersistedGame();
     setState(null);
     setTimerRunning(false);
     setWalkAwayConfirm(false);
