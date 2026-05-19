@@ -1,8 +1,39 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { formatIndianNumber } from "../../lib/gameEngine.js";
+import modulesData from "../../data/modules.json";
 
 const SITE_URL = "https://policywonkgame.aasifj.com";
 const PGP_URL = "https://school.takshashila.org.in/pgp";
+
+function moduleNameFor(moduleId) {
+  const m = modulesData.find((x) => x.id === moduleId);
+  return m?.name ?? "this module";
+}
+
+// Per-outcome benefits-led copy for the guest upsell (#24). Three variants
+// matching the three end states. Never frames the pitch as a paywall —
+// the player already sees their wrongs and explanations as a guest;
+// logging in adds revision tools on top.
+function upsellCopy(state) {
+  if (state.status === "lost") {
+    const moduleName = moduleNameFor(state.selectedModule);
+    return {
+      headline: `Want to revise ${moduleName}?`,
+      body: "Log in and the notes for this module unlock for you instantly. Your play history sticks around too.",
+    };
+  }
+  if (state.status === "won") {
+    return {
+      headline: "Want to save this score and keep coming back?",
+      body: "Log in to track your scores across modules and revisit the ones you nail.",
+    };
+  }
+  // walked-away
+  return {
+    headline: "Want to come back and finish strong?",
+    body: "Log in to pick up where you left off. Notes for completed modules unlock too.",
+  };
+}
 
 // Canonical outcomes match the server enum (sessions.outcome). The client
 // engine uses "walked-away" historically; normalize at the API boundary.
@@ -73,12 +104,35 @@ function headlineForStatus(status, score) {
 export default function EndScreen({ state, onPlayAgain }) {
   const share = shareString(state);
   const postedRef = useRef(false);
+  // "loading" while /api/me is in flight, then "guest" or "user". We
+  // render nothing in the upsell slot until we know — it's a fast call,
+  // worth a short blank to avoid flashing the wrong variant.
+  const [authState, setAuthState] = useState("loading");
 
   useEffect(() => {
     if (postedRef.current) return;
     postedRef.current = true;
     postSession(state);
   }, [state]);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch("/api/me", { credentials: "same-origin" });
+        if (!res.ok) throw new Error("me_failed");
+        const data = await res.json();
+        if (cancelled) return;
+        setAuthState(data?.user ? "user" : "guest");
+      } catch {
+        if (cancelled) return;
+        setAuthState("guest");
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   async function copyShare() {
     try {
@@ -104,6 +158,42 @@ export default function EndScreen({ state, onPlayAgain }) {
           <p className="text-sm opacity-80 mt-2">Well played, {state.playerName}.</p>
         )}
       </header>
+
+      {/* Guest upsell (#24). Variant by outcome; primary CTA is Log in;
+          "Play another as guest" sits inside as the secondary action so
+          the standalone Play again button below can be hidden for guests
+          without losing the path forward. */}
+      {authState === "guest" && (() => {
+        const { headline, body } = upsellCopy(state);
+        return (
+          <section className="border-2 border-[var(--color-charcoal)] p-6 flex flex-col gap-4">
+            <h2 className="font-serif text-2xl md:text-3xl font-semibold leading-tight">
+              {headline}
+            </h2>
+            <p className="text-base leading-relaxed text-[var(--color-text-soft)]">
+              {body}
+            </p>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-3 mt-1">
+              <a
+                href="/login"
+                className="px-6 py-3 bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
+              >
+                Log in →
+              </a>
+              <button
+                type="button"
+                onClick={onPlayAgain}
+                className="text-sm underline decoration-2 underline-offset-2 text-[var(--color-text-soft)] hover:text-[var(--color-text)]"
+              >
+                Play another as guest →
+              </button>
+            </div>
+            <p className="text-xs text-[var(--color-text-muted)] leading-relaxed mt-1">
+              We save your email, nickname, avatar, and history. We don't track you or share with third parties.
+            </p>
+          </section>
+        );
+      })()}
 
       <div className="flex flex-col gap-3">
         <p className="text-sm opacity-80">Share string</p>
@@ -137,13 +227,18 @@ export default function EndScreen({ state, onPlayAgain }) {
         </p>
       </div>
 
-      <button
-        type="button"
-        onClick={onPlayAgain}
-        className="self-center mt-2 px-6 py-3 rounded bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
-      >
-        Play again
-      </button>
+      {/* Guests already get "Play another as guest" inside the upsell card,
+          so don't duplicate the button here. Hide while authState is loading
+          to avoid the brief flash for the (rare) logged-in case. */}
+      {authState === "user" && (
+        <button
+          type="button"
+          onClick={onPlayAgain}
+          className="self-center mt-2 px-6 py-3 rounded bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
+        >
+          Play again
+        </button>
+      )}
 
       <section className="border-t border-[var(--color-border)] pt-6 flex flex-col gap-3">
         <h2 className="text-xs uppercase tracking-widest text-[var(--color-functional-marigold)]">Open source</h2>
