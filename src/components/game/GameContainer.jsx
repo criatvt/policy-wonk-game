@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import modules from "../../data/modules.json";
 import expertsData from "../../data/experts.json";
 import {
@@ -216,6 +216,12 @@ export default function GameContainer() {
   // shouldn't be asked their name again at the start of every game (#32).
   const [loggedInUser, setLoggedInUser] = useState(null);
 
+  // Rung that was mounted from sessionStorage (or null if no rehydrate).
+  // Used to tell the Question component to render instantly instead of
+  // replaying the typewriter and option fade-in — the player has already
+  // read this question, re-typing it on refresh feels broken.
+  const rehydratedRungRef = useRef(persisted?.state?.currentRung ?? null);
+
   // Compute the "next" screen after onboarding completes — RULES the first
   // time, MODULE_PICK on returning. Shared between manual onboarding
   // advance, the auto-skip for logged-in users, and Play again.
@@ -351,10 +357,21 @@ export default function GameContainer() {
     }
   }, [loggedInUser, goPostOnboarding]);
 
-  // After options finish revealing, start the timer for this question
+  // After options finish revealing, start the timer for this question.
+  // Stamp questionStartedAt the first time this fires per rung so a
+  // mid-question refresh can compute the right remaining seconds. On
+  // rehydrate (instant Question), this also fires immediately — the
+  // null-guard preserves the original timestamp.
   const handleRevealComplete = useCallback(() => {
     if (state?.status === "reveal-question") {
       setTimerRunning(true);
+      if (state.questionStartedAt == null) {
+        setState((s) =>
+          s && s.status === "reveal-question" && s.questionStartedAt == null
+            ? { ...s, questionStartedAt: Date.now() }
+            : s,
+        );
+      }
     }
   }, [state?.status]);
 
@@ -741,6 +758,11 @@ export default function GameContainer() {
             <Timer
               seconds={tierTimer}
               running={timerRunning}
+              initialElapsedSec={
+                state.questionStartedAt != null
+                  ? (Date.now() - state.questionStartedAt) / 1000
+                  : 0
+              }
               onExpire={handleExpire}
             />
           )}
@@ -752,6 +774,7 @@ export default function GameContainer() {
           locked={state.answerLocked}
           eliminated={state.fiftyFiftyEliminated}
           revealCorrect={inReveal ? state.correctIndex : null}
+          instant={rehydratedRungRef.current === state.currentRung}
           onSelect={handleSelect}
           onRevealComplete={handleRevealComplete}
         />

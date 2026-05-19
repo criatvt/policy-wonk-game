@@ -23,19 +23,33 @@ export default function Question({
   // null while answering; the index of the correct option once the
   // engine has revealed (used to paint green / red).
   revealCorrect = null,
+  // `instant` skips the typewriter + fade-in reveal and shows the question
+  // fully composed on first paint. Set when the player refreshes mid-game
+  // and rehydrates from sessionStorage — they've already seen this question,
+  // re-typing it would feel broken. Timer starts immediately.
+  instant = false,
   onSelect,
   onRevealComplete,
 }) {
-  const [stemDone, setStemDone] = useState(false);
-  const [optionsTyped, setOptionsTyped] = useState(0); // 0..4
-  const [pauseAfterStem, setPauseAfterStem] = useState(false);
+  const [stemDone, setStemDone] = useState(instant);
+  const [optionsTyped, setOptionsTyped] = useState(instant ? 4 : 0); // 0..4
+  const [pauseAfterStem, setPauseAfterStem] = useState(instant);
 
-  // Reset on new question
+  // Reset on new question. If `instant` is true we land directly in the
+  // fully-revealed state — useful on rehydrate, but also automatically
+  // correct if the player advances to a fresh rung while still on the
+  // same component instance (deps include `instant` so the effect re-runs).
   useEffect(() => {
-    setStemDone(false);
-    setOptionsTyped(0);
-    setPauseAfterStem(false);
-  }, [question.id]);
+    if (instant) {
+      setStemDone(true);
+      setOptionsTyped(4);
+      setPauseAfterStem(true);
+    } else {
+      setStemDone(false);
+      setOptionsTyped(0);
+      setPauseAfterStem(false);
+    }
+  }, [question.id, instant]);
 
   // After stem finishes typing, hold a 1000ms pause before option A so
   // the player can absorb the question before options arrive.
@@ -47,21 +61,30 @@ export default function Question({
 
   // After all 4 options typed, give a long settle pause (4s) so the
   // player can re-read everything in calm before the timer starts.
+  // On rehydrate (`instant`) skip the settle — they've already had it.
   useEffect(() => {
     if (optionsTyped !== 4) return;
+    if (instant) {
+      onRevealComplete?.();
+      return;
+    }
     const t = setTimeout(() => onRevealComplete?.(), 4000);
     return () => clearTimeout(t);
-  }, [optionsTyped, onRevealComplete]);
+  }, [optionsTyped, onRevealComplete, instant]);
 
   return (
     <div className="flex flex-col gap-4">
       <div className="font-serif min-h-[3em] text-xl md:text-2xl leading-snug" aria-live="polite">
-        <Typewriter
-          text={question.question}
-          perCharMs={50}
-          cursorWhileTyping
-          onDone={() => setStemDone(true)}
-        />
+        {instant ? (
+          question.question
+        ) : (
+          <Typewriter
+            text={question.question}
+            perCharMs={50}
+            cursorWhileTyping
+            onDone={() => setStemDone(true)}
+          />
+        )}
       </div>
 
       <ul className="flex flex-col gap-2 list-none p-0 m-0">

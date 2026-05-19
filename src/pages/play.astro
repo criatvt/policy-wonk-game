@@ -6,11 +6,14 @@ import GameContainer from "../components/game/GameContainer.jsx";
   <!-- Persistent "Log in" affordance for guests (#19). Hidden once
        authenticated. Sits above GameContainer so it's present across every
        guest screen: onboarding, rules, module pick, playing, end. -->
-  <header class="flex justify-end -mt-6 mb-2 min-h-[1.25rem]">
-    <div id="auth-strip" class="text-xs">
+  <header class="flex justify-end -mt-6 mb-4 min-h-[2rem]">
+    <div id="auth-strip">
       <noscript>
-        <a href="/login" class="underline text-[var(--color-text-soft)] hover:opacity-80">
-          Log in
+        <a
+          href="/login"
+          class="inline-block px-3 py-1.5 border border-[var(--color-charcoal)] text-[var(--color-charcoal)] text-xs font-medium hover:bg-[var(--color-charcoal)]/5 transition-colors"
+        >
+          Log in →
         </a>
       </noscript>
     </div>
@@ -37,6 +40,6 @@ import GameContainer from "../components/game/GameContainer.jsx";
       // show the link — worst case it just sends them to /login.
     }
     el.innerHTML =
-      '<a href="/login" class="underline text-[var(--color-text-soft)] hover:opacity-80">Have an account? Log in →</a>';
+      '<a href="/login" class="inline-block px-3 py-1.5 border border-[var(--color-charcoal)] text-[var(--color-charcoal)] text-xs font-medium hover:bg-[var(--color-charcoal)]/5 transition-colors">Log in →</a>';
   })();
 </script>

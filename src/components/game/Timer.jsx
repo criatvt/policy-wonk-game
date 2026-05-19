@@ -3,20 +3,35 @@ import { useEffect, useRef, useState } from "react";
 // Tier-based countdown. Starts when `running` flips true. Pauses when
 // running flips false. Calls onExpire() at zero. Visual warning kicks
 // in at the last 5 seconds (functional red).
+//
+// `initialElapsedSec` pre-banks elapsed time at mount — used when a
+// player refreshes mid-question and the timer needs to resume at the
+// correct remaining value rather than restart from full.
 
-export default function Timer({ seconds, running, onExpire, onTick }) {
-  const [remaining, setRemaining] = useState(seconds);
+export default function Timer({
+  seconds,
+  running,
+  initialElapsedSec = 0,
+  onExpire,
+  onTick,
+}) {
+  const [remaining, setRemaining] = useState(
+    Math.max(0, seconds - initialElapsedSec),
+  );
   const expiredRef = useRef(false);
   const startStampRef = useRef(null);
-  const accumulatedRef = useRef(0);
+  const accumulatedRef = useRef(initialElapsedSec * 1000);
   const rafRef = useRef(null);
 
-  // Reset when `seconds` changes (new question)
+  // Reset when `seconds` changes (new question). `initialElapsedSec`
+  // is intentionally read at mount only — it represents elapsed time
+  // already banked before this component took over.
   useEffect(() => {
-    setRemaining(seconds);
+    setRemaining(Math.max(0, seconds - initialElapsedSec));
     expiredRef.current = false;
-    accumulatedRef.current = 0;
+    accumulatedRef.current = initialElapsedSec * 1000;
     startStampRef.current = null;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [seconds]);
 
   useEffect(() => {

@@ -136,6 +136,11 @@ export function createInitialState({ name, moduleId, plan }) {
     score: 0,
     fellOnRung: null,
     startTime: Date.now(),
+    // Wall-clock timestamp at which the current question's timer started.
+    // Set on the first handleRevealComplete for each rung; reset to null
+    // when advancing. Used by the Timer to resume at the correct elapsed
+    // value after a sessionStorage rehydrate.
+    questionStartedAt: null,
     // Stable client-side id so the EndScreen POST to /api/me/sessions is
     // idempotent across StrictMode double-mount, refresh, or retry.
     clientSessionId: cryptoRandomUUID(),
@@ -205,6 +210,7 @@ export function advanceToNextQuestion(state) {
     pollData: null,
     expertVerdict: null,
     status: "reveal-question",
+    questionStartedAt: null,
   };
 }
 
