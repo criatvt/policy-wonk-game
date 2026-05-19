@@ -65,7 +65,11 @@ auth.post("/send-link", async (c) => {
   });
 
   const origin = getOrigin(c);
-  const verifyUrl = `${origin}/api/auth/verify?token=${token}`;
+  // Email link goes to the static confirm page (not the API). The user's
+  // explicit click POSTs from that page to /api/auth/verify, which is what
+  // consumes the token. This keeps email-scanner pre-fetchers from eating
+  // single-use tokens before the user gets to click.
+  const verifyUrl = `${origin}/auth/confirm?token=${token}`;
 
   // In dev / preview-without-Resend, we may want to log instead of sending.
   // For now: always send if RESEND_API_KEY is present.
@@ -92,17 +96,40 @@ auth.post("/send-link", async (c) => {
 });
 
 // GET /api/auth/verify?token=...
-// Browser navigates here from the magic link. On success, issues a session
-// cookie and redirects: new users (no nickname) go to /onboarding/nickname;
-// returning users go to /.
-auth.get("/verify", async (c) => {
-  const token = c.req.query("token");
-  if (!token || typeof token !== "string") {
-    return c.redirect("/login?error=missing_token");
-  }
+//
+// Backwards-compat: older emails point straight here. We do NOT consume
+// the token on GET — pre-fetchers like Microsoft 365 Safe Links, some
+// corporate spam scanners, and Apple Mail link preview will hit this URL
+// before the real user clicks, and a one-shot token consumed on GET means
+// the user gets a `?error=invalid_or_expired` loop. Instead we redirect
+// to the static confirm page; the user clicks "Sign me in" there, which
+// POSTs back to this same path and consumes the token.
+auth.get("/verify", (c) => {
+  const token = c.req.query("token") ?? "";
+  if (!token) return c.redirect("/login?error=missing_token");
+  return c.redirect(`/auth/confirm?token=${encodeURIComponent(token)}`);
+});
+
+// POST /api/auth/verify
+//
+// The actual consume-and-sign-in path. Fired by the form submit on
+// /auth/confirm with the token in the form body. Pre-fetchers don't
+// simulate form submissions, so the token survives long enough for the
+// real user to click.
+//
+// On success, issues a session cookie and redirects: new users (no
+// nickname) go to /onboarding/nickname; returning users go to /.
+auth.post("/verify", async (c) => {
   if (!c.env.SESSION_SECRET) {
     console.error("verify: SESSION_SECRET not configured");
     return c.redirect("/login?error=server");
+  }
+
+  const body = await c.req.parseBody().catch(() => ({}));
+  const tokenRaw = (body as Record<string, unknown>).token;
+  const token = typeof tokenRaw === "string" ? tokenRaw : "";
+  if (!token) {
+    return c.redirect("/login?error=missing_token");
   }
 
   const payload = await consumeToken(c.env.KV, token);
