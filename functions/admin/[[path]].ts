@@ -81,6 +81,14 @@ app.get("/admin/__diag", async (c) => {
     }
   }
 
+  // Cross-check: also call the actual guard function so we can see if its
+  // return value matches the manual reconstruction above. If they diverge,
+  // the guard itself has a bug.
+  const realGuardReturned = await loadAdminUser(c);
+  const realGuardResult: unknown = realGuardReturned
+    ? { id: realGuardReturned.id, email: realGuardReturned.email, is_admin: String(realGuardReturned.is_admin) }
+    : null;
+
   return c.json({
     env: c.env.ENV,
     has_session_secret: hasSecret,
@@ -94,6 +102,8 @@ app.get("/admin/__diag", async (c) => {
     is_admin_coerced: isAdminCoerced,
     is_admin_matches_one: isAdminMatchesOne,
     guard_would_pass: isAdminMatchesOne === true,
+    real_guard_returned: realGuardResult,
+    real_guard_was_null: realGuardReturned === null,
   });
 });
 
@@ -105,6 +115,13 @@ app.use("*", async (c, next) => {
   // returns the raw state the guard sees, so we can debug why a real
   // admin user is being rejected. Production stays locked down.
   if (c.req.path === "/admin/__diag" && c.env.ENV !== "production") {
+    await next();
+    return;
+  }
+  // Routing-only test bypass — ?__routetest=1 skips the guard so we can
+  // see whether the route handler itself matches the request. Non-prod
+  // only.
+  if (c.req.query("__routetest") === "1" && c.env.ENV !== "production") {
     await next();
     return;
   }
