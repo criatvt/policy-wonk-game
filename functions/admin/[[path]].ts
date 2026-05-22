@@ -42,93 +42,10 @@ type Bindings = {
 // that mismatch entirely.
 const app = new Hono<{ Bindings: Bindings }>();
 
-// TEMPORARY diagnostic — gated to non-prod envs only. Visit /admin/__diag
-// from a logged-in browser to see exactly what the guard sees. Remove
-// before the phase-1 → main merge.
-app.get("/admin/__diag", async (c) => {
-  if (c.env.ENV === "production") {
-    return c.html(renderNotFound(), 404);
-  }
-  const { readSession } = await import("../api/_lib/session");
-  const { findUserById } = await import("../api/_lib/users");
-
-  const hasSecret = !!c.env.SESSION_SECRET;
-  const cookieHeader = c.req.header("Cookie") ?? "";
-  const hasCookie = cookieHeader.includes("pwg_session=");
-  const cookieTail = hasCookie ? cookieHeader.split("pwg_session=")[1].split(";")[0].slice(-8) : null;
-
-  let claimsSub: string | null = null;
-  let claimsEmail: string | null = null;
-  if (hasSecret) {
-    const claims = await readSession(c, c.env.SESSION_SECRET!);
-    claimsSub = claims?.sub ?? null;
-    claimsEmail = claims?.email ?? null;
-  }
-
-  let userJson: unknown = null;
-  let isAdminType: string | null = null;
-  let isAdminValue: unknown = null;
-  let isAdminCoerced: number | null = null;
-  let isAdminMatchesOne: boolean | null = null;
-  if (claimsSub) {
-    const u = await findUserById(c.env.DB, claimsSub);
-    if (u) {
-      userJson = { id: u.id, email: u.email, nickname: u.nickname, is_admin: String(u.is_admin) };
-      isAdminType = typeof u.is_admin;
-      isAdminValue = String(u.is_admin);
-      isAdminCoerced = Number(u.is_admin);
-      isAdminMatchesOne = Number(u.is_admin) === 1;
-    }
-  }
-
-  // Cross-check: also call the actual guard function so we can see if its
-  // return value matches the manual reconstruction above. If they diverge,
-  // the guard itself has a bug.
-  const realGuardReturned = await loadAdminUser(c);
-  const realGuardResult: unknown = realGuardReturned
-    ? { id: realGuardReturned.id, email: realGuardReturned.email, is_admin: String(realGuardReturned.is_admin) }
-    : null;
-
-  return c.json({
-    env: c.env.ENV,
-    has_session_secret: hasSecret,
-    has_cookie: hasCookie,
-    cookie_tail: cookieTail,
-    claims_sub: claimsSub,
-    claims_email: claimsEmail,
-    user: userJson,
-    is_admin_type: isAdminType,
-    is_admin_value: isAdminValue,
-    is_admin_coerced: isAdminCoerced,
-    is_admin_matches_one: isAdminMatchesOne,
-    guard_would_pass: isAdminMatchesOne === true,
-    real_guard_returned: realGuardResult,
-    real_guard_was_null: realGuardReturned === null,
-  });
-});
-
 // Guard: every admin route must clear this. On failure, return a real
 // 404 page (not a 403) so the route family is indistinguishable from
 // nonexistent paths.
 app.use("*", async (c, next) => {
-  // Diagnostic bypass — only in non-production envs. The /__diag handler
-  // returns the raw state the guard sees, so we can debug why a real
-  // admin user is being rejected. Production stays locked down.
-  if (c.req.path === "/admin/__diag" && c.env.ENV !== "production") {
-    await next();
-    return;
-  }
-  // Routing-only test bypass — ?__routetest=1 or ?__diag404=1 skip the
-  // guard so we can see whether the route handler itself matches the
-  // request (the notFound handler also prints diag info when
-  // __diag404=1). Non-prod only.
-  if (
-    c.env.ENV !== "production" &&
-    (c.req.query("__routetest") === "1" || c.req.query("__diag404") === "1")
-  ) {
-    await next();
-    return;
-  }
   const user = await loadAdminUser(c);
   if (!user) {
     return c.html(renderNotFound(), 404);
@@ -259,7 +176,7 @@ function userRow(u: AdminUserRow): SafeHtml {
           : html`<span class="muted">never</span>`
       }</td>
       <td>${u.session_count}</td>
-      <td>${u.is_admin === 1 ? html`<span class="pill pill-won">admin</span>` : raw("")}</td>
+      <td>${Number(u.is_admin) === 1 ? html`<span class="pill pill-won">admin</span>` : raw("")}</td>
     </tr>`;
 }
 
@@ -327,7 +244,7 @@ app.get("/admin/users/:id", async (c) => {
           <tbody>${sessions.map((s) => sessionRow(s, { showUser: false }))}</tbody>
         </table>`;
 
-  const adminPill = user.is_admin === 1 ? html`<span class="pill pill-won">admin</span>` : raw("");
+  const adminPill = Number(user.is_admin) === 1 ? html`<span class="pill pill-won">admin</span>` : raw("");
 
   const body = html`
     <h1>${user.email} ${adminPill}</h1>
@@ -456,27 +373,20 @@ app.get("/admin/sessions", async (c) => {
 
 // Anything else under /admin/* — render the same generic 404 the guard
 // produces. Keeps the surface uniform.
-//
-// TEMP: in non-prod, additionally include diagnostic info via the
-// ?__diag404=1 query so we can see what path / URL Hono actually
-// observed when no route matched. Removed before the phase-1 → main
-// merge.
-app.notFound((c) => {
-  if (c.env.ENV !== "production" && c.req.query("__diag404") === "1") {
-    return c.json({
-      where: "notFound",
-      path: c.req.path,
-      method: c.req.method,
-      url: c.req.url,
-      query: Object.fromEntries(new URL(c.req.url).searchParams),
-    });
-  }
-  return c.html(renderNotFound(), 404);
-});
+app.notFound((c) => c.html(renderNotFound(), 404));
 
 app.onError((err, c) => {
+  // Distinct shape from notFound so a thrown handler doesn't masquerade
+  // as "page doesn't exist" — caught us out once already when a missing
+  // staging migration made the dashboard throw.
   console.error("admin error:", err);
-  return c.html(renderNotFound(), 500);
+  const message = err instanceof Error ? err.message : String(err);
+  return c.html(
+    `<!doctype html><html><head><meta charset="utf-8" /><title>Server error · Policy Wonk admin</title><meta name="robots" content="noindex" /></head><body style="font-family:system-ui,sans-serif;padding:40px;color:#1a1a1a;background:#f8f1e4;"><h1 style="font-family:Georgia,serif;">Server error</h1><p>Something went wrong handling this admin request. Details have been logged.</p><pre style="background:#fff;padding:12px;border:1px solid #ccc;overflow:auto;font-size:12px;">${message
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")}</pre><p><a href="/admin">Back to dashboard →</a></p></body></html>`,
+    500,
+  );
 });
 
 // ---------- shared row + paging helpers ----------

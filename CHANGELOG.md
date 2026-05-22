@@ -7,7 +7,7 @@ All notable changes to Policy Wonk. Format follows [Keep a Changelog](https://ke
 - Re-author CP 22 / CG 1 / CP 10 notes through the proper `scripts/ingest.js` pipeline using the actual GCPP source PDFs. Current notes were authored from question-bank explanations + general public-policy knowledge (sub-agent couldn't reach the source PDFs). See [`CONTRIBUTING.md`](policy-wonk-game/CONTRIBUTING.md) for the pipeline.
 - Expand note slug coverage so every `topic` in the question banks has a 1:1 note file, or add a graceful fallback page. The end-screen "Browse notes for [topic]" link currently 404s for uncovered slugs.
 - Pixel-letter render surface for avatars — `avatar_slug` is stored at signup but no UI displays it yet. When `/me` or in-game avatar lands, drop in a pixel font (e.g. Press Start 2P) and render the letter.
-- Pre-launch checklist update — add an end-to-end signup smoke test against the production environment so missing D1 migrations / unset secrets surface before the first real user hits them. (Phase 1 launched with prod D1 unmigrated; caught in post-launch QA.)
+- Pre-launch checklist update — add an end-to-end signup smoke test against **both staging and production** so missing D1 migrations / unset secrets surface before any real user (or the admin) hits them. (Phase 1 launched with prod D1 unmigrated; v0.3.0 hit the same trap on staging during admin-panel QA.)
 - Per-email magic-link rate limit feels tight (3 per 15 min, silent block). Consider raising to 5–8 per 15 min or surfacing a visible "you've requested several links; check spam or wait a few minutes" message.
 
 ## [0.3.0] — 2026-05-22 — Admin panel (Phase 1 / Track D)
@@ -25,6 +25,14 @@ Closes the deferred Phase 1 track. Read-only admin tool for the solo operator (A
 - Admin pages are rendered server-side as HTML strings via a Hono catch-all at `functions/admin/[[path]].ts`. Different pattern from the rest of the (static) site — isolated to `/admin` so a non-admin curl of any admin URL returns a real 404 with no admin markup. Tagged `html\`\`` template auto-escapes all interpolated values.
 - No new DB migration — `users.is_admin` was already present in `0001_users.sql` (added at the original Phase 1 backend setup with #26 in mind).
 - No client JS in the admin tree. Search and filters are plain GET forms; pagination is offset-based; LIKE search uses `ESCAPE '\'` with proper `%`/`_`/`\` escaping.
+
+### Fixed (during staging QA, pre-merge)
+
+- **Routing**. Hono's `.basePath("/admin")` worked under `wrangler pages dev` but did not match the bare `/admin` URL on the deployed Pages Functions runtime — requests fell through to `notFound`. Removed `basePath` and registered every route with its full `/admin/...` path.
+- **`is_admin` strict equality**. The guard's `user.is_admin !== 1` would fail if D1 ever returned the INTEGER column as a bigint (`1n !== 1`). Switched to `Number(user.is_admin) !== 1` so the check survives both number and bigint return types. Same fix applied to the admin pill in the user-list and user-detail views.
+- **Allowlist refresh on returning logins**. `upsertUserOnLogin` only set `is_admin` on INSERT — meaning the allowlist effectively froze at a user's first login, and changing `ADMIN_EMAILS` afterwards did nothing. Now every login UPDATE refreshes `is_admin` from the current env var.
+- **onError no longer masquerades as 404**. The admin app's `onError` previously returned the Not Found HTML with status 500. Browsers showed "Not found" while the server was actually erroring; cost an hour of misdirected debugging against a missing staging D1 migration. Now returns a visibly distinct "Server error" page with the exception message inline.
+- **Staging D1 migration applied**. The `sessions` table never landed in the `policy-wonk-staging` D1 — only the `users` table from `0001_users.sql` was present. Caused the dashboard's session-count queries to throw on first contact. Ran `npm run db:migrate:staging` and verified.
 
 ### Changed
 
