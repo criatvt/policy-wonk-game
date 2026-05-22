@@ -10,6 +10,30 @@ All notable changes to Policy Wonk. Format follows [Keep a Changelog](https://ke
 - Pre-launch checklist update — add an end-to-end signup smoke test against **both staging and production** so missing D1 migrations / unset secrets surface before any real user (or the admin) hits them. (Phase 1 launched with prod D1 unmigrated; v0.3.0 hit the same trap on staging during admin-panel QA.)
 - Per-email magic-link rate limit feels tight (3 per 15 min, silent block). Consider raising to 5–8 per 15 min or surfacing a visible "you've requested several links; check spam or wait a few minutes" message.
 
+## [0.3.3] — 2026-05-22 — Revision notes for 6 more modules
+
+Partial completion of #40. Six of the eight previously-uncovered modules ship with full notes coverage; two stay in the WIP branch for a follow-up.
+
+### Added
+
+- **219 new revision notes** across six modules (notes drafted by a sub-agent off the proper `scripts/ingest.js` PDF pipeline, source PDFs from the GCPP syllabus):
+  - `cp-11` Nationalism and State (42 notes)
+  - `cp-12` State Capacity (41 notes)
+  - `cp-13` Policy Design (29 notes)
+  - `cp-21` Microeconomic Foundations (37 notes)
+  - `cp-23` Supply, Demand, Equilibrium (31 notes)
+  - `cp-33` Policy Communication (41 notes)
+- **Plus the missing `protectionism` note for `cp-25`** — completes that module too (39/39 coverage).
+- Two helper scripts on the branch (used by the authoring workflow): `scripts/list-topics.mjs` (list unique topic slugs per module) and `scripts/topic-context.mjs` (gather extracted-PDF snippets for a topic).
+
+### Deferred
+
+- **`cs-11` (Strategic Studies)** — not in this release. Blocked on a question-bank data-quality issue: the cs-11 `topic` field mixes Title-Case (`"Strategic Studies"`) and kebab-case (`"strategic-studies"`) for the same concepts, so notes can't route deterministically until the bank is reconciled. Tracked on `feat/40-notes-8-modules` for resume.
+
+### Changed
+
+- Footer version: `Beta v0.3.2` → `Beta v0.3.3`. `package.json`: `0.3.2` → `0.3.3`.
+
 ## [0.3.2] — 2026-05-22 — v0.3.1 hotfixes (chip styling, direct sign-in)
 
 Three issues surfaced within minutes of the v0.3.1 prod deploy.
