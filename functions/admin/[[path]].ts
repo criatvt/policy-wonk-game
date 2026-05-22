@@ -118,10 +118,14 @@ app.use("*", async (c, next) => {
     await next();
     return;
   }
-  // Routing-only test bypass — ?__routetest=1 skips the guard so we can
-  // see whether the route handler itself matches the request. Non-prod
-  // only.
-  if (c.req.query("__routetest") === "1" && c.env.ENV !== "production") {
+  // Routing-only test bypass — ?__routetest=1 or ?__diag404=1 skip the
+  // guard so we can see whether the route handler itself matches the
+  // request (the notFound handler also prints diag info when
+  // __diag404=1). Non-prod only.
+  if (
+    c.env.ENV !== "production" &&
+    (c.req.query("__routetest") === "1" || c.req.query("__diag404") === "1")
+  ) {
     await next();
     return;
   }
@@ -452,7 +456,23 @@ app.get("/admin/sessions", async (c) => {
 
 // Anything else under /admin/* — render the same generic 404 the guard
 // produces. Keeps the surface uniform.
-app.notFound((c) => c.html(renderNotFound(), 404));
+//
+// TEMP: in non-prod, additionally include diagnostic info via the
+// ?__diag404=1 query so we can see what path / URL Hono actually
+// observed when no route matched. Removed before the phase-1 → main
+// merge.
+app.notFound((c) => {
+  if (c.env.ENV !== "production" && c.req.query("__diag404") === "1") {
+    return c.json({
+      where: "notFound",
+      path: c.req.path,
+      method: c.req.method,
+      url: c.req.url,
+      query: Object.fromEntries(new URL(c.req.url).searchParams),
+    });
+  }
+  return c.html(renderNotFound(), 404);
+});
 
 app.onError((err, c) => {
   console.error("admin error:", err);
