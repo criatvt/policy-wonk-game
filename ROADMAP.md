@@ -57,17 +57,21 @@ Phase 2+ items are stack-ranked here but the ordering is **draft** — to be con
 | #25 | Privacy & data note at email collection | ✅ Closed |
 | #33 | "Well played" copy cosmetic | ✅ Closed |
 
-**Track D — Admin ⏸️**
+**Track D — Admin ✅**
 
 | # | Issue | Status |
 |---|---|---|
-| #26 | Admin panel for user management + troubleshooting (read-only) | ⏸️ Deferred to a Phase 1.x patch — not blocking launch. Work continues on the `phase-1` branch when picked up. |
+| #26 | Admin panel for user management + troubleshooting (read-only) | ✅ Shipped in v0.3.0 (2026-05-22) via PR #37. Read-only `/admin` gated by `ADMIN_EMAILS`; non-admins get a real 404. |
 
-**Post-launch hotfixes (v0.2.1, same launch day):**
+**Post-launch releases on `main`:**
 
-- Magic-link sign-in loop fixed via an intermediate `/auth/confirm` page — email link-scanners were GET-fetching the magic link and eating the one-shot token before users could click. (commit `a140bb1`)
-- Production D1 migrations applied — they'd never been run on prod before launch (pre-launch QA was against the local dev DB). Add an end-to-end signup smoke test against the prod environment to the pre-launch checklist next time.
-- End-screen "Share string" textarea replaced with a real Share button (#35) — uses `navigator.share` where available, clipboard fallback. (commit `49586e6`)
+- **v0.2.1** (2026-05-19, hotfixes): magic-link prefetcher loop fix via `/auth/confirm` intermediate page; prod D1 migrations finally applied; end-screen Share affordance (#35).
+- **v0.3.0** (2026-05-22): Track D admin panel (#26).
+- **v0.3.1** (2026-05-22): Site-wide top header with Notes menu, auth chip + sign-out (#36), homepage refresh.
+- **v0.3.2** (2026-05-22): Header hotfixes (chip global styling, header Sign-in → direct flow, tagline disclosure).
+- **v0.3.3** (2026-05-22): 219 revision notes for cp-11/12/13/21/23/33 plus cp-25 completion. #40 partial — cs-11 only module remaining.
+
+**Pre-launch checklist debt:** v0.2.1 and v0.3.0 both shipped with missing remote D1 migrations (the former on prod, the latter on staging). Next pre-launch checklist needs an end-to-end signup smoke test against **both staging and production** environments to catch this class of issue before the first real user hits it.
 
 **Frozen decisions for Phase 1:**
 
