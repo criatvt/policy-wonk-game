@@ -162,11 +162,27 @@ export default function EndScreen({ state, onPlayAgain }) {
     }
   }, [state, authState]);
 
-  async function copyShare() {
+  const [shareConfirmed, setShareConfirmed] = useState(false);
+
+  // Native share sheet on mobile (navigator.share); clipboard copy
+  // fallback on desktop / older browsers. A textarea + "Copy" pair was
+  // doing this job before (#35), but felt like dev chrome rather than
+  // a real share affordance.
+  async function handleShare() {
+    if (typeof navigator !== "undefined" && typeof navigator.share === "function") {
+      try {
+        await navigator.share({ text: share });
+      } catch {
+        // User cancelled or the share sheet failed — both silent.
+      }
+      return;
+    }
     try {
       await navigator.clipboard.writeText(share);
+      setShareConfirmed(true);
+      window.setTimeout(() => setShareConfirmed(false), 2000);
     } catch {
-      // best-effort
+      // best-effort — leave the button label unchanged on copy failure.
     }
   }
 
@@ -253,20 +269,19 @@ export default function EndScreen({ state, onPlayAgain }) {
         );
       })()}
 
+      {/* Share affordance (#35). One button — uses navigator.share where
+          available (mobile native sheet, populated with the preview text);
+          falls back to clipboard copy with a brief "Copied" confirmation. */}
       <div className="flex flex-col gap-3">
-        <p className="text-sm opacity-80">Share string</p>
-        <textarea
-          readOnly
-          value={share}
-          className="w-full p-3 rounded bg-[var(--color-bg-soft)] border border-[var(--color-border)] text-sm font-mono text-[var(--color-text)]"
-          rows={3}
-        />
+        <p className="text-sm italic text-[var(--color-text-soft)] leading-relaxed">
+          “{share}”
+        </p>
         <button
           type="button"
-          onClick={copyShare}
-          className="self-start px-4 py-2 rounded border border-[var(--color-charcoal)] text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)]/10"
+          onClick={handleShare}
+          className="self-start px-4 py-2 rounded border border-[var(--color-charcoal)] text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)]/10 transition-colors"
         >
-          Copy to clipboard
+          {shareConfirmed ? "Copied to clipboard!" : "Share →"}
         </button>
       </div>
 
