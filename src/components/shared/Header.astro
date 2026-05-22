@@ -23,7 +23,11 @@
   </div>
 </header>
 
-<style>
+<style is:global>
+  /* `is:global` is required so the styles apply to DOM the inline script
+     injects via innerHTML. Astro's default scoping suffixes rule
+     selectors with an `astro-XXXXX` data attribute that script-injected
+     nodes don't carry, so without this the chip renders as raw text. */
   .pw-header {
     display: flex;
     align-items: center;
@@ -155,7 +159,9 @@
     const CACHE_TTL_MS = 5 * 60 * 1000;
 
     function renderGuest() {
-      slot.innerHTML = '<a class="pw-signin" href="/login">Sign in</a>';
+      // Direct to the email-form view of /login (skips the "two ways in"
+      // upsell — header clickers know they want to sign in).
+      slot.innerHTML = '<a class="pw-signin" href="/login?show=email">Sign in</a>';
     }
 
     function renderSignedIn(user) {

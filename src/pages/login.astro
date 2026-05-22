@@ -8,14 +8,21 @@ const errorMessages: Record<string, string> = {
   server: "Something went wrong on our end. Try again in a moment.",
 };
 const errorMessage = errorParam ? (errorMessages[errorParam] ?? "Sign-in failed. Try again.") : null;
+
+// Header "Sign in" link sends ?show=email so users who already know they
+// want to sign in skip the two-ways-in upsell and land directly on the
+// email form. The chooser + benefits panels hide; the form expands.
+const directMode = Astro.url.searchParams.get("show") === "email";
 ---
 <BaseLayout title="Sign in · Policy Wonk" description="Sign in to Policy Wonk, or play as a guest with no commitment.">
   <section class="max-w-2xl mx-auto py-12">
     <header class="mb-10 text-center">
       <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] mb-3">Policy Wonk</p>
-      <h1 class="font-serif text-4xl md:text-5xl font-semibold leading-tight">Two ways in.</h1>
+      <h1 class="font-serif text-4xl md:text-5xl font-semibold leading-tight">{directMode ? "Sign in." : "Two ways in."}</h1>
       <p class="mt-3 text-[var(--color-text-soft)] leading-relaxed max-w-md mx-auto">
-        Save your history and unlock notes by signing in. Or jump straight into the game — no email, no commitment.
+        {directMode
+          ? "Enter your email — we'll send a one-time sign-in link. No password to remember."
+          : "Save your history and unlock notes by signing in. Or jump straight into the game — no email, no commitment."}
       </p>
     </header>
 
@@ -25,42 +32,46 @@ const errorMessage = errorParam ? (errorMessages[errorParam] ?? "Sign-in failed.
       </div>
     )}
 
-    <div class="grid md:grid-cols-2 gap-4">
-      <button
-        type="button"
-        id="show-email-btn"
-        class="px-6 py-4 border-2 border-[var(--color-charcoal)] bg-[var(--color-charcoal)] text-[var(--color-bg)] text-lg font-semibold hover:opacity-90 transition-opacity"
-      >
-        Sign in with email →
-      </button>
-      <a
-        href="/play"
-        class="px-6 py-4 border-2 border-[var(--color-charcoal)] text-[var(--color-charcoal)] text-lg font-semibold text-center hover:bg-[var(--color-charcoal)]/5 transition-colors"
-      >
-        Play as guest →
-      </a>
-    </div>
+    {!directMode && (
+      <>
+        <div class="grid md:grid-cols-2 gap-4">
+          <button
+            type="button"
+            id="show-email-btn"
+            class="px-6 py-4 border-2 border-[var(--color-charcoal)] bg-[var(--color-charcoal)] text-[var(--color-bg)] text-lg font-semibold hover:opacity-90 transition-opacity"
+          >
+            Sign in with email →
+          </button>
+          <a
+            href="/play"
+            class="px-6 py-4 border-2 border-[var(--color-charcoal)] text-[var(--color-charcoal)] text-lg font-semibold text-center hover:bg-[var(--color-charcoal)]/5 transition-colors"
+          >
+            Play as guest →
+          </a>
+        </div>
 
-    <div class="grid md:grid-cols-2 gap-x-6 gap-y-6 mt-6 text-sm leading-relaxed">
-      <div class="flex flex-col gap-2">
-        <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">If you sign in</p>
-        <ul class="list-none p-0 m-0 flex flex-col gap-1.5 text-[var(--color-text-soft)]">
-          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Revision notes unlock for each module you play</span></li>
-          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Your scores and play history stick around</span></li>
-          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Coming soon: flashcards, spaced repetition, weak-area dashboard</span></li>
-        </ul>
-      </div>
-      <div class="flex flex-col gap-2">
-        <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">If you play as guest</p>
-        <ul class="list-none p-0 m-0 flex flex-col gap-1.5 text-[var(--color-text-soft)]">
-          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Full game — same ladder, same lifelines</span></li>
-          <li class="flex gap-2"><span aria-hidden="true">·</span><span>State persists in this tab; gone when you close it</span></li>
-          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Sign in later — your guest history folds into the new account</span></li>
-        </ul>
-      </div>
-    </div>
+        <div class="grid md:grid-cols-2 gap-x-6 gap-y-6 mt-6 text-sm leading-relaxed">
+          <div class="flex flex-col gap-2">
+            <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">If you sign in</p>
+            <ul class="list-none p-0 m-0 flex flex-col gap-1.5 text-[var(--color-text-soft)]">
+              <li class="flex gap-2"><span aria-hidden="true">·</span><span>Revision notes unlock for each module you play</span></li>
+              <li class="flex gap-2"><span aria-hidden="true">·</span><span>Your scores and play history stick around</span></li>
+              <li class="flex gap-2"><span aria-hidden="true">·</span><span>Coming soon: flashcards, spaced repetition, weak-area dashboard</span></li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-2">
+            <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">If you play as guest</p>
+            <ul class="list-none p-0 m-0 flex flex-col gap-1.5 text-[var(--color-text-soft)]">
+              <li class="flex gap-2"><span aria-hidden="true">·</span><span>Full game — same ladder, same lifelines</span></li>
+              <li class="flex gap-2"><span aria-hidden="true">·</span><span>State persists in this tab; gone when you close it</span></li>
+              <li class="flex gap-2"><span aria-hidden="true">·</span><span>Sign in later — your guest history folds into the new account</span></li>
+            </ul>
+          </div>
+        </div>
+      </>
+    )}
 
-    <div id="email-form-wrap" class={`mt-10 pt-8 border-t border-[var(--color-border)] ${errorMessage ? "" : "hidden"}`}>
+    <div id="email-form-wrap" class={`${directMode ? "" : "mt-10 pt-8 border-t border-[var(--color-border)]"} ${(directMode || errorMessage) ? "" : "hidden"}`}>
       <form id="login-form" class="space-y-4 max-w-md" novalidate>
         <div>
           <label for="email" class="block text-sm font-medium mb-2">Your email</label>
@@ -100,7 +111,9 @@ const errorMessage = errorParam ? (errorMessages[errorParam] ?? "Sign-in failed.
 </BaseLayout>
 
 <script>
-  const showEmailBtn = document.getElementById("show-email-btn") as HTMLButtonElement;
+  // Optional in direct mode (?show=email): the chooser is server-skipped,
+  // so #show-email-btn isn't in the DOM. Guard accordingly.
+  const showEmailBtn = document.getElementById("show-email-btn") as HTMLButtonElement | null;
   const emailFormWrap = document.getElementById("email-form-wrap") as HTMLDivElement;
   const form = document.getElementById("login-form") as HTMLFormElement;
   const emailInput = document.getElementById("email") as HTMLInputElement;
@@ -111,11 +124,15 @@ const errorMessage = errorParam ? (errorMessages[errorParam] ?? "Sign-in failed.
 
   // Reveal the email form below when the user picks "Sign in with email".
   // Keeps the entry choice visually balanced — neither path is buried.
-  showEmailBtn.addEventListener("click", () => {
+  showEmailBtn?.addEventListener("click", () => {
     emailFormWrap.classList.remove("hidden");
     emailInput.focus({ preventScroll: true });
     emailFormWrap.scrollIntoView({ behavior: "smooth", block: "start" });
   });
+
+  // Direct mode (?show=email): focus the email input immediately so the
+  // user can start typing without a click.
+  if (!showEmailBtn) emailInput.focus({ preventScroll: true });
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
