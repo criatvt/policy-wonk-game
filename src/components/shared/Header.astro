@@ -1,0 +1,245 @@
+---
+// Site-wide top strip. Slotted by BaseLayout above every page's main
+// content. Mirrors the structure on /admin's admin bar (wordmark on the
+// left, nav in the middle, auth slot on the right) so the visual logic
+// stays consistent between zones.
+//
+// The auth slot is filled client-side: this is a static site, so we
+// fetch /api/me on load and either render the avatar chip + sign-out
+// menu (signed in) or a "Sign in" link (guest). Result is cached in
+// sessionStorage to avoid the round-trip on every page nav within the
+// same tab.
+---
+<header class="pw-header">
+  <a href="/" class="pw-wordmark">Policy Wonk</a>
+  <nav class="pw-nav">
+    <a href="/notes">Notes</a>
+    <a href="/search">Search</a>
+  </nav>
+  <div class="pw-auth" id="pw-header-auth">
+    {/* Filled in by the inline script below. Empty by default so guests
+        don't briefly see "Sign in" then have it flip if they're actually
+        logged in (or vice versa). */}
+  </div>
+</header>
+
+<style>
+  .pw-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--color-border, rgba(26, 26, 26, 0.1));
+    background: var(--color-bg, #f8f1e4);
+    font-family: var(--font-sans, Inter, system-ui, sans-serif);
+    font-size: 14px;
+  }
+  .pw-wordmark {
+    font-family: var(--font-serif, "Playfair Display", Georgia, serif);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--color-charcoal, #1a1a1a);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .pw-wordmark:hover { opacity: 0.8; }
+  .pw-nav {
+    display: flex;
+    gap: 18px;
+    margin-left: 20px;
+  }
+  .pw-nav a {
+    color: var(--color-charcoal, #1a1a1a);
+    text-decoration: none;
+    opacity: 0.85;
+    font-weight: 500;
+  }
+  .pw-nav a:hover { opacity: 1; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .pw-auth {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+  }
+  .pw-signin {
+    color: var(--color-functional-marigold, #006D77);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    font-weight: 600;
+  }
+  .pw-signin:hover { opacity: 0.85; }
+  .pw-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px 4px 4px;
+    border: 1px solid var(--color-border, rgba(26, 26, 26, 0.15));
+    border-radius: 999px;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+    color: var(--color-charcoal, #1a1a1a);
+  }
+  .pw-chip:hover { background: rgba(26, 26, 26, 0.04); }
+  .pw-avatar {
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-charcoal, #1a1a1a);
+    color: var(--color-bg, #f8f1e4);
+    border-radius: 50%;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .pw-nickname {
+    max-width: 12ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  .pw-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    min-width: 180px;
+    background: var(--color-bg, #f8f1e4);
+    border: 1px solid var(--color-border, rgba(26, 26, 26, 0.15));
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 4px;
+    z-index: 50;
+  }
+  .pw-menu[hidden] { display: none; }
+  .pw-menu-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 8px 12px;
+    background: transparent;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font: inherit;
+    color: var(--color-charcoal, #1a1a1a);
+  }
+  .pw-menu-item:hover { background: rgba(26, 26, 26, 0.06); }
+  .pw-menu-email {
+    padding: 8px 12px;
+    font-size: 12px;
+    color: var(--color-text-muted, #6b6b6b);
+    border-bottom: 1px solid var(--color-border, rgba(26, 26, 26, 0.1));
+    margin-bottom: 4px;
+    word-break: break-all;
+  }
+
+  @media (max-width: 540px) {
+    .pw-header { padding: 10px 16px; gap: 10px; }
+    .pw-nav { gap: 12px; margin-left: 8px; }
+    .pw-nickname { display: none; }
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    const slot = document.getElementById("pw-header-auth");
+    if (!slot) return;
+
+    const CACHE_KEY = "pwg:me";
+    const CACHE_TTL_MS = 5 * 60 * 1000;
+
+    function renderGuest() {
+      slot.innerHTML = '<a class="pw-signin" href="/login">Sign in</a>';
+    }
+
+    function renderSignedIn(user) {
+      const letter = (user.avatar_slug || user.nickname || user.email || "?").toString().toUpperCase().slice(0, 1);
+      const nickname = user.nickname || user.email.split("@")[0];
+      const escape = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+      slot.innerHTML =
+        '<button type="button" class="pw-chip" aria-haspopup="true" aria-expanded="false" id="pw-chip-btn">' +
+          '<span class="pw-avatar" aria-hidden="true">' + escape(letter) + '</span>' +
+          '<span class="pw-nickname">' + escape(nickname) + '</span>' +
+        '</button>' +
+        '<div class="pw-menu" id="pw-chip-menu" role="menu" hidden>' +
+          '<div class="pw-menu-email">' + escape(user.email) + '</div>' +
+          '<button type="button" class="pw-menu-item" id="pw-signout-btn" role="menuitem">Sign out</button>' +
+        '</div>';
+
+      const btn = document.getElementById("pw-chip-btn");
+      const menu = document.getElementById("pw-chip-menu");
+      const signOut = document.getElementById("pw-signout-btn");
+      if (!btn || !menu || !signOut) return;
+
+      const closeMenu = () => {
+        menu.hidden = true;
+        btn.setAttribute("aria-expanded", "false");
+      };
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const open = menu.hidden;
+        menu.hidden = !open;
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && e.target !== btn) closeMenu();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+      signOut.addEventListener("click", async () => {
+        signOut.disabled = true;
+        signOut.textContent = "Signing out…";
+        try {
+          await fetch("/api/auth/logout", { method: "POST", credentials: "same-origin" });
+        } catch {
+          // Cookie clear is the source of truth; even if the request fails
+          // the user will see a stale chip until they hit a page that
+          // actually round-trips. Cheap to ignore for Phase 1.
+        }
+        try { sessionStorage.removeItem(CACHE_KEY); } catch {}
+        window.location.href = "/";
+      });
+    }
+
+    function applyMe(user) {
+      if (user && typeof user === "object") {
+        renderSignedIn(user);
+      } else {
+        renderGuest();
+      }
+    }
+
+    // Read cached /api/me if it's fresh enough — avoids the round-trip on
+    // intra-tab nav. We still re-fetch in the background to catch logout
+    // / nickname changes propagating in.
+    let usedCache = false;
+    try {
+      const raw = sessionStorage.getItem(CACHE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed && parsed.t && Date.now() - parsed.t < CACHE_TTL_MS) {
+          applyMe(parsed.user);
+          usedCache = true;
+        }
+      }
+    } catch {}
+
+    fetch("/api/me", { credentials: "same-origin" })
+      .then((r) => r.ok ? r.json() : null)
+      .then((data) => {
+        const user = data && data.user ? data.user : null;
+        try { sessionStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), user })); } catch {}
+        applyMe(user);
+      })
+      .catch(() => {
+        if (!usedCache) renderGuest();
+      });
+  })();
+</script>

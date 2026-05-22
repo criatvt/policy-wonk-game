@@ -10,6 +10,21 @@ All notable changes to Policy Wonk. Format follows [Keep a Changelog](https://ke
 - Pre-launch checklist update — add an end-to-end signup smoke test against **both staging and production** so missing D1 migrations / unset secrets surface before any real user (or the admin) hits them. (Phase 1 launched with prod D1 unmigrated; v0.3.0 hit the same trap on staging during admin-panel QA.)
 - Per-email magic-link rate limit feels tight (3 per 15 min, silent block). Consider raising to 5–8 per 15 min or surfacing a visible "you've requested several links; check spam or wait a few minutes" message.
 
+## [0.3.1] — 2026-05-22 — Site-wide header + logged-in indicator
+
+Closes #36. Two threads of feedback from the v0.3.0 prod smoke test converged on the same surface: there was no visible cue that the user was signed in, and notes were not reachable from a menu (because there was no menu).
+
+### Added
+
+- **Site-wide top header** (`src/components/shared/Header.astro`, slotted into `BaseLayout`). Wordmark on the left, `Notes` and `Search` links in the middle, auth chip on the right. Replaces the previous arrangement where each page rendered its own inline header and notes were reachable only via the end-screen link.
+- **Auth chip (closes #36)** — when signed in, shows the user's avatar letter + nickname; click opens a menu with the user's email and a **Sign out** action (POSTs to `/api/auth/logout`, clears the local cache, reloads to `/`). When signed out, shows a `Sign in` link.
+- Auth state is fetched client-side from `/api/me` and cached in `sessionStorage` for 5 minutes to avoid the round-trip on every intra-tab nav.
+- **Homepage refresh** — new "What's new" section calling out the Phase 1 player-facing features (revision notes, optional sign-in). Renamed "Smarter Ask an AI" → "Smarter Ask a Professor" in the Upcoming list to match the live lifeline name.
+
+### Changed
+
+- Footer version: `Beta v0.3` → `Beta v0.3.1`. `package.json`: `0.3.0` → `0.3.1`.
+
 ## [0.3.0] — 2026-05-22 — Admin panel (Phase 1 / Track D)
 
 Closes the deferred Phase 1 track. Read-only admin tool for the solo operator (Aasif) — no edit/delete, no exports, no audit log; those are explicit non-goals per #26.

@@ -3,6 +3,7 @@ import "../styles/global.css";
 import "../styles/game.css";
 import "../styles/notes.css";
 import Footer from "../components/shared/Footer.astro";
+import Header from "../components/shared/Header.astro";
 
 interface Props {
   title?: string;
@@ -32,6 +33,7 @@ const {
     />
   </head>
   <body class={zone === "game" ? "game-zone" : "notes-zone"}>
+    <Header />
     <main class="min-h-[80vh] mx-auto max-w-4xl px-6 py-12">
       <slot />
     </main>
