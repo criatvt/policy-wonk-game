@@ -8,13 +8,21 @@ const errorMessages: Record<string, string> = {
   server: "Something went wrong on our end. Try again in a moment.",
 };
 const errorMessage = errorParam ? (errorMessages[errorParam] ?? "Sign-in failed. Try again.") : null;
+
+// "Direct sign-in mode" (when ?show=email is in the URL — sent by the
+// header's Sign in link) is applied CLIENT-SIDE, not server-side. Astro
+// with output: 'static' evaluates Astro.url at build time, where the
+// build has no query params, so a server-side conditional always
+// resolves to false. The inline script below reads window.location at
+// request time and toggles the chooser/form accordingly. Same pattern
+// as /auth/confirm.
 ---
 <BaseLayout title="Sign in · Policy Wonk" description="Sign in to Policy Wonk, or play as a guest with no commitment.">
   <section class="max-w-2xl mx-auto py-12">
     <header class="mb-10 text-center">
       <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] mb-3">Policy Wonk</p>
-      <h1 class="font-serif text-4xl md:text-5xl font-semibold leading-tight">Two ways in.</h1>
-      <p class="mt-3 text-[var(--color-text-soft)] leading-relaxed max-w-md mx-auto">
+      <h1 id="login-headline" class="font-serif text-4xl md:text-5xl font-semibold leading-tight">Two ways in.</h1>
+      <p id="login-subhead" class="mt-3 text-[var(--color-text-soft)] leading-relaxed max-w-md mx-auto">
         Save your history and unlock notes by signing in. Or jump straight into the game — no email, no commitment.
       </p>
     </header>
@@ -25,7 +33,7 @@ const errorMessage = errorParam ? (errorMessages[errorParam] ?? "Sign-in failed.
       </div>
     )}
 
-    <div class="grid md:grid-cols-2 gap-4">
+    <div id="login-chooser" class="grid md:grid-cols-2 gap-4">
       <button
         type="button"
         id="show-email-btn"
@@ -41,7 +49,7 @@ const errorMessage = errorParam ? (errorMessages[errorParam] ?? "Sign-in failed.
       </a>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-x-6 gap-y-6 mt-6 text-sm leading-relaxed">
+    <div id="login-benefits" class="grid md:grid-cols-2 gap-x-6 gap-y-6 mt-6 text-sm leading-relaxed">
       <div class="flex flex-col gap-2">
         <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">If you sign in</p>
         <ul class="list-none p-0 m-0 flex flex-col gap-1.5 text-[var(--color-text-soft)]">
@@ -85,6 +93,9 @@ const errorMessage = errorParam ? (errorMessages[errorParam] ?? "Sign-in failed.
         <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
           We store your email, nickname, avatar, and play history. We don't track you, don't share with third parties, don't use analytics cookies. <a href="/privacy" class="underline decoration-1 underline-offset-2 hover:text-[var(--color-text-soft)]">Read more →</a>
         </p>
+        <p id="guest-fallback" class="text-sm text-[var(--color-text-soft)] pt-2 hidden">
+          Don't want to sign in? <a href="/play" class="underline decoration-2 underline-offset-2 hover:opacity-80">Play as guest →</a>
+        </p>
       </form>
 
       <div id="login-success" class="hidden mt-6 p-5 border-l-4 border-[var(--color-functional-green)] bg-[var(--color-functional-green)]/10 max-w-md">
@@ -108,6 +119,27 @@ const errorMessage = errorParam ? (errorMessages[errorParam] ?? "Sign-in failed.
   const successEl = document.getElementById("login-success") as HTMLDivElement;
   const errorEl = document.getElementById("login-error") as HTMLDivElement;
   const errorText = document.getElementById("login-error-text") as HTMLParagraphElement;
+  const headline = document.getElementById("login-headline") as HTMLHeadingElement;
+  const subhead = document.getElementById("login-subhead") as HTMLParagraphElement;
+  const chooser = document.getElementById("login-chooser") as HTMLDivElement;
+  const benefits = document.getElementById("login-benefits") as HTMLDivElement;
+  const guestFallback = document.getElementById("guest-fallback") as HTMLParagraphElement;
+
+  // Direct mode (?show=email): toggle on client-side because static
+  // Astro can't read request-time query params. Hides the chooser +
+  // benefits panels, expands the form, swaps the headline, surfaces
+  // "Or play as guest →" inside the form so guest path stays visible.
+  const params = new URLSearchParams(window.location.search);
+  const directMode = params.get("show") === "email";
+  if (directMode) {
+    chooser.hidden = true;
+    benefits.hidden = true;
+    emailFormWrap.classList.remove("hidden", "mt-10", "pt-8", "border-t", "border-[var(--color-border)]");
+    headline.textContent = "Sign in.";
+    subhead.textContent = "Enter your email — we'll send a one-time sign-in link. No password to remember.";
+    guestFallback.classList.remove("hidden");
+    emailInput.focus({ preventScroll: true });
+  }
 
   // Reveal the email form below when the user picks "Sign in with email".
   // Keeps the entry choice visually balanced — neither path is buried.

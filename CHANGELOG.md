@@ -10,6 +10,20 @@ All notable changes to Policy Wonk. Format follows [Keep a Changelog](https://ke
 - Pre-launch checklist update — add an end-to-end signup smoke test against **both staging and production** so missing D1 migrations / unset secrets surface before any real user (or the admin) hits them. (Phase 1 launched with prod D1 unmigrated; v0.3.0 hit the same trap on staging during admin-panel QA.)
 - Per-email magic-link rate limit feels tight (3 per 15 min, silent block). Consider raising to 5–8 per 15 min or surfacing a visible "you've requested several links; check spam or wait a few minutes" message.
 
+## [0.3.2] — 2026-05-22 — v0.3.1 hotfixes (chip styling, direct sign-in)
+
+Three issues surfaced within minutes of the v0.3.1 prod deploy.
+
+### Fixed
+
+- **Auth chip rendered as raw text** (`Aadmin`, with no avatar pill or spacing). Astro auto-scopes `<style>` tags by suffixing rule selectors with an `astro-XXXXX` data attribute — DOM that the inline script injects via `innerHTML` doesn't carry that attribute, so the rules never matched. Switched `Header.astro`'s `<style>` to `<style is:global>`.
+- **Header "Sign in" landed on the upsell**. Clicking *Sign in* in the header dropped the user on `/login`'s "Two ways in" chooser, which is unwanted for header clickers (who already know they want to sign in). The link now sends `?show=email`; `/login` server-side skips the chooser + benefits panels and focuses straight into the email input. Headline swaps from "Two ways in." to "Sign in." in that mode.
+- **Homepage "Or browse the notes →" removed**. Redundant now that `Notes` lives in the top header. Single primary CTA (`Play →`) is enough.
+
+### Changed
+
+- Footer version: `Beta v0.3.1` → `Beta v0.3.2`. `package.json`: `0.3.1` → `0.3.2`.
+
 ## [0.3.1] — 2026-05-22 — Site-wide header + logged-in indicator
 
 Closes #36. Two threads of feedback from the v0.3.0 prod smoke test converged on the same surface: there was no visible cue that the user was signed in, and notes were not reachable from a menu (because there was no menu).
