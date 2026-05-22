@@ -1,7 +1,7 @@
 {
   "name": "policy-wonk-game",
   "type": "module",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "private": true,
   "license": "CC-BY-NC-4.0",
   "description": "Policy Wonk — a 15-question ladder quiz on public-policy fundamentals, built on Takshashila GCPP material. Open-access game; optional email + magic-link login unlocks per-module revision notes and saved play history. No tracking, no third-party scripts.",
@@ -19,6 +19,8 @@
     "validate-questions": "node scripts/validate-questions.js",
     "transform-questions": "node scripts/transform-questions.js",
     "notes:ingest": "node scripts/ingest.js",
+    "list-topics": "node scripts/list-topics.mjs",
+    "topic-context": "node scripts/topic-context.mjs",
     "notes:clean": "node scripts/clean-and-structure.js",
     "notes:rebuild": "node scripts/ingest.js --force && node scripts/clean-and-structure.js",
     "dev:worker": "npm run build && wrangler pages dev ./dist",
