@@ -34,12 +34,18 @@ type Bindings = {
   SESSION_SECRET?: string;
 };
 
-const app = new Hono<{ Bindings: Bindings }>().basePath("/admin");
+// Note: routes are registered with full /admin/... paths (no .basePath()).
+// The basePath() helper was setting Hono's internal route prefix in a way
+// that did not match Cloudflare Pages' canonical path for the bare
+// `/admin` URL (works locally with `wrangler pages dev`, fell through to
+// notFound on the deployed Pages Functions runtime). Full paths sidestep
+// that mismatch entirely.
+const app = new Hono<{ Bindings: Bindings }>();
 
 // TEMPORARY diagnostic — gated to non-prod envs only. Visit /admin/__diag
 // from a logged-in browser to see exactly what the guard sees. Remove
 // before the phase-1 → main merge.
-app.get("/__diag", async (c) => {
+app.get("/admin/__diag", async (c) => {
   if (c.env.ENV === "production") {
     return c.html(renderNotFound(), 404);
   }
@@ -111,7 +117,7 @@ app.use("*", async (c, next) => {
 
 // ---------- /admin (dashboard) ----------
 
-app.get("/", async (c) => {
+const dashboardHandler = async (c: import("hono").Context<{ Bindings: Bindings }>) => {
   const stats = await getDashboardStats(c.env.DB);
 
   const statCards = html`
@@ -152,11 +158,13 @@ app.get("/", async (c) => {
     </p>`;
 
   return c.html(renderShell({ title: "Dashboard", body }));
-});
+};
+app.get("/admin", dashboardHandler);
+app.get("/admin/", dashboardHandler);
 
 // ---------- /admin/users ----------
 
-app.get("/users", async (c) => {
+app.get("/admin/users", async (c) => {
   const search = (c.req.query("search") ?? "").trim();
   const page = parseIntSafe(c.req.query("page"), 1);
   const pageSize = 50;
@@ -236,7 +244,7 @@ function userRow(u: AdminUserRow): SafeHtml {
 
 // ---------- /admin/users/:id ----------
 
-app.get("/users/:id", async (c) => {
+app.get("/admin/users/:id", async (c) => {
   const id = c.req.param("id");
   const detail = await getUserDetail(c.env.DB, id);
   if (!detail) {
@@ -325,7 +333,7 @@ app.get("/users/:id", async (c) => {
 
 // ---------- /admin/sessions ----------
 
-app.get("/sessions", async (c) => {
+app.get("/admin/sessions", async (c) => {
   const moduleId = pickModule(c.req.query("module"));
   const outcome = pickOutcome(c.req.query("outcome"));
   const since = pickDate(c.req.query("since"));
