@@ -7,9 +7,28 @@ All notable changes to Policy Wonk. Format follows [Keep a Changelog](https://ke
 - Re-author CP 22 / CG 1 / CP 10 notes through the proper `scripts/ingest.js` pipeline using the actual GCPP source PDFs. Current notes were authored from question-bank explanations + general public-policy knowledge (sub-agent couldn't reach the source PDFs). See [`CONTRIBUTING.md`](policy-wonk-game/CONTRIBUTING.md) for the pipeline.
 - Expand note slug coverage so every `topic` in the question banks has a 1:1 note file, or add a graceful fallback page. The end-screen "Browse notes for [topic]" link currently 404s for uncovered slugs.
 - Pixel-letter render surface for avatars — `avatar_slug` is stored at signup but no UI displays it yet. When `/me` or in-game avatar lands, drop in a pixel font (e.g. Press Start 2P) and render the letter.
-- Admin panel (#26) — read-only dashboard, user list, session list, gated to the admin allowlist. Deferred from Phase 1. Track for development on the `phase-1` branch.
 - Pre-launch checklist update — add an end-to-end signup smoke test against the production environment so missing D1 migrations / unset secrets surface before the first real user hits them. (Phase 1 launched with prod D1 unmigrated; caught in post-launch QA.)
 - Per-email magic-link rate limit feels tight (3 per 15 min, silent block). Consider raising to 5–8 per 15 min or surfacing a visible "you've requested several links; check spam or wait a few minutes" message.
+
+## [0.3.0] — 2026-05-22 — Admin panel (Phase 1 / Track D)
+
+Closes the deferred Phase 1 track. Read-only admin tool for the solo operator (Aasif) — no edit/delete, no exports, no audit log; those are explicit non-goals per #26.
+
+### Added
+
+- **Admin panel** (#26) at `/admin`. Routes: dashboard (total users / signups in last 7 days / sessions today / most-played module), `/admin/users` (paginated list with email search), `/admin/users/[id]` (profile + played modules + full session history), `/admin/sessions` (filterable by module / outcome / date range).
+- **Admin authorization**. Every `/admin/*` request runs through a guard middleware that reads the session cookie, looks up the user, and checks `is_admin = 1`. Non-admins (and logged-out callers) get a real 404 — no admin chrome, no nav, no hint the route exists. The allowlist is the `ADMIN_EMAILS` env var (`aasif@aasifj.com` across dev/preview/prod), checked once at login by `upsertUserOnLogin`. `is_admin` is verified live on every request, so revoking admin = one column update, no session invalidation needed.
+- **Privacy disclosure** in `/privacy` — "Who can see your account data" section spelling out that the admin can view email / nickname / avatar / play history. No team, no third-party processor, no shared dashboard.
+
+### Notes on implementation
+
+- Admin pages are rendered server-side as HTML strings via a Hono catch-all at `functions/admin/[[path]].ts`. Different pattern from the rest of the (static) site — isolated to `/admin` so a non-admin curl of any admin URL returns a real 404 with no admin markup. Tagged `html\`\`` template auto-escapes all interpolated values.
+- No new DB migration — `users.is_admin` was already present in `0001_users.sql` (added at the original Phase 1 backend setup with #26 in mind).
+- No client JS in the admin tree. Search and filters are plain GET forms; pagination is offset-based; LIKE search uses `ESCAPE '\'` with proper `%`/`_`/`\` escaping.
+
+### Changed
+
+- Footer version: `Beta v0.2.1` → `Beta v0.3`. `package.json`: `0.2.1` → `0.3.0`.
 
 ## [0.2.1] — 2026-05-19 — Phase 1 post-launch hotfixes
 
