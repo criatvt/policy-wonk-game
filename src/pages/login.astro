@@ -9,20 +9,21 @@ const errorMessages: Record<string, string> = {
 };
 const errorMessage = errorParam ? (errorMessages[errorParam] ?? "Sign-in failed. Try again.") : null;
 
-// Header "Sign in" link sends ?show=email so users who already know they
-// want to sign in skip the two-ways-in upsell and land directly on the
-// email form. The chooser + benefits panels hide; the form expands.
-const directMode = Astro.url.searchParams.get("show") === "email";
+// "Direct sign-in mode" (when ?show=email is in the URL — sent by the
+// header's Sign in link) is applied CLIENT-SIDE, not server-side. Astro
+// with output: 'static' evaluates Astro.url at build time, where the
+// build has no query params, so a server-side conditional always
+// resolves to false. The inline script below reads window.location at
+// request time and toggles the chooser/form accordingly. Same pattern
+// as /auth/confirm.
 ---
 <BaseLayout title="Sign in · Policy Wonk" description="Sign in to Policy Wonk, or play as a guest with no commitment.">
   <section class="max-w-2xl mx-auto py-12">
     <header class="mb-10 text-center">
       <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] mb-3">Policy Wonk</p>
-      <h1 class="font-serif text-4xl md:text-5xl font-semibold leading-tight">{directMode ? "Sign in." : "Two ways in."}</h1>
-      <p class="mt-3 text-[var(--color-text-soft)] leading-relaxed max-w-md mx-auto">
-        {directMode
-          ? "Enter your email — we'll send a one-time sign-in link. No password to remember."
-          : "Save your history and unlock notes by signing in. Or jump straight into the game — no email, no commitment."}
+      <h1 id="login-headline" class="font-serif text-4xl md:text-5xl font-semibold leading-tight">Two ways in.</h1>
+      <p id="login-subhead" class="mt-3 text-[var(--color-text-soft)] leading-relaxed max-w-md mx-auto">
+        Save your history and unlock notes by signing in. Or jump straight into the game — no email, no commitment.
       </p>
     </header>
 
@@ -32,46 +33,42 @@ const directMode = Astro.url.searchParams.get("show") === "email";
       </div>
     )}
 
-    {!directMode && (
-      <>
-        <div class="grid md:grid-cols-2 gap-4">
-          <button
-            type="button"
-            id="show-email-btn"
-            class="px-6 py-4 border-2 border-[var(--color-charcoal)] bg-[var(--color-charcoal)] text-[var(--color-bg)] text-lg font-semibold hover:opacity-90 transition-opacity"
-          >
-            Sign in with email →
-          </button>
-          <a
-            href="/play"
-            class="px-6 py-4 border-2 border-[var(--color-charcoal)] text-[var(--color-charcoal)] text-lg font-semibold text-center hover:bg-[var(--color-charcoal)]/5 transition-colors"
-          >
-            Play as guest →
-          </a>
-        </div>
+    <div id="login-chooser" class="grid md:grid-cols-2 gap-4">
+      <button
+        type="button"
+        id="show-email-btn"
+        class="px-6 py-4 border-2 border-[var(--color-charcoal)] bg-[var(--color-charcoal)] text-[var(--color-bg)] text-lg font-semibold hover:opacity-90 transition-opacity"
+      >
+        Sign in with email →
+      </button>
+      <a
+        href="/play"
+        class="px-6 py-4 border-2 border-[var(--color-charcoal)] text-[var(--color-charcoal)] text-lg font-semibold text-center hover:bg-[var(--color-charcoal)]/5 transition-colors"
+      >
+        Play as guest →
+      </a>
+    </div>
 
-        <div class="grid md:grid-cols-2 gap-x-6 gap-y-6 mt-6 text-sm leading-relaxed">
-          <div class="flex flex-col gap-2">
-            <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">If you sign in</p>
-            <ul class="list-none p-0 m-0 flex flex-col gap-1.5 text-[var(--color-text-soft)]">
-              <li class="flex gap-2"><span aria-hidden="true">·</span><span>Revision notes unlock for each module you play</span></li>
-              <li class="flex gap-2"><span aria-hidden="true">·</span><span>Your scores and play history stick around</span></li>
-              <li class="flex gap-2"><span aria-hidden="true">·</span><span>Coming soon: flashcards, spaced repetition, weak-area dashboard</span></li>
-            </ul>
-          </div>
-          <div class="flex flex-col gap-2">
-            <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">If you play as guest</p>
-            <ul class="list-none p-0 m-0 flex flex-col gap-1.5 text-[var(--color-text-soft)]">
-              <li class="flex gap-2"><span aria-hidden="true">·</span><span>Full game — same ladder, same lifelines</span></li>
-              <li class="flex gap-2"><span aria-hidden="true">·</span><span>State persists in this tab; gone when you close it</span></li>
-              <li class="flex gap-2"><span aria-hidden="true">·</span><span>Sign in later — your guest history folds into the new account</span></li>
-            </ul>
-          </div>
-        </div>
-      </>
-    )}
+    <div id="login-benefits" class="grid md:grid-cols-2 gap-x-6 gap-y-6 mt-6 text-sm leading-relaxed">
+      <div class="flex flex-col gap-2">
+        <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">If you sign in</p>
+        <ul class="list-none p-0 m-0 flex flex-col gap-1.5 text-[var(--color-text-soft)]">
+          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Revision notes unlock for each module you play</span></li>
+          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Your scores and play history stick around</span></li>
+          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Coming soon: flashcards, spaced repetition, weak-area dashboard</span></li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-2">
+        <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">If you play as guest</p>
+        <ul class="list-none p-0 m-0 flex flex-col gap-1.5 text-[var(--color-text-soft)]">
+          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Full game — same ladder, same lifelines</span></li>
+          <li class="flex gap-2"><span aria-hidden="true">·</span><span>State persists in this tab; gone when you close it</span></li>
+          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Sign in later — your guest history folds into the new account</span></li>
+        </ul>
+      </div>
+    </div>
 
-    <div id="email-form-wrap" class={`${directMode ? "" : "mt-10 pt-8 border-t border-[var(--color-border)]"} ${(directMode || errorMessage) ? "" : "hidden"}`}>
+    <div id="email-form-wrap" class={`mt-10 pt-8 border-t border-[var(--color-border)] ${errorMessage ? "" : "hidden"}`}>
       <form id="login-form" class="space-y-4 max-w-md" novalidate>
         <div>
           <label for="email" class="block text-sm font-medium mb-2">Your email</label>
@@ -96,11 +93,9 @@ const directMode = Astro.url.searchParams.get("show") === "email";
         <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
           We store your email, nickname, avatar, and play history. We don't track you, don't share with third parties, don't use analytics cookies. <a href="/privacy" class="underline decoration-1 underline-offset-2 hover:text-[var(--color-text-soft)]">Read more →</a>
         </p>
-        {directMode && (
-          <p class="text-sm text-[var(--color-text-soft)] pt-2">
-            Don't want to sign in? <a href="/play" class="underline decoration-2 underline-offset-2 hover:opacity-80">Play as guest →</a>
-          </p>
-        )}
+        <p id="guest-fallback" class="text-sm text-[var(--color-text-soft)] pt-2 hidden">
+          Don't want to sign in? <a href="/play" class="underline decoration-2 underline-offset-2 hover:opacity-80">Play as guest →</a>
+        </p>
       </form>
 
       <div id="login-success" class="hidden mt-6 p-5 border-l-4 border-[var(--color-functional-green)] bg-[var(--color-functional-green)]/10 max-w-md">
@@ -116,9 +111,7 @@ const directMode = Astro.url.searchParams.get("show") === "email";
 </BaseLayout>
 
 <script>
-  // Optional in direct mode (?show=email): the chooser is server-skipped,
-  // so #show-email-btn isn't in the DOM. Guard accordingly.
-  const showEmailBtn = document.getElementById("show-email-btn") as HTMLButtonElement | null;
+  const showEmailBtn = document.getElementById("show-email-btn") as HTMLButtonElement;
   const emailFormWrap = document.getElementById("email-form-wrap") as HTMLDivElement;
   const form = document.getElementById("login-form") as HTMLFormElement;
   const emailInput = document.getElementById("email") as HTMLInputElement;
@@ -126,18 +119,35 @@ const directMode = Astro.url.searchParams.get("show") === "email";
   const successEl = document.getElementById("login-success") as HTMLDivElement;
   const errorEl = document.getElementById("login-error") as HTMLDivElement;
   const errorText = document.getElementById("login-error-text") as HTMLParagraphElement;
+  const headline = document.getElementById("login-headline") as HTMLHeadingElement;
+  const subhead = document.getElementById("login-subhead") as HTMLParagraphElement;
+  const chooser = document.getElementById("login-chooser") as HTMLDivElement;
+  const benefits = document.getElementById("login-benefits") as HTMLDivElement;
+  const guestFallback = document.getElementById("guest-fallback") as HTMLParagraphElement;
+
+  // Direct mode (?show=email): toggle on client-side because static
+  // Astro can't read request-time query params. Hides the chooser +
+  // benefits panels, expands the form, swaps the headline, surfaces
+  // "Or play as guest →" inside the form so guest path stays visible.
+  const params = new URLSearchParams(window.location.search);
+  const directMode = params.get("show") === "email";
+  if (directMode) {
+    chooser.hidden = true;
+    benefits.hidden = true;
+    emailFormWrap.classList.remove("hidden", "mt-10", "pt-8", "border-t", "border-[var(--color-border)]");
+    headline.textContent = "Sign in.";
+    subhead.textContent = "Enter your email — we'll send a one-time sign-in link. No password to remember.";
+    guestFallback.classList.remove("hidden");
+    emailInput.focus({ preventScroll: true });
+  }
 
   // Reveal the email form below when the user picks "Sign in with email".
   // Keeps the entry choice visually balanced — neither path is buried.
-  showEmailBtn?.addEventListener("click", () => {
+  showEmailBtn.addEventListener("click", () => {
     emailFormWrap.classList.remove("hidden");
     emailInput.focus({ preventScroll: true });
     emailFormWrap.scrollIntoView({ behavior: "smooth", block: "start" });
   });
-
-  // Direct mode (?show=email): focus the email input immediately so the
-  // user can start typing without a click.
-  if (!showEmailBtn) emailInput.focus({ preventScroll: true });
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
