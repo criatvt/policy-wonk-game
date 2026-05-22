@@ -19,6 +19,8 @@
     "validate-questions": "node scripts/validate-questions.js",
     "transform-questions": "node scripts/transform-questions.js",
     "notes:ingest": "node scripts/ingest.js",
+    "list-topics": "node scripts/list-topics.mjs",
+    "topic-context": "node scripts/topic-context.mjs",
     "notes:clean": "node scripts/clean-and-structure.js",
     "notes:rebuild": "node scripts/ingest.js --force && node scripts/clean-and-structure.js",
     "dev:worker": "npm run build && wrangler pages dev ./dist",
