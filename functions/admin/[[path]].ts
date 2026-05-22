@@ -36,10 +36,72 @@ type Bindings = {
 
 const app = new Hono<{ Bindings: Bindings }>().basePath("/admin");
 
+// TEMPORARY diagnostic — gated to non-prod envs only. Visit /admin/__diag
+// from a logged-in browser to see exactly what the guard sees. Remove
+// before the phase-1 → main merge.
+app.get("/__diag", async (c) => {
+  if (c.env.ENV === "production") {
+    return c.html(renderNotFound(), 404);
+  }
+  const { readSession } = await import("../api/_lib/session");
+  const { findUserById } = await import("../api/_lib/users");
+
+  const hasSecret = !!c.env.SESSION_SECRET;
+  const cookieHeader = c.req.header("Cookie") ?? "";
+  const hasCookie = cookieHeader.includes("pwg_session=");
+  const cookieTail = hasCookie ? cookieHeader.split("pwg_session=")[1].split(";")[0].slice(-8) : null;
+
+  let claimsSub: string | null = null;
+  let claimsEmail: string | null = null;
+  if (hasSecret) {
+    const claims = await readSession(c, c.env.SESSION_SECRET!);
+    claimsSub = claims?.sub ?? null;
+    claimsEmail = claims?.email ?? null;
+  }
+
+  let userJson: unknown = null;
+  let isAdminType: string | null = null;
+  let isAdminValue: unknown = null;
+  let isAdminCoerced: number | null = null;
+  let isAdminMatchesOne: boolean | null = null;
+  if (claimsSub) {
+    const u = await findUserById(c.env.DB, claimsSub);
+    if (u) {
+      userJson = { id: u.id, email: u.email, nickname: u.nickname, is_admin: String(u.is_admin) };
+      isAdminType = typeof u.is_admin;
+      isAdminValue = String(u.is_admin);
+      isAdminCoerced = Number(u.is_admin);
+      isAdminMatchesOne = Number(u.is_admin) === 1;
+    }
+  }
+
+  return c.json({
+    env: c.env.ENV,
+    has_session_secret: hasSecret,
+    has_cookie: hasCookie,
+    cookie_tail: cookieTail,
+    claims_sub: claimsSub,
+    claims_email: claimsEmail,
+    user: userJson,
+    is_admin_type: isAdminType,
+    is_admin_value: isAdminValue,
+    is_admin_coerced: isAdminCoerced,
+    is_admin_matches_one: isAdminMatchesOne,
+    guard_would_pass: isAdminMatchesOne === true,
+  });
+});
+
 // Guard: every admin route must clear this. On failure, return a real
 // 404 page (not a 403) so the route family is indistinguishable from
 // nonexistent paths.
 app.use("*", async (c, next) => {
+  // Diagnostic bypass — only in non-production envs. The /__diag handler
+  // returns the raw state the guard sees, so we can debug why a real
+  // admin user is being rejected. Production stays locked down.
+  if (c.req.path === "/admin/__diag" && c.env.ENV !== "production") {
+    await next();
+    return;
+  }
   const user = await loadAdminUser(c);
   if (!user) {
     return c.html(renderNotFound(), 404);
