@@ -40,11 +40,16 @@ export async function upsertUserOnLogin(
   const now = new Date().toISOString();
 
   if (existing) {
+    // Re-evaluate is_admin on every login so the column tracks the current
+    // ADMIN_EMAILS env var. Previously is_admin was only set on INSERT,
+    // meaning the allowlist effectively froze at the user's first login —
+    // changing the env var did nothing for existing rows.
+    const isAdmin = adminEmails.includes(email) ? 1 : 0;
     await db
-      .prepare("UPDATE users SET last_login_at = ? WHERE id = ?")
-      .bind(now, existing.id)
+      .prepare("UPDATE users SET last_login_at = ?, is_admin = ? WHERE id = ?")
+      .bind(now, isAdmin, existing.id)
       .run();
-    return { ...existing, last_login_at: now };
+    return { ...existing, last_login_at: now, is_admin: isAdmin };
   }
 
   const id = newUserId();

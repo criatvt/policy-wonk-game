@@ -29,7 +29,11 @@ export async function loadAdminUser<B extends GuardBindings>(
 
   const user = await findUserById(c.env.DB, claims.sub);
   if (!user) return null;
-  if (user.is_admin !== 1) return null;
+  // D1 has been known to return INTEGER columns as bigint depending on the
+  // driver / compatibility flags. Coerce to Number so the check survives
+  // both number and bigint return types (and would also tolerate "1" as a
+  // string if a future schema migration ever stored it that way).
+  if (Number(user.is_admin) !== 1) return null;
 
   return user;
 }
