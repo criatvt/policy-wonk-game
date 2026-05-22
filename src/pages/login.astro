@@ -96,6 +96,11 @@ const directMode = Astro.url.searchParams.get("show") === "email";
         <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
           We store your email, nickname, avatar, and play history. We don't track you, don't share with third parties, don't use analytics cookies. <a href="/privacy" class="underline decoration-1 underline-offset-2 hover:text-[var(--color-text-soft)]">Read more →</a>
         </p>
+        {directMode && (
+          <p class="text-sm text-[var(--color-text-soft)] pt-2">
+            Don't want to sign in? <a href="/play" class="underline decoration-2 underline-offset-2 hover:opacity-80">Play as guest →</a>
+          </p>
+        )}
       </form>
 
       <div id="login-success" class="hidden mt-6 p-5 border-l-4 border-[var(--color-functional-green)] bg-[var(--color-functional-green)]/10 max-w-md">
