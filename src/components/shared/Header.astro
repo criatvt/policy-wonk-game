@@ -49,16 +49,28 @@
   .pw-wordmark:hover { opacity: 0.8; }
   .pw-nav {
     display: flex;
-    gap: 18px;
+    gap: 8px;
     margin-left: 20px;
   }
+  /* Capsule / pill tab styling (2026-05-23): outlined pill so the nav
+     reads as a deliberate group instead of plain text links. Outlined
+     (not filled) keeps the header airy and visually distinct from the
+     filled avatar puck on the right. */
   .pw-nav a {
     color: var(--color-charcoal, #1a1a1a);
     text-decoration: none;
-    opacity: 0.85;
     font-weight: 500;
+    padding: 5px 13px;
+    border: 1px solid var(--color-border, #e5e5e5);
+    border-radius: 999px;
+    background: transparent;
+    line-height: 1.2;
+    transition: background-color 120ms ease, border-color 120ms ease;
   }
-  .pw-nav a:hover { opacity: 1; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .pw-nav a:hover {
+    background: var(--color-bg-soft, #f5f5f5);
+    border-color: var(--color-charcoal, #1a1a1a);
+  }
   .pw-auth {
     margin-left: auto;
     display: flex;
@@ -74,40 +86,43 @@
     font-weight: 600;
   }
   .pw-signin:hover { opacity: 0.85; }
+  /* Auth chip (2026-05-23): nickname removed, avatar IS the chip. Solid
+     teal disc gives a different visual register from the outlined-pill
+     nav tabs to the left — different shape (circle vs pill), different
+     colour treatment (filled vs outlined). Teal here reads as a link-
+     emphasis surface (the avatar opens the account menu), matching the
+     teal accent used elsewhere on the site. */
   .pw-chip {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 4px 10px 4px 4px;
-    border: 1px solid var(--color-border, rgba(26, 26, 26, 0.15));
-    border-radius: 999px;
+    justify-content: center;
+    padding: 0;
+    border: 0;
     background: transparent;
     cursor: pointer;
     font: inherit;
-    color: var(--color-charcoal, #1a1a1a);
+    border-radius: 50%;
   }
-  .pw-chip:hover { background: rgba(26, 26, 26, 0.04); }
+  .pw-chip:focus-visible {
+    outline: 2px solid var(--color-functional-marigold, #006D77);
+    outline-offset: 2px;
+  }
   .pw-avatar {
     display: inline-flex;
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     align-items: center;
     justify-content: center;
-    background: var(--color-charcoal, #1a1a1a);
-    color: var(--color-bg, #f8f1e4);
+    background: var(--color-functional-marigold, #006D77);
+    color: #ffffff;
     border-radius: 50%;
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
+    transition: opacity 120ms ease;
   }
-  .pw-nickname {
-    max-width: 12ch;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-weight: 500;
-  }
+  .pw-chip:hover .pw-avatar { opacity: 0.85; }
   .pw-menu {
     position: absolute;
     top: calc(100% + 6px);
@@ -134,8 +149,15 @@
     color: var(--color-charcoal, #1a1a1a);
   }
   .pw-menu-item:hover { background: rgba(26, 26, 26, 0.06); }
+  .pw-menu-nickname {
+    padding: 8px 12px 2px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-charcoal, #1a1a1a);
+    word-break: break-word;
+  }
   .pw-menu-email {
-    padding: 8px 12px;
+    padding: 0 12px 8px;
     font-size: 12px;
     color: var(--color-text-muted, #6b6b6b);
     border-bottom: 1px solid var(--color-border, rgba(26, 26, 26, 0.1));
@@ -145,8 +167,8 @@
 
   @media (max-width: 540px) {
     .pw-header { padding: 10px 16px; gap: 10px; }
-    .pw-nav { gap: 12px; margin-left: 8px; }
-    .pw-nickname { display: none; }
+    .pw-nav { gap: 6px; margin-left: 8px; }
+    .pw-nav a { padding: 4px 11px; font-size: 13px; }
   }
 </style>
 
@@ -168,12 +190,16 @@
       const letter = (user.avatar_slug || user.nickname || user.email || "?").toString().toUpperCase().slice(0, 1);
       const nickname = user.nickname || user.email.split("@")[0];
       const escape = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+      // Avatar-only chip (2026-05-23). Nickname is no longer rendered in
+      // the header — it stays inside the dropdown menu for identification.
+      // The avatar carries the accessible label so screen readers still
+      // know whose account this is.
       slot.innerHTML =
-        '<button type="button" class="pw-chip" aria-haspopup="true" aria-expanded="false" id="pw-chip-btn">' +
+        '<button type="button" class="pw-chip" aria-haspopup="true" aria-expanded="false" aria-label="Account menu for ' + escape(nickname) + '" id="pw-chip-btn">' +
           '<span class="pw-avatar" aria-hidden="true">' + escape(letter) + '</span>' +
-          '<span class="pw-nickname">' + escape(nickname) + '</span>' +
         '</button>' +
         '<div class="pw-menu" id="pw-chip-menu" role="menu" hidden>' +
+          '<div class="pw-menu-nickname">' + escape(nickname) + '</div>' +
           '<div class="pw-menu-email">' + escape(user.email) + '</div>' +
           '<button type="button" class="pw-menu-item" id="pw-signout-btn" role="menuitem">Sign out</button>' +
         '</div>';
