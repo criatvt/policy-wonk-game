@@ -1,7 +1,7 @@
 ---
 title: "Supply and Demand in Practice"
 module: "cp-23"
-moduleName: "Microeconomics — Demand & Supply"
+moduleName: "Microeconomics (demand & supply)"
 order: 30
 summary: "The COVID-era egg and rescue-puppy markets ran through the standard supply-demand dynamics in compressed time — and showed how elasticity determines whether shocks show up as price changes or quantity changes."
 sources: ["No Yolk_ Shortages and Spikes in the Time of COVID - Econlib.pdf", "What rescue puppies teach us about supply and demand.pdf"]

@@ -1,7 +1,7 @@
 ---
 title: "Rent-Seeking"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 33
 summary: "Effort spent securing political or regulatory advantages rather than producing value. The activity is privately profitable, socially wasteful, and politically resilient."
 sources: ["Opinion___The_addictive_nature_of_bad_policies.md"]

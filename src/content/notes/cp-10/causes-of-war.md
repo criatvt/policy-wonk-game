@@ -1,7 +1,7 @@
 ---
 title: "Levels of Analysis and the Causes of War"
 module: "cp-10"
-moduleName: "Public Systems Thinking"
+moduleName: "Systems thinking for policy"
 order: 9
 summary: "Why war happens isn't a single question — it's at least four questions, asked at different levels of analysis."
 sources: ["1998 causes of war & conditions of peace.pdf"]

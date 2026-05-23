@@ -1,7 +1,7 @@
 {
   "name": "policy-wonk-game",
   "type": "module",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "private": true,
   "license": "CC-BY-NC-4.0",
   "description": "Policy Wonk — a 15-question ladder quiz on public-policy fundamentals, built on Takshashila GCPP material. Open-access game; optional email + magic-link login unlocks per-module revision notes and saved play history. No tracking, no third-party scripts.",

@@ -1,7 +1,7 @@
 ---
 title: "Opportunity Cost"
 module: "cp-22"
-moduleName: "Public Economics — Markets"
+moduleName: "Public economics (markets)"
 order: 3
 summary: "The cost of a choice is what you gave up to make it — not what you paid in cash."
 sources: ["Opportunity Cost.pdf", "Price Signal Incentive.pdf"]

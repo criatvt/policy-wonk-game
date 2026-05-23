@@ -1,7 +1,7 @@
 ---
 title: "Marginal Thinking"
 module: "cp-22"
-moduleName: "Public Economics — Markets"
+moduleName: "Public economics (markets)"
 order: 7
 summary: "Real decisions happen at the edge: not 'do I buy roses at all' but 'do I buy one more or one fewer than I did last year.'"
 sources: ["Price Signal Incentive.pdf"]

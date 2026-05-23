@@ -1,7 +1,7 @@
 ---
 title: "Dynamic Market Responses"
 module: "cp-23"
-moduleName: "Microeconomics — Demand & Supply"
+moduleName: "Microeconomics (demand & supply)"
 order: 27
 summary: "After a shock, markets often overshoot before settling. Producers and consumers adjust on expectations, and the adjustments interact to produce dynamics the static framework can't fully capture."
 sources: ["No Yolk_ Shortages and Spikes in the Time of COVID - Econlib.pdf"]

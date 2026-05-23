@@ -1,7 +1,7 @@
 ---
 title: "Elasticity and Tax Incidence"
 module: "cp-23"
-moduleName: "Microeconomics — Demand & Supply"
+moduleName: "Microeconomics (demand & supply)"
 order: 11
 summary: "Who actually pays a tax — consumers or producers — depends on the relative elasticities of demand and supply, not on who is legally liable to remit the tax."
 sources: ["Demand - Econlib.pdf"]

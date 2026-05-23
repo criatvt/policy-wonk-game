@@ -1,7 +1,7 @@
 ---
 title: "Monopoly"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 30
 summary: "When a single firm controls supply, it can restrict output and raise prices above competitive levels. The result is welfare loss for consumers and the standard case for anti-trust intervention."
 sources: ["Clifford Winston Market Failure Podcast.md"]

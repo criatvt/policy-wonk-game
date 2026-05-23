@@ -1,7 +1,7 @@
 ---
 title: "Price Discovery"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 26
 summary: "Markets discover prices through the interaction of buyers and sellers, settling on values that no participant could have computed in advance."
 sources: ["Marginal Thinking.pdf"]

@@ -1,7 +1,7 @@
 ---
 title: "Giffen and Veblen Goods"
 module: "cp-23"
-moduleName: "Microeconomics — Demand & Supply"
+moduleName: "Microeconomics (demand & supply)"
 order: 22
 summary: "Two exceptional categories where demand rises with price — Giffen goods (rare inferior staples) and Veblen goods (conspicuous-consumption luxuries). Both are edge cases, but they are real."
 sources: ["Demand - Econlib.pdf"]

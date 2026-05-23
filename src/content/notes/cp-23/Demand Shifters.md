@@ -1,7 +1,7 @@
 ---
 title: "Demand Shifters"
 module: "cp-23"
-moduleName: "Microeconomics — Demand & Supply"
+moduleName: "Microeconomics (demand & supply)"
 order: 2
 summary: "Movement along a demand curve happens when price changes. The whole curve shifts when income, tastes, the price of substitutes or complements, or expectations change."
 sources: ["Demand - Econlib.pdf"]

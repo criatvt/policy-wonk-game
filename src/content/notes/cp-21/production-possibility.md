@@ -1,7 +1,7 @@
 ---
 title: "Production Possibilities and Trade-Offs"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 17
 summary: "The production possibility frontier is the textbook way of showing that an economy with limited resources faces trade-offs across what it can produce. Real economies operate inside that frontier, and policy can sometimes push them out."
 sources: ["Getting the Most Out of Life_ The Concept of Opportunity Cost - Econlib.pdf"]

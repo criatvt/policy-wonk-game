@@ -1,7 +1,7 @@
 ---
 title: "Price Controls in Crisis"
 module: "cp-23"
-moduleName: "Microeconomics — Demand & Supply"
+moduleName: "Microeconomics (demand & supply)"
 order: 15
 summary: "The COVID-era price-gouging debates over hand sanitiser, masks, and other essentials replayed the standard price-control trade-off in compressed time. The diagnosis was the same; the politics felt different."
 sources: ["India-hand_sanitizer.pdf"]

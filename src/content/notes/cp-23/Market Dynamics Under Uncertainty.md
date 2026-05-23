@@ -1,7 +1,7 @@
 ---
 title: "Market Dynamics Under Uncertainty"
 module: "cp-23"
-moduleName: "Microeconomics — Demand & Supply"
+moduleName: "Microeconomics (demand & supply)"
 order: 28
 summary: "When buyers and sellers don't know what conditions will be like next month, market dynamics change. Hoarding, panic buying, and supply withholding all become rational responses to uncertainty itself."
 sources: ["No Yolk_ Shortages and Spikes in the Time of COVID - Econlib.pdf"]

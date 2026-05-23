@@ -1,7 +1,7 @@
 ---
 title: "Unintended Consequences"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 6
 summary: "Incentive schemes routinely produce outcomes their designers didn't anticipate. The snake-bounty story is the standard caution: schemes must model responses to the scheme, not just to the problem."
 sources: ["Slavery__Snakes__and_Switching_The_Role_of_Incentives_in_Creating_Unintended_Consequences__1_.md"]

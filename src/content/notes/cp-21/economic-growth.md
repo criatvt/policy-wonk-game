@@ -1,7 +1,7 @@
 ---
 title: "Economic Growth"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 37
 summary: "Long-run growth comes from productivity gains — better technology, more capital, better-trained workers — not from money creation. And growth matters mainly as a means of expanding human possibilities."
 sources: ["Economic_Growth.pdf"]

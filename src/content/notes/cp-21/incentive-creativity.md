@@ -1,7 +1,7 @@
 ---
 title: "Creative Responses to Incentives"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 5
 summary: "Actors respond to price controls and regulations creatively — finding paths through the rules that the rule-makers didn't anticipate. The Chilean bakers story is the canonical case."
 sources: ["Incentives_Matter.pdf"]

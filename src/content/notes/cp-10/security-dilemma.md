@@ -1,7 +1,7 @@
 ---
 title: "The Security Dilemma"
 module: "cp-10"
-moduleName: "Public Systems Thinking"
+moduleName: "Systems thinking for policy"
 order: 7
 summary: "When defensive actions look offensive to the other side, even states that want peace can spiral into conflict."
 sources: ["1998 causes of war & conditions of peace.pdf"]

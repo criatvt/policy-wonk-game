@@ -1,7 +1,7 @@
 ---
 title: "Information Asymmetry"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 31
 summary: "Markets work badly when one side of a transaction knows much more than the other. The standard responses — disclosure, certification, regulation — try to reduce the gap rather than eliminate it."
 sources: ["Economic Freedom - Econlib.pdf"]

@@ -1,7 +1,7 @@
 ---
 title: "Supply Fundamentals"
 module: "cp-23"
-moduleName: "Microeconomics — Demand & Supply"
+moduleName: "Microeconomics (demand & supply)"
 order: 3
 summary: "The law of supply: as price rises, quantity supplied rises. The upward-sloping supply curve reflects producers' willingness to produce more at higher prices."
 sources: ["Demand - Econlib.pdf"]

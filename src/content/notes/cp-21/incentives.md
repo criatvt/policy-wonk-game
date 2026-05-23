@@ -1,7 +1,7 @@
 ---
 title: "Incentives Matter"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 1
 summary: "People respond to changes in rewards and costs by adjusting their behaviour. The phrase 'incentives matter' is the core working principle of economic reasoning about policy."
 sources: ["Incentives_Matter.pdf"]

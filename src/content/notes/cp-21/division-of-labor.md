@@ -1,7 +1,7 @@
 ---
 title: "Division of Labour"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 20
 summary: "Splitting tasks among specialists raises productivity dramatically — Adam Smith's pin factory observation, still operative across modern manufacturing and services."
 sources: ["Getting the Most Out of Life_ The Concept of Opportunity Cost - Econlib.pdf"]

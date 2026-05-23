@@ -1,7 +1,7 @@
 ---
 title: "Market Equilibrium"
 module: "cp-23"
-moduleName: "Microeconomics — Demand & Supply"
+moduleName: "Microeconomics (demand & supply)"
 order: 5
 summary: "The price at which quantity demanded equals quantity supplied. Markets tend toward this point because surpluses push prices down and shortages push prices up."
 sources: ["Equilibrium Price Quantity.pdf"]

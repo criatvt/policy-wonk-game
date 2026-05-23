@@ -1,7 +1,7 @@
 ---
 title: "The Kidney Shortage"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 32
 summary: "Why prohibiting payment for organs produces a chronic shortage — and why allowing payment raises ethical questions that are hard to set aside even when the case for the change is strong on incentive grounds."
 sources: ["Incentives_Matter.pdf"]

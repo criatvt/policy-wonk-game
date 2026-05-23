@@ -1,7 +1,7 @@
 ---
 title: "Realism and the Anarchic System"
 module: "cp-10"
-moduleName: "Public Systems Thinking"
+moduleName: "Systems thinking for policy"
 order: 6
 summary: "The dominant framework for thinking about why states behave as they do — and the two main flavours of it."
 sources: ["1998 causes of war & conditions of peace.pdf"]

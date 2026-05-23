@@ -1,7 +1,7 @@
 ---
 title: "Short-Run vs Long-Run Supply"
 module: "cp-23"
-moduleName: "Microeconomics — Demand & Supply"
+moduleName: "Microeconomics (demand & supply)"
 order: 12
 summary: "Supply is much more elastic in the long run, when capacity itself can adjust, than in the short run, when capacity is fixed. The distinction explains why short-run shocks produce price spikes that the long run absorbs."
 sources: ["Demand - Econlib.pdf"]

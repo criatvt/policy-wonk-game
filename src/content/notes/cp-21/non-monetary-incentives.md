@@ -1,7 +1,7 @@
 ---
 title: "Non-Monetary Incentives"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 3
 summary: "Status, recognition, social approval, and conscience all do real motivational work. Effective policy often uses them deliberately rather than treating them as residual noise."
 sources: ["Incentives_Matter.pdf"]

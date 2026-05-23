@@ -1,7 +1,7 @@
 ---
 title: "Gains from Trade"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 21
 summary: "Voluntary trade is positive-sum: both parties end up better off than they were before. The principle scales from individual exchanges to international trade."
 sources: ["Getting the Most Out of Life_ The Concept of Opportunity Cost - Econlib.pdf"]
