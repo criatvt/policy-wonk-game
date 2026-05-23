@@ -1,0 +1,26 @@
+---
+title: "Strategic Interests"
+module: "cs-11"
+moduleName: "Strategic Studies"
+order: 28
+summary: "Geography, resources, and position relative to other powers structure what counts as a strategic interest — partly contingent, but more durable than most other features of state policy."
+sources: ["DFA22_CS1.pptx.pdf"]
+---
+
+# Strategic Interests
+
+Strategic interests are the particular concerns whose protection or advancement defines a state's foreign-policy priorities. Some interests are universal — territorial integrity, political independence, the security of citizens — while others are particular to the state's geographic position, historical experience, economic structure, and ideological commitments. The discipline of identifying strategic interests is the first step in any serious foreign-policy analysis: a strategy without clearly identified interests is a strategy without anchor.
+
+Geography is the most durable shaper of strategic interest. Where a state sits in the world structures which threats it faces, which neighbours it has to manage, which trade routes matter for its prosperity, and which resources it controls or lacks. The classical geopolitical writers — Mahan on sea power, Mackinder on the Eurasian heartland, Spykman on the rimland — argued that geography was the master variable from which other strategic features could be derived. The strong form of the claim is overstated; the weak form is hard to deny. India's strategic interests are inflected throughout by the Himalayan border with China, the eastern flank facing Bangladesh and Myanmar, the western neighbourhood with Pakistan and the Iran-Afghanistan-Central Asia space, and the maritime expanse of the Indian Ocean.
+
+Resources are the second durable shaper. Energy security, food security, the security of critical minerals and inputs, access to fresh water — all generate strategic interests because their interruption would threaten the state's basic functioning. The 1970s oil crises taught oil-importing economies that energy security was strategic. The contemporary concern with semiconductor supply chains, critical minerals for clean-energy and defence applications, and food-supply resilience are extensions of the same logic. The states that produce critical resources gain leverage; the states that consume them have to manage dependence.
+
+The third durable shaper is position relative to other powers. Whether the state is a peer competitor, a regional power, a small state in the shadow of larger neighbours, or a hegemon shapes what kinds of strategic interests it has and what kinds of instruments it can use. A small state's interest in alliance protection is structurally different from a great power's interest in maintaining a balance favourable to itself. India's interests as a major Asian power are different from the interests of Sri Lanka or Maldives in the same region, even though geography overlaps. The hierarchy of capability within a region structures which states get to define the strategic agenda and which have to respond to others' definitions.
+
+A useful analytical move is to distinguish core from peripheral interests. Core interests are those whose violation would justify substantial costs to defend — territorial integrity, sovereignty over critical maritime spaces, the safety of citizens, the stability of essential economic relationships. Peripheral interests are those that matter but whose loss could be accepted if necessary. The distinction is consequential because the willingness to fight for an interest scales with the depth of the interest; making clear what counts as core to a state's identity helps the state and others calibrate expectations and responses. Confusion about which interests are core and which are peripheral has been a recurring source of strategic overextension and credibility loss.
+
+The interests of a state are not eternal. They evolve as the state's circumstances change. A state's energy interests shift with the composition of its economy; its maritime interests shift with its trade patterns; its political interests shift with its ideological commitments and the international environment. The discipline of revisiting strategic interests periodically — asking whether the current articulation still describes what actually matters — is part of strategic adaptation. States that fail to revisit can end up defending interests that have become obsolete while neglecting new interests that have emerged.
+
+## Why this matters in policy
+
+For India, the strategic interests question has become more explicit in recent years. The maritime turn — the formalisation of an Indo-Pacific framework, the renewed investment in the navy, the explicit articulation of an Indian Ocean strategy — reflects the recognition that maritime interests have grown in weight relative to continental interests. The economic-statecraft turn — supply-chain diversification, semiconductor capacity, critical-mineral policies — reflects the recognition that economic interests are increasingly inseparable from strategic ones. The articulation continues to evolve, and the gap between articulated interests and the instruments actually invested in to defend them is one of the working themes of Indian strategic debate.

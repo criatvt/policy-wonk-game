@@ -1,5 +1,5 @@
 ---
-title: "Framing as Selection"
+title: "Narrative Framing"
 module: "cp-33"
 moduleName: "Policy Communication"
 order: 8
@@ -7,7 +7,7 @@ summary: "Framing doesn't change the facts; it changes which facts are foregroun
 sources: ["Narratives_-_Policy_Paradox_Deborah_Stone_Ch_6__7__8.pdf"]
 ---
 
-# Framing as Selection
+# Narrative Framing
 
 The most precise way to define framing, drawing on Deborah Stone, is as the *selection* of which aspects of an issue to make salient in the audience's mind. A frame doesn't change the underlying facts; it changes which facts are foregrounded and which are pushed to the background. The selection profoundly shapes how audiences interpret the issue and which solutions seem appropriate.
 

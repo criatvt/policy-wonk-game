@@ -4,11 +4,31 @@ All notable changes to Policy Wonk. Format follows [Keep a Changelog](https://ke
 
 ## [Unreleased]
 
-- Re-author CP 22 / CG 1 / CP 10 notes through the proper `scripts/ingest.js` pipeline using the actual GCPP source PDFs. Current notes were authored from question-bank explanations + general public-policy knowledge (sub-agent couldn't reach the source PDFs). See [`CONTRIBUTING.md`](policy-wonk-game/CONTRIBUTING.md) for the pipeline.
-- Expand note slug coverage so every `topic` in the question banks has a 1:1 note file, or add a graceful fallback page. The end-screen "Browse notes for [topic]" link currently 404s for uncovered slugs.
+- Re-author CP 22 / CG 1 / CP 10 notes through the proper `scripts/ingest.js` pipeline using the actual GCPP source PDFs. Current notes were authored from question-bank explanations + general public-policy knowledge (sub-agent couldn't reach the source PDFs). See [`CONTRIBUTING.md`](policy-wonk-game/CONTRIBUTING.md) for the pipeline. The 92 build warnings about missing `<slug>.md` files all come from these three modules — they collapse once the re-authoring lands.
 - Pixel-letter render surface for avatars — `avatar_slug` is stored at signup but no UI displays it yet. When `/me` or in-game avatar lands, drop in a pixel font (e.g. Press Start 2P) and render the letter.
 - Pre-launch checklist update — add an end-to-end signup smoke test against **both staging and production** so missing D1 migrations / unset secrets surface before any real user (or the admin) hits them. (Phase 1 launched with prod D1 unmigrated; v0.3.0 hit the same trap on staging during admin-panel QA.)
 - Per-email magic-link rate limit feels tight (3 per 15 min, silent block). Consider raising to 5–8 per 15 min or surfacing a visible "you've requested several links; check spam or wait a few minutes" message.
+- Option-length variance across several question banks (cs-11, cp-33 and others) — the build flags ~30 questions where the correct option is meaningfully longer than its distractors. A "longest = correct" tell. Tighten the bank when there's appetite.
+
+## [0.3.4] — 2026-05-23 — cs-11 notes + cross-module topic reconciliation (closes #40)
+
+Closes #40 — every module on the site now has a 1:1 note file per `topic` in its question bank. Also retro-fixes a data-quality issue that shipped with v0.3.3: four modules (cs-11, cp-23, cp-25, cp-33) had `topic` fields in mixed Title-Case + kebab-case for the same concepts, which produced duplicate / broken note routes.
+
+### Added
+
+- **35 new revision notes for `cs-11` (Strategic Studies)** — `_index.md` plus 34 topics. Authored from the proper PDF pipeline (the three foundational PDFs — *Strategic Studies and the Problem of Power*, *Strategy and Limitation of War*, *The Lost Meaning of Strategy* — are scanned/image-only and needed an OCR pass via `ocrmypdf` before `scripts/ingest.js` could extract anything useful from them). The two pre-existing text-layer PDFs (Prakash Menon's CS-1 deck, the IWP Statecraft text) carry the rest. Sub-agent authored.
+- **`Protectionism.md` route now exists in cp-25** — v0.3.3 shipped only `protectionism.md` (kebab) but the bank had topic `"Protectionism"` (Title Case), so that route was broken (it 404'd on Cloudflare Pages). The Title-Case file now exists and routes.
+
+### Changed
+
+- **Question banks**: cs-11.json (10 topic-field edits — 8 case-pair collapses + 2 kebab-orphan renames to `Strategy and Politics` and `Second-Strike Capability`), cp-23.json (6 edits), cp-25.json (6 edits), cp-33.json (9 edits). All `topic` values are now Title-Case across the entire site, with one note file per topic.
+- **Six existing notes were merged** to absorb the kebab-side content their now-collapsed pair partners had been carrying: `cp-23/Market Equilibrium.md`, `cp-25/Comparative Advantage.md`, `cp-25/Trade Policy.md`, `cp-33/Narrative Structure.md`, `cp-33/Digital Platforms.md`, `cp-33/Credibility and Trust.md`. Each absorbed an analytical/applied angle that the kebab file had been a separate file for. No content was lost.
+- **Ten notes were case-renamed** kebab → Title Case to match the reconciled bank values, with frontmatter `title` and body H1 updated to match. Affected: cp-23 (3 — `Price Controls in Crisis`, `Supply and Demand in Practice`, `Ceteris Paribus in Market Analysis`), cp-25 (2 — `Protectionism`, `Trade Liberalization`), cp-33 (5 — `Narrative Framing`, `News Cycles and Corrections`, `Deborah Stone Policy Paradox`, `Communication Strategy`, `Consultation Design`).
+- Footer version: `Beta v0.3.3` → `Beta v0.3.4`. `package.json`: `0.3.3` → `0.3.4`.
+
+### Notes coverage milestone
+
+All 11 modules now ship with full revision-notes coverage: cg-1, cp-10, cp-11, cp-12, cp-13, cp-21, cp-22, cp-23, cp-25, cp-33, cs-11. (The three modules authored from the question-bank shortcut — CP 22 / CG 1 / CP 10 — are still flagged in `[Unreleased]` for re-authoring through the PDF pipeline, but that's a quality upgrade rather than a coverage gap.)
 
 ## [0.3.3] — 2026-05-22 — Revision notes for 6 more modules
 

@@ -602,7 +602,7 @@
   {
     "id": "cp23-q042",
     "module": "cp-23",
-    "topic": "price-controls",
+    "topic": "Price Controls in Crisis",
     "difficulty": "expert",
     "question": "During the COVID-19 pandemic, price spikes for hand sanitizer were widely condemned as 'price gouging.' What does supply-and-demand analysis reveal about the trade-offs in banning such price increases?",
     "options": [
@@ -618,7 +618,7 @@
   {
     "id": "cp23-q043",
     "module": "cp-23",
-    "topic": "market-equilibrium",
+    "topic": "Market Equilibrium",
     "difficulty": "expert",
     "question": "Supply and demand analysis predicts that markets tend toward equilibrium. What does the recurrence of shortages in regulated markets reveal about the relationship between equilibrium theory and institutional context?",
     "options": [
@@ -634,7 +634,7 @@
   {
     "id": "cp23-q044",
     "module": "cp-23",
-    "topic": "supply-demand",
+    "topic": "Supply and Demand in Practice",
     "difficulty": "expert",
     "question": "The egg and puppy shortages during COVID-19 both involved supply constraints meeting demand surges. Why did they produce different market outcomes, and what does this reveal about the role of elasticity?",
     "options": [
@@ -650,7 +650,7 @@
   {
     "id": "cp23-q045",
     "module": "cp-23",
-    "topic": "demand-supply",
+    "topic": "Ceteris Paribus in Market Analysis",
     "difficulty": "expert",
     "question": "Supply and demand curves represent behavior at a moment in time, with all else equal. What are the implications of this ceteris paribus assumption for using market analysis to predict the effects of a complex policy change?",
     "options": [
@@ -666,7 +666,7 @@
   {
     "id": "cp23-q046",
     "module": "cp-23",
-    "topic": "market-equilibrium",
+    "topic": "Market Equilibrium",
     "difficulty": "expert",
     "question": "Markets are said to 'clear' at equilibrium, meaning there are no unsatisfied buyers or sellers at the prevailing price. Why does the concept of market clearing have significant implications for evaluating the efficiency of government allocation mechanisms?",
     "options": [
@@ -682,7 +682,7 @@
   {
     "id": "cp23-q047",
     "module": "cp-23",
-    "topic": "supply-demand",
+    "topic": "Supply and Demand in Practice",
     "difficulty": "expert",
     "question": "The rescue puppy market during COVID showed demand surging and prices rising sharply. What would standard economic theory predict happens to supply over a longer time horizon, and why does this matter for evaluating short-run policy responses?",
     "options": [

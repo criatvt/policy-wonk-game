@@ -1,0 +1,26 @@
+---
+title: "Nuclear Strategy"
+module: "cs-11"
+moduleName: "Strategic Studies"
+order: 13
+summary: "The theory of how to use, threaten to use, and avoid the use of weapons whose actual employment would be catastrophic — and the strange equilibrium of mutual assured destruction that has held for eighty years."
+sources: ["Strategy_and_Limitation_of_War.pdf", "Strategic_Studies_and_the_Problem_of_Power.pdf"]
+---
+
+# Nuclear Strategy
+
+Nuclear strategy is the body of thinking about how states should use, threaten to use, and avoid the use of nuclear weapons. Because the actual large-scale use of nuclear weapons would be catastrophic for both attacker and target, nuclear strategy is paradoxically about not using nuclear weapons — about deriving political effect from their existence and from credible threats of their use without ever actually employing them. The body of theory was largely built in the United States in the 1950s and 1960s by Bernard Brodie, Albert Wohlstetter, Thomas Schelling, Herman Kahn, and others, and the resulting concepts remain the working vocabulary of contemporary nuclear policy.
+
+The foundational concept is mutual assured destruction (MAD). Once both sides in a nuclear dyad possess survivable second-strike capability — the ability to absorb a first strike and still inflict unacceptable damage in retaliation — neither side can rationally initiate nuclear war. The first attacker, no matter how successful, would be destroyed by the retaliation. The condition is "mutual" because the destruction works both ways and "assured" because the second-strike capability is robust enough that the retaliation cannot be eliminated by any feasible first strike. Under MAD, nuclear weapons stabilise the relationship: war between the two sides becomes effectively unthinkable.
+
+A second key concept is the stability-instability paradox, articulated by Glenn Snyder. The condition of strategic-nuclear stability — large-scale war is irrational — paradoxically opens space for lower-level conflict. If both sides know that escalation to total war is mutually catastrophic and therefore unlikely, each can pursue limited objectives — proxy wars, border skirmishes, sub-conventional pressure — confident that the adversary will not respond by escalating. The Cold War manifestation was the long series of proxy conflicts in Korea, Vietnam, Africa, Afghanistan, and elsewhere, fought with conventional forces under a nuclear umbrella that prevented any of them from escalating into general war. The contemporary South Asian manifestation is the persistent low-level conflict between India and Pakistan, sustained in the shadow of mutual nuclear deterrence.
+
+Nuclear doctrine — the declared posture for how a state would use its weapons — varies. Some states declare no-first-use (NFU): they will never be the first to introduce nuclear weapons into a conflict. India and China both maintain NFU postures. Other states reserve the right of first use as part of their deterrent — the US has historically done so to extend deterrence to conventional allies, Russia has done so to compensate for conventional weakness, Pakistan has done so to deter Indian conventional superiority. Each posture has internal coherence and each generates its own stability/instability properties.
+
+The credibility of nuclear threats is the long-running puzzle. To deter, a state must threaten to do something that would be irrational to actually do. The classical answers — automatic delegation of authority, deliberate ambiguity, the "threat that leaves something to chance" (Schelling) — are technical solutions to a political problem. They work probabilistically rather than deterministically, and their performance under stress is unknown precisely because the cases in which they would be tested are the cases everyone is trying to avoid.
+
+The arsenal-design implications are substantial. Survivability requires forces that can absorb a first strike — typically achieved through some combination of submarines (which are hard to find), mobile land-based missiles, dispersed bunkers, and warning systems that allow launch before the missiles arrive. Counterforce capability — the ability to destroy the adversary's nuclear forces in a first strike — is destabilising if pursued unilaterally, because it can create the perception that one side might consider a disarming first strike. Arms control agreements historically tried to constrain counterforce, prohibit destabilising defences, and stabilise the mutual-vulnerability condition.
+
+## Why this matters in policy
+
+India's nuclear posture — credible minimum deterrence, no-first-use, civilian command-and-control — was deliberately designed to sit within the doctrinal mainstream of stable nuclear deterrence rather than aspiring to counterforce or war-fighting capability. The posture has held since the 1998 tests and the 2003 doctrine. The current debates concern whether the posture needs adjustment in response to evolving threats — Chinese capability growth, Pakistani tactical nuclear weapons, ballistic-missile defence dynamics — and whether the doctrine's no-first-use commitment should be reaffirmed, qualified, or revised. Each debate sits squarely within the conceptual vocabulary the Cold War theorists left behind.

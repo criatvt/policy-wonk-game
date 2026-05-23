@@ -1,5 +1,5 @@
 ---
-title: "News and the Backfire Effect"
+title: "News Cycles and Corrections"
 module: "cp-33"
 moduleName: "Policy Communication"
 order: 25
@@ -7,7 +7,7 @@ summary: "Political beliefs are tied to group identity. Facts that threaten iden
 sources: ["How the news changes the way we think and behave.pdf"]
 ---
 
-# News and the Backfire Effect
+# News Cycles and Corrections
 
 A robust finding from political-psychology research is that accurate factual corrections often fail to change minds about politically charged issues — and sometimes strengthen the false beliefs they were trying to correct. The mechanism is *identity-protective cognition*: political beliefs are tied to group identity, and factual challenges to those beliefs feel like personal or social threats. The audience responds by defending the belief rather than updating it.
 

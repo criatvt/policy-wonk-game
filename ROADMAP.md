@@ -70,6 +70,7 @@ Phase 2+ items are stack-ranked here but the ordering is **draft** — to be con
 - **v0.3.1** (2026-05-22): Site-wide top header with Notes menu, auth chip + sign-out (#36), homepage refresh.
 - **v0.3.2** (2026-05-22): Header hotfixes (chip global styling, header Sign-in → direct flow, tagline disclosure).
 - **v0.3.3** (2026-05-22): 219 revision notes for cp-11/12/13/21/23/33 plus cp-25 completion. #40 partial — cs-11 only module remaining.
+- **v0.3.4** (2026-05-23): cs-11 notes (35 files, including OCR pass of three scanned PDFs) + cross-module topic-field reconciliation across cp-23/25/33/cs-11 (all `topic` values now Title-Case, 1:1 with note files). **Closes #40** — every module now has full revision-notes coverage.
 
 **Pre-launch checklist debt:** v0.2.1 and v0.3.0 both shipped with missing remote D1 migrations (the former on prod, the latter on staging). Next pre-launch checklist needs an end-to-end signup smoke test against **both staging and production** environments to catch this class of issue before the first real user hits it.
 
