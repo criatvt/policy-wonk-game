@@ -10,6 +10,18 @@ All notable changes to Policy Wonk. Format follows [Keep a Changelog](https://ke
 - Per-email magic-link rate limit feels tight (3 per 15 min, silent block). Consider raising to 5–8 per 15 min or surfacing a visible "you've requested several links; check spam or wait a few minutes" message.
 - Option-length variance across several question banks (cs-11, cp-33 and others) — the build flags ~30 questions where the correct option is meaningfully longer than its distractors. A "longest = correct" tell. Tighten the bank when there's appetite.
 
+## [0.3.5] — 2026-05-23 — Hotfix: drop the Phase-1 modules allowlist on the notes index
+
+The notes index page (`/notes/`) hardcoded a Phase-1-era allowlist of three modules (`cp-22`, `cg-1`, `cp-10`) and rendered everything else as "Coming soon" — even after v0.3.4 shipped notes for all 11 modules. Surfaced moments after the v0.3.4 deploy went live.
+
+### Fixed
+
+- **`src/pages/notes/index.astro`**: removed the `AVAILABLE_MODULES` constant entirely. A module is now treated as available iff it has at least one entry in the content collection (`modulesWithNotes`). All 11 modules now read as unlockable on the notes index.
+
+### Changed
+
+- Footer version: `Beta v0.3.4` → `Beta v0.3.5`. `package.json`: `0.3.4` → `0.3.5`.
+
 ## [0.3.4] — 2026-05-23 — cs-11 notes + cross-module topic reconciliation (closes #40)
 
 Closes #40 — every module on the site now has a 1:1 note file per `topic` in its question bank. Also retro-fixes a data-quality issue that shipped with v0.3.3: four modules (cs-11, cp-23, cp-25, cp-33) had `topic` fields in mixed Title-Case + kebab-case for the same concepts, which produced duplicate / broken note routes.

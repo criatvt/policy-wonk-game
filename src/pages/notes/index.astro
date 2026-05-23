@@ -6,13 +6,9 @@ import modulesData from "../../data/modules.json";
 
 type Module = (typeof modulesData)[number];
 
-// Modules with notes available in this Phase 1 release.
-// As #13 lands content for more modules, add them here.
-const AVAILABLE_MODULES = new Set(["cp-22", "cg-1", "cp-10"]);
-
 // Determine which modules have at least one note file shipped.
-// Cross-check the content collection so the index stays accurate even if
-// a module is half-authored.
+// All 11 modules now have notes coverage (v0.3.4); a module is treated
+// as "available" iff it has at least one entry in the content collection.
 const allNotes = await getCollection("notes");
 const modulesWithNotes = new Set(allNotes.map((n) => n.data.module));
 
@@ -46,7 +42,7 @@ for (const m of modulesData as Module[]) {
         <h2 class="font-serif text-2xl font-bold mb-4">{groupName}</h2>
         <ul class="divide-y divide-gray-300">
           {grouped[groupName]?.map((m) => {
-            const authored = AVAILABLE_MODULES.has(m.id) && modulesWithNotes.has(m.id);
+            const authored = modulesWithNotes.has(m.id);
             if (!authored) {
               return (
                 <li class="py-4 flex items-baseline justify-between gap-4">
