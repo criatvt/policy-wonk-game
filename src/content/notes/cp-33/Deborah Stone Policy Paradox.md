@@ -1,5 +1,5 @@
 ---
-title: "Stone on Narratives as Political"
+title: "Deborah Stone Policy Paradox"
 module: "cp-33"
 moduleName: "Policy Communication"
 order: 14
@@ -7,7 +7,7 @@ summary: "There is no neutral way to define a policy problem. Every narrative se
 sources: ["Narratives_-_Policy_Paradox_Deborah_Stone_Ch_6__7__8.pdf"]
 ---
 
-# Stone on Narratives as Political
+# Deborah Stone Policy Paradox
 
 Deborah Stone's deepest argument in *Policy Paradox* is that there is no neutral way to define a policy problem. Every narrative about a public issue selects which facts to make salient, designates protagonists and antagonists, attributes causation, and implies what counts as a legitimate solution. These choices are political because they distribute who benefits and who bears costs.
 

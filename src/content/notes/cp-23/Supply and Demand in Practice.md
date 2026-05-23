@@ -1,5 +1,5 @@
 ---
-title: "Supply and Demand: COVID Egg and Puppy Cases"
+title: "Supply and Demand in Practice"
 module: "cp-23"
 moduleName: "Microeconomics — Demand & Supply"
 order: 30
@@ -7,7 +7,7 @@ summary: "The COVID-era egg and rescue-puppy markets ran through the standard su
 sources: ["No Yolk_ Shortages and Spikes in the Time of COVID - Econlib.pdf", "What rescue puppies teach us about supply and demand.pdf"]
 ---
 
-# Supply and Demand: COVID Egg and Puppy Cases
+# Supply and Demand in Practice
 
 Two recent cases from the COVID period make the supply-demand framework vivid: egg markets in early 2020 and rescue-puppy markets through 2020-21. Both ran through the textbook dynamics in compressed time, and the differences between them illuminate the role of elasticity in shaping how shocks affect prices versus quantities.
 

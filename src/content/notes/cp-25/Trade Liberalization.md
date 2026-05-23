@@ -1,5 +1,5 @@
 ---
-title: "Trade Liberalisation and Politics"
+title: "Trade Liberalization"
 module: "cp-25"
 moduleName: "Trade & Specialisation"
 order: 36
@@ -7,7 +7,7 @@ summary: "Trade liberalisation creates aggregate gains but concentrated losses. 
 sources: ["Trade_Liberalization-_Why_So_Much_Controversy_.pdf"]
 ---
 
-# Trade Liberalisation and Politics
+# Trade Liberalization
 
 The political-economy puzzle at the heart of trade-liberalisation politics is that the *aggregate* gains from openness are typically large and the *aggregate* losses small, but the distribution of those gains and losses is sharply uneven. Workers in import-competing industries face concentrated, visible, identifiable losses. Consumers and workers in export industries gain diffuse, unidentifiable, hard-to-mobilise benefits. The political math repeatedly favours the concentrated losers even when the aggregate analysis favours liberalisation.
 

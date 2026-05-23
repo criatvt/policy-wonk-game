@@ -497,7 +497,7 @@
   {
     "id": "cp33-q034",
     "module": "cp-33",
-    "topic": "narrative-framing",
+    "topic": "Narrative Framing",
     "difficulty": "easy",
     "question": "What is the primary purpose of framing in policy communication?",
     "options": [
@@ -513,7 +513,7 @@
   {
     "id": "cp33-q035",
     "module": "cp-33",
-    "topic": "narrative-structure",
+    "topic": "Narrative Structure",
     "difficulty": "easy",
     "question": "A narrative in policy communication typically includes...",
     "options": [
@@ -529,7 +529,7 @@
   {
     "id": "cp33-q036",
     "module": "cp-33",
-    "topic": "news-cycles",
+    "topic": "News Cycles and Corrections",
     "difficulty": "medium",
     "question": "Why does research suggest accurate factual corrections often fail to change people's minds about political issues?",
     "options": [
@@ -545,7 +545,7 @@
   {
     "id": "cp33-q037",
     "module": "cp-33",
-    "topic": "policy-paradox",
+    "topic": "Deborah Stone Policy Paradox",
     "difficulty": "medium",
     "question": "Deborah Stone argues that policy narratives are inherently political. What does she mean?",
     "options": [
@@ -561,7 +561,7 @@
   {
     "id": "cp33-q038",
     "module": "cp-33",
-    "topic": "credibility-trust",
+    "topic": "Credibility and Trust",
     "difficulty": "expert",
     "question": "A policymaker has strong evidence that a well-established public narrative is factually wrong, but correcting it risks undermining trust in government. What does this dilemma reveal?",
     "options": [
@@ -577,7 +577,7 @@
   {
     "id": "cp33-q039",
     "module": "cp-33",
-    "topic": "digital-platforms",
+    "topic": "Digital Platforms",
     "difficulty": "expert",
     "question": "Why does the rise of social media make Deborah Stone's account of narrative and framing more, not less, relevant to policy analysis?",
     "options": [
@@ -593,7 +593,7 @@
   {
     "id": "cp33-q040",
     "module": "cp-33",
-    "topic": "narrative-framing",
+    "topic": "Narrative Framing",
     "difficulty": "expert",
     "question": "Policy paradox and narrative framing both show that defining a problem shapes available solutions. What does this imply for the design of public consultation processes?",
     "options": [
@@ -609,7 +609,7 @@
   {
     "id": "cp33-q041",
     "module": "cp-33",
-    "topic": "communication-strategy",
+    "topic": "Communication Strategy",
     "difficulty": "expert",
     "question": "A public health campaign presents rigorous scientific evidence that a widely-held dietary belief is false. Surveys show that after the campaign, more people hold the false belief than before. Which framework best explains this outcome and what does it imply for communication strategy?",
     "options": [
@@ -625,7 +625,7 @@
   {
     "id": "cp33-q042",
     "module": "cp-33",
-    "topic": "consultation-design",
+    "topic": "Consultation Design",
     "difficulty": "expert",
     "question": "A ministry conducts an extensive public consultation on a draft policy — public meetings in 12 cities, an online submission portal, and stakeholder roundtables. The final policy is identical to the original draft. A critic accuses the ministry of performative consultation. What structural features would distinguish genuine consultation from performative consultation, and why does the distinction matter?",
     "options": [

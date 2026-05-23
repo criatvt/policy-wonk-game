@@ -1,5 +1,5 @@
 ---
-title: "Price Controls: Lessons from COVID-Era Cases"
+title: "Price Controls in Crisis"
 module: "cp-23"
 moduleName: "Microeconomics — Demand & Supply"
 order: 15
@@ -7,7 +7,7 @@ summary: "The COVID-era price-gouging debates over hand sanitiser, masks, and ot
 sources: ["India-hand_sanitizer.pdf"]
 ---
 
-# Price Controls: Lessons from COVID-Era Cases
+# Price Controls in Crisis
 
 The COVID-19 pandemic produced a natural experiment in price-control policy across many goods. Hand sanitiser, surgical masks, and certain medical supplies all saw sharp demand surges meeting fixed short-run capacity. Prices started to spike. In India, the United States, and many other countries, governments imposed price controls — sometimes formally as price ceilings, sometimes informally as anti-price-gouging enforcement — to prevent what was framed as exploitative pricing.
 

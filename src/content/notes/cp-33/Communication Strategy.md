@@ -1,5 +1,5 @@
 ---
-title: "Communication Strategy and the Backfire Effect"
+title: "Communication Strategy"
 module: "cp-33"
 moduleName: "Policy Communication"
 order: 41
@@ -7,7 +7,7 @@ summary: "Threatening identity-linked beliefs causes entrenchment, not correctio
 sources: ["Effective_Policy_Communication_in_the_Age_of_Information_Overload_and_YouTube.pdf"]
 ---
 
-# Communication Strategy and the Backfire Effect
+# Communication Strategy
 
 The backfire effect — the empirical finding that correcting identity-linked beliefs can entrench them rather than dispel them — has substantial implications for how policy communication should be designed when the audience holds beliefs the policy needs to address. The naive approach (present the evidence, the audience will update) demonstrably fails for identity-charged beliefs. The strategic approach requires working with the identity rather than against it.
 

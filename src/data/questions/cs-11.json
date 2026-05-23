@@ -482,7 +482,7 @@
   {
     "id": "cs11-q033",
     "module": "cs-11",
-    "topic": "deterrence",
+    "topic": "Deterrence",
     "difficulty": "easy",
     "question": "What is deterrence in strategic studies?",
     "options": [
@@ -498,7 +498,7 @@
   {
     "id": "cs11-q034",
     "module": "cs-11",
-    "topic": "grand-strategy",
+    "topic": "Grand Strategy",
     "difficulty": "easy",
     "question": "What distinguishes strategy from tactics in statecraft?",
     "options": [
@@ -514,7 +514,7 @@
   {
     "id": "cs11-q035",
     "module": "cs-11",
-    "topic": "military-strategy",
+    "topic": "Military Strategy",
     "difficulty": "medium",
     "question": "Why do scholars argue that strategy without political purpose is merely operational art rather than true strategy?",
     "options": [
@@ -530,7 +530,7 @@
   {
     "id": "cs11-q036",
     "module": "cs-11",
-    "topic": "soft-power",
+    "topic": "Soft Power",
     "difficulty": "medium",
     "question": "Soft power differs from hard power primarily in that...",
     "options": [
@@ -546,7 +546,7 @@
   {
     "id": "cs11-q037",
     "module": "cs-11",
-    "topic": "strategic-adaptation",
+    "topic": "Strategic Adaptation",
     "difficulty": "expert",
     "question": "Why do states sometimes fail to adapt strategically even when their current approach is clearly failing?",
     "options": [
@@ -562,7 +562,7 @@
   {
     "id": "cs11-q038",
     "module": "cs-11",
-    "topic": "nuclear-strategy",
+    "topic": "Nuclear Strategy",
     "difficulty": "expert",
     "question": "Nuclear deterrence creates a stability-instability paradox. What does this mean?",
     "options": [
@@ -578,7 +578,7 @@
   {
     "id": "cs11-q039",
     "module": "cs-11",
-    "topic": "strategic-studies",
+    "topic": "Strategic Studies",
     "difficulty": "expert",
     "question": "The 'lost meaning of strategy' thesis argues modern statecraft has reduced strategy to logistics and management. What structural forces produce this degradation?",
     "options": [
@@ -594,7 +594,7 @@
   {
     "id": "cs11-q040",
     "module": "cs-11",
-    "topic": "power-and-national-interest",
+    "topic": "Power and National Interest",
     "difficulty": "expert",
     "question": "The 'problem of power' in strategic studies refers to which fundamental challenge?",
     "options": [
@@ -610,7 +610,7 @@
   {
     "id": "cs11-q041",
     "module": "cs-11",
-    "topic": "strategy-theory",
+    "topic": "Strategy and Politics",
     "difficulty": "expert",
     "question": "Clausewitz argued that war is the continuation of politics by other means — strategy must always be subordinate to political purpose. A military commander argues that operational demands should sometimes override political constraints to achieve military success. What is the Clausewitzian objection to this view?",
     "options": [
@@ -626,7 +626,7 @@
   {
     "id": "cs11-q042",
     "module": "cs-11",
-    "topic": "power-and-deterrence",
+    "topic": "Second-Strike Capability",
     "difficulty": "expert",
     "question": "Two states both possess nuclear weapons. State A has a larger, more accurate arsenal. State B has a smaller arsenal but has ensured its second-strike capability through dispersal and survivability. Which state has stronger deterrence, and what principle does this illustrate?",
     "options": [

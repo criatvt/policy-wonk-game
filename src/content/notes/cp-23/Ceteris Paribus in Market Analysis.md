@@ -1,5 +1,5 @@
 ---
-title: "Ceteris Paribus and Real Policy"
+title: "Ceteris Paribus in Market Analysis"
 module: "cp-23"
 moduleName: "Microeconomics — Demand & Supply"
 order: 31
@@ -7,7 +7,7 @@ summary: "Supply-demand analysis assumes everything else holds constant. Real po
 sources: ["Demand - Econlib.pdf"]
 ---
 
-# Ceteris Paribus and Real Policy
+# Ceteris Paribus in Market Analysis
 
 Supply-and-demand analysis at its cleanest assumes that *ceteris paribus* — other things equal — only one or two variables change at a time. A change in the price of the good, with everything else constant. A change in consumer income, with everything else constant. A change in input costs, with everything else constant. The ceteris paribus assumption is what lets the analysis isolate the effect of each variable cleanly.
 

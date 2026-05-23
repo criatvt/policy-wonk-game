@@ -602,7 +602,7 @@
   {
     "id": "cp25-q042",
     "module": "cp-25",
-    "topic": "comparative-advantage",
+    "topic": "Comparative Advantage",
     "difficulty": "expert",
     "question": "Comparative advantage theory predicts that all countries gain from specialization and trade even if one country is absolutely better at producing everything. What is the most powerful challenge to this prediction in practice?",
     "options": [
@@ -618,7 +618,7 @@
   {
     "id": "cp25-q043",
     "module": "cp-25",
-    "topic": "protectionism",
+    "topic": "Protectionism",
     "difficulty": "expert",
     "question": "The infant industry argument for protectionism holds that temporary protection allows domestic industries to develop until they can compete internationally. Why does empirical evidence on industrial policy make economists skeptical of this argument in practice?",
     "options": [
@@ -634,7 +634,7 @@
   {
     "id": "cp25-q044",
     "module": "cp-25",
-    "topic": "trade-liberalization",
+    "topic": "Trade Liberalization",
     "difficulty": "expert",
     "question": "Trade liberalization creates aggregate gains but concentrated losses — some workers and industries bear high adjustment costs while gains are diffuse. What does this distributional asymmetry imply for the political sustainability of liberal trade policy?",
     "options": [
@@ -650,7 +650,7 @@
   {
     "id": "cp25-q045",
     "module": "cp-25",
-    "topic": "trade-policy",
+    "topic": "Trade Policy",
     "difficulty": "expert",
     "question": "India's long history of import substitution industrialization is assessed critically in the readings. What does this case reveal about the relationship between trade policy, state capacity, and industrial development?",
     "options": [
@@ -666,7 +666,7 @@
   {
     "id": "cp25-q046",
     "module": "cp-25",
-    "topic": "comparative-advantage",
+    "topic": "Comparative Advantage",
     "difficulty": "expert",
     "question": "Division of labor enables specialization but creates interdependence. What does the history of global supply chain disruptions during COVID-19 reveal about the limits of optimizing for comparative advantage without regard for resilience?",
     "options": [
@@ -682,7 +682,7 @@
   {
     "id": "cp25-q047",
     "module": "cp-25",
-    "topic": "trade-policy",
+    "topic": "Trade Policy",
     "difficulty": "expert",
     "question": "The history of international trade policy shows cycles of liberalization and protection. What does this cyclicality suggest about whether free trade is a stable political-economic equilibrium?",
     "options": [
