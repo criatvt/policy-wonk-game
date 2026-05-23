@@ -1,7 +1,7 @@
 ---
 title: "Behavioural Response to Incentives"
 module: "cp-21"
-moduleName: "Public economics (incentives)"
+moduleName: "Incentives"
 order: 9
 summary: "How people actually respond to incentives in practice — often more readily, more creatively, and more consequentially than the people setting the rules expected."
 sources: ["Incentives_Matter.pdf"]

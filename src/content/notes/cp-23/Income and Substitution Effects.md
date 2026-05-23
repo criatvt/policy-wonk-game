@@ -1,7 +1,7 @@
 ---
 title: "Income and Substitution Effects"
 module: "cp-23"
-moduleName: "Microeconomics (demand & supply)"
+moduleName: "Demand & Supply"
 order: 21
 summary: "When a price rises, consumers respond through two channels: shifting toward cheaper alternatives (substitution) and adjusting overall consumption because real purchasing power has fallen (income)."
 sources: ["Demand - Econlib.pdf"]

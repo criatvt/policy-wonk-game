@@ -1,7 +1,7 @@
 ---
 title: "Public Goods"
 module: "cp-21"
-moduleName: "Public economics (incentives)"
+moduleName: "Incentives"
 order: 29
 summary: "Goods that are non-excludable and non-rival — clean air, basic research, national defence — that markets systematically under-supply because individual buyers cannot capture the full benefit."
 sources: ["Clifford Winston Market Failure Podcast.md"]

@@ -1,7 +1,7 @@
 ---
 title: "Sunk Costs and the Sunk-Cost Fallacy"
 module: "cp-22"
-moduleName: "Public economics (markets)"
+moduleName: "Markets"
 order: 4
 summary: "Money already spent cannot be recovered. Rational decisions should ignore it — and most of us, most of the time, don't."
 sources: ["Sunk_costs__From_Titanic_to_Evergrande.pdf"]

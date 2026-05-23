@@ -1,7 +1,7 @@
 ---
 title: "The Price Mechanism and Dispersed Knowledge"
 module: "cp-22"
-moduleName: "Public economics (markets)"
+moduleName: "Markets"
 order: 2
 summary: "Hayek's argument that prices solve a knowledge problem central planners cannot — and the example that makes the case."
 sources: ["Price Signal Incentive.pdf", "Information__Prices__and_Socialism_s_Flaws.pdf", "What do prices know that you dont.pdf"]

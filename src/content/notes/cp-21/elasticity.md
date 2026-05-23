@@ -1,7 +1,7 @@
 ---
 title: "Elasticity"
 module: "cp-21"
-moduleName: "Public economics (incentives)"
+moduleName: "Incentives"
 order: 12
 summary: "How sensitive quantity is to price. Inelastic demand barely moves when prices change; elastic demand responds strongly. Most policy that uses prices needs an estimate of elasticity to predict effects."
 sources: ["Marginal Thinking.pdf"]

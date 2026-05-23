@@ -1,12 +1,12 @@
 ---
-title: "Public economics (incentives): overview"
+title: "Incentives: overview"
 module: "cp-21"
-moduleName: "Public economics (incentives)"
+moduleName: "Incentives"
 order: 0
 summary: "How people respond to changes in costs and rewards — and why almost every policy is partly an exercise in incentive design."
 ---
 
-# Public economics (incentives)
+# Incentives
 
 The unifying theme of this module is that people respond to incentives — and that they often respond in ways their designers didn't anticipate. The classic examples accumulate quickly. Convict-ship captains' payment changed from per-loaded to per-arrived-alive, and mortality rates collapsed. The Pilgrims moved from communal to private farming and discovered that the same people worked much harder when they could keep what they produced. Chilean bakers facing price ceilings sold bread by a different name. A snake bounty in colonial India produced a thriving snake-farming industry. Across these cases, the surface lesson is the same: behaviour follows incentives, and changing the incentive changes the behaviour, often without changing the people.
 

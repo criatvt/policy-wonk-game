@@ -1,7 +1,7 @@
 ---
 title: "Supply and Demand Dynamics"
 module: "cp-23"
-moduleName: "Microeconomics (demand & supply)"
+moduleName: "Demand & Supply"
 order: 23
 summary: "When demand and supply both shift simultaneously, the analysis becomes ambiguous in one dimension and definite in the other. Reading the pattern of ambiguity is part of the analytical discipline."
 sources: ["Demand - Econlib.pdf"]

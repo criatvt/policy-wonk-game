@@ -10,6 +10,21 @@ All notable changes to Policy Wonk. Format follows [Keep a Changelog](https://ke
 - Per-email magic-link rate limit feels tight (3 per 15 min, silent block). Consider raising to 5–8 per 15 min or surfacing a visible "you've requested several links; check spam or wait a few minutes" message.
 - Option-length variance across several question banks (cs-11, cp-33 and others) — the build flags ~30 questions where the correct option is meaningfully longer than its distractors. A "longest = correct" tell. Tighten the bank when there's appetite.
 
+## [0.3.8] — 2026-05-23 — Shorter, direct names for the three econ modules
+
+Follow-up to v0.3.6. The "Public economics (incentives)" / "Public economics (markets)" / "Microeconomics (demand & supply)" framing was an organisational umbrella, not a tight content descriptor — these modules cover incentives, market processes (Hayek-style), and demand/supply mechanics respectively, not the formal public-economics canon (taxation, public goods, etc.). The umbrella label was adding jargon without adding clarity.
+
+### Changed
+
+- **`src/data/modules.json`** — three `name` field renames:
+  - CP 21: `Public economics (incentives)` → `Incentives`
+  - CP 22: `Public economics (markets)` → `Markets`
+  - CP 23: `Microeconomics (demand & supply)` → `Demand & Supply`
+- **78 notes frontmatter `moduleName` fields** updated to match (cp-21: 38, cp-22: 9, cp-23: 31).
+- **3 `_index.md` files** — `title:` field and H1 updated.
+- Comment in `src/content/config.ts` updated to the new example.
+- Footer version: `Beta v0.3.7` → `Beta v0.3.8`. `package.json`: `0.3.7` → `0.3.8`.
+
 ## [0.3.7] — 2026-05-23 — Drop GCPP module codes from public UI
 
 Companion to v0.3.6. After the four renames landed, the GCPP module codes (`CP 10`, `CP 11`, `CG 1`, `CS 11`, etc.) were still showing as visual labels next to each module name on the public UI. The codes are Takshashila-internal syllabus numbering and don't help non-Takshashila readers — same logic as the v0.3.6 renames.

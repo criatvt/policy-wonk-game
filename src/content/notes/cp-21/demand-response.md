@@ -1,7 +1,7 @@
 ---
 title: "Demand Response to Price"
 module: "cp-21"
-moduleName: "Public economics (incentives)"
+moduleName: "Incentives"
 order: 10
 summary: "When prices change, demand changes — but not by stopping entirely. People find smaller adjustments, substitutions, and creative paths around the higher price."
 sources: ["Incentives_Matter.pdf"]

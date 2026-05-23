@@ -1,7 +1,7 @@
 ---
 title: "Economic Freedom"
 module: "cp-21"
-moduleName: "Public economics (incentives)"
+moduleName: "Incentives"
 order: 36
 summary: "Economic freedom — the extent to which economic decisions are made by individuals rather than the state — correlates with prosperity. The causal mechanism, and the role of institutions, matters for what policy should learn from the correlation."
 sources: ["Economic Freedom - Econlib.pdf"]

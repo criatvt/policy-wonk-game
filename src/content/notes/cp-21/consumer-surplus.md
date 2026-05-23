@@ -1,7 +1,7 @@
 ---
 title: "Consumer Surplus"
 module: "cp-21"
-moduleName: "Public economics (incentives)"
+moduleName: "Incentives"
 order: 22
 summary: "The difference between what consumers would have been willing to pay and what they actually paid. Lower prices generally mean more consumer surplus — but distributional questions follow."
 sources: ["Marginal Thinking.pdf"]

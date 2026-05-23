@@ -1,7 +1,7 @@
 ---
 title: "Price as a Signal of Quality"
 module: "cp-22"
-moduleName: "Public economics (markets)"
+moduleName: "Markets"
 order: 6
 summary: "Beyond scarcity, prices also signal what kind of thing is being sold. Damage the signal and the market for the product can vanish."
 sources: ["Sunk_costs__From_Titanic_to_Evergrande.pdf", "Price Signal Incentive.pdf"]

@@ -1,7 +1,7 @@
 ---
 title: "Elasticity of Demand"
 module: "cp-23"
-moduleName: "Microeconomics (demand & supply)"
+moduleName: "Demand & Supply"
 order: 8
 summary: "How responsive quantity demanded is to changes in price. Elastic demand moves a lot for small price changes; inelastic demand barely moves at all."
 sources: ["Demand - Econlib.pdf"]

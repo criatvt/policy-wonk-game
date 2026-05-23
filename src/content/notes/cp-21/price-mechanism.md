@@ -1,7 +1,7 @@
 ---
 title: "The Price Mechanism"
 module: "cp-21"
-moduleName: "Public economics (incentives)"
+moduleName: "Incentives"
 order: 25
 summary: "Prices coordinate dispersed economic decisions without any central authority needing to know the underlying details. Hayek's insight, still useful sixty years later."
 sources: ["Marginal Thinking.pdf"]

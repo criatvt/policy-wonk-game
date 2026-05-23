@@ -1,12 +1,12 @@
 ---
-title: "Public economics (markets): overview"
+title: "Markets: overview"
 module: "cp-22"
-moduleName: "Public economics (markets)"
+moduleName: "Markets"
 order: 0
 summary: "How prices coordinate dispersed decisions, why opportunity cost and sunk costs change the calculus, and what goes wrong when information stops flowing."
 ---
 
-# Public economics (markets)
+# Markets
 
 This module is about the everyday machinery of a market economy: prices as signals, the information they carry, and the kinds of decisions they enable or undermine. The unifying thread is Friedrich Hayek's insight that no central authority can hold all the knowledge needed to allocate resources well — prices are the mechanism that lets dispersed local knowledge add up to global coordination without anyone in charge.
 

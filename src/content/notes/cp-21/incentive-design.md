@@ -1,7 +1,7 @@
 ---
 title: "Incentive Design"
 module: "cp-21"
-moduleName: "Public economics (incentives)"
+moduleName: "Incentives"
 order: 4
 summary: "Good incentive design aligns what's profitable for the individual with what's good for the policy goal. The fundamental challenge: actors are reading the rules to find the lowest-effort path to the reward."
 sources: ["Incentives_Matter.pdf"]

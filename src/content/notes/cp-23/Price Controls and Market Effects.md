@@ -1,7 +1,7 @@
 ---
 title: "Price Controls and Market Effects"
 module: "cp-23"
-moduleName: "Microeconomics (demand & supply)"
+moduleName: "Demand & Supply"
 order: 14
 summary: "Price ceilings produce shortages; price floors produce surpluses. Both replace price-based allocation with non-price mechanisms that have their own efficiency costs."
 sources: ["India-hand_sanitizer.pdf"]

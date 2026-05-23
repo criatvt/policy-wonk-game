@@ -1,7 +1,7 @@
 ---
 title: "Strategic Supply Behaviour"
 module: "cp-23"
-moduleName: "Microeconomics (demand & supply)"
+moduleName: "Demand & Supply"
 order: 13
 summary: "Producers anticipating future price changes adjust current supply strategically — hoarding when they expect higher prices, dumping when they expect lower. The behaviour can produce self-fulfilling cycles."
 sources: ["Demand - Econlib.pdf"]
