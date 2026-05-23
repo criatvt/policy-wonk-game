@@ -1,7 +1,7 @@
 ---
 title: "Opportunity Cost"
 module: "cp-21"
-moduleName: "Public economics (incentives)"
+moduleName: "Incentives"
 order: 14
 summary: "The real cost of a choice is the best alternative you gave up to make it. Money costs are only one part of the picture — and often not the most important part."
 sources: ["Getting the Most Out of Life_ The Concept of Opportunity Cost - Econlib.pdf"]

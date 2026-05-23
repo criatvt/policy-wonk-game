@@ -1,7 +1,7 @@
 ---
 title: "Supply and Demand Shocks"
 module: "cp-23"
-moduleName: "Microeconomics (demand & supply)"
+moduleName: "Demand & Supply"
 order: 25
 summary: "Sudden, large shifts in supply or demand produce sharp price movements. The COVID egg-price spike — supply down, demand stable — is the canonical recent case."
 sources: ["No Yolk_ Shortages and Spikes in the Time of COVID - Econlib.pdf"]

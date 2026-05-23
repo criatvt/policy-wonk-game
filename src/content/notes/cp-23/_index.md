@@ -1,12 +1,12 @@
 ---
-title: "Microeconomics (demand & supply): overview"
+title: "Demand & Supply: overview"
 module: "cp-23"
-moduleName: "Microeconomics (demand & supply)"
+moduleName: "Demand & Supply"
 order: 0
 summary: "The standard apparatus of supply and demand — what it explains, where it falls short, and what it predicts about price controls, shortages, and market equilibrium."
 ---
 
-# Microeconomics (demand & supply)
+# Demand & Supply
 
 This module is the standard apparatus of microeconomic thinking: how demand curves and supply curves describe what consumers and producers want at different prices, how markets find equilibrium, and how the equilibrium shifts when one or both curves move. The framework is old, well-tested, and useful enough that policy practitioners across the political spectrum still reach for it.
 

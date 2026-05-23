@@ -1,7 +1,7 @@
 ---
 title: "Supply Shifters"
 module: "cp-23"
-moduleName: "Microeconomics (demand & supply)"
+moduleName: "Demand & Supply"
 order: 4
 summary: "Movement along a supply curve happens when price changes. The whole curve shifts when input costs, technology, regulations, the number of producers, or expectations change."
 sources: ["Demand - Econlib.pdf"]

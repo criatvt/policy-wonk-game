@@ -1,7 +1,7 @@
 ---
 title: "Real-World Applications: Drought, Agriculture, and Supply"
 module: "cp-23"
-moduleName: "Microeconomics (demand & supply)"
+moduleName: "Demand & Supply"
 order: 29
 summary: "Agricultural markets show supply-demand dynamics clearly because production is so weather-dependent. A drought is a textbook supply shock that produces predictable price and quantity responses."
 sources: ["Demand - Econlib.pdf"]

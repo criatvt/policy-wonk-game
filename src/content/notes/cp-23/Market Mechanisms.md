@@ -1,7 +1,7 @@
 ---
 title: "The Market Mechanism"
 module: "cp-23"
-moduleName: "Microeconomics (demand & supply)"
+moduleName: "Demand & Supply"
 order: 19
 summary: "Prices are signals that coordinate producers and consumers without anyone in charge. The system is decentralised, works on partial information, and is remarkably robust — within the conditions where it works."
 sources: ["Equilibrium Price Quantity.pdf"]

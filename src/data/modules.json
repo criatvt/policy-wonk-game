@@ -35,7 +35,7 @@
     "id": "cp-21",
     "short": "cp21",
     "code": "CP 21",
-    "name": "Public economics (incentives)",
+    "name": "Incentives",
     "group": "Economic Reasoning",
     "themeFlavour": "english-heavy"
   },
@@ -43,7 +43,7 @@
     "id": "cp-22",
     "short": "cp22",
     "code": "CP 22",
-    "name": "Public economics (markets)",
+    "name": "Markets",
     "group": "Economic Reasoning",
     "themeFlavour": "english-heavy"
   },
@@ -51,7 +51,7 @@
     "id": "cp-23",
     "short": "cp23",
     "code": "CP 23",
-    "name": "Microeconomics (demand & supply)",
+    "name": "Demand & Supply",
     "group": "Economic Reasoning",
     "themeFlavour": "english-heavy"
   },

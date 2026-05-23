@@ -1,7 +1,7 @@
 ---
 title: "Market Failure"
 module: "cp-21"
-moduleName: "Public economics (incentives)"
+moduleName: "Incentives"
 order: 27
 summary: "When markets cannot efficiently allocate resources — usually because of externalities, public goods, information failures, or monopoly. Each failure mode implies a different policy response."
 sources: ["Clifford Winston Market Failure Podcast.md"]

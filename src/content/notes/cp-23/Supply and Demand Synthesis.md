@@ -1,7 +1,7 @@
 ---
 title: "Synthesis: Inelastic Demand and Constrained Supply"
 module: "cp-23"
-moduleName: "Microeconomics (demand & supply)"
+moduleName: "Demand & Supply"
 order: 26
 summary: "Healthcare illustrates the structural problem: inelastic demand (people need care regardless of price) combined with constrained supply (doctors take years to train) produces persistently high prices."
 sources: ["Demand - Econlib.pdf"]

@@ -1,7 +1,7 @@
 ---
 title: "Consumer and Producer Surplus"
 module: "cp-23"
-moduleName: "Microeconomics (demand & supply)"
+moduleName: "Demand & Supply"
 order: 17
 summary: "Two welfare measures that, together, capture the value the market creates for participants. Policy interventions almost always redistribute between these two; some also create deadweight loss."
 sources: ["Equilibrium Price Quantity.pdf"]

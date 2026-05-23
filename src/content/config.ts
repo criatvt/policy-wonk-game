@@ -11,7 +11,7 @@ const notes = defineCollection({
   schema: z.object({
     title: z.string(),
     module: z.string(),       // module id, e.g. "cp-22"
-    moduleName: z.string(),   // full module name, e.g. "Public economics (markets)"
+    moduleName: z.string(),   // full module name, e.g. "Markets"
     order: z.number(),        // sort key within a module; _index.md is 0
     summary: z.string().optional(),
     sources: z.array(z.string()).optional(),

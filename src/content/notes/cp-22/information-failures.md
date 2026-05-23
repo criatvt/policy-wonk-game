@@ -1,7 +1,7 @@
 ---
 title: "Information Failures and Business Collapse"
 module: "cp-22"
-moduleName: "Public economics (markets)"
+moduleName: "Markets"
 order: 5
 summary: "Most large business failures share one pattern: information that needed to reach decision-makers didn't get there, or got there too late."
 sources: ["Sunk_costs__From_Titanic_to_Evergrande.pdf"]

@@ -1,7 +1,7 @@
 ---
 title: "Welfare Analysis of Market Equilibrium"
 module: "cp-23"
-moduleName: "Microeconomics (demand & supply)"
+moduleName: "Demand & Supply"
 order: 7
 summary: "Equilibrium also has welfare properties — total consumer surplus plus producer surplus is maximised at the market-clearing point. Price controls reduce this total even when they make the political coalition feel like they delivered fairness."
 sources: ["Equilibrium Price Quantity.pdf"]

@@ -1,7 +1,7 @@
 ---
 title: "Market Distortions and Deadweight Loss"
 module: "cp-23"
-moduleName: "Microeconomics (demand & supply)"
+moduleName: "Demand & Supply"
 order: 18
 summary: "Deadweight loss is the welfare destroyed when policies prevent mutually beneficial trades from happening. It's the unavoidable inefficiency cost of taxes, price controls, and quantity restrictions."
 sources: ["Equilibrium Price Quantity.pdf"]

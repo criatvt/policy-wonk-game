@@ -1,7 +1,7 @@
 ---
 title: "Externalities"
 module: "cp-21"
-moduleName: "Public economics (incentives)"
+moduleName: "Incentives"
 order: 28
 summary: "Costs or benefits that fall on parties not involved in a transaction. Pollution is the standard negative externality; basic research is the standard positive one. Each implies different policy."
 sources: ["Clifford Winston Market Failure Podcast.md"]

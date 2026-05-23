@@ -1,7 +1,7 @@
 ---
 title: "Deadweight Loss"
 module: "cp-21"
-moduleName: "Public economics (incentives)"
+moduleName: "Incentives"
 order: 23
 summary: "The welfare lost when resources are not allocated to their most efficient uses — typically because of taxes, subsidies, price controls, or monopoly power."
 sources: ["Efficiency_and_Effectiveness.md"]
