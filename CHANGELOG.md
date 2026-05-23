@@ -10,6 +10,18 @@ All notable changes to Policy Wonk. Format follows [Keep a Changelog](https://ke
 - Per-email magic-link rate limit feels tight (3 per 15 min, silent block). Consider raising to 5–8 per 15 min or surfacing a visible "you've requested several links; check spam or wait a few minutes" message.
 - Option-length variance across several question banks (cs-11, cp-33 and others) — the build flags ~30 questions where the correct option is meaningfully longer than its distractors. A "longest = correct" tell. Tighten the bank when there's appetite.
 
+## [0.3.7] — 2026-05-23 — Drop GCPP module codes from public UI
+
+Companion to v0.3.6. After the four renames landed, the GCPP module codes (`CP 10`, `CP 11`, `CG 1`, `CS 11`, etc.) were still showing as visual labels next to each module name on the public UI. The codes are Takshashila-internal syllabus numbering and don't help non-Takshashila readers — same logic as the v0.3.6 renames.
+
+### Changed
+
+- Module picker (`GameContainer.jsx`) — dropped the `font-mono` code span; just the module name now.
+- Notes index (`/notes/`) — dropped `{m.code} · ` from both locked and unlocked module cards.
+- Per-module notes header (`/notes/<module>/`) — dropped `{mod.code} · ` from the uppercase rubric line; now shows just the group ("Foundations" / "Economic Reasoning" / "Strategy & Society").
+- The codes remain in `src/data/modules.json` for any future internal cross-reference.
+- Footer version: `Beta v0.3.6` → `Beta v0.3.7`. `package.json`: `0.3.6` → `0.3.7`.
+
 ## [0.3.6] — 2026-05-23 — Rename four modules to broader, field-standard names (closes #46)
 
 Some module names in the GCPP-syllabus framing were Takshashila-internal coinage rather than standard policy/economics phrases (`Public Systems Thinking`, the `Public Economics — Incentives` / `— Markets` split, `Microeconomics — Demand & Supply`). They landed fine with Takshashila alumni but read as bespoke to a broader policy audience.
