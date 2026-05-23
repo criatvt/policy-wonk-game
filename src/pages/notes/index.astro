@@ -46,7 +46,7 @@ for (const m of modulesData as Module[]) {
             if (!authored) {
               return (
                 <li class="py-4 flex items-baseline justify-between gap-4">
-                  <p class="font-semibold text-gray-500">{m.code} · {m.name}</p>
+                  <p class="font-semibold text-gray-500">{m.name}</p>
                   <span class="text-xs uppercase tracking-widest text-gray-500 whitespace-nowrap">Coming soon</span>
                 </li>
               );
@@ -61,7 +61,7 @@ for (const m of modulesData as Module[]) {
                 data-module-name={m.name}
               >
                 <div class="flex-1">
-                  <p class="font-semibold text-gray-500 module-title">{m.code} · {m.name}</p>
+                  <p class="font-semibold text-gray-500 module-title">{m.name}</p>
                   <p class="text-sm text-gray-500 mt-1 module-hint" data-state="guest">
                     Log in to unlock these notes.
                   </p>

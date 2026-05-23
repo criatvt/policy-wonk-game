@@ -591,8 +591,7 @@ export default function GameContainer() {
                     : "border-[var(--color-border)] hover:border-[var(--color-functional-marigold)]/60"
                 }`}
               >
-                <span className="font-mono opacity-70">{m.code}</span>
-                <span className="ml-2">{m.name}</span>
+                <span>{m.name}</span>
               </button>
             ))}
           </div>
