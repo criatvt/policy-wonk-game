@@ -1,7 +1,7 @@
 ---
 title: "Market vs Planned Economies"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 35
 summary: "Why market economies tend to produce more innovation than centrally planned ones — and why mixed systems usually dominate either pure model in practice."
 sources: ["Economic Freedom - Econlib.pdf"]

@@ -1,7 +1,7 @@
 ---
 title: "Specialisation"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 18
 summary: "Why economies benefit when actors specialise in what they do relatively best — and then trade for everything else. The principle scales from individuals to nations."
 sources: ["Getting the Most Out of Life_ The Concept of Opportunity Cost - Econlib.pdf"]

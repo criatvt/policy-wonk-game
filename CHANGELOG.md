@@ -10,6 +10,24 @@ All notable changes to Policy Wonk. Format follows [Keep a Changelog](https://ke
 - Per-email magic-link rate limit feels tight (3 per 15 min, silent block). Consider raising to 5–8 per 15 min or surfacing a visible "you've requested several links; check spam or wait a few minutes" message.
 - Option-length variance across several question banks (cs-11, cp-33 and others) — the build flags ~30 questions where the correct option is meaningfully longer than its distractors. A "longest = correct" tell. Tighten the bank when there's appetite.
 
+## [0.3.6] — 2026-05-23 — Rename four modules to broader, field-standard names (closes #46)
+
+Some module names in the GCPP-syllabus framing were Takshashila-internal coinage rather than standard policy/economics phrases (`Public Systems Thinking`, the `Public Economics — Incentives` / `— Markets` split, `Microeconomics — Demand & Supply`). They landed fine with Takshashila alumni but read as bespoke to a broader policy audience.
+
+### Changed
+
+- **`src/data/modules.json`** — four `name` field renames:
+  - CP 10: `Public Systems Thinking` → `Systems thinking for policy`
+  - CP 21: `Public Economics — Incentives` → `Public economics (incentives)`
+  - CP 22: `Public Economics — Markets` → `Public economics (markets)`
+  - CP 23: `Microeconomics — Demand & Supply` → `Microeconomics (demand & supply)`
+- **88 notes frontmatter `moduleName` fields** updated to match (cp-10: 10, cp-21: 38, cp-22: 9, cp-23: 31).
+- **4 `_index.md` files** in the affected modules — `title:` field and H1 updated to match.
+- Comment in `src/content/config.ts` (uses module name as example) — updated for tidiness.
+- Internal module IDs (`cp-10`, `cp-22`, etc.) and URL slugs are unchanged. No broken bookmarks; saved sessions and module-played tracking continue working since they reference IDs, not names.
+- The 7 other modules are already field-standard names and were not touched: State Capacity, Policy Analysis, Trade & Specialisation, Culture & Society, Policy Communication, Strategic Studies, Politics & Society.
+- Footer version: `Beta v0.3.5` → `Beta v0.3.6`. `package.json`: `0.3.5` → `0.3.6`.
+
 ## [0.3.5] — 2026-05-23 — Hotfix: drop the Phase-1 modules allowlist on the notes index
 
 The notes index page (`/notes/`) hardcoded a Phase-1-era allowlist of three modules (`cp-22`, `cg-1`, `cp-10`) and rendered everything else as "Coming soon" — even after v0.3.4 shipped notes for all 11 modules. Surfaced moments after the v0.3.4 deploy went live.

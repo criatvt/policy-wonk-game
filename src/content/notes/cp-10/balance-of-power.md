@@ -1,7 +1,7 @@
 ---
 title: "Balance of Power and Power Transition"
 module: "cp-10"
-moduleName: "Public Systems Thinking"
+moduleName: "Systems thinking for policy"
 order: 8
 summary: "Two competing theories about when great-power war becomes more likely — and they predict opposite conditions."
 sources: ["1998 causes of war & conditions of peace.pdf"]

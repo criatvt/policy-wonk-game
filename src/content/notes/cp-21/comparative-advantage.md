@@ -1,7 +1,7 @@
 ---
 title: "Comparative Advantage"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 19
 summary: "Trade between two actors is mutually beneficial when each specialises in what they have the lowest opportunity cost of producing — even if one is better at everything."
 sources: ["Getting the Most Out of Life_ The Concept of Opportunity Cost - Econlib.pdf"]

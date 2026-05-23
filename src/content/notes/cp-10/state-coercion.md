@@ -1,7 +1,7 @@
 ---
 title: "What the State Is For"
 module: "cp-10"
-moduleName: "Public Systems Thinking"
+moduleName: "Systems thinking for policy"
 order: 2
 summary: "Weber's definition, the unsentimental view in 'In Service of the Republic,' and what it implies for accountability."
 sources: ["In_Service_of_the_Republic_Ch_1__Ch_2_and_Ch_3.pdf"]

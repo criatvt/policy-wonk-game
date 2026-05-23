@@ -1,7 +1,7 @@
 ---
 title: "Scarcity"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 16
 summary: "Resources are limited; wants are not. Most policy problems are about how to allocate scarce resources across competing claims, and the choice always involves trade-offs."
 sources: ["Getting the Most Out of Life_ The Concept of Opportunity Cost - Econlib.pdf"]

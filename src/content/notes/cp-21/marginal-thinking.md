@@ -1,7 +1,7 @@
 ---
 title: "Marginal Thinking"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 13
 summary: "Decisions get made at the edge — should I do one more unit or one less? The marginal question is what economic actors actually face, and what policy usually has to address."
 sources: ["Marginal Thinking.pdf"]

@@ -1,7 +1,7 @@
 ---
 title: "Consumer Choice and Price"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 11
 summary: "When the price of a good falls, consumption rises. When it rises, consumption falls. The relationship is so general that it underlies almost everything else in microeconomics."
 sources: ["Marginal Thinking.pdf"]

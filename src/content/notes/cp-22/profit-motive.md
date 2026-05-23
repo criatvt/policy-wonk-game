@@ -1,7 +1,7 @@
 ---
 title: "Entrepreneurial Response and Specialisation"
 module: "cp-22"
-moduleName: "Public Economics — Markets"
+moduleName: "Public economics (markets)"
 order: 8
 summary: "Profit incentives don't just allocate existing resources — they call new ones into being and move production to where it can be done best."
 sources: ["Price Signal Incentive.pdf", "I rose.pdf"]

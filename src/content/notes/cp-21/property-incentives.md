@@ -1,7 +1,7 @@
 ---
 title: "Property Rights and Incentives"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 8
 summary: "Property rights are not just legal facts; they are incentive structures. Who owns what, and what they can do with what they own, shapes effort, investment, and innovation."
 sources: ["Economic Freedom - Econlib.pdf"]

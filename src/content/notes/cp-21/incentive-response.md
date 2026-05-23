@@ -1,7 +1,7 @@
 ---
 title: "Monetary and Non-Monetary Incentives"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 2
 summary: "Incentives include money, status, social approval, conscience, and time. Economists focus on money because it's easier to measure, not because it's the only thing that matters."
 sources: ["Incentives_Matter.pdf"]

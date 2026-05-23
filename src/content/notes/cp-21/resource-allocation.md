@@ -1,7 +1,7 @@
 ---
 title: "Resource Allocation"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 24
 summary: "Resources are limited; uses are competing. The central economic question is how to allocate scarce resources to the uses that produce the most value, and through what mechanism."
 sources: ["Getting the Most Out of Life_ The Concept of Opportunity Cost - Econlib.pdf"]

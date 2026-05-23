@@ -1,7 +1,7 @@
 ---
 title: "Property Rights and Labour Incentives"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 7
 summary: "The Pilgrim Plymouth story: when settlers moved from communal to private plots, the same people worked dramatically harder. Property rights matter for productivity because they determine who captures the rewards of effort."
 sources: ["Incentives_Matter.pdf"]

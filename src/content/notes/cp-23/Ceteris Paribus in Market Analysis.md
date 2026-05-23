@@ -1,7 +1,7 @@
 ---
 title: "Ceteris Paribus in Market Analysis"
 module: "cp-23"
-moduleName: "Microeconomics — Demand & Supply"
+moduleName: "Microeconomics (demand & supply)"
 order: 31
 summary: "Supply-demand analysis assumes everything else holds constant. Real policies typically shift multiple variables at once, which is why partial-equilibrium predictions often mislead about complex policy changes."
 sources: ["Demand - Econlib.pdf"]

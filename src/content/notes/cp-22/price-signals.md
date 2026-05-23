@@ -1,7 +1,7 @@
 ---
 title: "Prices as Signals"
 module: "cp-22"
-moduleName: "Public Economics — Markets"
+moduleName: "Public economics (markets)"
 order: 1
 summary: "A price is information about scarcity. It tells producers where to invest and consumers where to economise — without anyone issuing instructions."
 sources: ["Price Signal Incentive.pdf"]

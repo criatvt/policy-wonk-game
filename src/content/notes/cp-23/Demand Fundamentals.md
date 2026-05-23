@@ -1,7 +1,7 @@
 ---
 title: "Demand Fundamentals"
 module: "cp-23"
-moduleName: "Microeconomics — Demand & Supply"
+moduleName: "Microeconomics (demand & supply)"
 order: 1
 summary: "The law of demand: as price rises, quantity demanded falls. The downward-sloping demand curve is one of the most reliable empirical regularities in economics."
 sources: ["Demand - Econlib.pdf"]

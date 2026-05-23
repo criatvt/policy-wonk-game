@@ -1,7 +1,7 @@
 ---
 title: "Market Mechanisms and Efficiency"
 module: "cp-23"
-moduleName: "Microeconomics — Demand & Supply"
+moduleName: "Microeconomics (demand & supply)"
 order: 20
 summary: "Even functioning supply and demand can fail to allocate resources efficiently when externalities, information asymmetry, or monopoly power prevent prices from capturing the full social cost or benefit."
 sources: ["Clifford Winston Market Failure Podcast.pdf"]

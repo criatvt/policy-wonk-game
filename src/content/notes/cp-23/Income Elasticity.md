@@ -1,7 +1,7 @@
 ---
 title: "Income Elasticity"
 module: "cp-23"
-moduleName: "Microeconomics — Demand & Supply"
+moduleName: "Microeconomics (demand & supply)"
 order: 10
 summary: "How quantity demanded responds to changes in income. Identifies which goods are necessities (income elasticity below 1), normal goods, luxuries (above 1), and inferior goods (negative)."
 sources: ["Demand - Econlib.pdf"]

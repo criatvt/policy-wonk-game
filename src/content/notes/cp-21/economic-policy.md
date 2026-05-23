@@ -1,7 +1,7 @@
 ---
 title: "The Addictive Nature of Bad Policies"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 34
 summary: "Once a policy is in place, it creates constituencies that defend it — making reform politically expensive even when the analytical case for change is clear."
 sources: ["Opinion___The_addictive_nature_of_bad_policies.md"]

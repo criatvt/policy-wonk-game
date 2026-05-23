@@ -1,7 +1,7 @@
 ---
 title: "Cross-Price Elasticity"
 module: "cp-23"
-moduleName: "Microeconomics — Demand & Supply"
+moduleName: "Microeconomics (demand & supply)"
 order: 9
 summary: "How quantity demanded of one good responds to changes in the price of another. Positive cross-elasticity means substitutes; negative cross-elasticity means complements."
 sources: ["Demand - Econlib.pdf"]

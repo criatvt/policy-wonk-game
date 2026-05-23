@@ -1,7 +1,7 @@
 ---
 title: "Government Intervention"
 module: "cp-10"
-moduleName: "Public Systems Thinking"
+moduleName: "Systems thinking for policy"
 order: 4
 summary: "Even the simplest-seeming intervention generates enforcement problems, unintended consequences, and welfare costs. Humility is the right starting position."
 sources: ["In_Service_of_the_Republic_Ch_1__Ch_2_and_Ch_3.pdf"]

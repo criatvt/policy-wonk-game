@@ -3,7 +3,7 @@
     "id": "cp-10",
     "short": "cp10",
     "code": "CP 10",
-    "name": "Public Systems Thinking",
+    "name": "Systems thinking for policy",
     "group": "Foundations",
     "themeFlavour": "balanced"
   },
@@ -35,7 +35,7 @@
     "id": "cp-21",
     "short": "cp21",
     "code": "CP 21",
-    "name": "Public Economics — Incentives",
+    "name": "Public economics (incentives)",
     "group": "Economic Reasoning",
     "themeFlavour": "english-heavy"
   },
@@ -43,7 +43,7 @@
     "id": "cp-22",
     "short": "cp22",
     "code": "CP 22",
-    "name": "Public Economics — Markets",
+    "name": "Public economics (markets)",
     "group": "Economic Reasoning",
     "themeFlavour": "english-heavy"
   },
@@ -51,7 +51,7 @@
     "id": "cp-23",
     "short": "cp23",
     "code": "CP 23",
-    "name": "Microeconomics — Demand & Supply",
+    "name": "Microeconomics (demand & supply)",
     "group": "Economic Reasoning",
     "themeFlavour": "english-heavy"
   },

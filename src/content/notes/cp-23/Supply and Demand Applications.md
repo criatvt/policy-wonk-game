@@ -1,7 +1,7 @@
 ---
 title: "Supply and Demand: COVID Hand-Sanitiser Case"
 module: "cp-23"
-moduleName: "Microeconomics — Demand & Supply"
+moduleName: "Microeconomics (demand & supply)"
 order: 24
 summary: "The Indian government's price controls on hand sanitiser during COVID illustrate the standard pattern: demand surge, inelastic short-run supply, price spike, price control, shortage."
 sources: ["India-hand_sanitizer.pdf"]

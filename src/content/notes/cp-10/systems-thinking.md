@@ -1,7 +1,7 @@
 ---
 title: "Systems Thinking"
 module: "cp-10"
-moduleName: "Public Systems Thinking"
+moduleName: "Systems thinking for policy"
 order: 1
 summary: "A short field guide to the mental models that explain why complex systems behave nothing like simple machines."
 sources: ["The_Mental_Models_of_Systems_Thinking.pdf"]

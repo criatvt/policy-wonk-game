@@ -1,7 +1,7 @@
 ---
 title: "Time Cost"
 module: "cp-21"
-moduleName: "Public Economics — Incentives"
+moduleName: "Public economics (incentives)"
 order: 15
 summary: "Time is a scarce resource with its own opportunity cost. Programmes that ignore the time burden they impose on citizens systematically over-estimate uptake and effectiveness."
 sources: ["Getting the Most Out of Life_ The Concept of Opportunity Cost - Econlib.pdf"]

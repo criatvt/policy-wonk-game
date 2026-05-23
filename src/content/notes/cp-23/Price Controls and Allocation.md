@@ -1,7 +1,7 @@
 ---
 title: "Non-Price Allocation under Price Controls"
 module: "cp-23"
-moduleName: "Microeconomics — Demand & Supply"
+moduleName: "Microeconomics (demand & supply)"
 order: 16
 summary: "When prices can't allocate, something else does. Queues, rationing, seller discretion, and informal markets fill the gap, each with its own efficiency and fairness consequences."
 sources: ["India-hand_sanitizer.pdf"]
