@@ -28,11 +28,15 @@ database_id = "baa50072-d29e-4e11-952f-5888caf4d94f"
 binding = "KV"
 id = "57557e36571c4c64b0ae61aed779d7f0"
 
-# Workers Analytics Engine — first-party quiz funnel events (#12). No schema
-# and no migration (unlike D1): the dataset is created on first writeDataPoint.
-[[analytics_engine_datasets]]
-binding = "EVENTS"
-dataset = "policy_wonk_events_dev"
+# Workers Analytics Engine — first-party quiz funnel events (#12). DISABLED
+# until Analytics Engine is enabled on the Cloudflare account: a declared
+# binding fails the Pages deploy if AE isn't provisioned. The /api/events
+# route no-ops gracefully without the EVENTS binding, so the rest of the
+# site deploys fine. To activate the funnel: enable Analytics Engine in the
+# dashboard, then uncomment all three blocks (dev / preview / production).
+# [[analytics_engine_datasets]]
+# binding = "EVENTS"
+# dataset = "policy_wonk_events_dev"
 
 [vars]
 ENV = "dev"
@@ -52,9 +56,10 @@ database_id = "3d8f7203-eb68-4895-8366-aa1356305d04"
 binding = "KV"
 id = "a82d2d31fac9499bbc9189d770b42633"
 
-[[env.preview.analytics_engine_datasets]]
-binding = "EVENTS"
-dataset = "policy_wonk_events_staging"
+# Disabled pending Analytics Engine on the account — see the dev block above.
+# [[env.preview.analytics_engine_datasets]]
+# binding = "EVENTS"
+# dataset = "policy_wonk_events_staging"
 
 [env.preview.vars]
 ENV = "preview"
@@ -74,9 +79,10 @@ database_id = "fc7e05fd-e9bb-4d2f-912e-4f589c7ed18b"
 binding = "KV"
 id = "da6a9159fe6c4edf916b40cde7a590b1"
 
-[[env.production.analytics_engine_datasets]]
-binding = "EVENTS"
-dataset = "policy_wonk_events"
+# Disabled pending Analytics Engine on the account — see the dev block above.
+# [[env.production.analytics_engine_datasets]]
+# binding = "EVENTS"
+# dataset = "policy_wonk_events"
 
 [env.production.vars]
 ENV = "production"
