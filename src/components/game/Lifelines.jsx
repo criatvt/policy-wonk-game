@@ -64,7 +64,7 @@ export default function Lifelines({
           onClick={handlePoll}
         />
         <LifelineButton
-          label="Ask an AI ✨"
+          label="Ask Your Professor ✨"
           used={!state.lifelines.expert}
           disabled={disabled}
           onClick={handleExpertOpen}

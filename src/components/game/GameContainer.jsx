@@ -27,6 +27,7 @@ import {
 } from "../../lib/lifelineLogic.js";
 import { findCorrectIndex, isCorrect } from "../../lib/answerHash.js";
 import { pickExpertLine } from "../../lib/expertPicker.js";
+import { trackEvent } from "../../lib/analytics.js";
 import Question from "./Question.jsx";
 import Ladder from "./Ladder.jsx";
 import Timer from "./Timer.jsx";
@@ -192,7 +193,7 @@ const RULES_STAGES = [
   },
   {
     title: "Lifelines",
-    body: "Three lifelines, each usable once per session. 50:50 eliminates two wrong options. Audience Poll shows what the crowd thinks. Ask an AI ✨ gets advice from one of four AI experts (their reliability varies. You know, they are AI).",
+    body: "Three lifelines, each usable once per session. 50:50 eliminates two wrong options. Audience Poll shows what the crowd thinks. Ask Your Professor ✨ gets you advice from one of three professors — they'll lecture you a little first, but they always point you to the right answer.",
   },
 ];
 
@@ -323,6 +324,11 @@ export default function GameContainer() {
       }
       setState(createInitialState({ name: trimmedName, moduleId: chosenModuleId, plan }));
       setScreen(SCREEN_PLAYING);
+      // Funnel events (#12) — fire only once the play has actually started
+      // (questions loaded, screen switched), so abandoned module picks and
+      // failed loads don't count as plays.
+      trackEvent("module_chosen", { module: chosenModuleId });
+      trackEvent("game_started", { module: chosenModuleId });
     } catch (e) {
       setLoadError(`Failed to load module: ${e.message}`);
     }

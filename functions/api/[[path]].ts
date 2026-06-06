@@ -10,6 +10,7 @@ import { handle } from "hono/cloudflare-pages";
 
 import auth from "./_routes/auth";
 import me from "./_routes/me";
+import events from "./_routes/events";
 
 type Bindings = {
   DB: D1Database;
@@ -19,6 +20,9 @@ type Bindings = {
   RESEND_FROM: string;
   RESEND_API_KEY?: string;
   SESSION_SECRET?: string;
+  // Workers Analytics Engine dataset for first-party funnel events (#12).
+  // Optional so a build without the binding still runs (route no-ops).
+  EVENTS?: AnalyticsEngineDataset;
 };
 
 const app = new Hono<{ Bindings: Bindings }>().basePath("/api");
@@ -33,6 +37,7 @@ app.get("/health", (c) => {
 
 app.route("/auth", auth);
 app.route("/me", me);
+app.route("/events", events);
 
 app.notFound((c) => c.json({ ok: false, error: "not_found" }, 404));
 

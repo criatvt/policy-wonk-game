@@ -13,7 +13,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <p class="mt-4 text-base leading-relaxed text-[var(--color-text-soft)]">
         Short version: the game works without an account. If you sign in, we keep your email,
         nickname, avatar, and play history so you can revise the topics you missed. Nothing else.
-        No trackers, no third-party scripts, no analytics. This page spells out what that means.
+        No tracking cookies, no cross-site tracking, no selling your data. We do measure
+        aggregate, anonymous usage to see what's working — never anything that identifies you.
+        This page spells out what that means.
       </p>
     </header>
 
@@ -30,10 +32,23 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <section class="mb-10">
       <h2 class="font-serif text-2xl font-semibold mb-3">What we don't store</h2>
       <ul class="list-disc pl-6 flex flex-col gap-2 text-base leading-relaxed">
-        <li>Analytics or tracking cookies. There is no Google Analytics, no Facebook pixel, no Mixpanel, nothing.</li>
-        <li>Third-party scripts. The page only loads fonts from Google's font CDN — no behavioural tracking.</li>
+        <li>Tracking cookies or cross-site identifiers. No Google Analytics, no Facebook pixel, no Mixpanel, no ad networks. The analytics we <em>do</em> use (see below) are cookieless and anonymous, so there's no cookie banner.</li>
+        <li>Behavioural profiling. The only third-party scripts are Google's font CDN and Cloudflare's cookieless Web Analytics beacon — neither builds a profile of you or follows you across the web.</li>
         <li>Your IP address, beyond the short-term cache used to rate-limit sign-in emails. That cache resets after 15 minutes and is never written to disk.</li>
         <li>Anything we'd share with, sell to, or give to anyone outside the project. We don't have advertisers, partners, or data deals.</li>
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="font-serif text-2xl font-semibold mb-3">What we measure</h2>
+      <p class="text-base leading-relaxed mb-3">
+        To see what's working and what to fix, we measure usage in two ways — both
+        anonymous and aggregate. Neither uses cookies, so there's no cookie banner, and
+        neither can tell who you are or whether you've played before.
+      </p>
+      <ul class="list-disc pl-6 flex flex-col gap-2 text-base leading-relaxed">
+        <li><strong>Cloudflare Web Analytics.</strong> Cloudflare (the service that hosts this site) counts page views and visits and notes rough referrer, country, and device type. It's cookieless, doesn't fingerprint your browser, and doesn't store your IP address.</li>
+        <li><strong>First-party gameplay events.</strong> When a game starts and finishes, we record the module, the outcome (won / lost / walked away), and the score to our own Cloudflare Analytics Engine. No name, email, IP, or account id is attached — just anonymous counts that tell us which modules get played and finished.</li>
       </ul>
     </section>
 
@@ -84,7 +99,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </section>
 
     <p class="text-xs text-[var(--color-text-muted)] mt-12 pt-6 border-t border-[var(--color-border)]">
-      Last updated 2026-05-22.
+      Last updated 2026-06-06.
     </p>
   </section>
 </BaseLayout>

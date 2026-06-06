@@ -16,6 +16,24 @@ const {
   description = "Check your public policy knowledge in a fun way.",
   zone = "game",
 } = Astro.props;
+
+// Open Graph / Twitter Card needs ABSOLUTE URLs (#1). `Astro.site` comes
+// from astro.config.mjs; fall back to the prod origin so a misconfigured
+// build still emits valid tags rather than relative paths.
+const SITE = Astro.site?.origin ?? "https://policywonkgame.aasifj.com";
+const canonicalUrl = new URL(Astro.url.pathname, SITE).href;
+// /og-image.png is referenced here but the asset does NOT exist yet — it
+// still needs designing (1200×630, on-palette: Deep Indigo / Burnt Sienna /
+// Cream, no TV-game-show resemblance) and dropping into public/. Until then
+// the card unfurls without an image.
+const ogImage = new URL("/og-image.png", SITE).href;
+
+// Cloudflare Web Analytics beacon (#12). Cookieless, no fingerprinting, no
+// IP storage — privacy-preserving traffic measurement. Gated on a public env
+// var: set PUBLIC_CF_BEACON_TOKEN (the token from the Cloudflare dashboard →
+// Web Analytics) and the beacon loads; leave it unset (dev / preview) and no
+// third-party script is emitted at all. The token is public by design.
+const cfBeaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN ?? "";
 ---
 <!doctype html>
 <html lang="en">
@@ -24,6 +42,20 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <link rel="canonical" href={canonicalUrl} />
+    {/* Open Graph + Twitter Card (#1) — make pasted links unfurl on
+        WhatsApp / LinkedIn / Slack / X. Pure metadata, no script, no
+        tracking. Wired to the page's title/description props. */}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Policy Wonk" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,6 +70,15 @@ const {
       <slot />
     </main>
     <Footer />
+    {/* Cloudflare Web Analytics (#12) — only emitted when a beacon token is
+        configured, so no third-party script loads in dev/preview. */}
+    {cfBeaconToken && (
+      <script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={`{"token": "${cfBeaconToken}"}`}
+      ></script>
+    )}
     <!-- Guest-to-account merge trigger (#20). flushGuestSessions is a no-op
          when nothing is stashed, so the cost is one sessionStorage read per
          page nav. When the player signs in later in the same tab, the next

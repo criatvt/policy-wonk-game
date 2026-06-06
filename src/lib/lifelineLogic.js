@@ -62,21 +62,14 @@ export function generateAudiencePoll(correctIndex, difficulty, rng = Math.random
   return result;
 }
 
-// Phone an AI — pick whether the chosen expert recommends the correct
-// answer, weighted by their reliability. If they're wrong, pick a
-// random wrong option as their pick. Caller renders the verdict line
-// per character voice.
-//
-// Returns { pickedIndex, gotItRight }. The pickedIndex is the option
-// the expert "recommends." Caller looks up the expert's voice line
-// from experts.json and renders it.
-export function expertVerdict(expert, correctIndex, rng = Math.random) {
-  const reliability = expert.reliability ?? 0.5;
-  const gotItRight = rng() < reliability;
-  if (gotItRight) {
-    return { pickedIndex: correctIndex, gotItRight: true };
-  }
-  const wrong = [0, 1, 2, 3].filter((i) => i !== correctIndex);
-  const pickedIndex = wrong[Math.floor(rng() * wrong.length)];
-  return { pickedIndex, gotItRight: false };
+// Ask Your Professor — the professor ALWAYS recommends the correct
+// answer (issue #3, 2026-06-06). The earlier reliability roll and the
+// wrong-pick path are retired: the lifeline is now a reliable hint
+// delivered in character (a short lecture, then the answer). Kept as a
+// function — rather than inlined at the call site — so the caller's
+// shape ({ pickedIndex, gotItRight }) is unchanged and a future
+// "unreliable expert" mode can be reinstated here (alongside the
+// archived wrong/useless pools in experts.json) without touching the UI.
+export function expertVerdict(expert, correctIndex) {
+  return { pickedIndex: correctIndex, gotItRight: true };
 }

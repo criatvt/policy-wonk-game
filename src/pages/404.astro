@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Astro emits this as dist/404.html. Cloudflare Pages serves it with a real
+// HTTP 404 for any unmatched path, instead of silently falling through to the
+// homepage with a 200 (#39). Keep it static-friendly — no request-time data.
+---
+<BaseLayout title="Not found · Policy Wonk" description="That page doesn't exist.">
+  <section class="max-w-xl mx-auto min-h-[60vh] flex flex-col justify-center gap-6 text-center">
+    <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">
+      404 — Page not found
+    </p>
+    <h1 class="font-serif text-4xl md:text-5xl font-semibold leading-tight">
+      This concept isn't on the syllabus.
+    </h1>
+    <p class="text-base text-[var(--color-text-soft)] leading-relaxed">
+      The page you were after doesn't exist — maybe it moved, maybe the link
+      was off. No penalty for a wrong turn here.
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 mt-2">
+      <a
+        href="/play"
+        class="px-6 py-3 bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90 transition-opacity"
+      >
+        Play the quiz →
+      </a>
+      <a
+        href="/notes"
+        class="underline decoration-2 underline-offset-2 text-[var(--color-functional-marigold)] hover:opacity-80"
+      >
+        Browse revision notes →
+      </a>
+    </div>
+  </section>
+</BaseLayout>

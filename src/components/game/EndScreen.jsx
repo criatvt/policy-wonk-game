@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { formatIndianNumber } from "../../lib/gameEngine.js";
 import { stashGuestSession } from "../../lib/guestSessions.js";
+import { hasNote, moduleHasNotes } from "../../lib/noteSlugs.js";
+import { trackEvent } from "../../lib/analytics.js";
 import modulesData from "../../data/modules.json";
 
 const SITE_URL = "https://policywonkgame.aasifj.com";
@@ -120,6 +122,23 @@ function headlineForStatus(status, score) {
 export default function EndScreen({ state, onPlayAgain }) {
   const share = shareString(state);
   const postedRef = useRef(false);
+  const trackedRef = useRef(false);
+
+  // game_completed funnel event (#12). Fires once on the end screen, for
+  // guests and logged-in players alike (no auth dependency) and carries no
+  // PII — just the module, outcome, and score. The ref guard keeps
+  // StrictMode double-mounts from double-counting.
+  useEffect(() => {
+    if (trackedRef.current) return;
+    trackedRef.current = true;
+    const outcome = outcomeForApi(state.status);
+    if (!outcome) return;
+    trackEvent("game_completed", {
+      module: state.selectedModule,
+      outcome,
+      value: state.score,
+    });
+  }, [state]);
   // "loading" while /api/me is in flight, then "guest" or "user". We
   // render nothing in the upsell slot until we know — it's a fast call,
   // worth a short blank to avoid flashing the wrong variant.
@@ -210,6 +229,19 @@ export default function EndScreen({ state, onPlayAgain }) {
       {authState === "user" && state.status === "lost" && state.fellOnRung && (() => {
         const q = state.plan?.[state.fellOnRung - 1];
         if (!q?.topic || !q?.module) return null;
+        // Gate on real note existence (#39). The question's topic slug doesn't
+        // always have a 1:1 note file (kebab-mismatches on cg-1 / cp-10 /
+        // cp-22). When the exact note is missing, fall back to the module
+        // index; when the module ships no notes at all, render nothing rather
+        // than a link that dead-ends on a 404.
+        const exactNote = hasNote(q.module, q.topic);
+        if (!exactNote && !moduleHasNotes(q.module)) return null;
+        const href = exactNote
+          ? `/notes/${q.module}/${q.topic}`
+          : `/notes/${q.module}/`;
+        const label = exactNote
+          ? `Browse notes for ${topicLabel(q.topic)} →`
+          : `Browse ${moduleNameFor(q.module)} notes →`;
         return (
           <div className="border-2 border-[var(--color-charcoal)] p-5 text-center flex flex-col gap-2">
             <p className="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">
@@ -217,10 +249,10 @@ export default function EndScreen({ state, onPlayAgain }) {
             </p>
             <p className="text-base leading-relaxed">
               <a
-                href={`/notes/${q.module}/${q.topic}`}
+                href={href}
                 className="text-[var(--color-functional-marigold)] underline decoration-2 underline-offset-2 hover:opacity-80 font-semibold"
               >
-                Browse notes for {topicLabel(q.topic)} →
+                {label}
               </a>
             </p>
           </div>
@@ -257,7 +289,7 @@ export default function EndScreen({ state, onPlayAgain }) {
               </button>
             </div>
             <p className="text-xs text-[var(--color-text-muted)] leading-relaxed mt-1">
-              We save your email, nickname, avatar, and history. We don't track you, don't share with third parties, don't use analytics cookies.{" "}
+              We save your email, nickname, avatar, and history. We don't sell your data, don't use tracking cookies, and don't share with third parties — usage stats are anonymous and aggregate.{" "}
               <a
                 href="/privacy"
                 className="underline decoration-1 underline-offset-2 hover:text-[var(--color-text-soft)]"
@@ -269,20 +301,50 @@ export default function EndScreen({ state, onPlayAgain }) {
         );
       })()}
 
-      {/* Share affordance (#35). One button — uses navigator.share where
-          available (mobile native sheet, populated with the preview text);
-          falls back to clipboard copy with a brief "Copied" confirmation. */}
+      {/* Share affordance (#35 + #1). The native "Share →" uses
+          navigator.share where available (mobile sheet, populated with the
+          preview text) and falls back to clipboard copy. Alongside it,
+          explicit targets for WhatsApp / X / LinkedIn (#1). WhatsApp and X
+          carry the full share string; LinkedIn's sharer ignores arbitrary
+          text and only accepts a URL, so it shares the site link and relies
+          on the Open Graph card (BaseLayout) for the teaser. */}
       <div className="flex flex-col gap-3">
         <p className="text-sm italic text-[var(--color-text-soft)] leading-relaxed">
           “{share}”
         </p>
-        <button
-          type="button"
-          onClick={handleShare}
-          className="self-start px-4 py-2 rounded border border-[var(--color-charcoal)] text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)]/10 transition-colors"
-        >
-          {shareConfirmed ? "Copied to clipboard!" : "Share →"}
-        </button>
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            type="button"
+            onClick={handleShare}
+            className="px-4 py-2 rounded border border-[var(--color-charcoal)] text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)]/10 transition-colors"
+          >
+            {shareConfirmed ? "Copied to clipboard!" : "Share →"}
+          </button>
+          <a
+            href={`https://wa.me/?text=${encodeURIComponent(share)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 rounded border border-[var(--color-charcoal)] text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)]/10 transition-colors"
+          >
+            WhatsApp
+          </a>
+          <a
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(share)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 rounded border border-[var(--color-charcoal)] text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)]/10 transition-colors"
+          >
+            X
+          </a>
+          <a
+            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(SITE_URL)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 rounded border border-[var(--color-charcoal)] text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)]/10 transition-colors"
+          >
+            LinkedIn
+          </a>
+        </div>
       </div>
 
       <div className="border-t border-[var(--color-border)] pt-5 text-center">
@@ -337,10 +399,6 @@ export default function EndScreen({ state, onPlayAgain }) {
           <li className="flex flex-col gap-0.5">
             <p className="font-serif text-base">Wonky</p>
             <p className="text-sm text-[var(--color-text-soft)]">A host with quirky policy traits.</p>
-          </li>
-          <li className="flex flex-col gap-0.5">
-            <p className="font-serif text-base">Smarter Ask an AI</p>
-            <p className="text-sm text-[var(--color-text-soft)]">Richer characters and sharper answers from the four AI experts.</p>
           </li>
           <li className="flex flex-col gap-0.5">
             <p className="font-serif text-base">Notes for revising topics</p>

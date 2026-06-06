@@ -10,6 +10,28 @@ All notable changes to Policy Wonk. Format follows [Keep a Changelog](https://ke
 - Per-email magic-link rate limit feels tight (3 per 15 min, silent block). Consider raising to 5–8 per 15 min or surfacing a visible "you've requested several links; check spam or wait a few minutes" message.
 - Option-length variance across several question banks (cs-11, cp-33 and others) — the build flags ~30 questions where the correct option is meaningfully longer than its distractors. A "longest = correct" tell. Tighten the bank when there's appetite.
 
+## [0.4.0] — 2026-06-06 — Ask Your Professor, share + OG tags, real 404, privacy-respecting analytics
+
+A four-issue bundle: a richer lifeline, social sharing, an honest 404, and first measurement — shipped together. Closes #39, #3, #1, #12.
+
+### Added
+
+- **Ask Your Professor ✨ (#3).** The "Ask an AI" lifeline is renamed and rebuilt. Three professor caricatures (Nithen / Pranai / Anoopam) now give a short in-character lecture and *then* the answer — and the answer is **always correct** (the old reliability roll and wrong/useless pools are retired, preserved under `_archive`/`_deprecated` in `experts.json`). Each has a signature: Nithen frames it as the Trolley Problem (ethics), Anoopam reaches for the Virat Kohli comparative-advantage bit (economics), Pranai stacks frameworks then lets the serious mask slip. The fourth expert (Saarthak) is dropped. `lifelineLogic.expertVerdict` now always returns the correct option.
+- **Native share + Open Graph (#1).** End screen gains WhatsApp / X / LinkedIn share targets alongside the existing native `navigator.share`. `BaseLayout.astro` emits Open Graph + Twitter Card meta (absolute URLs from `Astro.site`) so pasted links unfurl. *Follow-up:* `/og-image.png` (1200×630, on-palette) still needs designing — the card unfurls without an image until then.
+- **Real 404 page (#39).** `src/pages/404.astro` → `dist/404.html`, which Cloudflare Pages serves with a true HTTP 404 for unknown paths instead of falling through to the homepage with a 200. Verified with `wrangler pages dev`.
+- **Privacy-respecting analytics (#12).** Cookieless **Cloudflare Web Analytics** beacon in `BaseLayout` (gated on `PUBLIC_CF_BEACON_TOKEN`, so nothing loads until configured) for traffic. CF Web Analytics has no custom-event API, so the quiz funnel (`game_started` / `module_chosen` / `game_completed`) is logged **first-party** via `POST /api/events` → **Cloudflare Workers Analytics Engine** (`EVENTS` binding). No PII, no cookies, no cross-site tracking; inputs are strictly allowlisted server-side.
+
+### Changed
+
+- **End-screen notes link is gated on real note existence (#39).** The question-bank `topic` slug doesn't always have a 1:1 note file (kebab-mismatches on cg-1 / cp-10 / cp-22). When the exact note is missing the link degrades to the module index; when a module ships no notes it renders nothing — never a dead link. cp-22 had **29 of 36** topics dead-ending before this.
+- **Privacy copy reconciled with reality (#12).** `privacy.astro`, `EndScreen.jsx`, and `login.astro` now honestly disclose the cookieless beacon and anonymous first-party events, with a new "What we measure" section — replacing the absolute "no analytics, no third-party scripts" claims.
+- Homepage and end-screen "upcoming features" teasers dropped the now-shipped "Smarter Ask a Professor" item.
+- Footer version: `Beta v0.3.8` → `Beta v0.4.0`. `package.json`: `0.3.8` → `0.4.0`.
+
+### Deploy notes
+
+- **#12 needs Cloudflare dashboard setup to go live:** set `PUBLIC_CF_BEACON_TOKEN` (Pages env, Production + Preview) from Web Analytics, and confirm **Workers Analytics Engine** is enabled on the account (the `EVENTS` binding in `wrangler.toml`). Until then the beacon is absent and `/api/events` no-ops gracefully — no errors, no broken deploy.
+
 ## [0.3.8] — 2026-05-23 — Shorter, direct names for the three econ modules
 
 Follow-up to v0.3.6. The "Public economics (incentives)" / "Public economics (markets)" / "Microeconomics (demand & supply)" framing was an organisational umbrella, not a tight content descriptor — these modules cover incentives, market processes (Hayek-style), and demand/supply mechanics respectively, not the formal public-economics canon (taxation, public goods, etc.). The umbrella label was adding jargon without adding clarity.

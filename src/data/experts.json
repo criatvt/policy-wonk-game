@@ -1,22 +1,21 @@
 {
-  "_note": "Verbatim from 07-dialogue-script.md §'Phone an AI — Expert lines'. Tags: correct (recommends right answer), wrong (recommends wrong answer), useless (does not give an answer). Reliability rate governs how often correct lines are served. [Option] is substituted at runtime with the recommended option's letter.",
+  "_note": "Expert lines for the 'Ask Your Professor ✨' lifeline. Three professor caricatures (Nithen / Pranai / Anoopam), each voiced from a real persona doc but never named directly in the UI. Per issue #3 (2026-06-06) the lifeline is now ALWAYS CORRECT: the professor always recommends the right option, delivered as a short in-character lecture with the answer ([Option]) revealed at the END. The old reliability roll and the wrong/useless pools are retired — preserved under `_deprecated`, and the dropped fourth expert under `_archive`, so the unreliable-lifeline mechanic can be reinstated without re-authoring. [Option] is substituted at runtime with the recommended option's letter.",
   "experts": [
     {
       "id": "niteen",
       "name": "Nitin Pai",
       "displayName": "Nithen AI",
-      "reliability": 0.70,
-      "quirk": "Aphoristic, strategic-culture framing, mildly contrarian",
+      "quirk": "Ethics professor — frames the question as a moral dilemma (the Trolley Problem), aphoristic, witty, self-deprecating",
       "lines": {
         "correct": [
-          "Cross-referencing positions. [Option]. No ads were served in the generation of this response.",
-          "[Option]. I am an approximation of Nithen. The real one would have said this better and shorter.",
-          "[Option]. The second-order effects point in this direction. I stand by this with moderate confidence."
-        ],
-        "wrong": [],
-        "useless": [
-          "Excellent question. I am redirecting you to an in-person workshop. Registration link: unavailable. Workshop date: to be determined.",
-          "The second-order effects here require a 47-slide deck. Shall I begin? I will assume yes. Slide one."
+          "Picture the trolley: one track is the obvious answer, the other is the tempting distractor. Pull the lever wrongly and you flatten your own credibility score. So pull it toward [Option]. I teach ethics; occasionally I even practise it.",
+          "Every policy question is a moral one wearing a suit. Ask who is on which track and the answer stops hiding. Here, the lever points to [Option]. I'd say more, but my dog does not debate and neither, today, will I.",
+          "First principles, then a strong cup of coffee, then the answer. The ethical reasoning survives all three: [Option]. I overstate my case professionally, but not this time.",
+          "There is a version of this question where every option is defensible. This is not that version — the trolley has exactly one humane track, and it is [Option]. I'd stake my favourite fountain pen on it, and I do not lend those out.",
+          "Strip away the jargon and you have a small ethical dilemma with an obvious resolution. The lever wants [Option]. I am mildly contrarian by nature, so when even I agree, consider it settled.",
+          "Who bears the cost, who reaps the benefit — answer that and you've answered the question. Both point to [Option]. I have debated this with my daughters; they ruled in my favour, eventually.",
+          "Ethics is just paying attention to consequences before they arrive. Pay attention: it is [Option]. Said with the confidence of a man who titled his own website 'you can't be serious.'",
+          "Aphorism first: the right answer rarely flatters you, but it does feed you points. The one that earns its keep is [Option]. I would workshop this further, but the coffee is getting cold."
         ]
       }
     },
@@ -24,19 +23,17 @@
       "id": "pranai",
       "name": "Pranay Kotasthane",
       "displayName": "Pranai AI",
-      "reliability": 0.90,
-      "quirk": "Verbose, frameworks-first, qualifies everything",
+      "quirk": "Systems & frameworks professor — 'three things to consider', maps everything, seems terribly serious but is secretly fun",
       "lines": {
         "correct": [
-          "Three things to consider. One: eliminate the obviously wrong. Two: apply first principles. Three: [Option]. Verify independently.",
-          "[Option]. I would thread this but there is no thread functionality in this format. I have filed a complaint with the developers.",
-          "Framework applied. Three inputs processed. Output: [Option]. Caveats exist but we have run out of time for them."
-        ],
-        "wrong": [
-          "Great question. Are you subscribed to our policy newsletter? [pause] I do not have one. I am an AI. Disregard. [Option]."
-        ],
-        "useless": [
-          "Full analysis requires the workshop. Attending the Takshashila programme would have preempted this question entirely."
+          "Three things to consider. One: eliminate what violates first principles. Two: check the incentives. Three: the structure points cleanly to [Option]. I had a fourth thing, but it did not survive peer review.",
+          "Let me frame this properly. Every system has one variable doing most of the work; find it and the rest follows. It follows to [Option]. I'd draw the diagram, but this format has no whiteboard, a grievance I have already filed.",
+          "Society, state, market — line them up and the answer resolves to [Option]. The serious face is for the lecture; off-camera I assure you I am a delight.",
+          "Treat this as a problem to map, not merely to answer. Map it, and every path but one collapses. The survivor is [Option]. I may have over-engineered that explanation — occupational hazard of the ex-engineer.",
+          "Frameworks first. Input: the question. Process: structured elimination. Output: [Option]. I once built a small tool to do exactly this; it agrees, which is reassuring and slightly threatening.",
+          "Second-order effects are where most people slip. Trace them one step further than feels comfortable and you land on [Option]. I promise I am more fun at dinner than this sentence suggests.",
+          "The systems view: today, pleasingly, the obvious answer and the correct answer are the same one. It is [Option]. Do verify independently — I say that to everyone, especially to myself.",
+          "The institution-builder in me wants to hand you a reading list. The teacher will settle for the answer: [Option]. The reading list is available on request, and nobody has ever requested it."
         ]
       }
     },
@@ -44,41 +41,74 @@
       "id": "anoopam",
       "name": "Anupam Manur",
       "displayName": "Anoopam AI",
-      "reliability": 0.60,
-      "quirk": "Empiricist, cites studies (sometimes invented), hedges",
+      "quirk": "Economics professor — comparative advantage via the Virat Kohli example, regressions and confidence intervals, dry and self-deprecating",
       "lines": {
         "correct": [
-          "[Option]. Source: a paper that exists, probably. I am moderately confident about both claims.",
-          "Running regression. Controlling for confounds. Best estimate: [Option]. R-squared: adequate. Do not ask about the p-value."
-        ],
-        "wrong": [
-          "The evidence is mixed. I am an AI. I am also mixed. [Option], but my confidence interval includes all four options.",
-          "[Option], with a confidence interval of plus or minus one option. You may find this unhelpful. I agree."
-        ],
-        "useless": [
-          "I have processed 200 papers on this. My uncertainty is larger than my answer. Please attend a Takshashila workshop for clarity."
-        ]
-      }
-    },
-    {
-      "id": "saarthak",
-      "name": "Sarthak Pradhan",
-      "displayName": "Saarthak AI",
-      "reliability": 0.50,
-      "quirk": "Fast, first-principles, confident, often wrong charmingly",
-      "lines": {
-        "correct": [
-          "[Option]. Four seconds of computation. First principles. Not taking further questions.",
-          "Processed. [Option]. 80% confident. The 20% is what makes me interesting."
-        ],
-        "wrong": [
-          "[Option]. I have since been updated. My revised answer is also [Option]. I just wanted you to know I updated.",
-          "Honestly? [Option]. I am eighty percent sure. Possibly sixty. The update changed things."
-        ],
-        "useless": [
-          "The in-person GCPP is a richer learning experience than a quiz format. I am not authorised to give the answer. Please register at school.takshashila.org.in."
+          "Comparative advantage, my friend. Virat Kohli might type faster than his typist, but he still shouldn't quit the crease for the keyboard — specialise where you're strongest. Your strongest move here is [Option]. My weakest is humour, which I am attempting anyway.",
+          "I ran the numbers. Well, a number. The point estimate lands firmly on [Option], confidence interval narrow for once. Do not ask about the p-value; we are not close friends yet.",
+          "Think opportunity cost. Every other option costs you points you could spend elsewhere; this one is the efficient allocation. Allocate to [Option]. That was my rather insipid attempt at making economics thrilling.",
+          "Even Kohli delegates his typing — not because he can't, but because his time is better spent batting. Spend your pick where the return is highest: [Option]. I'll be here, hedging everything except this.",
+          "The market has spoken, and markets, when they bother to speak clearly, say [Option]. I'm a market-liberal; I am contractually obliged to trust that, and I do.",
+          "Controlling for confounds — the wording, the trap, your nerves — the best estimate is [Option]. R-squared: adequate. 'Adequate' is the most an economist will ever promise you.",
+          "Specialisation beats brute effort every time; that's the whole of trade theory in one breath. The specialised, correct choice is [Option]. The graphic novel explains it better, with drawings.",
+          "Demand for the right answer is perfectly inelastic — you need it regardless of price. The good on offer is [Option]. I teach this for a living and still find that funny, which says more about me than the joke."
         ]
       }
     }
-  ]
+  ],
+  "_deprecated": {
+    "_note": "Pre-#3 wrong/useless line pools and reliability rates, retained so the unreliable-expert mechanic can be reinstated. Not read at runtime.",
+    "niteen": {
+      "reliability": 0.70,
+      "wrong": [],
+      "useless": [
+        "Excellent question. I am redirecting you to an in-person workshop. Registration link: unavailable. Workshop date: to be determined.",
+        "The second-order effects here require a 47-slide deck. Shall I begin? I will assume yes. Slide one."
+      ]
+    },
+    "pranai": {
+      "reliability": 0.90,
+      "wrong": [
+        "Great question. Are you subscribed to our policy newsletter? [pause] I do not have one. I am an AI. Disregard. [Option]."
+      ],
+      "useless": [
+        "Full analysis requires the workshop. Attending the Takshashila programme would have preempted this question entirely."
+      ]
+    },
+    "anoopam": {
+      "reliability": 0.60,
+      "wrong": [
+        "The evidence is mixed. I am an AI. I am also mixed. [Option], but my confidence interval includes all four options.",
+        "[Option], with a confidence interval of plus or minus one option. You may find this unhelpful. I agree."
+      ],
+      "useless": [
+        "I have processed 200 papers on this. My uncertainty is larger than my answer. Please attend a Takshashila workshop for clarity."
+      ]
+    }
+  },
+  "_archive": {
+    "_note": "Saarthak — dropped from the lifeline roster at #3 (no persona doc; the lifeline was reduced to three professors). Restore by moving this object back into `experts` and giving it a persona + signature bit.",
+    "experts": [
+      {
+        "id": "saarthak",
+        "name": "Sarthak Pradhan",
+        "displayName": "Saarthak AI",
+        "reliability": 0.50,
+        "quirk": "Fast, first-principles, confident, often wrong charmingly",
+        "lines": {
+          "correct": [
+            "[Option]. Four seconds of computation. First principles. Not taking further questions.",
+            "Processed. [Option]. 80% confident. The 20% is what makes me interesting."
+          ],
+          "wrong": [
+            "[Option]. I have since been updated. My revised answer is also [Option]. I just wanted you to know I updated.",
+            "Honestly? [Option]. I am eighty percent sure. Possibly sixty. The update changed things."
+          ],
+          "useless": [
+            "The in-person GCPP is a richer learning experience than a quiz format. I am not authorised to give the answer. Please register at school.takshashila.org.in."
+          ]
+        }
+      }
+    ]
+  }
 }

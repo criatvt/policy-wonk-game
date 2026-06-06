@@ -1,10 +1,12 @@
-// Picks an AI expert line for the Ask an AI lifeline, applies runtime
-// substitutions ([option]) and strips directorial markers ([pause], etc.).
+// Picks a professor's line for the "Ask Your Professor" lifeline, applies
+// runtime substitutions ([option]) and strips directorial markers
+// ([pause], etc.).
 //
-// The four caricatured experts (Nithen / Pranai / Anoopam / Saarthak) are
-// retained per the 2026-05-09 call when the Wonky host character was
-// deferred to a later release — the lifeline mechanic still works without
-// the host since experts speak directly.
+// Three caricatured professors (Nithen / Pranai / Anoopam) speak directly —
+// the Wonky host was deferred at the 2026-05-09 call, and the fourth expert
+// (Saarthak) was dropped at issue #3. Per #3 the recommended answer is now
+// always correct (see expertVerdict in lifelineLogic.js), so in practice
+// `tag` is always "correct".
 
 const SUBSTITUTION_KEYS = new Set(["option"]);
 
@@ -26,9 +28,9 @@ function applySubstitutions(text, subs) {
 }
 
 // Returns { text, expert } or null if expert/lines unknown.
-// Tag is "correct" | "wrong" | "useless". Falls back to "useless" if the
-// requested tag has no lines for this expert (e.g. Niteen has no "wrong"
-// pool).
+// Tag is normally "correct" (the only pool the active professors carry
+// since #3). Falls back to "useless" if a caller ever requests a tag the
+// expert has no lines for; returns null if that fallback is also empty.
 export function pickExpertLine(experts, expertId, tag, subs = {}, opts = {}) {
   const rng = opts.rng ?? Math.random;
   const expert = experts.find((e) => e.id === expertId);
