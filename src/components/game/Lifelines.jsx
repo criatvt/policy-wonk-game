@@ -169,7 +169,7 @@ function ExpertPanel({ experts, verdict, onClose }) {
           Option <span className="font-mono text-[var(--color-functional-marigold)]">{LETTERS[verdict.pickedIndex]}</span>.
         </p>
       )}
-      <p className="text-xs italic text-[var(--color-text-muted)] mt-1">AI can make mistakes.</p>
+      <p className="text-xs italic text-[var(--color-text-muted)] mt-1">Your professor is always right. The lecture is on the house.</p>
     </Panel>
   );
 }
