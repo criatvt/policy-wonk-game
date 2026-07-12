@@ -6,10 +6,10 @@
     "difficulty": "easy",
     "question": "What does the phrase 'incentives matter' mean in economics?",
     "options": [
-      "Money is the only motivation for human behavior",
-      "People respond to changes in rewards and costs by adjusting their behavior",
-      "Incentives have no real effect on behavior",
-      "Only rich people respond to incentives"
+      "Money is the only thing that motivates human behavior",
+      "People adjust their behavior when rewards or costs change",
+      "Incentives have little real effect on how people behave",
+      "Only wealthy people change their behavior for incentives"
     ],
     "correctIndex": 1,
     "explanation": "The economic principle that incentives matter refers to how people respond to changes in constraints or rewards. When incentives change, people adjust their choices in ways that often reflect creative problem-solving.",
@@ -22,10 +22,10 @@
     "difficulty": "easy",
     "question": "Why did mortality rates fall dramatically when convict ship captains were paid bonuses for each convict that arrived alive?",
     "options": [
-      "Captains became more compassionate people",
-      "The bonus aligned captains' self-interest with the well-being of the convicts",
-      "It was a complete coincidence",
-      "The government increased the ship quality"
+      "Captains grew more compassionate toward the convicts they carried",
+      "The bonus aligned captains' self-interest with convicts' survival",
+      "Better-built ships happened to reduce deaths at the same time",
+      "The improvement was an unexplained statistical coincidence"
     ],
     "correctIndex": 1,
     "explanation": "The change in incentives (payment for live arrivals) aligned what was profitable for captains with what was beneficial for convicts. Captains didn't become more ethical—their incentives changed.",
@@ -38,10 +38,10 @@
     "difficulty": "easy",
     "question": "What is opportunity cost?",
     "options": [
-      "The amount of money you spend on something",
-      "The value of the best alternative you give up when you choose something",
-      "The profit you make from a purchase",
-      "The cost of making a mistake"
+      "The total amount of money you spend to acquire something",
+      "The value of the best alternative you give up by choosing",
+      "The profit you expect to gain from making a purchase",
+      "The financial loss you suffer from a poor decision"
     ],
     "correctIndex": 1,
     "explanation": "Opportunity cost is the value of what you must sacrifice when making a choice. If you choose to go to college, the opportunity cost includes the income you could have earned working instead.",
@@ -54,10 +54,10 @@
     "difficulty": "easy",
     "question": "What does 'thinking at the margin' mean?",
     "options": [
-      "Only wealthy people can afford to think carefully",
-      "Focusing on how small changes in one variable affect outcomes",
-      "Considering only the worst-case scenario",
-      "Avoiding careful analysis of decisions"
+      "Weighing the total costs and benefits of a decision at once",
+      "Focusing on how a small change in one variable affects outcomes",
+      "Considering only the worst-case scenario before deciding",
+      "Judging a choice by its average cost rather than its extra cost"
     ],
     "correctIndex": 1,
     "explanation": "Marginal thinking involves analyzing the effect of small changes. For example, when considering a price increase, look at how the change affects behavior at the margin, not whether people stop buying entirely.",
@@ -70,10 +70,10 @@
     "difficulty": "easy",
     "question": "When gasoline prices increase, what is the most common economic response by consumers?",
     "options": [
-      "People stop driving entirely",
-      "People find ways to buy less gasoline, like carpooling or driving more efficiently",
-      "Prices have no effect on behavior",
-      "People buy more expensive cars"
+      "Consumers abandon driving altogether until prices fall again",
+      "Consumers cut back by carpooling or driving more efficiently",
+      "Consumers keep their driving habits completely unchanged",
+      "Consumers respond by purchasing larger, less efficient cars"
     ],
     "correctIndex": 1,
     "explanation": "Higher prices create incentives for creative responses short of stopping entirely. People carpool, combine trips, drive more slowly, or upgrade to fuel-efficient vehicles when prices rise enough.",
@@ -166,10 +166,10 @@
     "difficulty": "easy",
     "question": "What is a market failure?",
     "options": [
-      "When a company loses money on a product",
-      "When a market cannot efficiently allocate resources, often due to externalities or missing information",
-      "When markets grow too large",
-      "When everyone becomes wealthy"
+      "When a firm loses money selling a particular product line",
+      "When a market allocates resources inefficiently, as with externalities",
+      "When a market grows too large for regulators to oversee",
+      "When rising prices push most consumers out of a market"
     ],
     "correctIndex": 1,
     "explanation": "Market failures occur when free markets do not produce efficient outcomes. Examples include pollution externalities, monopolies, or situations where information is asymmetrical between buyers and sellers.",
@@ -214,10 +214,10 @@
     "difficulty": "easy",
     "question": "Why do people specialize in producing goods and services?",
     "options": [
-      "To make their work more boring",
-      "Because specialization typically leads to greater productivity and efficiency",
-      "Specialization is forced by governments",
-      "There is no advantage to specialization"
+      "Because dividing tasks makes each job more tedious to perform",
+      "Because focusing on one task raises productivity and efficiency",
+      "Because governments require workers to pick a single trade",
+      "Because specialization removes the need to trade with others"
     ],
     "correctIndex": 1,
     "explanation": "When people focus on what they do relatively well, they produce more efficiently. This allows trade and exchange to make everyone better off—even if one person could do everything better, specialization still benefits both parties.",
@@ -358,10 +358,10 @@
     "difficulty": "easy",
     "question": "What is the primary benefit of division of labor?",
     "options": [
-      "It makes work harder",
-      "It increases productivity and efficiency by allowing people to specialize",
-      "It eliminates the need for trade",
-      "It has no benefits"
+      "It removes the need for workers to trade with one another",
+      "It raises output by letting workers specialize in specific tasks",
+      "It lowers total output by making coordination more difficult",
+      "It ensures all workers are paid the same wage for any task"
     ],
     "correctIndex": 1,
     "explanation": "Division of labor allows each person or firm to focus on specific tasks they can do efficiently. This specialization increases total productivity compared to everyone doing everything themselves.",
@@ -438,10 +438,10 @@
     "difficulty": "easy",
     "question": "What is scarcity in economics?",
     "options": [
-      "When something costs a lot of money",
-      "When there is not enough of something to satisfy everyone's desires at zero price",
-      "When stores run out of stock",
-      "When people are poor"
+      "When a good is expensive and costs a great deal of money",
+      "When there is too little of something to meet everyone's wants",
+      "When a store temporarily runs out of a product to sell",
+      "When many people in a society are living in poverty"
     ],
     "correctIndex": 1,
     "explanation": "Scarcity means that relative to demand, supply is limited. This is the fundamental economic problem that makes all choices costly. Even very cheap or abundant goods have value because time is scarce.",

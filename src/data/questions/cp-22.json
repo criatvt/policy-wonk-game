@@ -6,10 +6,10 @@
     "difficulty": "easy",
     "question": "What is a price signal in economics?",
     "options": [
-      "A government announcement about costs",
-      "Information about scarcity that creates incentives for action",
-      "A warning sign in a store",
-      "The average price in a market"
+      "An official notice announcing the government-set price of a good",
+      "Information about relative scarcity that gives people an incentive to act",
+      "A retailer's posted sign advertising a temporary discount",
+      "The average of the transaction prices recorded across a market"
     ],
     "correctIndex": 1,
     "explanation": "A price signal conveys information about scarcity and value. When prices rise, they signal that something is becoming scarcer, creating incentives for conservation and increased production.",
@@ -22,10 +22,10 @@
     "difficulty": "easy",
     "question": "How did the rise in oil prices in the 1970s affect rose production?",
     "options": [
-      "It had no effect on rose production",
-      "It increased oil production and rose production equally",
+      "It lowered rose prices as growers passed on weaker demand to consumers",
+      "It shifted consumers toward cheaper substitute flowers, cutting rose output",
       "It increased the cost of heating greenhouses, changing where roses were produced",
-      "It eliminated all rose production"
+      "It made imported roses costlier, so domestic greenhouse output expanded"
     ],
     "correctIndex": 2,
     "explanation": "Higher oil prices made heating greenhouses in the U.S. more expensive. This price signal incentivized production shifts to naturally warm locations like Kenya and Ecuador, demonstrating how prices coordinate production decisions.",
@@ -107,7 +107,7 @@
       "Because markets reward persistence and penalise early exit from long-run projects",
       "Because managerial bonuses are tied to project completion rather than project profitability"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "The sunk cost fallacy leads businesses to 'throw good money after bad.' Even though past investments cannot be recovered, managers sometimes continue funding unsuccessful projects hoping to eventually recoup the initial investment. This is economically irrational.",
     "source": "Sunk_costs__From_Titanic_to_Evergrande.pdf"
   },
@@ -230,10 +230,10 @@
     "difficulty": "easy",
     "question": "When rose prices increased, what was the marginal decision consumers faced?",
     "options": [
-      "Whether to buy roses at all",
-      "Whether to buy slightly fewer roses or substitute with alternatives",
-      "Whether to eliminate all spending on gifts",
-      "Roses had no marginal effect"
+      "Whether to abandon gift-giving for the season entirely",
+      "Whether to buy slightly fewer roses or switch to alternatives",
+      "Whether to wait and buy the same roses once prices fell back",
+      "Whether to buy more roses now before prices rose further"
     ],
     "correctIndex": 1,
     "explanation": "At the margin, consumers decided whether to buy roses at the new price or buy substitutes. Few stopped buying roses entirely; most adjusted quantities and made substitution choices at the margin.",
@@ -294,10 +294,10 @@
     "difficulty": "easy",
     "question": "What behavioral response demonstrates how prices influence consumption?",
     "options": [
-      "People stop all spending when prices rise",
-      "Prices have no effect on purchases",
+      "When rose prices rose, consumers kept buying the same quantity as before",
+      "When rose prices rose, demand for close substitute gifts fell alongside roses",
       "When rose prices increased, consumers bought fewer roses or substituted alternatives",
-      "Consumer behavior is random and unpredictable"
+      "When rose prices rose, consumers spent more overall to keep buying roses"
     ],
     "correctIndex": 2,
     "explanation": "Higher prices incentivize consumers to reduce consumption and search for alternatives. The oil-rose example shows how price changes propagate through the economy, affecting production and consumption choices.",
@@ -390,10 +390,10 @@
     "difficulty": "easy",
     "question": "In the context of price signals, what is the fundamental economic problem being solved?",
     "options": [
-      "How to eliminate all scarcity",
+      "How to raise enough tax revenue to fund public spending",
       "How to allocate scarce resources among competing uses",
-      "How to make everything free",
-      "How to prevent people from wanting things"
+      "How to ensure every producer earns an equal share of profit",
+      "How to keep the prices of essential goods stable over time"
     ],
     "correctIndex": 1,
     "explanation": "Scarcity means not everything can be produced in unlimited quantities. Prices solve the allocation problem by signaling where resources are most valued and guiding production and consumption decisions.",
@@ -470,10 +470,10 @@
     "difficulty": "easy",
     "question": "How does the price of roses coordinate decisions between oil producers, farmers, and consumers?",
     "options": [
-      "Price does not coordinate anything",
-      "Government officials directly instruct each group",
+      "A central agency collects each group's plans and issues binding output targets",
+      "The three groups negotiate directly with one another over prices and quantities",
       "Through a mechanism where each group responds to price signals without needing to communicate",
-      "Randomly and inefficiently"
+      "Producers set output first and consumers simply accept whatever is supplied"
     ],
     "correctIndex": 2,
     "explanation": "Oil producers respond to oil prices, rose farmers respond to rose prices, and consumers respond to rose prices. No coordination is required; each pursues self-interest while responding to prices, producing efficient outcomes.",
@@ -500,7 +500,7 @@
     "module": "cp-22",
     "topic": "information-efficiency",
     "difficulty": "hard",
-    "question": "What does Vernon Smith mean when he calls the price system 'a scientific mystery'?",
+    "question": "In what sense can the price system meaningfully be described as 'a scientific mystery'?",
     "options": [
       "That price formation follows emergent statistical patterns economists have not yet succeeded in modelling mathematically",
       "That the price system's efficiency in coordinating dispersed information rivals natural phenomena like the expanding universe",
@@ -508,7 +508,7 @@
       "That experimental economics consistently fails to replicate real-world price outcomes in controlled laboratory settings"
     ],
     "correctIndex": 1,
-    "explanation": "Smith suggests the price system's ability to aggregate infinite dispersed information and produce efficient allocation is as profound and mysterious as fundamental physical phenomena. Its elegance comes from its simplicity and effectiveness.",
+    "explanation": "The characterization suggests the price system's ability to aggregate infinite dispersed information and produce efficient allocation is as profound and mysterious as fundamental physical phenomena. Its elegance comes from its simplicity and effectiveness.",
     "source": "Price Signal Incentive.pdf"
   },
   {
@@ -550,10 +550,10 @@
     "difficulty": "easy",
     "question": "What was remarkable about how the market responded to the oil price shock?",
     "options": [
-      "The market could not respond",
-      "Only government intervention could solve the problem",
+      "A central authority stepped in to plan the reallocation of resources",
+      "Producers and consumers held their behavior steady until prices normalized",
       "Complex adaptation occurred through decentralized decisions responding to price signals",
-      "No one changed any behavior"
+      "A few large firms coordinated the whole industry's response to the shock"
     ],
     "correctIndex": 2,
     "explanation": "The oil shock created a complex global reallocation of resources—new farms, new infrastructure, new consumption patterns—all coordinated through price signals without central planning or direct communication.",
@@ -644,12 +644,12 @@
     "module": "cp-22",
     "topic": "price-signals",
     "difficulty": "expert",
-    "question": "Hayek's argument about the price system is that prices aggregate dispersed knowledge no central planner can possess. What does this imply for the design of socialist or command planning systems?",
+    "question": "The price system aggregates dispersed knowledge that no central authority could ever gather in one place. What does this imply for the design of socialist or command planning systems?",
     "options": [
-      "Command systems face an inherent information problem — not just an incentive problem — because prices embed tacit, local, constantly changing knowledge that no authority can fully gather",
-      "The information constraint is real but secondary; socialist planning fails chiefly because it cannot replicate competitive market pressure, not because knowledge is irreducibly dispersed across actors",
-      "Hayek's argument is now partially addressed by big data analytics, which can aggregate consumption signals across millions of actors and approximate price-system coordination outcomes",
-      "The knowledge problem applies to final goods markets but not to investment allocation, which state development banks can efficiently guide once they have reliable sectoral and firm-level data"
+      "Command systems face an inherent information problem: prices embed tacit, local, changing knowledge no authority can gather",
+      "The information issue is secondary; planning fails mainly because it can't replicate competitive market pressure",
+      "Big data analytics now largely solves this by aggregating consumption signals across millions of actors",
+      "The knowledge problem hits consumer goods but not investment, which state banks can allocate with good data"
     ],
     "correctIndex": 0,
     "explanation": "Hayek's insight is not just about incentives but about epistemology: the knowledge needed to allocate resources efficiently is not available in any one place. It exists in dispersed, tacit, local form — and prices are the only mechanism that aggregates it without requiring central collection.",

@@ -36,7 +36,7 @@
     "module": "cp-13",
     "topic": "policy-goals",
     "difficulty": "easy",
-    "question": "According to Deborah Stone, what is one of the four primary goals of public policy?",
+    "question": "Which of the following is one of the four primary goals of public policy?",
     "options": [
       "Profit maximization",
       "Equity or equality",
@@ -134,10 +134,10 @@
     "difficulty": "easy",
     "question": "What distinguishes a 'problem' from a 'condition' in policy analysis?",
     "options": [
-      "Problems are always more important than conditions",
-      "A problem is something that can be addressed by policy; a condition cannot be changed",
-      "Conditions are always permanent while problems are temporary",
-      "There is no meaningful distinction between them"
+      "Problems affect the public while conditions affect only individuals",
+      "A problem can be addressed through policy, whereas a condition cannot be changed",
+      "Conditions are permanent by nature while problems are temporary disruptions",
+      "Conditions are measured objectively while problems are politically constructed"
     ],
     "correctIndex": 1,
     "explanation": "Stone defines conditions as bad circumstances that little can be done about (e.g., mortality). Problems are conditions that can be addressed through policy intervention. The distinction matters because it determines whether governments should act.",
@@ -166,10 +166,10 @@
     "difficulty": "easy",
     "question": "What is a regulating instrument in policy design?",
     "options": [
-      "An instrument that eliminates all government oversight",
-      "An instrument that directly influences the volume or nature of activities through requirements or restrictions",
-      "An instrument that only provides information to citizens",
-      "An instrument that creates new markets for goods and services"
+      "An instrument that shifts behaviour by taxing or subsidising an activity",
+      "An instrument that directly controls activities by imposing requirements or restrictions",
+      "An instrument that guides behaviour by informing and persuading citizens",
+      "An instrument that creates tradable rights to allocate resources via markets"
     ],
     "correctIndex": 1,
     "explanation": "Regulating instruments directly intervene in activities through requirements (like mandatory technologies, emission limits, or performance standards) to influence behavior and outcomes.",
@@ -343,7 +343,7 @@
     "question": "What is the final step in Bardach's Eightfold Path?",
     "options": [
       "Decide on a policy",
-      "Tell your story—communicate findings effectively",
+      "Tell your story",
       "Implement the policy",
       "Evaluate the results"
     ],
@@ -550,10 +550,10 @@
     "difficulty": "easy",
     "question": "What is the purpose of selecting criteria in Bardach's Step Four?",
     "options": [
-      "To eliminate options quickly",
-      "To establish standards by which alternative policies will be evaluated",
-      "To satisfy all stakeholders",
-      "To ensure only one option survives"
+      "To decide in advance which alternative will win",
+      "To set the standards for evaluating alternative policies",
+      "To communicate the findings clearly to decision-makers",
+      "To gather the evidence base needed for projections"
     ],
     "correctIndex": 1,
     "explanation": "Criteria define what matters in evaluation—efficiency, equity, liberty, security, etc. They provide the framework for comparing alternatives and justifying final recommendations.",
@@ -628,7 +628,7 @@
     "module": "cp-13",
     "topic": "policy-analysis",
     "difficulty": "hard",
-    "question": "What does it mean for policy analysis to be a 'social and political activity' as Bardach argues?",
+    "question": "What does it mean to describe policy analysis as a 'social and political activity' rather than a purely technical one?",
     "options": [
       "Analysis must ultimately be subordinated to the preferences of the commissioning authority who controls implementation",
       "Analysts should prioritise finding consensus positions that can attract cross-party support over rigorous technical findings",
@@ -692,12 +692,12 @@
     "module": "cp-13",
     "topic": "policy-goals",
     "difficulty": "expert",
-    "question": "Deborah Stone identifies four fundamental goals of public policy: efficiency, equity, security, and liberty. Why does she argue these goals inevitably conflict rather than complement each other?",
+    "question": "Public policy is often described as pursuing four fundamental goals: efficiency, equity, security, and liberty. Why do these goals inevitably conflict rather than complement each other?",
     "options": [
-      "Each goal embeds a different conception of what constitutes a fair social arrangement, so maximizing one systematically requires trade-offs with the others",
-      "Resource scarcity forces governments to rank goals by priority, and the ranking chosen by any administration reflects ideological preference rather than neutral analysis",
-      "The conflicts are rhetorical rather than substantive — careful policy design routinely finds solutions that advance all four goals without meaningful sacrifice",
-      "Goal conflicts arise from poor institutional design and are resolved once democratic systems develop sufficient deliberative capacity"
+      "Each goal embeds a different idea of a fair society, so maximizing one systematically forces trade-offs with the others",
+      "Scarce resources force governments to rank the goals, and the ranking reflects ideology rather than neutral analysis",
+      "The conflicts are rhetorical, not real — careful design can advance all four goals with no meaningful sacrifice",
+      "The conflicts stem from poor institutional design and vanish once democratic deliberation matures"
     ],
     "correctIndex": 0,
     "explanation": "Efficiency may require concentrating resources where returns are highest, violating equity. Security may require constraints on liberty. Equity may reduce efficiency incentives. These are not accidental conflicts but reflect genuinely competing visions of the good society.",
@@ -724,12 +724,12 @@
     "module": "cp-13",
     "topic": "policy-instruments",
     "difficulty": "expert",
-    "question": "Bardach argues policymakers should assemble rather than design policy solutions. What does this distinction imply for how analysts should approach a new policy problem?",
+    "question": "Some policy analysts argue policymakers should assemble rather than design policy solutions. What does this distinction imply for how analysts should approach a new policy problem?",
     "options": [
-      "Solutions should be built from existing resources, capacities, and programs rather than designed from scratch — recognizing that implementation depends on what actually exists, not ideal constructs",
-      "Policy analysis should begin from first principles rather than existing programs, which risk perpetuating the institutional failures and path dependencies they were meant to correct",
-      "Assembling from existing elements is appropriate only for incremental reforms; genuinely transformative change requires designing institutions and instruments from foundational principles",
-      "Assembling solutions from existing elements sacrifices rigour for feasibility and is inappropriate when reform stakes are high enough to justify designing new institutions"
+      "Build solutions from existing resources, capacities, and programs, since implementation depends on what actually exists",
+      "Start from first principles rather than existing programs, which risk perpetuating the failures they were meant to fix",
+      "Assemble from existing parts only for incremental reform; transformative change needs design from foundations",
+      "Prefer designing new institutions whenever reform stakes are high enough to justify the added rigour"
     ],
     "correctIndex": 0,
     "explanation": "Assembling rather than designing reflects a systems insight: new policies operate within existing institutional landscapes. Solutions that ignore what exists — in capacity, culture, incentives, and resources — produce well-designed plans that fail in implementation.",

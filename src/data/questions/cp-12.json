@@ -4,12 +4,12 @@
     "module": "cp-12",
     "topic": "state-failure",
     "difficulty": "easy",
-    "question": "What does Pritchett identify as a flailing state?",
+    "question": "What is a 'flailing state'?",
     "options": [
-      "A state that simultaneously succeeds in some domains and fails in others",
-      "A state that fails completely in all functions",
-      "A state that has entirely collapsed",
-      "A state without taxation"
+      "A state with strong capacity in some functions but weak capacity in others",
+      "A state that fails to perform any of its core functions at all",
+      "A state whose central authority has collapsed entirely",
+      "A state that deliberately withholds all services from its citizens"
     ],
     "correctIndex": 0,
     "explanation": "Pritchett's concept of a 'flailing state' describes contexts where state capacity is unevenly distributed—strong in some areas (security, urban administration) but weak in others (rural delivery, welfare).",
@@ -20,12 +20,12 @@
     "module": "cp-12",
     "topic": "state-capacity",
     "difficulty": "easy",
-    "question": "What does Kapur mean by the Indian state both failing and succeeding?",
+    "question": "What does it mean to describe the Indian state as both failing and succeeding?",
     "options": [
-      "The state shows contradictory outcomes—strong institutional capacity in some areas while delivering poor public goods in others",
-      "The state is purely failing",
-      "The state succeeds uniformly across all sectors",
-      "Success and failure are unrelated concepts"
+      "It shows uneven capacity — strong in some domains, weak at public-goods delivery in others",
+      "It performs poorly across nearly every sector and population group alike",
+      "It delivers public goods uniformly well across virtually all regions",
+      "Its successes and failures belong to entirely separate historical policy eras"
     ],
     "correctIndex": 0,
     "explanation": "Kapur argues that characterizing India's state as simply 'failing' or 'succeeding' obscures the reality of uneven state capacity across different domains and populations.",
@@ -38,10 +38,10 @@
     "difficulty": "easy",
     "question": "In principal-agent theory, what is the core problem?",
     "options": [
-      "Agents (bureaucrats) may pursue their own interests rather than the principal's (public's) interests",
-      "Principals always perfectly control agents",
-      "Agents have no ability to deviate from principals' wishes",
-      "The problem only occurs in private firms"
+      "Agents (bureaucrats) may pursue their own interests rather than the principal's",
+      "Principals can perfectly observe and control their agents' actions",
+      "Agents have no discretion once instructions have been issued to them",
+      "The misalignment arises only in firms, never in public bureaucracies"
     ],
     "correctIndex": 0,
     "explanation": "The principal-agent problem describes the challenge of ensuring those executing policy (agents) remain aligned with those delegating authority (principals).",
@@ -55,9 +55,9 @@
     "question": "What is a key institutional source of principal-agent problems in government?",
     "options": [
       "Information asymmetries between elected officials and career bureaucrats",
-      "Bureaucrats lack the ability to withhold information",
-      "Officials always have perfect information",
-      "Bureaucracies are transparent by design"
+      "A perfect flow of information from bureaucrats to their principals",
+      "Legal rules compelling bureaucrats to disclose all internal information",
+      "Short bureaucratic tenures that prevent any accumulation of expertise"
     ],
     "correctIndex": 0,
     "explanation": "Bureaucrats possess detailed operational knowledge that elected principals lack, creating opportunities for bureaucratic discretion and potential misalignment.",
@@ -70,10 +70,10 @@
     "difficulty": "easy",
     "question": "What does 'The Grammar of Anarchy' suggest about state authority in India?",
     "options": [
-      "State authority rests partly on legitimacy conferred by citizens, not just coercive capacity",
-      "The state rules purely through force",
-      "Citizens never question state authority",
-      "Grammar is irrelevant to state power"
+      "Authority rests partly on citizen-conferred legitimacy, not coercion alone",
+      "The state secures compliance purely through its monopoly on coercion",
+      "Citizens obey state authority without ever assessing its legitimacy",
+      "State authority derives entirely from constitutional text and law"
     ],
     "correctIndex": 0,
     "explanation": "The work argues that state authority in India is negotiated and contingent on how different groups understand legitimate governance and reciprocal obligations.",
@@ -86,10 +86,10 @@
     "difficulty": "easy",
     "question": "What does the policymaker-as-tightrope-walker metaphor suggest about governance?",
     "options": [
-      "Policymakers navigate competing pressures and constraints, requiring careful balance",
-      "Policy is straightforward and linear",
-      "Policymakers face no constraints",
-      "Walking metaphors are irrelevant to policy"
+      "Policymakers must balance competing pressures and constraints carefully",
+      "Policymaking follows a straightforward, linear sequence of steps",
+      "Policymakers implement optimal policies free of political constraint",
+      "Policy outcomes depend mainly on the leader's personal decisiveness"
     ],
     "correctIndex": 0,
     "explanation": "The metaphor captures how policymakers must balance multiple constituencies, constraints, and competing goals simultaneously.",
@@ -102,10 +102,10 @@
     "difficulty": "easy",
     "question": "What is a primary limitation on state capacity in developing democracies?",
     "options": [
-      "Insufficient financial and human resources to implement policies effectively",
-      "Governments have unlimited resources",
-      "Capacity is not limited",
-      "Money is irrelevant to governance"
+      "Insufficient financial and human resources to implement policy effectively",
+      "An oversupply of skilled administrators relative to available tasks",
+      "Excessive fiscal reserves that discourage careful prioritisation",
+      "Citizens declining to make use of the services the state offers"
     ],
     "correctIndex": 0,
     "explanation": "Limited budgets, inadequate infrastructure, and insufficient trained personnel constrain what developing states can achieve.",
@@ -118,10 +118,10 @@
     "difficulty": "easy",
     "question": "What does poor state performance in rural areas typically reflect?",
     "options": [
-      "Lower capacity to extract resources and deliver services in dispersed, less profitable locations",
-      "Rural people prefer poor services",
-      "Distance has no impact on service delivery",
-      "Rural areas are prioritized equally"
+      "Lower capacity to deliver services across dispersed, remote populations",
+      "A deliberate central policy of directing all resources to cities",
+      "Rural populations demanding far fewer services than urban residents",
+      "Higher per-capita costs offset by larger rural tax revenues"
     ],
     "correctIndex": 0,
     "explanation": "Geographic remoteness, population density, and lower revenue-generation capacity make rural service delivery more expensive and logistically challenging.",
@@ -135,9 +135,9 @@
     "question": "What role does perceived legitimacy play in state authority?",
     "options": [
       "Legitimate authority requires less coercive force to achieve compliance",
-      "Legitimacy and force are unrelated",
-      "States require no legitimacy",
-      "Force completely determines state power"
+      "Legitimacy matters only in autocracies, not in functioning democracies",
+      "Coercive force alone reliably secures long-term citizen compliance",
+      "Greater legitimacy raises the cost of governing by inviting dissent"
     ],
     "correctIndex": 0,
     "explanation": "When citizens perceive state authority as legitimate, compliance costs decrease and state capacity effectively increases.",
@@ -150,10 +150,10 @@
     "difficulty": "easy",
     "question": "What structural incentive might lead bureaucrats to misalign with public interest?",
     "options": [
-      "Career advancement often depends on pleasing supervisors rather than serving public goals",
-      "Bureaucrats always prioritize public interest",
-      "Incentives are irrelevant",
-      "Bureaucrats have no career concerns"
+      "Advancement often depends on pleasing supervisors, not on serving public goals",
+      "Fixed salaries that reward effort equally regardless of performance",
+      "Promotion rules tied strictly to measurable public outcomes",
+      "Frequent rotation across postings that weakens supervisory loyalty"
     ],
     "correctIndex": 0,
     "explanation": "When promotion and evaluation depend on hierarchical relationships rather than policy outcomes, bureaucrats may optimize for internal metrics rather than public benefit.",
@@ -167,9 +167,9 @@
     "question": "What geographic pattern characterizes many developing states?",
     "options": [
       "Strong state presence in urban centers with weaker reach in peripheral regions",
-      "State power is uniformly distributed",
-      "Rural areas are prioritized",
-      "Geography irrelevant to state strength"
+      "Equal administrative presence across urban and rural areas alike",
+      "Concentrated state capacity in rural rather than urban districts",
+      "State reach determined by population wealth, not by geography"
     ],
     "correctIndex": 0,
     "explanation": "States typically maintain greater administrative, coercive, and extractive capacity in urban areas where resources are concentrated and control is easier.",
@@ -183,9 +183,9 @@
     "question": "What external constraint commonly limits policymakers' choices?",
     "options": [
       "Veto players with power to block policies can force compromise",
-      "Policymakers face no constraints",
-      "External actors never influence policy",
-      "Constraints are entirely internal"
+      "A unified electorate that endorses every proposed policy change",
+      "Courts and legislatures that automatically ratify executive decisions",
+      "International donors who fund policy without attaching any conditions"
     ],
     "correctIndex": 0,
     "explanation": "Policymakers operate within systems where various actors—legislatures, courts, interest groups, bureaucracies—can block or modify proposed policies.",
@@ -420,7 +420,7 @@
     "module": "cp-12",
     "topic": "kapur-framework",
     "difficulty": "hard",
-    "question": "What analytical framework does Kapur propose to move beyond 'failing state' discourse?",
+    "question": "What analytical approach moves beyond a binary 'failing state' label?",
     "options": [
       "Examining specific state capacities across domains and identifying where success is possible rather than using a binary label",
       "Benchmarking Indian state performance against East Asian developmental states to identify the institutional reforms required",

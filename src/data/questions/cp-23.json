@@ -82,12 +82,12 @@
     "question": "What is an inferior good in economic terms?",
     "options": [
       "A good for which demand decreases as income increases",
+      "A good for which demand increases as income increases",
       "A good of lower quality than alternatives",
-      "A good that is always cheaper than other options",
-      "A good that nobody wants to purchase"
+      "A good that is always cheaper than other options"
     ],
     "correctIndex": 0,
-    "explanation": "Inferior goods are those for which demand falls when consumer income rises. Classic examples include public transportation and cheap instant noodles—as people earn more, they switch to premium alternatives."
+    "explanation": "Inferior goods are those for which demand falls when consumer income rises. Classic examples include public transportation and cheap instant noodles—as people earn more, they switch to premium alternatives. A good whose demand rises with income is a normal good."
   },
   {
     "id": "cp23-q007",
@@ -127,12 +127,12 @@
     "question": "Which event would cause a rightward shift in the supply curve?",
     "options": [
       "A technological improvement that reduces production costs",
-      "An increase in the price of the good",
-      "A decrease in the price of complementary inputs",
-      "An increase in production taxes"
+      "An increase in the market price of the good itself",
+      "An increase in the price of a key production input",
+      "The introduction of a new per-unit production tax"
     ],
     "correctIndex": 0,
-    "explanation": "A rightward supply shift means producers want to supply more at every price. This occurs with technological improvements, lower input costs, or favorable policy changes. Price changes move along the curve, not shift it."
+    "explanation": "A rightward supply shift means producers want to supply more at every price. This occurs with technological improvements, which lower unit costs. A rise in input prices or a new tax raises costs and shifts supply left, while a change in the good's own price only moves along the curve."
   },
   {
     "id": "cp23-q010",
@@ -156,9 +156,9 @@
     "difficulty": "easy",
     "question": "During the COVID-19 pandemic, egg prices spiked in some regions. What economic principle explains this?",
     "options": [
-      "Supply decreased due to farm closures while demand remained relatively stable",
-      "Demand decreased while supply increased significantly",
-      "Both supply and demand decreased equally",
+      "Supply fell due to farm closures while demand held steady",
+      "Demand fell sharply while supply expanded significantly",
+      "Both supply and demand contracted by similar amounts",
       "Price controls prevented the market from clearing"
     ],
     "correctIndex": 0,

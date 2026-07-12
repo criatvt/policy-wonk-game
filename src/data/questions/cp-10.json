@@ -612,12 +612,12 @@
     "module": "cp-10",
     "topic": "policy-design",
     "difficulty": "expert",
-    "question": "'In Service of the Republic' argues simultaneously for free markets AND for government intervention to correct market failures. Is this position consistent, and what does it require?",
+    "question": "A policy stance endorses free markets while also supporting government intervention to correct market failures. Is this position coherent, and what does it require?",
     "options": [
-      "The position is consistent if policymakers rigorously distinguish genuine market failures from situations where markets work well, and match interventions precisely to the failure type",
-      "The position is internally consistent only if the state has the capacity to identify and correct failures without creating larger distortions in the process",
-      "The reconciliation requires a dynamic framework: markets should be the default, with intervention triggered by specific measurable failures and sunset conditions",
-      "Consistency requires policymakers to accept that intervention will sometimes fail, and to build in evaluation mechanisms that allow failed policies to be reversed"
+      "Coherent, if genuine market failures are separated from cases where markets work well and intervention is matched to the failure type",
+      "Incoherent, since endorsing markets and endorsing intervention are fundamentally contradictory economic philosophies",
+      "Coherent only if the state intervenes broadly across the whole economy rather than limiting itself to specific failures",
+      "Incoherent unless markets are treated as a last resort, used only after direct intervention has already failed"
     ],
     "correctIndex": 0,
     "explanation": "The position is logically consistent: markets are presumptively efficient, but genuine failures (externalities, public goods, information asymmetry, natural monopoly) exist and justify targeted intervention matched to the specific type of failure.",

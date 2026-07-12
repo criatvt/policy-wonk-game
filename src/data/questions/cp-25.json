@@ -21,10 +21,10 @@
     "difficulty": "easy",
     "question": "Why does specialization increase productivity?",
     "options": [
-      "Workers become more skilled at their specific tasks through practice and repetition",
-      "Specialized workers receive higher wages than generalists",
-      "Specialization reduces the number of workers needed",
-      "It eliminates the need for any form of training or education"
+      "Repeated practice makes workers faster and more skilled at their task",
+      "Specialized workers are always paid more than generalists",
+      "Fewer total workers are needed once tasks are divided up",
+      "Specialization removes most need for on-the-job training"
     ],
     "correctIndex": 0,
     "explanation": "Specialization increases productivity through skill development, reduced switching costs between tasks, and the ability to use task-specific tools effectively. A worker repeating the same task becomes faster and more efficient."
@@ -81,10 +81,10 @@
     "difficulty": "easy",
     "question": "Why do economists favor specialization based on comparative advantage?",
     "options": [
-      "It allows each producer to focus on what they do relatively best, increasing total output",
-      "It eliminates all competition between producers",
-      "It guarantees equal income for all workers",
-      "It removes the need for any international agreements"
+      "Each producer focuses on what it does relatively best, raising total output",
+      "It fully protects each producer from all foreign competition",
+      "It guarantees every country earns equal gains from trade",
+      "It maximizes each country's self-sufficiency in all goods"
     ],
     "correctIndex": 0,
     "explanation": "Specialization based on comparative advantage increases the size of the total pie—both countries can consume more than if they were self-sufficient. Trade allows each to focus on lower-opportunity-cost production."
@@ -97,9 +97,9 @@
     "question": "How does free trade typically affect consumer prices?",
     "options": [
       "It tends to lower prices by increasing competition and variety",
-      "It always raises prices to benefit foreign producers",
-      "It has no effect on prices in the importing country",
-      "It prevents price changes of any kind"
+      "It raises prices as foreign producers exploit new market access",
+      "It leaves consumer prices unchanged but widens product choice",
+      "It fixes domestic prices at the level set by world markets"
     ],
     "correctIndex": 0,
     "explanation": "Free trade increases competition among suppliers, often lowering prices for consumers. Imported goods can provide cheaper alternatives, and domestic producers face competitive pressure to reduce costs."

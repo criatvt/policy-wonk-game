@@ -7,9 +7,9 @@
     "question": "What is the primary goal of policy communication?",
     "options": [
       "To explain policy decisions and build understanding among stakeholders",
-      "To conceal government decisions from the public",
-      "To increase government revenue through communication services",
-      "To prevent any public discussion of policy"
+      "To promote the governing party's image ahead of elections",
+      "To secure media coverage that portrays the government favourably",
+      "To satisfy legal requirements to publish official decisions"
     ],
     "correctIndex": 0,
     "explanation": "Effective policy communication aims to clearly explain government decisions, their rationale, and implications to citizens, media, and other stakeholders. This builds legitimacy and enables informed public engagement."
@@ -21,10 +21,10 @@
     "difficulty": "easy",
     "question": "Who are key audiences for policy communication?",
     "options": [
-      "Citizens, media, civil society, international partners, and policymakers themselves",
-      "Only wealthy and educated citizens",
-      "Exclusively government officials",
-      "Foreign governments, not domestic audiences"
+      "Citizens, media, civil society, international partners, and policymakers",
+      "Domestic voters and party members, since they decide elections",
+      "Senior officials and the ministries implementing the policy",
+      "Business investors and international partners shaping economic confidence"
     ],
     "correctIndex": 0,
     "explanation": "Effective policy communication reaches multiple audiences with tailored messages—citizens need to understand impacts, media translate for public, civil society provides feedback, international partners need clarity on commitments."
@@ -36,10 +36,10 @@
     "difficulty": "easy",
     "question": "What is a policy narrative?",
     "options": [
-      "A structured story that explains policy goals, problems, and solutions in a compelling way",
-      "A fictional account used to entertain policymakers",
-      "Only the technical data about a policy",
-      "A criticism of government decisions"
+      "A structured story explaining a policy's goals, problems, and solutions",
+      "A detailed technical account of a policy's provisions and mechanisms",
+      "A public statement defending a policy against its critics",
+      "A summary of the data and evidence supporting a policy"
     ],
     "correctIndex": 0,
     "explanation": "Narratives are powerful communication tools that connect abstract policy to human experience. A good narrative for environmental policy might show how it protects health and creates jobs, not just describe regulations."
@@ -51,10 +51,10 @@
     "difficulty": "easy",
     "question": "What is framing in policy communication?",
     "options": [
-      "Presenting the same policy in different ways that affect public perception",
-      "Putting text inside literal frames on documents",
-      "Identifying fraudulent policies",
-      "Creating new laws through communication"
+      "Presenting the same policy in different ways that shape public perception",
+      "Structuring a document so its key provisions stand out",
+      "Restating a policy in simpler language for general audiences",
+      "Setting the boundaries of what a policy will and won't cover"
     ],
     "correctIndex": 0,
     "explanation": "Framing affects how people interpret information. A tax increase can be framed as 'necessary for schools' (positive) or 'burden on families' (negative)—same policy, different frames, different responses."
@@ -66,10 +66,10 @@
     "difficulty": "easy",
     "question": "What builds credibility in policy communication?",
     "options": [
-      "Consistent messaging, transparency about facts and uncertainties, and following through on commitments",
-      "Always telling people what they want to hear",
-      "Concealing any problems or uncertainties",
-      "Using complex technical language to impress audiences"
+      "Consistency, honesty about uncertainty, and following through on commitments",
+      "Projecting unwavering confidence and never admitting any doubt or error",
+      "Telling each audience whatever it most wants to hear in the moment",
+      "Using authoritative technical jargon that signals deep expertise"
     ],
     "correctIndex": 0,
     "explanation": "Trust comes from consistency, honesty about limitations, and demonstrable follow-through. A policymaker who admits uncertainty when warranted builds more credibility than one making false certainties."
@@ -96,10 +96,10 @@
     "difficulty": "easy",
     "question": "How has social media changed policy communication?",
     "options": [
-      "It allows direct communication to citizens, faster feedback, but also rapid spread of misinformation",
-      "Social media has eliminated the need for any policy communication",
-      "Social media only spreads accurate information",
-      "Only governments use social media for communication"
+      "It enables direct outreach and fast feedback, but also spreads misinformation quickly",
+      "It has fully replaced traditional media as governments' primary communication channel",
+      "It lets governments tightly control which messages citizens see and share",
+      "It reaches younger audiences but has little effect on real policy debate"
     ],
     "correctIndex": 0,
     "explanation": "Social media enables governments to communicate directly and gather rapid feedback, but also allows misinformation to spread quickly. Real-time communication demands faster response capabilities and fact-checking vigilance."
@@ -111,10 +111,10 @@
     "difficulty": "easy",
     "question": "What is a clear policy message?",
     "options": [
-      "A simple, memorable statement of what the policy does and why it matters to audiences",
-      "A lengthy explanation of all technical details",
-      "A promise that the policy will solve all related problems",
-      "A statement that avoids any specifics"
+      "A simple, memorable statement of what a policy does and why it matters",
+      "A thorough account of the policy's technical provisions and rules",
+      "A firm commitment that the policy will fix the underlying problem",
+      "A carefully hedged statement that avoids committing to specifics"
     ],
     "correctIndex": 0,
     "explanation": "Effective messages are specific but understandable: 'This health subsidy allows poor families to afford preventive care, reducing emergency costs.' Clear messages help audiences grasp importance and implications."
@@ -126,10 +126,10 @@
     "difficulty": "easy",
     "question": "Why is listening important in policy communication?",
     "options": [
-      "It reveals public concerns, identifies misunderstandings, and improves policy design through feedback",
-      "Policymakers should never consider public input",
-      "Listening makes policies less efficient to implement",
-      "Public feedback is always correct and should override expert judgment"
+      "It surfaces public concerns, reveals misunderstandings, and improves policy design",
+      "It signals respect and primarily serves to boost public approval ratings",
+      "It slows implementation while satisfying formal procedural requirements",
+      "It lets the public override expert judgment on technical policy matters"
     ],
     "correctIndex": 0,
     "explanation": "Two-way communication improves policy outcomes. Public input reveals implementation challenges, identifies unintended effects, and builds support. However, public feedback should inform, not always override, expert judgment."
@@ -547,7 +547,7 @@
     "module": "cp-33",
     "topic": "Deborah Stone Policy Paradox",
     "difficulty": "medium",
-    "question": "Deborah Stone argues that policy narratives are inherently political. What does she mean?",
+    "question": "In what sense are policy narratives inherently political rather than neutral?",
     "options": [
       "Narratives frame what counts as a problem, who is responsible, and what solutions are legitimate — choices that distribute power and resources",
       "Policy narratives are constructed by advocacy coalitions to advance sectoral interests rather than improve governance for the general public",
@@ -555,7 +555,7 @@
       "Narratives inherently simplify complex trade-offs in ways that systematically favour whichever interest group controls the agenda-setting process"
     ],
     "correctIndex": 0,
-    "explanation": "For Stone, there is no neutral way to define a policy problem. Every narrative selects characters, assigns causation, and implies remedies — and these choices are not technical but political, determining who gains and who bears costs.",
+    "explanation": "There is no neutral way to define a policy problem. Every narrative selects characters, assigns causation, and implies remedies — and these choices are not technical but political, determining who gains and who bears costs.",
     "source": "Narratives_-_Policy_Paradox_Deborah_Stone_Ch_6__7__8.pdf"
   },
   {
@@ -579,12 +579,12 @@
     "module": "cp-33",
     "topic": "Digital Platforms",
     "difficulty": "expert",
-    "question": "Why does the rise of social media make Deborah Stone's account of narrative and framing more, not less, relevant to policy analysis?",
+    "question": "Why does the rise of social media make narrative and framing more, not less, relevant to policy analysis?",
     "options": [
-      "Social media amplifies narrative and framing by reducing the cost of mobilizing communities around shared stories, making narrative dynamics central to political outcomes",
-      "Social media creates an environment where factual accuracy is more easily verified, which limits the distorting effects of framing on policy debates",
-      "Platform algorithms select content based on relevance to stated user preferences, which gradually surfaces factual policy content over emotionally charged narratives",
-      "Social media expands the range of voices in policy debate, diluting the agenda-setting power of any single narrative or well-resourced framing coalition"
+      "It amplifies narrative and framing by cutting the cost of mobilizing communities around shared stories",
+      "It makes factual accuracy easier to verify, which limits framing's distorting effect on policy debate",
+      "Its algorithms surface content by stated user preference, gradually favouring facts over charged narratives",
+      "It widens the range of voices, diluting the agenda-setting power of any single well-resourced narrative"
     ],
     "correctIndex": 0,
     "explanation": "If anything, social media turbocharges narrative dynamics: algorithms reward emotionally resonant stories over dry fact, filter bubbles reinforce existing frames, and virality rewards the most compelling narrative — not the most accurate one.",
