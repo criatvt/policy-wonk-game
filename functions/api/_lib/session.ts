@@ -68,9 +68,15 @@ export async function readSession(
   c: Context,
   secret: string,
 ): Promise<SessionClaims | null> {
-  // Cookie first — keeps web behaviour unchanged. Native-app callers can't
-  // easily use an HttpOnly cookie, so we also accept the same JWT via an
-  // Authorization: Bearer header (set by the iOS app from Keychain).
+  // Cookie first — this is what the web uses, and its behaviour is unchanged.
+  //
+  // We also accept the same JWT via an Authorization: Bearer header, for
+  // callers that can't hold an HttpOnly cookie. NOTHING USES THIS TODAY: it
+  // arrived with an email-OTP flow for the iOS app, and that app is
+  // deliberately login-free, so the OTP endpoints were removed on 2026-08-19.
+  // The header path is kept because it is inert until something sends the
+  // header, and it is the seam any future non-browser client would need.
+  // If no such client ever appears, delete it rather than let it rot.
   let token: string | null = null;
   const cookieHeader = c.req.header("Cookie") ?? "";
   const match = cookieHeader.match(new RegExp(`${COOKIE_NAME}=([^;]+)`));
