@@ -119,6 +119,12 @@ export function otpCodeHtml(code: string): string {
 
 // Minimal inline-styled HTML. No images, no remote fonts, no tracking.
 // Matches the editorial-poster aesthetic but stripped down for email clients.
+//
+// The button's 14px corner matches --radius-cta on the site and the 14pt
+// continuous corner on iOS, so the email looks like it came from the same
+// product. Outlook's Word rendering engine ignores border-radius and will
+// show a square button; that is an acceptable degradation, and the reason
+// the plain-text link below the button is not optional.
 export function magicLinkHtml(verifyUrl: string): string {
   return `<!DOCTYPE html>
 <html>
@@ -128,7 +134,7 @@ export function magicLinkHtml(verifyUrl: string): string {
     <p style="margin:0 0 8px 0;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#6B6B6B">Policy Wonk</p>
     <h1 style="margin:0 0 24px 0;font-size:28px;font-weight:700;line-height:1.2">Sign in to your account</h1>
     <p style="margin:0 0 24px 0;font-size:16px">Click the button below to sign in. The link expires in 10 minutes and can only be used once.</p>
-    <p style="margin:0 0 32px 0"><a href="${verifyUrl}" style="display:inline-block;padding:12px 24px;background:#1A1A1A;color:#F8F1E4;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:600">Sign in</a></p>
+    <p style="margin:0 0 32px 0"><a href="${verifyUrl}" style="display:inline-block;padding:12px 24px;border-radius:14px;background:#1A1A1A;color:#F8F1E4;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:600">Sign in</a></p>
     <p style="margin:0 0 8px 0;font-size:13px;color:#6B6B6B">Or paste this link into your browser:</p>
     <p style="margin:0 0 32px 0;font-size:13px;word-break:break-all"><a href="${verifyUrl}" style="color:#1A1A1A">${verifyUrl}</a></p>
     <hr style="border:none;border-top:1px solid #E8DFC9;margin:0 0 24px 0">
