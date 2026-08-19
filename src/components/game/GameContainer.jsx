@@ -19,6 +19,7 @@ import {
   timerForRung,
   walkAway,
   walkAwayScore,
+  canUseLifelines,
 } from "../../lib/gameEngine.js";
 import {
   expertVerdict,
@@ -193,7 +194,7 @@ const RULES_STAGES = [
   },
   {
     title: "Lifelines",
-    body: "Three lifelines, each usable once per session. 50:50 eliminates two wrong options. Audience Poll shows what the crowd thinks. Ask Your Professor ✨ gets you advice from one of three professors — they'll lecture you a little first, but they always point you to the right answer.",
+    body: "Three lifelines, each usable once per session, unlocked from Q6 onwards — the easy tier is yours to clear unaided. 50:50 eliminates two wrong options. Audience Poll shows what the crowd thinks. Ask Your Professor ✨ puts your economics professor on the line — he'll lecture you a little first, but he always points you to the right answer.",
   },
 ];
 
@@ -448,33 +449,71 @@ export default function GameContainer() {
     if (state?.status === "reveal-question") setTimerRunning(true);
   }, [state]);
 
+  // findCorrectIndex returns -1 when NO option hashes to the question's
+  // correctHash. That means the salt bundled into the JS and the question
+  // payload came from different builds — the salt rotates on every build
+  // (scripts/transform-questions.js), so a tab holding stale
+  // /data/questions JSON against a fresh _salt.js hits exactly this.
+  //
+  // All three lifelines derive their output from this index, and -1
+  // corrupts each of them silently rather than visibly: the professor
+  // recommends "Option undefined" (["A","B","C","D"][-1]), 50:50 filters
+  // nothing and can therefore eliminate the CORRECT answer, and the poll
+  // writes its majority share to result[-1] so the real answer gets no
+  // weight. Per the project's fail-loudly rule, refuse the lifeline and
+  // log rather than hand the player confidently wrong advice.
+  const resolveCorrectIndex = useCallback(async (q) => {
+    const idx = await findCorrectIndex(q);
+    if (idx < 0) {
+      console.error(
+        `[policy-wonk] No option matched correctHash for question ${q.id}. ` +
+          "The bundled salt and the question payload are from different builds. " +
+          "Reload the page to pick up a consistent pair.",
+      );
+      return null;
+    }
+    return idx;
+  }, []);
+
   const handleLifelineFiftyFifty = useCallback(async () => {
     if (!state || state.status !== "reveal-question" || state.answerLocked) return;
+    if (!canUseLifelines(state)) return;
     if (!state.lifelines.fiftyFifty) return;
     const q = state.plan[state.currentRung - 1];
-    const correctIdx = await findCorrectIndex(q);
+    const correctIdx = await resolveCorrectIndex(q);
+    if (correctIdx === null) return;
     const eliminated = fiftyFiftyEliminate(correctIdx);
     setState((s) => applyFiftyFifty(s, eliminated));
   }, [state]);
 
   const handleLifelinePoll = useCallback(async () => {
     if (!state || state.status !== "reveal-question" || state.answerLocked) return;
+    if (!canUseLifelines(state)) return;
     if (!state.lifelines.poll) return;
     setTimerRunning(false);
     const q = state.plan[state.currentRung - 1];
-    const correctIdx = await findCorrectIndex(q);
+    const correctIdx = await resolveCorrectIndex(q);
+    if (correctIdx === null) {
+      setTimerRunning(true);
+      return;
+    }
     const pollData = generateAudiencePoll(correctIdx, q.difficulty);
     setState((s) => applyAudiencePoll(s, pollData));
   }, [state]);
 
   const handleLifelineExpert = useCallback(async (expertId) => {
     if (!state || state.status !== "reveal-question" || state.answerLocked) return;
+    if (!canUseLifelines(state)) return;
     if (!state.lifelines.expert) return;
     setTimerRunning(false);
     const expert = EXPERTS.find((e) => e.id === expertId);
     if (!expert) return;
     const q = state.plan[state.currentRung - 1];
-    const correctIdx = await findCorrectIndex(q);
+    const correctIdx = await resolveCorrectIndex(q);
+    if (correctIdx === null) {
+      setTimerRunning(true);
+      return;
+    }
     const verdict = expertVerdict(expert, correctIdx);
     const tag = verdict.gotItRight ? "correct" : "wrong";
     const optionLetter = ["A", "B", "C", "D"][verdict.pickedIndex];

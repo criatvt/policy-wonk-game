@@ -227,6 +227,17 @@ export function canWalkAway(state) {
   return state.currentRung > 5 && !state.answerLocked && state.status === "reveal-question";
 }
 
+// Lifelines unlock from rung 6 onwards — the same threshold as walk-away.
+// Aasif's call (2026-08-19): spending a single-use lifeline on the easy
+// tier (Q1-Q4) is wasted, and offering them from Q1 made the opening feel
+// like the game had already started. The easy tier is meant to be cleared
+// unaided; the ladder gets real once the Q5 safety net is behind you.
+export const LIFELINE_UNLOCK_RUNG = 6;
+
+export function canUseLifelines(state) {
+  return state.currentRung >= LIFELINE_UNLOCK_RUNG;
+}
+
 export function walkAway(state) {
   if (!canWalkAway(state)) return state;
   return {

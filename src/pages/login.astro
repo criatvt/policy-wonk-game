@@ -1,5 +1,5 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import AuthLayout from "../layouts/AuthLayout.astro";
 
 const errorParam = Astro.url.searchParams.get("error");
 const errorMessages: Record<string, string> = {
@@ -10,105 +10,113 @@ const errorMessages: Record<string, string> = {
 const errorMessage = errorParam ? (errorMessages[errorParam] ?? "Sign-in failed. Try again.") : null;
 
 // "Direct sign-in mode" (when ?show=email is in the URL — sent by the
-// header's Sign in link) is applied CLIENT-SIDE, not server-side. Astro
+// header's Sign in button) is applied CLIENT-SIDE, not server-side. Astro
 // with output: 'static' evaluates Astro.url at build time, where the
 // build has no query params, so a server-side conditional always
 // resolves to false. The inline script below reads window.location at
 // request time and toggles the chooser/form accordingly. Same pattern
 // as /auth/confirm.
+//
+// Layout note (2026-08-19): the masthead now lives in AuthLayout, and
+// the headline/subhead carry the shared `auth-headline` / `auth-subhead`
+// ids that direct mode rewrites.
 ---
-<BaseLayout title="Sign in · Policy Wonk" description="Sign in to Policy Wonk, or play as a guest with no commitment.">
-  <section class="max-w-2xl mx-auto py-12">
-    <header class="mb-10 text-center">
-      <p class="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] mb-3">Policy Wonk</p>
-      <h1 id="login-headline" class="font-serif text-4xl md:text-5xl font-semibold leading-tight">Two ways in.</h1>
-      <p id="login-subhead" class="mt-3 text-[var(--color-text-soft)] leading-relaxed max-w-md mx-auto">
-        Save your history and unlock notes by signing in. Or jump straight into the game — no email, no commitment.
-      </p>
-    </header>
+<AuthLayout
+  title="Sign in · Policy Wonk"
+  description="Sign in to Policy Wonk, or play as a guest with no commitment."
+  eyebrow="Welcome"
+  headline="Two ways in."
+  subhead="Sign in to keep your history and unlock notes. Or go straight to the game — no email, no commitment."
+  width="wide"
+>
+  {errorMessage && (
+    <div
+      role="alert"
+      class="mb-6 border-l-2 border-[var(--color-functional-red)] bg-[var(--color-functional-red)]/5 px-4 py-3 text-sm"
+    >
+      {errorMessage}
+    </div>
+  )}
 
-    {errorMessage && (
-      <div role="alert" class="mb-8 p-4 border-l-4 border-[var(--color-functional-red)] bg-[var(--color-functional-red)]/10 text-sm">
-        {errorMessage}
+  {/* The two paths get identical visual weight per the Phase 1 spec —
+      guest play is a first-class option, not a downsell. Filled vs
+      outlined distinguishes them without ranking them. */}
+  <div id="login-chooser" class="grid gap-3 sm:grid-cols-2">
+    <button
+      type="button"
+      id="show-email-btn"
+      class="group flex flex-col gap-1 border border-[var(--color-charcoal)] bg-[var(--color-charcoal)] px-5 py-4 text-left text-[var(--color-bg)] transition-opacity hover:opacity-90"
+    >
+      <span class="text-base font-semibold">Sign in with email →</span>
+      <span class="text-xs opacity-70">Notes, history, and progress</span>
+    </button>
+    <a
+      href="/play"
+      class="group flex flex-col gap-1 border border-[var(--color-charcoal)] px-5 py-4 text-left text-[var(--color-charcoal)] transition-colors hover:bg-[var(--color-bg-soft)]"
+    >
+      <span class="text-base font-semibold">Play as guest →</span>
+      <span class="text-xs text-[var(--color-text-muted)]">Straight into the game</span>
+    </a>
+  </div>
+
+  {/* Quieted right down (2026-08-19): this was two three-item bulleted
+      columns at body size, which out-shouted the buttons above it. Same
+      information, set as fine print, so the eye lands on the choice. */}
+  <dl id="login-benefits" class="mt-7 grid gap-x-8 gap-y-4 text-center text-xs leading-relaxed sm:grid-cols-2">
+    <div>
+      <dt class="mb-1.5 font-medium uppercase tracking-[0.14em] text-[var(--color-text-muted)]">Signed in</dt>
+      <dd class="m-0 text-[var(--color-text-soft)]">
+        Revision notes unlock for every module you play · scores and history stick around · flashcards and spaced repetition coming
+      </dd>
+    </div>
+    <div>
+      <dt class="mb-1.5 font-medium uppercase tracking-[0.14em] text-[var(--color-text-muted)]">As a guest</dt>
+      <dd class="m-0 text-[var(--color-text-soft)]">
+        The full game, same ladder and lifelines · state lives in this tab only · sign in later and your guest history folds in
+      </dd>
+    </div>
+  </dl>
+
+  <div id="email-form-wrap" class={errorMessage ? "mt-8 border-t border-[var(--color-border)] pt-7" : "mt-8 border-t border-[var(--color-border)] pt-7 hidden"}>
+    <form id="login-form" class="mx-auto max-w-sm space-y-3" novalidate>
+      <div>
+        <label for="email" class="mb-2 block text-sm font-medium">Your email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          autocomplete="email"
+          spellcheck="false"
+          class="w-full border border-[var(--color-border-soft)] bg-[var(--color-bg-soft)] px-4 py-3 text-[15px] focus:border-[var(--color-charcoal)] focus:outline-none"
+          placeholder="you@example.com"
+        />
       </div>
-    )}
-
-    <div id="login-chooser" class="grid md:grid-cols-2 gap-4">
       <button
-        type="button"
-        id="show-email-btn"
-        class="px-6 py-4 border-2 border-[var(--color-charcoal)] bg-[var(--color-charcoal)] text-[var(--color-bg)] text-lg font-semibold hover:opacity-90 transition-opacity"
+        type="submit"
+        id="submit-btn"
+        class="w-full bg-[var(--color-charcoal)] px-6 py-3 font-semibold text-[var(--color-bg)] hover:opacity-90 disabled:cursor-wait disabled:opacity-50"
       >
-        Sign in with email →
+        Send me a sign-in link
       </button>
-      <a
-        href="/play"
-        class="px-6 py-4 border-2 border-[var(--color-charcoal)] text-[var(--color-charcoal)] text-lg font-semibold text-center hover:bg-[var(--color-charcoal)]/5 transition-colors"
-      >
-        Play as guest →
-      </a>
+      <p class="text-xs leading-relaxed text-[var(--color-text-muted)]">
+        We store your email, nickname, avatar, and play history. No tracking cookies, no third-party sharing, no selling data. <a href="/privacy" class="underline decoration-1 underline-offset-2 hover:text-[var(--color-text-soft)]">Read more →</a>
+      </p>
+      <p id="guest-fallback" class="hidden pt-1 text-sm text-[var(--color-text-soft)]">
+        Rather not? <a href="/play" class="underline decoration-2 underline-offset-2 hover:opacity-80">Play as guest →</a>
+      </p>
+    </form>
+
+    <div id="login-success" class="mx-auto mt-5 hidden max-w-sm border-l-2 border-[var(--color-functional-green)] bg-[var(--color-functional-green)]/5 px-4 py-3">
+      <p class="font-semibold">Check your email</p>
+      <p class="mt-1 text-sm text-[var(--color-text-soft)]">If that address is on file, a sign-in link is on its way. It expires in 10 minutes.</p>
     </div>
 
-    <div id="login-benefits" class="grid md:grid-cols-2 gap-x-6 gap-y-6 mt-6 text-sm leading-relaxed">
-      <div class="flex flex-col gap-2">
-        <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">If you sign in</p>
-        <ul class="list-none p-0 m-0 flex flex-col gap-1.5 text-[var(--color-text-soft)]">
-          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Revision notes unlock for each module you play</span></li>
-          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Your scores and play history stick around</span></li>
-          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Coming soon: flashcards, spaced repetition, weak-area dashboard</span></li>
-        </ul>
-      </div>
-      <div class="flex flex-col gap-2">
-        <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">If you play as guest</p>
-        <ul class="list-none p-0 m-0 flex flex-col gap-1.5 text-[var(--color-text-soft)]">
-          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Full game — same ladder, same lifelines</span></li>
-          <li class="flex gap-2"><span aria-hidden="true">·</span><span>State persists in this tab; gone when you close it</span></li>
-          <li class="flex gap-2"><span aria-hidden="true">·</span><span>Sign in later — your guest history folds into the new account</span></li>
-        </ul>
-      </div>
+    <div id="login-error" class="mx-auto mt-5 hidden max-w-sm border-l-2 border-[var(--color-functional-red)] bg-[var(--color-functional-red)]/5 px-4 py-3">
+      <p class="text-sm" id="login-error-text"></p>
     </div>
-
-    <div id="email-form-wrap" class={`mt-10 pt-8 border-t border-[var(--color-border)] ${errorMessage ? "" : "hidden"}`}>
-      <form id="login-form" class="space-y-4 max-w-md" novalidate>
-        <div>
-          <label for="email" class="block text-sm font-medium mb-2">Your email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            autocomplete="email"
-            spellcheck="false"
-            class="w-full px-4 py-3 border border-[var(--color-border)] bg-[var(--color-bg-soft)] focus:outline-none focus:border-[var(--color-charcoal)]"
-            placeholder="you@example.com"
-          />
-        </div>
-        <button
-          type="submit"
-          id="submit-btn"
-          class="w-full px-6 py-3 bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90 disabled:opacity-50 disabled:cursor-wait"
-        >
-          Send me a sign-in link
-        </button>
-        <p class="text-xs text-[var(--color-text-muted)] leading-relaxed">
-          We store your email, nickname, avatar, and play history. We don't sell your data, don't use tracking cookies, and don't share with third parties — usage stats are anonymous and aggregate. <a href="/privacy" class="underline decoration-1 underline-offset-2 hover:text-[var(--color-text-soft)]">Read more →</a>
-        </p>
-        <p id="guest-fallback" class="text-sm text-[var(--color-text-soft)] pt-2 hidden">
-          Don't want to sign in? <a href="/play" class="underline decoration-2 underline-offset-2 hover:opacity-80">Play as guest →</a>
-        </p>
-      </form>
-
-      <div id="login-success" class="hidden mt-6 p-5 border-l-4 border-[var(--color-functional-green)] bg-[var(--color-functional-green)]/10 max-w-md">
-        <p class="font-semibold">Check your email</p>
-        <p class="mt-1 text-sm">If that address is on file, a sign-in link is on its way. It expires in 10 minutes.</p>
-      </div>
-
-      <div id="login-error" class="hidden mt-6 p-5 border-l-4 border-[var(--color-functional-red)] bg-[var(--color-functional-red)]/10 max-w-md">
-        <p class="text-sm" id="login-error-text"></p>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+  </div>
+</AuthLayout>
 
 <script>
   const showEmailBtn = document.getElementById("show-email-btn") as HTMLButtonElement;
@@ -119,24 +127,24 @@ const errorMessage = errorParam ? (errorMessages[errorParam] ?? "Sign-in failed.
   const successEl = document.getElementById("login-success") as HTMLDivElement;
   const errorEl = document.getElementById("login-error") as HTMLDivElement;
   const errorText = document.getElementById("login-error-text") as HTMLParagraphElement;
-  const headline = document.getElementById("login-headline") as HTMLHeadingElement;
-  const subhead = document.getElementById("login-subhead") as HTMLParagraphElement;
+  const headline = document.getElementById("auth-headline") as HTMLHeadingElement;
+  const subhead = document.getElementById("auth-subhead") as HTMLParagraphElement;
   const chooser = document.getElementById("login-chooser") as HTMLDivElement;
-  const benefits = document.getElementById("login-benefits") as HTMLDivElement;
+  const benefits = document.getElementById("login-benefits") as HTMLDListElement;
   const guestFallback = document.getElementById("guest-fallback") as HTMLParagraphElement;
 
   // Direct mode (?show=email): toggle on client-side because static
   // Astro can't read request-time query params. Hides the chooser +
   // benefits panels, expands the form, swaps the headline, surfaces
-  // "Or play as guest →" inside the form so guest path stays visible.
+  // "Play as guest →" inside the form so the guest path stays visible.
   const params = new URLSearchParams(window.location.search);
   const directMode = params.get("show") === "email";
   if (directMode) {
     chooser.hidden = true;
     benefits.hidden = true;
-    emailFormWrap.classList.remove("hidden", "mt-10", "pt-8", "border-t", "border-[var(--color-border)]");
+    emailFormWrap.classList.remove("hidden", "mt-8", "border-t", "border-[var(--color-border)]", "pt-7");
     headline.textContent = "Sign in.";
-    subhead.textContent = "Enter your email — we'll send a one-time sign-in link. No password to remember.";
+    subhead.textContent = "Enter your email and we'll send a one-time sign-in link. No password to remember.";
     guestFallback.classList.remove("hidden");
     emailInput.focus({ preventScroll: true });
   }
@@ -146,7 +154,6 @@ const errorMessage = errorParam ? (errorMessages[errorParam] ?? "Sign-in failed.
   showEmailBtn.addEventListener("click", () => {
     emailFormWrap.classList.remove("hidden");
     emailInput.focus({ preventScroll: true });
-    emailFormWrap.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
   form.addEventListener("submit", async (e) => {

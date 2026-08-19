@@ -1,0 +1,85 @@
+---
+// Shared shell for the four auth-flow pages: /login, /auth/confirm,
+// /onboarding/nickname, /onboarding/avatar.
+//
+// Why it exists (2026-08-19): those four pages had each grown their own
+// header treatment, their own widths, and — in the onboarding pair — raw
+// Tailwind greys (`text-gray-500`, `bg-black`) that bypassed the palette
+// tokens entirely. This centralises the masthead so the flow reads as one
+// continuous thing, and so the token drift can't come back page by page.
+//
+// Two deliberate constraints, per Aasif's call:
+//   - Type and colour are FIXED. Playfair + Inter, white/grey surfaces,
+//     functional teal/green/red only in functional roles. The visual
+//     interest here comes from typographic scale (hairline uppercase
+//     eyebrow against a large Playfair headline) and whitespace, never
+//     from decorative colour. Do not tint the rule below the header —
+//     a teal hairline would be decorative use of a functional colour.
+//   - Centred, horizontally and vertically. The masthead is centre-set to
+//     match the rest of the site — the original /login and every /play
+//     screen centre their headings, and a left-aligned masthead here read
+//     as off-axis next to them. Form fields inside the slot stay
+//     left-aligned; only the masthead centres.
+//   - Vertically centred. BaseLayout's <main> is min-h-[80vh]; these
+//     pages are short, so left to flow they stranded the content at the
+//     top with a large dead gap above the footer. The shell's min-height
+//     is 80vh minus main's own py-12 (3rem top + 3rem bottom = 6rem), so
+//     it fills the content box exactly — a smaller value re-opens the gap
+//     it was added to close.
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  eyebrow: string;
+  headline: string;
+  subhead?: string;
+  /** `wide` for the two-column chooser on /login; `narrow` for forms. */
+  width?: "narrow" | "wide";
+}
+
+const {
+  title,
+  description,
+  eyebrow,
+  headline,
+  subhead,
+  width = "narrow",
+} = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <section
+    class={`mx-auto flex min-h-[calc(80vh-6rem)] flex-col justify-center ${
+      width === "wide" ? "max-w-xl" : "max-w-md"
+    }`}
+  >
+    <header class="text-center">
+      <p
+        id="auth-eyebrow"
+        class="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-text-muted)]"
+      >
+        {eyebrow}
+      </p>
+      <h1
+        id="auth-headline"
+        class="mt-3 font-serif text-4xl md:text-5xl font-semibold leading-[1.05] tracking-tight"
+      >
+        {headline}
+      </h1>
+      {subhead && (
+        <p
+          id="auth-subhead"
+          class="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-[var(--color-text-soft)]"
+        >
+          {subhead}
+        </p>
+      )}
+      {/* Neutral hairline — a quiet structural marker, not an accent. */}
+      <div class="mx-auto mt-8 h-px w-10 bg-[var(--color-border-soft)]" aria-hidden="true"></div>
+    </header>
+
+    <div class="mt-8">
+      <slot />
+    </div>
+  </section>
+</BaseLayout>

@@ -1,11 +1,19 @@
 import { useState } from "react";
 
+import { canUseLifelines, LIFELINE_UNLOCK_RUNG } from "../../lib/gameEngine.js";
+
 const LETTERS = ["A", "B", "C", "D"];
 
 // Three lifeline buttons + their result panels (audience poll bars,
-// expert verdict). Each lifeline is single-use per session and pauses
-// the game timer while open. Activation logic lives in GameContainer;
-// this component is the surface.
+// expert verdict). Each lifeline is single-use per session, locked until
+// rung 6, and pauses the game timer while open. Activation logic lives in
+// GameContainer; this component is the surface.
+//
+// "Ask Your Professor" goes straight to the single active professor —
+// there is no chooser. The panel shows only `displayName` ("Professor
+// Takshi", a fictional composite); never surface a real faculty name
+// here. If the roster is widened again, restore the ExpertPicker step
+// (see experts.json `_archive`).
 
 export default function Lifelines({
   state,
@@ -15,10 +23,14 @@ export default function Lifelines({
   onUseExpert,
   onDismissPanel,
 }) {
-  const [openPanel, setOpenPanel] = useState(null); // null | "poll" | "expert" | "expert-pick"
-  const [selectedExpert, setSelectedExpert] = useState(null);
+  const [openPanel, setOpenPanel] = useState(null); // null | "poll" | "expert"
 
-  const disabled = state.status !== "reveal-question" || state.answerLocked;
+  const locked = !canUseLifelines(state);
+  const disabled =
+    locked || state.status !== "reveal-question" || state.answerLocked;
+
+  // Exactly one professor in the active roster; see experts.json.
+  const professor = experts?.[0] ?? null;
 
   function handleFiftyFifty() {
     if (disabled || !state.lifelines.fiftyFifty) return;
@@ -32,19 +44,13 @@ export default function Lifelines({
   }
 
   function handleExpertOpen() {
-    if (disabled || !state.lifelines.expert) return;
-    setOpenPanel("expert-pick");
-  }
-
-  function handleExpertPick(expertId) {
-    onUseExpert(expertId);
-    setSelectedExpert(expertId);
+    if (disabled || !state.lifelines.expert || !professor) return;
+    onUseExpert(professor.id);
     setOpenPanel("expert");
   }
 
   function handleDismiss() {
     setOpenPanel(null);
-    setSelectedExpert(null);
     onDismissPanel?.();
   }
 
@@ -71,16 +77,14 @@ export default function Lifelines({
         />
       </div>
 
-      {openPanel === "poll" && state.pollData && (
-        <PollPanel data={state.pollData} onClose={handleDismiss} />
+      {locked && (
+        <p className="text-xs text-[var(--color-text-muted)]">
+          Lifelines unlock at Q{LIFELINE_UNLOCK_RUNG}. The easy tier is yours alone.
+        </p>
       )}
 
-      {openPanel === "expert-pick" && (
-        <ExpertPicker
-          experts={experts}
-          onPick={handleExpertPick}
-          onClose={handleDismiss}
-        />
+      {openPanel === "poll" && state.pollData && (
+        <PollPanel data={state.pollData} onClose={handleDismiss} />
       )}
 
       {openPanel === "expert" && state.expertVerdict && (
@@ -137,26 +141,6 @@ function PollPanel({ data, onClose }) {
   );
 }
 
-function ExpertPicker({ experts, onPick, onClose }) {
-  return (
-    <Panel title="Who do you want to call?" onClose={onClose}>
-      <ul className="grid sm:grid-cols-2 gap-2 list-none p-0 m-0">
-        {experts.map((e) => (
-          <li key={e.id}>
-            <button
-              type="button"
-              onClick={() => onPick(e.id)}
-              className="w-full text-left p-3 rounded border border-[var(--color-border)] hover:border-[var(--color-charcoal)]"
-            >
-              <p className="font-semibold">{e.displayName}</p>
-              <p className="text-xs opacity-70 mt-1">{e.quirk}</p>
-            </button>
-          </li>
-        ))}
-      </ul>
-    </Panel>
-  );
-}
 
 function ExpertPanel({ experts, verdict, onClose }) {
   const expert = experts.find((e) => e.id === verdict.expertId);

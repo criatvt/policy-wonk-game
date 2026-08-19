@@ -6,17 +6,36 @@
 //
 // The auth slot is filled client-side: this is a static site, so we
 // fetch /api/me on load and either render the avatar chip + sign-out
-// menu (signed in) or a "Sign in" link (guest). Result is cached in
+// menu (signed in) or a "Sign in" button (guest). Result is cached in
 // sessionStorage to avoid the round-trip on every page nav within the
 // same tab.
+//
+// On the auth-flow pages themselves the guest "Sign in" button is
+// suppressed (2026-08-19). It was rendering a "Sign in" link in the top
+// bar directly above a page whose entire job is signing in — the same
+// action offered twice, six lines apart. Signed-in users still get their
+// avatar chip everywhere, including here, so an already-authenticated
+// visitor who lands on /login can still reach their account menu.
+//
+// Pathname is safe to read at build time: `output: 'static'` builds each
+// page at its own route, so Astro.url.pathname is that route. (Only
+// SEARCH PARAMS are unavailable at build time — that's the constraint
+// /login and /auth/confirm work around client-side, and it doesn't
+// apply here.)
+const AUTH_FLOW_PREFIXES = ["/login", "/auth/confirm", "/onboarding"];
+// Normalise the trailing slash so both /login and /login/ match.
+const path = Astro.url.pathname.replace(/\/+$/, "") || "/";
+const isAuthFlow = AUTH_FLOW_PREFIXES.some(
+  (p) => path === p || path.startsWith(p + "/"),
+);
 ---
 <header class="pw-header">
-  <a href="/" class="pw-wordmark">Policy Wonk</a>
+  <a href="/" class="pw-wordmark">Policy <em>Wonk</em></a>
   <nav class="pw-nav">
     <a href="/notes">Notes</a>
     <a href="/search">Search</a>
   </nav>
-  <div class="pw-auth" id="pw-header-auth">
+  <div class="pw-auth" id="pw-header-auth" data-hide-signin={isAuthFlow ? "1" : null}>
     {/* Filled in by the inline script below. Empty by default so guests
         don't briefly see "Sign in" then have it flip if they're actually
         logged in (or vice versa). */}
@@ -45,6 +64,15 @@
     color: var(--color-charcoal, #1a1a1a);
     text-decoration: none;
     letter-spacing: 0.01em;
+  }
+  /* Two-tone wordmark, matching the homepage hero treatment
+     (`Policy <span teal italic>Wonk.</span>` in index.astro): charcoal
+     "Policy", teal italic "Wonk". The teal is link emphasis on a link —
+     the wordmark IS the home link — so this stays inside the functional
+     colour rule rather than becoming decorative tinting. */
+  .pw-wordmark em {
+    color: var(--color-functional-marigold, #006D77);
+    font-style: italic;
   }
   .pw-wordmark:hover { opacity: 0.8; }
   .pw-nav {
@@ -75,17 +103,40 @@
     margin-left: auto;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 8px;
     position: relative;
+    /* Reserve the slot. It starts empty and is filled only once /api/me
+       resolves; without a reserved box the header reflowed on every page
+       load as the button or avatar popped in. Matches the 30px avatar
+       and the pill's own height. */
+    min-height: 30px;
   }
+  /* Filled charcoal pill (2026-08-19). Was an underlined teal text link,
+     which read as body copy that had wandered into the chrome and shared
+     no shape language with the outlined nav pills beside it. Filled-vs-
+     outlined now carries the hierarchy: nav tabs are outlined, the one
+     action worth taking is filled. Charcoal, not teal — teal is reserved
+     for selected/active and link emphasis, and a filled teal button here
+     would collide with the avatar puck's meaning. */
   .pw-signin {
-    color: var(--color-functional-marigold, #006D77);
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 3px;
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 14px;
+    border: 1px solid var(--color-charcoal, #1a1a1a);
+    border-radius: 999px;
+    background: var(--color-charcoal, #1a1a1a);
+    color: var(--color-bg, #ffffff);
+    text-decoration: none;
     font-weight: 600;
+    line-height: 1.2;
+    transition: opacity 120ms ease;
   }
   .pw-signin:hover { opacity: 0.85; }
+  .pw-signin:focus-visible {
+    outline: 2px solid var(--color-functional-marigold, #006D77);
+    outline-offset: 2px;
+  }
   /* Auth chip (2026-05-23): nickname removed, avatar IS the chip. Solid
      teal disc gives a different visual register from the outlined-pill
      nav tabs to the left — different shape (circle vs pill), different
@@ -169,6 +220,7 @@
     .pw-header { padding: 10px 16px; gap: 10px; }
     .pw-nav { gap: 6px; margin-left: 8px; }
     .pw-nav a { padding: 4px 11px; font-size: 13px; }
+    .pw-signin { padding: 4px 12px; font-size: 13px; }
   }
 </style>
 
@@ -180,7 +232,16 @@
     const CACHE_KEY = "pwg:me";
     const CACHE_TTL_MS = 5 * 60 * 1000;
 
+    // Set on the auth-flow routes (/login, /auth/confirm, /onboarding/*)
+    // by the Astro frontmatter above. On those pages the page body already
+    // offers sign-in, so a second "Sign in" in the chrome is pure noise.
+    const hideSignin = slot.dataset.hideSignin === "1";
+
     function renderGuest() {
+      if (hideSignin) {
+        slot.innerHTML = "";
+        return;
+      }
       // Direct to the email-form view of /login (skips the "two ways in"
       // upsell — header clickers know they want to sign in).
       slot.innerHTML = '<a class="pw-signin" href="/login?show=email">Sign in</a>';
