@@ -18,14 +18,25 @@ export type SessionClaims = {
   exp: number;
 };
 
+// Mint a signed session JWT. Shared by issueSessionCookie (web cookie) and
+// the native-app sign-in endpoint, which returns the same token in the JSON
+// body so an app-stored token is interchangeable with the web cookie.
+export async function signSessionToken(
+  userId: string,
+  email: string,
+  secret: string,
+): Promise<string> {
+  const exp = Math.floor(Date.now() / 1000) + SESSION_DURATION_SECONDS;
+  return sign({ sub: userId, email, exp }, secret, "HS256");
+}
+
 export async function issueSessionCookie(
   c: Context,
   userId: string,
   email: string,
   secret: string,
 ): Promise<void> {
-  const exp = Math.floor(Date.now() / 1000) + SESSION_DURATION_SECONDS;
-  const token = await sign({ sub: userId, email, exp }, secret, "HS256");
+  const token = await signSessionToken(userId, email, secret);
 
   const isProd = c.env.ENV === "production";
   const cookieAttrs = [
@@ -57,12 +68,23 @@ export async function readSession(
   c: Context,
   secret: string,
 ): Promise<SessionClaims | null> {
+  // Cookie first — keeps web behaviour unchanged. Native-app callers can't
+  // easily use an HttpOnly cookie, so we also accept the same JWT via an
+  // Authorization: Bearer header (set by the iOS app from Keychain).
+  let token: string | null = null;
   const cookieHeader = c.req.header("Cookie") ?? "";
   const match = cookieHeader.match(new RegExp(`${COOKIE_NAME}=([^;]+)`));
-  if (!match) return null;
+  if (match) {
+    token = match[1];
+  } else {
+    const authHeader = c.req.header("Authorization") ?? "";
+    const bearer = authHeader.match(/^Bearer\s+(.+)$/i);
+    if (bearer) token = bearer[1].trim();
+  }
+  if (!token) return null;
 
   try {
-    const decoded = (await verify(match[1], secret, "HS256")) as SessionClaims;
+    const decoded = (await verify(token, secret, "HS256")) as SessionClaims;
     return decoded;
   } catch {
     return null;

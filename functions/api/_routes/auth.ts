@@ -6,14 +6,23 @@ import {
   storeToken,
   consumeToken,
   checkAndIncrementRate,
+  generateOtpCode,
+  storeOtp,
+  verifyOtp,
 } from "../_lib/tokens";
 import {
   sendEmail,
   magicLinkHtml,
   magicLinkText,
+  otpCodeHtml,
+  otpCodeText,
 } from "../_lib/email";
 import { upsertUserOnLogin, type User } from "../_lib/users";
-import { issueSessionCookie, clearSessionCookie } from "../_lib/session";
+import {
+  issueSessionCookie,
+  clearSessionCookie,
+  signSessionToken,
+} from "../_lib/session";
 
 type Bindings = {
   DB: D1Database;
@@ -146,6 +155,118 @@ auth.post("/verify", async (c) => {
   await issueSessionCookie(c, user.id, user.email, c.env.SESSION_SECRET);
 
   return c.redirect(nextOnboardingStep(user));
+});
+
+// POST /api/auth/otp/request — native-app email login, step 1.
+// Body: { email: string }
+//
+// A header-based sibling of /send-link: instead of mailing a clickable link
+// (which a native app can't intercept), we mail a 6-digit code the app
+// prompts for. Same email validation + same per-IP / per-email rate limits.
+// Always returns 200 with a generic message — never confirm or deny that an
+// email exists or that a code was sent.
+auth.post("/otp/request", async (c) => {
+  let body: { email?: unknown };
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({ ok: false, error: "invalid_body" }, 400);
+  }
+
+  const emailRaw = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
+  if (!isValidEmail(emailRaw)) {
+    return c.json({ ok: false, error: "invalid_email" }, 400);
+  }
+
+  if (!c.env.BREVO_API_KEY) {
+    console.error("otp/request: BREVO_API_KEY not configured");
+    return c.json({ ok: false, error: "email_not_configured" }, 500);
+  }
+
+  // Per-email and per-IP throttles — identical limits to /send-link.
+  const ip = c.req.header("CF-Connecting-IP") ?? "unknown";
+  const ipRate = await checkAndIncrementRate(c.env.KV, `ip:${ip}`, 10, 900);
+  const emailRate = await checkAndIncrementRate(c.env.KV, `email:${emailRaw}`, 3, 900);
+  if (!ipRate.allowed || !emailRate.allowed) {
+    // Same 200 response — don't surface rate limits to the caller.
+    return c.json({ ok: true, message: "If that email is valid, a sign-in code is on its way." });
+  }
+
+  const code = generateOtpCode();
+  await storeOtp(c.env.KV, emailRaw, code);
+
+  const result = await sendEmail({
+    apiKey: c.env.BREVO_API_KEY,
+    from: c.env.EMAIL_FROM,
+    to: emailRaw,
+    subject: "Your Policy Wonk sign-in code",
+    html: otpCodeHtml(code),
+    text: otpCodeText(code),
+  });
+
+  if (!result.ok) {
+    console.error("otp/request: Brevo send failed", {
+      status: result.status,
+      error: result.error,
+    });
+    // Still respond 200 generically — don't leak which addresses bounce.
+    return c.json({ ok: true, message: "If that email is valid, a sign-in code is on its way." });
+  }
+
+  return c.json({ ok: true, message: "If that email is valid, a sign-in code is on its way." });
+});
+
+// POST /api/auth/otp/verify — native-app email login, step 2.
+// Body: { email: string, code: string }
+//
+// Verifies the 6-digit code against the hashed KV record. On success, issues
+// a session cookie AND returns the session JWT in the JSON body so the app
+// can store it in Keychain and send it as `Authorization: Bearer` later.
+auth.post("/otp/verify", async (c) => {
+  if (!c.env.SESSION_SECRET) {
+    console.error("otp/verify: SESSION_SECRET not configured");
+    return c.json({ ok: false, error: "server_not_configured" }, 500);
+  }
+
+  let body: { email?: unknown; code?: unknown };
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({ ok: false, error: "invalid_body" }, 400);
+  }
+
+  const email = typeof body.email === "string" ? body.email.trim().toLowerCase() : "";
+  const code = typeof body.code === "string" ? body.code.trim() : "";
+  if (!isValidEmail(email) || !/^\d{6}$/.test(code)) {
+    return c.json({ ok: false, error: "invalid_or_expired" }, 400);
+  }
+
+  const result = await verifyOtp(c.env.KV, email, code);
+  if (!result.ok) {
+    return c.json({ ok: false, error: "invalid_or_expired" }, 400);
+  }
+
+  const adminEmails = (c.env.ADMIN_EMAILS ?? "")
+    .split(",")
+    .map((s) => s.trim().toLowerCase())
+    .filter(Boolean);
+
+  const user = await upsertUserOnLogin(c.env.DB, email, adminEmails);
+  // Set the cookie too (harmless if opened in a webview), but the JSON token
+  // below is what the native app stores in Keychain and sends as a Bearer.
+  await issueSessionCookie(c, user.id, user.email, c.env.SESSION_SECRET);
+  const token = await signSessionToken(user.id, user.email, c.env.SESSION_SECRET);
+
+  return c.json({
+    ok: true,
+    token,
+    user: {
+      id: user.id,
+      email: user.email,
+      nickname: user.nickname,
+      avatar_slug: user.avatar_slug,
+    },
+  });
 });
 
 // POST /api/auth/logout

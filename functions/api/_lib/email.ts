@@ -83,6 +83,40 @@ export function magicLinkText(verifyUrl: string): string {
   ].join("\n");
 }
 
+// Plaintext fallback for the OTP code email (native-app login).
+export function otpCodeText(code: string): string {
+  return [
+    "Your Policy Wonk sign-in code",
+    "",
+    `Enter this code in the app to sign in: ${code}`,
+    "",
+    "This code expires in 10 minutes and can only be used once.",
+    "",
+    "If you didn't request this code, you can safely ignore this email.",
+    "",
+    "— Policy Wonk",
+  ].join("\n");
+}
+
+// Minimal inline-styled HTML for the OTP code email. Same stripped-down,
+// no-images, no-tracking treatment as the magic-link email.
+export function otpCodeHtml(code: string): string {
+  return `<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"></head>
+<body style="margin:0;padding:32px 24px;background:#F8F1E4;font-family:Georgia,'Times New Roman',serif;color:#1A1A1A;line-height:1.6">
+  <div style="max-width:560px;margin:0 auto;background:#FFFFFF;padding:40px 36px;border:1px solid #E8DFC9">
+    <p style="margin:0 0 8px 0;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#6B6B6B">Policy Wonk</p>
+    <h1 style="margin:0 0 24px 0;font-size:28px;font-weight:700;line-height:1.2">Your sign-in code</h1>
+    <p style="margin:0 0 24px 0;font-size:16px">Enter this code in the app to sign in. It expires in 10 minutes and can only be used once.</p>
+    <p style="margin:0 0 32px 0;font-size:34px;font-weight:700;letter-spacing:0.18em;font-family:Helvetica,Arial,sans-serif">${code}</p>
+    <hr style="border:none;border-top:1px solid #E8DFC9;margin:0 0 24px 0">
+    <p style="margin:0;font-size:12px;color:#6B6B6B">If you didn't request this code, you can safely ignore this email. Someone may have entered your address by mistake.</p>
+  </div>
+</body>
+</html>`;
+}
+
 // Minimal inline-styled HTML. No images, no remote fonts, no tracking.
 // Matches the editorial-poster aesthetic but stripped down for email clients.
 export function magicLinkHtml(verifyUrl: string): string {

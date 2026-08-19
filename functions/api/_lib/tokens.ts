@@ -80,3 +80,95 @@ export async function checkAndIncrementRate(
   });
   return { allowed: true, current: current + 1 };
 }
+
+// Email OTP codes — the native-app login flow. Same single-use, hash-in-KV
+// discipline as magic-link tokens: we store sha256(code), never the plaintext
+// code, keyed by sha256(email). Codes are six numeric digits (matched to the
+// 10-minute TTL — low entropy, so we also cap verify attempts).
+
+const OTP_TTL_SECONDS = 600; // 10 minutes
+const OTP_KEY_PREFIX = "otp:";
+const OTP_MAX_ATTEMPTS = 5;
+
+type OtpRecord = {
+  codeHash: string;
+  attempts: number;
+  createdAt: number;
+};
+
+// Six-digit numeric code, zero-padded, drawn from a CSPRNG.
+export function generateOtpCode(): string {
+  const n = crypto.getRandomValues(new Uint32Array(1))[0] % 1000000;
+  return n.toString().padStart(6, "0");
+}
+
+export async function storeOtp(
+  kv: KVNamespace,
+  email: string,
+  code: string,
+): Promise<void> {
+  const key = OTP_KEY_PREFIX + (await hashToken(email));
+  const record: OtpRecord = {
+    codeHash: await hashToken(code),
+    attempts: 0,
+    createdAt: Date.now(),
+  };
+  await kv.put(key, JSON.stringify(record), {
+    expirationTtl: OTP_TTL_SECONDS,
+  });
+}
+
+// Verify a submitted code. Increments the attempt counter and deletes the
+// record on success or once attempts are exhausted (so a code can't be
+// brute-forced within the TTL window). Returns { ok: true } only on an exact
+// hash match.
+export async function verifyOtp(
+  kv: KVNamespace,
+  email: string,
+  code: string,
+): Promise<{ ok: boolean }> {
+  const key = OTP_KEY_PREFIX + (await hashToken(email));
+  const raw = await kv.get(key);
+  if (!raw) return { ok: false };
+
+  let record: OtpRecord;
+  try {
+    record = JSON.parse(raw) as OtpRecord;
+  } catch {
+    await kv.delete(key);
+    return { ok: false };
+  }
+
+  if (record.attempts >= OTP_MAX_ATTEMPTS) {
+    await kv.delete(key);
+    return { ok: false };
+  }
+
+  const submittedHash = await hashToken(code);
+  if (!timingSafeEqual(submittedHash, record.codeHash)) {
+    record.attempts += 1;
+    if (record.attempts >= OTP_MAX_ATTEMPTS) {
+      await kv.delete(key);
+    } else {
+      // Preserve the original TTL window — don't extend it on a wrong guess.
+      const elapsed = Math.floor((Date.now() - record.createdAt) / 1000);
+      const remaining = Math.max(1, OTP_TTL_SECONDS - elapsed);
+      await kv.put(key, JSON.stringify(record), { expirationTtl: remaining });
+    }
+    return { ok: false };
+  }
+
+  await kv.delete(key);
+  return { ok: true };
+}
+
+// Constant-time string compare. Both inputs here are fixed-length sha256 hex
+// digests, so length never leaks the code; the loop still avoids early-out.
+function timingSafeEqual(a: string, b: string): boolean {
+  if (a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) {
+    diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  }
+  return diff === 0;
+}
