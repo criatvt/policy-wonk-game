@@ -53,8 +53,24 @@ auth.post("/send-link", async (c) => {
     return c.json({ ok: false, error: "invalid_email" }, 400);
   }
 
+  // Both halves of the email config are checked before any work happens, and
+  // both fail LOUDLY with a 500. This endpoint deliberately returns a generic
+  // 200 for per-recipient failures so it never confirms whether an address
+  // exists — but that same generic 200 is what hid #51 for weeks. A missing
+  // binding is a deployment fault, not a fact about the caller's address, so
+  // it has no business hiding behind that response.
+  //
+  // EMAIL_FROM specifically: it is supplied by [env.*.vars] in wrangler.toml.
+  // If that file ever stops being the source of truth for Pages vars, the
+  // variable silently becomes undefined, Brevo receives sender.email: null
+  // and rejects the send — which is exactly the shape of the original outage.
   if (!c.env.BREVO_API_KEY) {
     console.error("send-link: BREVO_API_KEY not configured");
+    return c.json({ ok: false, error: "email_not_configured" }, 500);
+  }
+
+  if (!c.env.EMAIL_FROM) {
+    console.error("send-link: EMAIL_FROM not configured");
     return c.json({ ok: false, error: "email_not_configured" }, 500);
   }
 
@@ -178,8 +194,16 @@ auth.post("/otp/request", async (c) => {
     return c.json({ ok: false, error: "invalid_email" }, 400);
   }
 
+  // Same reasoning as /send-link: a missing binding is a deployment fault and
+  // fails loudly, rather than hiding behind the generic 200 this endpoint
+  // uses for per-recipient outcomes.
   if (!c.env.BREVO_API_KEY) {
     console.error("otp/request: BREVO_API_KEY not configured");
+    return c.json({ ok: false, error: "email_not_configured" }, 500);
+  }
+
+  if (!c.env.EMAIL_FROM) {
+    console.error("otp/request: EMAIL_FROM not configured");
     return c.json({ ok: false, error: "email_not_configured" }, 500);
   }
 
