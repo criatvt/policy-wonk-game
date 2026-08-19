@@ -40,6 +40,22 @@ const cfBeaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN ?? "";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* Apply the stored appearance BEFORE first paint. This has to be an
+        inline, render-blocking script in <head>: if it ran with the rest of
+        the page scripts, a reader who has chosen light while their OS is dark
+        would see a dark flash on every navigation. "system" deliberately sets
+        nothing and lets the prefers-color-scheme block in global.css decide.
+        Key matches the iOS app's AppAppearance.storageKey. */}
+    <script is:inline>
+      (function () {
+        try {
+          var m = localStorage.getItem("policyWonk.appearance");
+          if (m === "light" || m === "dark") {
+            document.documentElement.setAttribute("data-theme", m);
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta name="description" content={description} />
     <title>{title}</title>
     <link rel="canonical" href={canonicalUrl} />

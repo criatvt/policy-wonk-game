@@ -16,7 +16,7 @@ export default function Ladder({ currentRung, highestClearedRung }) {
         return (
           <li
             key={r.rung}
-            className={`flex items-center justify-between gap-3 px-3 py-1 rounded text-sm ${
+            className={`flex items-center justify-between gap-3 px-3 py-1 rounded-[var(--radius-cta)] text-sm ${
               current
                 ? "bg-[var(--color-functional-marigold)] text-[var(--color-bg)] font-semibold"
                 : cleared

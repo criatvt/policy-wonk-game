@@ -45,14 +45,14 @@ const errorMessage = errorParam ? (errorMessages[errorParam] ?? "Sign-in failed.
     <button
       type="button"
       id="show-email-btn"
-      class="group flex flex-col gap-1 border border-[var(--color-charcoal)] bg-[var(--color-charcoal)] px-5 py-4 text-left text-[var(--color-bg)] transition-opacity hover:opacity-90"
+      class="group flex flex-col gap-1 border border-[var(--color-charcoal)] bg-[var(--color-charcoal)] px-5 py-4 rounded-[var(--radius-cta)] text-left text-[var(--color-bg)] transition-opacity hover:opacity-90"
     >
       <span class="text-base font-semibold">Sign in with email →</span>
       <span class="text-xs opacity-70">Notes, history, and progress</span>
     </button>
     <a
       href="/play"
-      class="group flex flex-col gap-1 border border-[var(--color-charcoal)] px-5 py-4 text-left text-[var(--color-charcoal)] transition-colors hover:bg-[var(--color-bg-soft)]"
+      class="group flex flex-col gap-1 border border-[var(--color-charcoal)] px-5 py-4 rounded-[var(--radius-cta)] text-left text-[var(--color-charcoal)] transition-colors hover:bg-[var(--color-bg-soft)]"
     >
       <span class="text-base font-semibold">Play as guest →</span>
       <span class="text-xs text-[var(--color-text-muted)]">Straight into the game</span>
@@ -88,14 +88,14 @@ const errorMessage = errorParam ? (errorMessages[errorParam] ?? "Sign-in failed.
           required
           autocomplete="email"
           spellcheck="false"
-          class="w-full border border-[var(--color-border-soft)] bg-[var(--color-bg-soft)] px-4 py-3 text-[15px] focus:border-[var(--color-charcoal)] focus:outline-none"
+          class="w-full border border-[var(--color-border-soft)] rounded-[var(--radius-cta)] bg-[var(--color-bg-soft)] px-4 py-3 text-[15px] focus:border-[var(--color-charcoal)] focus:outline-none"
           placeholder="you@example.com"
         />
       </div>
       <button
         type="submit"
         id="submit-btn"
-        class="w-full bg-[var(--color-charcoal)] px-6 py-3 font-semibold text-[var(--color-bg)] hover:opacity-90 disabled:cursor-wait disabled:opacity-50"
+        class="w-full rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] px-6 py-3 font-semibold text-[var(--color-bg)] hover:opacity-90 disabled:cursor-wait disabled:opacity-50"
       >
         Send me a sign-in link
       </button>

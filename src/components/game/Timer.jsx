@@ -81,7 +81,7 @@ export default function Timer({
       >
         {display}s
       </div>
-      <div className="flex-1 h-2 bg-[var(--color-bg-soft)] rounded overflow-hidden min-w-[120px]">
+      <div className="flex-1 h-2 bg-[var(--color-bg-soft)] rounded-[var(--radius-cta)] overflow-hidden min-w-[120px]">
         <div
           className="h-full transition-[width] duration-100"
           style={{

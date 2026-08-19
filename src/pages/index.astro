@@ -38,10 +38,15 @@ const TESTFLIGHT_URL = "https://testflight.apple.com/join/AubAzGnh";
     <div class="flex flex-col items-center gap-5">
       <a
         href="/play"
-        class="px-12 py-5 bg-[var(--color-charcoal)] text-[var(--color-bg)] text-xl font-semibold hover:opacity-90 transition-opacity"
+        class="px-12 py-5 rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] text-[var(--color-bg)] text-xl font-semibold hover:opacity-90 transition-opacity"
       >
         Play →
       </a>
+      <p class="text-sm text-[var(--color-text-muted)] max-w-md text-center leading-relaxed">
+        Best played on a desktop or laptop. The ladder and the lifelines want room to breathe.
+        <br />
+        On a phone, try the iOS app below.
+      </p>
       <p class="text-sm text-[var(--color-text-muted)] max-w-md text-center leading-relaxed">
         For The Takshashila Institution alumni, students, and the policy curious.
         <br />
@@ -66,7 +71,7 @@ const TESTFLIGHT_URL = "https://testflight.apple.com/join/AubAzGnh";
         href={TESTFLIGHT_URL}
         target="_blank"
         rel="noopener noreferrer"
-        class="self-start px-6 py-3 bg-[var(--color-charcoal)] text-[var(--color-bg)] text-sm font-semibold hover:opacity-90 transition-opacity"
+        class="self-start px-6 py-3 rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] text-[var(--color-bg)] text-sm font-semibold hover:opacity-90 transition-opacity"
       >
         Check it out on TestFlight →
       </a>

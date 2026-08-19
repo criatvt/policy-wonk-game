@@ -345,7 +345,7 @@ export default function EndScreen({ state, onPlayAgain }) {
             <div className="flex flex-wrap items-center gap-x-5 gap-y-3 mt-1">
               <a
                 href="/login"
-                className="px-6 py-3 bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
+                className="px-6 py-3 rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
               >
                 Log in →
               </a>
@@ -396,7 +396,7 @@ export default function EndScreen({ state, onPlayAgain }) {
         <button
           type="button"
           onClick={handleShareCard}
-          className="self-center px-6 py-3 bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90 transition-opacity"
+          className="self-center px-6 py-3 rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90 transition-opacity"
         >
           {cardSaved ? "Image saved" : "Share this card →"}
         </button>
@@ -408,7 +408,7 @@ export default function EndScreen({ state, onPlayAgain }) {
           <button
             type="button"
             onClick={handleShare}
-            className="px-4 py-2 rounded border border-[var(--color-charcoal)] text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)]/10 transition-colors"
+            className="px-4 py-2 rounded-[var(--radius-cta)] border border-[var(--color-charcoal)] text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)]/10 transition-colors"
           >
             {shareConfirmed ? "Copied to clipboard!" : "Share text →"}
           </button>
@@ -416,7 +416,7 @@ export default function EndScreen({ state, onPlayAgain }) {
             href={`https://wa.me/?text=${encodeURIComponent(share)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 rounded border border-[var(--color-charcoal)] text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)]/10 transition-colors"
+            className="px-4 py-2 rounded-[var(--radius-cta)] border border-[var(--color-charcoal)] text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)]/10 transition-colors"
           >
             WhatsApp
           </a>
@@ -424,7 +424,7 @@ export default function EndScreen({ state, onPlayAgain }) {
             href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(share)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 rounded border border-[var(--color-charcoal)] text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)]/10 transition-colors"
+            className="px-4 py-2 rounded-[var(--radius-cta)] border border-[var(--color-charcoal)] text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)]/10 transition-colors"
           >
             X
           </a>
@@ -432,7 +432,7 @@ export default function EndScreen({ state, onPlayAgain }) {
             href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(SITE_URL)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 rounded border border-[var(--color-charcoal)] text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)]/10 transition-colors"
+            className="px-4 py-2 rounded-[var(--radius-cta)] border border-[var(--color-charcoal)] text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)]/10 transition-colors"
           >
             LinkedIn
           </a>
@@ -461,7 +461,7 @@ export default function EndScreen({ state, onPlayAgain }) {
         <button
           type="button"
           onClick={onPlayAgain}
-          className="self-center mt-2 px-6 py-3 rounded bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
+          className="self-center mt-2 px-6 py-3 rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
         >
           Play again
         </button>

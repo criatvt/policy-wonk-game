@@ -589,7 +589,7 @@ export default function GameContainer() {
             required
             autoFocus
             aria-required="true"
-            className="px-4 py-3 text-lg text-center rounded bg-[var(--color-bg-soft)] border-2 border-[var(--color-border)] text-[var(--color-text)] focus:border-[var(--color-functional-marigold)] focus:outline-none focus:ring-2 focus:ring-[var(--color-functional-marigold)]/30"
+            className="px-4 py-3 text-lg text-center rounded-[var(--radius-cta)] bg-[var(--color-bg-soft)] border-2 border-[var(--color-border)] text-[var(--color-text)] focus:border-[var(--color-functional-marigold)] focus:outline-none focus:ring-2 focus:ring-[var(--color-functional-marigold)]/30"
           />
         </label>
 
@@ -601,7 +601,7 @@ export default function GameContainer() {
           type="button"
           onClick={advanceFromOnboarding}
           disabled={!canContinueFromOnboarding}
-          className="self-center px-8 py-3 rounded bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-90"
+          className="self-center px-8 py-3 rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-90"
         >
           Continue →
         </button>
@@ -630,7 +630,7 @@ export default function GameContainer() {
                 key={m.id}
                 type="button"
                 onClick={() => setModuleId(m.id)}
-                className={`px-3 py-2 rounded border text-sm text-left ${
+                className={`px-3 py-2 rounded-[var(--radius-cta)] border text-sm text-left ${
                   moduleId === m.id
                     ? "border-[var(--color-functional-marigold)] bg-[var(--color-functional-marigold)]/15"
                     : "border-[var(--color-border)] hover:border-[var(--color-functional-marigold)]/60"
@@ -662,7 +662,7 @@ export default function GameContainer() {
                 setScreen(SCREEN_RULES);
               }
             }}
-            className="px-4 py-2 rounded border border-[var(--color-border)] text-[var(--color-text-soft)]"
+            className="px-4 py-2 rounded-[var(--radius-cta)] border border-[var(--color-border)] text-[var(--color-text-soft)]"
           >
             Back
           </button>
@@ -673,7 +673,7 @@ export default function GameContainer() {
               startGame(moduleId);
             }}
             disabled={!moduleId}
-            className="px-5 py-2 rounded bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-90"
+            className="px-5 py-2 rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold disabled:opacity-40 disabled:cursor-not-allowed hover:opacity-90"
           >
             Start the game
           </button>
@@ -744,7 +744,7 @@ export default function GameContainer() {
             <button
               type="button"
               onClick={advanceToModulePick}
-              className="px-12 py-5 bg-[var(--color-charcoal)] text-[var(--color-bg)] text-xl font-semibold hover:opacity-90 transition-opacity"
+              className="px-12 py-5 rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] text-[var(--color-bg)] text-xl font-semibold hover:opacity-90 transition-opacity"
             >
               Pick your module →
             </button>
@@ -752,7 +752,7 @@ export default function GameContainer() {
             <button
               type="button"
               onClick={() => setRulesStage(rulesStage + 1)}
-              className="px-12 py-5 bg-[var(--color-charcoal)] text-[var(--color-bg)] text-xl font-semibold hover:opacity-90 transition-opacity"
+              className="px-12 py-5 rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] text-[var(--color-bg)] text-xl font-semibold hover:opacity-90 transition-opacity"
             >
               Next →
             </button>
@@ -858,7 +858,7 @@ export default function GameContainer() {
                     <button
                       type="button"
                       onClick={handleContinueToNextRung}
-                      className="px-5 py-2 rounded bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
+                      className="px-5 py-2 rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
                     >
                       Continue to Q{cleared + 1}
                     </button>
@@ -869,7 +869,7 @@ export default function GameContainer() {
                       <button
                         type="button"
                         onClick={handleWalkAwayAfterCorrect}
-                        className="px-5 py-2 rounded border border-[var(--color-charcoal)] text-[var(--color-charcoal)] font-semibold hover:bg-[var(--color-charcoal)]/10"
+                        className="px-5 py-2 rounded-[var(--radius-cta)] border border-[var(--color-charcoal)] text-[var(--color-charcoal)] font-semibold hover:bg-[var(--color-charcoal)]/10"
                       >
                         Walk away with {scoreLabel}
                       </button>
@@ -882,7 +882,7 @@ export default function GameContainer() {
                 <button
                   type="button"
                   onClick={handleNext}
-                  className="self-start px-5 py-2 rounded bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
+                  className="self-start px-5 py-2 rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
                 >
                   See result
                 </button>
@@ -927,7 +927,7 @@ export default function GameContainer() {
               type="button"
               disabled={!lockEnabled}
               onClick={handleLock}
-              className="px-5 py-2 rounded bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold disabled:opacity-30 hover:opacity-90"
+              className="px-5 py-2 rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold disabled:opacity-30 hover:opacity-90"
             >
               Lock answer
             </button>
@@ -962,14 +962,14 @@ export default function GameContainer() {
               <button
                 type="button"
                 onClick={cancelWalkAway}
-                className="px-4 py-2 rounded border border-[var(--color-border-soft)] text-[var(--color-text)] hover:border-[var(--color-text-soft)]"
+                className="px-4 py-2 rounded-[var(--radius-cta)] border border-[var(--color-border-soft)] text-[var(--color-text)] hover:border-[var(--color-text-soft)]"
               >
                 Stay in the game
               </button>
               <button
                 type="button"
                 onClick={confirmWalkAway}
-                className="px-4 py-2 rounded bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
+                className="px-4 py-2 rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90"
               >
                 Yes, walk away
               </button>

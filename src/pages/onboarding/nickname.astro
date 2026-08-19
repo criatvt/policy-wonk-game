@@ -29,7 +29,7 @@ import AuthLayout from "../../layouts/AuthLayout.astro";
         maxlength="24"
         autocomplete="off"
         spellcheck="false"
-        class="w-full border border-[var(--color-border-soft)] bg-[var(--color-bg-soft)] px-4 py-3 text-[15px] focus:border-[var(--color-charcoal)] focus:outline-none"
+        class="w-full border border-[var(--color-border-soft)] rounded-[var(--radius-cta)] bg-[var(--color-bg-soft)] px-4 py-3 text-[15px] focus:border-[var(--color-charcoal)] focus:outline-none"
         placeholder="3–24 characters"
       />
       <p class="mt-2 text-xs text-[var(--color-text-muted)]">Letters, numbers, spaces, hyphens, underscores, apostrophes.</p>
@@ -37,7 +37,7 @@ import AuthLayout from "../../layouts/AuthLayout.astro";
     <button
       type="submit"
       id="submit-btn"
-      class="w-full bg-[var(--color-charcoal)] px-6 py-3 font-semibold text-[var(--color-bg)] hover:opacity-90 disabled:cursor-wait disabled:opacity-50"
+      class="w-full rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] px-6 py-3 font-semibold text-[var(--color-bg)] hover:opacity-90 disabled:cursor-wait disabled:opacity-50"
     >
       Continue
     </button>

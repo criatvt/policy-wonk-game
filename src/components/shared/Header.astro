@@ -22,6 +22,8 @@
 // SEARCH PARAMS are unavailable at build time — that's the constraint
 // /login and /auth/confirm work around client-side, and it doesn't
 // apply here.)
+import ThemeToggle from "./ThemeToggle.astro";
+
 const AUTH_FLOW_PREFIXES = ["/login", "/auth/confirm", "/onboarding"];
 // Normalise the trailing slash so both /login and /login/ match.
 const path = Astro.url.pathname.replace(/\/+$/, "") || "/";
@@ -35,6 +37,7 @@ const isAuthFlow = AUTH_FLOW_PREFIXES.some(
     <a href="/notes">Notes</a>
     <a href="/search">Search</a>
   </nav>
+  <ThemeToggle />
   <div class="pw-auth" id="pw-header-auth" data-hide-signin={isAuthFlow ? "1" : null}>
     {/* Filled in by the inline script below. Empty by default so guests
         don't briefly see "Sign in" then have it flip if they're actually
@@ -100,7 +103,9 @@ const isAuthFlow = AUTH_FLOW_PREFIXES.some(
     border-color: var(--color-charcoal, #1a1a1a);
   }
   .pw-auth {
-    margin-left: auto;
+    /* The theme toggle immediately before this carries the margin-left:auto
+       that pushes the right-hand group over, so this element must not also
+       claim it or the two would separate. */
     display: flex;
     align-items: center;
     justify-content: flex-end;

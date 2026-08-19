@@ -122,7 +122,7 @@ export default function Question({
                 type="button"
                 onClick={() => !locked && !isEliminated && onSelect(i)}
                 disabled={locked || isEliminated || !visible}
-                className={`w-full text-left flex items-start gap-3 px-4 py-3 rounded border-2 ${stateClass}`}
+                className={`w-full text-left flex items-start gap-3 px-4 py-3 rounded-[var(--radius-cta)] border-2 ${stateClass}`}
                 style={{
                   opacity: visible ? 1 : 0,
                   pointerEvents: visible ? "auto" : "none",

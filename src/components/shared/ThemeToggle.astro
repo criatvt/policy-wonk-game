@@ -1,0 +1,117 @@
+---
+// Appearance switch for the header.
+//
+// Three states, mirroring the iOS app's AppAppearance enum (system / light /
+// dark) and reusing its storage key, so the two builds describe the setting
+// the same way. "system" is the default and stores nothing meaningful: it
+// simply removes the data-theme attribute and lets the
+// prefers-color-scheme block in global.css decide.
+//
+// The button only CYCLES the setting. Applying the stored choice on load
+// happens in an inline <script> in BaseLayout's <head>, because it has to run
+// before first paint or the page flashes the wrong theme.
+---
+<button
+  type="button"
+  class="pw-theme"
+  id="pw-theme-toggle"
+  aria-label="Appearance: system"
+  title="Appearance: system"
+>
+  <svg class="pw-theme-icon" data-icon="system" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"
+       fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="4" width="20" height="13" rx="2" />
+    <path d="M8 21h8M12 17v4" />
+  </svg>
+  <svg class="pw-theme-icon" data-icon="light" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" hidden
+       fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4.2" />
+    <path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8" />
+  </svg>
+  <svg class="pw-theme-icon" data-icon="dark" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" hidden
+       fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 13.4A8.2 8.2 0 1 1 10.6 4a6.6 6.6 0 0 0 9.4 9.4z" />
+  </svg>
+</button>
+
+<style is:global>
+  /* Outlined pill, matching .pw-nav a — this is chrome, not an action, so it
+     stays outlined rather than filled. */
+  .pw-theme {
+    /* Pushes itself and the auth slot after it to the right-hand end of the
+       header. .pw-auth deliberately does not also set this. */
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 1px solid var(--color-border, #e5e5e5);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--color-charcoal, #1a1a1a);
+    cursor: pointer;
+    transition: background-color 120ms ease, border-color 120ms ease;
+  }
+  .pw-theme:hover {
+    background: var(--color-bg-soft, #f5f5f5);
+    border-color: var(--color-charcoal, #1a1a1a);
+  }
+  .pw-theme:focus-visible {
+    outline: 2px solid var(--color-functional-marigold, #006D77);
+    outline-offset: 2px;
+  }
+  .pw-theme-icon[hidden] { display: none; }
+</style>
+
+<script is:inline>
+  (function () {
+    const KEY = "policyWonk.appearance";
+    const ORDER = ["system", "light", "dark"];
+    const btn = document.getElementById("pw-theme-toggle");
+    if (!btn) return;
+
+    function read() {
+      try {
+        const v = localStorage.getItem(KEY);
+        return ORDER.includes(v) ? v : "system";
+      } catch {
+        return "system";
+      }
+    }
+
+    function paint(mode) {
+      // "system" means: own no opinion, let prefers-color-scheme decide.
+      if (mode === "system") {
+        document.documentElement.removeAttribute("data-theme");
+      } else {
+        document.documentElement.setAttribute("data-theme", mode);
+      }
+      // toggleAttribute, NOT `.hidden = ...`. These are SVG elements, and
+      // `hidden` is an HTMLElement property: assigning it on an SVGElement
+      // sets a plain JS property that never reflects to the content
+      // attribute, so the CSS would keep showing whichever icon was marked
+      // hidden in the markup and the button would never change.
+      for (const icon of btn.querySelectorAll(".pw-theme-icon")) {
+        icon.toggleAttribute("hidden", icon.dataset.icon !== mode);
+      }
+      const label = "Appearance: " + mode;
+      btn.setAttribute("aria-label", label);
+      btn.setAttribute("title", label);
+    }
+
+    paint(read());
+
+    btn.addEventListener("click", () => {
+      const next = ORDER[(ORDER.indexOf(read()) + 1) % ORDER.length];
+      try {
+        localStorage.setItem(KEY, next);
+      } catch {
+        // Private mode with storage denied: the choice still applies for
+        // this page, it just won't survive a navigation.
+      }
+      paint(next);
+    });
+  })();
+</script>

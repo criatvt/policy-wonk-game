@@ -104,7 +104,7 @@ function LifelineButton({ label, used, disabled, onClick }) {
       type="button"
       disabled={used || disabled}
       onClick={onClick}
-      className={`px-3 py-2 rounded border text-sm transition-opacity ${
+      className={`px-3 py-2 rounded-[var(--radius-cta)] border text-sm transition-opacity ${
         used
           ? "border-[var(--color-border)] line-through opacity-40 cursor-not-allowed"
           : disabled
@@ -127,7 +127,7 @@ function PollPanel({ data, onClose }) {
             <span className="font-mono w-6 text-center text-[var(--color-text-muted)]">
               {LETTERS[i]}
             </span>
-            <div className="flex-1 h-5 bg-[var(--color-bg-soft)] rounded overflow-hidden">
+            <div className="flex-1 h-5 bg-[var(--color-bg-soft)] rounded-[var(--radius-cta)] overflow-hidden">
               <div
                 className="h-full bg-[var(--color-functional-marigold)]/70 transition-[width] duration-700"
                 style={{ width: `${(pct / max) * 100}%` }}
@@ -160,7 +160,7 @@ function ExpertPanel({ experts, verdict, onClose }) {
 
 function Panel({ title, children, onClose }) {
   return (
-    <div className="border border-[var(--color-border-soft)] bg-[var(--color-bg-panel)] rounded p-4 flex flex-col gap-3">
+    <div className="border border-[var(--color-border-soft)] bg-[var(--color-bg-panel)] rounded-[var(--radius-cta)] p-4 flex flex-col gap-3">
       <div className="flex items-center justify-between">
         <p className="text-xs uppercase tracking-widest opacity-70">{title}</p>
         <button
