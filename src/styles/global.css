@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------------------
+   Palette.
+
+   Light values live in @theme (Tailwind v4 emits them on :root and generates
+   utilities from them). Dark values are re-declared further down as plain
+   custom-property overrides — every component references these as
+   var(--color-*), so overriding the property at runtime is enough and no
+   component needs a dark: variant.
+
+   The dark palette is ported verbatim from the iOS app's
+   PolicyWonk/DesignSystem/Theme.swift so a screenshot from either build reads
+   as the same product. Do not drift one without the other.
+--------------------------------------------------------------------------- */
+
 @theme {
   /* Functional colours — universal UX signal.
      The "marigold" var name is legacy. Color history:
@@ -15,15 +29,21 @@
   /* Aesthetic palette — white background, black/gray text and surfaces.
      Per Aasif's call (2026-05-08): the indigo/teal/sienna palette was
      not working; switched to a calm white/gray theme with the functional
-     colours doing all state-signal work. */
+     colours doing all state-signal work.
+
+     Neutrals realigned to the iOS values 2026-08-19: the greys were cool
+     (blue-tinted #4B5563 / #9CA3AF) while iOS used neutral greys, which read
+     as two different products side by side. --color-text-muted moving from
+     #9CA3AF to #6B6B6B also takes it from ~2.5:1 on white (fails WCAG AA)
+     to ~5.1:1. */
   --color-bg: #FFFFFF;
-  --color-bg-soft: #F5F5F5;
-  --color-bg-panel: #FAFAFA;
+  --color-bg-soft: #F6F6F4;
+  --color-bg-panel: #FAFAF9;
   --color-text: #1A1A1A;
-  --color-text-soft: #4B5563;
-  --color-text-muted: #9CA3AF;
-  --color-border: #E5E5E5;
-  --color-border-soft: #D1D5DB;
+  --color-text-soft: #4A4A4E;
+  --color-text-muted: #6B6B6B;
+  --color-border: #E3E3E0;
+  --color-border-soft: #CFCFCA;
   --color-charcoal: #1A1A1A;
 
   /* Type stack — Playfair Display for editorial serif headlines,
@@ -36,15 +56,86 @@
      semantic names above as components are touched. */
   --color-cream: #1A1A1A;
   --color-indigo-deep: #FFFFFF;
-  --color-indigo-faded: #F5F5F5;
-  --color-sienna-burnt: #9CA3AF;
-  --color-sienna-pale: #4B5563;
+  --color-indigo-faded: #F6F6F4;
+  --color-sienna-burnt: #6B6B6B;
+  --color-sienna-pale: #4A4A4E;
   --color-teal-faded: #6B7280;
-  --color-teal-pale: #9CA3AF;
+  --color-teal-pale: #6B6B6B;
 }
 
+/* Shared, theme-independent tokens. The CTA radius and shadow mirror
+   WonkPrimaryButton in the iOS Theme (14pt continuous corner + soft drop). */
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
+  --radius-cta: 14px;
+  --shadow-cta: 0 5px 10px rgb(0 0 0 / 0.16);
+  --shadow-cta-pressed: 0 2px 4px rgb(0 0 0 / 0.08);
+}
+
+/* --- Dark palette -------------------------------------------------------
+   Values from iOS Theme.swift. The functional trio brightens in the dark so
+   it stays legible against a near-black ground; the base palette inverts.
+   Declared twice: once for the system preference (unless the reader has
+   explicitly chosen light) and once for an explicit dark choice, so a future
+   theme toggle wins in both directions. */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-functional-marigold: #46C2CD;
+    --color-functional-green: #9FD45F;
+    --color-functional-red: #F26A47;
+
+    --color-bg: #0E0E11;
+    --color-bg-soft: #1B1B1F;
+    --color-bg-panel: #16161A;
+    --color-text: #F2F2F0;
+    --color-text-soft: #B8B8BF;
+    --color-text-muted: #9B9BA1;
+    --color-border: #35353C;
+    --color-border-soft: #4A4A52;
+    /* Inverts with the theme: the primary CTA fills with --color-charcoal and
+       labels with --color-bg, so it reads as a black pill in light mode and a
+       light pill in dark mode — same trick as iOS's ink/bg pairing. */
+    --color-charcoal: #F2F2F0;
+
+    --color-cream: #F2F2F0;
+    --color-indigo-deep: #0E0E11;
+    --color-indigo-faded: #1B1B1F;
+    --color-sienna-burnt: #9B9BA1;
+    --color-sienna-pale: #B8B8BF;
+    --color-teal-faded: #9B9BA1;
+    --color-teal-pale: #9B9BA1;
+
+    --shadow-cta: 0 5px 10px rgb(0 0 0 / 0.5);
+    --shadow-cta-pressed: 0 2px 4px rgb(0 0 0 / 0.35);
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-functional-marigold: #46C2CD;
+  --color-functional-green: #9FD45F;
+  --color-functional-red: #F26A47;
+
+  --color-bg: #0E0E11;
+  --color-bg-soft: #1B1B1F;
+  --color-bg-panel: #16161A;
+  --color-text: #F2F2F0;
+  --color-text-soft: #B8B8BF;
+  --color-text-muted: #9B9BA1;
+  --color-border: #35353C;
+  --color-border-soft: #4A4A52;
+  --color-charcoal: #F2F2F0;
+
+  --color-cream: #F2F2F0;
+  --color-indigo-deep: #0E0E11;
+  --color-indigo-faded: #1B1B1F;
+  --color-sienna-burnt: #9B9BA1;
+  --color-sienna-pale: #B8B8BF;
+  --color-teal-faded: #9B9BA1;
+  --color-teal-pale: #9B9BA1;
+
+  --shadow-cta: 0 5px 10px rgb(0 0 0 / 0.5);
+  --shadow-cta-pressed: 0 2px 4px rgb(0 0 0 / 0.35);
 }
 
 html, body {

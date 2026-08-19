@@ -35,34 +35,34 @@ function topicSlugOf(noteSlug: string): string {
   <section class="max-w-3xl mx-auto py-8">
     <nav class="mb-8 text-sm">
       <a href="/notes/" class="underline">Notes</a>
-      <span class="mx-2 text-gray-400">›</span>
-      <span class="text-gray-700">{mod.name}</span>
+      <span class="mx-2 text-[var(--color-text-muted)]">›</span>
+      <span class="text-[var(--color-text-soft)]">{mod.name}</span>
     </nav>
 
     <header class="mb-12">
-      <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">{mod.group}</p>
+      <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)] mb-2">{mod.group}</p>
       <h1 class="font-serif text-4xl md:text-5xl font-bold leading-tight">{mod.name}</h1>
       {indexEntry?.data.summary && (
-        <p class="mt-4 text-gray-700 leading-relaxed text-lg">{indexEntry.data.summary}</p>
+        <p class="mt-4 text-[var(--color-text-soft)] leading-relaxed text-lg">{indexEntry.data.summary}</p>
       )}
     </header>
 
     {topics.length > 0 ? (
-      <ul class="divide-y divide-gray-300">
+      <ul class="divide-y divide-[var(--color-border-soft)]">
         {topics.map((t) => (
           <li class="py-4">
-            <a href={`/notes/${module}/${topicSlugOf(t.slug)}/`} class="block hover:bg-gray-50 -mx-2 px-2 py-1">
+            <a href={`/notes/${module}/${topicSlugOf(t.slug)}/`} class="block hover:bg-[var(--color-bg-soft)] -mx-2 px-2 py-1">
               <p class="font-semibold underline">{t.data.title}</p>
-              {t.data.summary && <p class="mt-1 text-sm text-gray-700">{t.data.summary}</p>}
+              {t.data.summary && <p class="mt-1 text-sm text-[var(--color-text-soft)]">{t.data.summary}</p>}
             </a>
           </li>
         ))}
       </ul>
     ) : (
-      <p class="text-gray-500 italic">Notes for this module are coming soon.</p>
+      <p class="text-[var(--color-text-muted)] italic">Notes for this module are coming soon.</p>
     )}
 
-    <footer class="mt-16 pt-6 border-t border-gray-300 text-sm text-gray-500">
+    <footer class="mt-16 pt-6 border-t border-[var(--color-border-soft)] text-sm text-[var(--color-text-muted)]">
       Adapted from Takshashila GCPP course material.
     </footer>
   </section>

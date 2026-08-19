@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { formatIndianNumber } from "../../lib/gameEngine.js";
+import { drawShareCard, shareCardBlob, CARD_W, CARD_H } from "../../lib/shareCard.js";
 import { stashGuestSession } from "../../lib/guestSessions.js";
 import { hasNote, moduleHasNotes } from "../../lib/noteSlugs.js";
 import { trackEvent } from "../../lib/analytics.js";
@@ -205,6 +206,74 @@ export default function EndScreen({ state, onPlayAgain }) {
     }
   }
 
+  // Shareable result card (#1), drawn to match the iOS app's ShareCardView so
+  // a result posted from the web and one posted from the phone look identical.
+  const cardRef = useRef(null);
+  const [cardSaved, setCardSaved] = useState(false);
+  const cardResult = {
+    status: state.status,
+    score: state.score,
+    fellOnRung: state.fellOnRung ?? null,
+    moduleName: moduleNameFor(state.selectedModule),
+  };
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const canvas = cardRef.current;
+      if (!canvas) return;
+      try {
+        await drawShareCard(canvas, cardResult);
+      } catch {
+        // A failed card must not take the end screen down with it. The text
+        // share buttons below stay usable either way.
+      }
+      if (cancelled) return;
+    })();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.status, state.score, state.fellOnRung, state.selectedModule]);
+
+  // Share the rendered PNG through the native sheet where the browser allows
+  // file shares (iOS Safari, Android Chrome); fall back to a download so
+  // desktop users still get the image.
+  async function handleShareCard() {
+    let blob;
+    try {
+      blob = await shareCardBlob(cardResult);
+    } catch {
+      return;
+    }
+    if (!blob) return;
+
+    const file = new File([blob], "policy-wonk-result.png", { type: "image/png" });
+    if (
+      typeof navigator !== "undefined" &&
+      typeof navigator.share === "function" &&
+      navigator.canShare?.({ files: [file] })
+    ) {
+      try {
+        await navigator.share({ files: [file], text: share });
+      } catch {
+        // Cancelled or refused — silent, same as the text share.
+      }
+      return;
+    }
+
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "policy-wonk-result.png";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+    setCardSaved(true);
+    window.setTimeout(() => setCardSaved(false), 2000);
+  }
+
   return (
     <section className="flex flex-col gap-6 max-w-xl mx-auto min-h-[70vh] justify-center">
       <header className="flex flex-col gap-2 py-4 text-center">
@@ -308,17 +377,40 @@ export default function EndScreen({ state, onPlayAgain }) {
           carry the full share string; LinkedIn's sharer ignores arbitrary
           text and only accepts a URL, so it shares the site link and relies
           on the Open Graph card (BaseLayout) for the teaser. */}
-      <div className="flex flex-col gap-3">
-        <p className="text-sm italic text-[var(--color-text-soft)] leading-relaxed">
+      <div className="flex flex-col gap-4">
+        <h2 className="text-xs uppercase tracking-widest text-[var(--color-text-muted)] text-center">
+          Your result card
+        </h2>
+
+        {/* The card is a fixed-light image by design, so it keeps its own
+            cream ground in dark mode rather than following the theme. */}
+        <canvas
+          ref={cardRef}
+          width={CARD_W * 3}
+          height={CARD_H * 3}
+          role="img"
+          aria-label={`Policy Wonk result card. ${share}`}
+          className="self-center w-full max-w-[260px] h-auto border border-[var(--color-border)] shadow-[var(--shadow-cta)]"
+        />
+
+        <button
+          type="button"
+          onClick={handleShareCard}
+          className="self-center px-6 py-3 bg-[var(--color-charcoal)] text-[var(--color-bg)] font-semibold hover:opacity-90 transition-opacity"
+        >
+          {cardSaved ? "Image saved" : "Share this card →"}
+        </button>
+
+        <p className="text-sm italic text-[var(--color-text-soft)] leading-relaxed text-center">
           “{share}”
         </p>
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center justify-center gap-2">
           <button
             type="button"
             onClick={handleShare}
             className="px-4 py-2 rounded border border-[var(--color-charcoal)] text-[var(--color-charcoal)] hover:bg-[var(--color-charcoal)]/10 transition-colors"
           >
-            {shareConfirmed ? "Copied to clipboard!" : "Share →"}
+            {shareConfirmed ? "Copied to clipboard!" : "Share text →"}
           </button>
           <a
             href={`https://wa.me/?text=${encodeURIComponent(share)}`}
@@ -393,40 +485,6 @@ export default function EndScreen({ state, onPlayAgain }) {
         </p>
       </section>
 
-      <section className="border-t border-[var(--color-border)] pt-5 flex flex-col gap-3">
-        <h2 className="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Upcoming features</h2>
-        <ul className="flex flex-col gap-3 list-none p-0 m-0">
-          <li className="flex flex-col gap-0.5">
-            <p className="font-serif text-base">Wonky</p>
-            <p className="text-sm text-[var(--color-text-soft)]">A host with quirky policy traits.</p>
-          </li>
-          <li className="flex flex-col gap-0.5">
-            <p className="font-serif text-base">Notes for revising topics</p>
-            <p className="text-sm text-[var(--color-text-soft)]">Curated notes from each module so you can revise the concepts you missed.</p>
-          </li>
-        </ul>
-      </section>
-
-      <section className="border-t border-[var(--color-border)] pt-5 flex flex-col gap-3">
-        <h2 className="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Polish & fixes</h2>
-        <ul className="flex flex-col gap-3 list-none p-0 m-0">
-          <li className="flex flex-col gap-0.5">
-            <p className="font-serif text-base">Mobile optimization</p>
-            <p className="text-sm text-[var(--color-text-soft)]">Touch-friendly layouts and tighter type scale on small screens.</p>
-          </li>
-        </ul>
-        <p className="text-sm text-[var(--color-text-soft)]">
-          More on the{" "}
-          <a
-            href="https://github.com/criatvt/policy-wonk-game/issues"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[var(--color-functional-marigold)] underline decoration-2 underline-offset-2 hover:opacity-80"
-          >
-            GitHub issue tracker
-          </a>.
-        </p>
-      </section>
     </section>
   );
 }

@@ -1,5 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+// TestFlight invitation for the native iOS build (PolicyWonk-iOS, a sibling
+// repo). Kept as a constant so the link appears once.
+const TESTFLIGHT_URL = "https://testflight.apple.com/join/AubAzGnh";
 ---
 <BaseLayout title="Policy Wonk" zone="game">
   <section class="py-12 md:py-20 flex flex-col gap-12 md:gap-16">
@@ -45,13 +49,51 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </p>
     </div>
 
+    <!-- Native iOS build. Shown to everyone so non-Apple readers know it
+         exists, with the opening line swapped for visitors already on an
+         iPhone or iPad (see the script at the foot of this file). -->
+    <section class="flex flex-col gap-4 border-t border-[var(--color-border)] pt-6">
+      <h2 class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Also on iPhone</h2>
+
+      <div class="flex flex-col gap-1">
+        <p class="font-serif text-base text-[var(--color-text)]">Policy Wonk for iOS</p>
+        <p class="text-sm text-[var(--color-text-soft)]" data-ios-lede>
+          There is a native iOS app. It is in open testing on TestFlight, so you can try it before it reaches the App Store.
+        </p>
+      </div>
+
+      <a
+        href={TESTFLIGHT_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="self-start px-6 py-3 bg-[var(--color-charcoal)] text-[var(--color-bg)] text-sm font-semibold hover:opacity-90 transition-opacity"
+      >
+        Check it out on TestFlight →
+      </a>
+
+      <details class="text-sm text-[var(--color-text-soft)]">
+        <summary class="cursor-pointer text-[var(--color-functional-marigold)] underline decoration-2 underline-offset-2 hover:opacity-80">
+          How to join a TestFlight beta
+        </summary>
+        <ol class="mt-3 flex flex-col gap-2 pl-5 list-decimal">
+          <li>Install Apple's free TestFlight app from the App Store.</li>
+          <li>Open the invitation link above on your iPhone or iPad.</li>
+          <li>Tap Accept, then Install.</li>
+          <li>Policy Wonk lands on your home screen with an orange dot beside the name. That dot just marks a test build.</li>
+        </ol>
+        <p class="mt-3">
+          Test builds expire after 90 days. TestFlight will prompt you when a newer one is ready.
+        </p>
+      </details>
+    </section>
+
     <section class="flex flex-col gap-3 border-t border-[var(--color-border)] pt-6">
       <h2 class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">What's new</h2>
       <ul class="flex flex-col gap-3 list-none p-0 m-0">
         <li class="flex flex-col gap-0.5">
           <p class="font-serif text-base text-[var(--color-text)]">Ask Your Professor ✨</p>
           <p class="text-sm text-[var(--color-text-soft)]">
-            The “Ask an AI” lifeline is now Ask Your Professor — an AI character based on one of our amazing profs, who lectures you a little, then points you to the right answer. Lifelines unlock from Q6.
+            The “Ask an AI” lifeline is now Ask Your Professor. Professor Takshi lectures you a little, then points you to the right answer. Lifelines unlock from Q6.
           </p>
         </li>
         <li class="flex flex-col gap-0.5">
@@ -59,7 +101,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <a href="/notes" class="underline decoration-2 underline-offset-2 hover:opacity-80">Revision notes →</a>
           </p>
           <p class="text-sm text-[var(--color-text-soft)]">
-            Per-topic notes unlock after you complete a quiz on the module. Three modules are ready; eight more on the way.
+            Per-topic notes for all eleven modules. Notes for a module unlock once you complete a quiz on it.
           </p>
         </li>
         <li class="flex flex-col gap-0.5">
@@ -67,34 +109,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <a href="/login" class="underline decoration-2 underline-offset-2 hover:opacity-80">Optional sign in →</a>
           </p>
           <p class="text-sm text-[var(--color-text-soft)]">
-            Save your play history, unlock notes per module, pick a nickname. Email magic link, no passwords. Guests remain first-class.
+            Save your play history, unlock notes per module, pick a nickname. Sign in by email link, with no passwords. Guests remain first class.
           </p>
         </li>
       </ul>
     </section>
-
-    <section class="flex flex-col gap-3 border-t border-[var(--color-border)] pt-6">
-      <h2 class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Upcoming features</h2>
-      <ul class="flex flex-col gap-3 list-none p-0 m-0">
-        <li class="flex flex-col gap-0.5">
-          <p class="font-serif text-base text-[var(--color-text)]">Wonky</p>
-          <p class="text-sm text-[var(--color-text-soft)]">A host with quirky policy traits.</p>
-        </li>
-      </ul>
-    </section>
-
-    <section class="flex flex-col gap-3 border-t border-[var(--color-border)] pt-6">
-      <h2 class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Polish & fixes</h2>
-      <ul class="flex flex-col gap-3 list-none p-0 m-0">
-        <li class="flex flex-col gap-0.5">
-          <p class="font-serif text-base text-[var(--color-text)]">Mobile optimization</p>
-          <p class="text-sm text-[var(--color-text-soft)]">Touch-friendly layouts and tighter type scale on small screens.</p>
-        </li>
-      </ul>
-      <p class="text-sm text-[var(--color-text-soft)]">
-        More on the
-        <a href="https://github.com/criatvt/policy-wonk-game/issues" target="_blank" rel="noopener noreferrer" class="text-[var(--color-functional-marigold)] underline decoration-2 underline-offset-2 hover:opacity-80">GitHub issue tracker</a>.
-      </p>
-    </section>
   </section>
 </BaseLayout>
+
+<script>
+  // Swap the iOS lede for visitors already on an Apple handheld. iPadOS 13+
+  // reports itself as "MacIntel", so the touch-point count is what separates
+  // an iPad from a desktop Mac.
+  const isIOS =
+    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+  if (isIOS) {
+    const lede = document.querySelector<HTMLParagraphElement>("[data-ios-lede]");
+    if (lede) {
+      lede.textContent =
+        "You are on an Apple device, so you can run the native app. It is in open testing on TestFlight. Joining takes a minute.";
+    }
+  }
+</script>

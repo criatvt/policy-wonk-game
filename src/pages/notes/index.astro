@@ -22,12 +22,12 @@ for (const m of modulesData as Module[]) {
 <BaseLayout title="Notes · Policy Wonk" description="Revision notes for the 11 Takshashila GCPP modules covered by Policy Wonk." zone="notes">
   <section class="max-w-3xl mx-auto py-8">
     <header class="mb-10">
-      <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Revision</p>
+      <p class="text-xs uppercase tracking-widest text-[var(--color-text-muted)] mb-2">Revision</p>
       <h1 class="font-serif text-4xl md:text-5xl font-bold leading-tight">Notes</h1>
-      <p class="mt-4 text-gray-700 leading-relaxed text-lg">
+      <p class="mt-4 text-[var(--color-text-soft)] leading-relaxed text-lg">
         Per-topic revision notes for each Takshashila GCPP module. Notes unlock once you've completed a quiz on that module.
       </p>
-      <p class="mt-3 text-sm text-gray-500 leading-relaxed">
+      <p class="mt-3 text-sm text-[var(--color-text-muted)] leading-relaxed">
         These notes are a blend of public-domain policy concepts, Aasif's own notes,
         and material adapted from the Takshashila GCPP readings. They're a revision aid, not
         a substitute for the original sources.
@@ -40,14 +40,14 @@ for (const m of modulesData as Module[]) {
     {groupOrder.map((groupName) => (
       <section class="mb-12">
         <h2 class="font-serif text-2xl font-bold mb-4">{groupName}</h2>
-        <ul class="divide-y divide-gray-300">
+        <ul class="divide-y divide-[var(--color-border-soft)]">
           {grouped[groupName]?.map((m) => {
             const authored = modulesWithNotes.has(m.id);
             if (!authored) {
               return (
                 <li class="py-4 flex items-baseline justify-between gap-4">
-                  <p class="font-semibold text-gray-500">{m.name}</p>
-                  <span class="text-xs uppercase tracking-widest text-gray-500 whitespace-nowrap">Coming soon</span>
+                  <p class="font-semibold text-[var(--color-text-muted)]">{m.name}</p>
+                  <span class="text-xs uppercase tracking-widest text-[var(--color-text-muted)] whitespace-nowrap">Coming soon</span>
                 </li>
               );
             }
@@ -61,8 +61,8 @@ for (const m of modulesData as Module[]) {
                 data-module-name={m.name}
               >
                 <div class="flex-1">
-                  <p class="font-semibold text-gray-500 module-title">{m.name}</p>
-                  <p class="text-sm text-gray-500 mt-1 module-hint" data-state="guest">
+                  <p class="font-semibold text-[var(--color-text-muted)] module-title">{m.name}</p>
+                  <p class="text-sm text-[var(--color-text-muted)] mt-1 module-hint" data-state="guest">
                     Log in to unlock these notes.
                   </p>
                 </div>
@@ -78,7 +78,7 @@ for (const m of modulesData as Module[]) {
       </section>
     ))}
 
-    <footer class="mt-16 pt-6 border-t border-gray-300 text-sm text-gray-500">
+    <footer class="mt-16 pt-6 border-t border-[var(--color-border-soft)] text-sm text-[var(--color-text-muted)]">
       Notes adapted from Takshashila GCPP course material.
     </footer>
   </section>
@@ -132,8 +132,8 @@ for (const m of modulesData as Module[]) {
       if (played.has(moduleId)) {
         // Unlocked: title becomes the link, hint + cta hidden.
         title.innerHTML = `<a href="/notes/${moduleId}/" class="underline">${title.textContent}</a>`;
-        title.classList.remove("text-gray-500");
-        title.classList.add("text-black");
+        title.classList.remove("text-[var(--color-text-muted)]");
+        title.classList.add("text-[var(--color-text)]");
         hint.remove();
         cta.remove();
       } else {
