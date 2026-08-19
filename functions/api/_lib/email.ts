@@ -1,11 +1,25 @@
-// Resend transactional email helper.
+// Brevo transactional email helper.
 //
-// Wraps the Resend REST API directly via fetch — avoids pulling in the
-// resend npm package (and its dependencies) when a single POST is all
-// we need. Keep this file framework-free; route handlers import it.
+// Wraps the Brevo REST API directly via fetch — avoids pulling in an SDK
+// (and its dependencies) when a single POST is all we need. Keep this
+// file framework-free; route handlers import it.
+//
+// Why Brevo and not Resend (2026-08-19): Resend's free tier verifies
+// exactly ONE sending domain per account, and that slot is held by
+// another project (ploca.app). policywonkgame.aasifj.com was therefore
+// never verifiable there, so every magic-link send was rejected and
+// sign-in was silently dead in production. Brevo's free tier allows
+// multiple verified sender domains (300 emails/day, shared across
+// transactional and campaigns), which is what this project actually
+// needs. Cloudflare Email Sending was considered and rejected: it
+// requires the Workers Paid plan, and this account is on the free plan.
+//
+// The exported surface (SendArgs / SendResult / sendEmail) is unchanged
+// from the Resend version, so callers did not have to move.
 
 type SendArgs = {
   apiKey: string;
+  /** Envelope sender address. Its domain must be verified in Brevo. */
   from: string;
   to: string;
   subject: string;
@@ -17,29 +31,40 @@ export type SendResult =
   | { ok: true; id: string }
   | { ok: false; status: number; error: string };
 
+// Display name on the From line. Kept here rather than in config: it is
+// product identity, not per-environment configuration.
+const FROM_NAME = "Policy Wonk";
+
 export async function sendEmail(args: SendArgs): Promise<SendResult> {
-  const res = await fetch("https://api.resend.com/emails", {
+  const res = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${args.apiKey}`,
+      // Brevo authenticates with a bare `api-key` header — NOT a Bearer
+      // token. Sending Authorization instead returns 401.
+      "api-key": args.apiKey,
       "Content-Type": "application/json",
+      Accept: "application/json",
     },
     body: JSON.stringify({
-      from: args.from,
-      to: [args.to],
+      sender: { email: args.from, name: FROM_NAME },
+      to: [{ email: args.to }],
       subject: args.subject,
-      html: args.html,
-      text: args.text,
+      htmlContent: args.html,
+      // Brevo requires htmlContent OR textContent; we always send both so
+      // plaintext-only clients still get a usable link.
+      textContent: args.text,
     }),
   });
 
+  // Brevo returns 201 on an immediate send (202 when scheduled), so test
+  // the range rather than equality with 200.
   if (!res.ok) {
     const errorBody = await res.text();
     return { ok: false, status: res.status, error: errorBody };
   }
 
-  const json = (await res.json()) as { id: string };
-  return { ok: true, id: json.id };
+  const json = (await res.json().catch(() => ({}))) as { messageId?: string };
+  return { ok: true, id: json.messageId ?? "" };
 }
 
 // Plaintext fallback for the magic-link email. Important for accessibility

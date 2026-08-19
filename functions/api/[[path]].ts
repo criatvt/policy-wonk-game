@@ -17,8 +17,8 @@ type Bindings = {
   KV: KVNamespace;
   ENV: string;
   ADMIN_EMAILS: string;
-  RESEND_FROM: string;
-  RESEND_API_KEY?: string;
+  EMAIL_FROM: string;
+  BREVO_API_KEY?: string;
   SESSION_SECRET?: string;
   // Workers Analytics Engine dataset for first-party funnel events (#12).
   // Optional so a build without the binding still runs (route no-ops).

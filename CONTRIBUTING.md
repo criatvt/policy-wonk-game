@@ -86,7 +86,7 @@ npm run dev:worker       # wrangler dev for the Worker
 
 ### Local auth bypass
 
-`functions/api/_routes/auth.ts` exposes `/api/auth/dev-login?email=<addr>` when `ENV === "dev"`. It bypasses the magic-link flow and issues a real session cookie. Use it for local testing instead of wiring up a Resend key. The route returns 404 in preview/production. Add `?format=json` to keep a JSON body for curl; the default is a redirect through the onboarding chain.
+`functions/api/_routes/auth.ts` exposes `/api/auth/dev-login?email=<addr>` when `ENV === "dev"`. It bypasses the magic-link flow and issues a real session cookie. Use it for local testing instead of wiring up a Brevo key. The route returns 404 in preview/production. Add `?format=json` to keep a JSON body for curl; the default is a redirect through the onboarding chain.
 
 `SESSION_SECRET` for the JWT signer lives in `.dev.vars` (gitignored). Generate one with any random string ≥ 32 chars.
 
@@ -129,7 +129,7 @@ Once the backend lands, the project uses three environments:
 
 | Environment | Branch | Database | Email |
 |---|---|---|---|
-| `prod` | `main` | `policy-wonk-prod` | Real Resend sends from `noreply@policywonkgame.aasifj.com` |
+| `prod` | `main` | `policy-wonk-prod` | Real Brevo sends from `noreply@policywonkgame.aasifj.com` |
 | `staging` | `phase-N` | `policy-wonk-staging` | Stubbed or routed to a single test inbox |
 | `dev` | local | `wrangler dev` SQLite | Bypassed via `/api/auth/dev-login` |
 

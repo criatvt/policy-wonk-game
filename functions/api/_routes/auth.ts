@@ -20,8 +20,8 @@ type Bindings = {
   KV: KVNamespace;
   ENV: string;
   ADMIN_EMAILS: string;
-  RESEND_FROM: string;
-  RESEND_API_KEY?: string;
+  EMAIL_FROM: string;
+  BREVO_API_KEY?: string;
   SESSION_SECRET?: string;
 };
 
@@ -44,8 +44,8 @@ auth.post("/send-link", async (c) => {
     return c.json({ ok: false, error: "invalid_email" }, 400);
   }
 
-  if (!c.env.RESEND_API_KEY) {
-    console.error("send-link: RESEND_API_KEY not configured");
+  if (!c.env.BREVO_API_KEY) {
+    console.error("send-link: BREVO_API_KEY not configured");
     return c.json({ ok: false, error: "email_not_configured" }, 500);
   }
 
@@ -71,11 +71,11 @@ auth.post("/send-link", async (c) => {
   // single-use tokens before the user gets to click.
   const verifyUrl = `${origin}/auth/confirm?token=${token}`;
 
-  // In dev / preview-without-Resend, we may want to log instead of sending.
-  // For now: always send if RESEND_API_KEY is present.
+  // In dev / preview-without-Brevo, we may want to log instead of sending.
+  // For now: always send if BREVO_API_KEY is present.
   const result = await sendEmail({
-    apiKey: c.env.RESEND_API_KEY,
-    from: c.env.RESEND_FROM,
+    apiKey: c.env.BREVO_API_KEY,
+    from: c.env.EMAIL_FROM,
     to: emailRaw,
     subject: "Sign in to Policy Wonk",
     html: magicLinkHtml(verifyUrl),
@@ -83,7 +83,7 @@ auth.post("/send-link", async (c) => {
   });
 
   if (!result.ok) {
-    console.error("send-link: Resend send failed", {
+    console.error("send-link: Brevo send failed", {
       status: result.status,
       error: result.error,
     });
@@ -157,8 +157,8 @@ auth.post("/logout", (c) => {
 // GET/POST /api/auth/dev-login?email=... — dev-only bypass for the magic-link
 // flow. Gated strictly on ENV === "dev"; returns 404 in preview/production
 // so it cannot be invoked even if Workers config drift exposes the route.
-// Existence is intentional: the magic-link path requires Resend, which a
-// local checkout typically lacks. This keeps the local test loop fast.
+// Existence is intentional: the magic-link path requires a Brevo API key,
+// which a local checkout typically lacks. This keeps the local test loop fast.
 auth.all("/dev-login", async (c) => {
   if (c.env.ENV !== "dev") {
     return c.json({ ok: false, error: "not_found" }, 404);

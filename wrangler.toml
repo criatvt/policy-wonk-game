@@ -9,8 +9,14 @@
 # touch prod user data. The `database_id` and KV `id` are filled in after
 # running `wrangler d1 create` / `wrangler kv namespace create` (see CONTRIBUTING.md).
 #
-# Secrets (RESEND_API_KEY, SESSION_SECRET) are NOT stored here — they're set
+# Secrets (BREVO_API_KEY, SESSION_SECRET) are NOT stored here — they're set
 # per env via `wrangler pages secret put <NAME> --env <env>`.
+#
+# Email provider is Brevo as of 2026-08-19 (was Resend, whose free tier caps
+# an account at ONE verified sending domain — a slot already held by another
+# project, so policywonkgame.aasifj.com could never be verified and every
+# magic-link send failed). EMAIL_FROM's domain must be verified in Brevo
+# before sign-in works in any environment.
 
 name = "policy-wonk-game"
 pages_build_output_dir = "./dist"
@@ -41,7 +47,7 @@ id = "57557e36571c4c64b0ae61aed779d7f0"
 [vars]
 ENV = "dev"
 ADMIN_EMAILS = "aasif@aasifj.com"
-RESEND_FROM = "noreply@policywonkgame.aasifj.com"
+EMAIL_FROM = "noreply@policywonkgame.aasifj.com"
 
 # ---------- preview (phase-N branches, PR previews) ----------
 
@@ -64,7 +70,7 @@ id = "a82d2d31fac9499bbc9189d770b42633"
 [env.preview.vars]
 ENV = "preview"
 ADMIN_EMAILS = "aasif@aasifj.com"
-RESEND_FROM = "noreply@policywonkgame.aasifj.com"
+EMAIL_FROM = "noreply@policywonkgame.aasifj.com"
 
 # ---------- production (main branch only) ----------
 
@@ -87,4 +93,4 @@ id = "da6a9159fe6c4edf916b40cde7a590b1"
 [env.production.vars]
 ENV = "production"
 ADMIN_EMAILS = "aasif@aasifj.com"
-RESEND_FROM = "noreply@policywonkgame.aasifj.com"
+EMAIL_FROM = "noreply@policywonkgame.aasifj.com"

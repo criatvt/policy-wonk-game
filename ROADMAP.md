@@ -39,7 +39,7 @@ Phase 2+ items are stack-ranked here but the ordering is **draft** — to be con
 | # | Issue | Status |
 |---|---|---|
 | #15 | Backend setup (Cloudflare Workers + KV/D1) | ✅ Closed |
-| #16 | Magic-link login (Resend) | ✅ Closed |
+| #16 | Magic-link login (Brevo; originally Resend, swapped in #51) | ✅ Closed |
 | #17 | Signup flow (nickname + avatar) | ✅ Closed |
 | #18 | Curated avatar set | ✅ Closed — shipped as 26 auto-derived letter slugs; pixel-letter render surface deferred |
 | #19 | Play as Guest path | ✅ Closed |
