@@ -4,8 +4,13 @@
 // 401 on the sub-routes; GET / is the exception (returns user: null).
 
 import { Hono, type Context } from "hono";
-import { readSession } from "../_lib/session";
-import { findUserById, updateAvatar, updateNickname } from "../_lib/users";
+import { readSession, clearSessionCookie } from "../_lib/session";
+import {
+  deleteUser,
+  findUserById,
+  updateAvatar,
+  updateNickname,
+} from "../_lib/users";
 import { deriveAvatarSlug, isValidAvatarSlug } from "../_lib/avatars";
 import {
   insertSession,
@@ -76,6 +81,28 @@ me.get("/", async (c) => {
     },
   });
 });
+
+// DELETE /api/me — self-serve account deletion (Apple/App Store requirement,
+// and externally promised to alumni). Removes the user row and all their
+// sessions (deleteUser clears child rows explicitly). Requires a valid
+// session (Bearer header or cookie). POST /api/me/delete-account is an alias
+// for clients that can't send a DELETE.
+async function deleteAccount(
+  c: Context<{ Bindings: Bindings }>,
+): Promise<Response> {
+  if (!c.env.SESSION_SECRET) {
+    return c.json({ ok: false, error: "server_not_configured" }, 500);
+  }
+  const userId = await requireUserId(c);
+  if (!userId) return c.json({ ok: false, error: "unauthorized" }, 401);
+
+  await deleteUser(c.env.DB, userId);
+  clearSessionCookie(c);
+  return c.json({ ok: true });
+}
+
+me.delete("/", deleteAccount);
+me.post("/delete-account", deleteAccount);
 
 // POST /api/me/sessions — record one completed session.
 // Idempotent on (user_id, client_id): re-posting the same client_id is a

@@ -95,6 +95,18 @@ export async function updateNickname(
     .run();
 }
 
+// Delete a user and all their data (Apple mandates in-app account deletion).
+// sessions has ON DELETE CASCADE on user_id (migrations/0002_sessions.sql),
+// but D1 does not reliably enforce foreign-key cascades, so we delete the
+// child rows explicitly first to guarantee no orphaned sessions remain.
+export async function deleteUser(
+  db: D1Database,
+  id: string,
+): Promise<void> {
+  await db.prepare("DELETE FROM sessions WHERE user_id = ?").bind(id).run();
+  await db.prepare("DELETE FROM users WHERE id = ?").bind(id).run();
+}
+
 export async function updateAvatar(
   db: D1Database,
   userId: string,
