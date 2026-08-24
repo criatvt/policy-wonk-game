@@ -1,16 +1,17 @@
-// Celebratory confetti for clearing a rung. No third-party library — the
-// whole point of this project is zero third-party scripts (see the
-// package.json description) — so this is a small canvas particle system
-// tuned to the site's own functional palette (read from the CSS custom
-// properties at fire time, so it's automatically correct in light and
-// dark) rather than a bespoke "confetti gold" that would fight the game's
-// deliberate no-glossy-chrome guardrail (see game.css).
+// Celebratory confetti for clearing a milestone rung. No third-party
+// library — the whole point of this project is zero third-party scripts
+// (see the package.json description) — so this is a small canvas particle
+// system tuned to the site's own functional palette (read from the CSS
+// custom properties at fire time, so it's automatically correct in light
+// and dark) rather than a bespoke "confetti gold" that would fight the
+// game's deliberate no-glossy-chrome guardrail (see game.css).
 //
-// Six types, one per milestone GameContainer.jsx already treats as
-// distinct in rungMessage(): a quick, quiet pop for an ordinary rung;
-// star bursts — bigger on the second — for the two safety nets; ribbon
-// rain that widens for each of the three tier clears; and an all-out
-// multi-burst finale for clearing the whole ladder.
+// Five types, one per milestone GameContainer.jsx already treats as
+// distinct in rungMessage(): star bursts — bigger on the second — for the
+// two safety nets; ribbon rain that widens for each of the three tier
+// clears; and an all-out multi-burst finale for clearing the whole
+// ladder. An ordinary rung (per Aasif's call, 2026-08-24) gets nothing —
+// confetti stays reserved for the moments that already get special copy.
 
 let canvas = null;
 let ctx = null;
@@ -164,25 +165,6 @@ function start() {
 
 // --- per-milestone shapes --------------------------------------------
 
-function fireRung(pal) {
-  addBurst({
-    count: 18,
-    x: window.innerWidth / 2,
-    y: window.innerHeight * 0.22,
-    angleMin: Math.PI * 0.2,
-    angleMax: Math.PI * 0.8,
-    speedMin: 2.4,
-    speedMax: 5,
-    gravity: 0.16,
-    drag: 0.99,
-    life: 900,
-    shapes: ["circle"],
-    colors: [pal.marigold, pal.green],
-    sizeMin: 5,
-    sizeMax: 8,
-  });
-}
-
 // The two safety nets (Q5, Q10) get a radial star burst from mid-screen —
 // a "badge unlocked" read rather than a falling one. The second is bigger,
 // echoing how rungMessage() calls Q10's net the bigger of the two.
@@ -268,45 +250,51 @@ function fireFinale(pal) {
 // --- public API --------------------------------------------------------
 
 /**
- * Fire a confetti burst. `type` is one of "rung" (default), "safetyNet1",
- * "safetyNet2", "tier1", "tier2", "tier3", "finale" — see typeForRung()
- * for the rung-number → type mapping used by the game itself.
+ * Fire a confetti burst. `type` is one of "safetyNet1", "safetyNet2",
+ * "tier1", "tier2", "tier3", "finale" — see typeForRung() for the
+ * rung-number → type mapping used by the game itself. An unrecognised
+ * (or falsy) type is a deliberate no-op — see typeForRung().
  * No-ops server-side and when the reader prefers reduced motion.
  */
 export function fireConfetti(type) {
   if (typeof window === "undefined" || typeof document === "undefined") return;
   if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
 
-  ensureCanvas();
   const pal = palette();
   switch (type) {
     case "safetyNet1":
+      ensureCanvas();
       fireSafetyNet(pal, false);
       break;
     case "safetyNet2":
+      ensureCanvas();
       fireSafetyNet(pal, true);
       break;
     case "tier1":
+      ensureCanvas();
       fireTierRain(pal, 1);
       break;
     case "tier2":
+      ensureCanvas();
       fireTierRain(pal, 2);
       break;
     case "tier3":
+      ensureCanvas();
       fireTierRain(pal, 3);
       break;
     case "finale":
+      ensureCanvas();
       fireFinale(pal);
       break;
     default:
-      fireRung(pal);
+      return; // ordinary rung — no confetti
   }
   start();
 }
 
 // Mirrors the milestone rungs rungMessage() (GameContainer.jsx) already
 // treats specially: the two safety nets and the three tier clears. Every
-// other cleared rung gets the plain "rung" pop. Rung 15 doesn't route
+// other cleared rung returns null — no confetti. Rung 15 doesn't route
 // through here — a won game skips straight to EndScreen, which fires
 // "finale" itself.
 export function typeForRung(cleared) {
@@ -315,5 +303,5 @@ export function typeForRung(cleared) {
   if (cleared === 4) return "tier1";
   if (cleared === 8) return "tier2";
   if (cleared === 12) return "tier3";
-  return "rung";
+  return null;
 }

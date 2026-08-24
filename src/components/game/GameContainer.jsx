@@ -225,18 +225,21 @@ export default function GameContainer() {
   // read this question, re-typing it on refresh feels broken.
   const rehydratedRungRef = useRef(persisted?.state?.currentRung ?? null);
 
-  // Confetti on a fresh rung clear. Rung 15's win skips this (isLastRung
-  // never reaches "revealed-correct" with a rung message — see below) and
-  // fires its own "finale" burst from EndScreen instead. Guarded so a
-  // rehydrated reveal (page refresh mid-reveal) or a re-render doesn't
-  // replay the burst for a rung already celebrated.
+  // Confetti on a fresh milestone rung clear (safety nets, tier clears —
+  // an ordinary rung gets nothing, per Aasif's call). Rung 15's win skips
+  // this (isLastRung never reaches "revealed-correct" with a rung message
+  // — see below) and fires its own "finale" burst from EndScreen instead.
+  // Guarded so a rehydrated reveal (page refresh mid-reveal) or a
+  // re-render doesn't replay the burst for a rung already celebrated.
   const celebratedRungRef = useRef(0);
   useEffect(() => {
     if (state.status !== "revealed-correct") return;
     if (rehydratedRungRef.current === state.currentRung) return;
     if (celebratedRungRef.current === state.currentRung) return;
+    const confettiType = typeForRung(state.currentRung);
+    if (!confettiType) return;
     celebratedRungRef.current = state.currentRung;
-    fireConfetti(typeForRung(state.currentRung));
+    fireConfetti(confettiType);
   }, [state.status, state.currentRung]);
 
   // Compute the "next" screen after onboarding completes — RULES the first
