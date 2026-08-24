@@ -7,11 +7,13 @@
 // game's deliberate no-glossy-chrome guardrail (see game.css).
 //
 // Five types, one per milestone GameContainer.jsx already treats as
-// distinct in rungMessage(): star bursts — bigger on the second — for the
-// two safety nets; ribbon rain that widens for each of the three tier
-// clears; and an all-out multi-burst finale for clearing the whole
-// ladder. An ordinary rung (per Aasif's call, 2026-08-24) gets nothing —
-// confetti stays reserved for the moments that already get special copy.
+// distinct in rungMessage(): a single-hue star burst — bigger on the
+// second — for the two safety nets, visually distinct from every other
+// type's green-and-marigold mix; ribbon bursts, contained on screen, that
+// widen for each of the three tier clears; and a flashing, twinkling,
+// two-wave finale for clearing the whole ladder. An ordinary rung (per
+// Aasif's call, 2026-08-24) gets nothing — confetti stays reserved for
+// the moments that already get special copy.
 
 let canvas = null;
 let ctx = null;
@@ -72,11 +74,28 @@ function palette() {
   };
 }
 
+// Blends a #rrggbb colour toward white (amount > 0) or black (amount < 0).
+// Used to build a single-hue tonal set out of one CSS token instead of
+// hardcoding a new brand colour — stays theme-correct since it's derived
+// from the live token at fire time.
+function shade(hex, amount) {
+  const m = /^#?([0-9a-f]{6})$/i.exec((hex || "").trim());
+  if (!m) return hex;
+  const n = parseInt(m[1], 16);
+  const r = (n >> 16) & 255;
+  const g = (n >> 8) & 255;
+  const b = n & 255;
+  const target = amount >= 0 ? 255 : 0;
+  const t = Math.min(1, Math.abs(amount));
+  const mix = (c) => Math.round(c + (target - c) * t);
+  return `rgb(${mix(r)}, ${mix(g)}, ${mix(b)})`;
+}
+
 // --- particles ------------------------------------------------------
 
 function addBurst({
   count, x, y, angleMin, angleMax, speedMin, speedMax,
-  gravity, drag, life, shapes, colors, sizeMin, sizeMax,
+  gravity, drag, life, shapes, colors, sizeMin, sizeMax, twinkle,
 }) {
   for (let i = 0; i < count; i++) {
     const angle = angleMin + Math.random() * (angleMax - angleMin);
@@ -92,12 +111,44 @@ function addBurst({
       shape: shapes[Math.floor(Math.random() * shapes.length)],
       color: colors[Math.floor(Math.random() * colors.length)],
       size: sizeMin + Math.random() * (sizeMax - sizeMin),
+      twinkle: !!twinkle,
+      twinklePhase: Math.random() * Math.PI * 2,
     });
   }
 }
 
-function drawShape(shape, size) {
-  if (shape === "circle") {
+// A single soft radial pulse at screen centre — the "impact" beat right as
+// the finale opens. Not a particle that moves or falls; it just blooms and
+// fades in place, so it gets its own entry in the particles array with a
+// linear (not sustain-then-fade) alpha curve and a capped peak opacity —
+// a glow, not a whiteout.
+function addFlash(pal) {
+  particles.push({
+    x: window.innerWidth / 2,
+    y: window.innerHeight / 2,
+    vx: 0, vy: 0,
+    gravity: 0, drag: 1,
+    rotation: 0, spin: 0,
+    life: 420, age: 0,
+    shape: "flash",
+    color: pal.marigold,
+    size: Math.max(window.innerWidth, window.innerHeight) * 1.1,
+    fadeMode: "linear",
+    peakAlpha: 0.4,
+    twinkle: false,
+  });
+}
+
+function drawShape(shape, size, color) {
+  if (shape === "flash") {
+    const grad = ctx.createRadialGradient(0, 0, 0, 0, 0, size / 2);
+    grad.addColorStop(0, color);
+    grad.addColorStop(1, "transparent");
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.arc(0, 0, size / 2, 0, Math.PI * 2);
+    ctx.fill();
+  } else if (shape === "circle") {
     ctx.beginPath();
     ctx.arc(0, 0, size / 2, 0, Math.PI * 2);
     ctx.fill();
@@ -134,13 +185,21 @@ function tick(dt) {
     p.y += p.vy * step;
     p.rotation += p.spin * step;
     const t = p.age / p.life;
-    const alpha = t < 0.7 ? 1 : Math.max(0, 1 - (t - 0.7) / 0.3);
+    let alpha =
+      p.fadeMode === "linear"
+        ? Math.max(0, 1 - t) * (p.peakAlpha ?? 1)
+        : t < 0.7
+          ? 1
+          : Math.max(0, 1 - (t - 0.7) / 0.3);
+    // A gentle shimmer on finale stars — reads as glinting rather than a
+    // plain fade, the extra bit of sparkle for the biggest win.
+    if (p.twinkle) alpha *= 0.6 + 0.4 * Math.sin(p.age / 90 + p.twinklePhase);
     ctx.save();
     ctx.translate(p.x, p.y);
     ctx.rotate(p.rotation);
-    ctx.globalAlpha = alpha;
+    ctx.globalAlpha = Math.max(0, alpha);
     ctx.fillStyle = p.color;
-    drawShape(p.shape, p.size);
+    drawShape(p.shape, p.size, p.color);
     ctx.restore();
   }
   if (particles.length === 0) {
@@ -166,9 +225,15 @@ function start() {
 // --- per-milestone shapes --------------------------------------------
 
 // The two safety nets (Q5, Q10) get a radial star burst from mid-screen —
-// a "badge unlocked" read rather than a falling one. The second is bigger,
+// a "badge unlocked" read rather than a falling one — in a single-hue
+// tonal set (marigold plus a lighter and a darker shade of it) so it
+// reads as visually distinct from every other milestone's green-and-
+// marigold mix. The second net is bigger and adds the darkest shade,
 // echoing how rungMessage() calls Q10's net the bigger of the two.
 function fireSafetyNet(pal, big) {
+  const colors = big
+    ? [pal.marigold, shade(pal.marigold, 0.45), shade(pal.marigold, -0.35)]
+    : [pal.marigold, shade(pal.marigold, 0.45)];
   addBurst({
     count: big ? 50 : 30,
     x: window.innerWidth / 2,
@@ -181,16 +246,19 @@ function fireSafetyNet(pal, big) {
     drag: 0.985,
     life: big ? 1600 : 1250,
     shapes: ["star"],
-    colors: big ? [pal.marigold, pal.green, pal.charcoal] : [pal.marigold, pal.green],
+    colors,
     sizeMin: big ? 11 : 9,
     sizeMax: big ? 18 : 14,
   });
 }
 
-// The three tier clears (Q4, Q8, Q12) get ribbon rain across the top edge,
-// widening and thickening with each tier — the ladder getting harder reads
-// as the celebration getting bigger too.
-function fireTierRain(pal, intensity) {
+// The three tier clears (Q4, Q8, Q12) get a spread of small ribbon bursts
+// across the width — contained on screen, not rain trailing off the
+// bottom edge (per Aasif's call, 2026-08-24: low gravity and drag keep
+// each burst hovering and fluttering near where it popped until it fades,
+// rather than falling out of view). Widens and thickens with each tier —
+// the ladder getting harder reads as the celebration getting bigger too.
+function fireTierBurst(pal, intensity) {
   const origins = 4 + intensity * 2;
   const colors =
     intensity === 3
@@ -200,16 +268,16 @@ function fireTierRain(pal, intensity) {
         : [pal.marigold, pal.charcoal];
   for (let i = 0; i < origins; i++) {
     addBurst({
-      count: 5 + intensity * 2,
+      count: 6 + intensity * 2,
       x: (window.innerWidth * (i + 0.5)) / origins,
-      y: -20,
-      angleMin: Math.PI * 0.35,
-      angleMax: Math.PI * 0.65,
-      speedMin: 1.5,
-      speedMax: 3.2,
-      gravity: 0.2,
-      drag: 0.998,
-      life: 1500 + intensity * 250,
+      y: window.innerHeight * (0.22 + (i % 2) * 0.14),
+      angleMin: 0,
+      angleMax: Math.PI * 2,
+      speedMin: 1,
+      speedMax: 2.4 + intensity * 0.3,
+      gravity: 0.045,
+      drag: 0.965,
+      life: 1300 + intensity * 200,
       shapes: ["ribbon"],
       colors,
       sizeMin: 7,
@@ -218,20 +286,23 @@ function fireTierRain(pal, intensity) {
   }
 }
 
-// One wave of the finale: three staggered radial bursts (a fireworks
-// cadence), using every shape and every colour in the palette.
-function fireFinaleWave(pal, delayOffset) {
-  [0.2, 0.5, 0.8].forEach((px, i) => {
+// One wave of the finale: five staggered radial bursts spread edge to
+// edge (a fireworks cadence), using every shape and every colour in the
+// palette, with a shimmer on top so the stars glint instead of just
+// fading. `boost` scales count/speed so a later wave can land bigger —
+// a crescendo rather than a repeat.
+function fireFinaleWave(pal, delayOffset, boost) {
+  [0.1, 0.3, 0.5, 0.7, 0.9].forEach((px, i) => {
     window.setTimeout(() => {
       ensureCanvas();
       addBurst({
-        count: 45,
+        count: Math.round(38 * boost),
         x: window.innerWidth * px,
-        y: window.innerHeight * (0.3 + (i % 2) * 0.1),
+        y: window.innerHeight * (0.26 + (i % 2) * 0.14),
         angleMin: 0,
         angleMax: Math.PI * 2,
         speedMin: 3.5,
-        speedMax: 8.5,
+        speedMax: 8.5 * boost,
         gravity: 0.07,
         drag: 0.985,
         life: 1900,
@@ -239,26 +310,30 @@ function fireFinaleWave(pal, delayOffset) {
         colors: [pal.marigold, pal.green, pal.charcoal],
         sizeMin: 7,
         sizeMax: 16,
+        twinkle: true,
       });
       start();
-    }, delayOffset + i * 260);
+    }, delayOffset + i * 170);
   });
 }
 
-// Clearing the whole ladder: two waves of the fireworks cadence above,
-// staggered 900ms apart, each riding its own rain layer — per Aasif's
-// call (2026-08-24), the finale reads as a bigger, more sustained
-// celebration rather than a single quick round. Longest-running, biggest
-// of the five.
+// Clearing the whole ladder: a flash of impact, then two waves of the
+// fireworks cadence above (the second bigger — a crescendo), each riding
+// its own tier-burst layer. Per Aasif's call (2026-08-24) — "should feel
+// like a phenomenal victory" — this is the biggest, longest, and only
+// type that flashes or twinkles. Longest-running of the five.
 function fireFinale(pal) {
-  fireTierRain(pal, 2);
-  fireFinaleWave(pal, 0);
+  ensureCanvas();
+  addFlash(pal);
+  fireTierBurst(pal, 2);
+  fireFinaleWave(pal, 0, 1);
   window.setTimeout(() => {
     ensureCanvas();
-    fireTierRain(pal, 2);
+    addFlash(pal);
+    fireTierBurst(pal, 2);
     start();
   }, 900);
-  fireFinaleWave(pal, 900);
+  fireFinaleWave(pal, 900, 1.3);
 }
 
 // --- public API --------------------------------------------------------
@@ -286,15 +361,15 @@ export function fireConfetti(type) {
       break;
     case "tier1":
       ensureCanvas();
-      fireTierRain(pal, 1);
+      fireTierBurst(pal, 1);
       break;
     case "tier2":
       ensureCanvas();
-      fireTierRain(pal, 2);
+      fireTierBurst(pal, 2);
       break;
     case "tier3":
       ensureCanvas();
-      fireTierRain(pal, 3);
+      fireTierBurst(pal, 3);
       break;
     case "finale":
       ensureCanvas();
