@@ -218,11 +218,9 @@ function fireTierRain(pal, intensity) {
   }
 }
 
-// Clearing the whole ladder: three staggered radial bursts (a fireworks
-// cadence) over a rain layer, using every shape and every colour in the
-// palette. Longest-running, biggest of the six.
-function fireFinale(pal) {
-  fireTierRain(pal, 2);
+// One wave of the finale: three staggered radial bursts (a fireworks
+// cadence), using every shape and every colour in the palette.
+function fireFinaleWave(pal, delayOffset) {
   [0.2, 0.5, 0.8].forEach((px, i) => {
     window.setTimeout(() => {
       ensureCanvas();
@@ -243,8 +241,24 @@ function fireFinale(pal) {
         sizeMax: 16,
       });
       start();
-    }, i * 260);
+    }, delayOffset + i * 260);
   });
+}
+
+// Clearing the whole ladder: two waves of the fireworks cadence above,
+// staggered 900ms apart, each riding its own rain layer — per Aasif's
+// call (2026-08-24), the finale reads as a bigger, more sustained
+// celebration rather than a single quick round. Longest-running, biggest
+// of the five.
+function fireFinale(pal) {
+  fireTierRain(pal, 2);
+  fireFinaleWave(pal, 0);
+  window.setTimeout(() => {
+    ensureCanvas();
+    fireTierRain(pal, 2);
+    start();
+  }, 900);
+  fireFinaleWave(pal, 900);
 }
 
 // --- public API --------------------------------------------------------
