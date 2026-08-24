@@ -4,6 +4,7 @@ import { drawShareCard, shareCardBlob, CARD_W, CARD_H } from "../../lib/shareCar
 import { stashGuestSession } from "../../lib/guestSessions.js";
 import { hasNote, moduleHasNotes } from "../../lib/noteSlugs.js";
 import { trackEvent } from "../../lib/analytics.js";
+import { fireConfetti } from "../../lib/confetti.js";
 import modulesData from "../../data/modules.json";
 
 const SITE_URL = "https://policywonkgame.aasifj.com";
@@ -124,6 +125,16 @@ export default function EndScreen({ state, onPlayAgain }) {
   const share = shareString(state);
   const postedRef = useRef(false);
   const trackedRef = useRef(false);
+  const finaleRef = useRef(false);
+
+  // The big finale burst for clearing all 15 rungs. Fires once on mount —
+  // rung-level confetti (GameContainer.jsx) never fires for rung 15 itself,
+  // since a won game skips the inter-rung message and lands straight here.
+  useEffect(() => {
+    if (finaleRef.current) return;
+    finaleRef.current = true;
+    if (state.status === "won") fireConfetti("finale");
+  }, [state]);
 
   // game_completed funnel event (#12). Fires once on the end screen, for
   // guests and logged-in players alike (no auth dependency) and carries no

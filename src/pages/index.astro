@@ -1,9 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import modules from "../data/modules.json";
 
 // TestFlight invitation for the native iOS build (PolicyWonk-iOS, a sibling
 // repo). Kept as a constant so the link appears once.
 const TESTFLIGHT_URL = "https://testflight.apple.com/join/AubAzGnh";
+
+// Counted, not hardcoded, so the homepage stat can't drift from the real
+// module list (#41 — the game shipped 11 topics and the homepage never
+// said so).
+const topicCount = modules.length;
 ---
 <BaseLayout title="Policy Wonk" zone="game">
   <section class="py-12 md:py-20 flex flex-col gap-12 md:gap-16">
@@ -16,7 +22,11 @@ const TESTFLIGHT_URL = "https://testflight.apple.com/join/AubAzGnh";
       </h1>
     </header>
 
-    <dl class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8 border-y border-[var(--color-border)] py-8">
+    <dl class="grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-8 border-y border-[var(--color-border)] py-8">
+      <div class="flex flex-col gap-1">
+        <dt class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Topics</dt>
+        <dd class="font-serif text-4xl md:text-5xl text-[var(--color-functional-marigold)] font-semibold">{topicCount}</dd>
+      </div>
       <div class="flex flex-col gap-1">
         <dt class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Questions</dt>
         <dd class="font-serif text-4xl md:text-5xl text-[var(--color-functional-marigold)] font-semibold">15</dd>

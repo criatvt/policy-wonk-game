@@ -29,6 +29,7 @@ import {
 import { findCorrectIndex, isCorrect } from "../../lib/answerHash.js";
 import { pickExpertLine } from "../../lib/expertPicker.js";
 import { trackEvent } from "../../lib/analytics.js";
+import { fireConfetti, typeForRung } from "../../lib/confetti.js";
 import Question from "./Question.jsx";
 import Ladder from "./Ladder.jsx";
 import Timer from "./Timer.jsx";
@@ -223,6 +224,20 @@ export default function GameContainer() {
   // replaying the typewriter and option fade-in — the player has already
   // read this question, re-typing it on refresh feels broken.
   const rehydratedRungRef = useRef(persisted?.state?.currentRung ?? null);
+
+  // Confetti on a fresh rung clear. Rung 15's win skips this (isLastRung
+  // never reaches "revealed-correct" with a rung message — see below) and
+  // fires its own "finale" burst from EndScreen instead. Guarded so a
+  // rehydrated reveal (page refresh mid-reveal) or a re-render doesn't
+  // replay the burst for a rung already celebrated.
+  const celebratedRungRef = useRef(0);
+  useEffect(() => {
+    if (state.status !== "revealed-correct") return;
+    if (rehydratedRungRef.current === state.currentRung) return;
+    if (celebratedRungRef.current === state.currentRung) return;
+    celebratedRungRef.current = state.currentRung;
+    fireConfetti(typeForRung(state.currentRung));
+  }, [state.status, state.currentRung]);
 
   // Compute the "next" screen after onboarding completes — RULES the first
   // time, MODULE_PICK on returning. Shared between manual onboarding
