@@ -1,9 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import modules from "../data/modules.json";
 
 // TestFlight invitation for the native iOS build (PolicyWonk-iOS, a sibling
 // repo). Kept as a constant so the link appears once.
 const TESTFLIGHT_URL = "https://testflight.apple.com/join/AubAzGnh";
+
+// Counted, not hardcoded, so the homepage stat can't drift from the real
+// module list (#41 — the game shipped 11 topics and the homepage never
+// said so).
+const topicCount = modules.length;
 ---
 <BaseLayout title="Policy Wonk" zone="game">
   <section class="py-12 md:py-20 flex flex-col gap-12 md:gap-16">
@@ -16,7 +22,11 @@ const TESTFLIGHT_URL = "https://testflight.apple.com/join/AubAzGnh";
       </h1>
     </header>
 
-    <dl class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8 border-y border-[var(--color-border)] py-8">
+    <dl class="grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-8 border-y border-[var(--color-border)] py-8">
+      <div class="flex flex-col gap-1">
+        <dt class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Topics</dt>
+        <dd class="font-serif text-4xl md:text-5xl text-[var(--color-functional-marigold)] font-semibold">{topicCount}</dd>
+      </div>
       <div class="flex flex-col gap-1">
         <dt class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">Questions</dt>
         <dd class="font-serif text-4xl md:text-5xl text-[var(--color-functional-marigold)] font-semibold">15</dd>
@@ -38,19 +48,14 @@ const TESTFLIGHT_URL = "https://testflight.apple.com/join/AubAzGnh";
     <div class="flex flex-col items-center gap-5">
       <a
         href="/play"
-        class="px-12 py-5 rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] text-[var(--color-bg)] text-xl font-semibold hover:opacity-90 transition-opacity"
+        class="btn-physical px-12 py-5 rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] text-[var(--color-bg)] text-xl font-semibold"
       >
-        Play →
+        Play
       </a>
+      {/* One line only (2026-08-24) — the two paragraphs of audience and
+          sourcing prose moved out; the footer credit covers provenance. */}
       <p class="text-sm text-[var(--color-text-muted)] max-w-md text-center leading-relaxed">
-        Best played on a desktop or laptop. The ladder and the lifelines want room to breathe.
-        <br />
-        On a phone, try the iOS app below.
-      </p>
-      <p class="text-sm text-[var(--color-text-muted)] max-w-md text-center leading-relaxed">
-        For The Takshashila Institution alumni, students, and the policy curious.
-        <br />
-        Built on alumni notes, GCPP study material, and publicly available information.
+        Best on a big screen. On a phone, try the iOS app below.
       </p>
     </div>
 
@@ -71,8 +76,12 @@ const TESTFLIGHT_URL = "https://testflight.apple.com/join/AubAzGnh";
         href={TESTFLIGHT_URL}
         target="_blank"
         rel="noopener noreferrer"
-        class="self-start px-6 py-3 rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] text-[var(--color-bg)] text-sm font-semibold hover:opacity-90 transition-opacity"
+        class="btn-physical self-start inline-flex items-center gap-2 px-6 py-3 rounded-[var(--radius-cta)] bg-[var(--color-charcoal)] text-[var(--color-bg)] text-sm font-semibold"
       >
+        {/* Apple mark, drawn inline so it inherits currentColor in both themes. */}
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08ZM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25Z" />
+        </svg>
         Check it out on TestFlight →
       </a>
 
@@ -92,33 +101,6 @@ const TESTFLIGHT_URL = "https://testflight.apple.com/join/AubAzGnh";
       </details>
     </section>
 
-    <section class="flex flex-col gap-3 border-t border-[var(--color-border)] pt-6">
-      <h2 class="text-xs uppercase tracking-widest text-[var(--color-text-muted)]">What's new</h2>
-      <ul class="flex flex-col gap-3 list-none p-0 m-0">
-        <li class="flex flex-col gap-0.5">
-          <p class="font-serif text-base text-[var(--color-text)]">Ask Your Professor ✨</p>
-          <p class="text-sm text-[var(--color-text-soft)]">
-            The “Ask an AI” lifeline is now Ask Your Professor. Professor Takshi lectures you a little, then points you to the right answer. Lifelines unlock from Q6.
-          </p>
-        </li>
-        <li class="flex flex-col gap-0.5">
-          <p class="font-serif text-base text-[var(--color-text)]">
-            <a href="/notes" class="underline decoration-2 underline-offset-2 hover:opacity-80">Revision notes →</a>
-          </p>
-          <p class="text-sm text-[var(--color-text-soft)]">
-            Per-topic notes for all eleven modules. Notes for a module unlock once you complete a quiz on it.
-          </p>
-        </li>
-        <li class="flex flex-col gap-0.5">
-          <p class="font-serif text-base text-[var(--color-text)]">
-            <a href="/login" class="underline decoration-2 underline-offset-2 hover:opacity-80">Optional sign in →</a>
-          </p>
-          <p class="text-sm text-[var(--color-text-soft)]">
-            Save your play history, unlock notes per module, pick a nickname. Sign in by email link, with no passwords. Guests remain first class.
-          </p>
-        </li>
-      </ul>
-    </section>
   </section>
 </BaseLayout>
 

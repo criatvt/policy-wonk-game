@@ -2,7 +2,7 @@
 #
 # Three environments:
 #   - top-level (no [env.<name>] block) → `wrangler pages dev`, local development
-#   - [env.preview]                     → preview deploys (phase-1 branch, PR previews)
+#   - [env.preview]                     → preview deploys (dev branch, PR previews)
 #   - [env.production]                  → production deploys (main branch only)
 #
 # Each env binds its own D1 database and KV namespace so preview/dev can never
@@ -49,7 +49,7 @@ ENV = "dev"
 ADMIN_EMAILS = "aasif@aasifj.com"
 EMAIL_FROM = "noreply@policywonkgame.aasifj.com"
 
-# ---------- preview (phase-N branches, PR previews) ----------
+# ---------- preview (dev branch, PR previews) ----------
 
 [env.preview]
 

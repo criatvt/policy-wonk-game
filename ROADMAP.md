@@ -14,7 +14,7 @@ Phase 2+ items are stack-ranked here but the ordering is **draft** — to be con
 
 ## Phase 1 — Notes + Accounts (frozen 2026-05-17, shipped 2026-05-19)
 
-**Status:** substantially shipped. Tracks A, B, C complete; Track D (admin panel) deferred. See [`CHANGELOG.md`](policy-wonk-game/CHANGELOG.md#020--2026-05-19--phase-1-notes--accounts) for the per-feature summary and known issues.
+**Status:** shipped. Tracks A, B, C, and D (admin panel, v0.3.0) are all complete. See [`CHANGELOG.md`](./CHANGELOG.md#020--2026-05-19--phase-1-notes--accounts) for the per-feature summary and known issues.
 
 **Goal:** unlock the learning loop. Players who get questions wrong can revise via notes; their progress saves across sessions if they log in. Guest play stays fully open and first-class.
 

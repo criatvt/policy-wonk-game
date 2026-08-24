@@ -72,6 +72,34 @@
   --shadow-cta-pressed: 0 2px 4px rgb(0 0 0 / 0.08);
 }
 
+/* Physical CTA. Resting state sits proud of the page on the CTA drop
+   shadow; hover lifts it a hair; :active sinks it and tightens the shadow
+   so the press reads as travel, like WonkPrimaryButton's pressed scale on
+   iOS. The inset highlight is a light catch on the top edge — it's what
+   sells the "raised object" read on an otherwise flat charcoal fill. */
+.btn-physical {
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.18),
+    var(--shadow-cta);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.btn-physical:hover {
+  transform: translateY(-1px);
+}
+.btn-physical:active {
+  transform: translateY(2px);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.1),
+    var(--shadow-cta-pressed);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-physical,
+  .btn-physical:hover,
+  .btn-physical:active {
+    transform: none;
+  }
+}
+
 /* --- Dark palette -------------------------------------------------------
    Values from iOS Theme.swift. The functional trio brightens in the dark so
    it stays legible against a near-black ground; the base palette inverts.
