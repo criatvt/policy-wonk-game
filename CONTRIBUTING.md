@@ -9,7 +9,7 @@ Policy Wonk is open source under CC BY-NC 4.0. This doc explains the development
   ```sh
   gh issue list -l phase-1
   ```
-- **Non-negotiable rules** (style, originality, gating) live in `../CLAUDE.md` (outside this repo, in the project parent folder).
+- **Non-negotiable rules** (design guardrails, the release checklist, gotchas) live in [`CLAUDE.md`](./CLAUDE.md) at the repo root. Claude Code loads it automatically at the start of every session; read it first if you're working here by hand.
 
 ## Branching model
 
