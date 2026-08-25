@@ -55,9 +55,9 @@
     "question": "What does Westphalian sovereignty emphasize?",
     "options": [
       "State autonomy and non-interference in internal affairs",
-      "The supremacy of international institutions",
-      "The sovereignty of monarchs over citizens",
-      "The primacy of religious authority"
+      "The supremacy of international bodies over national governments",
+      "The sovereignty of monarchs over citizens and their territories",
+      "The primacy of religious authority over secular political rule"
     ],
     "correctIndex": 0,
     "explanation": "Westphalian sovereignty, emerging from the 1648 Peace of Westphalia, established the principle of state territorial autonomy and non-interference by other states in internal matters.",
@@ -71,9 +71,9 @@
     "question": "What is the key distinction of liberal nationalism?",
     "options": [
       "It seeks to combine national identity with individual rights and democratic governance",
-      "It prioritizes cultural purity over individual freedoms",
-      "It rejects all forms of national identity",
-      "It advocates for empire-building"
+      "It prioritizes cultural purity and ethnic homogeneity over individual freedoms and rights",
+      "It rejects all forms of national identity in favour of pure cosmopolitan internationalism",
+      "It advocates for empire-building and the forced assimilation of subject peoples"
     ],
     "correctIndex": 0,
     "explanation": "Liberal nationalism seeks to reconcile the bonds of national community with liberal principles of individual rights, democratic representation, and limited government.",
@@ -167,9 +167,9 @@
     "question": "What is the relationship between de jure and de facto sovereignty?",
     "options": [
       "A state may hold legal sovereignty while lacking practical control of its territory",
-      "Legal (de jure) sovereignty always guarantees actual (de facto) control",
-      "Only de facto sovereignty is recognized under international law",
-      "De jure sovereignty applies to monarchies, de facto to republics"
+      "Legal (de jure) sovereignty always guarantees actual and effective control on the ground",
+      "Only de facto sovereignty, not de jure, is recognised as valid under international law",
+      "De jure sovereignty applies strictly to monarchies, while de facto applies to republics"
     ],
     "correctIndex": 0,
     "explanation": "States may formally claim sovereignty (de jure) while facing practical constraints (de facto) on their ability to control territory and population.",

@@ -3,21 +3,25 @@ title: "Culture & Society: overview"
 module: "cg-1"
 moduleName: "Culture & Society"
 order: 0
-summary: "How culture shapes what humans do — and how technology, in turn, reshapes culture."
+summary: "A historic perspective on culture and technology: what culture is, how it is layered and transmitted, and how it interacts with technology, governance and geopolitics."
 ---
 
 # Culture & Society
 
-This module looks at culture as the operating system humans run on: the shared beliefs, symbols, values, and practices that make large-scale cooperation possible. It then turns to technology, which both grows out of culture and changes it — sometimes faster than the society can absorb. The throughline is that neither culture nor technology is neutral, and policy that ignores cultural fit tends to fail no matter how technically sound it is.
+This module traces a single argument across a very long timeline, from the Big Bang to artificial intelligence: biological evolution is too slow to explain how human societies actually change, so culture stepped in as a faster, learned "operating system" for survival. From there the module builds outward, first into what culture is and how it is structured, then into how culture and technology shape each other, and finally into what all of this means for governance, policy and statecraft.
+
+The material is drawn from a single course deck on culture and technology, read alongside the module's question bank, which pushes the framework into concrete policy scenarios: why technically superior technologies sometimes fail, why development aid runs into cultural resistance, and why "every technology has a program, agenda and philosophy" is a governance principle and not just a slogan.
 
 Topics in this module:
 
-- **What culture is and how it shows up** — the working definition and its visible manifestations.
-- **Cultural determinism** — the claim that human nature is mostly learned, and the debate it generates.
-- **Layers of culture** — why a single person carries many cultural identities at once.
-- **Culture and technology** — how each shapes the other.
-- **Cultural revolutions in human history** — Cognitive, Agricultural, Scientific, Industrial.
-- **How technologies get adopted (and rejected)** — the awareness-evaluation-adoption pathway.
-- **The subjectivity problem** — why technology resists human ambiguity.
-- **The human-machine transition** — what changes when machines start to look like minds.
-- **Technology, politics, and policy** — every technology carries an agenda.
+- **Culture definitions and symbols**: what culture is, and how it is transmitted through values, rituals, heroes, symbols and practices.
+- **Cultural determinism**: the theory that learned ideas and values, not biology, shape human nature, and its optimistic and pessimistic versions.
+- **Layers of culture**: the national, regional, gender, generational, social and corporate layers that coexist within one person.
+- **A history of human cooperation**: the Cognitive Revolution, the Agricultural Revolution and the Industrial Revolution as turning points in how humans organise.
+- **Culture as an evolutionary accelerant**: why culture, not genetics, explains the pace and diversity of human change.
+- **Technology and sociocultural adoption**: what technology is, and the awareness-evaluation-adoption pathway that determines whether it is accepted.
+- **Culture and technology in tension**: culture as the filter that selects and rejects technologies, and what gets devalued when technical calculation replaces human judgement.
+- **Technology and the problem of subjectivity**: why technique treats human ambiguity and diversity as obstacles to be engineered away.
+- **The human-machine transition**: the sequence from "humans are not machines" to "machines are sentient", and the institutional gaps it exposes.
+- **Technology, power and governance**: technological authoritarianism, regulation, and the case for scrutinising every technology's embedded agenda.
+- **Geopolitics and the STRATEGY Bridge**: how cultural disposition, interests and instruments of power combine in modern statecraft.

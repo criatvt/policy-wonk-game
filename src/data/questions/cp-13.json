@@ -86,10 +86,10 @@
     "difficulty": "easy",
     "question": "Which situation illustrates a market failure that justifies government intervention?",
     "options": [
-      "A business increases its prices when demand rises",
+      "A business raises its prices when demand for its product increases sharply",
       "A factory pollutes a river, harming people who did not purchase its products",
-      "A company earns high profits from a popular product",
-      "Consumers choose cheaper alternatives over expensive ones"
+      "A company earns high profits because its product is genuinely popular with buyers",
+      "Consumers switch to cheaper alternatives when a product becomes too expensive"
     ],
     "correctIndex": 1,
     "explanation": "Market failures occur when markets cannot efficiently allocate resources or when benefits/costs spill over to people not involved in the transaction. Pollution is a classic example of a negative externality that justifies government intervention.",
@@ -166,10 +166,10 @@
     "difficulty": "easy",
     "question": "What is a regulating instrument in policy design?",
     "options": [
-      "An instrument that shifts behaviour by taxing or subsidising an activity",
+      "An instrument that shifts behaviour indirectly by taxing or subsidising an activity",
       "An instrument that directly controls activities by imposing requirements or restrictions",
-      "An instrument that guides behaviour by informing and persuading citizens",
-      "An instrument that creates tradable rights to allocate resources via markets"
+      "An instrument that guides behaviour by informing and persuading citizens to change habits",
+      "An instrument that creates tradable rights to allocate scarce resources through markets"
     ],
     "correctIndex": 1,
     "explanation": "Regulating instruments directly intervene in activities through requirements (like mandatory technologies, emission limits, or performance standards) to influence behavior and outcomes.",
@@ -471,9 +471,9 @@
     "question": "What does 'ceteris paribus' mean in policy analysis?",
     "options": [
       "Other things being equal; holding other variables constant",
-      "All things being equal in every way",
-      "Using examples from other countries",
-      "Making assumptions about future changes"
+      "All things being equal in every possible respect, without exception",
+      "Using comparative examples drawn from other countries' policies",
+      "Making explicit assumptions about how conditions will change in future"
     ],
     "correctIndex": 0,
     "explanation": "Ceteris paribus means 'other things being equal'—a standard assumption in analysis that allows us to isolate the effect of one change by holding everything else constant.",
@@ -759,9 +759,9 @@
     "question": "The Delhi Metro critique illustrates a recurring problem in infrastructure policy evaluation: benefits are public and diffuse while costs are concentrated and immediate. What does this asymmetry imply for how project evaluations should be structured?",
     "options": [
       "Evaluations must explicitly measure diffuse public benefits — congestion relief, environmental gains, and agglomeration effects — or they will systematically undervalue infrastructure",
-      "Diffuse public benefits are unmeasurable in practice, so evaluations should focus on quantifiable financial returns and leave social value judgments to elected officials",
-      "The asymmetry is a market failure resolved by full privatisation, which forces projects to capture and price the benefits they generate rather than relying on subsidies",
-      "Concentrated costs dominate political salience regardless of evaluation methodology, so better measurement cannot meaningfully shift decisions on infrastructure investment"
+      "Diffuse public benefits are unmeasurable in practice, so evaluations should focus narrowly on quantifiable financial returns and leave social value judgments to elected officials",
+      "The asymmetry is a market failure best resolved by full privatisation, which forces projects to capture and price the benefits they generate rather than relying on public subsidies",
+      "Concentrated costs dominate political salience regardless of evaluation methodology, so better measurement alone cannot meaningfully shift decisions on infrastructure investment"
     ],
     "correctIndex": 0,
     "explanation": "If evaluations measure only costs (which are concentrated and visible) but fail to measure diffuse benefits (which are real but hard to count), the analysis is systematically biased against public goods — producing under-investment relative to the social optimum.",

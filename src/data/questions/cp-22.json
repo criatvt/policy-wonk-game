@@ -2,7 +2,7 @@
   {
     "id": "cp22-q001",
     "module": "cp-22",
-    "topic": "price-signals",
+    "topic": "Prices as Signals",
     "difficulty": "easy",
     "question": "What is a price signal in economics?",
     "options": [
@@ -18,7 +18,7 @@
   {
     "id": "cp22-q002",
     "module": "cp-22",
-    "topic": "price-mechanism",
+    "topic": "Producer Response to the Oil Shock",
     "difficulty": "easy",
     "question": "How did the rise in oil prices in the 1970s affect rose production?",
     "options": [
@@ -34,7 +34,7 @@
   {
     "id": "cp22-q003",
     "module": "cp-22",
-    "topic": "decentralized-coordination",
+    "topic": "Decentralised Coordination and the Invisible Hand",
     "difficulty": "medium",
     "question": "Why did Kenyan farmers increase rose production without knowing about oil scarcity?",
     "options": [
@@ -50,7 +50,7 @@
   {
     "id": "cp22-q004",
     "module": "cp-22",
-    "topic": "price-information",
+    "topic": "Hayek and the Knowledge Problem",
     "difficulty": "medium",
     "question": "What information is contained in the price system that no single person could have?",
     "options": [
@@ -66,7 +66,7 @@
   {
     "id": "cp22-q005",
     "module": "cp-22",
-    "topic": "opportunity-cost",
+    "topic": "Opportunity Cost",
     "difficulty": "easy",
     "question": "In the context of the oil crisis and roses, what was one economically rational response to high oil prices?",
     "options": [
@@ -82,14 +82,14 @@
   {
     "id": "cp22-q006",
     "module": "cp-22",
-    "topic": "sunk-costs",
+    "topic": "The Sunk Cost Fallacy",
     "difficulty": "easy",
     "question": "What is a sunk cost?",
     "options": [
-      "The total revenue a business has earned",
+      "A fixed cost that a business must keep paying every period, regardless of output or sales",
       "A cost that has been incurred and cannot be recovered, and should not affect future decisions",
-      "The cost of building something new",
-      "A government tax on businesses"
+      "The value of the best alternative a business gives up when it chooses one investment over another",
+      "A tax a government levies on business profits, which reduces the return on a completed project"
     ],
     "correctIndex": 1,
     "explanation": "Sunk costs are past expenditures that cannot be recovered. Rational decision-making should ignore sunk costs and focus only on future costs and benefits. Many businesses fail because they do not abandon bad investments due to sunk cost fallacy.",
@@ -98,7 +98,7 @@
   {
     "id": "cp22-q007",
     "module": "cp-22",
-    "topic": "sunk-cost-fallacy",
+    "topic": "The Sunk Cost Fallacy",
     "difficulty": "medium",
     "question": "Why do businesses sometimes continue investing in failing projects?",
     "options": [
@@ -114,7 +114,7 @@
   {
     "id": "cp22-q008",
     "module": "cp-22",
-    "topic": "price-role",
+    "topic": "How Prices Allocate Resources",
     "difficulty": "medium",
     "question": "What role does price play in determining how society allocates scarce resources?",
     "options": [
@@ -130,7 +130,7 @@
   {
     "id": "cp22-q009",
     "module": "cp-22",
-    "topic": "market-coordination",
+    "topic": "Decentralised Coordination and the Invisible Hand",
     "difficulty": "hard",
     "question": "Why is the price system described as 'the invisible hand in action'?",
     "options": [
@@ -146,7 +146,7 @@
   {
     "id": "cp22-q010",
     "module": "cp-22",
-    "topic": "information-scarcity",
+    "topic": "Decentralised Coordination and the Invisible Hand",
     "difficulty": "hard",
     "question": "What does the Kenyan rose farmer example demonstrate about information and incentives?",
     "options": [
@@ -162,7 +162,7 @@
   {
     "id": "cp22-q011",
     "module": "cp-22",
-    "topic": "opportunity-cost",
+    "topic": "Opportunity Cost",
     "difficulty": "medium",
     "question": "What was the opportunity cost to consumers of the oil price increase affecting rose prices?",
     "options": [
@@ -178,7 +178,7 @@
   {
     "id": "cp22-q012",
     "module": "cp-22",
-    "topic": "business-failure",
+    "topic": "When Businesses Miss the Signal",
     "difficulty": "medium",
     "question": "What common business mistake led to the failure of Gerald Ratner's jewelry business?",
     "options": [
@@ -194,7 +194,7 @@
   {
     "id": "cp22-q013",
     "module": "cp-22",
-    "topic": "concealing-losses",
+    "topic": "Information Concealment and Business Collapse",
     "difficulty": "hard",
     "question": "Why did Nick Leeson's concealment of losses at Barings Bank make the eventual collapse worse?",
     "options": [
@@ -210,7 +210,7 @@
   {
     "id": "cp22-q014",
     "module": "cp-22",
-    "topic": "price-as-signal",
+    "topic": "Prices as Signals",
     "difficulty": "medium",
     "question": "How does price communicate quality and value to consumers?",
     "options": [
@@ -226,7 +226,7 @@
   {
     "id": "cp22-q015",
     "module": "cp-22",
-    "topic": "marginal-decision",
+    "topic": "Opportunity Cost",
     "difficulty": "easy",
     "question": "When rose prices increased, what was the marginal decision consumers faced?",
     "options": [
@@ -242,7 +242,7 @@
   {
     "id": "cp22-q016",
     "module": "cp-22",
-    "topic": "information-prices",
+    "topic": "The Price System as Emergent Order",
     "difficulty": "hard",
     "question": "What is remarkable about the price system's efficiency in the oil-rose example?",
     "options": [
@@ -258,7 +258,7 @@
   {
     "id": "cp22-q017",
     "module": "cp-22",
-    "topic": "sunk-costs",
+    "topic": "Sunk Costs in Practice",
     "difficulty": "medium",
     "question": "Why is the Titanic's poor construction quality an example of a sunk cost problem?",
     "options": [
@@ -274,7 +274,7 @@
   {
     "id": "cp22-q018",
     "module": "cp-22",
-    "topic": "business-innovation",
+    "topic": "Producer Response to the Oil Shock",
     "difficulty": "medium",
     "question": "What did entrepreneurs recognize in response to high oil prices?",
     "options": [
@@ -290,7 +290,7 @@
   {
     "id": "cp22-q019",
     "module": "cp-22",
-    "topic": "consumer-behavior",
+    "topic": "Consumer Response to the Oil Shock",
     "difficulty": "easy",
     "question": "What behavioral response demonstrates how prices influence consumption?",
     "options": [
@@ -306,7 +306,7 @@
   {
     "id": "cp22-q020",
     "module": "cp-22",
-    "topic": "competitive-advantage",
+    "topic": "Information Concealment and Business Collapse",
     "difficulty": "hard",
     "question": "Why did Nokia fail despite once being a global technology leader?",
     "options": [
@@ -322,7 +322,7 @@
   {
     "id": "cp22-q021",
     "module": "cp-22",
-    "topic": "price-discovery",
+    "topic": "How Prices Allocate Resources",
     "difficulty": "medium",
     "question": "How does the price system 'discover' where resources are most valued?",
     "options": [
@@ -338,7 +338,7 @@
   {
     "id": "cp22-q022",
     "module": "cp-22",
-    "topic": "sunk-cost-fallacy",
+    "topic": "Sunk Costs in Practice",
     "difficulty": "hard",
     "question": "How did Toys 'R' Us's partnership with Amazon exemplify poor decision-making?",
     "options": [
@@ -354,7 +354,7 @@
   {
     "id": "cp22-q023",
     "module": "cp-22",
-    "topic": "price-expectations",
+    "topic": "When Businesses Miss the Signal",
     "difficulty": "medium",
     "question": "Why did the 2008 financial crisis occur despite warning signs?",
     "options": [
@@ -370,7 +370,7 @@
   {
     "id": "cp22-q024",
     "module": "cp-22",
-    "topic": "dispersed-knowledge",
+    "topic": "The Price System as Emergent Order",
     "difficulty": "hard",
     "question": "What does the rose example teach about the limits of central planning?",
     "options": [
@@ -386,7 +386,7 @@
   {
     "id": "cp22-q025",
     "module": "cp-22",
-    "topic": "scarcity-response",
+    "topic": "How Prices Allocate Resources",
     "difficulty": "easy",
     "question": "In the context of price signals, what is the fundamental economic problem being solved?",
     "options": [
@@ -402,7 +402,7 @@
   {
     "id": "cp22-q026",
     "module": "cp-22",
-    "topic": "business-failure-patterns",
+    "topic": "Information Concealment and Business Collapse",
     "difficulty": "hard",
     "question": "What common pattern appears in many business failures?",
     "options": [
@@ -418,7 +418,7 @@
   {
     "id": "cp22-q027",
     "module": "cp-22",
-    "topic": "price-as-signal",
+    "topic": "How Prices Allocate Resources",
     "difficulty": "medium",
     "question": "What does a rising price tell producers in a market economy?",
     "options": [
@@ -434,7 +434,7 @@
   {
     "id": "cp22-q028",
     "module": "cp-22",
-    "topic": "specialization",
+    "topic": "Producer Response to the Oil Shock",
     "difficulty": "medium",
     "question": "Why did rose production shift from New Jersey greenhouses to Kenya and Ecuador?",
     "options": [
@@ -450,7 +450,7 @@
   {
     "id": "cp22-q029",
     "module": "cp-22",
-    "topic": "market-failure",
+    "topic": "Information Concealment and Business Collapse",
     "difficulty": "hard",
     "question": "What role did concealed information play in the Barings Bank collapse?",
     "options": [
@@ -466,14 +466,14 @@
   {
     "id": "cp22-q030",
     "module": "cp-22",
-    "topic": "prices-coordination",
+    "topic": "Decentralised Coordination and the Invisible Hand",
     "difficulty": "easy",
     "question": "How does the price of roses coordinate decisions between oil producers, farmers, and consumers?",
     "options": [
-      "A central agency collects each group's plans and issues binding output targets",
-      "The three groups negotiate directly with one another over prices and quantities",
+      "A central planning agency collects each group's plans and issues binding output targets for them",
+      "The three groups meet directly and negotiate prices and quantities through formal bargaining sessions",
       "Through a mechanism where each group responds to price signals without needing to communicate",
-      "Producers set output first and consumers simply accept whatever is supplied"
+      "Producers decide their output levels first, and consumers simply accept whatever is supplied to them"
     ],
     "correctIndex": 2,
     "explanation": "Oil producers respond to oil prices, rose farmers respond to rose prices, and consumers respond to rose prices. No coordination is required; each pursues self-interest while responding to prices, producing efficient outcomes.",
@@ -482,7 +482,7 @@
   {
     "id": "cp22-q031",
     "module": "cp-22",
-    "topic": "business-adaptation",
+    "topic": "When Businesses Miss the Signal",
     "difficulty": "medium",
     "question": "Why did Thomas Cook fail despite inventing mass tourism?",
     "options": [
@@ -498,7 +498,7 @@
   {
     "id": "cp22-q032",
     "module": "cp-22",
-    "topic": "information-efficiency",
+    "topic": "The Price System as Emergent Order",
     "difficulty": "hard",
     "question": "In what sense can the price system meaningfully be described as 'a scientific mystery'?",
     "options": [
@@ -514,7 +514,7 @@
   {
     "id": "cp22-q033",
     "module": "cp-22",
-    "topic": "consumer-alternatives",
+    "topic": "Consumer Response to the Oil Shock",
     "difficulty": "medium",
     "question": "What rational choices did consumers make when rose prices increased?",
     "options": [
@@ -530,7 +530,7 @@
   {
     "id": "cp22-q034",
     "module": "cp-22",
-    "topic": "management-information",
+    "topic": "Information Concealment and Business Collapse",
     "difficulty": "hard",
     "question": "What management failure characterized both Leeson's concealment and Nokia's silence about Symbian?",
     "options": [
@@ -546,14 +546,14 @@
   {
     "id": "cp22-q035",
     "module": "cp-22",
-    "topic": "market-response",
+    "topic": "Decentralised Coordination and the Invisible Hand",
     "difficulty": "easy",
     "question": "What was remarkable about how the market responded to the oil price shock?",
     "options": [
-      "A central authority stepped in to plan the reallocation of resources",
-      "Producers and consumers held their behavior steady until prices normalized",
+      "A central planning authority stepped in and directed the reallocation of resources across the economy",
+      "Producers and consumers held their behaviour steady and waited for prices to normalise on their own",
       "Complex adaptation occurred through decentralized decisions responding to price signals",
-      "A few large firms coordinated the whole industry's response to the shock"
+      "A few large dominant firms coordinated the whole industry's collective response to the price shock"
     ],
     "correctIndex": 2,
     "explanation": "The oil shock created a complex global reallocation of resources—new farms, new infrastructure, new consumption patterns—all coordinated through price signals without central planning or direct communication.",
@@ -562,7 +562,7 @@
   {
     "id": "cp22-q036",
     "module": "cp-22",
-    "topic": "profit-motive",
+    "topic": "Producer Response to the Oil Shock",
     "difficulty": "medium",
     "question": "How did profit incentives solve the scarcity problem in rose production?",
     "options": [
@@ -578,7 +578,7 @@
   {
     "id": "cp22-q037",
     "module": "cp-22",
-    "topic": "adjustment-mechanisms",
+    "topic": "How Prices Allocate Resources",
     "difficulty": "hard",
     "question": "What is the relationship between price changes and long-term supply adjustment?",
     "options": [
@@ -594,7 +594,7 @@
   {
     "id": "cp22-q038",
     "module": "cp-22",
-    "topic": "transparency-failure",
+    "topic": "Information Concealment and Business Collapse",
     "difficulty": "medium",
     "question": "How do information failures lead to business collapse?",
     "options": [
@@ -610,7 +610,7 @@
   {
     "id": "cp22-q039",
     "module": "cp-22",
-    "topic": "price-efficiency",
+    "topic": "Hayek and the Knowledge Problem",
     "difficulty": "hard",
     "question": "Why is the price system more efficient than having a planner decide resource allocation?",
     "options": [
@@ -626,7 +626,7 @@
   {
     "id": "cp22-q040",
     "module": "cp-22",
-    "topic": "creative-response",
+    "topic": "Consumer Response to the Oil Shock",
     "difficulty": "hard",
     "question": "What does the variety of responses to the oil price increase demonstrate about economic incentives?",
     "options": [
@@ -642,7 +642,7 @@
   {
     "id": "cp22-q041",
     "module": "cp-22",
-    "topic": "price-signals",
+    "topic": "Hayek and the Knowledge Problem",
     "difficulty": "expert",
     "question": "The price system aggregates dispersed knowledge that no central authority could ever gather in one place. What does this imply for the design of socialist or command planning systems?",
     "options": [
@@ -658,7 +658,7 @@
   {
     "id": "cp22-q042",
     "module": "cp-22",
-    "topic": "sunk-costs",
+    "topic": "The Sunk Cost Fallacy",
     "difficulty": "expert",
     "question": "The sunk cost fallacy leads organizations to continue investing in failing projects because of past expenditure. Why is the fallacy particularly dangerous in government policy contexts?",
     "options": [
@@ -674,7 +674,7 @@
   {
     "id": "cp22-q043",
     "module": "cp-22",
-    "topic": "price-signals",
+    "topic": "Decentralised Coordination and the Invisible Hand",
     "difficulty": "expert",
     "question": "The Kenyan farmers responding to changes in oil prices without knowing about oil markets illustrates a profound property of the price system. What is that property, and what are its limits?",
     "options": [
@@ -690,7 +690,7 @@
   {
     "id": "cp22-q044",
     "module": "cp-22",
-    "topic": "opportunity-cost",
+    "topic": "Opportunity Cost",
     "difficulty": "expert",
     "question": "Opportunity cost implies that using a resource for one purpose necessarily forecloses other uses. Why does failing to account for opportunity cost lead governments to systematically underestimate the true cost of public programs?",
     "options": [
@@ -706,7 +706,7 @@
   {
     "id": "cp22-q045",
     "module": "cp-22",
-    "topic": "price-signals",
+    "topic": "Prices as Signals",
     "difficulty": "expert",
     "question": "Price controls are often introduced to protect consumers from high prices. What does the economics of price signals suggest will systematically happen to supply when prices are held below market-clearing levels?",
     "options": [
@@ -722,7 +722,7 @@
   {
     "id": "cp22-q046",
     "module": "cp-22",
-    "topic": "price-signals",
+    "topic": "The Price System as Emergent Order",
     "difficulty": "expert",
     "question": "The 'I, Rose' essay (after Leonard Read's 'I, Pencil') demonstrates that no individual or organization possesses the knowledge to plan the entire supply chain of even a simple product. What does this reveal about the limits of industrial policy?",
     "options": [
@@ -738,7 +738,7 @@
   {
     "id": "cp22-q047",
     "module": "cp-22",
-    "topic": "sunk-costs",
+    "topic": "Sunk Costs in Practice",
     "difficulty": "expert",
     "question": "The Titanic and Evergrande cases both illustrate how sunk cost reasoning can accelerate catastrophic failure. What common institutional feature allows sunk cost logic to override rational decision-making in both private and public contexts?",
     "options": [
@@ -754,7 +754,7 @@
   {
     "id": "cp22-q048",
     "module": "cp-22",
-    "topic": "price-signals",
+    "topic": "Prices as Signals",
     "difficulty": "expert",
     "question": "Prices coordinate economic activity through decentralized signals, but externalities mean that market prices often fail to reflect the full social cost of production or consumption. What does this imply for the design of carbon pricing mechanisms?",
     "options": [

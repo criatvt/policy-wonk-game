@@ -52,9 +52,9 @@
     "question": "What is framing in policy communication?",
     "options": [
       "Presenting the same policy in different ways that shape public perception",
-      "Structuring a document so its key provisions stand out",
-      "Restating a policy in simpler language for general audiences",
-      "Setting the boundaries of what a policy will and won't cover"
+      "Structuring a policy document so its key provisions stand out to readers and reviewers",
+      "Restating a policy in simpler, plain language so general audiences can follow it",
+      "Setting out the precise boundaries of what a policy will and will not cover"
     ],
     "correctIndex": 0,
     "explanation": "Framing affects how people interpret information. A tax increase can be framed as 'necessary for schools' (positive) or 'burden on families' (negative)—same policy, different frames, different responses."
@@ -82,9 +82,9 @@
     "question": "What role does media play in policy communication?",
     "options": [
       "Media translates and amplifies policy information to broader public audiences",
-      "Media controls all government policy decisions",
-      "Media only reports facts with no interpretation",
-      "Media has no influence on how policy is understood"
+      "Media controls all government policy decisions, overriding elected officials outright",
+      "Media only reports facts with no interpretation, framing or added commentary at all",
+      "Media has no influence on how policy is understood, however a story gets covered"
     ],
     "correctIndex": 0,
     "explanation": "Media serves as the primary channel between policymakers and public. Journalists interpret, contextualize, and amplify policy announcements. Good media relations can clarify; poor ones create confusion or misinformation."

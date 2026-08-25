@@ -22,9 +22,9 @@
     "question": "What distinguishes strategy from tactics?",
     "options": [
       "Strategy sets long-term goals; tactics handle the immediate engagements that serve them",
-      "Strategy governs peacetime policy while tactics apply only once war begins",
-      "Strategy is decided by generals while tactics are set by political leaders",
-      "Strategy concerns defence while tactics concern offensive operations"
+      "Strategy governs peacetime policy, and tactics only take over once open war has actually begun",
+      "Strategy is decided by senior generals, while tactics are left to elected political leaders to set",
+      "Strategy concerns purely defensive planning, while tactics concern only offensive combat operations"
     ],
     "correctIndex": 0,
     "explanation": "A strategic objective might be 'establish control of a region.' Tactics are the specific maneuvers—which units move where, timing, formations. Good tactics serve bad strategy; bad tactics undermine good strategy."
@@ -52,9 +52,9 @@
     "question": "What is national interest?",
     "options": [
       "A state's core objectives of survival, prosperity, and values that guide foreign policy",
-      "Whatever the party in power judges politically useful at the moment",
-      "A fixed set of goals identical across all states and historical eras",
-      "The obligations a state accepts under treaties and international law"
+      "Whatever the party currently in power judges to be politically useful or convenient at the moment",
+      "A fixed set of goals that stays identical across every state and every period of history",
+      "The formal obligations a state accepts by signing treaties and agreeing to international law"
     ],
     "correctIndex": 0,
     "explanation": "National interest typically includes security, economic wellbeing, and values. It may be debated within a nation, but it provides continuity across governments and guides long-term strategy."
@@ -97,9 +97,9 @@
     "question": "What is the international system?",
     "options": [
       "The arrangement of sovereign states, institutions, and rules that structure world politics",
-      "A world government that holds binding authority over all sovereign states",
-      "The United Nations and its agencies acting as a single global authority",
-      "A body of law that overrides the decisions of individual sovereign states"
+      "A world government that holds binding legal authority over every sovereign state and its citizens",
+      "The United Nations and its various agencies acting together as a single global governing authority",
+      "A body of international law that automatically overrides the decisions of individual sovereign states"
     ],
     "correctIndex": 0,
     "explanation": "The international system is anarchic—no central authority above states. It consists of sovereign states, international organizations, norms, and institutions that constrain and enable state action."
@@ -112,9 +112,9 @@
     "question": "What is the security dilemma?",
     "options": [
       "When one state's defensive measures alarm others, spurring mistrust and an arms buildup",
-      "When a state cannot afford the weapons it needs to defend its borders",
-      "When allies disagree over how to share the burden of common defence",
-      "When a state must choose between spending on guns or on butter"
+      "When a state cannot afford to buy the weapons it genuinely needs to defend its own borders",
+      "When allied states disagree over how fairly to share the financial burden of their common defence",
+      "When a government must choose between spending its limited budget on guns or on butter"
     ],
     "correctIndex": 0,
     "explanation": "The security dilemma describes a tragic dynamic: State A builds weapons for defense; State B views this as a threat and arms itself; State A perceives this as aggressive and arms further. Everyone ends up less secure."
@@ -503,9 +503,9 @@
     "question": "What distinguishes strategy from tactics in statecraft?",
     "options": [
       "Strategy connects ends and means at the level of overall objectives; tactics address how to win individual engagements",
-      "Strategy is the domain of politicians while tactics is exclusively the domain of military commanders",
-      "Strategy involves long-term planning while tactics are defined as decisions made under combat pressure",
-      "Strategy involves nuclear weapons and grand alliances while conventional operations are purely tactical"
+      "Strategy is the domain of politicians, while tactics is treated as exclusively the job of military commanders",
+      "Strategy involves long-term planning, while tactics are defined only as decisions made under combat pressure",
+      "Strategy involves nuclear weapons and grand alliances, while conventional operations are treated as purely tactical"
     ],
     "correctIndex": 0,
     "explanation": "Strategy is concerned with relating means to ends at the level of overall political objectives. Tactics is concerned with winning individual engagements. A brilliant tactician without strategy can win battles and lose wars.",

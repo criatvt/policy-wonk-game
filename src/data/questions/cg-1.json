@@ -2,7 +2,7 @@
   {
     "id": "cg1-q001",
     "module": "cg-1",
-    "topic": "culture-definition",
+    "topic": "Culture Definitions and Symbols",
     "difficulty": "easy",
     "question": "What does the term 'culture' primarily refer to?",
     "options": [
@@ -18,7 +18,7 @@
   {
     "id": "cg1-q002",
     "module": "cg-1",
-    "topic": "culture-manifestations",
+    "topic": "Culture Definitions and Symbols",
     "difficulty": "easy",
     "question": "Which are the four key manifestations of culture?",
     "options": [
@@ -28,13 +28,13 @@
       "Language, music, literature, and cuisine"
     ],
     "correctIndex": 0,
-    "explanation": "Culture manifests through symbols, values, rituals, and heroes — the visible and invisible elements through which cultural programming is expressed and transmitted.",
+    "explanation": "Culture manifests through symbols, values, rituals, and heroes \u2014 the visible and invisible elements through which cultural programming is expressed and transmitted.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q003",
     "module": "cg-1",
-    "topic": "cultural-determinism",
+    "topic": "Cultural Determinism",
     "difficulty": "easy",
     "question": "According to cultural determinism, what shapes human nature?",
     "options": [
@@ -44,13 +44,13 @@
       "Geographic environment, climate, and natural resources"
     ],
     "correctIndex": 0,
-    "explanation": "Cultural determinism holds that human nature is shaped by the ideas, meanings, beliefs, and values people learn as members of a society — not by biology or environment alone.",
+    "explanation": "Cultural determinism holds that human nature is shaped by the ideas, meanings, beliefs, and values people learn as members of a society \u2014 not by biology or environment alone.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q004",
     "module": "cg-1",
-    "topic": "human-history",
+    "topic": "A History of Human Cooperation",
     "difficulty": "easy",
     "question": "Which revolution occurred approximately 70,000 years ago?",
     "options": [
@@ -66,7 +66,7 @@
   {
     "id": "cg1-q005",
     "module": "cg-1",
-    "topic": "human-history",
+    "topic": "A History of Human Cooperation",
     "difficulty": "easy",
     "question": "What major social transformation did the Industrial Revolution bring?",
     "options": [
@@ -82,7 +82,7 @@
   {
     "id": "cg1-q006",
     "module": "cg-1",
-    "topic": "technology-definition",
+    "topic": "Technology and Sociocultural Adoption",
     "difficulty": "easy",
     "question": "Technology is best understood as...",
     "options": [
@@ -92,13 +92,13 @@
       "The organization of labor and management in large enterprises"
     ],
     "correctIndex": 0,
-    "explanation": "Technology refers to the making, usage, and knowledge of tools, machines, techniques, and systems of organization to solve problems — the application of science to practical ends.",
+    "explanation": "Technology refers to the making, usage, and knowledge of tools, machines, techniques, and systems of organization to solve problems \u2014 the application of science to practical ends.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q007",
     "module": "cg-1",
-    "topic": "technology-adoption",
+    "topic": "Technology and Sociocultural Adoption",
     "difficulty": "easy",
     "question": "The three phases through which a technology gains sociocultural acceptance are...",
     "options": [
@@ -114,7 +114,7 @@
   {
     "id": "cg1-q008",
     "module": "cg-1",
-    "topic": "cultural-determinism",
+    "topic": "Cultural Determinism",
     "difficulty": "easy",
     "question": "The optimistic version of cultural determinism holds that...",
     "options": [
@@ -130,7 +130,7 @@
   {
     "id": "cg1-q009",
     "module": "cg-1",
-    "topic": "culture-layers",
+    "topic": "Layers of Culture",
     "difficulty": "easy",
     "question": "Which of the following is a layer of culture that exists within a single nation?",
     "options": [
@@ -140,13 +140,13 @@
       "The military's combat doctrine and equipment decisions"
     ],
     "correctIndex": 0,
-    "explanation": "Within a single nation, culture exists at multiple layers including regional ethnic, linguistic, and religious differences — alongside gender, generational, and corporate layers.",
+    "explanation": "Within a single nation, culture exists at multiple layers including regional ethnic, linguistic, and religious differences \u2014 alongside gender, generational, and corporate layers.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q010",
     "module": "cg-1",
-    "topic": "culture-technology",
+    "topic": "Culture and Technology in Tension",
     "difficulty": "easy",
     "question": "Culture functions as humanity's 'operating system' because...",
     "options": [
@@ -162,7 +162,7 @@
   {
     "id": "cg1-q011",
     "module": "cg-1",
-    "topic": "cultural-determinism",
+    "topic": "Cultural Determinism",
     "difficulty": "easy",
     "question": "Cultural determinism's core claim about 'right ways' of living is...",
     "options": [
@@ -172,13 +172,13 @@
       "Scientific progress reveals the objectively right way to organize society"
     ],
     "correctIndex": 0,
-    "explanation": "Cultural determinism holds that there is no universal 'right way' of being human — 'our way' is always seen as right within a society, but different societies legitimately differ.",
+    "explanation": "Cultural determinism holds that there is no universal 'right way' of being human \u2014 'our way' is always seen as right within a society, but different societies legitimately differ.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q012",
     "module": "cg-1",
-    "topic": "technology-subjectivity",
+    "topic": "Technology and the Problem of Subjectivity",
     "difficulty": "easy",
     "question": "Technology is said to want to solve the problem of 'subjectivity' because...",
     "options": [
@@ -194,14 +194,14 @@
   {
     "id": "cg1-q013",
     "module": "cg-1",
-    "topic": "technology-adoption",
+    "topic": "Technology and Sociocultural Adoption",
     "difficulty": "medium",
     "question": "A new technology is adopted in one society but rejected in another with different values. What concept best explains this difference?",
     "options": [
-      "Sociocultural alignment — technology succeeds only when it fits existing beliefs and practices",
-      "Path dependence — early infrastructure choices lock in technological trajectories regardless of cultural fit",
-      "Comparative advantage — societies adopt technologies where their productive capacity is relatively strongest",
-      "Institutional complementarity — regulatory frameworks determine which technologies gain legal recognition"
+      "Sociocultural alignment \u2014 technology succeeds only when it fits existing beliefs and practices",
+      "Path dependence \u2014 early infrastructure choices lock in technological trajectories regardless of cultural fit",
+      "Comparative advantage \u2014 societies adopt technologies where their productive capacity is relatively strongest",
+      "Institutional complementarity \u2014 regulatory frameworks determine which technologies gain legal recognition"
     ],
     "correctIndex": 0,
     "explanation": "Technologies succeed when they find cultural alignment and have gone through awareness, evaluation, and adoption. A technology rejected in one cultural context may be accepted where values are compatible.",
@@ -210,7 +210,7 @@
   {
     "id": "cg1-q014",
     "module": "cg-1",
-    "topic": "cultural-determinism",
+    "topic": "Cultural Determinism",
     "difficulty": "medium",
     "question": "The pessimistic version of cultural determinism implies which of the following?",
     "options": [
@@ -220,13 +220,13 @@
       "Cultural change is gradual and historically driven by economic shocks rather than by individual agency"
     ],
     "correctIndex": 0,
-    "explanation": "The pessimistic version of cultural determinism holds that people are what they are conditioned to be — passive creatures who do whatever their culture tells them, with no genuine agency.",
+    "explanation": "The pessimistic version of cultural determinism holds that people are what they are conditioned to be \u2014 passive creatures who do whatever their culture tells them, with no genuine agency.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q015",
     "module": "cg-1",
-    "topic": "technology-subjectivity",
+    "topic": "Technology and the Problem of Subjectivity",
     "difficulty": "medium",
     "question": "Why does technology tend to push psychology, sociology, and anthropology toward becoming 'sciences'?",
     "options": [
@@ -242,7 +242,7 @@
   {
     "id": "cg1-q016",
     "module": "cg-1",
-    "topic": "technology-policy",
+    "topic": "Technology Power and Governance",
     "difficulty": "medium",
     "question": "The statement 'every technology has a program, agenda, and philosophy' implies what for policymakers?",
     "options": [
@@ -252,13 +252,13 @@
       "Public investment in R&D is more effective than ex-post regulation for shaping technology outcomes"
     ],
     "correctIndex": 0,
-    "explanation": "History's lesson is that every technology is a product of its economic and political context and has a program, agenda, and philosophy — all of which require scrutiny, criticism, and control.",
+    "explanation": "History's lesson is that every technology is a product of its economic and political context and has a program, agenda, and philosophy \u2014 all of which require scrutiny, criticism, and control.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q017",
     "module": "cg-1",
-    "topic": "culture-layers",
+    "topic": "Layers of Culture",
     "difficulty": "medium",
     "question": "Multiple layers of culture exist simultaneously within one person. What does this imply for policy communication?",
     "options": [
@@ -274,7 +274,7 @@
   {
     "id": "cg1-q018",
     "module": "cg-1",
-    "topic": "culture-definition",
+    "topic": "Culture Definitions and Symbols",
     "difficulty": "medium",
     "question": "Culture is described as 'symbolic communication.' What does this mean for how values are transmitted?",
     "options": [
@@ -284,13 +284,13 @@
       "Values travel primarily through economic exchange, with trade acting as the main vector of cultural diffusion"
     ],
     "correctIndex": 0,
-    "explanation": "Cultural symbolic communication means that a group's skills, knowledge, attitudes, values, and motives are embedded in symbols — meanings learned and deliberately perpetuated through institutions, not just explicit statements.",
+    "explanation": "Cultural symbolic communication means that a group's skills, knowledge, attitudes, values, and motives are embedded in symbols \u2014 meanings learned and deliberately perpetuated through institutions, not just explicit statements.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q019",
     "module": "cg-1",
-    "topic": "human-machine-transition",
+    "topic": "The Human-Machine Transition",
     "difficulty": "medium",
     "question": "What is the core tension illustrated by the transition from 'humans are not machines' to 'machines are sentient'?",
     "options": [
@@ -306,7 +306,7 @@
   {
     "id": "cg1-q020",
     "module": "cg-1",
-    "topic": "technology-adoption",
+    "topic": "Technology and Sociocultural Adoption",
     "difficulty": "medium",
     "question": "Why do some technologies fail even when they are technically superior to alternatives?",
     "options": [
@@ -322,7 +322,7 @@
   {
     "id": "cg1-q021",
     "module": "cg-1",
-    "topic": "strategy-geopolitics",
+    "topic": "Geopolitics and the STRATEGY Bridge",
     "difficulty": "medium",
     "question": "The STRATEGY Bridge concept connects political ends with means including military, economic, diplomatic, and informational instruments. What does this imply?",
     "options": [
@@ -332,13 +332,13 @@
       "Informational and cyber instruments are supplementary tools that amplify the effects of hard power"
     ],
     "correctIndex": 0,
-    "explanation": "The STRATEGY Bridge shows that statecraft integrates military, economic, diplomatic, informational, space, and cyber instruments — strategy is the intelligent coordination of all these means toward political ends.",
+    "explanation": "The STRATEGY Bridge shows that statecraft integrates military, economic, diplomatic, informational, space, and cyber instruments \u2014 strategy is the intelligent coordination of all these means toward political ends.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q022",
     "module": "cg-1",
-    "topic": "human-history",
+    "topic": "A History of Human Cooperation",
     "difficulty": "medium",
     "question": "How did the Cognitive Revolution approximately 70,000 years ago give humans a decisive evolutionary advantage?",
     "options": [
@@ -348,13 +348,13 @@
       "It enabled humans to migrate out of Africa by equipping them with navigational and tool-use capabilities"
     ],
     "correctIndex": 0,
-    "explanation": "The Cognitive Revolution enabled sapiens to cooperate in large groups through shared myths and language — a capability no other species possessed. This flexible large-scale cooperation became the foundation of human dominance.",
+    "explanation": "The Cognitive Revolution enabled sapiens to cooperate in large groups through shared myths and language \u2014 a capability no other species possessed. This flexible large-scale cooperation became the foundation of human dominance.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q023",
     "module": "cg-1",
-    "topic": "culture-technology",
+    "topic": "Culture and Technology in Tension",
     "difficulty": "medium",
     "question": "The replacement of human judgment with technical calculation is described as a core consequence of the human-machine transition. What does it devalue?",
     "options": [
@@ -364,13 +364,13 @@
       "The irreplaceable role of cultural memory in sustaining social cohesion across generational transitions"
     ],
     "correctIndex": 0,
-    "explanation": "The impact of technological transition is the devaluation of the singular human capacity to see things as a whole — in all their psychic, emotional, and moral dimensions — replaced with technical calculation considered superior in all respects.",
+    "explanation": "The impact of technological transition is the devaluation of the singular human capacity to see things as a whole \u2014 in all their psychic, emotional, and moral dimensions \u2014 replaced with technical calculation considered superior in all respects.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q024",
     "module": "cg-1",
-    "topic": "cultural-determinism",
+    "topic": "Cultural Determinism",
     "difficulty": "hard",
     "question": "Cultural determinism argues that each society views 'our way' as the right way. What problem does this pose for international policymaking?",
     "options": [
@@ -386,7 +386,7 @@
   {
     "id": "cg1-q025",
     "module": "cg-1",
-    "topic": "culture-evolution",
+    "topic": "Culture as an Evolutionary Accelerant",
     "difficulty": "hard",
     "question": "Why does the course material suggest that biological evolution is insufficient to explain human cultural diversity?",
     "options": [
@@ -402,7 +402,7 @@
   {
     "id": "cg1-q026",
     "module": "cg-1",
-    "topic": "technology-policy",
+    "topic": "Technology Power and Governance",
     "difficulty": "hard",
     "question": "The course argues that every technology embeds economic and political context. What does this imply for technology transfer to developing countries?",
     "options": [
@@ -418,7 +418,7 @@
   {
     "id": "cg1-q027",
     "module": "cg-1",
-    "topic": "human-machine-transition",
+    "topic": "The Human-Machine Transition",
     "difficulty": "hard",
     "question": "What is the deeper challenge posed by the transition from 'machines can duplicate human intelligence' to 'machines are sentient'?",
     "options": [
@@ -434,7 +434,7 @@
   {
     "id": "cg1-q028",
     "module": "cg-1",
-    "topic": "technology-subjectivity",
+    "topic": "Technology and the Problem of Subjectivity",
     "difficulty": "hard",
     "question": "Why does the course material present diversity and complexity as 'enemies of technique'?",
     "options": [
@@ -444,13 +444,13 @@
       "Diverse social preferences make it functionally impossible to define shared welfare criteria that could guide efficient public technology investment"
     ],
     "correctIndex": 0,
-    "explanation": "Technique demands that inputs be standardized, processes be predictable, and outcomes be measurable. Human diversity — in values, judgment, and interpretation — resists all three demands, creating fundamental tension.",
+    "explanation": "Technique demands that inputs be standardized, processes be predictable, and outcomes be measurable. Human diversity \u2014 in values, judgment, and interpretation \u2014 resists all three demands, creating fundamental tension.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q029",
     "module": "cg-1",
-    "topic": "technology-authoritarianism",
+    "topic": "Technology Power and Governance",
     "difficulty": "hard",
     "question": "How does 'technological authoritarianism' differ from ordinary government regulation of technology?",
     "options": [
@@ -460,13 +460,13 @@
       "Technological authoritarianism concentrates data in state hands; ordinary regulation distributes data governance across independent agencies"
     ],
     "correctIndex": 0,
-    "explanation": "Technological authoritarianism is not about setting standards but about using technology as an instrument of governance and control — extending state power into private life through surveillance, behavioral tracking, and social scoring.",
+    "explanation": "Technological authoritarianism is not about setting standards but about using technology as an instrument of governance and control \u2014 extending state power into private life through surveillance, behavioral tracking, and social scoring.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q030",
     "module": "cg-1",
-    "topic": "strategy-geopolitics",
+    "topic": "Geopolitics and the STRATEGY Bridge",
     "difficulty": "hard",
     "question": "The STRATEGY Bridge places intelligence and technology alongside military, economic, and diplomatic instruments. What does this reflect about modern statecraft?",
     "options": [
@@ -476,29 +476,29 @@
       "The rapid diffusion of commercial dual-use technology has significantly eroded the military-technical advantages that historically distinguished great powers"
     ],
     "correctIndex": 0,
-    "explanation": "The STRATEGY Bridge integrating space, cyber, and intelligence alongside traditional instruments reflects that modern statecraft is inherently multi-domain — no single instrument is sufficient.",
+    "explanation": "The STRATEGY Bridge integrating space, cyber, and intelligence alongside traditional instruments reflects that modern statecraft is inherently multi-domain \u2014 no single instrument is sufficient.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q031",
     "module": "cg-1",
-    "topic": "culture-layers",
+    "topic": "Layers of Culture",
     "difficulty": "hard",
     "question": "How does the layered nature of culture within individuals challenge the concept of a unified 'national interest' in foreign policy?",
     "options": [
-      "Competing national, regional, professional, and generational identities mean there may be no unified national interest — only contested interpretations",
+      "Competing national, regional, professional, and generational identities mean there may be no unified national interest \u2014 only contested interpretations",
       "Subnational cultural identities visibly weaken the state's bargaining leverage in international negotiations by signaling potentially exploitable internal fragmentation",
       "Cultural layering makes electoral mandates inherently unreliable guides for foreign policy, since individual voter preferences are often deeply internally contradictory",
       "The layered self produces structural coalition fragility, as foreign policy consensus tends to break down whenever salient domestic identities are politically activated"
     ],
     "correctIndex": 0,
-    "explanation": "If individuals hold competing national, regional, gender, generational, and professional cultural identities simultaneously, a single 'national interest' is a simplification — what exists is a contested negotiation among these layered identities.",
+    "explanation": "If individuals hold competing national, regional, gender, generational, and professional cultural identities simultaneously, a single 'national interest' is a simplification \u2014 what exists is a contested negotiation among these layered identities.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q032",
     "module": "cg-1",
-    "topic": "culture-technology",
+    "topic": "Culture and Technology in Tension",
     "difficulty": "hard",
     "question": "Why does the course material argue that cultural factors, not technical merit, often determine which technologies survive?",
     "options": [
@@ -508,13 +508,13 @@
       "Because state procurement policies systematically favor technologies developed by domestically based or culturally aligned allied-nation firms over foreign alternatives"
     ],
     "correctIndex": 0,
-    "explanation": "Technologies succeed when they find cultural alignment. The three-phase process of awareness, evaluation, and adoption is driven by cultural compatibility, not just technical quality — superior technologies regularly fail when they conflict with prevailing cultural values.",
+    "explanation": "Technologies succeed when they find cultural alignment. The three-phase process of awareness, evaluation, and adoption is driven by cultural compatibility, not just technical quality \u2014 superior technologies regularly fail when they conflict with prevailing cultural values.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q033",
     "module": "cg-1",
-    "topic": "technology-policy",
+    "topic": "Technology Power and Governance",
     "difficulty": "hard",
     "question": "A government promotes a health technology backed by scientific consensus, but uptake is negligible despite subsidies. The technology conflicts with cultural values. What does this reveal?",
     "options": [
@@ -530,23 +530,23 @@
   {
     "id": "cg1-q034",
     "module": "cg-1",
-    "topic": "cultural-determinism",
+    "topic": "Cultural Determinism",
     "difficulty": "expert",
     "question": "Cultural determinism argues that all values are culturally conditioned. But this implies cultural relativism is itself a culturally conditioned value. What does this paradox reveal?",
     "options": [
-      "Cultural relativism cannot ground itself in universal validity — it faces a self-refuting quality that limits its use as a cross-cultural evaluative framework",
+      "Cultural relativism cannot ground itself in universal validity \u2014 it faces a self-refuting quality that limits its use as a cross-cultural evaluative framework",
       "The paradox demonstrates that any meta-ethical framework seeking to adjudicate across societies ultimately requires some form of external or transcultural epistemic anchoring",
       "All normative frameworks face structurally equivalent self-referential limits, which means cultural relativism is epistemically no weaker or stronger than its universalist competitors",
       "The paradox reveals that rigorous cross-cultural policy evaluation can only remain coherent when grounded in procedural consensus rather than in contested substantive norms"
     ],
     "correctIndex": 0,
-    "explanation": "Cultural relativism's claim that all values are culturally specific is itself a claim made from a particular cultural standpoint — it cannot ground itself in universal validity without self-contradiction, limiting its usefulness as an evaluative framework.",
+    "explanation": "Cultural relativism's claim that all values are culturally specific is itself a claim made from a particular cultural standpoint \u2014 it cannot ground itself in universal validity without self-contradiction, limiting its usefulness as an evaluative framework.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q035",
     "module": "cg-1",
-    "topic": "human-machine-transition",
+    "topic": "The Human-Machine Transition",
     "difficulty": "expert",
     "question": "As machines increasingly govern complex systems, the policy challenge shifts from 'how to adopt technology' to 'how to govern systems that govern us.' What institutional gap does this reveal?",
     "options": [
@@ -556,13 +556,13 @@
       "Democratic legislatures lack the technical expertise to write effective rules for systems whose behavior emerges from training rather than code"
     ],
     "correctIndex": 0,
-    "explanation": "Governance frameworks evolved to regulate human actors with legal personality, intent, and accountability. Autonomous systems that make consequential decisions expose a fundamental conceptual gap — our institutions were not built for this.",
+    "explanation": "Governance frameworks evolved to regulate human actors with legal personality, intent, and accountability. Autonomous systems that make consequential decisions expose a fundamental conceptual gap \u2014 our institutions were not built for this.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q036",
     "module": "cg-1",
-    "topic": "culture-evolution",
+    "topic": "Culture as an Evolutionary Accelerant",
     "difficulty": "expert",
     "question": "The course traces human history from the Big Bang to artificial intelligence. What does this trajectory suggest about cultural versus biological evolution?",
     "options": [
@@ -572,13 +572,13 @@
       "Cultural evolution accelerates over historical time but ultimately remains constrained by hard biological limits on individual cognition, memory capacity, and viable social group size"
     ],
     "correctIndex": 0,
-    "explanation": "The historical arc shows that culture emerged because biological evolution was too slow, and that cultural and now technological evolution have progressively accelerated — humans are increasingly their own evolutionary authors.",
+    "explanation": "The historical arc shows that culture emerged because biological evolution was too slow, and that cultural and now technological evolution have progressively accelerated \u2014 humans are increasingly their own evolutionary authors.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q037",
     "module": "cg-1",
-    "topic": "technology-adoption",
+    "topic": "Technology and Sociocultural Adoption",
     "difficulty": "expert",
     "question": "Why might a society adopt a technology that undermines the very cultural values that made it prosperous, even without intending to?",
     "options": [
@@ -588,13 +588,13 @@
       "Political elites who make or shape adoption decisions are largely insulated from the long-term cultural costs ultimately borne by ordinary citizens over time"
     ],
     "correctIndex": 0,
-    "explanation": "Cultures adopt technologies for their immediate benefits without being able to observe their long-term cultural effects — by the time the erosion is visible, it is often too late for any individual actor to reverse it unilaterally.",
+    "explanation": "Cultures adopt technologies for their immediate benefits without being able to observe their long-term cultural effects \u2014 by the time the erosion is visible, it is often too late for any individual actor to reverse it unilaterally.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q038",
     "module": "cg-1",
-    "topic": "culture-technology",
+    "topic": "Culture and Technology in Tension",
     "difficulty": "expert",
     "question": "Calling culture humanity's 'operating system' implies cultural change is like a software update. What does this analogy illuminate, and what does it obscure?",
     "options": [
@@ -604,13 +604,13 @@
       "It illuminates the functional interdependency of cultural elements, but obscures that cultures do not have a single developer and emerge from distributed, uncoordinated action"
     ],
     "correctIndex": 0,
-    "explanation": "The analogy usefully captures that culture can change while human nature stays constant, but dangerously implies that cultural change is clean, consensual, and technically manageable — hiding that real cultural change is fought over, imposed, and resisted.",
+    "explanation": "The analogy usefully captures that culture can change while human nature stays constant, but dangerously implies that cultural change is clean, consensual, and technically manageable \u2014 hiding that real cultural change is fought over, imposed, and resisted.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q039",
     "module": "cg-1",
-    "topic": "technology-policy",
+    "topic": "Technology Power and Governance",
     "difficulty": "expert",
     "question": "History's lesson is that 'every technology is a product of an economic and political context and has a program, agenda, and philosophy.' What governance principle follows from this?",
     "options": [
@@ -626,9 +626,9 @@
   {
     "id": "cg1-q040",
     "module": "cg-1",
-    "topic": "culture-technology",
+    "topic": "Culture and Technology in Tension",
     "difficulty": "expert",
-    "question": "The course suggests culture and technology are in constant interaction — each shaping what the other becomes. What does this co-evolutionary relationship imply for policymakers who want to steer technological development?",
+    "question": "The course suggests culture and technology are in constant interaction \u2014 each shaping what the other becomes. What does this co-evolutionary relationship imply for policymakers who want to steer technological development?",
     "options": [
       "Steering technology requires changing the cultural values that determine what problems technology is asked to solve and what trade-offs societies are willing to accept",
       "Technology steering requires anticipatory governance that carefully maps likely co-evolutionary pathways before deployment, rather than attempting to regulate outcomes after diffusion",
@@ -636,13 +636,13 @@
       "Policymakers must coordinate cultural and technology policy simultaneously, since intervening in only one domain reliably produces unpredictable and costly second-order effects"
     ],
     "correctIndex": 0,
-    "explanation": "Because technology succeeds only through cultural alignment, and culture adapts in response to technologies it has adopted, steering technological development requires attending to cultural values — technical policy without cultural policy is incomplete.",
+    "explanation": "Because technology succeeds only through cultural alignment, and culture adapts in response to technologies it has adopted, steering technological development requires attending to cultural values \u2014 technical policy without cultural policy is incomplete.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   },
   {
     "id": "cg1-q041",
     "module": "cg-1",
-    "topic": "culture-technology",
+    "topic": "Culture and Technology in Tension",
     "difficulty": "expert",
     "question": "Culture shapes which problems technology is asked to solve. What does this imply for comparative analysis of why different societies develop different technologies?",
     "options": [
@@ -652,7 +652,7 @@
       "Technological divergence is best explained by differences in state capacity and industrial policy rather than by underlying cultural value systems"
     ],
     "correctIndex": 0,
-    "explanation": "Because cultures differ in what they identify as problems worth solving, they generate different technological demands. This makes technological development trajectories culturally embedded — not universal or economically determined alone.",
+    "explanation": "Because cultures differ in what they identify as problems worth solving, they generate different technological demands. This makes technological development trajectories culturally embedded \u2014 not universal or economically determined alone.",
     "source": "FEB_25_CULTURE_AND_TECHNOLOGY.pptx.pdf"
   }
 ]
