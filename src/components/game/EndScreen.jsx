@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { formatIndianNumber } from "../../lib/gameEngine.js";
 import { drawShareCard, shareCardBlob, CARD_W, CARD_H } from "../../lib/shareCard.js";
 import { stashGuestSession } from "../../lib/guestSessions.js";
-import { hasNote, moduleHasNotes } from "../../lib/noteSlugs.js";
+import { hasNote, moduleHasNotes, noteSlug } from "../../lib/noteSlugs.js";
 import { trackEvent } from "../../lib/analytics.js";
 import { fireConfetti } from "../../lib/confetti.js";
 import modulesData from "../../data/modules.json";
@@ -309,15 +309,17 @@ export default function EndScreen({ state, onPlayAgain }) {
       {authState === "user" && state.status === "lost" && state.fellOnRung && (() => {
         const q = state.plan?.[state.fellOnRung - 1];
         if (!q?.topic || !q?.module) return null;
-        // Gate on real note existence (#39). The question's topic slug doesn't
-        // always have a 1:1 note file (kebab-mismatches on cg-1 / cp-10 /
-        // cp-22). When the exact note is missing, fall back to the module
-        // index; when the module ships no notes at all, render nothing rather
-        // than a link that dead-ends on a 404.
+        // Gate on real note existence (#39). The question's `topic` matches a
+        // note by filename, but the actual route is the github-slugger'd
+        // form Astro generates for every note (noteSlug applies the same
+        // slugification) — building the href from the raw topic 404s. When
+        // the exact note is missing, fall back to the module index; when the
+        // module ships no notes at all, render nothing rather than a link
+        // that dead-ends on a 404.
         const exactNote = hasNote(q.module, q.topic);
         if (!exactNote && !moduleHasNotes(q.module)) return null;
         const href = exactNote
-          ? `/notes/${q.module}/${q.topic}`
+          ? `/notes/${q.module}/${noteSlug(q.topic)}`
           : `/notes/${q.module}/`;
         const label = exactNote
           ? `Browse notes for ${topicLabel(q.topic)} →`
