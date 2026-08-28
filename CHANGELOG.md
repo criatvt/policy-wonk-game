@@ -12,6 +12,12 @@ All notable changes to Policy Wonk. Format follows [Keep a Changelog](https://ke
 - Per-email magic-link rate limit feels tight (3 per 15 min, silent block). Consider raising to 5–8 per 15 min or surfacing a visible "you've requested several links; check spam or wait a few minutes" message.
 - Option-length variance across several question banks (cs-11, cp-33 and others) — the build flags ~30 questions where the correct option is meaningfully longer than its distractors. A "longest = correct" tell. Tighten the bank when there's appetite.
 
+## [0.1.6] — 2026-08-28 — Error boundary around the game
+
+### Added
+
+- **An error boundary around the game island.** `/play` mounts `GameContainer` with `client:only="react"`, so there is no server-rendered fallback: any render-time throw unmounts the React root and leaves the page with nothing but the Astro header and footer. That is exactly how v0.1.5's blank page went unnoticed in production for four days. A crashed island looks like an empty section, not an error, and `npm run build` cannot see it. `GameIsland.jsx` now wraps the container in a boundary that renders a readable card instead: what happened, a **Reload the page** button, a **Start a fresh game** button that clears the `policyWonk:gameState` snapshot first (a crash caused by a corrupt snapshot would otherwise repeat on every reload), the error message for a bug report, and the same email / GitHub issue link pair used under question explanations. Verified in both themes by injecting a throw. It is a backstop, not a licence to leave throwing code in place.
+
 ## [0.1.5] — 2026-08-28 — Hotfix: `/play` rendered a blank page
 
 ### Fixed

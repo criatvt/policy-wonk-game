@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import GameContainer from "../components/game/GameContainer.jsx";
+import GameIsland from "../components/game/GameIsland.jsx";
 
 // The page-level "Log in →" strip that used to sit here was removed
 // (2026-08-19). It came from #19, which asked for a persistent log-in
@@ -17,5 +17,5 @@ import GameContainer from "../components/game/GameContainer.jsx";
 // sessionStorage for the tab.
 ---
 <BaseLayout title="Policy Wonk — play" zone="game">
-  <GameContainer client:only="react" />
+  <GameIsland client:only="react" />
 </BaseLayout>
