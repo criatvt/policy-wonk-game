@@ -2,7 +2,7 @@
   {
     "id": "cp10-q001",
     "module": "cp-10",
-    "topic": "systems-thinking",
+    "topic": "Systems Thinking Fundamentals",
     "difficulty": "easy",
     "question": "What is a feedback loop in systems thinking?",
     "options": [
@@ -18,7 +18,7 @@
   {
     "id": "cp10-q002",
     "module": "cp-10",
-    "topic": "state-coercion",
+    "topic": "The State and the Monopoly on Violence",
     "difficulty": "easy",
     "question": "According to 'In Service of the Republic,' what is at the heart of the state?",
     "options": [
@@ -34,7 +34,7 @@
   {
     "id": "cp10-q003",
     "module": "cp-10",
-    "topic": "international-relations",
+    "topic": "Anarchy and the Causes of War",
     "difficulty": "easy",
     "question": "What does anarchy mean in international relations theory?",
     "options": [
@@ -50,7 +50,7 @@
   {
     "id": "cp10-q004",
     "module": "cp-10",
-    "topic": "systems-thinking",
+    "topic": "Systems Thinking Fundamentals",
     "difficulty": "easy",
     "question": "What is a bottleneck in a complex system?",
     "options": [
@@ -66,7 +66,7 @@
   {
     "id": "cp10-q005",
     "module": "cp-10",
-    "topic": "systems-thinking",
+    "topic": "Emergence and Policy Evaluation",
     "difficulty": "easy",
     "question": "What does 'emergence' describe in systems thinking?",
     "options": [
@@ -82,7 +82,7 @@
   {
     "id": "cp10-q006",
     "module": "cp-10",
-    "topic": "balance-of-power",
+    "topic": "Balance of Power and Power Transition",
     "difficulty": "easy",
     "question": "Balance of power theory argues that states primarily seek to prevent...",
     "options": [
@@ -98,7 +98,7 @@
   {
     "id": "cp10-q007",
     "module": "cp-10",
-    "topic": "security-dilemma",
+    "topic": "The Security Dilemma",
     "difficulty": "easy",
     "question": "The 'security dilemma' in international relations refers to...",
     "options": [
@@ -114,7 +114,7 @@
   {
     "id": "cp10-q008",
     "module": "cp-10",
-    "topic": "systems-thinking",
+    "topic": "Systems Thinking Fundamentals",
     "difficulty": "easy",
     "question": "What is the Law of Diminishing Returns?",
     "options": [
@@ -130,7 +130,7 @@
   {
     "id": "cp10-q009",
     "module": "cp-10",
-    "topic": "systems-thinking",
+    "topic": "Systems Thinking Fundamentals",
     "difficulty": "easy",
     "question": "What is 'critical mass' in systems thinking?",
     "options": [
@@ -146,7 +146,7 @@
   {
     "id": "cp10-q010",
     "module": "cp-10",
-    "topic": "free-markets",
+    "topic": "Free Markets and Self-Organisation",
     "difficulty": "easy",
     "question": "According to 'In Service of the Republic,' why do free markets tend to drive economic growth?",
     "options": [
@@ -162,7 +162,7 @@
   {
     "id": "cp10-q011",
     "module": "cp-10",
-    "topic": "power-transition",
+    "topic": "Balance of Power and Power Transition",
     "difficulty": "easy",
     "question": "Power transition theory suggests war is most likely when...",
     "options": [
@@ -178,7 +178,7 @@
   {
     "id": "cp10-q012",
     "module": "cp-10",
-    "topic": "systems-thinking",
+    "topic": "Systems Thinking Fundamentals",
     "difficulty": "easy",
     "question": "What is homeostasis in systems thinking?",
     "options": [
@@ -194,7 +194,7 @@
   {
     "id": "cp10-q013",
     "module": "cp-10",
-    "topic": "government-intervention",
+    "topic": "The Limits of Government Intervention",
     "difficulty": "medium",
     "question": "In 'In Service of the Republic,' the charger standardization example is used to illustrate what broader point about government intervention?",
     "options": [
@@ -210,7 +210,7 @@
   {
     "id": "cp10-q014",
     "module": "cp-10",
-    "topic": "causes-of-war",
+    "topic": "Anarchy and the Causes of War",
     "difficulty": "medium",
     "question": "Why can't anarchy alone explain variations in war and peace across different times and regions?",
     "options": [
@@ -226,7 +226,7 @@
   {
     "id": "cp10-q015",
     "module": "cp-10",
-    "topic": "balance-of-power",
+    "topic": "Balance of Power and Power Transition",
     "difficulty": "medium",
     "question": "What distinguishes balance of power theory from power transition theory in explaining when wars occur?",
     "options": [
@@ -242,7 +242,7 @@
   {
     "id": "cp10-q016",
     "module": "cp-10",
-    "topic": "systems-thinking",
+    "topic": "Feedback Loops and Resilience at Scale",
     "difficulty": "medium",
     "question": "A runaway feedback loop differs from a homeostatic feedback loop because...",
     "options": [
@@ -258,7 +258,7 @@
   {
     "id": "cp10-q017",
     "module": "cp-10",
-    "topic": "levels-of-analysis",
+    "topic": "Levels of Analysis in International Relations",
     "difficulty": "medium",
     "question": "The 'levels of analysis' framework in international relations is primarily useful because...",
     "options": [
@@ -274,7 +274,7 @@
   {
     "id": "cp10-q018",
     "module": "cp-10",
-    "topic": "systems-thinking",
+    "topic": "Feedback Loops and Resilience at Scale",
     "difficulty": "medium",
     "question": "What is 'churn' in systems thinking, and why does it matter for organizations?",
     "options": [
@@ -290,7 +290,7 @@
   {
     "id": "cp10-q019",
     "module": "cp-10",
-    "topic": "policy-design",
+    "topic": "The Art and Science of Policy Design",
     "difficulty": "medium",
     "question": "Why do the authors of 'In Service of the Republic' distinguish between the 'science' and 'art' of public policy?",
     "options": [
@@ -306,7 +306,7 @@
   {
     "id": "cp10-q020",
     "module": "cp-10",
-    "topic": "security-dilemma",
+    "topic": "The Security Dilemma",
     "difficulty": "medium",
     "question": "The 'security dilemma' creates a structural problem for international cooperation because...",
     "options": [
@@ -322,7 +322,7 @@
   {
     "id": "cp10-q021",
     "module": "cp-10",
-    "topic": "systems-thinking",
+    "topic": "Feedback Loops and Resilience at Scale",
     "difficulty": "medium",
     "question": "Why do properties that work at small scale often fail at large scale in systems thinking?",
     "options": [
@@ -338,7 +338,7 @@
   {
     "id": "cp10-q022",
     "module": "cp-10",
-    "topic": "realism",
+    "topic": "Realism and Neorealism",
     "difficulty": "medium",
     "question": "Classical realists and neorealists share core assumptions but differ in what drives state behavior. What is the key difference?",
     "options": [
@@ -354,7 +354,7 @@
   {
     "id": "cp10-q023",
     "module": "cp-10",
-    "topic": "systems-thinking",
+    "topic": "Emergence and Policy Evaluation",
     "difficulty": "medium",
     "question": "A government intervention creates unintended consequences worse than the original problem. Which framework from the readings best explains this pattern?",
     "options": [
@@ -370,7 +370,7 @@
   {
     "id": "cp10-q024",
     "module": "cp-10",
-    "topic": "causes-of-war",
+    "topic": "Anarchy and the Causes of War",
     "difficulty": "hard",
     "question": "The 'causes of war' literature distinguishes between 'permissive causes' and 'explanations of variation.' Why is this distinction important for policy?",
     "options": [
@@ -386,7 +386,7 @@
   {
     "id": "cp10-q025",
     "module": "cp-10",
-    "topic": "free-markets",
+    "topic": "Free Markets and Self-Organisation",
     "difficulty": "hard",
     "question": "Why do the authors of 'In Service of the Republic' argue that self-organizing systems frequently outperform centrally planned alternatives?",
     "options": [
@@ -402,7 +402,7 @@
   {
     "id": "cp10-q026",
     "module": "cp-10",
-    "topic": "systems-thinking",
+    "topic": "Emergence and Policy Evaluation",
     "difficulty": "hard",
     "question": "Why does the emergence property in systems thinking have significant implications for policy evaluation?",
     "options": [
@@ -418,7 +418,7 @@
   {
     "id": "cp10-q027",
     "module": "cp-10",
-    "topic": "power-transition",
+    "topic": "Balance of Power and Power Transition",
     "difficulty": "hard",
     "question": "Power transition theory predicts wars during rising-state parity. What complicates applying this to modern great power competition?",
     "options": [
@@ -434,7 +434,7 @@
   {
     "id": "cp10-q028",
     "module": "cp-10",
-    "topic": "state-coercion",
+    "topic": "The State and the Monopoly on Violence",
     "difficulty": "hard",
     "question": "'In Service of the Republic' states that 'the state is a soulless machine.' What does this imply for accountability in governance?",
     "options": [
@@ -450,7 +450,7 @@
   {
     "id": "cp10-q029",
     "module": "cp-10",
-    "topic": "realism",
+    "topic": "Realism and Neorealism",
     "difficulty": "hard",
     "question": "Neorealism treats anarchy as a constant yet tries to explain variations in international outcomes. What logical problem does this create?",
     "options": [
@@ -466,7 +466,7 @@
   {
     "id": "cp10-q030",
     "module": "cp-10",
-    "topic": "systems-thinking",
+    "topic": "Emergence and Policy Evaluation",
     "difficulty": "hard",
     "question": "The irreducibility principle suggests that below a certain threshold, a desired outcome simply does not occur. How does this apply to building state capacity?",
     "options": [
@@ -482,7 +482,7 @@
   {
     "id": "cp10-q031",
     "module": "cp-10",
-    "topic": "security-dilemma",
+    "topic": "The Security Dilemma",
     "difficulty": "hard",
     "question": "How does modeling international relations as a stag hunt rather than a Prisoner's Dilemma change predictions about conflict and cooperation?",
     "options": [
@@ -498,7 +498,7 @@
   {
     "id": "cp10-q032",
     "module": "cp-10",
-    "topic": "free-markets",
+    "topic": "Free Markets and Self-Organisation",
     "difficulty": "hard",
     "question": "The TCP/IP versus X.25 example in 'In Service of the Republic' illustrates which broader principle about government-led solutions?",
     "options": [
@@ -514,7 +514,7 @@
   {
     "id": "cp10-q033",
     "module": "cp-10",
-    "topic": "policy-design",
+    "topic": "The Art and Science of Policy Design",
     "difficulty": "hard",
     "question": "Why do the authors of 'In Service of the Republic' argue that redistributive policies are 'fraught with trouble' even when redistribution is normatively desirable?",
     "options": [
@@ -530,7 +530,7 @@
   {
     "id": "cp10-q034",
     "module": "cp-10",
-    "topic": "levels-of-analysis",
+    "topic": "Levels of Analysis in International Relations",
     "difficulty": "expert",
     "question": "The 'paradigm wars' between realism and liberalism are criticized for distracting from theory-building. What does this suggest about the ideal approach to studying international relations?",
     "options": [
@@ -546,7 +546,7 @@
   {
     "id": "cp10-q035",
     "module": "cp-10",
-    "topic": "government-intervention",
+    "topic": "The Limits of Government Intervention",
     "difficulty": "expert",
     "question": "The charger standardization example reveals that even trivial interventions generate complex governance challenges. What does this imply for how policymakers should approach the scope of intervention?",
     "options": [
@@ -562,7 +562,7 @@
   {
     "id": "cp10-q036",
     "module": "cp-10",
-    "topic": "realism",
+    "topic": "Realism and Neorealism",
     "difficulty": "expert",
     "question": "Neorealism, power transition theory, and the security dilemma offer different structural explanations for conflict. What can and cannot these structural theories collectively explain?",
     "options": [
@@ -578,7 +578,7 @@
   {
     "id": "cp10-q037",
     "module": "cp-10",
-    "topic": "systems-thinking",
+    "topic": "Emergence and Policy Evaluation",
     "difficulty": "expert",
     "question": "Emergence in systems thinking implies the whole is not the sum of its parts. How does this challenge standard policy cost-benefit analysis?",
     "options": [
@@ -594,7 +594,7 @@
   {
     "id": "cp10-q038",
     "module": "cp-10",
-    "topic": "security-dilemma",
+    "topic": "The Security Dilemma",
     "difficulty": "expert",
     "question": "The security dilemma suggests conflict can emerge from purely defensive motivations. Why does this make international cooperation exceptionally difficult even between states that prefer peace?",
     "options": [
@@ -610,14 +610,14 @@
   {
     "id": "cp10-q039",
     "module": "cp-10",
-    "topic": "policy-design",
+    "topic": "The Art and Science of Policy Design",
     "difficulty": "expert",
     "question": "A policy stance endorses free markets while also supporting government intervention to correct market failures. Is this position coherent, and what does it require?",
     "options": [
       "Coherent, if genuine market failures are separated from cases where markets work well and intervention is matched to the failure type",
-      "Incoherent, since endorsing markets and endorsing intervention are fundamentally contradictory economic philosophies",
-      "Coherent only if the state intervenes broadly across the whole economy rather than limiting itself to specific failures",
-      "Incoherent unless markets are treated as a last resort, used only after direct intervention has already failed"
+      "Incoherent, since endorsing free markets and endorsing government intervention represent fundamentally contradictory economic philosophies",
+      "Coherent only if the state intervenes broadly across the whole economy, rather than narrowly targeting specific market failures as they arise",
+      "Incoherent unless markets are treated only as a last resort, used after direct state intervention has already failed to correct the outcome"
     ],
     "correctIndex": 0,
     "explanation": "The position is logically consistent: markets are presumptively efficient, but genuine failures (externalities, public goods, information asymmetry, natural monopoly) exist and justify targeted intervention matched to the specific type of failure.",
@@ -626,7 +626,7 @@
   {
     "id": "cp10-q040",
     "module": "cp-10",
-    "topic": "systems-thinking",
+    "topic": "Feedback Loops and Resilience at Scale",
     "difficulty": "expert",
     "question": "The systems thinking concept of a 'margin of safety' in engineering suggests always building in buffer for error. How does this principle translate to the design of public institutions?",
     "options": [
@@ -642,7 +642,7 @@
   {
     "id": "cp10-q041",
     "module": "cp-10",
-    "topic": "causes-of-war",
+    "topic": "Anarchy and the Causes of War",
     "difficulty": "expert",
     "question": "If feminist theory treats patriarchy as a constant (like neorealists treat anarchy), it faces the same explanatory problem: constants cannot explain variation. How should feminist scholarship respond to this structural challenge?",
     "options": [

@@ -233,14 +233,21 @@ export default function GameContainer() {
   // re-render doesn't replay the burst for a rung already celebrated.
   const celebratedRungRef = useRef(0);
   useEffect(() => {
-    if (state.status !== "revealed-correct") return;
+    if (!state || state.status !== "revealed-correct") return;
     if (rehydratedRungRef.current === state.currentRung) return;
     if (celebratedRungRef.current === state.currentRung) return;
     const confettiType = typeForRung(state.currentRung);
     if (!confettiType) return;
     celebratedRungRef.current = state.currentRung;
     fireConfetti(confettiType);
-  }, [state.status, state.currentRung]);
+    // `state` is null on every screen before a game starts (onboarding,
+    // rules, module pick), so both the body and the deps have to tolerate
+    // it. The deps are the part that actually matters: they are evaluated
+    // as an argument to useEffect, i.e. during render, so a bare
+    // `state.status` here throws before any guard in the body can run and
+    // takes the whole client:only island down with it. That shipped in
+    // 0c6d78d and left /play blank in production.
+  }, [state?.status, state?.currentRung]);
 
   // Compute the "next" screen after onboarding completes — RULES the first
   // time, MODULE_PICK on returning. Shared between manual onboarding

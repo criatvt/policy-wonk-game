@@ -1,7 +1,7 @@
 {
   "name": "policy-wonk-game",
   "type": "module",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "license": "CC-BY-NC-4.0",
   "description": "Policy Wonk — a 15-question ladder quiz on public-policy fundamentals, built on Takshashila GCPP material. Open-access game; optional email + magic-link login unlocks per-module revision notes and saved play history. No tracking, no third-party scripts.",
@@ -36,6 +36,7 @@
   "dependencies": {
     "@astrojs/react": "^4.2.0",
     "astro": "^5.2.0",
+    "github-slugger": "^2.0.0",
     "hono": "^4.12.19",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

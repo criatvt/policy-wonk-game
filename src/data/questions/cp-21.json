@@ -166,10 +166,10 @@
     "difficulty": "easy",
     "question": "What is a market failure?",
     "options": [
-      "When a firm loses money selling a particular product line",
+      "When a firm loses money selling a product line due to poor management",
       "When a market allocates resources inefficiently, as with externalities",
-      "When a market grows too large for regulators to oversee",
-      "When rising prices push most consumers out of a market"
+      "When a market grows too large for regulators to monitor effectively",
+      "When rising prices push most consumers out of a market entirely"
     ],
     "correctIndex": 1,
     "explanation": "Market failures occur when free markets do not produce efficient outcomes. Examples include pollution externalities, monopolies, or situations where information is asymmetrical between buyers and sellers.",

@@ -23,9 +23,9 @@
     "question": "What does it mean to describe the Indian state as both failing and succeeding?",
     "options": [
       "It shows uneven capacity — strong in some domains, weak at public-goods delivery in others",
-      "It performs poorly across nearly every sector and population group alike",
-      "It delivers public goods uniformly well across virtually all regions",
-      "Its successes and failures belong to entirely separate historical policy eras"
+      "It performs poorly across nearly every sector and population group, with few exceptions",
+      "It delivers public goods uniformly well across virtually all regions and districts alike",
+      "Its successes and failures belong to entirely separate historical policy eras, not the present"
     ],
     "correctIndex": 0,
     "explanation": "Kapur argues that characterizing India's state as simply 'failing' or 'succeeding' obscures the reality of uneven state capacity across different domains and populations.",
@@ -167,9 +167,9 @@
     "question": "What geographic pattern characterizes many developing states?",
     "options": [
       "Strong state presence in urban centers with weaker reach in peripheral regions",
-      "Equal administrative presence across urban and rural areas alike",
-      "Concentrated state capacity in rural rather than urban districts",
-      "State reach determined by population wealth, not by geography"
+      "Equal administrative presence across urban and rural areas, with no meaningful regional gap",
+      "Concentrated state capacity in rural districts rather than in urban centres and towns",
+      "State reach determined mainly by population wealth and income, not by geography at all"
     ],
     "correctIndex": 0,
     "explanation": "States typically maintain greater administrative, coercive, and extractive capacity in urban areas where resources are concentrated and control is easier.",

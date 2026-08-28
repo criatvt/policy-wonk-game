@@ -172,9 +172,9 @@
     "question": "What occurs at market equilibrium?",
     "options": [
       "Quantity demanded equals quantity supplied at a particular price",
-      "All consumers want to purchase the good",
-      "All producers want to sell the good",
-      "Price equals the average cost of production"
+      "Every buyer in the market wants to purchase the good, whatever the price",
+      "Every seller in the market wants to sell the good, whatever the price",
+      "Price equals the average cost incurred by producers to make the good"
     ],
     "correctIndex": 0,
     "explanation": "Market equilibrium is the price point where quantity demanded equals quantity supplied. At this point, there is no tendency for price to change, and the market clears with no surplus or shortage."
@@ -322,9 +322,9 @@
     "question": "Why might a drought cause both supply shortages and price spikes for agricultural goods?",
     "options": [
       "Reduced water supply decreases crop yields while demand remains stable",
-      "Farmers intentionally reduce planting to increase prices",
-      "Consumers suddenly demand more during emergencies",
-      "Price ceilings prevent the market from responding"
+      "Farmers deliberately hold back planting to drive up prices before harvest",
+      "Consumers panic-buy and stockpile staples once emergency news spreads",
+      "Price ceilings imposed by the government stop supply from adjusting"
     ],
     "correctIndex": 0,
     "explanation": "A drought reduces agricultural output (leftward supply shift) while demand stays relatively constant because food is a necessity. This supply shock causes both quantity to fall and prices to rise significantly."
@@ -427,9 +427,9 @@
     "question": "Why might a market fail to allocate resources efficiently even when supply and demand are present?",
     "options": [
       "Externalities, information asymmetries, or monopoly power can prevent efficient allocation",
-      "Price signals become unreliable once a market reaches a large enough scale",
-      "Competitive markets by definition over-produce relative to social optimum",
-      "Consumer preferences are too unstable to allow supply to align with demand"
+      "Price signals become unreliable once a market grows beyond a certain competitive scale",
+      "Competitive markets by definition over-produce relative to the social optimum output",
+      "Consumer preferences are too unstable for supply to reliably track demand over time"
     ],
     "correctIndex": 0,
     "explanation": "Market failures occur when supply-demand mechanisms don't capture full costs/benefits (externalities), when buyers/sellers lack information, or when monopolies restrict output. These prevent the market from reaching the socially efficient outcome."
@@ -607,9 +607,9 @@
     "question": "During the COVID-19 pandemic, price spikes for hand sanitizer were widely condemned as 'price gouging.' What does supply-and-demand analysis reveal about the trade-offs in banning such price increases?",
     "options": [
       "Banning price increases prevents rationing by price, leading to rationing by availability — those who arrive first get the good, not those who need it most or value it highest",
-      "Banning price spikes is welfare-improving, since the price signal is redundant once a shortage is publicly known and visible to all potential suppliers",
-      "Price ceilings during acute shortages raise total surplus by shifting gains from sellers to the buyers who need the good most urgently",
-      "Blocking price increases halts speculative hoarding without affecting the underlying supply signal, so output and allocation remain at efficient levels"
+      "Banning price spikes is welfare-improving, since the price signal becomes redundant once a shortage is publicly known and visible to every potential supplier in the market",
+      "Price ceilings during acute shortages raise total surplus by shifting gains from sellers to the buyers who value the good most urgently and arrive early",
+      "Blocking price increases halts speculative hoarding without affecting the underlying supply signal, so output and allocation remain efficient throughout the crisis"
     ],
     "correctIndex": 0,
     "explanation": "The price spike signals suppliers to produce more and buyers to use sparingly. Banning the spike removes the signal, maintains artificial low prices, and produces shortages — goods disappear from shelves, distributed on a first-come basis with no regard for who needs them most.",
@@ -623,9 +623,9 @@
     "question": "Supply and demand analysis predicts that markets tend toward equilibrium. What does the recurrence of shortages in regulated markets reveal about the relationship between equilibrium theory and institutional context?",
     "options": [
       "Equilibrium theory assumes prices are free to adjust — where prices are held below clearing levels, the equilibrating mechanism is suppressed and shortages persist as a structural feature",
-      "Recurrent shortages in regulated markets show that equilibrium theory overstates the self-correcting capacity of price signals even in unregulated settings",
-      "Well-designed regulation can replicate price-based clearing through administrative allocation, so shortages reflect poor implementation rather than a theoretical limitation",
-      "Equilibrium only describes competitive markets with many buyers and sellers; regulated markets with dominant state actors fall entirely outside the model's domain"
+      "Recurrent shortages in regulated markets show that equilibrium theory overstates the self-correcting capacity of price signals, even in otherwise unregulated settings",
+      "Well-designed regulation can replicate price-based clearing through administrative allocation, so shortages there reflect poor implementation rather than a genuine theoretical limitation",
+      "Equilibrium only describes competitive markets with many buyers and sellers, so regulated markets with dominant state actors fall entirely outside the model's domain"
     ],
     "correctIndex": 0,
     "explanation": "Equilibrium is not a law of nature but an outcome of the price mechanism. Where prices are held below clearing levels by regulation, the mechanism is suppressed. Supply and demand still describe the underlying forces — they just cannot manifest as price movement, so they manifest as shortage instead.",
@@ -638,10 +638,10 @@
     "difficulty": "expert",
     "question": "The egg and puppy shortages during COVID-19 both involved supply constraints meeting demand surges. Why did they produce different market outcomes, and what does this reveal about the role of elasticity?",
     "options": [
-      "Inelastic supply plus a demand surge produces sharp price spikes; flexible supply absorbs the shock through quantity, not price — elasticity determines how shocks distribute between price and quantity",
-      "Both shortages reflected identical supply-demand dynamics; the different outcomes were caused by divergent consumer income levels across the two buyer populations",
-      "Elasticity shapes long-run adjustment paths but not short-run crisis outcomes, where price movements are driven by sentiment and media coverage rather than fundamentals",
-      "The divergent outcomes arose because egg markets are regulated and puppy markets are not — elasticity is secondary to the presence or absence of price controls"
+      "Inelastic supply plus a demand surge produces sharp price spikes. Flexible supply absorbs the shock through quantity, not price. Elasticity determines that split between price and quantity",
+      "Both shortages reflected identical supply and demand dynamics; the different outcomes were caused entirely by divergent consumer income levels across the two separate buyer populations",
+      "Elasticity shapes long-run adjustment paths but not short-run crisis outcomes, where price movements are driven mainly by sentiment and media coverage rather than underlying market fundamentals",
+      "The divergent outcomes arose because egg markets are heavily regulated and puppy markets are not, so elasticity is secondary to the presence or absence of price controls in each market"
     ],
     "correctIndex": 0,
     "explanation": "Elasticity determines the incidence of shocks. An inelastic supply combined with a demand surge produces a large price increase. A more elastic supply — where producers can respond quickly — absorbs the shock through quantity rather than price. The COVID cases illustrate this in real time.",
@@ -655,9 +655,9 @@
     "question": "Supply and demand curves represent behavior at a moment in time, with all else equal. What are the implications of this ceteris paribus assumption for using market analysis to predict the effects of a complex policy change?",
     "options": [
       "Complex policies shift multiple variables at once, violating ceteris paribus — partial equilibrium predictions mislead when the policy also affects income, technology, or related markets",
-      "Ceteris paribus is a modelling convenience with no real-world implications; experienced analysts can apply partial equilibrium correctly to any policy, however complex",
-      "General equilibrium models fully resolve the ceteris paribus problem, making partial equilibrium analysis redundant for policy evaluation in interconnected markets",
-      "The assumption strengthens predictive accuracy by removing noise — holding other variables constant isolates the dominant causal mechanism driving market outcomes"
+      "Ceteris paribus is a modelling convenience with no real-world implications, so experienced analysts can apply partial equilibrium reasoning correctly to any policy, however complex",
+      "General equilibrium models fully resolve the ceteris paribus problem, making partial equilibrium analysis redundant for evaluating any policy change across interconnected markets",
+      "The assumption strengthens predictive accuracy by removing noise, since holding other variables constant isolates the single dominant causal mechanism at work"
     ],
     "correctIndex": 0,
     "explanation": "Ceteris paribus analysis isolates the effect of one change by holding everything else constant. Complex policies change many things at once — affecting income, substitutes, technology, and expectations simultaneously — so full analysis requires general equilibrium thinking that tracks second-order effects.",
@@ -687,9 +687,9 @@
     "question": "The rescue puppy market during COVID showed demand surging and prices rising sharply. What would standard economic theory predict happens to supply over a longer time horizon, and why does this matter for evaluating short-run policy responses?",
     "options": [
       "Higher prices attract new supply over time — more breeders enter, supply expands, prices fall. Short-run price controls suppress this signal, prolonging the shortage beyond what the market resolves",
-      "Biological constraints cap supply growth, so price controls are the only tool that can prevent permanent price elevation once a demand surge occurs in animal markets",
-      "Demand destruction from the high price restores balance before new supply enters, so the long-run supply response is economically insignificant for evaluating short-run controls",
-      "Long-run supply expansion in regulated animal markets depends on licensing policy rather than price signals, making standard economic predictions unreliable in this context"
+      "Biological constraints on breeding cap supply growth entirely, so price controls are the only tool that can prevent permanent price elevation once a demand surge occurs",
+      "Demand destruction from the high price restores balance before new supply enters, so the long-run supply response is economically insignificant for evaluating any short-run controls",
+      "Long-run supply expansion in regulated animal markets depends mainly on licensing policy rather than price signals, making standard economic predictions unreliable in this particular context"
     ],
     "correctIndex": 0,
     "explanation": "Price signals induce supply response over time. If the price is allowed to rise, it draws in new supply — eventually. Controls that suppress the price remove the signal to new entrants, prolonging the shortage until the underlying demand surge subsides on its own.",
