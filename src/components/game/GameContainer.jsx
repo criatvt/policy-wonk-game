@@ -150,7 +150,7 @@ const RULES_SEEN_KEY = "policyWonk:rulesSeen";
 // (sessionStorage semantics) — exactly the ephemerality the issue asks
 // for. Logged-in players use the same mechanism; their session also gets
 // POSTed to /api/me/sessions at the end for permanent storage.
-const GAME_STATE_KEY = "policyWonk:gameState";
+export const GAME_STATE_KEY = "policyWonk:gameState";
 
 function loadPersistedGame() {
   if (typeof window === "undefined") return null;
