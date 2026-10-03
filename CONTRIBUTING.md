@@ -101,11 +101,16 @@ Each command builds the site, starts `astro preview` on port 4391, runs, and shu
 
 On a CI failure, open the run's **Summary** and download the `playwright-report` artefact (listed under GitHub's **Artifacts** heading). Unzip it and open `playwright-report/index.html`: it holds the failure message, a screenshot, a trace, and for layout failures the full captured geometry.
 
-**If CI's Linux rendering ever differs from macOS** beyond the 2px tolerance, so that the layout check fails on CI but passes locally with no layout change, give Linux its own baselines:
+**Linux has its own layout baselines.** Text on the Linux CI runner measures a few pixels differently from macOS, so CI compares against `tests/browser/layout-baselines/linux/` and macOS uses the shared files above it. After an intended layout change, update both:
 
-1. Download the `playwright-report` artefact from the failing run and open the report.
-2. Each failing layout test has an attachment named `<project>.<suite>.json (actual)`, for example `desktop-1280.play.json (actual)`. Save each one as `tests/browser/layout-baselines/linux/<project>.<suite>.json`.
-3. Commit them. CI compares against `layout-baselines/linux/` from then on, and macOS keeps using the shared files. After an intended layout change, update both: run `test:layout:update` locally for the shared files, and take the Linux files from the next CI report.
+1. Run `npm run test:layout:update` locally and commit the shared files.
+2. Push. The layout check fails on CI and uploads a small `layout-actual-linux` artefact.
+3. Unzip it into the Linux folder and commit:
+   ```sh
+   gh run download <run-id> -n layout-actual-linux -D tests/browser/layout-baselines/linux
+   ```
+
+Check the diff before committing. It should show only your change.
 
 ## Notes authoring
 

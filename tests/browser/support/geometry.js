@@ -231,13 +231,11 @@ export async function captureThemes(page, label, settle) {
 // Baselines live in layout-baselines/<project>.<suite>.json. A per-platform
 // copy in layout-baselines/<platform>/ (process.platform: "linux",
 // "darwin") wins if one exists, and --update-snapshots then rewrites that
-// copy. It is the escape hatch should the Linux runner ever render text
-// differently from macOS beyond the tolerance:
-//   1. Download the playwright-report artefact from the failing CI run.
-//   2. For each failing layout test, save its "<project>.<suite>.json
-//      (actual)" attachment as layout-baselines/linux/<project>.<suite>.json.
-//   3. Commit them. CI then compares against those; macOS keeps using the
-//      shared files. From then on, update both copies for intended changes.
+// copy. The Linux runner measures text 3 to 4px differently from macOS (and
+// wraps one /login line differently), so CI uses layout-baselines/linux/.
+// To refresh it after an intended change: push, let CI fail, then
+//   gh run download <run-id> -n layout-actual-linux -D tests/browser/layout-baselines/linux
+// and commit. macOS keeps using the shared files.
 function baselinePath(file) {
   const platformFile = path.join(BASELINE_DIR, process.platform, file);
   return fs.existsSync(platformFile) ? platformFile : path.join(BASELINE_DIR, file);
@@ -296,7 +294,18 @@ export async function expectLayout(snapshot, testInfo, suite) {
     test.info().annotations.push({ type: "layout baseline", description: `wrote ${path.relative(process.cwd(), target)}` });
     return;
   }
+  // A failing run also leaves the actual geometry as a plain file in
+  // test-results/layout-actual/, named like the baseline it would replace.
+  // CI uploads that folder as the layout-actual-linux artefact, which
+  // unzips straight into layout-baselines/linux/.
+  const saveActual = () => {
+    const dir = path.join(testInfo.project.outputDir, "layout-actual");
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, file), body);
+  };
+
   if (!exists) {
+    saveActual();
     throw new Error(
       `No layout baseline at ${path.relative(process.cwd(), target)}. ` +
         "Run `npm run test:layout:update` and commit the result.",
@@ -304,6 +313,7 @@ export async function expectLayout(snapshot, testInfo, suite) {
   }
 
   const lines = diff(JSON.parse(fs.readFileSync(target, "utf8")), JSON.parse(body));
+  if (lines.length) saveActual();
   const shown = lines.slice(0, 40).map((l) => `  ${l}`).join("\n");
   const more = lines.length > 40 ? `\n  …and ${lines.length - 40} more` : "";
   expect(

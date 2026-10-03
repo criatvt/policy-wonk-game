@@ -59,3 +59,14 @@ jobs:
             playwright-report/
             test-results/
           retention-days: 14
+      # Just the actual geometry of any failing layout test, laid out like
+      # tests/browser/layout-baselines/linux/. If the change is intended,
+      # unzip it into that folder and commit (see CONTRIBUTING.md).
+      - name: Upload actual layout geometry
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: layout-actual-linux
+          path: test-results/layout-actual/
+          if-no-files-found: ignore
+          retention-days: 14
