@@ -219,6 +219,12 @@ function loadPersistedGame() {
     if (!raw) return null;
     const parsed = JSON.parse(raw);
     if (!parsed || typeof parsed !== "object") return null;
+    // A snapshot saved mid-lock by a build without the #90 fix. Nothing
+    // advances out of "locked" after a reload, so reopen the question:
+    // the selection is kept and the timer resumes.
+    if (parsed.state?.status === "locked") {
+      parsed.state = { ...parsed.state, status: "reveal-question", answerLocked: false };
+    }
     return parsed;
   } catch {
     return null;
@@ -415,17 +421,16 @@ export default function GameContainer() {
   }, []);
 
   // Persist the game snapshot on any change. Skip while a lock is mid-flight
-  // (answerLocked=true but correctIndex not yet resolved) — that 1s window
-  // owns an async chain inside handleLock that won't re-fire after a refresh,
-  // so freezing the persisted snapshot at the pre-lock state lets a refreshed
-  // player re-attempt the lock cleanly.
+  // (the engine's transient "locked" status) — that 1s window owns an async
+  // chain inside handleLock that won't re-fire after a refresh, so freezing
+  // the persisted snapshot at the pre-lock state lets a refreshed player
+  // re-attempt the lock cleanly. The guard used to test for
+  // "reveal-question", which lockAnswer never produces, so the "locked"
+  // snapshot was saved and a refresh in that second left the game stuck
+  // with no timer, lifelines or Lock button (#90).
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const lockInFlight =
-      state &&
-      state.status === "reveal-question" &&
-      state.answerLocked &&
-      state.correctIndex == null;
+    const lockInFlight = state?.status === "locked";
     if (lockInFlight) return;
     try {
       window.sessionStorage?.setItem(
