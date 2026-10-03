@@ -82,6 +82,25 @@ Phones get their own UI; desktop and tablets do not change (plan in #5). "Phone"
 - **No grey tap flash.** Phones get a dimmed pressed state on links and buttons instead. A component's own `active:` style overrides it.
 - **`theme-color`** follows the page background in both themes, including an explicit choice on the appearance switch. The colours are the `--color-bg` values, repeated in `BaseLayout`; keep them in step with `global.css`.
 
+## Browser checks
+
+`npm run build` cannot see what a browser renders, so CI also loads the built site in headless Chromium (Playwright, a dev dependency). The `Browser checks` workflow runs them on every push and pull request. Locally:
+
+```sh
+npx playwright install chromium   # once, downloads the browser
+npm run test:phone                # phones must not scroll sideways
+npm run test:layout               # desktop and tablet must not move
+npm run test:layout:update        # rewrite the layout baselines on purpose
+npm run test:browser              # both
+```
+
+Each command builds the site, starts `astro preview` on port 4391, runs, and shuts it down. `PW_SKIP_BUILD=1` reuses an existing `dist/`.
+
+- **`test:phone`** emulates three phones (375×667, 393×852, 412×915) and fails if any page, or any `/play` state from the name screen through Q6, the lifelines, walk-away and the end screen, is wider than the screen. The failure names the outermost elements that stick out. Each phone uses a fixed question seed; `PW_SEED=<n>` reproduces or varies a run.
+- **`test:layout`** records where every piece of text and every painted box sits at 1280×800 and on an 820×1180 touch tablet, in both themes, and compares that with the JSON in `tests/browser/layout-baselines/`. It is the guard behind "desktop and tablets do not change" in #5. If you changed the desktop or tablet layout on purpose (or edited copy on a covered page), run `test:layout:update` and commit the baseline diff with the change. It needs network access to Google Fonts, and says so if the fonts fail to load.
+
+On a CI failure, open the run's **Summary** and download the `playwright-report` artifact. Unzip it and open `playwright-report/index.html`: it holds the failure message, a screenshot, a trace, and for layout failures the full captured geometry.
+
 ## Notes authoring
 
 The revision notes in `src/content/notes/<module-id>/` are a blend of public-policy concepts, Aasif's own notes, and material adapted from the Takshashila GCPP readings — disclosed to readers on the notes index and in the per-note footer.

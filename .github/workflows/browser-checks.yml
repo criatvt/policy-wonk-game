@@ -1,0 +1,55 @@
+name: Browser checks
+
+# #63: `npm run build` passing says nothing about what a browser renders.
+# The #62 phone overflow and the v0.1.5 blank /play both built cleanly. This
+# job serves the built site with `astro preview` and loads it in headless
+# Chromium (Playwright, a dev dependency; nothing here ships to players):
+#
+#   - phones (375×667, 393×852, 412×915): no page or game state may scroll
+#     sideways
+#   - 1280×800 desktop and an 820×1180 tablet, both themes: the layout must
+#     match the committed baselines in tests/browser/layout-baselines/
+#
+# No secrets: the build reads only PUBLIC_CF_BEACON_TOKEN, which is optional
+# and left unset here, so no analytics beacon is emitted.
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: browser-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  browser-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - run: npm ci
+      - name: Install Chromium
+        run: npx playwright install --with-deps --only-shell chromium
+      # Build in its own step so a broken build reads as one.
+      - run: npm run build
+      - name: Run browser checks
+        run: npm run test:browser
+        env:
+          PW_SKIP_BUILD: "1"
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 14

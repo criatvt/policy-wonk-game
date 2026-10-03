@@ -4,6 +4,10 @@ node_modules/
 # Build output
 dist/
 
+# Playwright browser checks (tests/browser): reports and traces
+playwright-report/
+test-results/
+
 # Astro generated types and cache (regenerated on dev/build)
 .astro/
 
