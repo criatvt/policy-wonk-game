@@ -817,7 +817,7 @@ export default function GameContainer() {
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center">
-      <div className="grid md:grid-cols-[1fr_240px] gap-6 w-full">
+      <div className="grid grid-cols-[minmax(0,1fr)] md:grid-cols-[1fr_240px] gap-6 w-full">
       <section className="flex flex-col gap-5">
         <div className="flex items-center justify-between gap-4">
           <p className="text-sm opacity-70">

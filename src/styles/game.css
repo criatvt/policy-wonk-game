@@ -28,7 +28,7 @@
 }
 
 /* Ladder: vertical on desktop, horizontal scroll on mobile */
-@media (max-width: 768px) {
+@media (max-width: 767.98px) {
   .ladder-rungs {
     flex-direction: row !important;
     overflow-x: auto;
