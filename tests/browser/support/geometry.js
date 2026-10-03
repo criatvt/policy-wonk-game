@@ -136,14 +136,20 @@ function collectInPage() {
   const seen = new Map();
   const out = {};
   for (const { kind, label, rect } of items) {
-    // The release version in the footer credit line changes the line's
-    // width every release; keep its vertical position, drop its horizontal
-    // one. Boxes around it are full width and keep everything.
-    const versioned = kind === "text" && /\bv\d+\.\d+\.\d+\b/.test(label);
+    // Keep only the vertical position of two kinds of item whose width is
+    // not layout:
+    // - the footer credit line, which carries the release version and so
+    //   changes width every release;
+    // - anything sized by an emoji (the ✨ lifeline, the ❤️ credit, the
+    //   share line). Emoji come from the system font, which is Apple Color
+    //   Emoji on macOS and Noto Color Emoji on the Linux runner.
+    const widthless =
+      (kind === "text" && /\bv\d+\.\d+\.\d+\b/.test(label)) ||
+      ((kind === "text" || kind === "box") && /\p{Extended_Pictographic}/u.test(label));
     const base = `${kind}: ${label.replace(/\bv\d+\.\d+\.\d+\b/g, "v#").slice(0, 60)}`;
     const n = (seen.get(base) ?? 0) + 1;
     seen.set(base, n);
-    out[n === 1 ? base : `${base} (${n})`] = versioned ? [null, rect[1], null, rect[3]] : rect;
+    out[n === 1 ? base : `${base} (${n})`] = widthless ? [null, rect[1], null, rect[3]] : rect;
   }
   return {
     doc: [document.documentElement.scrollWidth, document.documentElement.scrollHeight],
@@ -270,10 +276,10 @@ export async function expectLayout(snapshot, testInfo, suite) {
   const shown = lines.slice(0, 40).map((l) => `  ${l}`).join("\n");
   const more = lines.length > 40 ? `\n  …and ${lines.length - 40} more` : "";
   expect(
-    lines,
+    lines.length,
     `${testInfo.project.name} layout moved (${lines.length} difference${lines.length === 1 ? "" : "s"} ` +
       `beyond ${TOLERANCE_PX}px; values are [x, y, width, height]):\n${shown}${more}\n\n` +
       "If the change is intended, run `npm run test:layout:update` and commit the new baseline. " +
       "The full captured geometry is attached to this test in the HTML report.",
-  ).toEqual([]);
+  ).toBe(0);
 }
