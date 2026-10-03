@@ -13,17 +13,23 @@ name: Browser checks
 # No secrets: the build reads only PUBLIC_CF_BEACON_TOKEN, which is optional
 # and left unset here, so no analytics beacon is emitted.
 
+# Pushes to the two long-running branches, plus every pull request. A
+# feature branch with a PR open is covered by the PR run alone, rather than
+# running once for the push and again for the PR.
 on:
   push:
+    branches: [main, dev]
   pull_request:
   workflow_dispatch:
 
 permissions:
   contents: read
 
+# A newer push supersedes an older run on the same branch or PR, except on
+# main: every production commit gets a complete run.
 concurrency:
   group: browser-checks-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
   browser-checks:

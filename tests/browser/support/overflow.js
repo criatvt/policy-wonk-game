@@ -11,7 +11,7 @@
 //     Outermost offenders:
 //       section.flex.flex-col.gap-5 "Question 1 of 15 — easy15sWhat is the La" (x 24 to 2353, 2329px wide)
 //       aside.md:order-2 "Ladder11,00022,00035,000410,000525,000•6" (x 24 to 2353, 2329px wide)
-import { expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 // Measured against the emulated screen width, not window.innerWidth. With
 // mobile emulation, Chromium zooms out to fit an overflowing page and
@@ -72,12 +72,15 @@ export function overflowMessage(label, viewport, { screenWidth, scrollWidth, off
   );
 }
 
-// Soft assertion, so one run reports every overflowing screen at once.
+// Soft assertion, so one run reports every overflowing screen at once. Each
+// check is its own step, so the report lists every screen that was checked.
 export async function expectNoOverflow(page, label) {
-  const result = await measureOverflow(page);
-  const viewport = page.viewportSize();
-  expect
-    .soft(result.scrollWidth, overflowMessage(label, viewport, result))
-    .toBeLessThanOrEqual(result.screenWidth);
-  return result;
+  return test.step(`no overflow: ${label}`, async () => {
+    const result = await measureOverflow(page);
+    const viewport = page.viewportSize();
+    expect
+      .soft(result.scrollWidth, overflowMessage(label, viewport, result))
+      .toBeLessThanOrEqual(result.screenWidth);
+    return result;
+  });
 }

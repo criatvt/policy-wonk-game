@@ -15,6 +15,18 @@
 // Values are [x, y, width, height] in document pixels, rounded. Compared
 // with a small tolerance so sub-pixel font rasterisation differences
 // between platforms do not fail the run. A deliberate 10px change does.
+//
+// Two kinds of text have a width that is not layout, so they record an
+// anchor instead of x and width: [anchor, y, null, height], with the key
+// suffixed @left, @centre or @right after the block's text-align.
+//   - The footer credit line carries the release version, so its width
+//     changes every release.
+//   - Emoji come from the system font (Apple Color Emoji on macOS, Noto
+//     Color Emoji on the Linux runner), so text holding one varies in
+//     width by platform. A box whose own text holds an emoji (the ✨
+//     lifeline button) keeps its left edge and drops only its width.
+// Centred text anchors on its centre, so padding on a centred line still
+// moves the anchor and still fails.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -32,12 +44,15 @@ function collectInPage() {
   const sx = window.scrollX;
   const sy = window.scrollY;
 
-  // The countdown changes every frame; its geometry is not layout.
-  const skip = new Set(
-    [...document.querySelectorAll('[aria-label*="seconds remaining" i]')]
-      .map((el) => el.parentElement)
-      .filter(Boolean),
-  );
+  // The countdown digits and the shrinking bar fill change every frame;
+  // the track they sit in is layout and stays measured.
+  const skip = new Set();
+  for (const digits of document.querySelectorAll('[aria-label*="seconds remaining" i]')) {
+    skip.add(digits);
+    for (const fill of digits.parentElement?.querySelectorAll('[style*="width"]') ?? []) {
+      skip.add(fill);
+    }
+  }
   const skipped = (el) => {
     for (let p = el; p; p = p.parentElement) {
       if (skip.has(p)) return true;
@@ -109,10 +124,22 @@ function collectInPage() {
       (side) => parseFloat(cs[`border${side}Width`]) > 0 && alpha(cs[`border${side}Color`]) > 0,
     );
 
+  const VERSION = /\bv\d+\.\d+\.\d+\b/;
+  const EMOJI = /\p{Extended_Pictographic}/u;
+  const anchorOf = (el) => {
+    const align = getComputedStyle(el).textAlign;
+    if (align === "center") return "centre";
+    if (align === "right" || align === "end") return "right";
+    return "left";
+  };
+
   const items = [];
-  for (const [, { text, rects }] of blocks) {
+  for (const [block, { text, rects }] of blocks) {
     const rect = union(rects);
-    if (rect) items.push({ kind: "text", label: norm(text.join("")), rect });
+    if (!rect) continue;
+    const label = norm(text.join(""));
+    const anchor = VERSION.test(label) || EMOJI.test(label) ? anchorOf(block) : null;
+    items.push({ kind: "text", label, rect, anchor });
   }
   for (const el of document.body.querySelectorAll("*")) {
     if (el.closest("svg") && el.tagName.toLowerCase() !== "svg") continue;
@@ -127,7 +154,11 @@ function collectInPage() {
     const label = norm(
       el.getAttribute("aria-label") || el.innerText || el.getAttribute("placeholder"),
     );
-    items.push({ kind, label, rect });
+    // Only the element's own text nodes count: a footer that merely
+    // contains the ❤️ line keeps its full width.
+    const own = [...el.childNodes].filter((n) => n.nodeType === Node.TEXT_NODE);
+    const emojiSized = kind === "box" && own.some((n) => EMOJI.test(n.nodeValue));
+    items.push({ kind, label, rect, anchor: emojiSized ? "left" : null });
   }
 
   // Document order would shift every key when one element is added, so
@@ -135,21 +166,14 @@ function collectInPage() {
   items.sort((a, b) => a.rect[1] - b.rect[1] || a.rect[0] - b.rect[0]);
   const seen = new Map();
   const out = {};
-  for (const { kind, label, rect } of items) {
-    // Keep only the vertical position of two kinds of item whose width is
-    // not layout:
-    // - the footer credit line, which carries the release version and so
-    //   changes width every release;
-    // - anything sized by an emoji (the ✨ lifeline, the ❤️ credit, the
-    //   share line). Emoji come from the system font, which is Apple Color
-    //   Emoji on macOS and Noto Color Emoji on the Linux runner.
-    const widthless =
-      (kind === "text" && /\bv\d+\.\d+\.\d+\b/.test(label)) ||
-      ((kind === "text" || kind === "box") && /\p{Extended_Pictographic}/u.test(label));
-    const base = `${kind}: ${label.replace(/\bv\d+\.\d+\.\d+\b/g, "v#").slice(0, 60)}`;
+  for (const { kind, label, rect, anchor } of items) {
+    const text = label.replace(new RegExp(VERSION.source, "g"), "v#").slice(0, 60);
+    const base = `${kind}: ${text}${anchor ? ` @${anchor}` : ""}`;
     const n = (seen.get(base) ?? 0) + 1;
     seen.set(base, n);
-    out[n === 1 ? base : `${base} (${n})`] = widthless ? [null, rect[1], null, rect[3]] : rect;
+    const [x, y, w, h] = rect;
+    const ax = anchor === "centre" ? Math.round(x + w / 2) : anchor === "right" ? x + w : x;
+    out[n === 1 ? base : `${base} (${n})`] = anchor ? [ax, y, null, h] : rect;
   }
   return {
     doc: [document.documentElement.scrollWidth, document.documentElement.scrollHeight],
@@ -205,8 +229,15 @@ export async function captureThemes(page, label, settle) {
 }
 
 // Baselines live in layout-baselines/<project>.<suite>.json. A per-platform
-// copy in layout-baselines/<platform>/ wins if one exists, as an escape
-// hatch should the Linux runner ever render text differently from macOS.
+// copy in layout-baselines/<platform>/ (process.platform: "linux",
+// "darwin") wins if one exists, and --update-snapshots then rewrites that
+// copy. It is the escape hatch should the Linux runner ever render text
+// differently from macOS beyond the tolerance:
+//   1. Download the playwright-report artefact from the failing CI run.
+//   2. For each failing layout test, save its "<project>.<suite>.json
+//      (actual)" attachment as layout-baselines/linux/<project>.<suite>.json.
+//   3. Commit them. CI then compares against those; macOS keeps using the
+//      shared files. From then on, update both copies for intended changes.
 function baselinePath(file) {
   const platformFile = path.join(BASELINE_DIR, process.platform, file);
   return fs.existsSync(platformFile) ? platformFile : path.join(BASELINE_DIR, file);

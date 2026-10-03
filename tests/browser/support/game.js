@@ -220,6 +220,8 @@ export class Game {
   // persists to sessionStorage and a rehydrated question renders fully
   // composed, the same as a player refreshing mid-game. Saves about fifteen
   // seconds per question on the way to Q6.
+  // So Q2 onwards are checked in their post-reload `instant` form; only Q1
+  // goes through the typewriter.
   async fastForward() {
     const rung = this.rung + 1;
     await this.continueToNext();

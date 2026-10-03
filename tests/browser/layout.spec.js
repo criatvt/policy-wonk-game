@@ -7,7 +7,7 @@
 //
 // Intended layout change? `npm run test:layout:update`, then review and
 // commit the JSON diff alongside the change that caused it.
-import { test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 import { Game, MODULES, pinQuestionBank, seedRandom, settle } from "./support/game.js";
 import { captureThemes, expectLayout, expectWebFonts } from "./support/geometry.js";
 
@@ -16,6 +16,7 @@ const STATIC_PAGES = [
   "/notes/",
   `/notes/${MODULES[0].id}/`,
   "/login",
+  "/login?show=email",
   "/privacy",
   "/search",
   "/this-page-does-not-exist",
@@ -25,6 +26,8 @@ test("static pages keep their desktop and tablet layout", async ({ page }, testI
   const snapshot = {};
   for (const path of STATIC_PAGES) {
     await page.goto(path, { waitUntil: "networkidle" });
+    // The email form is revealed client-side; measure it, not the chooser.
+    if (path.includes("show=email")) await expect(page.locator('input[type="email"]')).toBeVisible();
     await expectWebFonts(page);
     Object.assign(snapshot, await captureThemes(page, path, settle));
   }

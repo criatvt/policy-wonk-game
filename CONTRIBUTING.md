@@ -84,7 +84,7 @@ Phones get their own UI; desktop and tablets do not change (plan in #5). "Phone"
 
 ## Browser checks
 
-`npm run build` cannot see what a browser renders, so CI also loads the built site in headless Chromium (Playwright, a dev dependency). The `Browser checks` workflow runs them on every push and pull request. Locally:
+`npm run build` cannot see what a browser renders, so CI also loads the built site in headless Chromium (Playwright, a dev dependency). The `Browser checks` workflow runs them on pushes to `dev` and `main` and on every pull request. Locally:
 
 ```sh
 npx playwright install chromium   # once, downloads the browser
@@ -96,10 +96,16 @@ npm run test:browser              # both
 
 Each command builds the site, starts `astro preview` on port 4391, runs, and shuts it down. `PW_SKIP_BUILD=1` reuses an existing `dist/`.
 
-- **`test:phone`** emulates three phones (375×667, 393×852, 412×915) and fails if any page, or any `/play` state from the name screen through Q6, the lifelines, walk-away and the end screen, is wider than the screen. The failure names the outermost elements that stick out. Each phone uses a fixed question seed; `PW_SEED=<n>` reproduces or varies a run.
+- **`test:phone`** emulates three phones (375×667, 393×852, 412×915) and fails if any page, or any `/play` state from the name screen through every question and reveal up to Q6, the lifelines, walk-away and the end screen, is wider than the screen. The failure names the outermost elements that stick out. Each phone uses a fixed question seed; `PW_SEED=<n>` reproduces or varies a run.
 - **`test:layout`** records where every piece of text and every painted box sits at 1280×800 and on an 820×1180 touch tablet, in both themes, and compares that with the JSON in `tests/browser/layout-baselines/`. It is the guard behind "desktop and tablets do not change" in #5. If you changed the desktop or tablet layout on purpose (or edited copy on a covered page), run `test:layout:update` and commit the baseline diff with the change. It needs network access to Google Fonts, and says so if the fonts fail to load.
 
-On a CI failure, open the run's **Summary** and download the `playwright-report` artifact. Unzip it and open `playwright-report/index.html`: it holds the failure message, a screenshot, a trace, and for layout failures the full captured geometry.
+On a CI failure, open the run's **Summary** and download the `playwright-report` artefact (listed under GitHub's **Artifacts** heading). Unzip it and open `playwright-report/index.html`: it holds the failure message, a screenshot, a trace, and for layout failures the full captured geometry.
+
+**If CI's Linux rendering ever differs from macOS** beyond the 2px tolerance, so that the layout check fails on CI but passes locally with no layout change, give Linux its own baselines:
+
+1. Download the `playwright-report` artefact from the failing run and open the report.
+2. Each failing layout test has an attachment named `<project>.<suite>.json (actual)`, for example `desktop-1280.play.json (actual)`. Save each one as `tests/browser/layout-baselines/linux/<project>.<suite>.json`.
+3. Commit them. CI compares against `layout-baselines/linux/` from then on, and macOS keeps using the shared files. After an intended layout change, update both: run `test:layout:update` locally for the shared files, and take the Linux files from the next CI report.
 
 ## Notes authoring
 
