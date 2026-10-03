@@ -4,6 +4,7 @@ import "../styles/game.css";
 import "../styles/notes.css";
 import Footer from "../components/shared/Footer.astro";
 import Header from "../components/shared/Header.astro";
+import { PHONE_QUERY, STANDALONE_QUERY } from "../lib/device.js";
 
 interface Props {
   title?: string;
@@ -34,26 +35,101 @@ const ogImage = new URL("/og-image.png", SITE).href;
 // Web Analytics) and the beacon loads; leave it unset (dev / preview) and no
 // third-party script is emitted at all. The token is public by design.
 const cfBeaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN ?? "";
+
+// Browser chrome colour (#65): the address bar and status bar on phones
+// match the page. Meta content can't read CSS custom properties, so these
+// are the --color-bg values from global.css, light and dark. Keep them in
+// step with that file.
+const THEME_COLOR = { light: "#FFFFFF", dark: "#0E0E11" };
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* viewport-fit=cover lets the page run under the notch and home
+        indicator, so the safe-area insets become real numbers. Phones pad
+        the body by them in global.css, so nothing ends up under the
+        notch. */}
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    {/* One per scheme for "system". The theme script below rewrites both
+        to the chosen colour when the reader has picked light or dark, so
+        they must come before it. */}
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content={THEME_COLOR.light} data-scheme="light" data-color={THEME_COLOR.light} />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content={THEME_COLOR.dark} data-scheme="dark" data-color={THEME_COLOR.dark} />
     {/* Apply the stored appearance BEFORE first paint. This has to be an
         inline, render-blocking script in <head>: if it ran with the rest of
         the page scripts, a reader who has chosen light while their OS is dark
         would see a dark flash on every navigation. "system" deliberately sets
         nothing and lets the prefers-color-scheme block in global.css decide.
-        Key matches the iOS app's AppAppearance.storageKey. */}
+        Key matches the iOS app's AppAppearance.storageKey.
+
+        It also keeps the theme-color metas honest. Their media queries only
+        know the OS scheme, so an explicit choice would leave the browser
+        chrome the wrong colour. The observer catches every later change to
+        data-theme, including the header's appearance switch, without that
+        switch needing to know the metas exist. */}
     <script is:inline>
       (function () {
+        var root = document.documentElement;
         try {
           var m = localStorage.getItem("policyWonk.appearance");
           if (m === "light" || m === "dark") {
-            document.documentElement.setAttribute("data-theme", m);
+            root.setAttribute("data-theme", m);
           }
         } catch (e) {}
+
+        var metas = document.querySelectorAll('meta[name="theme-color"][data-scheme]');
+        function syncThemeColor() {
+          var chosen = root.getAttribute("data-theme");
+          var source = null;
+          for (var i = 0; i < metas.length; i++) {
+            if (metas[i].getAttribute("data-scheme") === chosen) source = metas[i];
+          }
+          // With a choice, every meta carries that colour whatever its
+          // media query says. On "system", each goes back to its own.
+          for (var j = 0; j < metas.length; j++) {
+            metas[j].setAttribute("content", (source || metas[j]).getAttribute("data-color"));
+          }
+        }
+        syncThemeColor();
+        if (window.MutationObserver) {
+          new MutationObserver(syncThemeColor).observe(root, {
+            attributes: true,
+            attributeFilter: ["data-theme"],
+          });
+        }
+      })();
+    </script>
+    {/* Phone and installed-app detection (#65), before first paint for the
+        same reason as the theme: the `phone:` and `standalone:` variants in
+        global.css key off these attributes, so setting them any later would
+        paint the desktop layout first and then jump. The queries come from
+        src/lib/device.js, which useIsPhone() and useStandalone() also read,
+        so CSS and React can't disagree. Media queries only, no user-agent
+        sniffing. Both stay live: rotating, resizing or installing updates
+        them. */}
+    <script define:vars={{ PHONE_QUERY, STANDALONE_QUERY }}>
+      (function () {
+        var root = document.documentElement;
+        if (!window.matchMedia) return;
+        function track(query, attr, value) {
+          var mql = window.matchMedia(query);
+          function apply() {
+            if (mql.matches) root.setAttribute(attr, value);
+            else root.removeAttribute(attr);
+          }
+          apply();
+          // Safari before 14 only has the deprecated addListener.
+          if (mql.addEventListener) mql.addEventListener("change", apply);
+          else if (mql.addListener) mql.addListener(apply);
+        }
+        track(PHONE_QUERY, "data-device", "phone");
+        track(STANDALONE_QUERY, "data-standalone", "");
+        // iOS Safari only applies :active to a tap when a touch listener
+        // exists somewhere up the tree. global.css gives phones a pressed
+        // state in place of the grey tap flash it turns off, and this
+        // no-op is what lets that pressed state show.
+        document.addEventListener("touchstart", function () {}, { passive: true });
       })();
     </script>
     <meta name="description" content={description} />

@@ -69,6 +69,19 @@ This needs a local D1 database migrated first — see `db:migrate:dev` in `packa
 
 `SESSION_SECRET` for the JWT signer lives in `.dev.vars` (gitignored). Generate one with any random string ≥ 32 chars.
 
+## Phones
+
+Phones get their own UI; desktop and tablets do not change (plan in #5). "Phone" is a touch device whose short side is under 600px. It is a media query, not a width breakpoint, so a narrow desktop window and every tablet stay on the desktop layout. There is no user-agent sniffing.
+
+- **One definition.** `PHONE_QUERY` and `STANDALONE_QUERY` live in [`src/lib/device.js`](src/lib/device.js). A render-blocking script in `BaseLayout`'s `<head>` sets `<html data-device="phone">` and `<html data-standalone>` from them before first paint, and keeps both current on rotation, resize and install.
+- **CSS:** use the `phone:` and `standalone:` variants (`phone:hidden`, `phone:text-base`). Not `max-md:`.
+- **React:** `useIsPhone()` and `useStandalone()` from `src/lib/device.js`. Both return `false` on the server and during hydration, then update.
+- **Safe areas.** The viewport is `viewport-fit=cover`, so on a phone the page runs under the notch and home indicator. The body is padded by the insets, which covers in-flow content. Anything `position: fixed` must clear them itself with `phone:pt-safe`, `phone:pb-safe`, `phone:px-safe` (and `pl-safe`, `pr-safe`).
+- **Full height:** use `phone:min-h-dvh` or `phone:h-dvh`, not `100vh`. On iOS Safari `100vh` includes the collapsing address bar and pushes pinned controls off screen.
+- **Text fields are at least 16px on phones,** or iOS Safari zooms on focus. Fields using `text-xs` or `text-sm` are lifted automatically. A field with an arbitrary size such as `text-[15px]` also needs `phone:text-base`.
+- **No grey tap flash.** Phones get a dimmed pressed state on links and buttons instead. A component's own `active:` style overrides it.
+- **`theme-color`** follows the page background in both themes, including an explicit choice on the appearance switch. The colours are the `--color-bg` values, repeated in `BaseLayout`; keep them in step with `global.css`.
+
 ## Notes authoring
 
 The revision notes in `src/content/notes/<module-id>/` are a blend of public-policy concepts, Aasif's own notes, and material adapted from the Takshashila GCPP readings — disclosed to readers on the notes index and in the per-note footer.
