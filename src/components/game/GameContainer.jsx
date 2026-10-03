@@ -27,6 +27,7 @@ import {
   generateAudiencePoll,
 } from "../../lib/lifelineLogic.js";
 import { findCorrectIndex, isCorrect } from "../../lib/answerHash.js";
+import { BUILT_AT } from "../../lib/_salt.js";
 import { pickExpertLine } from "../../lib/expertPicker.js";
 import { trackEvent } from "../../lib/analytics.js";
 import { fireConfetti, typeForRung } from "../../lib/confetti.js";
@@ -37,6 +38,14 @@ import EndScreen from "./EndScreen.jsx";
 import Lifelines from "./Lifelines.jsx";
 
 const EXPERTS = expertsData.experts;
+
+// Shown under the lock controls when the answer can't be checked because
+// the question payload and the JS bundle come from different builds (#88).
+// The answer is not scored and the game stays on the current question.
+// Closing the tab is the fallback because a reload restores the same
+// sessionStorage snapshot, and that snapshot carries the question payload.
+const LOCK_MISMATCH_MESSAGE =
+  "We couldn't check your answer, so it hasn't been scored. This page is out of date. Reload it to carry on. If that doesn't work, close this tab and open the game again.";
 
 // Inter-rung acknowledgement shown after a correct answer on Q1–Q14.
 // KBC-style framing per Aasif's call (2026-05-09): every screen between
@@ -213,6 +222,9 @@ export default function GameContainer() {
   const [loadError, setLoadError] = useState(null);
   const [timerRunning, setTimerRunning] = useState(false);
   const [walkAwayConfirm, setWalkAwayConfirm] = useState(false);
+  // Set when a lock is refused because no option matches the answer hash
+  // (#88). Not persisted: a reload either fixes the pairing or shows it again.
+  const [lockError, setLockError] = useState(null);
   const [rulesStage, setRulesStage] = useState(() => persisted?.rulesStage ?? 0);
   // Logged-in user (or null). Populated by the /api/me effect below. Used
   // to skip the in-game name prompt — a player with an account nickname
@@ -341,7 +353,10 @@ export default function GameContainer() {
   const startGame = useCallback(async (chosenModuleId) => {
     setLoadError(null);
     try {
-      const questionsRes = await fetch(`/data/questions/${chosenModuleId}.json`);
+      // Build-versioned URL so a cached bank from an earlier build can never
+      // pair with this bundle's salt (#88). Every answer would then hash as
+      // wrong.
+      const questionsRes = await fetch(`/data/questions/${chosenModuleId}.json?b=${encodeURIComponent(BUILT_AT)}`);
       if (!questionsRes.ok) throw new Error(`questions ${questionsRes.status}`);
       const questionBank = await questionsRes.json();
       const { plan, warnings } = pickSessionQuestions(questionBank);
@@ -362,7 +377,7 @@ export default function GameContainer() {
 
   async function fetchExplanation(question) {
     try {
-      const res = await fetch(`/data/explanations/${question.module}/${question.id}.json`);
+      const res = await fetch(`/data/explanations/${question.module}/${question.id}.json?b=${encodeURIComponent(BUILT_AT)}`);
       if (!res.ok) return null;
       const data = await res.json();
       return data.explanation ?? null;
@@ -379,6 +394,7 @@ export default function GameContainer() {
     setState(null);
     setTimerRunning(false);
     setWalkAwayConfirm(false);
+    setLockError(null);
     // Logged-in users (#32): skip the name prompt on Play again. Their
     // nickname is already in `name` from the initial seed, so we jump
     // straight to rules (first time) or module pick (returning).
@@ -411,23 +427,67 @@ export default function GameContainer() {
     setState((s) => selectOption(s, i));
   }, []);
 
+  // findCorrectIndex returns -1 when NO option hashes to the question's
+  // correctHash. That means the salt bundled into the JS and the question
+  // payload came from different builds — the salt rotates on every build
+  // (scripts/transform-questions.js), so a tab holding stale
+  // /data/questions JSON against a fresh _salt.js hits exactly this.
+  //
+  // All three lifelines derive their output from this index, and -1
+  // corrupts each of them silently rather than visibly: the professor
+  // recommends "Option undefined" (["A","B","C","D"][-1]), 50:50 filters
+  // nothing and can therefore eliminate the CORRECT answer, and the poll
+  // writes its majority share to result[-1] so the real answer gets no
+  // weight. The lock has the same failure: every answer, including the
+  // right one, would be marked wrong (#88). Per the project's fail-loudly
+  // rule, refuse and log rather than act on a corrupt index.
+  const resolveCorrectIndex = useCallback(async (q) => {
+    const idx = await findCorrectIndex(q);
+    if (idx < 0) {
+      console.error(
+        `[policy-wonk] No option matched correctHash for question ${q.id} ` +
+          `(module ${q.module}, bundle built ${BUILT_AT}). ` +
+          "The bundled salt and the question payload are from different builds. " +
+          "Reload the page to pick up a consistent pair.",
+      );
+      return null;
+    }
+    return idx;
+  }, []);
+
   // Lock + check + reveal flow. 1s suspense pause before reveal so the
   // lock state is felt for a beat (no character to fill the space, but
   // a brief rhythm still helps absorption).
   const handleLock = useCallback(async () => {
     if (!state || state.selectedAnswer == null || state.answerLocked) return;
     setTimerRunning(false);
+    setLockError(null);
     setState(lockAnswer(state));
     const q = state.plan[state.currentRung - 1];
     const selectedText = q.options[state.selectedAnswer];
     const [correct, correctIdx, exp] = await Promise.all([
       isCorrect(q, selectedText),
-      findCorrectIndex(q),
+      resolveCorrectIndex(q),
       fetchExplanation(q),
     ]);
+    // Build mismatch (#88): `correct` is false for every option, so
+    // revealing would score a right answer as wrong. Refuse instead. Undo
+    // the lock so the question is answerable once the pairing is fixed, and
+    // leave score and ladder untouched. The timer stays stopped while
+    // lockError is set (see the Timer below), so it can't run out and end
+    // the game either.
+    if (correctIdx === null) {
+      setState((s) =>
+        s && s.status === "locked" && s.currentRung === state.currentRung
+          ? { ...s, status: "reveal-question", answerLocked: false }
+          : s,
+      );
+      setLockError(LOCK_MISMATCH_MESSAGE);
+      return;
+    }
     await new Promise((r) => setTimeout(r, 1000));
     setState((s) => reveal(s, correct, exp, correctIdx));
-  }, [state]);
+  }, [state, resolveCorrectIndex]);
 
   // For revealed-wrong: end the game.
   // For revealed-correct on Q15: advance triggers the "won" status.
@@ -473,32 +533,6 @@ export default function GameContainer() {
     setWalkAwayConfirm(false);
     if (state?.status === "reveal-question") setTimerRunning(true);
   }, [state]);
-
-  // findCorrectIndex returns -1 when NO option hashes to the question's
-  // correctHash. That means the salt bundled into the JS and the question
-  // payload came from different builds — the salt rotates on every build
-  // (scripts/transform-questions.js), so a tab holding stale
-  // /data/questions JSON against a fresh _salt.js hits exactly this.
-  //
-  // All three lifelines derive their output from this index, and -1
-  // corrupts each of them silently rather than visibly: the professor
-  // recommends "Option undefined" (["A","B","C","D"][-1]), 50:50 filters
-  // nothing and can therefore eliminate the CORRECT answer, and the poll
-  // writes its majority share to result[-1] so the real answer gets no
-  // weight. Per the project's fail-loudly rule, refuse the lifeline and
-  // log rather than hand the player confidently wrong advice.
-  const resolveCorrectIndex = useCallback(async (q) => {
-    const idx = await findCorrectIndex(q);
-    if (idx < 0) {
-      console.error(
-        `[policy-wonk] No option matched correctHash for question ${q.id}. ` +
-          "The bundled salt and the question payload are from different builds. " +
-          "Reload the page to pick up a consistent pair.",
-      );
-      return null;
-    }
-    return idx;
-  }, []);
 
   const handleLifelineFiftyFifty = useCallback(async () => {
     if (!state || state.status !== "reveal-question" || state.answerLocked) return;
@@ -826,7 +860,7 @@ export default function GameContainer() {
           {state.status === "reveal-question" && (
             <Timer
               seconds={tierTimer}
-              running={timerRunning}
+              running={timerRunning && !lockError}
               initialElapsedSec={
                 state.questionStartedAt != null
                   ? (Date.now() - state.questionStartedAt) / 1000
@@ -944,6 +978,12 @@ export default function GameContainer() {
             onUseExpert={handleLifelineExpert}
             onDismissPanel={handleLifelineDismiss}
           />
+        )}
+
+        {state.status === "reveal-question" && lockError && (
+          <p role="alert" className="text-sm text-[var(--color-functional-red)]">
+            {lockError}
+          </p>
         )}
 
         {state.status === "reveal-question" && !walkAwayConfirm && (
