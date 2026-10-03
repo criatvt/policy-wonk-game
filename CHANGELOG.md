@@ -4,6 +4,10 @@ All notable changes to Policy Wonk. Format follows [Keep a Changelog](https://ke
 
 ## [Unreleased]
 
+### Added
+
+- **Phone foundations (#65, mobile milestone M1).** Groundwork the phone UI builds on; nothing changes on desktop or tablets. A render-blocking `<head>` script sets `<html data-device="phone">` on a touch device whose short side is under 600px, and `data-standalone` when running as an installed app, before first paint and live on rotation. CSS reads them through new `phone:` and `standalone:` Tailwind variants; React through `useIsPhone()` and `useStandalone()` in `src/lib/device.js`, which also holds the one copy of the queries. On phones: `viewport-fit=cover` with the body padded by the safe-area insets, `100dvh` instead of `100vh` for the game page's full height, text fields lifted to 16px so iOS Safari stops zooming on focus, and a pressed state in place of the grey tap flash. `theme-color` metas now colour the browser chrome to match the page in both themes, and follow an explicit choice on the appearance switch. Rules for using all this are in `CONTRIBUTING.md` under "Phones".
+
 ### Pending
 
 - Re-author CP 22 / CG 1 / CP 10 notes through the proper `scripts/ingest.js` pipeline using the actual GCPP source PDFs. Current notes were authored from question-bank explanations + general public-policy knowledge (sub-agent couldn't reach the source PDFs). See [`CONTRIBUTING.md`](policy-wonk-game/CONTRIBUTING.md) for the pipeline. The 92 build warnings about missing `<slug>.md` files all come from these three modules — they collapse once the re-authoring lands.

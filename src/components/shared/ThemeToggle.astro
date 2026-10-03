@@ -9,7 +9,9 @@
 //
 // The button only CYCLES the setting. Applying the stored choice on load
 // happens in an inline <script> in BaseLayout's <head>, because it has to run
-// before first paint or the page flashes the wrong theme.
+// before first paint or the page flashes the wrong theme. That script also
+// watches data-theme and updates the theme-color metas, so the browser
+// chrome follows this switch without any code here.
 ---
 <button
   type="button"

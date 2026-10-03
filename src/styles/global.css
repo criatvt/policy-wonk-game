@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* Device variants (#65). `phone:` and `standalone:` key off attributes
+   BaseLayout's <head> script sets before first paint, from the queries in
+   src/lib/device.js. "Phone" is a touch device whose short side is under
+   600px, not a width breakpoint: a narrow desktop window and every tablet
+   stay on the desktop layout. React components use useIsPhone() and
+   useStandalone() from the same file. */
+@custom-variant phone (&:where([data-device=phone], [data-device=phone] *));
+@custom-variant standalone (&:where([data-standalone], [data-standalone] *));
+
 /* ---------------------------------------------------------------------------
    Palette.
 
@@ -175,4 +184,79 @@ body {
   font-family: var(--font-sans);
   background: var(--color-bg);
   color: var(--color-text);
+}
+
+/* --- Phone foundations (#65) ---------------------------------------------
+   Everything here applies only under <html data-device="phone">, so desktop
+   and tablets are untouched. Later phone work builds on these. */
+
+/* viewport-fit=cover (BaseLayout) lets the page run under the notch and the
+   home indicator. Padding the body by the insets keeps all in-flow content
+   clear of both; the body background still fills the notch area. Anything
+   position: fixed ignores this and must clear the insets itself, with the
+   *-safe utilities below. */
+[data-device="phone"] body {
+  padding:
+    env(safe-area-inset-top, 0px)
+    env(safe-area-inset-right, 0px)
+    env(safe-area-inset-bottom, 0px)
+    env(safe-area-inset-left, 0px);
+}
+
+/* 100vh on iOS Safari is the height with the address bar collapsed, so a
+   full-height layout overshoots the visible screen while the bar is
+   showing. dvh tracks the bar. Browsers without dvh drop this declaration
+   and keep the 100vh from game.css. */
+[data-device="phone"] .game-zone {
+  min-height: 100dvh;
+}
+
+/* iOS Safari zooms the page when a focused field's text is under 16px.
+   Tailwind's text-xs and text-sm read these tokens, so redefining them on
+   the field lifts those fields to 16px and leaves larger ones (text-lg on
+   the name field, Pagefind's search box) at their own size. Arbitrary
+   sizes such as text-[15px] don't go through a token: pair them with
+   phone:text-base at the call site. Zero specificity, so a field's own
+   phone: utility still wins. */
+:where([data-device="phone"]) :where(
+  input:not([type="checkbox"], [type="radio"], [type="range"], [type="color"],
+            [type="file"], [type="hidden"], [type="button"], [type="submit"],
+            [type="reset"], [type="image"]),
+  textarea,
+  select
+) {
+  --text-xs: 1rem;
+  --text-sm: 1rem;
+}
+
+/* No grey flash on tap. Its replacement is the pressed state below, in the
+   base layer and at zero specificity so any component's own active: style
+   wins. iOS only applies :active on a tap because of the touchstart
+   listener in BaseLayout's device script. */
+[data-device="phone"] {
+  -webkit-tap-highlight-color: transparent;
+}
+@layer base {
+  :where([data-device="phone"]) :where(a, button, summary, [role="button"]):active {
+    opacity: 0.7;
+  }
+}
+
+/* Safe-area padding for pinned bars, for use as phone:pt-safe and so on.
+   The insets are zero everywhere except under a notch or home indicator. */
+@utility pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+@utility pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@utility pl-safe {
+  padding-left: env(safe-area-inset-left, 0px);
+}
+@utility pr-safe {
+  padding-right: env(safe-area-inset-right, 0px);
+}
+@utility px-safe {
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
 }
