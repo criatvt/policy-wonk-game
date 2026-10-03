@@ -27,6 +27,7 @@ import {
   generateAudiencePoll,
 } from "../../lib/lifelineLogic.js";
 import { findCorrectIndex, isCorrect } from "../../lib/answerHash.js";
+import { BUILT_AT } from "../../lib/_salt.js";
 import { pickExpertLine } from "../../lib/expertPicker.js";
 import { trackEvent } from "../../lib/analytics.js";
 import { fireConfetti, typeForRung } from "../../lib/confetti.js";
@@ -37,6 +38,65 @@ import EndScreen from "./EndScreen.jsx";
 import Lifelines from "./Lifelines.jsx";
 
 const EXPERTS = expertsData.experts;
+
+// Shown under the lock controls when the answer can't be checked because
+// the question payload and the JS bundle come from different builds (#88).
+// The answer is not scored and the game stays on the current question. A
+// reload is a real fix: the saved game is stamped with the build its
+// questions came from, and a resume on a newer build refreshes them (see
+// refreshPlan below).
+const LOCK_MISMATCH_MESSAGE =
+  "We couldn't check your answer, so it hasn't been scored. The game was updated while you were playing. Reload the page to carry on. Your progress is kept.";
+
+// Shown on module pick when a saved game can't be carried over to a newer
+// build because one of its questions no longer exists (#88).
+const RESUME_DISCARDED_MESSAGE =
+  "Sorry, we couldn't carry your game over. The questions were updated since you last played. Pick a module to start again.";
+
+const ENDED_STATUSES = new Set(["won", "lost", "walked-away"]);
+
+// Build-versioned URL so a cached bank from an earlier build can never
+// pair with this bundle's salt (#88). Every answer would then hash as
+// wrong.
+function questionBankUrl(moduleId) {
+  return `/data/questions/${moduleId}.json?b=${encodeURIComponent(BUILT_AT)}`;
+}
+
+// A saved game carries its 15 questions, and their correctHash values only
+// match the salt of the build that served them. When a game saved on an
+// earlier build is resumed, fetch this build's banks and swap each planned
+// question for its current version by id, so the hashes match again and
+// the player keeps their rung, score, lifelines and safety nets (#88).
+// Returns { plan }, or { missing: [ids] } if a question has been removed,
+// or { error } if the banks couldn't be loaded.
+async function refreshPlan(plan) {
+  try {
+    const moduleIds = [...new Set(plan.map((q) => q.module))];
+    const banks = await Promise.all(
+      moduleIds.map(async (id) => {
+        const res = await fetch(questionBankUrl(id));
+        if (!res.ok) throw new Error(`questions ${id} ${res.status}`);
+        return res.json();
+      }),
+    );
+    const byId = new Map(banks.flat().map((q) => [q.id, q]));
+    const missing = plan.filter((q) => !byId.has(q.id)).map((q) => q.id);
+    if (missing.length) return { missing };
+    return { plan: plan.map((q) => byId.get(q.id)) };
+  } catch (error) {
+    return { error };
+  }
+}
+
+// True when a saved, unfinished game was written by a different build.
+// Snapshots from before this check have no builtAt, and were necessarily
+// written by an earlier build. Finished games are left alone: the end
+// screen never checks an answer.
+function needsPlanRefresh(persisted) {
+  const state = persisted?.state;
+  if (!state?.plan || ENDED_STATUSES.has(state.status)) return false;
+  return persisted.builtAt !== BUILT_AT;
+}
 
 // Inter-rung acknowledgement shown after a correct answer on Q1–Q14.
 // KBC-style framing per Aasif's call (2026-05-09): every screen between
@@ -159,6 +219,12 @@ function loadPersistedGame() {
     if (!raw) return null;
     const parsed = JSON.parse(raw);
     if (!parsed || typeof parsed !== "object") return null;
+    // A snapshot saved mid-lock by a build without the #90 fix. Nothing
+    // advances out of "locked" after a reload, so reopen the question:
+    // the selection is kept and the timer resumes.
+    if (parsed.state?.status === "locked") {
+      parsed.state = { ...parsed.state, status: "reveal-question", answerLocked: false };
+    }
     return parsed;
   } catch {
     return null;
@@ -213,6 +279,18 @@ export default function GameContainer() {
   const [loadError, setLoadError] = useState(null);
   const [timerRunning, setTimerRunning] = useState(false);
   const [walkAwayConfirm, setWalkAwayConfirm] = useState(false);
+  // Set when a lock is refused because no option matches the answer hash
+  // (#88). Not persisted: a reload either fixes the pairing or shows it again.
+  const [lockError, setLockError] = useState(null);
+  // The build whose salt the current plan's correctHash values match.
+  // Saved with the snapshot so a resume on a newer build can refresh the
+  // plan (#88). Only moves to BUILT_AT once the plan really comes from
+  // this build, so a failed refresh is retried on the next load.
+  const [planBuiltAt, setPlanBuiltAt] = useState(() => persisted?.builtAt ?? null);
+  // True while a saved game from an earlier build is being refreshed. The
+  // playing screen waits for it, so no answer is checked against old hashes.
+  const [refreshingPlan, setRefreshingPlan] = useState(() => needsPlanRefresh(persisted));
+  const [resumeNotice, setResumeNotice] = useState(null);
   const [rulesStage, setRulesStage] = useState(() => persisted?.rulesStage ?? 0);
   // Logged-in user (or null). Populated by the /api/me effect below. Used
   // to skip the in-game name prompt — a player with an account nickname
@@ -299,29 +377,71 @@ export default function GameContainer() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Resume across a deploy (#88). Runs once, only when the saved game came
+  // from a different build. On success the player carries on as if nothing
+  // happened. If a planned question has been removed there is nothing to
+  // resume into, so the saved game is dropped with a short notice. If the
+  // banks can't be loaded (offline, say), the old game is kept and the next
+  // load tries again; the lock guard covers this session.
+  useEffect(() => {
+    if (!refreshingPlan) return;
+    let cancelled = false;
+    (async () => {
+      const result = await refreshPlan(persisted.state.plan);
+      if (cancelled) return;
+      if (result.plan) {
+        setState((s) => (s ? { ...s, plan: result.plan } : s));
+        setPlanBuiltAt(BUILT_AT);
+      } else if (result.missing) {
+        console.warn(
+          `[policy-wonk] Saved game from build ${persisted.builtAt ?? "unknown"} ` +
+            `can't resume on ${BUILT_AT}: question(s) ${result.missing.join(", ")} no longer exist.`,
+        );
+        clearPersistedGame();
+        rehydratedRungRef.current = null;
+        setState(null);
+        setTimerRunning(false);
+        setWalkAwayConfirm(false);
+        setLockError(null);
+        setResumeNotice(RESUME_DISCARDED_MESSAGE);
+        setScreen(persisted.name?.trim() ? SCREEN_MODULE_PICK : SCREEN_ONBOARDING);
+      } else {
+        console.error(
+          `[policy-wonk] Couldn't refresh a saved game from build ${persisted.builtAt ?? "unknown"} ` +
+            `to ${BUILT_AT}. Keeping it; the next load will retry.`,
+          result.error,
+        );
+      }
+      setRefreshingPlan(false);
+    })();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // Persist the game snapshot on any change. Skip while a lock is mid-flight
-  // (answerLocked=true but correctIndex not yet resolved) — that 1s window
-  // owns an async chain inside handleLock that won't re-fire after a refresh,
-  // so freezing the persisted snapshot at the pre-lock state lets a refreshed
-  // player re-attempt the lock cleanly.
+  // (the engine's transient "locked" status) — that 1s window owns an async
+  // chain inside handleLock that won't re-fire after a refresh, so freezing
+  // the persisted snapshot at the pre-lock state lets a refreshed player
+  // re-attempt the lock cleanly. The guard used to test for
+  // "reveal-question", which lockAnswer never produces, so the "locked"
+  // snapshot was saved and a refresh in that second left the game stuck
+  // with no timer, lifelines or Lock button (#90).
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const lockInFlight =
-      state &&
-      state.status === "reveal-question" &&
-      state.answerLocked &&
-      state.correctIndex == null;
+    const lockInFlight = state?.status === "locked";
     if (lockInFlight) return;
     try {
       window.sessionStorage?.setItem(
         GAME_STATE_KEY,
-        JSON.stringify({ screen, name, moduleId, state, rulesStage }),
+        JSON.stringify({ screen, name, moduleId, state, rulesStage, builtAt: planBuiltAt }),
       );
     } catch {
       // sessionStorage may be unavailable (private mode, quota). Not blocking
       // — the player can keep playing, just without refresh-survival.
     }
-  }, [screen, name, moduleId, state, rulesStage]);
+  }, [screen, name, moduleId, state, rulesStage, planBuiltAt]);
 
   const currentQuestion = state ? state.plan[state.currentRung - 1] : null;
   const tierTimer = currentQuestion ? timerForRung(state.currentRung, currentQuestion) : 0;
@@ -341,7 +461,7 @@ export default function GameContainer() {
   const startGame = useCallback(async (chosenModuleId) => {
     setLoadError(null);
     try {
-      const questionsRes = await fetch(`/data/questions/${chosenModuleId}.json`);
+      const questionsRes = await fetch(questionBankUrl(chosenModuleId));
       if (!questionsRes.ok) throw new Error(`questions ${questionsRes.status}`);
       const questionBank = await questionsRes.json();
       const { plan, warnings } = pickSessionQuestions(questionBank);
@@ -349,6 +469,8 @@ export default function GameContainer() {
         for (const w of warnings) console.warn("question pool:", w);
       }
       setState(createInitialState({ name: trimmedName, moduleId: chosenModuleId, plan }));
+      setPlanBuiltAt(BUILT_AT);
+      setResumeNotice(null);
       setScreen(SCREEN_PLAYING);
       // Funnel events (#12) — fire only once the play has actually started
       // (questions loaded, screen switched), so abandoned module picks and
@@ -362,7 +484,7 @@ export default function GameContainer() {
 
   async function fetchExplanation(question) {
     try {
-      const res = await fetch(`/data/explanations/${question.module}/${question.id}.json`);
+      const res = await fetch(`/data/explanations/${question.module}/${question.id}.json?b=${encodeURIComponent(BUILT_AT)}`);
       if (!res.ok) return null;
       const data = await res.json();
       return data.explanation ?? null;
@@ -379,6 +501,7 @@ export default function GameContainer() {
     setState(null);
     setTimerRunning(false);
     setWalkAwayConfirm(false);
+    setLockError(null);
     // Logged-in users (#32): skip the name prompt on Play again. Their
     // nickname is already in `name` from the initial seed, so we jump
     // straight to rules (first time) or module pick (returning).
@@ -394,21 +517,54 @@ export default function GameContainer() {
   // mid-question refresh can compute the right remaining seconds. On
   // rehydrate (instant Question), this also fires immediately — the
   // null-guard preserves the original timestamp.
+  //
+  // A refused lock (#88) clears questionStartedAt and banks the elapsed
+  // time in heldElapsedMs, so wall-clock time spent on the message doesn't
+  // count. Nothing restarts while lockError is up; after a reload the
+  // stamp is rebased so the timer resumes where it was held.
   const handleRevealComplete = useCallback(() => {
-    if (state?.status === "reveal-question") {
+    if (state?.status === "reveal-question" && !lockError) {
       setTimerRunning(true);
       if (state.questionStartedAt == null) {
-        setState((s) =>
-          s && s.status === "reveal-question" && s.questionStartedAt == null
-            ? { ...s, questionStartedAt: Date.now() }
-            : s,
-        );
+        setState((s) => {
+          if (!s || s.status !== "reveal-question" || s.questionStartedAt != null) return s;
+          const { heldElapsedMs = 0, ...rest } = s;
+          return { ...rest, questionStartedAt: Date.now() - heldElapsedMs };
+        });
       }
     }
-  }, [state?.status]);
+  }, [state?.status, lockError]);
 
   const handleSelect = useCallback((i) => {
     setState((s) => selectOption(s, i));
+  }, []);
+
+  // findCorrectIndex returns -1 when NO option hashes to the question's
+  // correctHash. That means the salt bundled into the JS and the question
+  // payload came from different builds — the salt rotates on every build
+  // (scripts/transform-questions.js), so a tab holding stale
+  // /data/questions JSON against a fresh _salt.js hits exactly this.
+  //
+  // All three lifelines derive their output from this index, and -1
+  // corrupts each of them silently rather than visibly: the professor
+  // recommends "Option undefined" (["A","B","C","D"][-1]), 50:50 filters
+  // nothing and can therefore eliminate the CORRECT answer, and the poll
+  // writes its majority share to result[-1] so the real answer gets no
+  // weight. The lock has the same failure: every answer, including the
+  // right one, would be marked wrong (#88). Per the project's fail-loudly
+  // rule, refuse and log rather than act on a corrupt index.
+  const resolveCorrectIndex = useCallback(async (q) => {
+    const idx = await findCorrectIndex(q);
+    if (idx < 0) {
+      console.error(
+        `[policy-wonk] No option matched correctHash for question ${q.id} ` +
+          `(module ${q.module}, bundle built ${BUILT_AT}). ` +
+          "The bundled salt and the question payload are from different builds. " +
+          "Reload the page to pick up a consistent pair.",
+      );
+      return null;
+    }
+    return idx;
   }, []);
 
   // Lock + check + reveal flow. 1s suspense pause before reveal so the
@@ -417,17 +573,44 @@ export default function GameContainer() {
   const handleLock = useCallback(async () => {
     if (!state || state.selectedAnswer == null || state.answerLocked) return;
     setTimerRunning(false);
+    setLockError(null);
     setState(lockAnswer(state));
     const q = state.plan[state.currentRung - 1];
     const selectedText = q.options[state.selectedAnswer];
-    const [correct, correctIdx, exp] = await Promise.all([
+    const [correct, correctIdx] = await Promise.all([
       isCorrect(q, selectedText),
-      findCorrectIndex(q),
-      fetchExplanation(q),
+      resolveCorrectIndex(q),
     ]);
+    // Build mismatch (#88): `correct` is false for every option, so
+    // revealing would score a right answer as wrong. Refuse instead, before
+    // the explanation is fetched. Undo the lock so the question is
+    // answerable once the pairing is fixed, and leave score and ladder
+    // untouched. The timer stays stopped while lockError is set (see
+    // timerRunning below), and the elapsed time is banked rather than left
+    // on the wall clock, so neither waiting nor reloading can run it out.
+    if (correctIdx === null) {
+      setState((s) => {
+        if (!s || s.status !== "locked" || s.currentRung !== state.currentRung) return s;
+        const held =
+          s.questionStartedAt != null ? Date.now() - s.questionStartedAt : (s.heldElapsedMs ?? 0);
+        return {
+          ...s,
+          status: "reveal-question",
+          answerLocked: false,
+          questionStartedAt: null,
+          heldElapsedMs: held,
+        };
+      });
+      // Whatever build the plan was stamped with, its hashes don't match
+      // this bundle. Clearing the stamp makes the next load refresh it.
+      setPlanBuiltAt(null);
+      setLockError(LOCK_MISMATCH_MESSAGE);
+      return;
+    }
+    const exp = await fetchExplanation(q);
     await new Promise((r) => setTimeout(r, 1000));
     setState((s) => reveal(s, correct, exp, correctIdx));
-  }, [state]);
+  }, [state, resolveCorrectIndex]);
 
   // For revealed-wrong: end the game.
   // For revealed-correct on Q15: advance triggers the "won" status.
@@ -473,32 +656,6 @@ export default function GameContainer() {
     setWalkAwayConfirm(false);
     if (state?.status === "reveal-question") setTimerRunning(true);
   }, [state]);
-
-  // findCorrectIndex returns -1 when NO option hashes to the question's
-  // correctHash. That means the salt bundled into the JS and the question
-  // payload came from different builds — the salt rotates on every build
-  // (scripts/transform-questions.js), so a tab holding stale
-  // /data/questions JSON against a fresh _salt.js hits exactly this.
-  //
-  // All three lifelines derive their output from this index, and -1
-  // corrupts each of them silently rather than visibly: the professor
-  // recommends "Option undefined" (["A","B","C","D"][-1]), 50:50 filters
-  // nothing and can therefore eliminate the CORRECT answer, and the poll
-  // writes its majority share to result[-1] so the real answer gets no
-  // weight. Per the project's fail-loudly rule, refuse the lifeline and
-  // log rather than hand the player confidently wrong advice.
-  const resolveCorrectIndex = useCallback(async (q) => {
-    const idx = await findCorrectIndex(q);
-    if (idx < 0) {
-      console.error(
-        `[policy-wonk] No option matched correctHash for question ${q.id}. ` +
-          "The bundled salt and the question payload are from different builds. " +
-          "Reload the page to pick up a consistent pair.",
-      );
-      return null;
-    }
-    return idx;
-  }, []);
 
   const handleLifelineFiftyFifty = useCallback(async () => {
     if (!state || state.status !== "reveal-question" || state.answerLocked) return;
@@ -559,17 +716,20 @@ export default function GameContainer() {
     const q = state?.plan[state.currentRung - 1];
     setState((s) => timeExpired(s));
     if (q) {
+      // Time ran out, so this is a loss whatever the hashes say. On a build
+      // mismatch, resolveCorrectIndex logs it and the reveal shows no
+      // highlight rather than painting from a -1 index.
       const [exp, correctIdx] = await Promise.all([
         fetchExplanation(q),
-        findCorrectIndex(q),
+        resolveCorrectIndex(q),
       ]);
       setState((s) => ({ ...s, explanation: exp, correctIndex: correctIdx }));
     }
-  }, [state]);
+  }, [state, resolveCorrectIndex]);
 
   // Keyboard: 1-4 select, Enter lock, W walk away
   useEffect(() => {
-    if (screen !== SCREEN_PLAYING || !state) return;
+    if (screen !== SCREEN_PLAYING || !state || refreshingPlan) return;
     if (state.status !== "reveal-question") return;
     function onKey(e) {
       if (e.key >= "1" && e.key <= "4") {
@@ -583,7 +743,7 @@ export default function GameContainer() {
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [screen, state, handleSelect, handleLock, handleWalkAway]);
+  }, [screen, state, refreshingPlan, handleSelect, handleLock, handleWalkAway]);
 
   if (screen === SCREEN_ONBOARDING) {
     return (
@@ -666,6 +826,10 @@ export default function GameContainer() {
             ))}
           </div>
         </fieldset>
+
+        {resumeNotice && (
+          <p role="status" className="text-sm text-[var(--color-text-soft)]">{resumeNotice}</p>
+        )}
 
         {loadError && (
           <p className="text-[var(--color-functional-red)] text-sm">{loadError}</p>
@@ -805,6 +969,11 @@ export default function GameContainer() {
 
   if (!state) return null;
 
+  // A saved game from an earlier build is being refreshed (#88). Usually a
+  // single fast request; holding the screen means no answer is checked,
+  // and no timer started, against the old hashes.
+  if (refreshingPlan) return null;
+
   if (state.status === "won" || state.status === "lost" || state.status === "walked-away") {
     return <EndScreen state={state} onPlayAgain={resetToOnboarding} />;
   }
@@ -826,11 +995,11 @@ export default function GameContainer() {
           {state.status === "reveal-question" && (
             <Timer
               seconds={tierTimer}
-              running={timerRunning}
+              running={timerRunning && !lockError}
               initialElapsedSec={
                 state.questionStartedAt != null
                   ? (Date.now() - state.questionStartedAt) / 1000
-                  : 0
+                  : (state.heldElapsedMs ?? 0) / 1000
               }
               onExpire={handleExpire}
             />
@@ -944,6 +1113,12 @@ export default function GameContainer() {
             onUseExpert={handleLifelineExpert}
             onDismissPanel={handleLifelineDismiss}
           />
+        )}
+
+        {state.status === "reveal-question" && lockError && (
+          <p role="alert" className="text-sm text-[var(--color-functional-red)]">
+            {lockError}
+          </p>
         )}
 
         {state.status === "reveal-question" && !walkAwayConfirm && (

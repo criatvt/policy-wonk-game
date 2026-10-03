@@ -58,9 +58,20 @@ export async function seedRandom(page, seed) {
 // in each difficulty, exactly as many as one game needs. The session plan
 // then no longer depends on the rest of the bank, so adding or editing
 // other questions does not move the layout baselines.
+//
+// Matched on the pathname, because the game requests banks with a
+// build-version query string (`?b=`, #88). A glob ending in `.json` would
+// silently stop matching, and an unpinned bank changes the baselines
+// without any error. Game.startGame() throws if a pinned page loaded a
+// question without the route firing.
+const pinnedPages = new WeakMap();
+
 export async function pinQuestionBank(page) {
   const need = { easy: 4, medium: 4, hard: 4, expert: 3 };
-  await page.route("**/data/questions/*.json", async (route) => {
+  const pin = { fired: false };
+  pinnedPages.set(page, pin);
+  await page.route((url) => /\/data\/questions\/[^/]+\.json$/.test(url.pathname), async (route) => {
+    pin.fired = true;
     const response = await route.fetch();
     const bank = await response.json();
     if (!Array.isArray(bank)) return route.fulfill({ response });
@@ -137,6 +148,13 @@ export class Game {
     await this.click(this.button(this.module.name, { exact: true }));
     await this.click(this.button("Start the game"));
     await this.waitForQuestion();
+    const pin = pinnedPages.get(this.page);
+    if (pin && !pin.fired) {
+      throw new Error(
+        "pinQuestionBank: the game loaded a question but the bank route never fired. " +
+          "The question-bank URL has changed; update the matcher in tests/browser/support/game.js.",
+      );
+    }
   }
 
   // Wait until a question from the bank is fully on screen: the complete
