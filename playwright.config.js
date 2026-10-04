@@ -50,7 +50,7 @@ export default defineConfig({
   projects: [
     ...phones.map(({ name, viewport, deviceScaleFactor }) => ({
       name,
-      testMatch: /phone-overflow\.spec\.js/,
+      testMatch: /phone-(overflow|scroll)\.spec\.js/,
       use: { viewport, deviceScaleFactor, isMobile: true, hasTouch: true },
     })),
     {

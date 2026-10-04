@@ -18,7 +18,7 @@
     "astro": "astro",
     "validate-questions": "node scripts/validate-questions.js",
     "test:browser": "playwright test",
-    "test:phone": "playwright test tests/browser/phone-overflow.spec.js",
+    "test:phone": "playwright test tests/browser/phone-overflow.spec.js tests/browser/phone-scroll.spec.js",
     "test:layout": "playwright test tests/browser/layout.spec.js",
     "test:layout:update": "playwright test tests/browser/layout.spec.js --update-snapshots",
     "transform-questions": "node scripts/transform-questions.js",

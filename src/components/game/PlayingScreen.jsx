@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { LADDER, walkAwayScore } from "../../lib/gameEngine.js";
 import Question from "./Question.jsx";
 import Ladder from "./Ladder.jsx";
@@ -47,10 +48,26 @@ export default function PlayingScreen({
   const inReveal =
     state.status === "revealed-correct" || state.status === "revealed-wrong";
 
+  // Bring each new question into view. The reveal card and its explanation
+  // sit below the question, so on a phone the player has scrolled down to
+  // reach Continue, and the next question would otherwise start typing out
+  // above the viewport. Only scrolls when the top of the play area is off
+  // screen, so a desktop window that already shows it doesn't move.
+  const sectionRef = useRef(null);
+  const shownRungRef = useRef(state.currentRung);
+  useEffect(() => {
+    if (shownRungRef.current === state.currentRung) return;
+    shownRungRef.current = state.currentRung;
+    const el = sectionRef.current;
+    if (!el || el.getBoundingClientRect().top >= 0) return;
+    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    el.scrollIntoView({ block: "start", behavior: reduce ? "auto" : "smooth" });
+  }, [state.currentRung]);
+
   return (
     <div className="min-h-[80vh] flex items-center justify-center">
       <div className="grid grid-cols-[minmax(0,1fr)] md:grid-cols-[1fr_240px] gap-6 w-full">
-      <section className="flex flex-col gap-5">
+      <section ref={sectionRef} className="flex flex-col gap-5 scroll-mt-4">
         <div className="flex items-center justify-between gap-4">
           <p className="text-sm opacity-70">
             Question {state.currentRung} of 15 — {LADDER[state.currentRung - 1].difficulty}
